@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simkin.ru — прототип главной</title>
+<style>
+  :root{
+    --ink:#161616;
+    --ink-2:#585858;
+    --ink-3:#8c8c8c;
+    --line:#d8d8d6;
+    --line-2:#ebebe9;
+    --bg:#f3f3f1;
+    --paper:#ffffff;
+    --fill:#e4e4e1;
+    --w:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+    background:var(--bg);color:var(--ink);
+    font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 40px}
+  .sec{background:var(--paper);border-bottom:1px solid var(--line-2)}
+  .sec__inner{padding:84px 0}
+
+  /* ---------- заглушки ---------- */
+  .ph{background:var(--fill);border:1px solid var(--line);position:relative;overflow:hidden}
+  .ph::after{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(to top right,transparent 49.7%,var(--line) 49.7%,var(--line) 50.3%,transparent 50.3%),
+      linear-gradient(to top left,transparent 49.7%,var(--line) 49.7%,var(--line) 50.3%,transparent 50.3%);
+  }
+  .ph span{
+    position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);
+    background:var(--paper);padding:5px 12px;font-size:11px;color:var(--ink-3);
+    border:1px solid var(--line);letter-spacing:.05em;white-space:nowrap;
+  }
+  .line{height:9px;background:var(--fill);border-radius:2px;margin-top:9px}
+  .line.s{width:58%}
+  .line.m{width:84%}
+  .lines{margin-top:14px}
+  .icon{width:44px;height:44px;border:1px solid var(--line);background:var(--fill);border-radius:50%}
+  .icon.sq{border-radius:4px}
+
+  /* ---------- типографика ---------- */
+  h1{font-size:46px;line-height:1.1;font-weight:700;letter-spacing:-.025em}
+  h2{font-size:32px;line-height:1.18;font-weight:700;letter-spacing:-.018em}
+  h3{font-size:17px;font-weight:650;line-height:1.32}
+  .lead{font-size:18px;color:var(--ink-2);margin-top:20px;max-width:34em}
+  .eyebrow{font-size:11.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);font-weight:600}
+  .head{margin-bottom:44px;max-width:44em}
+  .head h2{max-width:20em}
+  .head p{color:var(--ink-2);margin-top:14px}
+  .head--row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;max-width:none}
+
+  /* ---------- кнопки ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    height:52px;padding:0 28px;border:1px solid var(--ink);
+    font-size:15px;font-weight:600;color:var(--ink);background:transparent;
+    text-decoration:none;white-space:nowrap;border-radius:2px;cursor:pointer;
+    transition:background .18s ease,color .18s ease;font-family:inherit;
+  }
+  .btn:hover{background:var(--ink);color:#fff}
+  .btn--fill{background:var(--ink);color:#fff}
+  .btn--fill:hover{background:#000}
+  .btn--sm{height:44px;padding:0 20px;font-size:14px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+  .link{
+    font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;
+    border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .18s ease;
+  }
+  .link:hover{border-color:var(--ink)}
+
+  /* ================= ШАПКА ================= */
+  header{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--line)}
+  .topbar{
+    border-bottom:1px solid var(--line-2);background:var(--bg);
+    max-height:44px;overflow:hidden;transition:max-height .25s ease,opacity .2s ease;opacity:1;
+  }
+  header.is-scrolled .topbar{max-height:0;opacity:0}
+  .topbar__in{display:flex;align-items:center;height:44px;gap:28px}
+  .topbar__note{font-size:12px;color:var(--ink-3);letter-spacing:.02em;flex:1 1 auto}
+  .topbar__nav{display:flex;gap:22px}
+  .topbar__nav a{font-size:13px;color:var(--ink-2);text-decoration:none;transition:color .18s ease}
+  .topbar__nav a:hover{color:var(--ink)}
+  .topbar__tel{font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap}
+
+  .hdr{display:flex;align-items:center;height:80px;gap:40px}
+  .logo{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);flex:0 0 auto}
+  .logo__mark{width:40px;height:40px;border:1px solid var(--line);background:var(--fill);flex:0 0 auto}
+  .logo__txt b{display:block;font-size:18px;letter-spacing:-.02em;line-height:1.1}
+  .logo__txt span{display:block;font-size:9.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.11em;margin-top:3px}
+  .mainnav{display:flex;gap:30px;flex:1 1 auto;justify-content:center}
+  .mainnav a{
+    font-size:15px;color:var(--ink);text-decoration:none;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:5px;padding:6px 0;
+    border-bottom:1px solid transparent;transition:border-color .18s ease;
+  }
+  .mainnav a:hover{border-color:var(--ink)}
+  .mainnav a i{
+    display:inline-block;width:0;height:0;border-left:3.5px solid transparent;
+    border-right:3.5px solid transparent;border-top:4px solid var(--ink-3);
+  }
+  .hdr__cta{flex:0 0 auto}
+  .burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:var(--paper);flex-direction:column;justify-content:center;align-items:center;gap:4px;cursor:pointer}
+  .burger i{display:block;width:18px;height:1.5px;background:var(--ink)}
+
+  /* ================= секции ================= */
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .hero__ph{aspect-ratio:4/3.4}
+
+  .theses{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .thesis{border:1px solid var(--line);padding:24px;background:var(--paper)}
+  .thesis .icon{margin-bottom:18px}
+  .chain{margin-top:40px;border:1px solid var(--line);background:var(--bg);padding:28px 24px}
+  .chain__row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .chain__step{border:1px solid var(--line);background:var(--paper);padding:12px 18px;font-size:14px;font-weight:600}
+  .chain__arw{color:var(--ink-3);font-size:14px}
+  .chain__cap{font-size:11.5px;color:var(--ink-3);margin-bottom:16px;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{border:1px solid var(--line);padding:26px;background:var(--paper);display:flex;flex-direction:column}
+  .card .icon{margin-bottom:18px}
+  .card h3{margin-bottom:4px}
+  .card .link{margin-top:auto;padding-top:20px;align-self:flex-start}
+  .badge{display:inline-block;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--line);padding:4px 9px;color:var(--ink-3);margin-top:14px;align-self:flex-start}
+  .sublink{margin-top:16px;font-size:13px;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:13px}
+
+  .expert{display:grid;grid-template-columns:.78fr 1.22fr;gap:56px;align-items:start}
+  .expert__ph{aspect-ratio:3/3.6}
+  .facts{list-style:none;margin-top:26px}
+  .facts li{display:flex;gap:16px;padding:13px 0;border-bottom:1px solid var(--line-2);font-size:15px;color:var(--ink-2)}
+  .facts li b{color:var(--ink);font-weight:600;flex:0 0 auto;min-width:96px}
+
+  .logos{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .logos .ph{height:78px}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px;border-top:1px solid var(--line-2);padding-top:30px}
+  .num b{display:block;font-size:36px;font-weight:700;letter-spacing:-.03em}
+  .num span{font-size:13px;color:var(--ink-3)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .step{border-top:2px solid var(--ink);padding-top:22px}
+  .step__n{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);margin-bottom:14px}
+  .step .ph{aspect-ratio:16/10;margin-bottom:20px}
+
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+  .col{padding:30px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+  .col:last-child{border-right:0}
+  .col ul{list-style:none;margin:20px 0 26px}
+  .col li{font-size:14px;color:var(--ink-2);padding:10px 0;border-bottom:1px solid var(--line-2)}
+  .col .btn{margin-top:auto}
+
+  .post .ph{aspect-ratio:16/10;margin-bottom:18px}
+  .post .eyebrow{margin-bottom:9px}
+  .post__meta{font-size:12px;color:var(--ink-3);margin-top:12px}
+
+  .cta{background:var(--ink);color:#fff;border-bottom:0}
+  .cta h2{color:#fff;max-width:15em}
+  .cta__grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .cta__sub{color:#9d9d9d;margin-top:18px;max-width:30em}
+  .form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .field{height:52px;border:1px solid #4c4c4c;background:transparent;color:#fff;padding:0 16px;font-size:14px;font-family:inherit}
+  .field::placeholder{color:#8f8f8f}
+  .field:focus{outline:none;border-color:#fff}
+  .cta .btn{grid-column:span 2;border-color:#fff;background:#fff;color:var(--ink)}
+  .cta .btn:hover{background:#e8e8e8;color:var(--ink)}
+  .agree{grid-column:span 2;font-size:12px;color:#9a9a9a;display:flex;gap:10px;align-items:flex-start}
+  .agree i{width:16px;height:16px;border:1px solid #6f6f6f;flex:0 0 auto;margin-top:2px;display:block}
+
+  .prefoot{background:var(--bg)}
+  .prefoot .sec__inner{padding:64px 0;text-align:center}
+  .prefoot .btns{justify-content:center}
+
+  footer{background:var(--paper);border-top:1px solid var(--line)}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.25fr;gap:40px;padding:64px 0 36px}
+  .foot h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-bottom:18px;font-weight:600}
+  .foot ul{list-style:none}
+  .foot li{padding:7px 0;font-size:14px;color:var(--ink-2)}
+  .clinic{border:1px solid var(--line);background:var(--bg);padding:18px;font-size:13px;color:var(--ink-2);margin-top:16px;line-height:1.5}
+  .foot__bottom{border-top:1px solid var(--line-2);padding:22px 0 44px;display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--ink-3);flex-wrap:wrap}
+
+  /* ---------- планшет ---------- */
+  @media (max-width:1180px){
+    .mainnav{gap:20px}
+    .mainnav a{font-size:14px}
+    .hdr{gap:24px}
+  }
+  @media (max-width:1040px){
+    .topbar__note{display:none}
+    .mainnav{display:none}
+    .burger{display:flex}
+    .hdr{justify-content:space-between}
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+  }
+
+  /* ---------- мобильная ---------- */
+  @media (max-width:900px){
+    .wrap{padding:0 20px}
+    .sec__inner{padding:52px 0}
+    h1{font-size:31px}
+    h2{font-size:24px}
+    .lead{font-size:16px}
+    .topbar{display:none}
+    .hdr{height:66px;gap:12px}
+    .hdr__cta .btn{height:42px;padding:0 15px;font-size:13px}
+    .logo__mark{width:34px;height:34px}
+    .logo__txt b{font-size:16px}
+    .hero,.expert,.cta__grid{grid-template-columns:1fr;gap:30px}
+    .theses,.grid-4,.grid-3,.steps{grid-template-columns:1fr;gap:14px}
+    .cols{grid-template-columns:1fr}
+    .col{border-right:0;border-bottom:1px solid var(--line)}
+    .col:last-child{border-bottom:0}
+    .logos{grid-template-columns:repeat(3,1fr)}
+    .nums{grid-template-columns:1fr;gap:16px}
+    .foot{grid-template-columns:1fr;gap:28px;padding:44px 0 28px}
+    .form{grid-template-columns:1fr}
+    .cta .btn,.agree{grid-column:span 1}
+    .btns .btn{width:100%}
+    .facts li{flex-direction:column;gap:2px}
+    .facts li b{min-width:0}
+  }
+  @media (max-width:560px){
+    .logos{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="topbar">
+    <div class="wrap topbar__in">
+      <span class="topbar__note">Авторская система эргономики Доктора Симкина</span>
+      <nav class="topbar__nav">
+        <a href="#method">Метод</a>
+        <a href="#expert">Дмитрий Симкин</a>
+        <a href="#articles">Знания</a>
+        <a href="#foot">Контакты</a>
+      </nav>
+      <a href="tel:+70000000000" class="topbar__tel">+7 (000) 000-00-00</a>
+    </div>
+  </div>
+  <div class="wrap hdr">
+    <a href="#" class="logo">
+      <span class="logo__mark"></span>
+      <span class="logo__txt"><b>Simkin.ru</b><span>Эргономика</span></span>
+    </a>
+    <nav class="mainnav">
+      <a href="#company">Для компаний <i></i></a>
+      <a href="#directions">Онлайн-курс</a>
+      <a href="#directions">Аудит и консалтинг</a>
+      <a href="#directions">Решения <i></i></a>
+      <a href="#directions">Разработки <i></i></a>
+    </nav>
+    <div class="hdr__cta">
+      <a href="#cta" class="btn btn--sm btn--fill">Обсудить задачу</a>
+    </div>
+    <button class="burger" aria-label="Меню"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- первый экран -->
+<section class="sec" id="hero">
+  <div class="wrap sec__inner">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Авторская система эргономики Доктора Симкина</div>
+        <h1 style="margin-top:20px">Эргономика, которая начинается с человека, а не с мебели</h1>
+        <p class="lead">Подзаголовок в две строки: короткое объяснение сути подхода и того, кому он нужен.</p>
+        <div class="btns">
+          <a href="#company" class="btn btn--fill">Для компаний</a>
+          <a href="#directions" class="btn">Онлайн-курс</a>
+          <a href="#cta" class="btn">Обсудить задачу</a>
+        </div>
+      </div>
+      <div class="ph hero__ph"><span>Фотография: человек за рабочим местом</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- отличие подхода -->
+<section class="sec" id="difference">
+  <div class="wrap sec__inner">
+    <div class="head">
+      <h2>Чем этот подход отличается от обычных рекомендаций по эргономике</h2>
+    </div>
+    <div class="theses">
+      <div class="thesis"><div class="icon"></div><h3>Не мебель сама по себе</h3><div class="lines"><div class="line"></div><div class="line s"></div></div></div>
+      <div class="thesis"><div class="icon"></div><h3>Не универсальные правила</h3><div class="lines"><div class="line"></div><div class="line s"></div></div></div>
+      <div class="thesis"><div class="icon"></div><h3>Не просто «сидите прямо»</h3><div class="lines"><div class="line"></div><div class="line s"></div></div></div>
+      <div class="thesis"><div class="icon"></div><h3>А выстроенная система</h3><div class="lines"><div class="line"></div><div class="line s"></div></div></div>
+    </div>
+    <div class="chain">
+      <div class="chain__cap">Логика системы</div>
+      <div class="chain__row">
+        <span class="chain__step">Человек</span><span class="chain__arw">→</span>
+        <span class="chain__step">Тело</span><span class="chain__arw">→</span>
+        <span class="chain__step">Задача</span><span class="chain__arw">→</span>
+        <span class="chain__step">Рабочая поза</span><span class="chain__arw">→</span>
+        <span class="chain__step">Оборудование</span><span class="chain__arw">→</span>
+        <span class="chain__step">Среда</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- для кого -->
+<section class="sec" id="company">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Кому полезен сайт</h2></div>
+    <div class="grid-4">
+      <div class="card"><div class="icon"></div><h3>Компаниям</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Для компаний</a></div>
+      <div class="card"><div class="icon"></div><h3>Сотрудникам и частным пользователям</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Онлайн-курс</a></div>
+      <div class="card"><div class="icon"></div><h3>Производителям мебели и оборудования</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Экспертная оценка</a></div>
+      <div class="card"><div class="icon"></div><h3>Специалистам и партнёрам</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><span class="badge">В перспективе</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- направления -->
+<section class="sec" id="directions">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Основные направления работы</h2></div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon sq"></div><h3>Корпоративное обучение</h3>
+        <div class="lines"><div class="line"></div><div class="line m"></div></div>
+        <div class="sublink">Чек-апы: оценка перегрузки и эргономических рисков →</div>
+        <a href="#" class="link">Подробнее</a>
+      </div>
+      <div class="card"><div class="icon sq"></div><h3>Онлайн-курс</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
+      <div class="card"><div class="icon sq"></div><h3>Аудит рабочих мест</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
+      <div class="card"><div class="icon sq"></div><h3>Консалтинг</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
+      <div class="card"><div class="icon sq"></div><h3>Эргономичные решения</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
+      <div class="card"><div class="icon sq"></div><h3>Авторские разработки</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- эксперт -->
+<section class="sec" id="expert">
+  <div class="wrap sec__inner">
+    <div class="expert">
+      <div class="ph expert__ph"><span>Портрет</span></div>
+      <div>
+        <div class="eyebrow">Автор системы</div>
+        <h2 style="margin-top:16px">Дмитрий Симкин</h2>
+        <p class="lead" style="margin-top:12px">Врач-остеопат, эксперт по эргономике.</p>
+        <ul class="facts">
+          <li><b>1991</b> начало медицинской практики</li>
+          <li><b>2004</b> начало обучения эргономике</li>
+          <li><b>Клиника</b> основатель Клиники Доктора Симкина</li>
+          <li><b>Разработки</b> автор методик и патентуемых решений</li>
+          <li><b>Опыт</b> российские и международные компании</li>
+          <li><b>Экспертиза</b> связь рабочей позы, тела и задач человека</li>
+        </ul>
+        <div class="btns"><a href="#" class="btn">Подробнее об эксперте</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- клиенты -->
+<section class="sec" id="clients">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>С кем работали</h2></div>
+    <div class="logos">
+      <div class="ph"><span>Лого</span></div><div class="ph"><span>Лого</span></div><div class="ph"><span>Лого</span></div>
+      <div class="ph"><span>Лого</span></div><div class="ph"><span>Лого</span></div><div class="ph"><span>Лого</span></div>
+    </div>
+    <div class="nums">
+      <div class="num"><b>000</b><span>компаний</span></div>
+      <div class="num"><b>000</b><span>обученных сотрудников</span></div>
+      <div class="num"><b>00</b><span>лет практики</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- как работает подход -->
+<section class="sec" id="method">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Как работает подход</h2></div>
+    <div class="steps">
+      <div class="step"><div class="step__n">Шаг 1</div><div class="ph"><span>Иллюстрация</span></div><h3>Понять тело</h3><div class="lines"><div class="line"></div><div class="line m"></div></div></div>
+      <div class="step"><div class="step__n">Шаг 2</div><div class="ph"><span>Иллюстрация</span></div><h3>Научиться устойчивому положению</h3><div class="lines"><div class="line"></div><div class="line m"></div></div></div>
+      <div class="step"><div class="step__n">Шаг 3</div><div class="ph"><span>Иллюстрация</span></div><h3>Адаптировать рабочее место</h3><div class="lines"><div class="line"></div><div class="line m"></div></div></div>
+    </div>
+    <div class="btns"><a href="#" class="btn">Подробнее о методе</a></div>
+  </div>
+</section>
+
+<!-- форматы -->
+<section class="sec" id="formats">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Форматы сотрудничества</h2></div>
+    <div class="cols">
+      <div class="col">
+        <div class="eyebrow">Компании</div><h3 style="margin-top:12px">Программа под задачи бизнеса</h3>
+        <ul><li>Корпоративный онлайн-курс</li><li>Очные мастер-классы</li><li>Аудит рабочих мест</li><li>Чек-апы</li></ul>
+        <a href="#cta" class="btn btn--sm">Запросить программу</a>
+      </div>
+      <div class="col">
+        <div class="eyebrow">Сотрудник</div><h3 style="margin-top:12px">Обучение для себя</h3>
+        <ul><li>Онлайн-курс</li><li>Разбор рабочего места</li><li>Подбор решений</li><li>Статьи и материалы</li></ul>
+        <a href="#cta" class="btn btn--sm">Оставить заявку</a>
+      </div>
+      <div class="col">
+        <div class="eyebrow">Производители</div><h3 style="margin-top:12px">Экспертиза мебели и оборудования</h3>
+        <ul><li>Оценка изделий</li><li>Консультации по разработке</li><li>Совместные проекты</li><li>Авторские решения</li></ul>
+        <a href="#cta" class="btn btn--sm">Обсудить задачу</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- статьи -->
+<section class="sec" id="articles">
+  <div class="wrap sec__inner">
+    <div class="head head--row">
+      <h2>Знания и статьи</h2>
+      <a href="#" class="link">Все материалы</a>
+    </div>
+    <div class="grid-3">
+      <div class="post"><div class="ph"><span>Обложка</span></div><div class="eyebrow">Рабочая поза</div><h3>Заголовок статьи в две строки</h3><div class="post__meta">00.00.0000 · 7 минут</div></div>
+      <div class="post"><div class="ph"><span>Обложка</span></div><div class="eyebrow">Мебель и оборудование</div><h3>Заголовок статьи в две строки</h3><div class="post__meta">00.00.0000 · 5 минут</div></div>
+      <div class="post"><div class="ph"><span>Обложка</span></div><div class="eyebrow">Перерывы и восстановление</div><h3>Заголовок статьи в две строки</h3><div class="post__meta">00.00.0000 · 6 минут</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- заявка -->
+<section class="sec cta" id="cta">
+  <div class="wrap sec__inner">
+    <div class="cta__grid">
+      <div>
+        <h2>Расскажите о задаче, предложим формат работы</h2>
+        <p class="cta__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+      </div>
+      <form class="form" onsubmit="return false">
+        <input class="field" placeholder="Имя">
+        <input class="field" placeholder="Телефон">
+        <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
+        <button class="btn">Оставить заявку</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- сквозной призыв -->
+<section class="sec prefoot">
+  <div class="wrap sec__inner">
+    <h2>Обсудим эргономику в вашей компании</h2>
+    <div class="btns">
+      <a href="#cta" class="btn btn--fill">Обсудить задачу</a>
+      <a href="#cta" class="btn">Получить предложение</a>
+    </div>
+  </div>
+</section>
+
+<footer id="foot">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#" class="logo" style="margin-bottom:18px">
+          <span class="logo__mark"></span>
+          <span class="logo__txt"><b>Simkin.ru</b><span>Эргономика</span></span>
+        </a>
+        <div class="lines"><div class="line"></div><div class="line"></div><div class="line s"></div></div>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul><li>Для компаний</li><li>Онлайн-курс</li><li>Аудит и консалтинг</li><li>Эргономичные решения</li><li>Авторские разработки</li></ul>
+      </div>
+      <div>
+        <h4>О проекте</h4>
+        <ul><li>Метод</li><li>Дмитрий Симкин</li><li>Знания и статьи</li><li>Контакты</li></ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul><li>+7 (000) 000-00-00</li><li>mail@simkin.ru</li><li>Telegram · WhatsApp</li></ul>
+        <div class="clinic">Медицинский приём, остеопатия и запись к врачу — на сайте клиники Doctorsimkin.ru</div>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>© 2026 Simkin.ru · Реквизиты юридического лица</span>
+      <span>Политика конфиденциальности · Согласие на обработку данных</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', function(){
+    hdr.classList.toggle('is-scrolled', window.scrollY > 120);
+  }, {passive:true});
+</script>
+
+</body>
+</html>
