@@ -57,7 +57,7 @@
       <div class="navitem"><a href="index.html#articles">Полезные статьи</a></div>
     </nav>
 
-    <div class="hdr__cta"><a href="#request" class="btn btn--sm btn--fill">Обсудить задачу</a></div>
+    <div class="hdr__cta"><a href="#request" class="btn btn--sm btn--fill btn--plain">Обсудить задачу</a></div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
   </div>
 
@@ -105,65 +105,69 @@
 </nav>
 
 <!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
-<section class="herosec" id="hero">
-  <div class="herosec__grid">
-    <div class="herosec__text">
-      <div class="herosec__rule" data-rv>
-        <span></span>
-        <div class="eyebrow">Для компаний</div>
+<section class="sec hero" id="hero">
+  <div class="wrap hero__inner">
+    <div class="hero__top">
+      <div>
+        <span class="eyebrow" data-rv>Для компаний</span>
+        <h1 data-rv style="--d:.06s;margin-top:24px">Заголовок первого экрана</h1>
       </div>
-      <h1 data-rv style="--d:.06s">Заголовок первого экрана</h1>
-      <p class="lead" data-rv style="--d:.12s">Подзаголовок: короткое объяснение, что компания получает от работы с эргономикой.</p>
-      <div class="btns" data-rv style="--d:.18s">
-        <a href="#request" class="btn btn--fill">Запросить корпоративную программу</a>
-        <a href="#request" class="btn">Обсудить задачу</a>
+      <div class="hero__aside">
+        <p class="lead" data-rv style="--d:.12s">Подзаголовок: короткое объяснение, что компания получает от работы с эргономикой.</p>
+        <div class="btns" data-rv style="--d:.18s">
+          <a href="#request" class="btn btn--fill">Запросить корпоративную программу</a>
+          <a href="#request" class="btn btn--plain">Обсудить задачу</a>
+        </div>
       </div>
     </div>
-    <div class="herosec__media">
-      <div class="ph"><span>Фотография</span></div>
-    </div>
+    <div class="ph ph--lg hero__media" data-rv style="--d:.24s"><span>Фотография</span></div>
   </div>
 </section>
 
 <!-- ============ БЛОК 2. КОМУ АДРЕСОВАНО ============ -->
 <section class="sec sec--alt" id="roles">
   <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Кому адресовано</h2></div>
-    <div class="roles">
-      <div class="role" data-rv style="--d:.0s">
-        <span class="idx">01</span>
-        <div class="icon"></div>
-        <h3>Собственник</h3>
-      </div>
-      <div class="role" data-rv style="--d:.0s">
-        <span class="idx">02</span>
-        <div class="icon"></div>
-        <h3>Руководитель</h3>
-      </div>
-      <div class="role" data-rv style="--d:.0s">
-        <span class="idx">03</span>
-        <div class="icon"></div>
-        <h3>HR</h3>
-      </div>
-      <div class="role" data-rv style="--d:.1s">
-        <span class="idx">04</span>
-        <div class="icon"></div>
-        <h3>Роль четвёртая</h3>
-      </div>
-      <div class="role" data-rv style="--d:.1s">
-        <span class="idx">05</span>
-        <div class="icon"></div>
-        <h3>Роль пятая</h3>
-      </div>
-      <div class="role" data-rv style="--d:.2s">
-        <span class="idx">06</span>
-        <div class="icon"></div>
-        <h3>Роль шестая</h3>
-      </div>
-      <div class="role" data-rv style="--d:.2s">
-        <span class="idx">07</span>
-        <div class="icon"></div>
-        <h3>Роль седьмая</h3>
+    <div class="head head--split" data-rv>
+      <h2>Кому адресовано <span class="soft">внутри компании</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="panel" data-rv style="--d:.06s">
+      <div class="roles">
+        <div class="role">
+          <span class="idx">01</span>
+          <div class="icon"></div>
+          <h3>Собственник</h3>
+        </div>
+        <div class="role">
+          <span class="idx">02</span>
+          <div class="icon"></div>
+          <h3>Руководитель</h3>
+        </div>
+        <div class="role">
+          <span class="idx">03</span>
+          <div class="icon"></div>
+          <h3>HR</h3>
+        </div>
+        <div class="role">
+          <span class="idx">04</span>
+          <div class="icon"></div>
+          <h3>Роль четвёртая</h3>
+        </div>
+        <div class="role">
+          <span class="idx">05</span>
+          <div class="icon"></div>
+          <h3>Роль пятая</h3>
+        </div>
+        <div class="role">
+          <span class="idx">06</span>
+          <div class="icon"></div>
+          <h3>Роль шестая</h3>
+        </div>
+        <div class="role">
+          <span class="idx">07</span>
+          <div class="icon"></div>
+          <h3>Роль седьмая</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -172,49 +176,41 @@
 <!-- ============ БЛОК 3. ЧТО ЭРГОНОМИКА ДАЁТ КОМПАНИИ ============ -->
 <section class="sec" id="benefits">
   <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Что эргономика даёт компании</h2></div>
+    <div class="head head--split" data-rv>
+      <h2>Что эргономика <span class="soft">даёт компании</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
 
-    <ol class="benefits" data-rv>
-      <li>Снижение утомления и физической перегрузки</li>
-      <li>Поддержание концентрации и работоспособности</li>
-      <li>Снижение факторов боли и дискомфорта</li>
-      <li>Более эффективное использование мебели и оборудования</li>
-      <li>Снижение потерь рабочего времени из-за проблем со здоровьем</li>
-      <li>Повышение качества условий труда</li>
-      <li>Укрепление бренда работодателя</li>
-      <li>Повышение привлекательности компании для сотрудников</li>
-      <li>Дополнительный аргумент для удержания ценных специалистов</li>
-      <li>Формирование культуры заботы о сотрудниках через условия труда</li>
-    </ol>
+    <div class="panel" data-rv style="--d:.06s">
+      <ol class="benefits">
+        <li>Снижение утомления и физической перегрузки</li>
+        <li>Поддержание концентрации и работоспособности</li>
+        <li>Снижение факторов боли и дискомфорта</li>
+        <li>Более эффективное использование мебели и оборудования</li>
+        <li>Снижение потерь рабочего времени из-за проблем со здоровьем</li>
+        <li>Повышение качества условий труда</li>
+        <li>Укрепление бренда работодателя</li>
+        <li>Повышение привлекательности компании для сотрудников</li>
+        <li>Дополнительный аргумент для удержания ценных специалистов</li>
+        <li>Формирование культуры заботы о сотрудниках через условия труда</li>
+      </ol>
+    </div>
 
-    <blockquote class="quote" data-rv>
+    <blockquote class="quote" data-rv style="--d:.12s">
       Эргономика работает не только на здоровье и продуктивность сотрудников, но и на бренд
       работодателя: хорошие условия труда становятся частью корпоративной культуры
       и конкурентного преимущества компании
     </blockquote>
 
-    <!-- под-раздел «Исследования и факты» -->
     <div class="research">
-      <div class="head" style="margin-bottom:0">
-        <h2 style="font-size:26px">Исследования и факты</h2>
+      <div class="head head--split" style="margin-bottom:0" data-rv>
+        <h2 style="font-size:clamp(23px,2.3vw,31px)">Исследования <span class="soft">и факты</span></h2>
         <p>Тезисы на основе международных исследований и материалов корпоративного курса.</p>
       </div>
       <div class="research__grid">
-        <div class="fact" data-rv>
-          <b>00&nbsp;%</b>
-          <p>Короткий вывод по результатам исследования.</p>
-          <div class="src"><a href="#">Источник</a></div>
-        </div>
-        <div class="fact" data-rv>
-          <b>00&nbsp;%</b>
-          <p>Короткий вывод по результатам исследования.</p>
-          <div class="src"><a href="#">Источник</a></div>
-        </div>
-        <div class="fact" data-rv>
-          <b>0×</b>
-          <p>Короткий вывод по результатам исследования.</p>
-          <div class="src"><a href="#">Источник</a></div>
-        </div>
+        <div class="fact" data-rv><b>00&nbsp;%</b><p>Короткий вывод по результатам исследования.</p><div class="src"><a href="#">Источник</a></div></div>
+        <div class="fact" data-rv style="--d:.08s"><b>00&nbsp;%</b><p>Короткий вывод по результатам исследования.</p><div class="src"><a href="#">Источник</a></div></div>
+        <div class="fact" data-rv style="--d:.16s"><b>0×</b><p>Короткий вывод по результатам исследования.</p><div class="src"><a href="#">Источник</a></div></div>
       </div>
     </div>
   </div>
@@ -223,12 +219,11 @@
 <!-- ============ БЛОК 4. МИФЫ ОБ ЭРГОНОМИКЕ ============ -->
 <section class="sec sec--alt" id="myths">
   <div class="wrap sec__inner">
-    <div class="head">
-      <h2>Мифы об эргономике</h2>
+    <div class="head head--split" data-rv>
+      <h2>Мифы <span class="soft">об эргономике</span></h2>
       <p>Шесть самых сильных мифов. Остальные разбираем отдельно и в корпоративной презентации.</p>
     </div>
-
-    <div class="acc" data-rv>
+    <div class="acc" data-rv style="--d:.06s">
       <details>
         <summary><span class="acc__n">Миф 1</span><span class="acc__q">«Купили дорогую мебель — вопрос эргономики решён»</span></summary>
         <div class="acc__body">Мебель не гарантирует эргономичную работу без умения её настраивать и использовать.</div>
@@ -251,10 +246,8 @@
       </details>
       <details>
         <summary><span class="acc__n">Миф 6</span><span class="acc__q">«Есть корпоративный курс по эргономике — значит, вопрос решён»</span></summary>
-        <div class="acc__body">
-          Наличие курса не значит, что знания применяются.
-          <div class="quote quote--sm">Если хотите понять, работает ли ваш корпоративный курс по эргономике — просто пройдите по офису и посмотрите, как сидят сотрудники</div>
-        </div>
+        <div class="acc__body">Наличие курса не значит, что знания применяются.
+          <div class="quote quote--sm">Если хотите понять, работает ли ваш корпоративный курс по эргономике — просто пройдите по офису и посмотрите, как сидят сотрудники</div></div>
       </details>
     </div>
   </div>
@@ -263,49 +256,55 @@
 <!-- ============ БЛОК 5. ЧТО МЫ ПРЕДЛАГАЕМ КОМПАНИИ ============ -->
 <section class="sec" id="offers">
   <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Что мы предлагаем компании</h2></div>
-    <div class="grid-3">
-      <div class="card" data-rv style="--d:.0s">
-        <span class="idx">01</span>
-        <div class="icon sq"></div>
-        <h3>Аудит и консалтинг</h3>
-        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-        <a href="#" class="link">Подробнее</a>
-      </div>
-      <div class="card" data-rv style="--d:.0s">
-        <span class="idx">02</span>
-        <div class="icon sq"></div>
-        <h3>Корпоративная версия курса</h3>
-        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-        <a href="#" class="link">Подробнее</a>
-      </div>
-      <div class="card" data-rv style="--d:.0s">
-        <span class="idx">03</span>
-        <div class="icon sq"></div>
-        <h3>Комплексная корпоративная программа</h3>
-        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-        <a href="#" class="link">Подробнее</a>
-      </div>
-      <div class="card" data-rv style="--d:.1s">
-        <span class="idx">04</span>
-        <div class="icon sq"></div>
-        <h3>Подбор и организация рабочих мест</h3>
-        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-        <a href="#" class="link">Подробнее</a>
-      </div>
-      <div class="card" data-rv style="--d:.1s">
-        <span class="idx">05</span>
-        <div class="icon sq"></div>
-        <h3>Промышленная эргономика</h3>
-        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-        <a href="#" class="link">Подробнее</a>
-      </div>
-      <div class="card" data-rv style="--d:.1s">
-        <span class="idx">06</span>
-        <div class="icon sq"></div>
-        <h3>Чек-апы</h3>
-        <p>Корпоративная оценка перегрузки и эргономических рисков. Не медицинская диагностика.</p>
-        <a href="https://doctorsimkin.ru" class="link">Клиника Доктора Симкина</a>
+    <div class="head head--center" data-rv>
+      <span class="eyebrow">Услуги</span>
+      <h2>Что мы предлагаем <span class="soft">компании</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="panel" data-rv style="--d:.06s">
+      <div class="cells cells--3">
+        <div class="cell">
+          <span class="idx">01</span>
+          <div class="icon sq"></div>
+          <h3>Аудит и консалтинг</h3>
+          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+          <a href="#" class="link">Подробнее</a>
+        </div>
+        <div class="cell">
+          <span class="idx">02</span>
+          <div class="icon sq"></div>
+          <h3>Корпоративная версия курса</h3>
+          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+          <a href="#" class="link">Подробнее</a>
+        </div>
+        <div class="cell">
+          <span class="idx">03</span>
+          <div class="icon sq"></div>
+          <h3>Комплексная корпоративная программа</h3>
+          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+          <a href="#" class="link">Подробнее</a>
+        </div>
+        <div class="cell">
+          <span class="idx">04</span>
+          <div class="icon sq"></div>
+          <h3>Подбор и организация рабочих мест</h3>
+          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+          <a href="#" class="link">Подробнее</a>
+        </div>
+        <div class="cell">
+          <span class="idx">05</span>
+          <div class="icon sq"></div>
+          <h3>Промышленная эргономика</h3>
+          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+          <a href="#" class="link">Подробнее</a>
+        </div>
+        <div class="cell">
+          <span class="idx">06</span>
+          <div class="icon sq"></div>
+          <h3>Чек-апы</h3>
+          <p>Корпоративная оценка перегрузки и эргономических рисков. Не медицинская диагностика.</p>
+          <a href="https://doctorsimkin.ru" class="link">Клиника Доктора Симкина</a>
+        </div>
       </div>
     </div>
   </div>
@@ -314,32 +313,37 @@
 <!-- ============ БЛОК 7. КАК ПРОХОДИТ СОТРУДНИЧЕСТВО ============ -->
 <section class="sec sec--alt" id="flow">
   <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Как проходит сотрудничество</h2></div>
-    <div class="flow" data-rv>
-      <div class="flow__step">
-        <div class="flow__n">Шаг 1</div>
-        <h3>Название шага</h3>
-        <p>Одна строка о шаге.</p>
-      </div>
-      <div class="flow__step">
-        <div class="flow__n">Шаг 2</div>
-        <h3>Название шага</h3>
-        <p>Одна строка о шаге.</p>
-      </div>
-      <div class="flow__step">
-        <div class="flow__n">Шаг 3</div>
-        <h3>Название шага</h3>
-        <p>Одна строка о шаге.</p>
-      </div>
-      <div class="flow__step">
-        <div class="flow__n">Шаг 4</div>
-        <h3>Название шага</h3>
-        <p>Одна строка о шаге.</p>
-      </div>
-      <div class="flow__step">
-        <div class="flow__n">Шаг 5</div>
-        <h3>Название шага</h3>
-        <p>Одна строка о шаге.</p>
+    <div class="head head--split" data-rv>
+      <h2>Как проходит <span class="soft">сотрудничество</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="panel" data-rv style="--d:.06s">
+      <div class="flow">
+        <div class="flow__step">
+          <div class="flow__n">1</div>
+          <h3>Название шага</h3>
+          <p>Одна строка о шаге.</p>
+        </div>
+        <div class="flow__step">
+          <div class="flow__n">2</div>
+          <h3>Название шага</h3>
+          <p>Одна строка о шаге.</p>
+        </div>
+        <div class="flow__step">
+          <div class="flow__n">3</div>
+          <h3>Название шага</h3>
+          <p>Одна строка о шаге.</p>
+        </div>
+        <div class="flow__step">
+          <div class="flow__n">4</div>
+          <h3>Название шага</h3>
+          <p>Одна строка о шаге.</p>
+        </div>
+        <div class="flow__step">
+          <div class="flow__n">5</div>
+          <h3>Название шага</h3>
+          <p>Одна строка о шаге.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -348,12 +352,15 @@
 <!-- ============ БЛОК 8. РЕЗУЛЬТАТ ДЛЯ КОМПАНИИ ============ -->
 <section class="sec" id="results">
   <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Результат для компании</h2></div>
-    <div class="results" data-rv>
-      <div class="result"><b>000</b><p>Одна строка о результате.</p></div>
-      <div class="result"><b>00&nbsp;%</b><p>Одна строка о результате.</p></div>
-      <div class="result"><b>00</b><p>Одна строка о результате.</p></div>
-      <div class="result"><div class="icon"></div><p style="margin-top:16px">Одна строка о результате.</p></div>
+    <div class="head head--split" data-rv>
+      <h2>Результат <span class="soft">для компании</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="results">
+      <div class="result" data-rv><b>000</b><p>Одна строка о результате.</p></div>
+      <div class="result" data-rv style="--d:.06s"><b>00&nbsp;%</b><p>Одна строка о результате.</p></div>
+      <div class="result" data-rv style="--d:.12s"><b>00</b><p>Одна строка о результате.</p></div>
+      <div class="result" data-rv style="--d:.18s"><div class="icon"></div><p>Одна строка о результате.</p></div>
     </div>
   </div>
 </section>
@@ -361,17 +368,19 @@
 <!-- ============ БЛОК 9. КЛИЕНТЫ И ОТЗЫВЫ ============ -->
 <section class="sec sec--alt" id="clients">
   <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Клиенты и отзывы</h2></div>
-    <div class="logos">
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
+    <div class="head head--split" data-rv>
+      <h2>Клиенты <span class="soft">и отзывы</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
     </div>
-    <div class="reviews" data-rv>
-      <div class="review">
+    <div class="logos" data-rv style="--d:.06s">
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+    </div>
+    <div class="reviews" style="margin-top:44px">
+      <div class="review" data-rv>
         <div class="review__mark">«</div>
         <p class="review__txt">Цитата из отзыва: что было до работы, что изменилось после и на чём это видно.</p>
         <div class="review__who">
@@ -379,7 +388,7 @@
           <div><b>Имя Фамилия</b><span>Должность, компания</span></div>
         </div>
       </div>
-      <div class="review">
+      <div class="review" data-rv style="--d:.08s">
         <div class="review__mark">«</div>
         <p class="review__txt">Цитата из отзыва: что было до работы, что изменилось после и на чём это видно.</p>
         <div class="review__who">
@@ -394,45 +403,69 @@
 <!-- ============ БЛОК 10. ВОПРОСЫ И ОТВЕТЫ ============ -->
 <section class="sec" id="faq">
   <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Вопросы и ответы</h2></div>
-    <div class="acc acc--plain" data-rv>
-      <details><summary><span class="acc__q">Текст первого вопроса</span></summary><div class="acc__body">Текст ответа на вопрос.</div></details>
-      <details><summary><span class="acc__q">Текст второго вопроса</span></summary><div class="acc__body">Текст ответа на вопрос.</div></details>
-      <details><summary><span class="acc__q">Текст третьего вопроса</span></summary><div class="acc__body">Текст ответа на вопрос.</div></details>
-      <details><summary><span class="acc__q">Текст четвёртого вопроса</span></summary><div class="acc__body">Текст ответа на вопрос.</div></details>
-      <details><summary><span class="acc__q">Текст пятого вопроса</span></summary><div class="acc__body">Текст ответа на вопрос.</div></details>
-      <details><summary><span class="acc__q">Текст шестого вопроса</span></summary><div class="acc__body">Текст ответа на вопрос.</div></details>
+    <div class="head head--center" data-rv>
+      <span class="eyebrow">FAQ</span>
+      <h2>Вопросы <span class="soft">и ответы</span></h2>
+    </div>
+    <div class="acc acc--plain acc--onwhite" data-rv style="--d:.06s">
+      <details>
+        <summary><span class="acc__q">Текст вопроса 1</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 2</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 3</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 4</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 5</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 6</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
     </div>
   </div>
 </section>
 
 <!-- ============ БЛОК 11. ФОРМА ЗАЯВКИ ============ -->
-<section class="sec cta" id="request">
-  <div class="wrap sec__inner">
-    <div class="head" data-rv style="margin-bottom:36px">
-      <h2>Заголовок блока заявки</h2>
-      <p class="cta__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+<section class="sec" id="request">
+  <div class="wrap" style="padding-bottom:24px">
+    <div class="band" data-rv>
+      <span class="eyebrow">Заявка</span>
+      <h2 style="margin-top:20px;max-width:15em">Заголовок блока заявки</h2>
+      <p class="band__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+      <form class="bigform" onsubmit="return false" style="margin-top:44px">
+        <input class="field" placeholder="Имя">
+        <input class="field" placeholder="Телефон">
+        <input class="field" placeholder="Почта">
+        <input class="field" placeholder="Компания">
+        <input class="field" placeholder="Должность">
+        <input class="field" placeholder="Число сотрудников">
+        <textarea class="field field--full" placeholder="Сообщение"></textarea>
+        <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
+        <button class="btn btn--light">Запросить программу</button>
+      </form>
     </div>
-    <form class="bigform" onsubmit="return false" data-rv>
-      <input class="field" placeholder="Имя">
-      <input class="field" placeholder="Телефон">
-      <input class="field" placeholder="Почта">
-      <input class="field" placeholder="Компания">
-      <input class="field" placeholder="Должность">
-      <input class="field" placeholder="Число сотрудников">
-      <textarea class="field field--full" placeholder="Сообщение"></textarea>
-      <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
-      <button class="btn">Запросить программу</button>
-    </form>
   </div>
 </section>
 
 <!-- ============ ОБЩЕЕ: БЛОК ПРИЗЫВА ПЕРЕД ПОДВАЛОМ ============ -->
 <section class="sec prefoot">
-  <div class="wrap sec__inner">
-    <h2 data-rv>Заголовок призыва</h2>
-    <p data-rv style="--d:.06s">Короткая подпись под заголовком.</p>
-    <div class="btns" data-rv style="--d:.12s"><a href="#request" class="btn btn--fill">Обсудить задачу</a></div>
+  <div class="wrap" style="padding-top:18px;padding-bottom:64px">
+    <div class="band" data-rv>
+      <h2>Заголовок призыва</h2>
+      <p>Короткая подпись под заголовком.</p>
+      <div class="btns"><a href="#request" class="btn btn--light">Обсудить задачу</a></div>
+    </div>
   </div>
 </section>
 

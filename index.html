@@ -57,7 +57,7 @@
       <div class="navitem"><a href="#articles">Полезные статьи</a></div>
     </nav>
 
-    <div class="hdr__cta"><a href="#cta" class="btn btn--sm btn--fill">Обсудить задачу</a></div>
+    <div class="hdr__cta"><a href="#cta" class="btn btn--sm btn--fill btn--plain">Обсудить задачу</a></div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
   </div>
 
@@ -96,95 +96,103 @@
 </header>
 
 <!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
-<section class="herosec" id="hero">
-  <div class="herosec__grid">
-    <div class="herosec__text">
-      <div class="herosec__rule" data-rv>
-        <span></span>
-        <div class="eyebrow">Авторская система эргономики Доктора Симкина</div>
+<section class="sec hero" id="hero">
+  <div class="wrap hero__inner">
+    <div class="hero__top">
+      <div>
+        <span class="eyebrow" data-rv>Авторская система эргономики Доктора Симкина</span>
+        <h1 data-rv style="--d:.06s;margin-top:24px">Эргономика, которая начинается с человека, а не с мебели</h1>
       </div>
-      <h1 data-rv style="--d:.06s">Эргономика, которая начинается с человека, а не с мебели</h1>
-      <p class="lead" data-rv style="--d:.12s">Подзаголовок в две строки: короткое объяснение сути подхода<br>и того, кому он нужен.</p>
-      <div class="btns" data-rv style="--d:.18s">
-        <a href="company.html" class="btn btn--fill">Для компаний</a>
-        <a href="#directions" class="btn">Для себя</a>
-        <a href="#cta" class="btn">Обсудить задачу</a>
+      <div class="hero__aside">
+        <p class="lead" data-rv style="--d:.12s">Подзаголовок в две строки: короткое объяснение сути подхода<br>и того, кому он нужен.</p>
+        <div class="btns" data-rv style="--d:.18s">
+          <a href="company.html" class="btn btn--fill">Для компаний</a>
+          <a href="#directions" class="btn">Для себя</a>
+          <a href="#cta" class="btn btn--plain">Обсудить задачу</a>
+        </div>
       </div>
     </div>
-    <div class="herosec__media">
-      <div class="ph"><span>Фотография: человек за рабочим местом</span></div>
-    </div>
+    <div class="ph ph--lg hero__media" data-rv style="--d:.24s"><span>Фотография: человек за рабочим местом</span></div>
   </div>
 </section>
 
 <!-- ============ БЛОК 2. ЧЕМ ПОДХОД ОТЛИЧАЕТСЯ ============ -->
 <section class="sec" id="difference">
   <div class="wrap sec__inner">
-    <div class="head" data-rv>
-      <h2>Чем этот подход отличается от обычных рекомендаций по эргономике</h2>
+    <div class="head head--split" data-rv>
+      <h2>Чем этот подход отличается <span class="soft">от обычных рекомендаций по эргономике</span></h2>
+      <p>Короткий поясняющий абзац к блоку: в двух-трёх строках о сути отличия.</p>
     </div>
 
-    <div class="theses">
-      <div class="thesis" data-rv style="--d:.0s">
-        <span class="idx">01</span>
-        <div class="icon"></div>
-        <h3>Тезис первый</h3>
-        <div class="lines"><div class="line"></div><div class="line s"></div></div>
-      </div>
-      <div class="thesis" data-rv style="--d:.1s">
-        <span class="idx">02</span>
-        <div class="icon"></div>
-        <h3>Тезис второй</h3>
-        <div class="lines"><div class="line"></div><div class="line s"></div></div>
-      </div>
-      <div class="thesis" data-rv style="--d:.2s">
-        <span class="idx">03</span>
-        <div class="icon"></div>
-        <h3>Тезис третий</h3>
-        <div class="lines"><div class="line"></div><div class="line s"></div></div>
-      </div>
-      <div class="thesis" data-rv style="--d:.3s">
-        <span class="idx">04</span>
-        <div class="icon"></div>
-        <h3>Тезис четвёртый</h3>
-        <div class="lines"><div class="line"></div><div class="line s"></div></div>
+    <div class="panel" data-rv style="--d:.06s">
+      <div class="cells cells--4">
+        <div class="cell">
+          <span class="idx">01</span>
+          <div class="icon"></div>
+          <h3>Тезис первый</h3>
+          <p>Короткое пояснение тезиса в одну-две строки.</p>
+        </div>
+        <div class="cell">
+          <span class="idx">02</span>
+          <div class="icon"></div>
+          <h3>Тезис второй</h3>
+          <p>Короткое пояснение тезиса в одну-две строки.</p>
+        </div>
+        <div class="cell">
+          <span class="idx">03</span>
+          <div class="icon"></div>
+          <h3>Тезис третий</h3>
+          <p>Короткое пояснение тезиса в одну-две строки.</p>
+        </div>
+        <div class="cell">
+          <span class="idx">04</span>
+          <div class="icon"></div>
+          <h3>Тезис четвёртый</h3>
+          <p>Короткое пояснение тезиса в одну-две строки.</p>
+        </div>
       </div>
     </div>
 
-    <div class="rail">
-      <div class="rail__i" data-rv style="--d:.0s">
-        <div class="rail__n">01</div>
-        <div class="rail__t">Человек</div>
-      </div>
-      <div class="rail__i" data-rv style="--d:.1s">
-        <div class="rail__n">02</div>
-        <div class="rail__t">Тело</div>
-      </div>
-      <div class="rail__i" data-rv style="--d:.2s">
-        <div class="rail__n">03</div>
-        <div class="rail__t">Задача</div>
-      </div>
-      <div class="rail__i" data-rv style="--d:.3s">
-        <div class="rail__n">04</div>
-        <div class="rail__t">Рабочая поза</div>
-      </div>
-      <div class="rail__i" data-rv style="--d:.4s">
-        <div class="rail__n">05</div>
-        <div class="rail__t">Оборудование</div>
-      </div>
-      <div class="rail__i" data-rv style="--d:.5s">
-        <div class="rail__n">06</div>
-        <div class="rail__t">Среда</div>
+    <div class="panel panel--pad" data-rv style="margin-top:16px;--d:.12s">
+      <span class="eyebrow" style="margin-bottom:32px">Схема подхода</span>
+      <div class="rail">
+        <div class="rail__i">
+          <div class="rail__dot">01</div>
+          <div class="rail__t">Человек</div>
+        </div>
+        <div class="rail__i">
+          <div class="rail__dot">02</div>
+          <div class="rail__t">Тело</div>
+        </div>
+        <div class="rail__i">
+          <div class="rail__dot">03</div>
+          <div class="rail__t">Задача</div>
+        </div>
+        <div class="rail__i">
+          <div class="rail__dot">04</div>
+          <div class="rail__t">Рабочая поза</div>
+        </div>
+        <div class="rail__i">
+          <div class="rail__dot">05</div>
+          <div class="rail__t">Оборудование</div>
+        </div>
+        <div class="rail__i">
+          <div class="rail__dot">06</div>
+          <div class="rail__t">Среда</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ БЛОК 3. ДЛЯ КОГО ============ -->
-<section class="sec sec--alt" id="audience">
-  <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Для кого</h2></div>
-    <div class="grid-4 grid-4--stagger">
+<section class="sec" id="audience">
+  <div class="wrap sec__inner--tight sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Для кого <span class="soft">этот сайт и эта система</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="grid-4">
       <div class="card" data-rv style="--d:.0s">
         <span class="idx">01</span>
         <div class="icon"></div>
@@ -218,9 +226,13 @@
 </section>
 
 <!-- ============ БЛОК 4. ДВА НАПРАВЛЕНИЯ ============ -->
-<section class="sec" id="directions">
+<section class="sec sec--alt" id="directions">
   <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Два направления</h2></div>
+    <div class="head head--center" data-rv>
+      <span class="eyebrow">Направления</span>
+      <h2>Два направления, <span class="soft">два разных маршрута</span></h2>
+      <p>Короткий поясняющий абзац: чем отличаются маршруты для компании и для человека.</p>
+    </div>
     <div class="grid-2">
       <a href="company.html" class="dir dir--dark" data-rv style="--d:0s">
         <div class="icon sq lg"></div>
@@ -251,53 +263,45 @@
 </section>
 
 <!-- ============ БЛОК 5. ОБ ЭКСПЕРТЕ ============ -->
-<section class="expertsec" id="expert">
-  <div class="expertsec__grid">
-    <div class="expertsec__media">
-      <div class="ph"><span>Фотография</span></div>
-    </div>
-    <div class="expertsec__text">
-      <div class="eyebrow" data-rv>Об эксперте</div>
-      <div class="expert__name" data-rv style="--d:.06s">Дмитрий Симкин</div>
-      <div class="expert__spec" data-rv style="--d:.1s">Врач-остеопат, эксперт по эргономике, автор системы</div>
-      <div data-rv style="--d:.16s">
-        <ul class="facts">
+<section class="sec" id="expert">
+  <div class="wrap sec__inner">
+    <div class="expert">
+      <div class="ph ph--lg expert__ph" data-rv><span>Фотография</span></div>
+      <div>
+        <span class="eyebrow" data-rv>Об эксперте</span>
+        <div class="expert__name" data-rv style="--d:.06s">Дмитрий Симкин</div>
+        <div class="expert__spec" data-rv style="--d:.1s">Врач-остеопат, эксперт по эргономике, автор системы</div>
+        <div data-rv style="--d:.16s">
+          <ul class="facts">
           <li><b>1991</b> начало медицинской практики</li>
           <li><b>2004</b> начало работы с эргономикой</li>
           <li><b>Клиника</b> основатель Клиники Доктора Симкина</li>
           <li><b>Разработки</b> автор методик и собственных решений</li>
           <li><b>Опыт</b> российские и международные компании</li>
           <li><b>Экспертиза</b> связь рабочей позы, тела и задач человека</li>
-        </ul>
-        <div class="btns"><a href="#" class="btn">Подробнее об эксперте</a></div>
+          </ul>
+          <div class="btns"><a href="#" class="btn">Подробнее об эксперте</a></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ БЛОК 6. КЛИЕНТЫ ============ -->
-<section class="sec" id="clients">
-  <div class="wrap sec__inner" style="padding-bottom:0">
-    <div class="head" data-rv><h2>Клиенты</h2></div>
-  </div>
-  <div class="marquee" data-rv>
-    <div class="marquee__row">
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
+<section class="sec sec--alt" id="clients">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Клиенты, <span class="soft">с которыми мы работали</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="logos" data-rv style="--d:.06s">
         <div class="ph"><span>Логотип</span></div>
         <div class="ph"><span>Логотип</span></div>
         <div class="ph"><span>Логотип</span></div>
         <div class="ph"><span>Логотип</span></div>
         <div class="ph"><span>Логотип</span></div>
     </div>
-  </div>
-  <div class="wrap" style="padding-bottom:104px">
-    <div class="nums" data-rv>
+    <div class="nums" data-rv style="--d:.12s">
       <div class="num"><b>000</b><span>компаний</span></div>
       <div class="num"><b>000</b><span>обученных сотрудников</span></div>
       <div class="num"><b>00</b><span>лет практики</span></div>
@@ -306,43 +310,48 @@
 </section>
 
 <!-- ============ БЛОК 7. КАК РАБОТАЕТ ПОДХОД ============ -->
-<section class="sec sec--alt" id="method">
+<section class="sec" id="method">
   <div class="wrap sec__inner">
-    <div class="head" data-rv><h2>Как работает подход</h2></div>
-    <div class="steps">
-      <div class="step" data-rv style="--d:.0s">
-        <span class="idx--xl">01</span>
-        <div class="icon"></div>
-        <h3>Название шага</h3>
-        <p>Одно предложение о том, что происходит на этом шаге.</p>
-      </div>
-      <div class="step" data-rv style="--d:.1s">
-        <span class="idx--xl">02</span>
-        <div class="icon"></div>
-        <h3>Название шага</h3>
-        <p>Одно предложение о том, что происходит на этом шаге.</p>
-      </div>
-      <div class="step" data-rv style="--d:.2s">
-        <span class="idx--xl">03</span>
-        <div class="icon"></div>
-        <h3>Название шага</h3>
-        <p>Одно предложение о том, что происходит на этом шаге.</p>
+    <div class="head head--split" data-rv>
+      <h2>Как работает подход <span class="soft">— три шага системы</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="panel" data-rv style="--d:.06s">
+      <div class="steps">
+        <div class="step">
+          <span class="idx--xl">01</span>
+          <div class="icon"></div>
+          <h3>Название шага</h3>
+          <p>Одно предложение о том, что происходит на этом шаге.</p>
+        </div>
+        <div class="step">
+          <span class="idx--xl">02</span>
+          <div class="icon"></div>
+          <h3>Название шага</h3>
+          <p>Одно предложение о том, что происходит на этом шаге.</p>
+        </div>
+        <div class="step">
+          <span class="idx--xl">03</span>
+          <div class="icon"></div>
+          <h3>Название шага</h3>
+          <p>Одно предложение о том, что происходит на этом шаге.</p>
+        </div>
       </div>
     </div>
-    <div class="btns" data-rv><a href="#" class="btn">Подробнее о методе</a></div>
+    <div class="btns" data-rv style="--d:.12s"><a href="#" class="btn">Подробнее о методе</a></div>
   </div>
 </section>
 
 <!-- ============ БЛОК 9. СТАТЬИ ============ -->
-<section class="sec" id="articles">
+<section class="sec sec--alt" id="articles">
   <div class="wrap sec__inner">
     <div class="head head--row" data-rv>
-      <h2>Статьи</h2>
-      <a href="#" class="link">Все материалы</a>
+      <h2>Статьи <span class="soft">и материалы</span></h2>
+      <a href="#" class="link link--u">Все материалы</a>
     </div>
     <div class="posts">
       <a href="#" class="post posts__main" data-rv>
-        <div class="ph"><span>Обложка</span></div>
+        <div class="ph ph--lg"><span>Обложка</span></div>
         <span class="eyebrow">Тема</span>
         <h3>Заголовок главного материала в две строки</h3>
         <div class="post__meta">00.00.0000</div>
@@ -370,30 +379,34 @@
 </section>
 
 <!-- ============ БЛОК 10. ЗАЯВКА ============ -->
-<section class="sec cta" id="cta">
+<section class="sec" id="cta">
   <div class="wrap sec__inner">
-    <div class="cta__grid">
-      <div data-rv>
-        <span class="eyebrow">Заявка</span>
-        <h2 style="margin-top:18px">Заголовок блока заявки</h2>
-        <p class="cta__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+    <div class="band" data-rv>
+      <div class="band__grid">
+        <div>
+          <span class="eyebrow">Заявка</span>
+          <h2 style="margin-top:20px">Заголовок блока заявки</h2>
+          <p class="band__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+        </div>
+        <form class="form" onsubmit="return false">
+          <input class="field" placeholder="Имя">
+          <input class="field" placeholder="Телефон">
+          <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
+          <button class="btn btn--light">Оставить заявку</button>
+        </form>
       </div>
-      <form class="form" onsubmit="return false" data-rv style="--d:.1s">
-        <input class="field" placeholder="Имя">
-        <input class="field" placeholder="Телефон">
-        <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
-        <button class="btn">Оставить заявку</button>
-      </form>
     </div>
   </div>
 </section>
 
 <!-- ============ ОБЩЕЕ: БЛОК ПРИЗЫВА ПЕРЕД ПОДВАЛОМ ============ -->
 <section class="sec prefoot">
-  <div class="wrap sec__inner">
-    <h2 data-rv>Заголовок призыва</h2>
-    <p data-rv style="--d:.06s">Короткая подпись под заголовком.</p>
-    <div class="btns" data-rv style="--d:.12s"><a href="#cta" class="btn btn--fill">Обсудить задачу</a></div>
+  <div class="wrap" style="padding-bottom:64px">
+    <div class="band" data-rv>
+      <h2>Заголовок призыва</h2>
+      <p>Короткая подпись под заголовком.</p>
+      <div class="btns"><a href="#cta" class="btn btn--light">Обсудить задачу</a></div>
+    </div>
   </div>
 </section>
 
