@@ -868,6 +868,7 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 
 /* ================= ОТРАСЛИ ================= */
 .industries{display:flex;gap:10px;flex-wrap:wrap;margin-top:36px}
+.sec--alt .industries span{background:var(--paper)}
 .industries span{
   background:var(--soft);border-radius:100px;padding:13px 24px;
   font-size:14.5px;font-weight:650;color:var(--ink);
