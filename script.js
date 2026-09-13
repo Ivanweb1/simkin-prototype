@@ -63,6 +63,41 @@ document.querySelectorAll('[data-gallery]').forEach(function(g){
   });
 });
 
+// фильтр тем: одна активная, повторный клик снимает выбор
+document.querySelectorAll('[data-topics]').forEach(function(box){
+  var btns = box.querySelectorAll('button');
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var on = !b.classList.contains('is-on');
+      btns.forEach(function(x){ x.classList.remove('is-on'); });
+      b.classList.toggle('is-on', on);
+    });
+  });
+});
+
+// «Показать ещё» раскрывает скрытые карточки и прячется
+document.querySelectorAll('[data-more]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var grid = document.getElementById(btn.getAttribute('data-more'));
+    if (grid) grid.classList.add('is-expanded');
+    btn.parentNode.style.display = 'none';
+  });
+});
+
+// содержание статьи подсвечивает текущий раздел
+var toc = document.querySelector('[data-toc]');
+if (toc) {
+  var tocLinks = toc.querySelectorAll('a');
+  var tocHeads = Array.prototype.map.call(tocLinks, function(a){ return document.querySelector(a.getAttribute('href')); });
+  var syncToc = function(){
+    var cur = 0;
+    tocHeads.forEach(function(h, i){ if (h && h.getBoundingClientRect().top < 170) cur = i; });
+    tocLinks.forEach(function(a, i){ a.classList.toggle('is-on', i === cur); });
+  };
+  window.addEventListener('scroll', syncToc, {passive:true});
+  syncToc();
+}
+
 var reveals = document.querySelectorAll('[data-rv]');
 function showAll(){
   reveals.forEach(function(el){ el.classList.add('is-in'); });

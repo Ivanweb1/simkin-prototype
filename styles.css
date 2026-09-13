@@ -771,6 +771,124 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 .clinic-box__out{background:var(--paper);border-radius:var(--r);padding:30px 32px}
 .clinic-box__out b{display:block;font-size:22px;font-weight:800;letter-spacing:-.028em;margin:8px 0 22px}
 
+/* ================= ШАПКА РАЗДЕЛА ================= */
+.page-head{padding-top:60px;padding-bottom:48px}
+.page-head h1{font-size:clamp(34px,4.4vw,60px)}
+.page-head .lead{margin-top:18px}
+
+/* ================= ФИЛЬТР ПО ТЕМАМ ================= */
+.topics{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.topics button{
+  border:0;background:var(--soft);border-radius:var(--r);padding:20px 18px 18px;text-align:left;
+  font-family:inherit;font-size:14.5px;font-weight:700;color:var(--ink);cursor:pointer;line-height:1.3;
+  display:flex;flex-direction:column;gap:14px;min-height:104px;
+  transition:background .2s var(--ease),color .2s var(--ease);
+}
+.topics button span{font-size:12px;color:var(--ink-3);font-weight:650;margin-top:auto}
+.topics button:hover{background:#e8e8e4}
+.topics button.is-on{background:var(--ink);color:#fff}
+.topics button.is-on span{color:#8a8a8a}
+.search{position:relative;margin-top:14px;max-width:460px}
+.search input{
+  width:100%;height:52px;border:1px solid var(--line);background:var(--paper);border-radius:100px;
+  padding:0 20px 0 48px;font-family:inherit;font-size:15px;color:var(--ink);
+}
+.search input:focus{outline:none;border-color:var(--ink)}
+.search::before{
+  content:"";position:absolute;left:20px;top:17px;width:13px;height:13px;
+  border:1.8px solid var(--ink-3);border-radius:50%;
+}
+.search::after{content:"";position:absolute;left:31px;top:32px;width:6px;height:1.8px;background:var(--ink-3);transform:rotate(45deg)}
+
+/* ================= ГЛАВНЫЙ МАТЕРИАЛ ================= */
+.feature{
+  display:grid;grid-template-columns:1.3fr 1fr;background:var(--soft);border-radius:var(--r-lg);
+  overflow:hidden;text-decoration:none;color:var(--ink);transition:background .22s var(--ease);
+}
+.feature:hover{background:#e8e8e4}
+.feature .ph{border-radius:0;min-height:420px}
+.feature__txt{padding:52px 48px;display:flex;flex-direction:column}
+.feature__txt h3{font-size:clamp(24px,2.6vw,36px);font-weight:800;letter-spacing:-.032em;line-height:1.12;margin-top:16px}
+.feature__txt .post__meta{margin-top:auto;padding-top:30px}
+
+/* список статей с догрузкой */
+.posts-grid .is-more{display:none}
+.posts-grid.is-expanded .is-more{display:block}
+.more{display:flex;justify-content:center;margin-top:52px}
+
+/* ================= ШАПКА СТАТЬИ ================= */
+.art-head{max-width:880px;margin:0 auto;text-align:center;padding-top:52px}
+.art-head h1{font-size:clamp(32px,4.2vw,56px);margin-top:20px}
+.art-meta{
+  display:flex;justify-content:center;align-items:center;gap:10px 22px;flex-wrap:wrap;
+  margin-top:28px;font-size:14px;color:var(--ink-3);font-weight:650;
+}
+.art-author{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.art-author .ph{width:40px;height:40px;border-radius:50%}
+.art-cover{aspect-ratio:21/9;margin-top:52px}
+
+/* ================= СТАТЬЯ: СОДЕРЖАНИЕ И ТЕКСТ ================= */
+.art{display:grid;grid-template-columns:250px 1fr;gap:80px;align-items:start}
+/* колонка тянется на всю высоту статьи, иначе закреплённому содержанию некуда прилипать */
+.art > aside{align-self:stretch}
+/* без этого широкая таблица распирает колонку статьи вместо прокрутки внутри себя */
+.art > *{min-width:0}
+.toc{position:sticky;top:104px}
+.toc ol{list-style:none;margin-top:18px;border-left:1.5px solid var(--line-2)}
+.toc a{
+  display:block;padding:9px 0 9px 18px;margin-left:-1.5px;border-left:1.5px solid transparent;
+  font-size:14px;color:var(--ink-3);text-decoration:none;font-weight:600;line-height:1.4;
+  transition:color .2s ease,border-color .2s ease;
+}
+.toc a:hover{color:var(--ink)}
+.toc a.is-on{color:var(--ink);border-left-color:var(--ink)}
+
+.prose{max-width:720px}
+.prose h2{font-size:clamp(24px,2.4vw,32px);margin:60px 0 18px;scroll-margin-top:110px}
+.prose > h2:first-child{margin-top:0}
+.prose h3{font-size:20px;margin:36px 0 12px}
+.prose p{font-size:17.5px;line-height:1.72;color:#2e2e2e;margin-bottom:18px}
+.prose ul{list-style:none;margin:0 0 24px}
+.prose ul li{position:relative;padding-left:26px;font-size:17px;line-height:1.66;color:#2e2e2e;margin-bottom:10px}
+.prose ul li::before{content:"";position:absolute;left:4px;top:12px;width:7px;height:7px;border-radius:50%;background:var(--ink)}
+.prose blockquote{
+  margin:36px 0;padding:4px 0 4px 28px;border-left:3px solid var(--ink);
+  font-size:22px;line-height:1.45;font-weight:600;letter-spacing:-.018em;color:var(--ink);
+}
+.prose figure{margin:36px 0}
+.prose figure .ph{aspect-ratio:16/9}
+.prose figcaption{font-size:13.5px;color:var(--ink-3);margin-top:12px;font-weight:550}
+.prose .demo__ph{margin:36px 0}
+.callout{background:var(--soft);border-radius:var(--r);padding:26px 28px;margin:32px 0}
+.callout b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-3);margin-bottom:10px;font-weight:750}
+.prose .callout p{margin:0;font-size:16.5px}
+.table-wrap{overflow-x:auto;margin:32px 0;border-radius:var(--r);border:1px solid var(--line-2)}
+.prose table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+.prose th{text-align:left;background:var(--soft);font-weight:700;padding:14px 18px;font-size:13.5px}
+.prose td{padding:14px 18px;border-top:1px solid var(--line-2);color:var(--ink-2)}
+
+/* врезка автора внутри текста */
+.author-note{display:flex;align-items:center;gap:18px;background:var(--soft);border-radius:var(--r);padding:20px 24px;margin:36px 0}
+.author-note .ph{width:58px;height:58px;border-radius:50%;flex:0 0 auto}
+.author-note b{display:block;font-size:15px;font-weight:750}
+.author-note span{display:block;font-size:14px;color:var(--ink-2);margin-top:3px}
+
+/* что с этим делать */
+.takeaway{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:42px 40px;margin-top:60px}
+.prose .takeaway h2{color:#fff;margin:12px 0 14px}
+.prose .takeaway p{color:#b4b4b4}
+.takeaway .eyebrow{color:#787878}
+
+/* поделиться */
+.share{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:44px;padding-top:30px;border-top:1px solid var(--line-2)}
+.share__label{font-size:14px;font-weight:700;margin-right:8px}
+.share a{
+  width:46px;height:46px;border-radius:50%;background:var(--soft);display:grid;place-items:center;
+  font-size:11px;font-weight:800;color:var(--ink-2);text-decoration:none;letter-spacing:.02em;
+  transition:background .2s ease,color .2s ease;
+}
+.share a:hover{background:var(--ink);color:#fff}
+
 /* ================= ПРАВИЛА НАСТРОЙКИ ================= */
 .rules{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .rule .ph{aspect-ratio:4/3;margin-bottom:20px}
@@ -1000,6 +1118,11 @@ footer{background:var(--paper);padding-top:20px}
   .expert__ph{aspect-ratio:16/11}
   .results,.research__grid,.price,.cases,.rules{grid-template-columns:repeat(2,1fr)}
   .scheme,.patent,.split,.clinic-box{grid-template-columns:1fr;gap:36px}
+  .topics{grid-template-columns:repeat(4,1fr)}
+  .feature{grid-template-columns:1fr}
+  .feature .ph{min-height:0;aspect-ratio:16/9}
+  .art{grid-template-columns:1fr;gap:40px}
+  .toc{position:static;background:var(--soft);border-radius:var(--r);padding:24px 26px}
   .socials{grid-template-columns:repeat(3,1fr)}
   .pubs a{grid-template-columns:110px 1fr auto;gap:20px}
   .pubs__type{display:none}
@@ -1067,6 +1190,14 @@ footer{background:var(--paper);padding-top:20px}
   .review{padding:28px 24px}
   .reviews{grid-template-columns:1fr}
   .formats,.formats--5,.price,.compare,.tariffs,.cases,.pcards,.rules,.limits{grid-template-columns:1fr}
+  .topics{grid-template-columns:repeat(2,1fr)}
+  .topics button{min-height:88px;padding:16px}
+  .feature__txt{padding:30px 24px}
+  .art-head{padding-top:32px}
+  .art-cover{aspect-ratio:16/10;margin-top:36px}
+  .prose p,.prose ul li{font-size:16.5px}
+  .prose blockquote{font-size:19px;padding-left:20px}
+  .takeaway{padding:30px 24px}
   .socials{grid-template-columns:repeat(2,1fr)}
   .timeline li{grid-template-columns:1fr;gap:4px;padding:18px 0}
   .pubs a{grid-template-columns:1fr auto;gap:6px 16px;padding:18px 0}
