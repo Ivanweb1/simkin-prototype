@@ -719,6 +719,58 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
   color:var(--ink-3);font-weight:750;margin-bottom:10px;
 }
 
+/* ================= ПОРТРЕТ И ПОЗИЦИЯ ================= */
+.portrait{aspect-ratio:4/4.7}
+.position{
+  margin-top:30px;padding-left:22px;border-left:2px solid var(--ink);
+  font-size:19px;line-height:1.5;color:var(--ink);font-weight:550;max-width:30em;letter-spacing:-.01em;
+}
+
+/* ================= ХРОНОЛОГИЯ ================= */
+.timeline{list-style:none;border-top:1.5px solid var(--ink)}
+.timeline li{
+  display:grid;grid-template-columns:170px 1fr;gap:32px;align-items:baseline;
+  padding:24px 0;border-bottom:1px solid var(--line-2);
+}
+.timeline b{font-size:24px;font-weight:800;letter-spacing:-.035em;font-variant-numeric:tabular-nums}
+.timeline span{font-size:16.5px;color:var(--ink-2)}
+
+/* ================= ПУБЛИКАЦИИ ================= */
+.pubs{list-style:none;border-top:1.5px solid var(--ink)}
+.pubs li{border-bottom:1px solid var(--line-2)}
+.pubs a{
+  display:grid;grid-template-columns:130px 150px 1fr auto;gap:28px;align-items:center;
+  padding:24px 0;text-decoration:none;color:var(--ink);transition:opacity .2s ease;
+}
+.pubs a:hover{opacity:.58}
+.pubs__date{font-size:14px;color:var(--ink-3);font-weight:700;font-variant-numeric:tabular-nums}
+.pubs__type{font-size:10.5px;text-transform:uppercase;letter-spacing:.15em;color:var(--ink-3);font-weight:750}
+.pubs__title{font-size:17.5px;font-weight:650;letter-spacing:-.014em}
+.pubs__arr{font-size:18px;color:var(--ink-3)}
+
+/* ================= СОЦСЕТИ ================= */
+.socials{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.socials a{
+  background:var(--soft);border-radius:var(--r);padding:26px 24px 28px;
+  display:flex;flex-direction:column;gap:22px;text-decoration:none;color:var(--ink);
+  transition:background .22s var(--ease),color .22s var(--ease);
+}
+.socials a:hover{background:var(--ink);color:#fff}
+.socials .icon{background:var(--paper);transition:background .22s var(--ease)}
+.socials a:hover .icon{background:#2b2b2b}
+.socials b{font-size:16.5px;font-weight:750;display:flex;justify-content:space-between;align-items:center}
+.socials b::after{content:"↗";font-size:14px;font-weight:600;opacity:.6}
+
+/* ================= КЛИНИКА — ОТДЕЛЬНОЕ НАПРАВЛЕНИЕ ================= */
+.clinic-box{
+  background:var(--soft);border-radius:var(--r-lg);padding:52px 56px;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:center;
+}
+.clinic-box > *{min-width:0}
+.clinic-box__txt{font-size:17px;color:var(--ink-2);margin-top:20px;max-width:34em}
+.clinic-box__out{background:var(--paper);border-radius:var(--r);padding:30px 32px}
+.clinic-box__out b{display:block;font-size:22px;font-weight:800;letter-spacing:-.028em;margin:8px 0 22px}
+
 /* ================= ПРАВИЛА НАСТРОЙКИ ================= */
 .rules{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .rule .ph{aspect-ratio:4/3;margin-bottom:20px}
@@ -946,7 +998,10 @@ footer{background:var(--paper);padding-top:20px}
   .expert{grid-template-columns:1fr;gap:38px}
   .expert__ph{aspect-ratio:16/11}
   .results,.research__grid,.price,.cases,.rules{grid-template-columns:repeat(2,1fr)}
-  .scheme,.patent,.split{grid-template-columns:1fr;gap:36px}
+  .scheme,.patent,.split,.clinic-box{grid-template-columns:1fr;gap:36px}
+  .socials{grid-template-columns:repeat(3,1fr)}
+  .pubs a{grid-template-columns:110px 1fr auto;gap:20px}
+  .pubs__type{display:none}
   .split--rev > :first-child{order:0}
   .stages,.advice{grid-template-columns:1fr}
   .patent__doc{max-width:320px}
@@ -1011,6 +1066,16 @@ footer{background:var(--paper);padding-top:20px}
   .review{padding:28px 24px}
   .reviews{grid-template-columns:1fr}
   .formats,.formats--5,.price,.compare,.tariffs,.cases,.pcards,.rules,.limits{grid-template-columns:1fr}
+  .socials{grid-template-columns:repeat(2,1fr)}
+  .timeline li{grid-template-columns:1fr;gap:4px;padding:18px 0}
+  .pubs a{grid-template-columns:1fr auto;gap:6px 16px;padding:18px 0}
+  .pubs__date{grid-column:1}
+  .pubs__title{grid-column:1;font-size:16px}
+  .pubs__arr{grid-column:2;grid-row:1 / span 2}
+  .clinic-box{padding:30px 22px}
+  .clinic-box__out{padding:24px 20px}
+  .clinic-box__out .btn{width:100%;white-space:normal;height:auto;min-height:54px;padding:13px 20px;text-align:center}
+  .position{font-size:17px}
   .advice__card{padding:28px 24px}
   .stage h3{font-size:20px}
   .limits__col{padding:28px 24px}

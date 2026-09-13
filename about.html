@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simkin.ru — прототип страницы «Дмитрий Симкин»</title>
+<script>document.documentElement.className+=" js"</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=16">
+</head>
+<body>
+
+<!-- ============ ОБЩЕЕ: ШАПКА, ЗАКРЕПЛЕНА ПРИ ПРОКРУТКЕ ============ -->
+<header id="hdr">
+  <div class="topbar">
+    <div class="wrap topbar__in">
+      <span class="topbar__note">Авторская система эргономики Доктора Симкина</span>
+      <a href="#contacts" class="topbar__link">Контакты</a>
+      <button class="topbar__link" data-open>Обратный звонок</button>
+      <a href="tel:+70000000000" class="topbar__tel">+7 (000) 000-00-00</a>
+    </div>
+  </div>
+
+  <div class="wrap hdr">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"></span>
+      <span class="logo__txt"><b>Simkin.ru</b><span>Авторская система эргономики</span></span>
+    </a>
+
+    <nav class="mainnav">
+      <div class="navitem">
+        <a href="company.html">Для компаний <i></i></a>
+        <div class="sub">
+          <a href="audit.html">Аудит и консалтинг</a>
+          <a href="company.html#offers">Корпоративная версия курса</a>
+          <a href="program.html">Корпоративная программа</a>
+          <a href="workplace.html">Подбор и организация рабочих мест</a>
+          <a href="industrial.html">Промышленная эргономика</a>
+          <a href="company.html#offers">Чек-апы</a>
+        </div>
+      </div>
+      <div class="navitem">
+        <a href="self.html">Для себя <i></i></a>
+        <div class="sub">
+          <a href="course.html">Онлайн-курс</a>
+          <a href="solutions.html">Эргономичные решения</a>
+          <a href="products.html">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="navitem"><a href="course.html">Онлайн-курс</a></div>
+      <div class="navitem"><a href="solutions.html">Эргономичные решения</a></div>
+      <div class="navitem"><a href="method.html">Метод Симкина</a></div>
+      <div class="navitem"><a href="about.html">Дмитрий Симкин</a></div>
+      <div class="navitem"><a href="index.html#articles">Полезные статьи</a></div>
+    </nav>
+
+    <div class="hdr__cta"><a href="#actions" class="btn btn--sm btn--fill btn--plain">Обсудить задачу</a></div>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+
+  <!-- мобильное меню -->
+  <nav class="mnav" id="mnav">
+    <div class="wrap mnav__in">
+      <div class="mnav__item">
+        <a href="company.html">Для компаний</a>
+        <div class="mnav__sub">
+          <a href="audit.html">Аудит и консалтинг</a>
+          <a href="company.html#offers">Корпоративная версия курса</a>
+          <a href="program.html">Корпоративная программа</a>
+          <a href="workplace.html">Подбор и организация рабочих мест</a>
+          <a href="industrial.html">Промышленная эргономика</a>
+          <a href="company.html#offers">Чек-апы</a>
+        </div>
+      </div>
+      <div class="mnav__item">
+        <a href="self.html">Для себя</a>
+        <div class="mnav__sub">
+          <a href="course.html">Онлайн-курс</a>
+          <a href="solutions.html">Эргономичные решения</a>
+          <a href="products.html">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="mnav__item"><a href="course.html">Онлайн-курс</a></div>
+      <div class="mnav__item"><a href="solutions.html">Эргономичные решения</a></div>
+      <div class="mnav__item"><a href="method.html">Метод Симкина</a></div>
+      <div class="mnav__item"><a href="about.html">Дмитрий Симкин</a></div>
+      <div class="mnav__item"><a href="index.html#articles">Полезные статьи</a></div>
+      <a href="tel:+70000000000" class="mnav__tel">+7 (000) 000-00-00</a>
+      <div class="btns"><button class="btn" data-open>Обратный звонок</button></div>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ ОБЩЕЕ: СТРОКА НАВИГАЦИИ ============ -->
+<nav class="crumbs">
+  <div class="wrap crumbs__in">
+    <a href="index.html">Главная</a>
+    <span>/</span>
+    <span>Дмитрий Симкин</span>
+  </div>
+</nav>
+
+<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
+<section class="sec hero" id="hero">
+  <div class="wrap hero__inner">
+    <div class="hero__grid">
+      <div>
+        <h1 data-rv>Дмитрий Симкин</h1>
+        <p class="lead" data-rv style="--d:.06s">Врач-остеопат, эксперт по эргономике, автор системы</p>
+        <p class="position" data-rv style="--d:.12s">Одна фраза о позиции: во что эксперт верит и что отстаивает в эргономике.</p>
+      </div>
+      <div class="ph ph--lg portrait" data-rv style="--d:.18s"><span>Портрет</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 2. ПРОФЕССИОНАЛЬНЫЙ ПРОФИЛЬ ============ -->
+<section class="sec sec--alt" id="profile">
+  <div class="wrap sec__inner">
+    <div class="head head--split" style="margin-bottom:0" data-rv>
+      <h2>Профессиональный <span class="soft">профиль</span></h2>
+      <p>Текст блока: в нескольких строках о профессиональном пути, опыте и том, как врачебная практика стала основанием для работы в эргономике.</p>
+    </div>
+    <div class="nums" data-rv style="--d:.06s">
+      <div class="num" style="background:var(--paper)"><b>00</b><span>Ключевой факт</span></div>
+      <div class="num" style="background:var(--paper)"><b>000</b><span>Ключевой факт</span></div>
+      <div class="num" style="background:var(--paper)"><b>0000</b><span>Ключевой факт</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3. ОБРАЗОВАНИЕ И КВАЛИФИКАЦИЯ ============ -->
+<section class="sec" id="education">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Образование <span class="soft">и квалификация</span></h2>
+      <p>Список с годами.</p>
+    </div>
+    <ul class="timeline" data-rv style="--d:.06s">
+        <li><b>0000</b><span>Учебное заведение, квалификация или курс повышения квалификации.</span></li>
+        <li><b>0000</b><span>Учебное заведение, квалификация или курс повышения квалификации.</span></li>
+        <li><b>0000</b><span>Учебное заведение, квалификация или курс повышения квалификации.</span></li>
+        <li><b>0000</b><span>Учебное заведение, квалификация или курс повышения квалификации.</span></li>
+        <li><b>0000</b><span>Учебное заведение, квалификация или курс повышения квалификации.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4. СПЕЦИАЛИЗАЦИЯ В ЭРГОНОМИКЕ ============ -->
+<section class="sec sec--alt" id="specialization">
+  <div class="wrap sec__inner">
+    <div class="corp">
+      <div data-rv>
+        <h2>Специализация <span class="soft">в эргономике</span></h2>
+        <p class="split__txt">Текст блока: чем именно эксперт занимается в эргономике и в чём особенность его подхода.</p>
+      </div>
+      <div data-rv style="--d:.08s">
+        <ul>
+          <li>Направление работы в эргономике.</li>
+          <li>Направление работы в эргономике.</li>
+          <li>Направление работы в эргономике.</li>
+          <li>Направление работы в эргономике.</li>
+          <li>Направление работы в эргономике.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5. АВТОРСКИЕ МЕТОДИКИ И РАЗРАБОТКИ ============ -->
+<section class="sec" id="developments">
+  <div class="wrap sec__inner">
+    <div class="head head--row" data-rv>
+      <h2>Авторские методики <span class="soft">и разработки</span></h2>
+      <a href="products.html" class="link link--u">Все разработки</a>
+    </div>
+    <div class="grid-4">
+      <a href="product.html" class="pcard" data-rv style="--d:.0s">
+        <div class="ph"><span>Фотография</span></div>
+        <h3>Эргономичный стол</h3>
+        <p>Одна строка о разработке.</p>
+        <span class="link">Подробнее</span>
+      </a>
+      <a href="product.html" class="pcard" data-rv style="--d:.1s">
+        <div class="ph"><span>Фотография</span></div>
+        <h3>Ортопедическая подушка</h3>
+        <p>Одна строка о разработке.</p>
+        <span class="link">Подробнее</span>
+      </a>
+      <a href="product.html" class="pcard" data-rv style="--d:.2s">
+        <div class="ph"><span>Фотография</span></div>
+        <h3>Эргономические аксессуары</h3>
+        <p>Одна строка о разработке.</p>
+        <span class="link">Подробнее</span>
+      </a>
+      <a href="product.html" class="pcard" data-rv style="--d:.3s">
+        <div class="ph"><span>Фотография</span></div>
+        <h3>Отдельная разработка</h3>
+        <p>Одна строка о разработке.</p>
+        <span class="link">Подробнее</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 6. ОПЫТ РАБОТЫ С КОМПАНИЯМИ ============ -->
+<section class="sec sec--alt" id="experience">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Опыт работы <span class="soft">с компаниями</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="logos" data-rv style="--d:.06s">
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+    </div>
+    <div class="group" style="margin-top:56px" data-rv>
+      <span class="eyebrow">География проектов</span>
+      <div class="ph ph--lg" style="aspect-ratio:21/8;margin-top:20px"><span>Карта</span></div>
+      <div class="industries" style="margin-top:18px">
+        <span>Город или регион</span>
+        <span>Город или регион</span>
+        <span>Город или регион</span>
+        <span>Город или регион</span>
+        <span>Город или регион</span>
+        <span>Город или регион</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 7. ПУБЛИКАЦИИ И ВЫСТУПЛЕНИЯ ============ -->
+<section class="sec" id="publications">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Публикации <span class="soft">и выступления</span></h2>
+      <p>Список с датами и ссылками.</p>
+    </div>
+    <ul class="pubs" data-rv style="--d:.06s">
+        <li><a href="#">
+          <span class="pubs__date">00.00.0000</span>
+          <span class="pubs__type">Публикация</span>
+          <span class="pubs__title">Название публикации или выступления</span>
+          <span class="pubs__arr">↗</span>
+        </a></li>
+        <li><a href="#">
+          <span class="pubs__date">00.00.0000</span>
+          <span class="pubs__type">Выступление</span>
+          <span class="pubs__title">Название публикации или выступления</span>
+          <span class="pubs__arr">↗</span>
+        </a></li>
+        <li><a href="#">
+          <span class="pubs__date">00.00.0000</span>
+          <span class="pubs__type">Публикация</span>
+          <span class="pubs__title">Название публикации или выступления</span>
+          <span class="pubs__arr">↗</span>
+        </a></li>
+        <li><a href="#">
+          <span class="pubs__date">00.00.0000</span>
+          <span class="pubs__type">Интервью</span>
+          <span class="pubs__title">Название публикации или выступления</span>
+          <span class="pubs__arr">↗</span>
+        </a></li>
+        <li><a href="#">
+          <span class="pubs__date">00.00.0000</span>
+          <span class="pubs__type">Выступление</span>
+          <span class="pubs__title">Название публикации или выступления</span>
+          <span class="pubs__arr">↗</span>
+        </a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ БЛОК 7а. СОЦИАЛЬНЫЕ СЕТИ ============ -->
+<section class="sec sec--alt" id="socials">
+  <div class="wrap sec__inner--tight sec__inner">
+    <div class="head head--row" style="margin-bottom:36px" data-rv>
+      <h2>Социальные <span class="soft">сети</span></h2>
+    </div>
+    <div class="socials" data-rv style="--d:.06s">
+        <a href="#"><div class="icon"></div><b>ВКонтакте</b></a>
+        <a href="#"><div class="icon"></div><b>Telegram</b></a>
+        <a href="#"><div class="icon"></div><b>MAX</b></a>
+        <a href="#"><div class="icon"></div><b>YouTube</b></a>
+        <a href="#"><div class="icon"></div><b>RuTube</b></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 8. КЛИНИКА ============ -->
+<section class="sec" id="clinic">
+  <div class="wrap sec__inner">
+    <div class="clinic-box" data-rv>
+      <div>
+        <h2>Клиника</h2>
+        <p class="clinic-box__txt">Медицинский приём, остеопатия и запись к врачу ведутся на отдельном сайте клиники. Simkin.ru посвящён эргономике и не заменяет медицинскую консультацию.</p>
+      </div>
+      <div class="clinic-box__out">
+        <span class="eyebrow">Сайт клиники</span>
+        <b>Doctorsimkin.ru</b>
+        <a href="https://doctorsimkin.ru" class="btn btn--fill" target="_blank" rel="noopener">Перейти на сайт клиники</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 9. КНОПКИ ДЕЙСТВИЙ ============ -->
+<section class="sec" id="actions">
+  <div class="wrap" style="padding-bottom:118px">
+    <div class="band" data-rv>
+      <div class="band__grid">
+        <div>
+          <span class="eyebrow">Дальше</span>
+          <h2 style="margin-top:20px">Заголовок <span class="soft">блока действий</span></h2>
+        </div>
+        <div class="actions">
+          <a href="company.html" class="btn btn--light">Обсудить задачу</a>
+          <a href="course.html" class="btn btn--ghost-dark">Пройти курс</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ОБЩЕЕ: ПОДВАЛ ============ -->
+<footer id="contacts">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="index.html" class="logo">
+          <span class="logo__mark"></span>
+          <span class="logo__txt"><b>Simkin.ru</b><span>Авторская система эргономики</span></span>
+        </a>
+        <p class="foot__about">Короткий текст о проекте: авторская система эргономики Доктора Симкина, обучение и решения для компаний и частных пользователей.</p>
+      </div>
+
+      <div>
+        <h4>Для компаний</h4>
+        <ul>
+          <li><a href="audit.html">Аудит и консалтинг</a></li>
+          <li><a href="company.html#offers">Корпоративная версия курса</a></li>
+          <li><a href="program.html">Корпоративная программа</a></li>
+          <li><a href="workplace.html">Подбор рабочих мест</a></li>
+          <li><a href="industrial.html">Промышленная эргономика</a></li>
+          <li><a href="company.html#offers">Чек-апы</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Для себя</h4>
+        <ul>
+          <li><a href="course.html">Онлайн-курс</a></li>
+          <li><a href="solutions.html">Эргономичные решения</a></li>
+          <li><a href="products.html">Авторские разработки</a></li>
+          <li><a href="#">Полезные статьи</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>О проекте</h4>
+        <ul>
+          <li><a href="method.html">Метод Симкина</a></li>
+          <li><a href="about.html">Дмитрий Симкин</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+70000000000">+7 (000) 000-00-00</a></li>
+          <li><a href="mailto:mail@simkin.ru">mail@simkin.ru</a></li>
+          <li><a href="#">Telegram</a> · <a href="#">WhatsApp</a> · <a href="#">MAX</a></li>
+        </ul>
+        <button class="foot__cb" data-open>Заказать обратный звонок</button>
+        <div class="clinic">Медицинский приём, остеопатия и запись к врачу — на сайте клиники <a href="https://doctorsimkin.ru">Doctorsimkin.ru</a></div>
+      </div>
+    </div>
+
+    <div class="soc">
+      <a href="#">ВКонтакте</a>
+      <a href="#">Telegram</a>
+      <a href="#">MAX</a>
+      <a href="#">YouTube</a>
+      <a href="#">RuTube</a>
+    </div>
+
+    <div class="foot__bottom">
+      <span>© 2026 Simkin.ru · Реквизиты юридического лица</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Согласие на обработку данных</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБРАТНЫЙ ЗВОНОК» ============ -->
+<div class="modal" id="callback">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="cbTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="cbTitle">Обратный звонок</h2>
+    <p>Короткая подпись: в какой срок перезвонят.</p>
+    <form class="mform" onsubmit="return false">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield" placeholder="Удобное время">
+      <label class="magree"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill">Жду звонка</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js?v=16"></script>
+</body>
+</html>
