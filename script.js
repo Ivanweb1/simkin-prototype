@@ -36,3 +36,25 @@ document.querySelectorAll('[data-close]').forEach(function(el){
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') setModal(false);
 });
+
+var reveals = document.querySelectorAll('[data-rv]');
+function showAll(){
+  reveals.forEach(function(el){ el.classList.add('is-in'); });
+}
+if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  showAll();
+} else {
+  var fired = false;
+  var io = new IntersectionObserver(function(entries){
+    fired = true;
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      en.target.style.transitionDelay = en.target.style.getPropertyValue('--d') || '0s';
+      en.target.classList.add('is-in');
+      io.unobserve(en.target);
+    });
+  }, {rootMargin: '0px 0px -12% 0px', threshold: 0.08});
+  reveals.forEach(function(el){ io.observe(el); });
+  // страховка: вкладка открыта в фоне или наблюдатель не сработал — показываем всё
+  setTimeout(function(){ if(!fired) showAll(); }, 1600);
+}

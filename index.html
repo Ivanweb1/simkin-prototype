@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Simkin.ru — прототип главной</title>
+<script>document.documentElement.className+=" js"</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -92,20 +96,23 @@
 </header>
 
 <!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
-<section class="sec" id="hero">
-  <div class="wrap sec__inner">
-    <div class="hero">
-      <div>
+<section class="herosec" id="hero">
+  <div class="herosec__grid">
+    <div class="herosec__text">
+      <div class="herosec__rule" data-rv>
+        <span></span>
         <div class="eyebrow">Авторская система эргономики Доктора Симкина</div>
-        <h1 style="margin-top:20px">Эргономика, которая начинается с человека, а не с мебели</h1>
-        <p class="lead">Подзаголовок в две строки: короткое объяснение сути подхода<br>и того, кому он нужен.</p>
-        <div class="btns">
-          <a href="#directions" class="btn btn--fill">Для компаний</a>
-          <a href="#directions" class="btn">Для себя</a>
-          <a href="#cta" class="btn">Обсудить задачу</a>
-        </div>
       </div>
-      <div class="ph hero__ph"><span>Фотография: человек за рабочим местом</span></div>
+      <h1 data-rv style="--d:.06s">Эргономика, которая начинается с человека, а не с мебели</h1>
+      <p class="lead" data-rv style="--d:.12s">Подзаголовок в две строки: короткое объяснение сути подхода<br>и того, кому он нужен.</p>
+      <div class="btns" data-rv style="--d:.18s">
+        <a href="company.html" class="btn btn--fill">Для компаний</a>
+        <a href="#directions" class="btn">Для себя</a>
+        <a href="#cta" class="btn">Обсудить задачу</a>
+      </div>
+    </div>
+    <div class="herosec__media">
+      <div class="ph"><span>Фотография: человек за рабочим местом</span></div>
     </div>
   </div>
 </section>
@@ -113,42 +120,61 @@
 <!-- ============ БЛОК 2. ЧЕМ ПОДХОД ОТЛИЧАЕТСЯ ============ -->
 <section class="sec" id="difference">
   <div class="wrap sec__inner">
-    <div class="head">
+    <div class="head" data-rv>
       <h2>Чем этот подход отличается от обычных рекомендаций по эргономике</h2>
     </div>
 
     <div class="theses">
-      <div class="thesis">
+      <div class="thesis" data-rv style="--d:.0s">
+        <span class="idx">01</span>
         <div class="icon"></div>
         <h3>Тезис первый</h3>
         <div class="lines"><div class="line"></div><div class="line s"></div></div>
       </div>
-      <div class="thesis">
+      <div class="thesis" data-rv style="--d:.1s">
+        <span class="idx">02</span>
         <div class="icon"></div>
         <h3>Тезис второй</h3>
         <div class="lines"><div class="line"></div><div class="line s"></div></div>
       </div>
-      <div class="thesis">
+      <div class="thesis" data-rv style="--d:.2s">
+        <span class="idx">03</span>
         <div class="icon"></div>
         <h3>Тезис третий</h3>
         <div class="lines"><div class="line"></div><div class="line s"></div></div>
       </div>
-      <div class="thesis">
+      <div class="thesis" data-rv style="--d:.3s">
+        <span class="idx">04</span>
         <div class="icon"></div>
         <h3>Тезис четвёртый</h3>
         <div class="lines"><div class="line"></div><div class="line s"></div></div>
       </div>
     </div>
 
-    <div class="chain">
-      <div class="chain__cap">Схема подхода</div>
-      <div class="chain__row">
-        <span class="chain__step">Человек</span><span class="chain__arw">→</span>
-        <span class="chain__step">Тело</span><span class="chain__arw">→</span>
-        <span class="chain__step">Задача</span><span class="chain__arw">→</span>
-        <span class="chain__step">Рабочая поза</span><span class="chain__arw">→</span>
-        <span class="chain__step">Оборудование</span><span class="chain__arw">→</span>
-        <span class="chain__step">Среда</span>
+    <div class="rail">
+      <div class="rail__i" data-rv style="--d:.0s">
+        <div class="rail__n">01</div>
+        <div class="rail__t">Человек</div>
+      </div>
+      <div class="rail__i" data-rv style="--d:.1s">
+        <div class="rail__n">02</div>
+        <div class="rail__t">Тело</div>
+      </div>
+      <div class="rail__i" data-rv style="--d:.2s">
+        <div class="rail__n">03</div>
+        <div class="rail__t">Задача</div>
+      </div>
+      <div class="rail__i" data-rv style="--d:.3s">
+        <div class="rail__n">04</div>
+        <div class="rail__t">Рабочая поза</div>
+      </div>
+      <div class="rail__i" data-rv style="--d:.4s">
+        <div class="rail__n">05</div>
+        <div class="rail__t">Оборудование</div>
+      </div>
+      <div class="rail__i" data-rv style="--d:.5s">
+        <div class="rail__n">06</div>
+        <div class="rail__t">Среда</div>
       </div>
     </div>
   </div>
@@ -157,27 +183,31 @@
 <!-- ============ БЛОК 3. ДЛЯ КОГО ============ -->
 <section class="sec sec--alt" id="audience">
   <div class="wrap sec__inner">
-    <div class="head"><h2>Для кого</h2></div>
-    <div class="grid-4">
-      <div class="card">
+    <div class="head" data-rv><h2>Для кого</h2></div>
+    <div class="grid-4 grid-4--stagger">
+      <div class="card" data-rv style="--d:.0s">
+        <span class="idx">01</span>
         <div class="icon"></div>
         <h3>Компаниям</h3>
         <p>Строка текста об этой аудитории.</p>
         <a href="company.html" class="link">Для компаний</a>
       </div>
-      <div class="card">
+      <div class="card" data-rv style="--d:.1s">
+        <span class="idx">02</span>
         <div class="icon"></div>
         <h3>Сотрудникам и частным пользователям</h3>
         <p>Строка текста об этой аудитории.</p>
         <a href="#directions" class="link">Для себя</a>
       </div>
-      <div class="card">
+      <div class="card" data-rv style="--d:.2s">
+        <span class="idx">03</span>
         <div class="icon"></div>
         <h3>Производителям мебели и оборудования</h3>
         <p>Строка текста об этой аудитории.</p>
         <a href="#cta" class="link">Экспертная оценка</a>
       </div>
-      <div class="card">
+      <div class="card" data-rv style="--d:.3s">
+        <span class="idx">04</span>
         <div class="icon"></div>
         <h3>Специалистам и партнёрам</h3>
         <p>Строка текста об этой аудитории.</p>
@@ -190,9 +220,9 @@
 <!-- ============ БЛОК 4. ДВА НАПРАВЛЕНИЯ ============ -->
 <section class="sec" id="directions">
   <div class="wrap sec__inner">
-    <div class="head"><h2>Два направления</h2></div>
+    <div class="head" data-rv><h2>Два направления</h2></div>
     <div class="grid-2">
-      <a href="company.html" class="dir">
+      <a href="company.html" class="dir dir--dark" data-rv style="--d:0s">
         <div class="icon sq lg"></div>
         <h3>Для компаний</h3>
         <ul class="dir__list">
@@ -205,7 +235,7 @@
         </ul>
         <span class="link">Перейти в раздел</span>
       </a>
-      <a href="#" class="dir">
+      <a href="#" class="dir" data-rv style="--d:.1s">
         <div class="icon sq lg"></div>
         <h3>Для себя</h3>
         <ul class="dir__list">
@@ -221,14 +251,16 @@
 </section>
 
 <!-- ============ БЛОК 5. ОБ ЭКСПЕРТЕ ============ -->
-<section class="sec sec--alt" id="expert">
-  <div class="wrap sec__inner">
-    <div class="head"><h2>Об эксперте</h2></div>
-    <div class="expert">
-      <div class="ph expert__ph"><span>Фотография</span></div>
-      <div>
-        <div class="expert__name">Дмитрий Симкин</div>
-        <div class="expert__spec">Врач-остеопат, эксперт по эргономике, автор системы</div>
+<section class="expertsec" id="expert">
+  <div class="expertsec__grid">
+    <div class="expertsec__media">
+      <div class="ph"><span>Фотография</span></div>
+    </div>
+    <div class="expertsec__text">
+      <div class="eyebrow" data-rv>Об эксперте</div>
+      <div class="expert__name" data-rv style="--d:.06s">Дмитрий Симкин</div>
+      <div class="expert__spec" data-rv style="--d:.1s">Врач-остеопат, эксперт по эргономике, автор системы</div>
+      <div data-rv style="--d:.16s">
         <ul class="facts">
           <li><b>1991</b> начало медицинской практики</li>
           <li><b>2004</b> начало работы с эргономикой</li>
@@ -245,17 +277,27 @@
 
 <!-- ============ БЛОК 6. КЛИЕНТЫ ============ -->
 <section class="sec" id="clients">
-  <div class="wrap sec__inner">
-    <div class="head"><h2>Клиенты</h2></div>
-    <div class="logos">
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
-      <div class="ph"><span>Логотип</span></div>
+  <div class="wrap sec__inner" style="padding-bottom:0">
+    <div class="head" data-rv><h2>Клиенты</h2></div>
+  </div>
+  <div class="marquee" data-rv>
+    <div class="marquee__row">
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
+        <div class="ph"><span>Логотип</span></div>
     </div>
-    <div class="nums">
+  </div>
+  <div class="wrap" style="padding-bottom:104px">
+    <div class="nums" data-rv>
       <div class="num"><b>000</b><span>компаний</span></div>
       <div class="num"><b>000</b><span>обученных сотрудников</span></div>
       <div class="num"><b>00</b><span>лет практики</span></div>
@@ -266,57 +308,63 @@
 <!-- ============ БЛОК 7. КАК РАБОТАЕТ ПОДХОД ============ -->
 <section class="sec sec--alt" id="method">
   <div class="wrap sec__inner">
-    <div class="head"><h2>Как работает подход</h2></div>
+    <div class="head" data-rv><h2>Как работает подход</h2></div>
     <div class="steps">
-      <div class="step">
-        <div class="step__n">Шаг 1</div>
+      <div class="step" data-rv style="--d:.0s">
+        <span class="idx--xl">01</span>
         <div class="icon"></div>
-        <h3>Название первого шага</h3>
+        <h3>Название шага</h3>
         <p>Одно предложение о том, что происходит на этом шаге.</p>
       </div>
-      <div class="step">
-        <div class="step__n">Шаг 2</div>
+      <div class="step" data-rv style="--d:.1s">
+        <span class="idx--xl">02</span>
         <div class="icon"></div>
-        <h3>Название второго шага</h3>
+        <h3>Название шага</h3>
         <p>Одно предложение о том, что происходит на этом шаге.</p>
       </div>
-      <div class="step">
-        <div class="step__n">Шаг 3</div>
+      <div class="step" data-rv style="--d:.2s">
+        <span class="idx--xl">03</span>
         <div class="icon"></div>
-        <h3>Название третьего шага</h3>
+        <h3>Название шага</h3>
         <p>Одно предложение о том, что происходит на этом шаге.</p>
       </div>
     </div>
-    <div class="btns"><a href="#" class="btn">Подробнее о методе</a></div>
+    <div class="btns" data-rv><a href="#" class="btn">Подробнее о методе</a></div>
   </div>
 </section>
 
 <!-- ============ БЛОК 9. СТАТЬИ ============ -->
 <section class="sec" id="articles">
   <div class="wrap sec__inner">
-    <div class="head head--row">
+    <div class="head head--row" data-rv>
       <h2>Статьи</h2>
       <a href="#" class="link">Все материалы</a>
     </div>
-    <div class="grid-3">
-      <a href="#" class="post">
+    <div class="posts">
+      <a href="#" class="post posts__main" data-rv>
         <div class="ph"><span>Обложка</span></div>
-        <div class="eyebrow">Тема</div>
-        <h3>Заголовок статьи в две строки</h3>
+        <span class="eyebrow">Тема</span>
+        <h3>Заголовок главного материала в две строки</h3>
         <div class="post__meta">00.00.0000</div>
       </a>
-      <a href="#" class="post">
-        <div class="ph"><span>Обложка</span></div>
-        <div class="eyebrow">Тема</div>
-        <h3>Заголовок статьи в две строки</h3>
-        <div class="post__meta">00.00.0000</div>
-      </a>
-      <a href="#" class="post">
-        <div class="ph"><span>Обложка</span></div>
-        <div class="eyebrow">Тема</div>
-        <h3>Заголовок статьи в две строки</h3>
-        <div class="post__meta">00.00.0000</div>
-      </a>
+      <div class="posts__side">
+        <a href="#" class="post" data-rv style="--d:.08s">
+          <div class="ph"><span>Обложка</span></div>
+          <div>
+            <span class="eyebrow">Тема</span>
+            <h3>Заголовок статьи в две строки</h3>
+            <div class="post__meta">00.00.0000</div>
+          </div>
+        </a>
+        <a href="#" class="post" data-rv style="--d:.16s">
+          <div class="ph"><span>Обложка</span></div>
+          <div>
+            <span class="eyebrow">Тема</span>
+            <h3>Заголовок статьи в две строки</h3>
+            <div class="post__meta">00.00.0000</div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -325,11 +373,12 @@
 <section class="sec cta" id="cta">
   <div class="wrap sec__inner">
     <div class="cta__grid">
-      <div>
-        <h2>Заголовок блока заявки</h2>
+      <div data-rv>
+        <span class="eyebrow">Заявка</span>
+        <h2 style="margin-top:18px">Заголовок блока заявки</h2>
         <p class="cta__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
       </div>
-      <form class="form" onsubmit="return false">
+      <form class="form" onsubmit="return false" data-rv style="--d:.1s">
         <input class="field" placeholder="Имя">
         <input class="field" placeholder="Телефон">
         <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
@@ -342,9 +391,9 @@
 <!-- ============ ОБЩЕЕ: БЛОК ПРИЗЫВА ПЕРЕД ПОДВАЛОМ ============ -->
 <section class="sec prefoot">
   <div class="wrap sec__inner">
-    <h2>Заголовок призыва</h2>
-    <p>Короткая подпись под заголовком.</p>
-    <div class="btns"><a href="#cta" class="btn btn--fill">Обсудить задачу</a></div>
+    <h2 data-rv>Заголовок призыва</h2>
+    <p data-rv style="--d:.06s">Короткая подпись под заголовком.</p>
+    <div class="btns" data-rv style="--d:.12s"><a href="#cta" class="btn btn--fill">Обсудить задачу</a></div>
   </div>
 </section>
 
