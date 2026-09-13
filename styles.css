@@ -379,6 +379,105 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 .roles--5 > *{grid-column:span 2}
 .roles--5 > :nth-child(4),.roles--5 > :nth-child(5){grid-column:span 3}
 
+/* ================= ПЕРЕКЛЮЧАТЕЛЬ ВЕРСИЙ ================= */
+.seg{display:inline-flex;background:var(--soft);border-radius:100px;padding:5px;gap:4px}
+.seg button{
+  border:0;background:transparent;font-family:inherit;font-size:14.5px;font-weight:700;
+  color:var(--ink-2);padding:13px 28px;border-radius:100px;cursor:pointer;white-space:nowrap;
+  transition:background .22s var(--ease),color .22s var(--ease);
+}
+.seg button:hover{color:var(--ink)}
+.seg button.is-on{background:var(--ink);color:#fff}
+.seg__note{font-size:14px;color:var(--ink-3);margin-top:18px}
+[data-ver]{display:none}
+[data-ver].is-on{display:block}
+
+/* ================= ПРОГРАММА КУРСА ================= */
+.intro-mod{
+  background:var(--soft);border-radius:var(--r);padding:24px 30px;margin-bottom:10px;
+  display:flex;align-items:center;gap:20px;
+}
+.intro-mod .idx{flex:0 0 auto}
+.intro-mod h3{font-size:16.5px}
+.modules{list-style:none;display:grid;gap:8px}
+.modules li{
+  background:var(--bg);border-radius:var(--r-sm);padding:15px 20px;
+  font-size:15px;color:var(--ink-2);display:flex;gap:16px;
+}
+.modules li b{color:var(--ink-3);font-size:12.5px;font-weight:800;padding-top:3px;min-width:26px;font-variant-numeric:tabular-nums}
+
+/* ================= ДЕМОВЕРСИЯ ================= */
+.demo{
+  background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:64px 60px;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+}
+.demo h2{color:#fff}
+.demo h2 .soft{color:#787878}
+.demo .eyebrow{color:#787878}
+.demo p{color:#9c9c9c;margin-top:18px;font-size:16.5px}
+.demo__ph{aspect-ratio:16/10;border-radius:var(--r);background:#242424;position:relative;overflow:hidden}
+.demo__ph::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(to top right,transparent 49.8%,rgba(255,255,255,.09) 49.8%,rgba(255,255,255,.09) 50.2%,transparent 50.2%),
+    linear-gradient(to top left,transparent 49.8%,rgba(255,255,255,.09) 49.8%,rgba(255,255,255,.09) 50.2%,transparent 50.2%);
+}
+.demo__play{
+  position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:78px;height:78px;border-radius:50%;background:#fff;display:grid;place-items:center;
+}
+.demo__play::after{
+  content:"";border-left:19px solid var(--ink);border-top:12px solid transparent;
+  border-bottom:12px solid transparent;margin-left:5px;
+}
+.demo__cap{
+  position:absolute;z-index:1;left:50%;bottom:20px;transform:translateX(-50%);
+  font-size:11px;color:#8a8a8a;background:#1b1b1b;padding:7px 15px;border-radius:100px;
+  white-space:nowrap;font-weight:650;
+}
+
+/* ================= ТАБЛИЦА СРАВНЕНИЯ ================= */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.compare__col{border-radius:var(--r-lg);padding:42px 40px}
+.compare__col--a{background:var(--soft)}
+.compare__col--b{background:var(--ink);color:#fff}
+.compare__col h3{font-size:21px;font-weight:800;letter-spacing:-.025em;margin-bottom:28px}
+.compare__col ul{list-style:none}
+.compare__col li{
+  padding:16px 0 16px 32px;position:relative;font-size:15.5px;color:var(--ink-2);
+  border-bottom:1px solid var(--line-2);
+}
+.compare__col li:last-child{border-bottom:0}
+.compare__col--a li::before{content:"–";position:absolute;left:6px;color:var(--ink-3);font-weight:700}
+.compare__col--b li{color:#b4b4b4;border-bottom-color:#2c2c2c}
+.compare__col--b li::before{content:"✓";position:absolute;left:2px;color:#fff;font-weight:700}
+
+/* ================= ТАРИФЫ ================= */
+.tariffs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tariff{background:var(--soft);border-radius:var(--r-lg);padding:42px 38px;display:flex;flex-direction:column}
+.tariff--hl{background:var(--ink);color:#fff}
+.tariff__name{font-size:22px;font-weight:800;letter-spacing:-.028em}
+.tariff__price{font-size:clamp(30px,3.3vw,42px);font-weight:800;letter-spacing:-.042em;margin:24px 0 28px;font-variant-numeric:tabular-nums}
+.tariff ul{list-style:none;margin-bottom:36px}
+.tariff li{
+  padding:12px 0 12px 26px;position:relative;font-size:14.5px;color:var(--ink-2);
+  border-bottom:1px solid var(--line-2);
+}
+.tariff li::before{content:"";position:absolute;left:0;top:21px;width:7px;height:7px;border-radius:50%;background:var(--line)}
+.tariff--hl li{color:#a8a8a8;border-bottom-color:#2c2c2c}
+.tariff--hl li::before{background:#4a4a4a}
+.tariff .btn{margin-top:auto}
+
+/* ================= ВЕРСИЯ ДЛЯ КОМПАНИЙ ================= */
+.corp{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.corp ul{list-style:none;margin-top:6px}
+.corp li{
+  padding:17px 0 17px 30px;position:relative;font-size:16px;color:var(--ink-2);
+  border-bottom:1px solid var(--line-2);
+}
+.corp li::before{content:"";position:absolute;left:0;top:26px;width:8px;height:8px;border-radius:50%;background:var(--line)}
+.corp__link{margin-top:26px;display:block}
+
 /* ================= ПОЧЕМУ ЭТО РАБОТАЕТ ================= */
 .why{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .why h2{max-width:9em}
@@ -480,6 +579,10 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 
 /* ================= ФОРМАТЫ ПРОВЕДЕНИЯ ================= */
 .formats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+/* пять плиток: три сверху, две пошире снизу */
+.formats--5{grid-template-columns:repeat(6,1fr)}
+.formats--5 > *{grid-column:span 2}
+.formats--5 > :nth-child(4),.formats--5 > :nth-child(5){grid-column:span 3}
 .fmt{background:var(--paper);border-radius:var(--r);padding:34px 30px;display:flex;flex-direction:column}
 .fmt .icon{margin-bottom:24px;background:var(--soft)}
 .fmt h3{margin-bottom:10px}
@@ -620,6 +723,8 @@ footer{background:var(--paper);padding-top:20px}
   .expert{grid-template-columns:1fr;gap:38px}
   .expert__ph{aspect-ratio:16/11}
   .results,.research__grid,.price{grid-template-columns:repeat(2,1fr)}
+  .demo,.corp{grid-template-columns:1fr;gap:36px}
+  .demo{padding:48px 40px}
   .benefits{grid-template-columns:1fr}
   .gets{grid-template-columns:1fr;gap:36px}
   .gets__ph{aspect-ratio:16/10}
@@ -675,7 +780,15 @@ footer{background:var(--paper);padding-top:20px}
   .acc__body,.acc--plain .acc__body{padding:0 22px 24px 22px}
   .review{padding:28px 24px}
   .reviews{grid-template-columns:1fr}
-  .formats,.price{grid-template-columns:1fr}
+  .formats,.formats--5,.price,.compare,.tariffs{grid-template-columns:1fr}
+  .formats--5 > *,.formats--5 > :nth-child(4),.formats--5 > :nth-child(5){grid-column:auto}
+  .demo{padding:34px 24px;gap:28px}
+  .compare__col,.tariff{padding:30px 24px}
+  .demo__play{width:60px;height:60px}
+  .demo__play::after{border-left-width:15px;border-top-width:10px;border-bottom-width:10px}
+  .seg{width:100%}
+  .seg button{flex:1 1 0;padding:13px 12px;font-size:13.5px}
+  .intro-mod{padding:20px 22px;gap:14px}
   .fmt__meta{gap:24px}
   /* график работ: на узком экране вместо шкалы — подпись недель */
   .sched__head{display:none}

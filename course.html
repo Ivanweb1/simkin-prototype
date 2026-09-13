@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simkin.ru — прототип страницы «Онлайн-курс»</title>
+<script>document.documentElement.className+=" js"</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body>
+
+<!-- ============ ОБЩЕЕ: ШАПКА, ЗАКРЕПЛЕНА ПРИ ПРОКРУТКЕ ============ -->
+<header id="hdr">
+  <div class="topbar">
+    <div class="wrap topbar__in">
+      <span class="topbar__note">Авторская система эргономики Доктора Симкина</span>
+      <a href="#contacts" class="topbar__link">Контакты</a>
+      <button class="topbar__link" data-open>Обратный звонок</button>
+      <a href="tel:+70000000000" class="topbar__tel">+7 (000) 000-00-00</a>
+    </div>
+  </div>
+
+  <div class="wrap hdr">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"></span>
+      <span class="logo__txt"><b>Simkin.ru</b><span>Авторская система эргономики</span></span>
+    </a>
+
+    <nav class="mainnav">
+      <div class="navitem">
+        <a href="company.html">Для компаний <i></i></a>
+        <div class="sub">
+          <a href="company.html#offers">Аудит и консалтинг</a>
+          <a href="company.html#offers">Корпоративная версия курса</a>
+          <a href="program.html">Корпоративная программа</a>
+          <a href="company.html#offers">Подбор и организация рабочих мест</a>
+          <a href="company.html#offers">Промышленная эргономика</a>
+          <a href="company.html#offers">Чек-апы</a>
+        </div>
+      </div>
+      <div class="navitem">
+        <a href="self.html">Для себя <i></i></a>
+        <div class="sub">
+          <a href="course.html">Онлайн-курс</a>
+          <a href="#">Эргономичные решения</a>
+          <a href="#">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="navitem"><a href="course.html">Онлайн-курс</a></div>
+      <div class="navitem"><a href="#">Эргономичные решения</a></div>
+      <div class="navitem"><a href="index.html#method">Метод Симкина</a></div>
+      <div class="navitem"><a href="index.html#expert">Дмитрий Симкин</a></div>
+      <div class="navitem"><a href="index.html#articles">Полезные статьи</a></div>
+    </nav>
+
+    <div class="hdr__cta"><a href="#request" class="btn btn--sm btn--fill btn--plain">Пройти курс</a></div>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+
+  <!-- мобильное меню -->
+  <nav class="mnav" id="mnav">
+    <div class="wrap mnav__in">
+      <div class="mnav__item">
+        <a href="company.html">Для компаний</a>
+        <div class="mnav__sub">
+          <a href="company.html#offers">Аудит и консалтинг</a>
+          <a href="company.html#offers">Корпоративная версия курса</a>
+          <a href="program.html">Корпоративная программа</a>
+          <a href="company.html#offers">Подбор и организация рабочих мест</a>
+          <a href="company.html#offers">Промышленная эргономика</a>
+          <a href="company.html#offers">Чек-апы</a>
+        </div>
+      </div>
+      <div class="mnav__item">
+        <a href="self.html">Для себя</a>
+        <div class="mnav__sub">
+          <a href="course.html">Онлайн-курс</a>
+          <a href="#">Эргономичные решения</a>
+          <a href="#">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="mnav__item"><a href="course.html">Онлайн-курс</a></div>
+      <div class="mnav__item"><a href="#">Эргономичные решения</a></div>
+      <div class="mnav__item"><a href="index.html#method">Метод Симкина</a></div>
+      <div class="mnav__item"><a href="index.html#expert">Дмитрий Симкин</a></div>
+      <div class="mnav__item"><a href="index.html#articles">Полезные статьи</a></div>
+      <a href="tel:+70000000000" class="mnav__tel">+7 (000) 000-00-00</a>
+      <div class="btns"><button class="btn" data-open>Обратный звонок</button></div>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ ОБЩЕЕ: СТРОКА НАВИГАЦИИ ============ -->
+<nav class="crumbs">
+  <div class="wrap crumbs__in">
+    <a href="index.html">Главная</a>
+    <span>/</span>
+    <a href="self.html">Для себя</a>
+    <span>/</span>
+    <span>Онлайн-курс</span>
+  </div>
+</nav>
+
+<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
+<section class="sec hero" id="hero">
+  <div class="wrap hero__inner">
+    <div class="hero__grid">
+      <div>
+        <span class="eyebrow" data-rv>Онлайн-курс</span>
+        <h1 data-rv style="--d:.06s">Название курса</h1>
+        <p class="lead" data-rv style="--d:.12s">Подзаголовок о результате: что человек умеет и что меняется после курса.</p>
+        <div class="btns" data-rv style="--d:.18s">
+          <a href="#request" class="btn btn--fill">Оставить заявку</a>
+          <a href="#corp" class="btn">Корпоративная версия</a>
+        </div>
+      </div>
+      <div class="ph ph--lg hero__ph" data-rv style="--d:.24s"><span>Обложка курса</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 2. ПЕРЕКЛЮЧАТЕЛЬ ВЕРСИЙ ============ -->
+<section class="sec sec--alt" id="version">
+  <div class="wrap sec__inner--tight sec__inner">
+    <div class="head head--center" style="margin-bottom:34px" data-rv>
+      <span class="eyebrow">Версия курса</span>
+      <h2>Курс есть <span class="soft">в двух версиях</span></h2>
+    </div>
+    <div data-rv style="text-align:center;--d:.06s">
+      <div class="seg" data-seg>
+        <button type="button" data-set="self" class="is-on">Для себя</button>
+        <button type="button" data-set="company">Для компании</button>
+      </div>
+      <p class="seg__note">Переключатель меняет блоки «Как устроено обучение» и «Стоимость».</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3. КОМУ ПОДОЙДЁТ КУРС ============ -->
+<section class="sec" id="who">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Кому подойдёт <span class="soft">курс</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="panel" data-rv style="--d:.06s">
+      <div class="cells cells--4">
+        <div class="cell">
+          <span class="idx">01</span>
+          <div class="icon"></div>
+          <h3>Кому подойдёт первый</h3>
+          <p>Одна строка об этой аудитории.</p>
+        </div>
+        <div class="cell">
+          <span class="idx">02</span>
+          <div class="icon"></div>
+          <h3>Кому подойдёт второй</h3>
+          <p>Одна строка об этой аудитории.</p>
+        </div>
+        <div class="cell">
+          <span class="idx">03</span>
+          <div class="icon"></div>
+          <h3>Кому подойдёт третий</h3>
+          <p>Одна строка об этой аудитории.</p>
+        </div>
+        <div class="cell">
+          <span class="idx">04</span>
+          <div class="icon"></div>
+          <h3>Кому подойдёт четвёртый</h3>
+          <p>Одна строка об этой аудитории.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4. ЛОГИКА КУРСА ============ -->
+<section class="sec sec--alt" id="logic">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Логика <span class="soft">курса</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="grid-3">
+      <div class="step" data-rv style="--d:.0s">
+        <div class="ph" style="aspect-ratio:16/10;margin-bottom:26px"><span>Иллюстрация</span></div>
+        <span class="idx">ЭТАП 01</span>
+        <h3 style="margin-top:16px">Название этапа</h3>
+        <p>Абзац текста об этом этапе: что происходит и к чему приводит.</p>
+      </div>
+      <div class="step" data-rv style="--d:.1s">
+        <div class="ph" style="aspect-ratio:16/10;margin-bottom:26px"><span>Иллюстрация</span></div>
+        <span class="idx">ЭТАП 02</span>
+        <h3 style="margin-top:16px">Название этапа</h3>
+        <p>Абзац текста об этом этапе: что происходит и к чему приводит.</p>
+      </div>
+      <div class="step" data-rv style="--d:.2s">
+        <div class="ph" style="aspect-ratio:16/10;margin-bottom:26px"><span>Иллюстрация</span></div>
+        <span class="idx">ЭТАП 03</span>
+        <h3 style="margin-top:16px">Название этапа</h3>
+        <p>Абзац текста об этом этапе: что происходит и к чему приводит.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5. ПРОГРАММА КУРСА ============ -->
+<section class="sec" id="program">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Программа <span class="soft">курса</span></h2>
+      <p>Пять разделов и двадцать один модуль. Точные названия придут от заказчика отдельно.</p>
+    </div>
+    <div class="intro-mod" data-rv>
+      <span class="idx">00</span>
+      <h3>Вводный блок курса</h3>
+    </div>
+    <div class="acc" data-rv style="--d:.06s">
+      <details>
+        <summary><span class="acc__n">Раздел 1</span><span class="acc__q">Поза и тело</span></summary>
+        <div class="acc__body">
+          <ul class="modules">
+            <li><b>01</b> Название модуля</li>
+            <li><b>02</b> Название модуля</li>
+            <li><b>03</b> Название модуля</li>
+            <li><b>04</b> Название модуля</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary><span class="acc__n">Раздел 2</span><span class="acc__q">Рабочее место</span></summary>
+        <div class="acc__body">
+          <ul class="modules">
+            <li><b>05</b> Название модуля</li>
+            <li><b>06</b> Название модуля</li>
+            <li><b>07</b> Название модуля</li>
+            <li><b>08</b> Название модуля</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary><span class="acc__n">Раздел 3</span><span class="acc__q">Устройства и разные сценарии работы</span></summary>
+        <div class="acc__body">
+          <ul class="modules">
+            <li><b>09</b> Название модуля</li>
+            <li><b>10</b> Название модуля</li>
+            <li><b>11</b> Название модуля</li>
+            <li><b>12</b> Название модуля</li>
+            <li><b>13</b> Название модуля</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary><span class="acc__n">Раздел 4</span><span class="acc__q">Работоспособность и восстановление</span></summary>
+        <div class="acc__body">
+          <ul class="modules">
+            <li><b>14</b> Название модуля</li>
+            <li><b>15</b> Название модуля</li>
+            <li><b>16</b> Название модуля</li>
+            <li><b>17</b> Название модуля</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary><span class="acc__n">Раздел 5</span><span class="acc__q">Если что-то болит</span></summary>
+        <div class="acc__body">
+          <ul class="modules">
+            <li><b>18</b> Название модуля</li>
+            <li><b>19</b> Название модуля</li>
+            <li><b>20</b> Название модуля</li>
+            <li><b>21</b> Название модуля</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5а. ДЕМОВЕРСИЯ КУРСА ============ -->
+<section class="sec" id="demo">
+  <div class="wrap" style="padding-bottom:118px">
+    <div class="demo" data-rv>
+      <div>
+        <span class="eyebrow">Демоверсия</span>
+        <h2 style="margin-top:20px">Посмотреть <span class="soft">демоверсию курса</span></h2>
+        <p>Фрагмент курса. Формат демоверсии уточняется у заказчика: видео прямо в блоке или отдельная страница.</p>
+        <div class="btns"><a href="#" class="btn btn--light">Смотреть демо</a></div>
+      </div>
+      <div class="demo__ph">
+        <div class="demo__play"></div>
+        <div class="demo__cap">Фрагмент курса</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 6. КАК УСТРОЕНО ОБУЧЕНИЕ ============ -->
+<section class="sec sec--alt" id="how">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Как устроено <span class="soft">обучение</span></h2>
+      <p>Блок меняется в зависимости от выбранной версии курса.</p>
+    </div>
+    <div data-ver="self" class="is-on">
+      <div class="panel">
+        <div class="formats formats--5">
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Формат</h3>
+            <p>Как проходит обучение в версии для себя.</p>
+          </div>
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Длительность</h3>
+            <p>Сколько занимает прохождение курса.</p>
+          </div>
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Доступ</h3>
+            <p>На какой срок открывается доступ к материалам.</p>
+          </div>
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Практика</h3>
+            <p>Как устроены практические задания.</p>
+          </div>
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Обратная связь</h3>
+            <p>В каком виде даётся обратная связь.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-ver="company">
+      <div class="panel">
+        <div class="formats formats--5">
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Формат</h3>
+            <p>Как проходит обучение в версии для компании.</p>
+          </div>
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Длительность</h3>
+            <p>Сколько занимает программа для группы.</p>
+          </div>
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Доступ</h3>
+            <p>На какой срок открывается доступ сотрудникам.</p>
+          </div>
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Практика</h3>
+            <p>Как устроены практические задания в группе.</p>
+          </div>
+          <div class="fmt">
+            <div class="icon sq"></div>
+            <h3>Обратная связь</h3>
+            <p>В каком виде даётся обратная связь компании.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 7. ЧЕМ ОТЛИЧАЕТСЯ ОТ ОБЫЧНЫХ КУРСОВ ============ -->
+<section class="sec" id="diff">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Чем отличается <span class="soft">от обычных курсов</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="compare" data-rv style="--d:.06s">
+      <div class="compare__col compare__col--a">
+        <h3>Обычные курсы</h3>
+        <ul>
+            <li>Как это устроено в обычных курсах.</li>
+            <li>Как это устроено в обычных курсах.</li>
+            <li>Как это устроено в обычных курсах.</li>
+            <li>Как это устроено в обычных курсах.</li>
+            <li>Как это устроено в обычных курсах.</li>
+        </ul>
+      </div>
+      <div class="compare__col compare__col--b">
+        <h3>Курс Симкина</h3>
+        <ul>
+            <li>Как это устроено в курсе Симкина.</li>
+            <li>Как это устроено в курсе Симкина.</li>
+            <li>Как это устроено в курсе Симкина.</li>
+            <li>Как это устроено в курсе Симкина.</li>
+            <li>Как это устроено в курсе Симкина.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 8. АВТОР КУРСА ============ -->
+<section class="sec sec--alt" id="author">
+  <div class="wrap sec__inner">
+    <div class="expert">
+      <div class="ph ph--lg expert__ph" data-rv><span>Фотография</span></div>
+      <div>
+        <span class="eyebrow" data-rv>Автор курса</span>
+        <div class="expert__name" data-rv style="--d:.06s">Дмитрий Симкин</div>
+        <p class="lead" data-rv style="margin-top:18px;--d:.1s">Две строки текста об авторе курса: кто он и почему ведёт этот курс.</p>
+        <div class="btns" data-rv style="--d:.16s"><a href="index.html#expert" class="btn">Подробнее об эксперте</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 9. ВЕРСИЯ ДЛЯ КОМПАНИЙ ============ -->
+<section class="sec" id="corp">
+  <div class="wrap sec__inner">
+    <div class="corp">
+      <div data-rv>
+        <span class="eyebrow">Для компаний</span>
+        <h2 style="margin-top:20px">Версия <span class="soft">для компаний</span></h2>
+        <a href="program.html" class="link link--u corp__link">Нужна комплексная программа?</a>
+      </div>
+      <div data-rv style="--d:.08s">
+        <ul>
+          <li>Отличие корпоративной версии от версии для себя.</li>
+          <li>Отличие корпоративной версии от версии для себя.</li>
+          <li>Отличие корпоративной версии от версии для себя.</li>
+          <li>Отличие корпоративной версии от версии для себя.</li>
+        </ul>
+        <div class="btns"><a href="#request" class="btn btn--fill">Запросить корпоративную версию курса</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 10. СТОИМОСТЬ ============ -->
+<section class="sec sec--alt" id="price">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Стоимость <span class="soft">курса</span></h2>
+      <p>Блок меняется в зависимости от выбранной версии курса.</p>
+    </div>
+    <div data-ver="self" class="is-on">
+      <div class="tariffs">
+          <div class="tariff">
+            <div class="tariff__name">Тариф первый</div>
+            <div class="tariff__price">0 000 ₽</div>
+            <ul>
+              <li>Что входит в тариф.</li>
+              <li>Что входит в тариф.</li>
+              <li>Что входит в тариф.</li>
+              <li>Что входит в тариф.</li>
+            </ul>
+            <a href="#request" class="btn btn--fill">Записаться</a>
+          </div>
+          <div class="tariff tariff--hl">
+            <div class="tariff__name">Тариф второй</div>
+            <div class="tariff__price">0 000 ₽</div>
+            <ul>
+              <li>Что входит в тариф.</li>
+              <li>Что входит в тариф.</li>
+              <li>Что входит в тариф.</li>
+              <li>Что входит в тариф.</li>
+            </ul>
+            <a href="#request" class="btn btn--light">Записаться</a>
+          </div>
+      </div>
+    </div>
+    <div data-ver="company">
+      <div class="tariff">
+        <div class="tariff__name">Корпоративная версия</div>
+        <p style="color:var(--ink-2);margin-top:16px;max-width:36em">Стоимость считается под число сотрудников и формат проведения.</p>
+        <div class="btns"><a href="#request" class="btn btn--fill">Узнать стоимость</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 11. ВОПРОСЫ И ОТВЕТЫ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap sec__inner">
+    <div class="head head--center" data-rv>
+      <span class="eyebrow">FAQ</span>
+      <h2>Вопросы <span class="soft">и ответы</span></h2>
+    </div>
+    <div class="acc acc--plain acc--onwhite" data-rv style="--d:.06s">
+      <details>
+        <summary><span class="acc__q">Текст вопроса 1</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 2</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 3</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 4</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 5</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 6</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+      <details>
+        <summary><span class="acc__q">Текст вопроса 7</span></summary>
+        <div class="acc__body">Текст ответа на вопрос.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 12. ФОРМА ЗАЯВКИ ============ -->
+<section class="sec" id="request">
+  <div class="wrap sec__inner">
+    <div class="band" data-rv>
+      <span class="eyebrow">Заявка</span>
+      <h2 style="margin-top:20px;max-width:15em">Заголовок блока заявки</h2>
+      <p class="band__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+      <form class="bigform" onsubmit="return false" style="margin-top:44px">
+        <input class="field" placeholder="Имя">
+        <input class="field" placeholder="Телефон">
+        <input class="field" placeholder="Почта">
+        <input class="field" placeholder="Версия курса">
+        <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
+        <button class="btn btn--light">Записаться</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ОБЩЕЕ: ПОДВАЛ ============ -->
+<footer id="contacts">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="index.html" class="logo">
+          <span class="logo__mark"></span>
+          <span class="logo__txt"><b>Simkin.ru</b><span>Авторская система эргономики</span></span>
+        </a>
+        <p class="foot__about">Короткий текст о проекте: авторская система эргономики Доктора Симкина, обучение и решения для компаний и частных пользователей.</p>
+      </div>
+
+      <div>
+        <h4>Для компаний</h4>
+        <ul>
+          <li><a href="company.html#offers">Аудит и консалтинг</a></li>
+          <li><a href="company.html#offers">Корпоративная версия курса</a></li>
+          <li><a href="program.html">Корпоративная программа</a></li>
+          <li><a href="company.html#offers">Подбор рабочих мест</a></li>
+          <li><a href="company.html#offers">Промышленная эргономика</a></li>
+          <li><a href="company.html#offers">Чек-апы</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Для себя</h4>
+        <ul>
+          <li><a href="course.html">Онлайн-курс</a></li>
+          <li><a href="#">Эргономичные решения</a></li>
+          <li><a href="#">Авторские разработки</a></li>
+          <li><a href="#">Полезные статьи</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>О проекте</h4>
+        <ul>
+          <li><a href="index.html#method">Метод Симкина</a></li>
+          <li><a href="index.html#expert">Дмитрий Симкин</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+70000000000">+7 (000) 000-00-00</a></li>
+          <li><a href="mailto:mail@simkin.ru">mail@simkin.ru</a></li>
+          <li><a href="#">Telegram</a> · <a href="#">WhatsApp</a> · <a href="#">MAX</a></li>
+        </ul>
+        <button class="foot__cb" data-open>Заказать обратный звонок</button>
+        <div class="clinic">Медицинский приём, остеопатия и запись к врачу — на сайте клиники <a href="https://doctorsimkin.ru">Doctorsimkin.ru</a></div>
+      </div>
+    </div>
+
+    <div class="soc">
+      <a href="#">ВКонтакте</a>
+      <a href="#">Telegram</a>
+      <a href="#">MAX</a>
+      <a href="#">YouTube</a>
+      <a href="#">RuTube</a>
+    </div>
+
+    <div class="foot__bottom">
+      <span>© 2026 Simkin.ru · Реквизиты юридического лица</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Согласие на обработку данных</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБРАТНЫЙ ЗВОНОК» ============ -->
+<div class="modal" id="callback">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="cbTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="cbTitle">Обратный звонок</h2>
+    <p>Короткая подпись: в какой срок перезвонят.</p>
+    <form class="mform" onsubmit="return false">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield" placeholder="Удобное время">
+      <label class="magree"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill">Жду звонка</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js?v=7"></script>
+</body>
+</html>

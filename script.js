@@ -37,6 +37,19 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') setModal(false);
 });
 
+var seg = document.querySelector('[data-seg]');
+if (seg) {
+  seg.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-set]');
+    if (!b) return;
+    var v = b.getAttribute('data-set');
+    seg.querySelectorAll('button').forEach(function(x){ x.classList.toggle('is-on', x === b); });
+    document.querySelectorAll('[data-ver]').forEach(function(el){
+      el.classList.toggle('is-on', el.getAttribute('data-ver') === v);
+    });
+  });
+}
+
 var reveals = document.querySelectorAll('[data-rv]');
 function showAll(){
   reveals.forEach(function(el){ el.classList.add('is-in'); });
