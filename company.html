@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simkin.ru — прототип страницы «Для компаний»</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ ОБЩЕЕ: ШАПКА, ЗАКРЕПЛЕНА ПРИ ПРОКРУТКЕ ============ -->
+<header id="hdr">
+  <div class="topbar">
+    <div class="wrap topbar__in">
+      <span class="topbar__note">Авторская система эргономики Доктора Симкина</span>
+      <a href="#contacts" class="topbar__link">Контакты</a>
+      <button class="topbar__link" data-open>Обратный звонок</button>
+      <a href="tel:+70000000000" class="topbar__tel">+7 (000) 000-00-00</a>
+    </div>
+  </div>
+
+  <div class="wrap hdr">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"></span>
+      <span class="logo__txt"><b>Simkin.ru</b><span>Авторская система эргономики</span></span>
+    </a>
+
+    <nav class="mainnav">
+      <div class="navitem">
+        <a href="company.html">Для компаний <i></i></a>
+        <div class="sub">
+          <a href="#offers">Аудит и консалтинг</a>
+          <a href="#offers">Корпоративная версия курса</a>
+          <a href="#offers">Корпоративная программа</a>
+          <a href="#offers">Подбор и организация рабочих мест</a>
+          <a href="#offers">Промышленная эргономика</a>
+          <a href="#offers">Чек-апы</a>
+        </div>
+      </div>
+      <div class="navitem">
+        <a href="index.html#directions">Для себя <i></i></a>
+        <div class="sub">
+          <a href="#">Онлайн-курс</a>
+          <a href="#">Эргономичные решения</a>
+          <a href="#">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="navitem"><a href="#">Онлайн-курс</a></div>
+      <div class="navitem"><a href="#">Эргономичные решения</a></div>
+      <div class="navitem"><a href="index.html#method">Метод Симкина</a></div>
+      <div class="navitem"><a href="index.html#expert">Дмитрий Симкин</a></div>
+      <div class="navitem"><a href="index.html#articles">Полезные статьи</a></div>
+    </nav>
+
+    <div class="hdr__cta"><a href="#request" class="btn btn--sm btn--fill">Обсудить задачу</a></div>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+
+  <!-- мобильное меню -->
+  <nav class="mnav" id="mnav">
+    <div class="wrap mnav__in">
+      <div class="mnav__item">
+        <a href="company.html">Для компаний</a>
+        <div class="mnav__sub">
+          <a href="#offers">Аудит и консалтинг</a>
+          <a href="#offers">Корпоративная версия курса</a>
+          <a href="#offers">Корпоративная программа</a>
+          <a href="#offers">Подбор и организация рабочих мест</a>
+          <a href="#offers">Промышленная эргономика</a>
+          <a href="#offers">Чек-апы</a>
+        </div>
+      </div>
+      <div class="mnav__item">
+        <a href="index.html#directions">Для себя</a>
+        <div class="mnav__sub">
+          <a href="#">Онлайн-курс</a>
+          <a href="#">Эргономичные решения</a>
+          <a href="#">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="mnav__item"><a href="#">Онлайн-курс</a></div>
+      <div class="mnav__item"><a href="#">Эргономичные решения</a></div>
+      <div class="mnav__item"><a href="index.html#method">Метод Симкина</a></div>
+      <div class="mnav__item"><a href="index.html#expert">Дмитрий Симкин</a></div>
+      <div class="mnav__item"><a href="index.html#articles">Полезные статьи</a></div>
+      <a href="tel:+70000000000" class="mnav__tel">+7 (000) 000-00-00</a>
+      <div class="btns"><button class="btn" data-open>Обратный звонок</button></div>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ ОБЩЕЕ: СТРОКА НАВИГАЦИИ ============ -->
+<nav class="crumbs">
+  <div class="wrap crumbs__in">
+    <a href="index.html">Главная</a>
+    <span>/</span>
+    <span>Для компаний</span>
+  </div>
+</nav>
+
+<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
+<section class="sec" id="hero">
+  <div class="wrap sec__inner">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Для компаний</div>
+        <h1 style="margin-top:20px">Заголовок первого экрана</h1>
+        <p class="lead">Подзаголовок: короткое объяснение, что компания получает от работы с эргономикой.</p>
+        <div class="btns">
+          <a href="#request" class="btn btn--fill">Запросить корпоративную программу</a>
+          <a href="#request" class="btn">Обсудить задачу</a>
+        </div>
+      </div>
+      <div class="ph hero__ph"><span>Фотография</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 2. КОМУ АДРЕСОВАНО ============ -->
+<section class="sec sec--alt" id="roles">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Кому адресовано</h2></div>
+    <div class="roles">
+      <div class="role"><div class="icon"></div><h3>Собственник</h3></div>
+      <div class="role"><div class="icon"></div><h3>Руководитель</h3></div>
+      <div class="role"><div class="icon"></div><h3>HR</h3></div>
+      <div class="role"><div class="icon"></div><h3>Роль четвёртая</h3></div>
+      <div class="role"><div class="icon"></div><h3>Роль пятая</h3></div>
+      <div class="role"><div class="icon"></div><h3>Роль шестая</h3></div>
+      <div class="role"><div class="icon"></div><h3>Роль седьмая</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3. ЧТО ЭРГОНОМИКА ДАЁТ КОМПАНИИ ============ -->
+<section class="sec" id="benefits">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Что эргономика даёт компании</h2></div>
+
+    <ol class="benefits">
+      <li>Снижение утомления и физической перегрузки</li>
+      <li>Поддержание концентрации и работоспособности</li>
+      <li>Снижение факторов боли и дискомфорта</li>
+      <li>Более эффективное использование мебели и оборудования</li>
+      <li>Снижение потерь рабочего времени из-за проблем со здоровьем</li>
+      <li>Повышение качества условий труда</li>
+      <li>Укрепление бренда работодателя</li>
+      <li>Повышение привлекательности компании для сотрудников</li>
+      <li>Дополнительный аргумент для удержания ценных специалистов</li>
+      <li>Формирование культуры заботы о сотрудниках через условия труда</li>
+    </ol>
+
+    <blockquote class="quote">
+      Эргономика работает не только на здоровье и продуктивность сотрудников, но и на бренд
+      работодателя: хорошие условия труда становятся частью корпоративной культуры
+      и конкурентного преимущества компании
+    </blockquote>
+
+    <!-- под-раздел «Исследования и факты» -->
+    <div class="research">
+      <div class="head" style="margin-bottom:0">
+        <h2 style="font-size:26px">Исследования и факты</h2>
+        <p>Тезисы на основе международных исследований и материалов корпоративного курса.</p>
+      </div>
+      <div class="research__grid">
+        <div class="fact">
+          <b>00&nbsp;%</b>
+          <p>Короткий вывод по результатам исследования.</p>
+          <div class="src"><a href="#">Источник</a></div>
+        </div>
+        <div class="fact">
+          <b>00&nbsp;%</b>
+          <p>Короткий вывод по результатам исследования.</p>
+          <div class="src"><a href="#">Источник</a></div>
+        </div>
+        <div class="fact">
+          <b>0×</b>
+          <p>Короткий вывод по результатам исследования.</p>
+          <div class="src"><a href="#">Источник</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4. МИФЫ ОБ ЭРГОНОМИКЕ ============ -->
+<section class="sec sec--alt" id="myths">
+  <div class="wrap sec__inner">
+    <div class="head">
+      <h2>Мифы об эргономике</h2>
+      <p>Шесть самых сильных мифов. Остальные разбираем отдельно и в корпоративной презентации.</p>
+    </div>
+
+    <div class="acc">
+      <details>
+        <summary><span class="acc__n">Миф 1</span>«Купили дорогую мебель — вопрос эргономики решён»</summary>
+        <div class="acc__body">Мебель не гарантирует эргономичную работу без умения её настраивать и использовать.</div>
+      </details>
+      <details>
+        <summary><span class="acc__n">Миф 2</span>«Есть ДМС — значит, проблемы со здоровьем закрыты»</summary>
+        <div class="acc__body">ДМС снимает симптомы постфактум, но не устраняет рабочие факторы перегрузки и не компенсирует потери работоспособности.</div>
+      </details>
+      <details>
+        <summary><span class="acc__n">Миф 3</span>«Эффективность работы — прежде всего вопрос мотивации»</summary>
+        <div class="acc__body">Физические факторы снижают концентрацию независимо от мотивации сотрудника.</div>
+      </details>
+      <details>
+        <summary><span class="acc__n">Миф 4</span>«Проще заменить сотрудника, чем менять условия его работы»</summary>
+        <div class="acc__body">Новый сотрудник попадёт в те же условия, а замена дороже обучения и адаптации рабочего места.</div>
+      </details>
+      <details>
+        <summary><span class="acc__n">Миф 5</span>«Если сотрудники не жалуются, значит, проблемы нет»</summary>
+        <div class="acc__body">Люди часто работают с дискомфортом, не оформляя больничный.</div>
+      </details>
+      <details>
+        <summary><span class="acc__n">Миф 6</span>«Есть корпоративный курс по эргономике — значит, вопрос решён»</summary>
+        <div class="acc__body">
+          Наличие курса не значит, что знания применяются.
+          <div class="quote quote--sm">Если хотите понять, работает ли ваш корпоративный курс по эргономике — просто пройдите по офису и посмотрите, как сидят сотрудники</div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5. ЧТО МЫ ПРЕДЛАГАЕМ КОМПАНИИ ============ -->
+<section class="sec" id="offers">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Что мы предлагаем компании</h2></div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon sq"></div>
+        <h3>Аудит и консалтинг</h3>
+        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+        <a href="#" class="link">Подробнее</a>
+      </div>
+      <div class="card">
+        <div class="icon sq"></div>
+        <h3>Корпоративная версия курса</h3>
+        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+        <a href="#" class="link">Подробнее</a>
+      </div>
+      <div class="card">
+        <div class="icon sq"></div>
+        <h3>Комплексная корпоративная программа</h3>
+        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+        <a href="#" class="link">Подробнее</a>
+      </div>
+      <div class="card">
+        <div class="icon sq"></div>
+        <h3>Подбор и организация рабочих мест</h3>
+        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+        <a href="#" class="link">Подробнее</a>
+      </div>
+      <div class="card">
+        <div class="icon sq"></div>
+        <h3>Промышленная эргономика</h3>
+        <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
+        <a href="#" class="link">Подробнее</a>
+      </div>
+      <div class="card">
+        <div class="icon sq"></div>
+        <h3>Чек-апы</h3>
+        <p>Корпоративная оценка перегрузки и эргономических рисков. Не медицинская диагностика.</p>
+        <a href="https://doctorsimkin.ru" class="link">Клиника Доктора Симкина</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 7. КАК ПРОХОДИТ СОТРУДНИЧЕСТВО ============ -->
+<section class="sec sec--alt" id="flow">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Как проходит сотрудничество</h2></div>
+    <div class="flow">
+      <div class="flow__step">
+        <div class="flow__n">Шаг 1</div>
+        <h3>Название шага</h3>
+        <p>Одна строка о шаге.</p>
+      </div>
+      <div class="flow__step">
+        <div class="flow__n">Шаг 2</div>
+        <h3>Название шага</h3>
+        <p>Одна строка о шаге.</p>
+      </div>
+      <div class="flow__step">
+        <div class="flow__n">Шаг 3</div>
+        <h3>Название шага</h3>
+        <p>Одна строка о шаге.</p>
+      </div>
+      <div class="flow__step">
+        <div class="flow__n">Шаг 4</div>
+        <h3>Название шага</h3>
+        <p>Одна строка о шаге.</p>
+      </div>
+      <div class="flow__step">
+        <div class="flow__n">Шаг 5</div>
+        <h3>Название шага</h3>
+        <p>Одна строка о шаге.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 8. РЕЗУЛЬТАТ ДЛЯ КОМПАНИИ ============ -->
+<section class="sec" id="results">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Результат для компании</h2></div>
+    <div class="results">
+      <div class="result"><b>000</b><p>Одна строка о результате.</p></div>
+      <div class="result"><b>00&nbsp;%</b><p>Одна строка о результате.</p></div>
+      <div class="result"><b>00</b><p>Одна строка о результате.</p></div>
+      <div class="result"><div class="icon"></div><p style="margin-top:16px">Одна строка о результате.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 9. КЛИЕНТЫ И ОТЗЫВЫ ============ -->
+<section class="sec sec--alt" id="clients">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Клиенты и отзывы</h2></div>
+    <div class="logos">
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
+    </div>
+    <div class="reviews">
+      <div class="review">
+        <p class="review__txt">Цитата из отзыва: что было до работы, что изменилось после и на чём это видно.</p>
+        <div class="review__who">
+          <div class="ph review__ph"></div>
+          <div><b>Имя Фамилия</b><span>Должность, компания</span></div>
+        </div>
+      </div>
+      <div class="review">
+        <p class="review__txt">Цитата из отзыва: что было до работы, что изменилось после и на чём это видно.</p>
+        <div class="review__who">
+          <div class="ph review__ph"></div>
+          <div><b>Имя Фамилия</b><span>Должность, компания</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 10. ВОПРОСЫ И ОТВЕТЫ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap sec__inner">
+    <div class="head"><h2>Вопросы и ответы</h2></div>
+    <div class="acc">
+      <details><summary>Текст первого вопроса</summary><div class="acc__body">Текст ответа на вопрос.</div></details>
+      <details><summary>Текст второго вопроса</summary><div class="acc__body">Текст ответа на вопрос.</div></details>
+      <details><summary>Текст третьего вопроса</summary><div class="acc__body">Текст ответа на вопрос.</div></details>
+      <details><summary>Текст четвёртого вопроса</summary><div class="acc__body">Текст ответа на вопрос.</div></details>
+      <details><summary>Текст пятого вопроса</summary><div class="acc__body">Текст ответа на вопрос.</div></details>
+      <details><summary>Текст шестого вопроса</summary><div class="acc__body">Текст ответа на вопрос.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 11. ФОРМА ЗАЯВКИ ============ -->
+<section class="sec cta" id="request">
+  <div class="wrap sec__inner">
+    <div class="head" style="margin-bottom:36px">
+      <h2>Заголовок блока заявки</h2>
+      <p class="cta__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+    </div>
+    <form class="bigform" onsubmit="return false">
+      <input class="field" placeholder="Имя">
+      <input class="field" placeholder="Телефон">
+      <input class="field" placeholder="Почта">
+      <input class="field" placeholder="Компания">
+      <input class="field" placeholder="Должность">
+      <input class="field" placeholder="Число сотрудников">
+      <textarea class="field field--full" placeholder="Сообщение"></textarea>
+      <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn">Запросить программу</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ ОБЩЕЕ: БЛОК ПРИЗЫВА ПЕРЕД ПОДВАЛОМ ============ -->
+<section class="sec prefoot">
+  <div class="wrap sec__inner">
+    <h2>Заголовок призыва</h2>
+    <p>Короткая подпись под заголовком.</p>
+    <div class="btns"><a href="#request" class="btn btn--fill">Обсудить задачу</a></div>
+  </div>
+</section>
+
+<!-- ============ ОБЩЕЕ: ПОДВАЛ ============ -->
+<footer id="contacts">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="index.html" class="logo">
+          <span class="logo__mark"></span>
+          <span class="logo__txt"><b>Simkin.ru</b><span>Авторская система эргономики</span></span>
+        </a>
+        <p class="foot__about">Короткий текст о проекте: авторская система эргономики Доктора Симкина, обучение и решения для компаний и частных пользователей.</p>
+      </div>
+
+      <div>
+        <h4>Для компаний</h4>
+        <ul>
+          <li><a href="#offers">Аудит и консалтинг</a></li>
+          <li><a href="#offers">Корпоративная версия курса</a></li>
+          <li><a href="#offers">Корпоративная программа</a></li>
+          <li><a href="#offers">Подбор рабочих мест</a></li>
+          <li><a href="#offers">Промышленная эргономика</a></li>
+          <li><a href="#offers">Чек-апы</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Для себя</h4>
+        <ul>
+          <li><a href="#">Онлайн-курс</a></li>
+          <li><a href="#">Эргономичные решения</a></li>
+          <li><a href="#">Авторские разработки</a></li>
+          <li><a href="#">Полезные статьи</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>О проекте</h4>
+        <ul>
+          <li><a href="index.html#method">Метод Симкина</a></li>
+          <li><a href="index.html#expert">Дмитрий Симкин</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+70000000000">+7 (000) 000-00-00</a></li>
+          <li><a href="mailto:mail@simkin.ru">mail@simkin.ru</a></li>
+          <li><a href="#">Telegram</a> · <a href="#">WhatsApp</a> · <a href="#">MAX</a></li>
+        </ul>
+        <button class="foot__cb" data-open>Заказать обратный звонок</button>
+        <div class="clinic">Медицинский приём, остеопатия и запись к врачу — на сайте клиники <a href="https://doctorsimkin.ru">Doctorsimkin.ru</a></div>
+      </div>
+    </div>
+
+    <div class="soc">
+      <a href="#">ВКонтакте</a>
+      <a href="#">Telegram</a>
+      <a href="#">MAX</a>
+      <a href="#">YouTube</a>
+      <a href="#">RuTube</a>
+    </div>
+
+    <div class="foot__bottom">
+      <span>© 2026 Simkin.ru · Реквизиты юридического лица</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Согласие на обработку данных</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБРАТНЫЙ ЗВОНОК» ============ -->
+<div class="modal" id="callback">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="cbTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="cbTitle">Обратный звонок</h2>
+    <p>Короткая подпись: в какой срок перезвонят.</p>
+    <form class="mform" onsubmit="return false">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield" placeholder="Удобное время">
+      <label class="magree"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill">Жду звонка</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
