@@ -14,7 +14,8 @@
     --bg:#f3f3f1;
     --paper:#ffffff;
     --fill:#e4e4e1;
-    --w:1240px;
+    --w:1320px;
+    --pad:40px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -23,8 +24,12 @@
     background:var(--bg);color:var(--ink);
     font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:var(--w);margin:0 auto;padding:0 40px}
+  img{max-width:100%;display:block}
+
+  /* ---------- сетка ---------- */
+  .wrap{max-width:var(--w);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
   .sec{background:var(--paper);border-bottom:1px solid var(--line-2)}
+  .sec--alt{background:var(--bg)}
   .sec__inner{padding-top:84px;padding-bottom:84px}
 
   /* ---------- заглушки ---------- */
@@ -44,8 +49,9 @@
   .line.s{width:58%}
   .line.m{width:84%}
   .lines{margin-top:14px}
-  .icon{width:44px;height:44px;border:1px solid var(--line);background:var(--fill);border-radius:50%}
+  .icon{width:44px;height:44px;border:1px solid var(--line);background:var(--fill);border-radius:50%;flex:0 0 auto}
   .icon.sq{border-radius:4px}
+  .icon.lg{width:54px;height:54px}
 
   /* ---------- типографика ---------- */
   h1{font-size:46px;line-height:1.1;font-weight:700;letter-spacing:-.025em}
@@ -55,7 +61,7 @@
   .eyebrow{font-size:11.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);font-weight:600}
   .head{margin-bottom:44px;max-width:44em}
   .head h2{max-width:20em}
-  .head p{color:var(--ink-2);margin-top:14px}
+  .head p{color:var(--ink-2);margin-top:14px;max-width:38em}
   .head--row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;max-width:none}
 
   /* ---------- кнопки ---------- */
@@ -77,92 +83,91 @@
   }
   .link:hover{border-color:var(--ink)}
 
-  /* ================= ШАПКА ================= */
+  /* ================= ОБЩЕЕ: ШАПКА ================= */
   header{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--line)}
   .topbar{
     border-bottom:1px solid var(--line-2);background:var(--bg);
     max-height:44px;overflow:hidden;transition:max-height .25s ease,opacity .2s ease;opacity:1;
   }
   header.is-scrolled .topbar{max-height:0;opacity:0}
-  .topbar__in{display:flex;align-items:center;height:44px;gap:28px}
+  .topbar__in{display:flex;align-items:center;height:44px;gap:26px}
   .topbar__note{font-size:12px;color:var(--ink-3);letter-spacing:.02em;flex:1 1 auto}
-  .topbar__nav{display:flex;gap:22px}
-  .topbar__nav a{font-size:13px;color:var(--ink-2);text-decoration:none;transition:color .18s ease}
-  .topbar__nav a:hover{color:var(--ink)}
+  .topbar__link{font-size:13px;color:var(--ink-2);text-decoration:none;background:none;border:0;font-family:inherit;cursor:pointer;border-bottom:1px solid var(--line);padding:0 0 1px;transition:color .18s ease,border-color .18s ease}
+  .topbar__link:hover{color:var(--ink);border-color:var(--ink)}
   .topbar__tel{font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none;white-space:nowrap}
 
-  .hdr{display:flex;align-items:center;height:80px;gap:40px}
+  .hdr{display:flex;align-items:center;height:80px;gap:28px}
   .logo{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);flex:0 0 auto}
   .logo__mark{width:40px;height:40px;border:1px solid var(--line);background:var(--fill);flex:0 0 auto}
+  .logo__txt{max-width:126px}
   .logo__txt b{display:block;font-size:18px;letter-spacing:-.02em;line-height:1.1}
-  .logo__txt span{display:block;font-size:9.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.11em;margin-top:3px}
-  .mainnav{display:flex;gap:20px;flex:1 1 auto;justify-content:center}
+  .logo__txt span{display:block;font-size:9px;line-height:1.35;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+
+  .mainnav{display:flex;gap:14px;flex:1 1 auto;justify-content:center;min-width:0}
   .navitem{position:relative;display:flex;align-items:center;height:80px}
-  .mainnav a{
-    font-size:14px;color:var(--ink);text-decoration:none;white-space:nowrap;
+  .navitem > a{
+    font-size:13.5px;color:var(--ink);text-decoration:none;white-space:nowrap;
     display:inline-flex;align-items:center;gap:5px;padding:6px 0;
     border-bottom:1px solid transparent;transition:border-color .18s ease;
   }
-  .mainnav > .navitem > a:hover{border-color:var(--ink)}
-  .mainnav a i{
+  .navitem > a:hover{border-color:var(--ink)}
+  .navitem > a i{
     display:inline-block;width:0;height:0;border-left:3.5px solid transparent;
     border-right:3.5px solid transparent;border-top:4px solid var(--ink-3);
   }
   .sub{
-    position:absolute;top:100%;left:-18px;min-width:262px;z-index:70;
+    position:absolute;top:100%;left:-18px;min-width:268px;z-index:70;
     background:var(--paper);border:1px solid var(--line);padding:8px 0;
     opacity:0;visibility:hidden;transform:translateY(6px);
     transition:opacity .18s ease,transform .18s ease,visibility .18s;
     box-shadow:0 14px 30px rgba(0,0,0,.07);
   }
   .navitem:hover .sub{opacity:1;visibility:visible;transform:translateY(0)}
-  .sub a{display:block;padding:10px 18px;font-size:14px;color:var(--ink-2);border-bottom:0;white-space:nowrap}
-  .sub a:hover{background:var(--bg);color:var(--ink);border-bottom:0}
-  .hdr__cta{flex:0 0 auto}
-  .topbar__cb{font-size:13px;color:var(--ink-2);background:none;border:0;font-family:inherit;cursor:pointer;border-bottom:1px solid var(--line);padding:0 0 1px}
-  .topbar__cb:hover{color:var(--ink);border-color:var(--ink)}
-  .burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:var(--paper);flex-direction:column;justify-content:center;align-items:center;gap:4px;cursor:pointer}
-  .burger i{display:block;width:18px;height:1.5px;background:var(--ink)}
+  .sub a{display:block;padding:10px 18px;font-size:14px;color:var(--ink-2);text-decoration:none;white-space:nowrap;transition:background .15s ease,color .15s ease}
+  .sub a:hover{background:var(--bg);color:var(--ink)}
 
-  /* ================= секции ================= */
+  .hdr__cta{flex:0 0 auto}
+  .burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:var(--paper);flex-direction:column;justify-content:center;align-items:center;gap:4px;cursor:pointer;flex:0 0 auto}
+  .burger i{display:block;width:18px;height:1.5px;background:var(--ink);transition:transform .2s ease,opacity .2s ease}
+  .burger.is-on i:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+  .burger.is-on i:nth-child(2){opacity:0}
+  .burger.is-on i:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+
+  /* мобильное меню */
+  .mnav{display:none;border-top:1px solid var(--line);background:var(--paper);max-height:calc(100vh - 66px);overflow-y:auto}
+  .mnav.is-open{display:block}
+  .mnav__in{padding-top:8px;padding-bottom:24px}
+  .mnav__item{border-bottom:1px solid var(--line-2)}
+  .mnav__item > a{display:block;padding:15px 0;font-size:16px;font-weight:600;color:var(--ink);text-decoration:none}
+  .mnav__sub{padding:0 0 14px 16px}
+  .mnav__sub a{display:block;padding:8px 0;font-size:14px;color:var(--ink-2);text-decoration:none}
+  .mnav__tel{display:block;margin-top:22px;font-size:17px;font-weight:700;color:var(--ink);text-decoration:none}
+
+  /* ================= БЛОК 1. ПЕРВЫЙ ЭКРАН ================= */
   .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
   .hero__ph{aspect-ratio:4/3.4}
 
+  /* ================= БЛОК 2. ЧЕМ ПОДХОД ОТЛИЧАЕТСЯ ================= */
   .theses{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .thesis{border:1px solid var(--line);padding:24px;background:var(--paper)}
   .thesis .icon{margin-bottom:18px}
   .chain{margin-top:40px;border:1px solid var(--line);background:var(--bg);padding:28px 24px}
+  .chain__cap{font-size:11.5px;color:var(--ink-3);margin-bottom:16px;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
   .chain__row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .chain__step{border:1px solid var(--line);background:var(--paper);padding:12px 18px;font-size:14px;font-weight:600}
   .chain__arw{color:var(--ink-3);font-size:14px}
-  .chain__cap{font-size:11.5px;color:var(--ink-3);margin-bottom:16px;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
 
+  /* ================= БЛОК 3. ДЛЯ КОГО ================= */
   .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .card{border:1px solid var(--line);padding:26px;background:var(--paper);display:flex;flex-direction:column}
   .card .icon{margin-bottom:18px}
-  .card h3{margin-bottom:4px}
+  .card h3{margin-bottom:10px}
+  .card p{font-size:14px;color:var(--ink-2)}
   .card .link{margin-top:auto;padding-top:20px;align-self:flex-start}
-  .badge{display:inline-block;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--line);padding:4px 9px;color:var(--ink-3);margin-top:14px;align-self:flex-start}
-  .sublink{margin-top:16px;font-size:13px;color:var(--ink-2);border-top:1px dashed var(--line);padding-top:13px}
+  .badge{display:inline-block;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;border:1px solid var(--line);padding:4px 9px;color:var(--ink-3);margin-top:auto;align-self:flex-start}
+  .card .badge{margin-top:auto;transform:translateY(20px)}
 
-  .expert{display:grid;grid-template-columns:.78fr 1.22fr;gap:56px;align-items:start}
-  .expert__ph{aspect-ratio:3/3.6}
-  .facts{list-style:none;margin-top:26px}
-  .facts li{display:flex;gap:16px;padding:13px 0;border-bottom:1px solid var(--line-2);font-size:15px;color:var(--ink-2)}
-  .facts li b{color:var(--ink);font-weight:600;flex:0 0 auto;min-width:96px}
-
-  .logos{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-  .logos .ph{height:78px}
-  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px;border-top:1px solid var(--line-2);padding-top:30px}
-  .num b{display:block;font-size:36px;font-weight:700;letter-spacing:-.03em}
-  .num span{font-size:13px;color:var(--ink-3)}
-
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-  .step{border-top:2px solid var(--ink);padding-top:22px}
-  .step__n{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);margin-bottom:14px}
-  .step .ph{aspect-ratio:16/10;margin-bottom:20px}
-
+  /* ================= БЛОК 4. ДВА НАПРАВЛЕНИЯ ================= */
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   .dir{
     border:1px solid var(--line);background:var(--paper);padding:38px;
@@ -170,16 +175,44 @@
     transition:border-color .18s ease;
   }
   .dir:hover{border-color:var(--ink)}
-  .dir .icon{width:52px;height:52px;margin-bottom:22px}
+  .dir .icon{margin-bottom:22px}
   .dir h3{font-size:24px;font-weight:700;letter-spacing:-.02em}
   .dir__list{list-style:none;margin:24px 0 28px}
   .dir__list li{font-size:14.5px;color:var(--ink-2);padding:11px 0;border-bottom:1px solid var(--line-2)}
   .dir .link{margin-top:auto;align-self:flex-start}
 
+  /* ================= БЛОК 5. ОБ ЭКСПЕРТЕ ================= */
+  .expert{display:grid;grid-template-columns:.78fr 1.22fr;gap:56px;align-items:start}
+  .expert__ph{aspect-ratio:3/3.6}
+  .expert__name{font-size:28px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+  .expert__spec{font-size:17px;color:var(--ink-2);margin-top:10px}
+  .facts{list-style:none;margin-top:26px}
+  .facts li{display:flex;gap:16px;padding:13px 0;border-bottom:1px solid var(--line-2);font-size:15px;color:var(--ink-2)}
+  .facts li b{color:var(--ink);font-weight:600;flex:0 0 auto;min-width:104px}
+
+  /* ================= БЛОК 6. КЛИЕНТЫ ================= */
+  .logos{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .logos .ph{height:78px}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px;border-top:1px solid var(--line-2);padding-top:30px}
+  .num b{display:block;font-size:36px;font-weight:700;letter-spacing:-.03em}
+  .num span{font-size:13px;color:var(--ink-3)}
+
+  /* ================= БЛОК 7. КАК РАБОТАЕТ ПОДХОД ================= */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .step{border-top:2px solid var(--ink);padding-top:22px}
+  .step__n{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);margin-bottom:18px}
+  .step .icon{margin-bottom:18px}
+  .step h3{margin-bottom:10px}
+  .step p{font-size:14.5px;color:var(--ink-2)}
+
+  /* ================= БЛОК 9. СТАТЬИ ================= */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .post{text-decoration:none;color:var(--ink);display:block}
   .post .ph{aspect-ratio:16/10;margin-bottom:18px}
   .post .eyebrow{margin-bottom:9px}
   .post__meta{font-size:12px;color:var(--ink-3);margin-top:12px}
 
+  /* ================= БЛОК 10. ЗАЯВКА ================= */
   .cta{background:var(--ink);color:#fff;border-bottom:0}
   .cta h2{color:#fff;max-width:15em}
   .cta__grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -193,36 +226,41 @@
   .agree{grid-column:span 2;font-size:12px;color:#9a9a9a;display:flex;gap:10px;align-items:flex-start}
   .agree i{width:16px;height:16px;border:1px solid #6f6f6f;flex:0 0 auto;margin-top:2px;display:block}
 
+  /* ================= ОБЩЕЕ: ПРИЗЫВ ПЕРЕД ПОДВАЛОМ ================= */
   .prefoot{background:var(--bg)}
   .prefoot .sec__inner{padding-top:64px;padding-bottom:64px;text-align:center}
+  .prefoot p{color:var(--ink-2);margin-top:14px}
   .prefoot .btns{justify-content:center}
 
+  /* ================= ОБЩЕЕ: ПОДВАЛ ================= */
   footer{background:var(--paper);border-top:1px solid var(--line)}
-  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.25fr;gap:40px;padding:64px 0 36px}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr .9fr 1.15fr;gap:36px;padding-top:64px;padding-bottom:32px}
+  .foot__about{font-size:13.5px;color:var(--ink-2);margin-top:18px;max-width:24em;line-height:1.55}
   .foot h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-3);margin-bottom:18px;font-weight:600}
   .foot ul{list-style:none}
-  .foot li{padding:7px 0;font-size:14px;color:var(--ink-2)}
-  .clinic{border:1px solid var(--line);background:var(--bg);padding:18px;font-size:13px;color:var(--ink-2);margin-top:16px;line-height:1.5}
+  .foot li{padding:7px 0;font-size:14px}
+  .foot li a{color:var(--ink-2);text-decoration:none;transition:color .18s ease}
+  .foot li a:hover{color:var(--ink)}
   .foot__cb{font-size:14px;color:var(--ink);background:none;border:0;font-family:inherit;font-weight:600;cursor:pointer;border-bottom:1px solid var(--line);padding:0 0 2px;margin-top:14px}
   .foot__cb:hover{border-color:var(--ink)}
-  .soc{display:flex;gap:26px;flex-wrap:wrap;border-top:1px solid var(--line-2);padding:22px 0}
+  .clinic{border:1px solid var(--line);background:var(--bg);padding:18px;font-size:13px;color:var(--ink-2);margin-top:20px;line-height:1.5}
+  .clinic a{color:var(--ink);font-weight:600}
+  .soc{display:flex;gap:26px;flex-wrap:wrap;border-top:1px solid var(--line-2);padding-top:22px;padding-bottom:22px}
   .soc a{font-size:14px;color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .18s ease,border-color .18s ease}
   .soc a:hover{color:var(--ink);border-color:var(--ink)}
-  .foot__bottom{border-top:1px solid var(--line-2);padding:22px 0 44px;display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--ink-3);flex-wrap:wrap}
+  .foot__bottom{border-top:1px solid var(--line-2);padding-top:22px;padding-bottom:44px;display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--ink-3);flex-wrap:wrap}
+  .foot__bottom a{color:var(--ink-3);text-decoration:none;border-bottom:1px solid var(--line-2)}
+  .foot__bottom a:hover{color:var(--ink-2)}
 
-  /* ---------- всплывающее окно «Обратный звонок» ---------- */
+  /* ================= ОБЩЕЕ: ПОПАП «ОБРАТНЫЙ ЗВОНОК» ================= */
   .modal{position:fixed;inset:0;z-index:100;display:none}
   .modal.is-open{display:block}
   .modal__back{position:absolute;inset:0;background:rgba(22,22,22,.46)}
-  .modal__box{
-    position:relative;max-width:452px;margin:9vh auto 0;background:var(--paper);
-    border:1px solid var(--line);padding:40px;
-  }
-  .modal__x{
-    position:absolute;top:14px;right:14px;width:34px;height:34px;border:1px solid var(--line);
-    background:var(--paper);font-size:19px;line-height:1;color:var(--ink-2);cursor:pointer;font-family:inherit;
-  }
+  .modal__box{position:relative;max-width:452px;margin:9vh auto 0;background:var(--paper);border:1px solid var(--line);padding:40px}
+  .modal__x{position:absolute;top:14px;right:14px;width:34px;height:34px;border:1px solid var(--line);background:var(--paper);font-size:19px;line-height:1;color:var(--ink-2);cursor:pointer;font-family:inherit}
   .modal__x:hover{background:var(--bg);color:var(--ink)}
+  .modal__box h2{font-size:26px}
+  .modal__box p{color:var(--ink-2);font-size:15px;margin-top:12px}
   .mform{display:grid;gap:12px;margin-top:26px}
   .mfield{height:52px;border:1px solid var(--line);background:var(--bg);padding:0 16px;font-size:14px;font-family:inherit;color:var(--ink)}
   .mfield::placeholder{color:var(--ink-3)}
@@ -230,49 +268,55 @@
   .magree{font-size:12px;color:var(--ink-3);display:flex;gap:10px;align-items:flex-start;margin:4px 0 6px}
   .magree i{width:16px;height:16px;border:1px solid var(--line);flex:0 0 auto;margin-top:2px;display:block}
 
-  /* ---------- планшет ---------- */
-  @media (max-width:1280px){
-    .mainnav{gap:15px}
-    .mainnav a{font-size:13.5px}
-    .hdr{gap:22px}
-  }
-  @media (max-width:1180px){
-    .topbar__note{display:none}
+  /* ================= АДАПТИВ ================= */
+  @media (max-width:1300px){
     .mainnav{display:none}
     .burger{display:flex}
     .hdr{justify-content:space-between}
+  }
+  @media (max-width:1180px){
+    .topbar__note{display:none}
     .grid-4{grid-template-columns:repeat(2,1fr)}
+    .foot{grid-template-columns:1fr 1fr 1fr;gap:32px}
   }
   @media (max-width:1040px){
     .grid-2{grid-template-columns:1fr}
+    .hero{gap:40px}
+    .expert{gap:36px}
   }
-
-  /* ---------- мобильная ---------- */
   @media (max-width:900px){
-    .wrap{padding:0 20px}
+    :root{--pad:20px}
     .sec__inner{padding-top:52px;padding-bottom:52px}
     h1{font-size:31px}
     h2{font-size:24px}
     .lead{font-size:16px}
+    .head{margin-bottom:30px}
     .topbar{display:none}
     .hdr{height:66px;gap:12px}
     .hdr__cta .btn{height:42px;padding:0 15px;font-size:13px}
     .logo__mark{width:34px;height:34px}
     .logo__txt b{font-size:16px}
     .hero,.expert,.cta__grid{grid-template-columns:1fr;gap:30px}
-    .theses,.grid-4,.grid-3,.steps{grid-template-columns:1fr;gap:14px}
-    .grid-2{grid-template-columns:1fr;gap:14px}
+    .hero .lead br{display:none}
+    .theses,.grid-4,.grid-3,.steps,.grid-2{grid-template-columns:1fr;gap:14px}
     .dir{padding:28px}
     .dir h3{font-size:21px}
-    .modal__box{margin:0;max-width:none;min-height:100%;padding:28px 20px;border:0}
+    .expert__name{font-size:23px}
+    .card .badge{transform:none;margin-top:16px}
     .logos{grid-template-columns:repeat(3,1fr)}
     .nums{grid-template-columns:1fr;gap:16px}
-    .foot{grid-template-columns:1fr;gap:28px;padding:44px 0 28px}
     .form{grid-template-columns:1fr}
     .cta .btn,.agree{grid-column:span 1}
     .btns .btn{width:100%}
     .facts li{flex-direction:column;gap:2px}
     .facts li b{min-width:0}
+    .foot{grid-template-columns:1fr;gap:28px;padding-top:44px;padding-bottom:24px}
+    .foot__about{max-width:none}
+    .modal__box{margin:0;max-width:none;min-height:100%;padding:28px 20px;border:0}
+  }
+  @media (max-width:600px){
+    .hdr .logo__txt{max-width:none}
+    .hdr .logo__txt span{display:none}
   }
   @media (max-width:560px){
     .logos{grid-template-columns:repeat(2,1fr)}
@@ -281,22 +325,23 @@
 </head>
 <body>
 
+<!-- ============ ОБЩЕЕ: ШАПКА, ЗАКРЕПЛЕНА ПРИ ПРОКРУТКЕ ============ -->
 <header id="hdr">
   <div class="topbar">
     <div class="wrap topbar__in">
       <span class="topbar__note">Авторская система эргономики Доктора Симкина</span>
-      <nav class="topbar__nav">
-        <a href="#foot">Контакты</a>
-      </nav>
-      <button class="topbar__cb" data-open>Обратный звонок</button>
+      <a href="#contacts" class="topbar__link">Контакты</a>
+      <button class="topbar__link" data-open>Обратный звонок</button>
       <a href="tel:+70000000000" class="topbar__tel">+7 (000) 000-00-00</a>
     </div>
   </div>
+
   <div class="wrap hdr">
     <a href="#" class="logo">
       <span class="logo__mark"></span>
-      <span class="logo__txt"><b>Simkin.ru</b><span>Эргономика</span></span>
+      <span class="logo__txt"><b>Simkin.ru</b><span>Авторская система эргономики</span></span>
     </a>
+
     <nav class="mainnav">
       <div class="navitem">
         <a href="#directions">Для компаний <i></i></a>
@@ -324,21 +369,53 @@
       <div class="navitem"><a href="#expert">Дмитрий Симкин</a></div>
       <div class="navitem"><a href="#articles">Полезные статьи</a></div>
     </nav>
-    <div class="hdr__cta">
-      <a href="#cta" class="btn btn--sm btn--fill">Обсудить задачу</a>
-    </div>
-    <button class="burger" aria-label="Меню"><i></i><i></i><i></i></button>
+
+    <div class="hdr__cta"><a href="#cta" class="btn btn--sm btn--fill">Обсудить задачу</a></div>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
   </div>
+
+  <!-- мобильное меню -->
+  <nav class="mnav" id="mnav">
+    <div class="wrap mnav__in">
+      <div class="mnav__item">
+        <a href="#directions">Для компаний</a>
+        <div class="mnav__sub">
+          <a href="#">Аудит и консалтинг</a>
+          <a href="#">Корпоративная версия курса</a>
+          <a href="#">Корпоративная программа</a>
+          <a href="#">Подбор и организация рабочих мест</a>
+          <a href="#">Промышленная эргономика</a>
+          <a href="#">Чек-апы</a>
+        </div>
+      </div>
+      <div class="mnav__item">
+        <a href="#directions">Для себя</a>
+        <div class="mnav__sub">
+          <a href="#">Онлайн-курс</a>
+          <a href="#">Эргономичные решения</a>
+          <a href="#">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="mnav__item"><a href="#">Онлайн-курс</a></div>
+      <div class="mnav__item"><a href="#">Эргономичные решения</a></div>
+      <div class="mnav__item"><a href="#method">Метод Симкина</a></div>
+      <div class="mnav__item"><a href="#expert">Дмитрий Симкин</a></div>
+      <div class="mnav__item"><a href="#articles">Полезные статьи</a></div>
+      <a href="tel:+70000000000" class="mnav__tel">+7 (000) 000-00-00</a>
+      <div class="btns"><button class="btn" data-open>Обратный звонок</button></div>
+    </div>
+  </nav>
 </header>
 
-<!-- первый экран -->
+<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
 <section class="sec" id="hero">
   <div class="wrap sec__inner">
     <div class="hero">
       <div>
         <div class="eyebrow">Авторская система эргономики Доктора Симкина</div>
         <h1 style="margin-top:20px">Эргономика, которая начинается с человека, а не с мебели</h1>
-        <p class="lead">Подзаголовок в две строки: короткое объяснение сути подхода и того, кому он нужен.</p>
+        <p class="lead">Подзаголовок в две строки: короткое объяснение сути подхода<br>и того, кому он нужен.</p>
         <div class="btns">
           <a href="#directions" class="btn btn--fill">Для компаний</a>
           <a href="#directions" class="btn">Для себя</a>
@@ -350,20 +427,38 @@
   </div>
 </section>
 
-<!-- отличие подхода -->
+<!-- ============ БЛОК 2. ЧЕМ ПОДХОД ОТЛИЧАЕТСЯ ============ -->
 <section class="sec" id="difference">
   <div class="wrap sec__inner">
     <div class="head">
       <h2>Чем этот подход отличается от обычных рекомендаций по эргономике</h2>
     </div>
+
     <div class="theses">
-      <div class="thesis"><div class="icon"></div><h3>Не мебель сама по себе</h3><div class="lines"><div class="line"></div><div class="line s"></div></div></div>
-      <div class="thesis"><div class="icon"></div><h3>Не универсальные правила</h3><div class="lines"><div class="line"></div><div class="line s"></div></div></div>
-      <div class="thesis"><div class="icon"></div><h3>Не просто «сидите прямо»</h3><div class="lines"><div class="line"></div><div class="line s"></div></div></div>
-      <div class="thesis"><div class="icon"></div><h3>А выстроенная система</h3><div class="lines"><div class="line"></div><div class="line s"></div></div></div>
+      <div class="thesis">
+        <div class="icon"></div>
+        <h3>Тезис первый</h3>
+        <div class="lines"><div class="line"></div><div class="line s"></div></div>
+      </div>
+      <div class="thesis">
+        <div class="icon"></div>
+        <h3>Тезис второй</h3>
+        <div class="lines"><div class="line"></div><div class="line s"></div></div>
+      </div>
+      <div class="thesis">
+        <div class="icon"></div>
+        <h3>Тезис третий</h3>
+        <div class="lines"><div class="line"></div><div class="line s"></div></div>
+      </div>
+      <div class="thesis">
+        <div class="icon"></div>
+        <h3>Тезис четвёртый</h3>
+        <div class="lines"><div class="line"></div><div class="line s"></div></div>
+      </div>
     </div>
+
     <div class="chain">
-      <div class="chain__cap">Логика системы</div>
+      <div class="chain__cap">Схема подхода</div>
       <div class="chain__row">
         <span class="chain__step">Человек</span><span class="chain__arw">→</span>
         <span class="chain__step">Тело</span><span class="chain__arw">→</span>
@@ -376,26 +471,46 @@
   </div>
 </section>
 
-<!-- для кого -->
-<section class="sec" id="company">
+<!-- ============ БЛОК 3. ДЛЯ КОГО ============ -->
+<section class="sec sec--alt" id="audience">
   <div class="wrap sec__inner">
-    <div class="head"><h2>Кому полезен сайт</h2></div>
+    <div class="head"><h2>Для кого</h2></div>
     <div class="grid-4">
-      <div class="card"><div class="icon"></div><h3>Компаниям</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Для компаний</a></div>
-      <div class="card"><div class="icon"></div><h3>Сотрудникам и частным пользователям</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Онлайн-курс</a></div>
-      <div class="card"><div class="icon"></div><h3>Производителям мебели и оборудования</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Экспертная оценка</a></div>
-      <div class="card"><div class="icon"></div><h3>Специалистам и партнёрам</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><span class="badge">В перспективе</span></div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Компаниям</h3>
+        <p>Строка текста об этой аудитории.</p>
+        <a href="#directions" class="link">Для компаний</a>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Сотрудникам и частным пользователям</h3>
+        <p>Строка текста об этой аудитории.</p>
+        <a href="#directions" class="link">Для себя</a>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Производителям мебели и оборудования</h3>
+        <p>Строка текста об этой аудитории.</p>
+        <a href="#cta" class="link">Экспертная оценка</a>
+      </div>
+      <div class="card">
+        <div class="icon"></div>
+        <h3>Специалистам и партнёрам</h3>
+        <p>Строка текста об этой аудитории.</p>
+        <span class="badge">В перспективе</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- два направления -->
+<!-- ============ БЛОК 4. ДВА НАПРАВЛЕНИЯ ============ -->
 <section class="sec" id="directions">
   <div class="wrap sec__inner">
-    <div class="head"><h2>Два направления работы</h2></div>
+    <div class="head"><h2>Два направления</h2></div>
     <div class="grid-2">
       <a href="#" class="dir">
-        <div class="icon sq"></div>
+        <div class="icon sq lg"></div>
         <h3>Для компаний</h3>
         <ul class="dir__list">
           <li>Аудит и консалтинг</li>
@@ -408,7 +523,7 @@
         <span class="link">Перейти в раздел</span>
       </a>
       <a href="#" class="dir">
-        <div class="icon sq"></div>
+        <div class="icon sq lg"></div>
         <h3>Для себя</h3>
         <ul class="dir__list">
           <li>Онлайн-курс</li>
@@ -422,20 +537,20 @@
   </div>
 </section>
 
-<!-- эксперт -->
-<section class="sec" id="expert">
+<!-- ============ БЛОК 5. ОБ ЭКСПЕРТЕ ============ -->
+<section class="sec sec--alt" id="expert">
   <div class="wrap sec__inner">
+    <div class="head"><h2>Об эксперте</h2></div>
     <div class="expert">
-      <div class="ph expert__ph"><span>Портрет</span></div>
+      <div class="ph expert__ph"><span>Фотография</span></div>
       <div>
-        <div class="eyebrow">Автор системы</div>
-        <h2 style="margin-top:16px">Дмитрий Симкин</h2>
-        <p class="lead" style="margin-top:12px">Врач-остеопат, эксперт по эргономике.</p>
+        <div class="expert__name">Дмитрий Симкин</div>
+        <div class="expert__spec">Врач-остеопат, эксперт по эргономике, автор системы</div>
         <ul class="facts">
           <li><b>1991</b> начало медицинской практики</li>
-          <li><b>2004</b> начало обучения эргономике</li>
+          <li><b>2004</b> начало работы с эргономикой</li>
           <li><b>Клиника</b> основатель Клиники Доктора Симкина</li>
-          <li><b>Разработки</b> автор методик и патентуемых решений</li>
+          <li><b>Разработки</b> автор методик и собственных решений</li>
           <li><b>Опыт</b> российские и международные компании</li>
           <li><b>Экспертиза</b> связь рабочей позы, тела и задач человека</li>
         </ul>
@@ -445,13 +560,17 @@
   </div>
 </section>
 
-<!-- клиенты -->
+<!-- ============ БЛОК 6. КЛИЕНТЫ ============ -->
 <section class="sec" id="clients">
   <div class="wrap sec__inner">
-    <div class="head"><h2>С кем работали</h2></div>
+    <div class="head"><h2>Клиенты</h2></div>
     <div class="logos">
-      <div class="ph"><span>Лого</span></div><div class="ph"><span>Лого</span></div><div class="ph"><span>Лого</span></div>
-      <div class="ph"><span>Лого</span></div><div class="ph"><span>Лого</span></div><div class="ph"><span>Лого</span></div>
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
+      <div class="ph"><span>Логотип</span></div>
     </div>
     <div class="nums">
       <div class="num"><b>000</b><span>компаний</span></div>
@@ -461,40 +580,70 @@
   </div>
 </section>
 
-<!-- как работает подход -->
-<section class="sec" id="method">
+<!-- ============ БЛОК 7. КАК РАБОТАЕТ ПОДХОД ============ -->
+<section class="sec sec--alt" id="method">
   <div class="wrap sec__inner">
     <div class="head"><h2>Как работает подход</h2></div>
     <div class="steps">
-      <div class="step"><div class="step__n">Шаг 1</div><div class="icon" style="margin-bottom:18px"></div><h3>Понять тело</h3><div class="lines"><div class="line m"></div></div></div>
-      <div class="step"><div class="step__n">Шаг 2</div><div class="icon" style="margin-bottom:18px"></div><h3>Научиться устойчивому положению</h3><div class="lines"><div class="line m"></div></div></div>
-      <div class="step"><div class="step__n">Шаг 3</div><div class="icon" style="margin-bottom:18px"></div><h3>Адаптировать рабочее место</h3><div class="lines"><div class="line m"></div></div></div>
+      <div class="step">
+        <div class="step__n">Шаг 1</div>
+        <div class="icon"></div>
+        <h3>Название первого шага</h3>
+        <p>Одно предложение о том, что происходит на этом шаге.</p>
+      </div>
+      <div class="step">
+        <div class="step__n">Шаг 2</div>
+        <div class="icon"></div>
+        <h3>Название второго шага</h3>
+        <p>Одно предложение о том, что происходит на этом шаге.</p>
+      </div>
+      <div class="step">
+        <div class="step__n">Шаг 3</div>
+        <div class="icon"></div>
+        <h3>Название третьего шага</h3>
+        <p>Одно предложение о том, что происходит на этом шаге.</p>
+      </div>
     </div>
     <div class="btns"><a href="#" class="btn">Подробнее о методе</a></div>
   </div>
 </section>
 
-<!-- статьи -->
+<!-- ============ БЛОК 9. СТАТЬИ ============ -->
 <section class="sec" id="articles">
   <div class="wrap sec__inner">
     <div class="head head--row">
-      <h2>Знания и статьи</h2>
+      <h2>Статьи</h2>
       <a href="#" class="link">Все материалы</a>
     </div>
     <div class="grid-3">
-      <div class="post"><div class="ph"><span>Обложка</span></div><div class="eyebrow">Рабочая поза</div><h3>Заголовок статьи в две строки</h3><div class="post__meta">00.00.0000 · 7 минут</div></div>
-      <div class="post"><div class="ph"><span>Обложка</span></div><div class="eyebrow">Мебель и оборудование</div><h3>Заголовок статьи в две строки</h3><div class="post__meta">00.00.0000 · 5 минут</div></div>
-      <div class="post"><div class="ph"><span>Обложка</span></div><div class="eyebrow">Перерывы и восстановление</div><h3>Заголовок статьи в две строки</h3><div class="post__meta">00.00.0000 · 6 минут</div></div>
+      <a href="#" class="post">
+        <div class="ph"><span>Обложка</span></div>
+        <div class="eyebrow">Тема</div>
+        <h3>Заголовок статьи в две строки</h3>
+        <div class="post__meta">00.00.0000</div>
+      </a>
+      <a href="#" class="post">
+        <div class="ph"><span>Обложка</span></div>
+        <div class="eyebrow">Тема</div>
+        <h3>Заголовок статьи в две строки</h3>
+        <div class="post__meta">00.00.0000</div>
+      </a>
+      <a href="#" class="post">
+        <div class="ph"><span>Обложка</span></div>
+        <div class="eyebrow">Тема</div>
+        <h3>Заголовок статьи в две строки</h3>
+        <div class="post__meta">00.00.0000</div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- заявка -->
+<!-- ============ БЛОК 10. ЗАЯВКА ============ -->
 <section class="sec cta" id="cta">
   <div class="wrap sec__inner">
     <div class="cta__grid">
       <div>
-        <h2>Расскажите о задаче, предложим формат работы</h2>
+        <h2>Заголовок блока заявки</h2>
         <p class="cta__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
       </div>
       <form class="form" onsubmit="return false">
@@ -507,44 +656,70 @@
   </div>
 </section>
 
-<!-- сквозной призыв -->
+<!-- ============ ОБЩЕЕ: БЛОК ПРИЗЫВА ПЕРЕД ПОДВАЛОМ ============ -->
 <section class="sec prefoot">
   <div class="wrap sec__inner">
-    <h2>Обсудим эргономику в вашей компании</h2>
-    <p class="lead" style="margin:14px auto 0">Короткая подпись под заголовком.</p>
-    <div class="btns">
-      <a href="#cta" class="btn btn--fill">Обсудить задачу</a>
-    </div>
+    <h2>Заголовок призыва</h2>
+    <p>Короткая подпись под заголовком.</p>
+    <div class="btns"><a href="#cta" class="btn btn--fill">Обсудить задачу</a></div>
   </div>
 </section>
 
-<footer id="foot">
+<!-- ============ ОБЩЕЕ: ПОДВАЛ ============ -->
+<footer id="contacts">
   <div class="wrap">
     <div class="foot">
       <div>
-        <a href="#" class="logo" style="margin-bottom:18px">
+        <a href="#" class="logo">
           <span class="logo__mark"></span>
-          <span class="logo__txt"><b>Simkin.ru</b><span>Эргономика</span></span>
+          <span class="logo__txt"><b>Simkin.ru</b><span>Авторская система эргономики</span></span>
         </a>
-        <div class="lines"><div class="line"></div><div class="line"></div><div class="line s"></div></div>
+        <p class="foot__about">Короткий текст о проекте: авторская система эргономики Доктора Симкина, обучение и решения для компаний и частных пользователей.</p>
       </div>
+
       <div>
         <h4>Для компаний</h4>
-        <ul><li>Аудит и консалтинг</li><li>Корпоративная версия курса</li><li>Корпоративная программа</li><li>Подбор рабочих мест</li><li>Промышленная эргономика</li><li>Чек-апы</li></ul>
+        <ul>
+          <li><a href="#">Аудит и консалтинг</a></li>
+          <li><a href="#">Корпоративная версия курса</a></li>
+          <li><a href="#">Корпоративная программа</a></li>
+          <li><a href="#">Подбор рабочих мест</a></li>
+          <li><a href="#">Промышленная эргономика</a></li>
+          <li><a href="#">Чек-апы</a></li>
+        </ul>
       </div>
+
       <div>
         <h4>Для себя</h4>
-        <ul><li>Онлайн-курс</li><li>Эргономичные решения</li><li>Авторские разработки</li><li>Полезные статьи</li></ul>
-        <h4 style="margin-top:26px">О проекте</h4>
-        <ul><li>Метод Симкина</li><li>Дмитрий Симкин</li><li>Контакты</li></ul>
+        <ul>
+          <li><a href="#">Онлайн-курс</a></li>
+          <li><a href="#">Эргономичные решения</a></li>
+          <li><a href="#">Авторские разработки</a></li>
+          <li><a href="#">Полезные статьи</a></li>
+        </ul>
       </div>
+
+      <div>
+        <h4>О проекте</h4>
+        <ul>
+          <li><a href="#method">Метод Симкина</a></li>
+          <li><a href="#expert">Дмитрий Симкин</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+
       <div>
         <h4>Контакты</h4>
-        <ul><li>+7 (000) 000-00-00</li><li>mail@simkin.ru</li><li>Telegram · WhatsApp</li></ul>
+        <ul>
+          <li><a href="tel:+70000000000">+7 (000) 000-00-00</a></li>
+          <li><a href="mailto:mail@simkin.ru">mail@simkin.ru</a></li>
+          <li><a href="#">Telegram</a> · <a href="#">WhatsApp</a> · <a href="#">MAX</a></li>
+        </ul>
         <button class="foot__cb" data-open>Заказать обратный звонок</button>
-        <div class="clinic">Медицинский приём, остеопатия и запись к врачу — на сайте клиники Doctorsimkin.ru</div>
+        <div class="clinic">Медицинский приём, остеопатия и запись к врачу — на сайте клиники <a href="https://doctorsimkin.ru">Doctorsimkin.ru</a></div>
       </div>
     </div>
+
     <div class="soc">
       <a href="#">ВКонтакте</a>
       <a href="#">Telegram</a>
@@ -552,20 +727,21 @@
       <a href="#">YouTube</a>
       <a href="#">RuTube</a>
     </div>
+
     <div class="foot__bottom">
       <span>© 2026 Simkin.ru · Реквизиты юридического лица</span>
-      <span>Политика конфиденциальности · Согласие на обработку данных</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Согласие на обработку данных</a></span>
     </div>
   </div>
 </footer>
 
-<!-- всплывающее окно «Обратный звонок» -->
+<!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБРАТНЫЙ ЗВОНОК» ============ -->
 <div class="modal" id="callback">
   <div class="modal__back" data-close></div>
   <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="cbTitle">
     <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
-    <h2 id="cbTitle" style="font-size:26px">Обратный звонок</h2>
-    <p style="color:var(--ink-2);font-size:15px;margin-top:12px">Короткая подпись: когда перезвонят.</p>
+    <h2 id="cbTitle">Обратный звонок</h2>
+    <p>Короткая подпись: в какой срок перезвонят.</p>
     <form class="mform" onsubmit="return false">
       <input class="mfield" placeholder="Имя">
       <input class="mfield" placeholder="Телефон">
@@ -582,13 +758,32 @@
     hdr.classList.toggle('is-scrolled', window.scrollY > 120);
   }, {passive:true});
 
+  var burger = document.getElementById('burger');
+  var mnav = document.getElementById('mnav');
+  burger.addEventListener('click', function(){
+    var open = mnav.classList.toggle('is-open');
+    burger.classList.toggle('is-on', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+  mnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mnav.classList.remove('is-open');
+      burger.classList.remove('is-on');
+      burger.setAttribute('aria-expanded', false);
+    });
+  });
+
   var modal = document.getElementById('callback');
   function setModal(open){
     modal.classList.toggle('is-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   }
   document.querySelectorAll('[data-open]').forEach(function(el){
-    el.addEventListener('click', function(){ setModal(true); });
+    el.addEventListener('click', function(){
+      mnav.classList.remove('is-open');
+      burger.classList.remove('is-on');
+      setModal(true);
+    });
   });
   document.querySelectorAll('[data-close]').forEach(function(el){
     el.addEventListener('click', function(){ setModal(false); });
