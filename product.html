@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simkin.ru — прототип страницы «Подбор и организация рабочих мест»</title>
+<title>Simkin.ru — прототип карточки авторской разработки</title>
 <script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@
       <div class="navitem"><a href="index.html#articles">Полезные статьи</a></div>
     </nav>
 
-    <div class="hdr__cta"><a href="#request" class="btn btn--sm btn--fill btn--plain">Обсудить задачу</a></div>
+    <div class="hdr__cta"><a href="course.html" class="btn btn--sm btn--fill btn--plain">Пройти курс</a></div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
   </div>
 
@@ -100,9 +100,11 @@
   <div class="wrap crumbs__in">
     <a href="index.html">Главная</a>
     <span>/</span>
-    <a href="company.html">Для компаний</a>
+    <a href="self.html">Для себя</a>
     <span>/</span>
-    <span>Подбор и организация рабочих мест</span>
+    <a href="products.html">Авторские разработки</a>
+    <span>/</span>
+    <span>Название разработки</span>
   </div>
 </nav>
 
@@ -111,145 +113,243 @@
   <div class="wrap hero__inner">
     <div class="hero__grid">
       <div>
-        <span class="eyebrow" data-rv>Для компаний</span>
-        <h1 data-rv style="--d:.06s">Заголовок первого экрана</h1>
-        <p class="lead" data-rv style="--d:.12s">Подбор и организация рабочих мест для сотрудников компании.</p>
+        <span class="eyebrow" data-rv>Авторская разработка</span>
+        <h1 data-rv style="--d:.06s">Название разработки</h1>
+        <p class="lead" data-rv style="--d:.12s">Одна строка о назначении разработки.</p>
         <div class="btns" data-rv style="--d:.18s">
-          <a href="#request" class="btn btn--fill">Обсудить задачу</a>
+          <a href="#request" class="btn btn--fill">Оставить заявку</a>
         </div>
       </div>
-      <div class="ph ph--lg hero__ph" data-rv style="--d:.24s"><span>Фотография</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 2. КОГДА НУЖНА ОРГАНИЗАЦИЯ РАБОЧИХ МЕСТ ============ -->
-<section class="sec sec--alt" id="when">
-  <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Когда нужна <span class="soft">организация рабочих мест</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
-    </div>
-    <div class="panel" data-rv style="--d:.06s">
-      <div class="cells cells--4">
-        <div class="cell">
-          <div class="icon"></div>
-          <p>Ситуация, при которой нужна организация рабочих мест — одна строка.</p>
-        </div>
-        <div class="cell">
-          <div class="icon"></div>
-          <p>Ситуация, при которой нужна организация рабочих мест — одна строка.</p>
-        </div>
-        <div class="cell">
-          <div class="icon"></div>
-          <p>Ситуация, при которой нужна организация рабочих мест — одна строка.</p>
-        </div>
-        <div class="cell">
-          <div class="icon"></div>
-          <p>Ситуация, при которой нужна организация рабочих мест — одна строка.</p>
+      <div class="gallery" data-gallery data-rv style="--d:.24s">
+        <div class="ph ph--lg gallery__main"><span>Фотография 1</span></div>
+        <div class="gallery__thumbs">
+          <button type="button" class="is-on" aria-label="Фотография 1"><div class="ph"></div></button>
+          <button type="button" aria-label="Фотография 2"><div class="ph"></div></button>
+          <button type="button" aria-label="Фотография 3"><div class="ph"></div></button>
+          <button type="button" aria-label="Фотография 4"><div class="ph"></div></button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 3. ЧТО ВХОДИТ В РАБОТУ ============ -->
-<section class="sec" id="scope">
+<!-- ============ БЛОК 2. КАКУЮ ПРОБЛЕМУ РЕШАЕТ ============ -->
+<section class="sec sec--alt" id="problem">
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
-      <h2>Что входит <span class="soft">в работу</span></h2>
+      <h2>Какую проблему <span class="soft">решает</span></h2>
       <p>Короткий поясняющий абзац к блоку.</p>
     </div>
     <div class="panel" data-rv style="--d:.06s">
       <div class="cells cells--4">
         <div class="cell">
           <span class="idx">01</span>
-          <h3>Аудит текущих мест</h3>
-          <p>Две строки текста с коротким описанием этой части работы.</p>
+          <div class="icon"></div>
+          <p>Пункт о проблеме, которую решает разработка.</p>
         </div>
         <div class="cell">
           <span class="idx">02</span>
-          <h3>Подбор мебели и оборудования</h3>
-          <p>Две строки текста с коротким описанием этой части работы.</p>
+          <div class="icon"></div>
+          <p>Пункт о проблеме, которую решает разработка.</p>
         </div>
         <div class="cell">
           <span class="idx">03</span>
-          <h3>План закупки</h3>
-          <p>Две строки текста с коротким описанием этой части работы.</p>
+          <div class="icon"></div>
+          <p>Пункт о проблеме, которую решает разработка.</p>
         </div>
         <div class="cell">
           <span class="idx">04</span>
-          <h3>Установка и настройка</h3>
-          <p>Две строки текста с коротким описанием этой части работы.</p>
+          <div class="icon"></div>
+          <p>Пункт о проблеме, которую решает разработка.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 4. КАК ПРОХОДИТ ============ -->
-<section class="sec sec--alt" id="flow">
+<!-- ============ БЛОК 3. ДЛЯ КОГО ПРЕДНАЗНАЧЕНА ============ -->
+<section class="sec" id="audience">
+  <div class="wrap sec__inner">
+    <div class="gets">
+      <div data-rv>
+        <h2>Для кого <span class="soft">предназначена</span></h2>
+      </div>
+      <ul data-rv style="--d:.08s">
+        <li>Для кого предназначена — пункт списка.</li>
+        <li>Для кого предназначена — пункт списка.</li>
+        <li>Для кого предназначена — пункт списка.</li>
+        <li>Для кого предназначена — пункт списка.</li>
+        <li>Для кого предназначена — пункт списка.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4. КАК РАБОТАЕТ ============ -->
+<section class="sec sec--alt" id="how">
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
-      <h2>Как <span class="soft">проходит</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
+      <h2>Как <span class="soft">работает</span></h2>
+      <p>Схема или чертёж с пояснениями.</p>
     </div>
-    <div class="panel" data-rv style="--d:.06s">
-      <div class="flow">
-        <div class="flow__step">
-          <div class="flow__n">1</div>
-          <h3>Название этапа</h3>
-          <p>Одна строка об этапе.</p>
-          <div class="flow__when">Срок: 0 дней</div>
-        </div>
-        <div class="flow__step">
-          <div class="flow__n">2</div>
-          <h3>Название этапа</h3>
-          <p>Одна строка об этапе.</p>
-          <div class="flow__when">Срок: 0 дней</div>
-        </div>
-        <div class="flow__step">
-          <div class="flow__n">3</div>
-          <h3>Название этапа</h3>
-          <p>Одна строка об этапе.</p>
-          <div class="flow__when">Срок: 0 дней</div>
-        </div>
-        <div class="flow__step">
-          <div class="flow__n">4</div>
-          <h3>Название этапа</h3>
-          <p>Одна строка об этапе.</p>
-          <div class="flow__when">Срок: 0 дней</div>
-        </div>
+    <div class="scheme">
+      <div class="ph ph--lg scheme__img" data-rv>
+        <span>Схема или чертёж</span>
+        <span class="scheme__pin" style="left:22%;top:30%">1</span>
+        <span class="scheme__pin" style="left:58%;top:22%">2</span>
+        <span class="scheme__pin" style="left:72%;top:62%">3</span>
+        <span class="scheme__pin" style="left:34%;top:70%">4</span>
+      </div>
+      <div data-rv style="--d:.08s">
+        <ol class="scheme__legend">
+          <li>Пояснение к элементу конструкции.</li>
+          <li>Пояснение к элементу конструкции.</li>
+          <li>Пояснение к элементу конструкции.</li>
+          <li>Пояснение к элементу конструкции.</li>
+        </ol>
+        <p class="scheme__txt">Текст блока: как устроена разработка и за счёт чего она работает.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 5. СВЯЗЬ С ДРУГИМИ УСЛУГАМИ ============ -->
-<section class="sec" id="related">
+<!-- ============ БЛОК 5. ПОЧЕМУ КОНСТРУКЦИЯ ИМЕННО ТАКАЯ ============ -->
+<section class="sec" id="design">
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
-      <h2>Связь <span class="soft">с другими услугами</span></h2>
+      <h2>Почему конструкция <span class="soft">именно такая</span></h2>
       <p>Короткий поясняющий абзац к блоку.</p>
     </div>
-    <div class="grid-2">
-      <a href="audit.html" class="card" data-rv>
-        <div class="icon sq"></div>
-        <h3>Аудит и консалтинг</h3>
-        <p>Одна строка о том, чем эта услуга дополняет подбор рабочих мест.</p>
-        <span class="link">Перейти</span>
-      </a>
-      <a href="industrial.html" class="card" data-rv style="--d:.08s">
-        <div class="icon sq"></div>
-        <h3>Промышленная эргономика</h3>
-        <p>Одна строка о том, чем эта услуга дополняет подбор рабочих мест.</p>
-        <span class="link">Перейти</span>
-      </a>
+    <div class="rules">
+      <div class="rule" data-rv style="--d:.0s">
+        <div class="ph"><span>Изображение</span></div>
+        <p>Подпись к конструктивному решению.</p>
+      </div>
+      <div class="rule" data-rv style="--d:.1s">
+        <div class="ph"><span>Изображение</span></div>
+        <p>Подпись к конструктивному решению.</p>
+      </div>
+      <div class="rule" data-rv style="--d:.2s">
+        <div class="ph"><span>Изображение</span></div>
+        <p>Подпись к конструктивному решению.</p>
+      </div>
+      <div class="rule" data-rv style="--d:.3s">
+        <div class="ph"><span>Изображение</span></div>
+        <p>Подпись к конструктивному решению.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 6. ФОРМА ЗАЯВКИ ============ -->
+<!-- ============ БЛОК 6. ОГРАНИЧЕНИЯ ============ -->
+<section class="sec sec--alt" id="limits">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Ограничения</h2>
+      <p>Кому и в каких случаях разработка не подходит.</p>
+    </div>
+    <div class="limits" data-rv style="--d:.06s">
+      <div class="limits__col" style="background:var(--paper)">
+        <h3>Кому не подходит</h3>
+        <ul>
+            <li>Кому не подходит — пункт списка.</li>
+            <li>Кому не подходит — пункт списка.</li>
+            <li>Кому не подходит — пункт списка.</li>
+        </ul>
+      </div>
+      <div class="limits__col" style="background:var(--paper)">
+        <h3>Когда не подходит</h3>
+        <ul>
+            <li>Когда не подходит — пункт списка.</li>
+            <li>Когда не подходит — пункт списка.</li>
+            <li>Когда не подходит — пункт списка.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 7. ФОТО И ВИДЕО ============ -->
+<section class="sec" id="media">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Фото <span class="soft">и видео</span></h2>
+      <p>Галерея фотографий и видео использования.</p>
+    </div>
+    <div class="demo" style="padding:16px" data-rv>
+      <div class="demo__ph" data-open="usevideo" role="button" tabindex="0" aria-label="Смотреть видео использования" style="aspect-ratio:21/9">
+        <div class="demo__play"></div>
+        <div class="demo__time">Видео использования</div>
+      </div>
+    </div>
+    <div class="grid-3" data-rv style="margin-top:16px;--d:.06s">
+        <div class="ph"><span>Фотография</span></div>
+        <div class="ph"><span>Фотография</span></div>
+        <div class="ph"><span>Фотография</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 8. АВТОРСТВО И ПАТЕНТЫ ============ -->
+<section class="sec sec--alt" id="patent">
+  <div class="wrap sec__inner">
+    <div class="patent" data-rv>
+      <div>
+        <h2>Авторство <span class="soft">и патенты</span></h2>
+        <p class="patent__txt" style="margin-top:28px">Текст блока: об авторстве и патентном статусе этой разработки.</p>
+      </div>
+      <div class="ph patent__doc"><span>Скан документа</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 9. ХАРАКТЕРИСТИКИ ============ -->
+<section class="sec" id="specs">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Характеристики</h2>
+      <p>Размеры, материалы, комплектация и вес.</p>
+    </div>
+    <div class="specs" data-rv style="--d:.06s">
+        <div class="specs__row"><div class="specs__k">Размеры</div><div class="specs__v">000 × 000 × 000 мм</div></div>
+        <div class="specs__row"><div class="specs__k">Материалы</div><div class="specs__v">Материалы разработки</div></div>
+        <div class="specs__row"><div class="specs__k">Комплектация</div><div class="specs__v">Что входит в комплект</div></div>
+        <div class="specs__row"><div class="specs__k">Вес</div><div class="specs__v">0,0 кг</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 10. ПОХОЖИЕ РЕШЕНИЯ И СТАТЬИ ============ -->
+<section class="sec sec--alt" id="related">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Похожие решения <span class="soft">и статьи</span></h2>
+      <p>Короткий поясняющий абзац к блоку.</p>
+    </div>
+    <div class="pcards">
+        <a href="#" class="pcard" data-rv style="--d:.0s">
+          <div class="ph"><span>Фотография</span></div>
+          <h3>Похожее решение</h3>
+          <p>Одна строка.</p>
+          <span class="link">Перейти</span>
+        </a>
+        <a href="#" class="pcard" data-rv style="--d:.1s">
+          <div class="ph"><span>Фотография</span></div>
+          <h3>Похожее решение</h3>
+          <p>Одна строка.</p>
+          <span class="link">Перейти</span>
+        </a>
+        <a href="#" class="pcard" data-rv style="--d:.2s">
+          <div class="ph"><span>Фотография</span></div>
+          <h3>Статья по теме</h3>
+          <p>Одна строка.</p>
+          <span class="link">Перейти</span>
+        </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 11. ФОРМА ЗАЯВКИ ============ -->
 <section class="sec" id="request">
   <div class="wrap sec__inner">
     <div class="band" data-rv>
@@ -259,10 +359,9 @@
       <form class="bigform" onsubmit="return false" style="margin-top:44px">
         <input class="field" placeholder="Имя">
         <input class="field" placeholder="Телефон">
-        <input class="field" placeholder="Компания">
-        <input class="field" placeholder="Число рабочих мест">
+        <textarea class="field field--full" placeholder="Комментарий"></textarea>
         <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
-        <button class="btn btn--light">Обсудить задачу</button>
+        <button class="btn btn--light">Оставить заявку</button>
       </form>
     </div>
   </div>
@@ -337,6 +436,15 @@
     </div>
   </div>
 </footer>
+
+<!-- ============ ВСПЛЫВАЮЩЕЕ ОКНО: ВИДЕО ИСПОЛЬЗОВАНИЯ ============ -->
+<div class="modal modal--video" id="usevideo">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-label="Видео использования">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <div class="vid"><span>Видео использования разработки</span></div>
+  </div>
+</div>
 
 <!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБРАТНЫЙ ЗВОНОК» ============ -->
 <div class="modal" id="callback">

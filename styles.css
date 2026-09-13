@@ -595,6 +595,86 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 .pcard p{font-size:14.5px;color:var(--ink-2);margin-top:9px}
 .pcard .link{margin-top:auto;padding-top:24px;align-self:flex-start}
 
+/* статус разработки на фото карточки */
+.pcard__media{position:relative;margin-bottom:24px}
+.pcard__media .ph{margin-bottom:0}
+.status{
+  display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+  background:var(--paper);border-radius:100px;padding:7px 14px;
+  font-size:11.5px;font-weight:750;color:var(--ink);
+}
+.pcard__media .status{position:absolute;left:14px;top:14px;z-index:2}
+/* три статуса различимы без цвета: заполненная точка, кольцо, серая точка */
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink);flex:0 0 auto}
+.status--proto::before{background:transparent;box-shadow:inset 0 0 0 1.6px var(--ink)}
+.status--patent::before{background:var(--ink-3)}
+.status--empty::before{background:var(--line)}
+.statuses{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.statuses .status{background:var(--soft)}
+
+/* ================= ГАЛЕРЕЯ ================= */
+.gallery{display:grid;gap:10px}
+.gallery__main{aspect-ratio:4/3.4}
+.gallery__thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gallery__thumbs button{
+  padding:0;border:0;background:none;cursor:pointer;border-radius:var(--r-sm);
+  opacity:.5;transition:opacity .2s ease,box-shadow .2s ease;
+}
+.gallery__thumbs button:hover{opacity:.8}
+.gallery__thumbs button.is-on{opacity:1;box-shadow:0 0 0 2px var(--ink)}
+.gallery__thumbs .ph{aspect-ratio:1;border-radius:var(--r-sm)}
+.gallery__thumbs .ph::after{opacity:.5}
+
+/* ================= СХЕМА С ВЫНОСКАМИ ================= */
+.scheme{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center}
+.scheme__img{position:relative;aspect-ratio:4/3.3}
+.scheme__pin{
+  position:absolute;z-index:2;width:34px;height:34px;border-radius:50%;
+  background:var(--ink);color:#fff;display:grid;place-items:center;
+  font-size:13px;font-weight:800;box-shadow:0 0 0 6px rgba(255,255,255,.75);
+}
+.scheme__legend{list-style:none;counter-reset:s}
+.scheme__legend li{
+  counter-increment:s;display:flex;gap:16px;align-items:flex-start;
+  padding:15px 0;border-bottom:1px solid var(--line-2);font-size:15.5px;color:var(--ink-2);
+}
+.scheme__legend li:first-child{border-top:1px solid var(--line-2)}
+.scheme__legend li::before{
+  content:counter(s);flex:0 0 auto;width:28px;height:28px;border-radius:50%;
+  background:var(--ink);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800;
+}
+.scheme__txt{margin-top:26px;font-size:16px;color:var(--ink-2)}
+
+/* ================= ОГРАНИЧЕНИЯ ================= */
+.limits{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.limits__col{background:var(--soft);border-radius:var(--r-lg);padding:40px 38px}
+.limits__col h3{font-size:20px;margin-bottom:18px}
+.limits__col ul{list-style:none}
+.limits__col li{
+  padding:14px 0 14px 28px;position:relative;font-size:15.5px;color:var(--ink-2);
+  border-bottom:1px solid var(--line-2);
+}
+.limits__col li:last-child{border-bottom:0}
+.limits__col li::before{content:"–";position:absolute;left:5px;color:var(--ink-3);font-weight:700}
+
+/* ================= ХАРАКТЕРИСТИКИ ================= */
+.specs{background:var(--soft);border-radius:var(--r-lg);padding:12px 40px}
+.specs__row{
+  display:grid;grid-template-columns:260px 1fr;gap:32px;align-items:baseline;
+  padding:22px 0;border-bottom:1px solid var(--line-2);
+}
+.specs__row:last-child{border-bottom:0}
+.specs__k{font-size:14px;color:var(--ink-3);font-weight:700}
+.specs__v{font-size:16.5px;color:var(--ink);font-weight:550}
+
+/* ================= АВТОРСТВО И ПАТЕНТЫ ================= */
+.patent{display:grid;grid-template-columns:1.25fr .75fr;gap:72px;align-items:center}
+.patent__txt{font-size:18px;line-height:1.55;color:var(--ink-2)}
+.patent__doc{aspect-ratio:1/1.414}
+
+/* форма с двумя кнопками */
+.bigform .actions{grid-column:span 2;margin-top:6px}
+
 /* ================= ПРАВИЛА НАСТРОЙКИ ================= */
 .rules{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .rule .ph{aspect-ratio:4/3;margin-bottom:20px}
@@ -822,6 +902,9 @@ footer{background:var(--paper);padding-top:20px}
   .expert{grid-template-columns:1fr;gap:38px}
   .expert__ph{aspect-ratio:16/11}
   .results,.research__grid,.price,.cases,.rules{grid-template-columns:repeat(2,1fr)}
+  .scheme,.patent{grid-template-columns:1fr;gap:36px}
+  .patent__doc{max-width:320px}
+  .specs__row{grid-template-columns:200px 1fr}
   .letters{grid-template-columns:repeat(3,1fr)}
   .demo__top,.corp{grid-template-columns:1fr;gap:36px}
   .demo__list{grid-template-columns:repeat(2,1fr);margin-top:40px;padding-top:32px}
@@ -881,7 +964,12 @@ footer{background:var(--paper);padding-top:20px}
   .acc__body,.acc--plain .acc__body{padding:0 22px 24px 22px}
   .review{padding:28px 24px}
   .reviews{grid-template-columns:1fr}
-  .formats,.formats--5,.price,.compare,.tariffs,.cases,.pcards,.rules{grid-template-columns:1fr}
+  .formats,.formats--5,.price,.compare,.tariffs,.cases,.pcards,.rules,.limits{grid-template-columns:1fr}
+  .limits__col{padding:28px 24px}
+  .specs{padding:6px 22px}
+  .specs__row{grid-template-columns:1fr;gap:4px;padding:16px 0}
+  .gallery__thumbs{gap:8px}
+  .bigform .actions{grid-column:span 1}
   .actions .btn{width:100%}
   .letters{grid-template-columns:repeat(2,1fr);gap:12px}
   .download{padding:28px 24px;gap:26px}

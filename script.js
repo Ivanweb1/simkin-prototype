@@ -52,6 +52,17 @@ if (seg) {
   });
 }
 
+document.querySelectorAll('[data-gallery]').forEach(function(g){
+  var label = g.querySelector('.gallery__main span');
+  var thumbs = g.querySelectorAll('.gallery__thumbs button');
+  thumbs.forEach(function(b, i){
+    b.addEventListener('click', function(){
+      thumbs.forEach(function(x){ x.classList.toggle('is-on', x === b); });
+      if (label) label.textContent = 'Фотография ' + (i + 1);
+    });
+  });
+});
+
 var reveals = document.querySelectorAll('[data-rv]');
 function showAll(){
   reveals.forEach(function(el){ el.classList.add('is-in'); });

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simkin.ru — прототип страницы «Подбор и организация рабочих мест»</title>
+<title>Simkin.ru — прототип страницы «Авторские разработки»</title>
 <script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@
       <div class="navitem"><a href="index.html#articles">Полезные статьи</a></div>
     </nav>
 
-    <div class="hdr__cta"><a href="#request" class="btn btn--sm btn--fill btn--plain">Обсудить задачу</a></div>
+    <div class="hdr__cta"><a href="course.html" class="btn btn--sm btn--fill btn--plain">Пройти курс</a></div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
   </div>
 
@@ -100,9 +100,9 @@
   <div class="wrap crumbs__in">
     <a href="index.html">Главная</a>
     <span>/</span>
-    <a href="company.html">Для компаний</a>
+    <a href="self.html">Для себя</a>
     <span>/</span>
-    <span>Подбор и организация рабочих мест</span>
+    <span>Авторские разработки</span>
   </div>
 </nav>
 
@@ -111,145 +111,98 @@
   <div class="wrap hero__inner">
     <div class="hero__grid">
       <div>
-        <span class="eyebrow" data-rv>Для компаний</span>
+        <span class="eyebrow" data-rv>Авторские разработки</span>
         <h1 data-rv style="--d:.06s">Заголовок первого экрана</h1>
-        <p class="lead" data-rv style="--d:.12s">Подбор и организация рабочих мест для сотрудников компании.</p>
-        <div class="btns" data-rv style="--d:.18s">
-          <a href="#request" class="btn btn--fill">Обсудить задачу</a>
-        </div>
+        <p class="lead" data-rv style="--d:.12s">Подзаголовок: короткое объяснение, что это за разработки и чем они отличаются от серийных изделий.</p>
       </div>
-      <div class="ph ph--lg hero__ph" data-rv style="--d:.24s"><span>Фотография</span></div>
+      <div class="ph ph--lg hero__ph" data-rv style="--d:.18s"><span>Фотография разработок</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 2. КОГДА НУЖНА ОРГАНИЗАЦИЯ РАБОЧИХ МЕСТ ============ -->
-<section class="sec sec--alt" id="when">
+<!-- ============ БЛОК 2. ПОЧЕМУ ПОЯВИЛИСЬ СВОИ РАЗРАБОТКИ ============ -->
+<section class="sec sec--alt" id="why">
+  <div class="wrap sec__inner">
+    <div class="patent" data-rv>
+      <div>
+        <h2>Почему появились <span class="soft">свои разработки</span></h2>
+        <p class="patent__txt" style="margin-top:28px">Текст блока: в нескольких строках о том, какой задачи не решали существующие изделия и почему пришлось делать своё.</p>
+      </div>
+      <div class="ph ph--lg" style="aspect-ratio:4/3.6"><span>Иллюстрация</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3. СПИСОК РАЗРАБОТОК ============ -->
+<section class="sec" id="list">
+  <div class="wrap sec__inner">
+    <div class="head head--split" style="margin-bottom:40px" data-rv>
+      <h2>Список <span class="soft">разработок</span></h2>
+      <p>У каждой разработки указан статус. Какой именно — уточняется у заказчика.</p>
+    </div>
+    <div class="statuses" data-rv>
+      <span class="status">Серийное производство</span>
+      <span class="status status--proto">Опытный образец</span>
+      <span class="status status--patent">Патентная заявка</span>
+    </div>
+    <div class="grid-4">
+        <a href="product.html" class="pcard" data-rv style="--d:.0s">
+          <div class="pcard__media">
+            <div class="ph"><span>Фотография</span></div>
+            <span class="status status--empty">Статус разработки</span>
+          </div>
+          <h3>Эргономичный стол</h3>
+          <p>Какую задачу решает — одна строка.</p>
+          <span class="link">Подробнее</span>
+        </a>
+        <a href="product.html" class="pcard" data-rv style="--d:.1s">
+          <div class="pcard__media">
+            <div class="ph"><span>Фотография</span></div>
+            <span class="status status--empty">Статус разработки</span>
+          </div>
+          <h3>Ортопедическая подушка</h3>
+          <p>Какую задачу решает — одна строка.</p>
+          <span class="link">Подробнее</span>
+        </a>
+        <a href="product.html" class="pcard" data-rv style="--d:.2s">
+          <div class="pcard__media">
+            <div class="ph"><span>Фотография</span></div>
+            <span class="status status--empty">Статус разработки</span>
+          </div>
+          <h3>Эргономические аксессуары</h3>
+          <p>Какую задачу решает — одна строка.</p>
+          <span class="link">Подробнее</span>
+        </a>
+        <a href="product.html" class="pcard" data-rv style="--d:.3s">
+          <div class="pcard__media">
+            <div class="ph"><span>Фотография</span></div>
+            <span class="status status--empty">Статус разработки</span>
+          </div>
+          <h3>Отдельная разработка</h3>
+          <p>Какую задачу решает — одна строка.</p>
+          <span class="link">Подробнее</span>
+        </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4. АВТОРСТВО И ПАТЕНТЫ ============ -->
+<section class="sec sec--alt" id="patents">
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
-      <h2>Когда нужна <span class="soft">организация рабочих мест</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
+      <h2>Авторство <span class="soft">и патенты</span></h2>
+      <p>Текст блока: об авторстве разработок и патентной защите.</p>
     </div>
-    <div class="panel" data-rv style="--d:.06s">
-      <div class="cells cells--4">
-        <div class="cell">
-          <div class="icon"></div>
-          <p>Ситуация, при которой нужна организация рабочих мест — одна строка.</p>
-        </div>
-        <div class="cell">
-          <div class="icon"></div>
-          <p>Ситуация, при которой нужна организация рабочих мест — одна строка.</p>
-        </div>
-        <div class="cell">
-          <div class="icon"></div>
-          <p>Ситуация, при которой нужна организация рабочих мест — одна строка.</p>
-        </div>
-        <div class="cell">
-          <div class="icon"></div>
-          <p>Ситуация, при которой нужна организация рабочих мест — одна строка.</p>
-        </div>
-      </div>
+    <div class="letters" data-rv style="--d:.06s">
+        <div class="ph"><span>Документ</span></div>
+        <div class="ph"><span>Документ</span></div>
+        <div class="ph"><span>Документ</span></div>
+        <div class="ph"><span>Документ</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 3. ЧТО ВХОДИТ В РАБОТУ ============ -->
-<section class="sec" id="scope">
-  <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Что входит <span class="soft">в работу</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
-    </div>
-    <div class="panel" data-rv style="--d:.06s">
-      <div class="cells cells--4">
-        <div class="cell">
-          <span class="idx">01</span>
-          <h3>Аудит текущих мест</h3>
-          <p>Две строки текста с коротким описанием этой части работы.</p>
-        </div>
-        <div class="cell">
-          <span class="idx">02</span>
-          <h3>Подбор мебели и оборудования</h3>
-          <p>Две строки текста с коротким описанием этой части работы.</p>
-        </div>
-        <div class="cell">
-          <span class="idx">03</span>
-          <h3>План закупки</h3>
-          <p>Две строки текста с коротким описанием этой части работы.</p>
-        </div>
-        <div class="cell">
-          <span class="idx">04</span>
-          <h3>Установка и настройка</h3>
-          <p>Две строки текста с коротким описанием этой части работы.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 4. КАК ПРОХОДИТ ============ -->
-<section class="sec sec--alt" id="flow">
-  <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Как <span class="soft">проходит</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
-    </div>
-    <div class="panel" data-rv style="--d:.06s">
-      <div class="flow">
-        <div class="flow__step">
-          <div class="flow__n">1</div>
-          <h3>Название этапа</h3>
-          <p>Одна строка об этапе.</p>
-          <div class="flow__when">Срок: 0 дней</div>
-        </div>
-        <div class="flow__step">
-          <div class="flow__n">2</div>
-          <h3>Название этапа</h3>
-          <p>Одна строка об этапе.</p>
-          <div class="flow__when">Срок: 0 дней</div>
-        </div>
-        <div class="flow__step">
-          <div class="flow__n">3</div>
-          <h3>Название этапа</h3>
-          <p>Одна строка об этапе.</p>
-          <div class="flow__when">Срок: 0 дней</div>
-        </div>
-        <div class="flow__step">
-          <div class="flow__n">4</div>
-          <h3>Название этапа</h3>
-          <p>Одна строка об этапе.</p>
-          <div class="flow__when">Срок: 0 дней</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 5. СВЯЗЬ С ДРУГИМИ УСЛУГАМИ ============ -->
-<section class="sec" id="related">
-  <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Связь <span class="soft">с другими услугами</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
-    </div>
-    <div class="grid-2">
-      <a href="audit.html" class="card" data-rv>
-        <div class="icon sq"></div>
-        <h3>Аудит и консалтинг</h3>
-        <p>Одна строка о том, чем эта услуга дополняет подбор рабочих мест.</p>
-        <span class="link">Перейти</span>
-      </a>
-      <a href="industrial.html" class="card" data-rv style="--d:.08s">
-        <div class="icon sq"></div>
-        <h3>Промышленная эргономика</h3>
-        <p>Одна строка о том, чем эта услуга дополняет подбор рабочих мест.</p>
-        <span class="link">Перейти</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 6. ФОРМА ЗАЯВКИ ============ -->
+<!-- ============ БЛОК 5. ФОРМА ЗАЯВКИ ============ -->
 <section class="sec" id="request">
   <div class="wrap sec__inner">
     <div class="band" data-rv>
@@ -259,10 +212,12 @@
       <form class="bigform" onsubmit="return false" style="margin-top:44px">
         <input class="field" placeholder="Имя">
         <input class="field" placeholder="Телефон">
-        <input class="field" placeholder="Компания">
-        <input class="field" placeholder="Число рабочих мест">
+        <textarea class="field field--full" placeholder="Комментарий"></textarea>
         <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
-        <button class="btn btn--light">Обсудить задачу</button>
+        <div class="actions">
+          <button class="btn btn--light">Запросить предложение</button>
+          <button class="btn btn--ghost-dark">Обсудить решение</button>
+        </div>
       </form>
     </div>
   </div>
