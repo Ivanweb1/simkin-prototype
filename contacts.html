@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=21">
+<link rel="stylesheet" href="styles.css?v=22">
 </head>
 <body>
 
@@ -124,50 +124,41 @@
   </div>
 </section>
 
-<!-- ============ БЛОК 3. КУДА ОБРАТИТЬСЯ ПО ТЕМЕ ============ -->
-<section class="sec sec--alt" id="topics">
+<!-- ============ БЛОКИ 3–4. КУДА ОБРАТИТЬСЯ ПО ТЕМЕ + ФОРМА ОБРАЩЕНИЯ ============ -->
+<!-- в структуре это два блока; по решению Ивана объединены: темы слева, форма справа -->
+<section class="sec sec--alt" id="form">
   <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Куда обратиться <span class="soft">по теме</span></h2>
-      <p>Выберите тему — она подставится в форму обращения.</p>
-    </div>
-    <div class="topics topics--4" data-rv style="--d:.06s">
-      <button type="button" data-topic="corp" data-target="contact-topic">Корпоративные программы<span>Выбрать тему →</span></button>
-      <button type="button" data-topic="audit" data-target="contact-topic">Аудит<span>Выбрать тему →</span></button>
-      <button type="button" data-topic="course" data-target="contact-topic">Курс<span>Выбрать тему →</span></button>
-      <button type="button" data-topic="solutions" data-target="contact-topic">Решения<span>Выбрать тему →</span></button>
-    </div>
-  </div>
-</section>
+    <div class="contact-split">
+      <div data-rv>
+        <h2>Куда обратиться <span class="soft">по теме</span></h2>
+        <p class="lead">Выберите тему — она подставится в форму обращения.</p>
+        <div class="topic-list">
+          <button type="button" data-topic="corp" data-target="contact-topic">Корпоративные программы</button>
+          <button type="button" data-topic="audit" data-target="contact-topic">Аудит</button>
+          <button type="button" data-topic="course" data-target="contact-topic">Курс</button>
+          <button type="button" data-topic="solutions" data-target="contact-topic">Решения</button>
+        </div>
+      </div>
 
-<!-- ============ БЛОК 4. ФОРМА ОБРАЩЕНИЯ ============ -->
-<section class="sec" id="form">
-  <div class="wrap sec__inner">
-    <div class="formpage__main" style="max-width:860px;margin:0 auto" data-rv>
-      <h2>Форма <span class="soft">обращения</span></h2>
-      <form class="lform" data-thanks="contacts" style="margin-top:32px">
-        <input class="mfield" placeholder="Имя">
-        <input class="mfield" placeholder="Телефон">
-        <input class="mfield full" type="email" placeholder="Почта">
-        <select class="mfield full" id="contact-topic">
-          <option value="">Тема обращения</option>
-            <option value="corp">Корпоративные программы</option>
-            <option value="audit">Аудит</option>
-            <option value="course">Курс</option>
-            <option value="solutions">Решения</option>
-          <option value="other">Другое</option>
-        </select>
-        <textarea class="mfield full" placeholder="Сообщение"></textarea>
-        <label class="magree"><i></i><span>Согласие на обработку персональных данных</span></label>
-        <button class="btn btn--fill btn--plain">Отправить</button>
-      </form>
+      <div class="formpage__main" data-rv style="--d:.08s">
+        <form class="lform" data-thanks="contacts">
+          <input type="hidden" id="contact-topic" name="topic" value="">
+          <div class="lform__topic">Тема: <b data-topic-label>не выбрана</b></div>
+          <input class="mfield" placeholder="Имя">
+          <input class="mfield" placeholder="Телефон">
+          <input class="mfield full" type="email" placeholder="Почта">
+          <textarea class="mfield full" placeholder="Сообщение"></textarea>
+          <label class="magree"><i></i><span>Согласие на обработку персональных данных</span></label>
+          <button class="btn btn--fill btn--plain">Отправить</button>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ БЛОК 5. ПРО КЛИНИКУ ============ -->
 <section class="sec" id="clinic">
-  <div class="wrap" style="padding-bottom:88px">
+  <div class="wrap" style="padding-top:88px;padding-bottom:88px">
     <div class="clinic-box" data-rv>
       <div>
         <h2>Клиника</h2>
@@ -291,6 +282,6 @@
   </div>
 </div>
 
-<script src="script.js?v=21"></script>
+<script src="script.js?v=22"></script>
 </body>
 </html>

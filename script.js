@@ -119,7 +119,13 @@ document.querySelectorAll('[data-topic]').forEach(function(t){
     if (field) field.value = t.getAttribute('data-topic');
     document.querySelectorAll('[data-topic]').forEach(function(x){ x.classList.toggle('is-on', x === t); });
     var form = field && field.closest('form');
-    if (form) form.scrollIntoView({behavior:'smooth', block:'start'});
+    if (!form) return;
+    var label = form.querySelector('[data-topic-label]');
+    if (label) label.textContent = t.textContent.trim();
+    // форма рядом — не дёргаем страницу; на телефоне она ниже плиток, туда и ведём
+    if (form.getBoundingClientRect().top > window.innerHeight * 0.6) {
+      form.scrollIntoView({behavior:'smooth', block:'start'});
+    }
   });
 });
 
