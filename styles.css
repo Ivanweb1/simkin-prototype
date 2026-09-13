@@ -45,7 +45,8 @@ img{max-width:100%;display:block}
 .ph span{
   position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);
   background:rgba(255,255,255,.92);padding:7px 15px;font-size:11px;color:var(--ink-2);
-  border-radius:100px;letter-spacing:.04em;white-space:nowrap;font-weight:650;
+  border-radius:100px;letter-spacing:.04em;font-weight:650;
+  max-width:calc(100% - 24px);text-align:center;line-height:1.35;
 }
 .ph--lg{border-radius:var(--r-lg)}
 .line{height:8px;background:var(--fill);border-radius:100px;margin-top:10px}
@@ -212,11 +213,11 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 .crumbs a:hover{color:var(--ink)}
 
 /* ================= ПЕРВЫЙ ЭКРАН ================= */
-.hero__inner{padding-top:76px;padding-bottom:96px}
-.hero__top{display:grid;grid-template-columns:1.42fr 1fr;gap:88px;align-items:end;margin-bottom:56px}
-.hero__aside{padding-bottom:6px}
-.hero__aside .btns{margin-top:30px}
-.hero__media{aspect-ratio:23/9;width:100%}
+.hero__inner{padding-top:72px;padding-bottom:104px}
+.hero__grid{display:grid;grid-template-columns:1.06fr .94fr;gap:72px;align-items:center}
+.hero__grid h1{margin-top:24px}
+.hero__grid .lead{margin-top:26px}
+.hero__ph{aspect-ratio:4/3.7;width:100%}
 
 /* ================= ПАНЕЛЬ С ЯЧЕЙКАМИ ================= */
 .panel{background:var(--soft);border-radius:var(--r-lg);padding:10px}
@@ -456,11 +457,16 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 .bigform textarea.field{height:118px;padding:17px 18px;resize:vertical;line-height:1.5;border-radius:var(--r)}
 .bigform .btn{justify-self:start;padding:0 36px}
 
-/* ================= ПРИЗЫВ ПЕРЕД ПОДВАЛОМ ================= */
-.prefoot .band{text-align:center}
-.prefoot .band h2{max-width:17em;margin:0 auto}
-.prefoot .band p{color:#9c9c9c;margin-top:18px}
-.prefoot .btns{justify-content:center}
+/* ================= ПРИЗЫВ ПЕРЕД ПОДВАЛОМ =================
+   намеренно светлый и компактный: рядом с тёмным блоком заявки
+   две одинаковые полосы читались как повтор одного блока */
+.prefoot__bar{
+  background:var(--soft);border-radius:var(--r-lg);padding:44px 52px;
+  display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;
+}
+.prefoot__bar h2{font-size:clamp(22px,2.2vw,30px);max-width:15em}
+.prefoot__bar p{color:var(--ink-2);margin-top:10px;font-size:15.5px;max-width:34em}
+.prefoot__bar .btn{flex:0 0 auto}
 
 /* ================= ПОДВАЛ ================= */
 footer{background:var(--paper);padding-top:20px}
@@ -538,8 +544,8 @@ footer{background:var(--paper);padding-top:20px}
 }
 @media (max-width:1040px){
   .grid-2{grid-template-columns:1fr}
-  .hero__top{grid-template-columns:1fr;gap:32px;align-items:start}
-  .hero__media{aspect-ratio:16/9}
+  .hero__grid{grid-template-columns:1fr;gap:36px;align-items:start}
+  .hero__ph{aspect-ratio:16/10}
   .head--split{grid-template-columns:1fr;gap:26px;align-items:start}
   .expert{grid-template-columns:1fr;gap:38px}
   .expert__ph{aspect-ratio:16/11}
@@ -557,8 +563,7 @@ footer{background:var(--paper);padding-top:20px}
   .sec__inner{padding-top:64px;padding-bottom:64px}
   .sec__inner--tight{padding-top:56px;padding-bottom:56px}
   .hero__inner{padding-top:44px;padding-bottom:56px}
-  .hero__top{margin-bottom:34px}
-  .hero__media{aspect-ratio:4/3}
+  .hero__ph{aspect-ratio:4/3}
   .lead{font-size:16.5px}
   .head{margin-bottom:34px}
   .topbar{display:none}
@@ -566,7 +571,7 @@ footer{background:var(--paper);padding-top:20px}
   .hdr__cta .btn{height:42px;padding:0 17px;font-size:13px}
   .logo__mark{width:34px;height:34px}
   .logo__txt b{font-size:17px}
-  .hero .lead br{display:none}
+  .herosec .lead br,.hero .lead br{display:none}
   .grid-4,.grid-3,.cells--4,.cells--2,.roles,.results,.research__grid,.flow,.rail{grid-template-columns:1fr}
   .rail{gap:16px}
   .rail__i{flex-direction:row;text-align:left;gap:16px;background:var(--paper);border-radius:var(--r);padding:16px 18px}
@@ -595,6 +600,8 @@ footer{background:var(--paper);padding-top:20px}
   .acc__body,.acc--plain .acc__body{padding:0 22px 24px 22px}
   .review{padding:28px 24px}
   .reviews{grid-template-columns:1fr}
+  .prefoot__bar{padding:30px 24px;gap:24px}
+  .prefoot__bar .btn{width:100%}
   .foot{grid-template-columns:1fr;gap:28px;padding-top:48px;padding-bottom:28px}
   .foot__about{max-width:none}
   .bigform{grid-template-columns:1fr}
