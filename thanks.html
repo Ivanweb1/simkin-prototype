@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simkin.ru — прототип страницы «Промышленная эргономика»</title>
+<title>Simkin.ru — прототип страницы «Спасибо за заявку»</title>
 <script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,156 +95,64 @@
   </nav>
 </header>
 
-<!-- ============ ОБЩЕЕ: СТРОКА НАВИГАЦИИ ============ -->
-<nav class="crumbs">
-  <div class="wrap crumbs__in">
-    <a href="index.html">Главная</a>
-    <span>/</span>
-    <a href="company.html">Для компаний</a>
-    <span>/</span>
-    <span>Промышленная эргономика</span>
-  </div>
-</nav>
-
-<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
-<section class="sec hero" id="hero">
-  <div class="wrap hero__inner">
-    <div class="hero__grid">
-      <div>
-        <span class="eyebrow" data-rv>Промышленная эргономика</span>
-        <h1 data-rv style="--d:.06s">Заголовок первого экрана</h1>
-        <p class="lead" data-rv style="--d:.12s">Очное обучение эргономике на производстве.</p>
-        <div class="btns" data-rv style="--d:.18s">
-          <a href="#request" class="btn btn--fill">Обсудить задачу</a>
-        </div>
-      </div>
-      <div class="ph ph--lg hero__ph" data-rv style="--d:.24s"><span>Фотография</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 2. КОМУ ПОДХОДИТ ============ -->
-<section class="sec sec--alt" id="who">
+<!-- ============ БЛОК 1. ПОДТВЕРЖДЕНИЕ ============ -->
+<section class="sec" id="done">
   <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Кому <span class="soft">подходит</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
-    </div>
-    <div data-rv style="--d:.06s">
-      <div class="group">
-        <span class="eyebrow">Отрасли</span>
-        <div class="industries">
-        <span>Отрасль первая</span>
-        <span>Отрасль вторая</span>
-        <span>Отрасль третья</span>
-        <span>Отрасль четвёртая</span>
-        <span>Отрасль пятая</span>
-        </div>
-      </div>
-      <div class="group">
-        <span class="eyebrow">Целевые группы</span>
-        <div class="industries">
-        <span>Целевая группа первая</span>
-        <span>Целевая группа вторая</span>
-        <span>Целевая группа третья</span>
-        <span>Целевая группа четвёртая</span>
-        </div>
-      </div>
+    <div class="thanks" data-thanks-page data-rv>
+      <div class="thanks__icon"></div>
+      <h1>Заявка отправлена</h1>
+      <p>Когда ответят — одна строка.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 3. КАК УСТРОЕНО ОБУЧЕНИЕ ============ -->
-<section class="sec" id="how">
+<!-- ============ БЛОК 2. ЧТО ПОСМОТРЕТЬ, ПОКА ЖДЁТЕ ============ -->
+<section class="sec sec--alt" id="watch">
+  <div class="wrap sec__inner">
+    <div class="head head--center" data-rv>
+      <h2>Что посмотреть, <span class="soft">пока ждёте</span></h2>
+    </div>
+    <div class="pcards">
+      <a href="article.html" class="pcard" data-rv style="--d:.0s">
+        <div class="ph"><span>Обложка</span></div>
+        <h3>Статья по теме</h3>
+        <p>Одна строка о том, что здесь посмотреть.</p>
+        <span class="link">Перейти</span>
+      </a>
+      <a href="method.html" class="pcard" data-rv style="--d:.1s">
+        <div class="ph"><span>Обложка</span></div>
+        <h3>Метод Симкина</h3>
+        <p>Одна строка о том, что здесь посмотреть.</p>
+        <span class="link">Перейти</span>
+      </a>
+      <a href="solutions.html" class="pcard" data-rv style="--d:.2s">
+        <div class="ph"><span>Обложка</span></div>
+        <h3>Эргономичные решения</h3>
+        <p>Одна строка о том, что здесь посмотреть.</p>
+        <span class="link">Перейти</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3. СРОЧНЫЕ ВОПРОСЫ ============ -->
+<section class="sec" id="urgent">
   <div class="wrap sec__inner--tight sec__inner">
-    <div class="why" data-rv>
-      <h2>Как устроено <span class="soft">обучение</span></h2>
+    <div class="clinic-box" data-rv>
       <div>
-        <p class="why__txt">Теория и практика на реальных рабочих местах. Программа адаптируется под конкретное производство: оборудование, сменность, характер операций.</p>
-        <a href="program.html" class="link link--u">Комплексная корпоративная программа</a>
+        <h2>Срочные <span class="soft" style="color:var(--ink-3)">вопросы</span></h2>
+        <p class="clinic-box__txt">Если вопрос не терпит отлагательства — позвоните или напишите в мессенджер.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 4. ОПЫТ И РЕЗУЛЬТАТЫ ============ -->
-<section class="sec sec--alt" id="results">
-  <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Опыт <span class="soft">и результаты</span></h2>
-      <p>Логотипы, отзывы и благодарственные письма переносятся со старого сайта и актуализируются.</p>
-    </div>
-
-    <div class="logos" data-rv style="--d:.06s">
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-    </div>
-
-    <div class="reviews" style="margin-top:44px">
-      <div class="review" data-rv>
-        <div class="review__mark">«</div>
-        <p class="review__txt">Цитата из отзыва: что было до обучения, что изменилось после и на чём это видно.</p>
-        <div class="review__who">
-          <div class="ph review__ph"></div>
-          <div><b>Имя Фамилия</b><span>Должность, предприятие</span></div>
-        </div>
-      </div>
-      <div class="review" data-rv style="--d:.08s">
-        <div class="review__mark">«</div>
-        <p class="review__txt">Цитата из отзыва: что было до обучения, что изменилось после и на чём это видно.</p>
-        <div class="review__who">
-          <div class="ph review__ph"></div>
-          <div><b>Имя Фамилия</b><span>Должность, предприятие</span></div>
-        </div>
+      <div class="clinic-box__out">
+        <span class="eyebrow">Телефон</span>
+        <b><a href="tel:+70000000000" style="color:inherit;text-decoration:none">+7 (000) 000-00-00</a></b>
+        <div class="messengers"><a href="#">Telegram</a><a href="#">WhatsApp</a><a href="#">MAX</a></div>
       </div>
     </div>
 
-    <div style="margin-top:44px" data-rv>
-      <span class="eyebrow" style="margin-bottom:20px">Благодарственные письма</span>
-      <div class="letters">
-        <div class="ph"><span>Письмо</span></div>
-        <div class="ph"><span>Письмо</span></div>
-        <div class="ph"><span>Письмо</span></div>
-        <div class="ph"><span>Письмо</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 5. ПРОГРАММА ОБУЧЕНИЯ ============ -->
-<section class="sec" id="program">
-  <div class="wrap sec__inner--tight sec__inner">
-    <div class="download" data-rv>
-      <div class="download__in">
-        <div class="download__file"></div>
-        <div>
-          <h3>Программа обучения</h3>
-          <p>Состав и порядок занятий одним файлом.</p>
-        </div>
-      </div>
-      <a href="#" class="btn btn--fill btn--plain">Скачать программу обучения</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 6. ФОРМА ЗАЯВКИ ============ -->
-<section class="sec" id="request">
-  <div class="wrap sec__inner">
-    <div class="band" data-rv>
-      <span class="eyebrow">Заявка</span>
-      <h2 style="margin-top:20px;max-width:15em">Заголовок блока заявки</h2>
-      <p class="band__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
-      <form class="bigform" onsubmit="return false" style="margin-top:44px">
-        <input class="field" placeholder="Имя">
-        <input class="field" placeholder="Телефон">
-        <input class="field" placeholder="Компания">
-        <input class="field" placeholder="Отрасль">
-        <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
-        <button class="btn btn--light">Обсудить задачу</button>
-      </form>
+    <!-- ============ БЛОК 4. КНОПКА «НА ГЛАВНУЮ» ============ -->
+    <div class="btns" style="justify-content:center;margin-top:56px" data-rv>
+      <a href="index.html" class="btn btn--fill btn--plain">На главную</a>
     </div>
   </div>
 </section>

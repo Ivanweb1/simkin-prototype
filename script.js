@@ -98,6 +98,52 @@ if (toc) {
   syncToc();
 }
 
+// переключатель внутри формы: «для себя / для компании» показывает свой набор полей
+document.querySelectorAll('[data-switch]').forEach(function(seg){
+  var form = seg.closest('form');
+  var hidden = form && form.querySelector('input[name="' + seg.getAttribute('data-switch') + '"]');
+  seg.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-val]');
+    if (!b) return;
+    seg.querySelectorAll('button').forEach(function(x){ x.classList.toggle('is-on', x === b); });
+    var val = b.getAttribute('data-val');
+    form.querySelectorAll('[data-show]').forEach(function(el){ el.hidden = el.getAttribute('data-show') !== val; });
+    if (hidden) hidden.value = b.textContent.trim();
+  });
+});
+
+// плитка темы подставляет тему в форму обращения
+document.querySelectorAll('[data-topic]').forEach(function(t){
+  t.addEventListener('click', function(){
+    var field = document.getElementById(t.getAttribute('data-target'));
+    if (field) field.value = t.getAttribute('data-topic');
+    document.querySelectorAll('[data-topic]').forEach(function(x){ x.classList.toggle('is-on', x === t); });
+    var form = field && field.closest('form');
+    if (form) form.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+
+// отправка формы ведёт на «Спасибо»; в адресе только источник, без данных из полей
+document.querySelectorAll('form[data-thanks]').forEach(function(f){
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    location.href = 'thanks.html?from=' + encodeURIComponent(f.getAttribute('data-thanks'));
+  });
+});
+
+// текст «Спасибо» зависит от того, из какой формы пришла заявка
+var thanksBox = document.querySelector('[data-thanks-page]');
+if (thanksBox) {
+  var variants = {
+    discuss: ['Заявка отправлена', 'Свяжемся, чтобы обсудить задачу. Ответим в течение 00 часов.'],
+    course: ['Заявка на курс принята', 'Пришлём подробности о курсе и выбранной версии. Ответим в течение 00 часов.'],
+    contacts: ['Сообщение отправлено', 'Ответим на обращение в течение 00 часов.']
+  };
+  var v = variants[new URLSearchParams(location.search).get('from')] || variants.contacts;
+  thanksBox.querySelector('h1').textContent = v[0];
+  thanksBox.querySelector('p').textContent = v[1];
+}
+
 var reveals = document.querySelectorAll('[data-rv]');
 function showAll(){
   reveals.forEach(function(el){ el.classList.add('is-in'); });

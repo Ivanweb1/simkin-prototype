@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simkin.ru — прототип страницы «Промышленная эргономика»</title>
+<title>Simkin.ru — прототип страницы «Контакты»</title>
 <script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,152 +100,107 @@
   <div class="wrap crumbs__in">
     <a href="index.html">Главная</a>
     <span>/</span>
-    <a href="company.html">Для компаний</a>
-    <span>/</span>
-    <span>Промышленная эргономика</span>
+    <span>Контакты</span>
   </div>
 </nav>
 
-<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
-<section class="sec hero" id="hero">
-  <div class="wrap hero__inner">
-    <div class="hero__grid">
-      <div>
-        <span class="eyebrow" data-rv>Промышленная эргономика</span>
-        <h1 data-rv style="--d:.06s">Заголовок первого экрана</h1>
-        <p class="lead" data-rv style="--d:.12s">Очное обучение эргономике на производстве.</p>
-        <div class="btns" data-rv style="--d:.18s">
-          <a href="#request" class="btn btn--fill">Обсудить задачу</a>
-        </div>
-      </div>
-      <div class="ph ph--lg hero__ph" data-rv style="--d:.24s"><span>Фотография</span></div>
+<!-- ============ БЛОК 1. ШАПКА ============ -->
+<section class="sec" id="head">
+  <div class="wrap page-head">
+    <h1 data-rv>Контакты</h1>
+    <p class="lead" data-rv style="--d:.06s">Одна строка о том, по каким вопросам сюда пишут.</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 2. СПОСОБЫ СВЯЗИ ============ -->
+<section class="sec" id="ways">
+  <div class="wrap" style="padding-bottom:88px">
+    <div class="contacts" data-rv>
+      <div class="contact"><span class="eyebrow">Телефон</span><b><a href="tel:+70000000000">+7 (000) 000-00-00</a></b></div>
+      <div class="contact"><span class="eyebrow">Почта</span><b><a href="mailto:mail@simkin.ru">mail@simkin.ru</a></b></div>
+      <div class="contact"><span class="eyebrow">Мессенджеры</span><div class="messengers"><a href="#">Telegram</a><a href="#">WhatsApp</a><a href="#">MAX</a></div></div>
+      <div class="contact"><span class="eyebrow">Время работы</span><b>Пн–Пт, 00:00–00:00</b></div>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 2. КОМУ ПОДХОДИТ ============ -->
-<section class="sec sec--alt" id="who">
+<!-- ============ БЛОК 3. КУДА ОБРАТИТЬСЯ ПО ТЕМЕ ============ -->
+<section class="sec sec--alt" id="topics">
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
-      <h2>Кому <span class="soft">подходит</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
+      <h2>Куда обратиться <span class="soft">по теме</span></h2>
+      <p>Выберите тему — она подставится в форму обращения.</p>
     </div>
-    <div data-rv style="--d:.06s">
-      <div class="group">
-        <span class="eyebrow">Отрасли</span>
-        <div class="industries">
-        <span>Отрасль первая</span>
-        <span>Отрасль вторая</span>
-        <span>Отрасль третья</span>
-        <span>Отрасль четвёртая</span>
-        <span>Отрасль пятая</span>
-        </div>
-      </div>
-      <div class="group">
-        <span class="eyebrow">Целевые группы</span>
-        <div class="industries">
-        <span>Целевая группа первая</span>
-        <span>Целевая группа вторая</span>
-        <span>Целевая группа третья</span>
-        <span>Целевая группа четвёртая</span>
-        </div>
-      </div>
+    <div class="topics topics--4" data-rv style="--d:.06s">
+      <button type="button" data-topic="corp" data-target="contact-topic">Корпоративные программы<span>Выбрать тему →</span></button>
+      <button type="button" data-topic="audit" data-target="contact-topic">Аудит<span>Выбрать тему →</span></button>
+      <button type="button" data-topic="course" data-target="contact-topic">Курс<span>Выбрать тему →</span></button>
+      <button type="button" data-topic="solutions" data-target="contact-topic">Решения<span>Выбрать тему →</span></button>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 3. КАК УСТРОЕНО ОБУЧЕНИЕ ============ -->
-<section class="sec" id="how">
-  <div class="wrap sec__inner--tight sec__inner">
-    <div class="why" data-rv>
-      <h2>Как устроено <span class="soft">обучение</span></h2>
-      <div>
-        <p class="why__txt">Теория и практика на реальных рабочих местах. Программа адаптируется под конкретное производство: оборудование, сменность, характер операций.</p>
-        <a href="program.html" class="link link--u">Комплексная корпоративная программа</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 4. ОПЫТ И РЕЗУЛЬТАТЫ ============ -->
-<section class="sec sec--alt" id="results">
+<!-- ============ БЛОК 4. ФОРМА ОБРАЩЕНИЯ ============ -->
+<section class="sec" id="form">
   <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Опыт <span class="soft">и результаты</span></h2>
-      <p>Логотипы, отзывы и благодарственные письма переносятся со старого сайта и актуализируются.</p>
-    </div>
-
-    <div class="logos" data-rv style="--d:.06s">
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-    </div>
-
-    <div class="reviews" style="margin-top:44px">
-      <div class="review" data-rv>
-        <div class="review__mark">«</div>
-        <p class="review__txt">Цитата из отзыва: что было до обучения, что изменилось после и на чём это видно.</p>
-        <div class="review__who">
-          <div class="ph review__ph"></div>
-          <div><b>Имя Фамилия</b><span>Должность, предприятие</span></div>
-        </div>
-      </div>
-      <div class="review" data-rv style="--d:.08s">
-        <div class="review__mark">«</div>
-        <p class="review__txt">Цитата из отзыва: что было до обучения, что изменилось после и на чём это видно.</p>
-        <div class="review__who">
-          <div class="ph review__ph"></div>
-          <div><b>Имя Фамилия</b><span>Должность, предприятие</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:44px" data-rv>
-      <span class="eyebrow" style="margin-bottom:20px">Благодарственные письма</span>
-      <div class="letters">
-        <div class="ph"><span>Письмо</span></div>
-        <div class="ph"><span>Письмо</span></div>
-        <div class="ph"><span>Письмо</span></div>
-        <div class="ph"><span>Письмо</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 5. ПРОГРАММА ОБУЧЕНИЯ ============ -->
-<section class="sec" id="program">
-  <div class="wrap sec__inner--tight sec__inner">
-    <div class="download" data-rv>
-      <div class="download__in">
-        <div class="download__file"></div>
-        <div>
-          <h3>Программа обучения</h3>
-          <p>Состав и порядок занятий одним файлом.</p>
-        </div>
-      </div>
-      <a href="#" class="btn btn--fill btn--plain">Скачать программу обучения</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 6. ФОРМА ЗАЯВКИ ============ -->
-<section class="sec" id="request">
-  <div class="wrap sec__inner">
-    <div class="band" data-rv>
-      <span class="eyebrow">Заявка</span>
-      <h2 style="margin-top:20px;max-width:15em">Заголовок блока заявки</h2>
-      <p class="band__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
-      <form class="bigform" onsubmit="return false" style="margin-top:44px">
-        <input class="field" placeholder="Имя">
-        <input class="field" placeholder="Телефон">
-        <input class="field" placeholder="Компания">
-        <input class="field" placeholder="Отрасль">
-        <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
-        <button class="btn btn--light">Обсудить задачу</button>
+    <div class="formpage__main" style="max-width:860px;margin:0 auto" data-rv>
+      <h2>Форма <span class="soft">обращения</span></h2>
+      <form class="lform" data-thanks="contacts" style="margin-top:32px">
+        <input class="mfield" placeholder="Имя">
+        <input class="mfield" placeholder="Телефон">
+        <input class="mfield full" type="email" placeholder="Почта">
+        <select class="mfield full" id="contact-topic">
+          <option value="">Тема обращения</option>
+            <option value="corp">Корпоративные программы</option>
+            <option value="audit">Аудит</option>
+            <option value="course">Курс</option>
+            <option value="solutions">Решения</option>
+          <option value="other">Другое</option>
+        </select>
+        <textarea class="mfield full" placeholder="Сообщение"></textarea>
+        <label class="magree"><i></i><span>Согласие на обработку персональных данных</span></label>
+        <button class="btn btn--fill btn--plain">Отправить</button>
       </form>
     </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5. ПРО КЛИНИКУ ============ -->
+<section class="sec" id="clinic">
+  <div class="wrap" style="padding-bottom:88px">
+    <div class="clinic-box" data-rv>
+      <div>
+        <h2>Клиника</h2>
+        <p class="clinic-box__txt">Медицинский приём, остеопатия и запись к врачу ведутся на отдельном сайте клиники. По медицинским вопросам обращайтесь туда.</p>
+      </div>
+      <div class="clinic-box__out">
+        <span class="eyebrow">Сайт клиники</span>
+        <b>Doctorsimkin.ru</b>
+        <a href="https://doctorsimkin.ru" class="btn btn--fill" target="_blank" rel="noopener">Перейти на сайт клиники</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 6. РЕКВИЗИТЫ ============ -->
+<section class="sec sec--alt" id="requisites">
+  <div class="wrap sec__inner">
+    <div class="head head--split" data-rv>
+      <h2>Реквизиты</h2>
+      <p></p>
+    </div>
+    <div class="specs" data-rv style="background:var(--paper);--d:.06s">
+      <div class="specs__row"><div class="specs__k">Юридическое лицо</div><div class="specs__v">Наименование юридического лица</div></div>
+      <div class="specs__row"><div class="specs__k">ИНН</div><div class="specs__v">0000000000</div></div>
+      <div class="specs__row"><div class="specs__k">Адрес</div><div class="specs__v">Юридический адрес</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 7. КАРТА ============ -->
+<section class="sec" id="map">
+  <div class="wrap sec__inner">
+    <div class="ph ph--lg" style="aspect-ratio:21/8" data-rv><span>Карта — если нужен адрес офиса</span></div>
   </div>
 </section>
 

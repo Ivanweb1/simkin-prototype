@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simkin.ru — прототип страницы «Эргономичные решения»</title>
+<title>Simkin.ru — прототип страницы «Заявка на курс»</title>
 <script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@
       <div class="navitem"><a href="knowledge.html">Полезные статьи</a></div>
     </nav>
 
-    <div class="hdr__cta"><a href="#request" class="btn btn--sm btn--fill btn--plain">Пройти курс</a></div>
+    <div class="hdr__cta"><a href="discuss.html" class="btn btn--sm btn--fill btn--plain">Обсудить задачу</a></div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
   </div>
 
@@ -100,209 +100,79 @@
   <div class="wrap crumbs__in">
     <a href="index.html">Главная</a>
     <span>/</span>
-    <a href="self.html">Для себя</a>
-    <span>/</span>
-    <span>Эргономичные решения</span>
+    <span>Заявка на курс</span>
   </div>
 </nav>
 
-<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
+<!-- ============ БЛОК 1. ШАПКА ============ -->
 <section class="sec hero" id="hero">
   <div class="wrap hero__inner">
     <div class="hero__grid">
       <div>
-        <span class="eyebrow" data-rv>Эргономичные решения</span>
-        <h1 data-rv style="--d:.06s">Заголовок первого экрана</h1>
-        <p class="lead" data-rv style="--d:.12s">Подбор решения под задачу, а не каталог.</p>
-        <div class="btns" data-rv style="--d:.18s">
-          <a href="#choose" class="btn btn--fill">Выбрать решение</a>
+        <span class="eyebrow" data-rv>Заявка на курс</span>
+        <h1 data-rv style="--d:.06s">Заголовок страницы заявки</h1>
+        <p class="lead" data-rv style="--d:.12s">Напоминание о курсе — одна строка.</p>
+      </div>
+      <div class="ph ph--lg hero__ph" data-rv style="--d:.18s"><span>Обложка курса</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--alt" id="request">
+  <div class="wrap sec__inner">
+    <div class="formpage__main" style="max-width:860px;margin:0 auto;background:var(--paper)" data-rv>
+      <form class="lform" data-thanks="course">
+
+        <!-- ============ БЛОК 2. ВЫБОР ВЕРСИИ ============ -->
+        <span class="lform__label">Версия курса</span>
+        <div class="seg" data-switch="version" style="background:var(--soft)">
+          <button type="button" data-val="self" class="is-on">Для себя</button>
+          <button type="button" data-val="company">Для компании</button>
         </div>
-      </div>
-      <div class="ph ph--lg hero__ph" data-rv style="--d:.24s"><span>Фотография</span></div>
+        <input type="hidden" name="version" value="Для себя">
+
+        <!-- ============ БЛОК 3. ФОРМА ============ -->
+        <input class="mfield" placeholder="Имя" style="background:var(--bg)">
+        <input class="mfield" placeholder="Телефон" style="background:var(--bg)">
+        <input class="mfield full" type="email" placeholder="Почта" style="background:var(--bg)">
+          <div class="lform__group" data-show="company" hidden>
+            <input class="mfield" style="background:var(--bg)" placeholder="Компания">
+            <input class="mfield" style="background:var(--bg)" placeholder="Должность">
+            <input class="mfield full" style="background:var(--bg)" placeholder="Число сотрудников">
+          </div>
+        <textarea class="mfield full" placeholder="Комментарий" style="background:var(--bg)"></textarea>
+        <label class="magree"><i></i><span>Согласие на обработку персональных данных</span></label>
+        <button class="btn btn--fill btn--plain">Отправить заявку</button>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 2. ВЫБОР ПО ЗАДАЧЕ ============ -->
-<section class="sec sec--alt" id="choose">
+<!-- ============ БЛОК 4. ЧТО БУДЕТ ДАЛЬШЕ ============ -->
+<section class="sec" id="next">
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
-      <h2>Выбор <span class="soft">по задаче</span></h2>
-      <p>Шесть входов: три по задаче и три по типу изделия.</p>
-    </div>
-
-    <div class="group">
-      <span class="eyebrow" data-rv>По задаче</span>
-      <div class="pcards" style="margin-top:20px">
-        <a href="solution.html" class="pcard" data-rv style="--d:.0s">
-          <div class="ph"><span>Фотография</span></div>
-          <h3>Решение для рабочего места</h3>
-          <p>Одна строка о том, для чего это решение.</p>
-          <span class="link">Перейти</span>
-        </a>
-        <a href="solution.html" class="pcard" data-rv style="--d:.1s">
-          <div class="ph"><span>Фотография</span></div>
-          <h3>Решение для работы с ноутбуком</h3>
-          <p>Одна строка о том, для чего это решение.</p>
-          <span class="link">Перейти</span>
-        </a>
-        <a href="solution.html" class="pcard" data-rv style="--d:.2s">
-          <div class="ph"><span>Фотография</span></div>
-          <h3>Поддержка поясницы</h3>
-          <p>Одна строка о том, для чего это решение.</p>
-          <span class="link">Перейти</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="group">
-      <span class="eyebrow" data-rv>По типу изделия</span>
-      <div class="pcards" style="margin-top:20px">
-        <a href="solution.html" class="pcard" data-rv style="--d:.0s">
-          <div class="ph"><span>Фотография</span></div>
-          <h3>Подушки</h3>
-          <p>Одна строка о том, для чего это решение.</p>
-          <span class="link">Перейти</span>
-        </a>
-        <a href="solution.html" class="pcard" data-rv style="--d:.1s">
-          <div class="ph"><span>Фотография</span></div>
-          <h3>Кресла</h3>
-          <p>Одна строка о том, для чего это решение.</p>
-          <span class="link">Перейти</span>
-        </a>
-        <a href="solution.html" class="pcard" data-rv style="--d:.2s">
-          <div class="ph"><span>Фотография</span></div>
-          <h3>Столы</h3>
-          <p>Одна строка о том, для чего это решение.</p>
-          <span class="link">Перейти</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 3. КАК ПОДБИРАЕТСЯ РЕШЕНИЕ ============ -->
-<section class="sec" id="how">
-  <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Как подбирается <span class="soft">решение</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
+      <h2>Что будет <span class="soft">дальше</span></h2>
+      <p>Три шага после отправки заявки.</p>
     </div>
     <div class="panel" data-rv style="--d:.06s">
       <div class="cells cells--3">
         <div class="cell">
           <span class="idx">01</span>
           <div class="icon"></div>
-          <h3>Название шага</h3>
           <p>Одна строка о том, что происходит на этом шаге.</p>
         </div>
         <div class="cell">
           <span class="idx">02</span>
           <div class="icon"></div>
-          <h3>Название шага</h3>
           <p>Одна строка о том, что происходит на этом шаге.</p>
         </div>
         <div class="cell">
           <span class="idx">03</span>
           <div class="icon"></div>
-          <h3>Название шага</h3>
           <p>Одна строка о том, что происходит на этом шаге.</p>
         </div>
       </div>
-    </div>
-    <div class="btns" data-rv style="--d:.12s"><a href="#request" class="btn btn--fill">Выбрать решение</a></div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 4. ПОЧЕМУ ПОДБОР ИНДИВИДУАЛЬНЫЙ ============ -->
-<section class="sec sec--alt" id="why">
-  <div class="wrap sec__inner--tight sec__inner">
-    <div class="why" data-rv>
-      <h2>Почему подбор <span class="soft">индивидуальный</span></h2>
-      <div>
-        <p class="why__txt">Текст блока: в двух-трёх строках о том, почему одно и то же изделие подходит одному человеку и не подходит другому.</p>
-        <a href="method.html" class="link link--u">Подробнее о методе</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 5. АВТОРСКИЕ РАЗРАБОТКИ ============ -->
-<section class="sec" id="products">
-  <div class="wrap sec__inner">
-    <div class="head head--row" data-rv>
-      <h2>Авторские <span class="soft">разработки</span></h2>
-      <a href="products.html" class="link link--u">Все разработки</a>
-    </div>
-    <div class="pcards">
-        <a href="product.html" class="pcard" data-rv style="--d:.0s">
-          <div class="ph"><span>Фотография</span></div>
-          <h3>Название разработки</h3>
-          <p>Одна строка о разработке.</p>
-          <span class="link">Перейти</span>
-        </a>
-        <a href="product.html" class="pcard" data-rv style="--d:.1s">
-          <div class="ph"><span>Фотография</span></div>
-          <h3>Название разработки</h3>
-          <p>Одна строка о разработке.</p>
-          <span class="link">Перейти</span>
-        </a>
-        <a href="product.html" class="pcard" data-rv style="--d:.2s">
-          <div class="ph"><span>Фотография</span></div>
-          <h3>Название разработки</h3>
-          <p>Одна строка о разработке.</p>
-          <span class="link">Перейти</span>
-        </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 6. ВОПРОСЫ И ОТВЕТЫ ============ -->
-<section class="sec sec--alt" id="faq">
-  <div class="wrap sec__inner">
-    <div class="head head--center" data-rv>
-      <span class="eyebrow">FAQ</span>
-      <h2>Вопросы <span class="soft">и ответы</span></h2>
-    </div>
-    <div class="acc acc--plain acc--onwhite" data-rv style="--d:.06s">
-      <details>
-        <summary><span class="acc__q">Текст вопроса о подборе</span></summary>
-        <div class="acc__body">Текст ответа на вопрос.</div>
-      </details>
-      <details>
-        <summary><span class="acc__q">Текст вопроса о наличии</span></summary>
-        <div class="acc__body">Текст ответа на вопрос.</div>
-      </details>
-      <details>
-        <summary><span class="acc__q">Текст вопроса о доставке</span></summary>
-        <div class="acc__body">Текст ответа на вопрос.</div>
-      </details>
-      <details>
-        <summary><span class="acc__q">Текст вопроса о гарантии</span></summary>
-        <div class="acc__body">Текст ответа на вопрос.</div>
-      </details>
-      <details>
-        <summary><span class="acc__q">Текст вопроса о сроках</span></summary>
-        <div class="acc__body">Текст ответа на вопрос.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 7. ФОРМА ПОДБОРА ============ -->
-<section class="sec" id="request">
-  <div class="wrap sec__inner">
-    <div class="band" data-rv>
-      <span class="eyebrow">Подбор решения</span>
-      <h2 style="margin-top:20px;max-width:15em">Заголовок формы подбора</h2>
-      <p class="band__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
-      <form class="bigform" onsubmit="return false" style="margin-top:44px">
-        <input class="field" placeholder="Имя">
-        <input class="field" placeholder="Телефон">
-        <textarea class="field field--full" placeholder="Задача и условия работы"></textarea>
-        <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
-        <button class="btn btn--light">Подобрать решение</button>
-      </form>
     </div>
   </div>
 </section>
