@@ -116,6 +116,13 @@ h3{font-size:18px;font-weight:700;line-height:1.32;letter-spacing:-.012em}
 .link--u{border-bottom:1px solid var(--line);padding-bottom:3px}
 .link--u:hover{border-color:var(--ink)}
 
+/* карточки-ссылки: снимаем подчёркивание и цвет посещённой ссылки */
+a.card,a.cell,a.dir,a.post,a.role,a.fmt,a.result,a.num,a.price__f,a.review{
+  text-decoration:none;color:var(--ink);
+}
+a.card:visited,a.cell:visited,a.dir:visited,a.post:visited,a.role:visited{color:var(--ink)}
+a.dir--dark,a.dir--dark:visited{color:#fff}
+
 /* ================= ПОЯВЛЕНИЕ ПРИ ПРОКРУТКЕ ================= */
 .js [data-rv]{opacity:0;transform:translateY(18px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
 .js [data-rv].is-in{opacity:1;transform:none}
@@ -255,6 +262,7 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 .card{
   background:var(--soft);border-radius:var(--r);padding:34px 30px 36px;
   display:flex;flex-direction:column;transition:background .22s var(--ease);
+  text-decoration:none;color:var(--ink);
 }
 .card:hover{background:#e8e8e4}
 .card .idx{margin-bottom:26px}
