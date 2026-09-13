@@ -226,6 +226,10 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 .cells--4{grid-template-columns:repeat(4,1fr)}
 .cells--3{grid-template-columns:repeat(3,1fr)}
 .cells--2{grid-template-columns:repeat(2,1fr)}
+/* пять ячеек: три сверху, две пошире снизу — без пустой клетки */
+.cells--5{grid-template-columns:repeat(6,1fr)}
+.cells--5 > *{grid-column:span 2}
+.cells--5 > :nth-child(4),.cells--5 > :nth-child(5){grid-column:span 3}
 .cell{background:var(--paper);border-radius:var(--r);padding:34px 30px 36px;display:flex;flex-direction:column}
 .cell .idx{margin-bottom:26px}
 .cell .icon{margin-bottom:24px}
@@ -457,16 +461,62 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 .bigform textarea.field{height:118px;padding:17px 18px;resize:vertical;line-height:1.5;border-radius:var(--r)}
 .bigform .btn{justify-self:start;padding:0 36px}
 
-/* ================= ПРИЗЫВ ПЕРЕД ПОДВАЛОМ =================
-   намеренно светлый и компактный: рядом с тёмным блоком заявки
-   две одинаковые полосы читались как повтор одного блока */
-.prefoot__bar{
-  background:var(--soft);border-radius:var(--r-lg);padding:44px 52px;
-  display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;
+/* ================= ФОРМАТЫ ПРОВЕДЕНИЯ ================= */
+.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.fmt{background:var(--paper);border-radius:var(--r);padding:34px 30px;display:flex;flex-direction:column}
+.fmt .icon{margin-bottom:24px;background:var(--soft)}
+.fmt h3{margin-bottom:10px}
+.fmt p{font-size:14.5px;color:var(--ink-2)}
+.fmt__meta{display:flex;gap:32px;margin-top:auto;padding-top:28px}
+.fmt__meta span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);font-weight:750}
+.fmt__meta b{display:block;font-size:19px;font-weight:800;letter-spacing:-.025em;margin-top:7px;font-variant-numeric:tabular-nums}
+
+/* ================= ОТРАСЛИ ================= */
+.industries{display:flex;gap:10px;flex-wrap:wrap;margin-top:36px}
+.industries span{
+  background:var(--soft);border-radius:100px;padding:13px 24px;
+  font-size:14.5px;font-weight:650;color:var(--ink);
 }
-.prefoot__bar h2{font-size:clamp(22px,2.2vw,30px);max-width:15em}
-.prefoot__bar p{color:var(--ink-2);margin-top:10px;font-size:15.5px;max-width:34em}
-.prefoot__bar .btn{flex:0 0 auto}
+
+/* ================= ГРАФИК РАБОТ ================= */
+.sched__head{display:grid;grid-template-columns:250px 1fr;gap:28px;padding:0 26px 16px}
+.sched__weeks{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.sched__weeks span{font-size:10.5px;font-weight:750;color:var(--ink-3);text-align:center;letter-spacing:.05em}
+.sched{display:grid;gap:8px}
+.sched__row{
+  display:grid;grid-template-columns:250px 1fr;gap:28px;align-items:center;
+  background:var(--paper);border-radius:var(--r-sm);padding:20px 26px;
+}
+.sched__t{font-size:15.5px;font-weight:700;letter-spacing:-.012em}
+.sched__track{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;align-items:center}
+.sched__bar{
+  grid-column:var(--from)/var(--to);height:12px;border-radius:100px;background:var(--ink);
+}
+.sched__when{display:none;font-size:13px;color:var(--ink-3);font-weight:650;margin-top:6px}
+
+/* ================= ЧТО ПОЛУЧАЕТ КОМПАНИЯ ================= */
+.gets{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.gets ul{list-style:none;counter-reset:g}
+.gets li{
+  counter-increment:g;display:flex;gap:20px;align-items:flex-start;
+  padding:19px 0;border-bottom:1px solid var(--line-2);font-size:16px;color:var(--ink-2);
+}
+.gets li:first-child{border-top:1px solid var(--line-2)}
+.gets li::before{
+  content:counter(g,decimal-leading-zero);flex:0 0 auto;
+  font-size:12.5px;font-weight:800;color:var(--ink-3);padding-top:4px;min-width:26px;
+  font-variant-numeric:tabular-nums;
+}
+.gets__ph{aspect-ratio:4/3.2}
+
+/* ================= СТОИМОСТЬ ================= */
+.price{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.price__f{background:var(--paper);border-radius:var(--r);padding:30px 26px 32px}
+.price__f .idx{display:block;margin-bottom:22px}
+.price__f h3{margin-bottom:10px;font-size:16.5px}
+.price__f p{font-size:14.5px;color:var(--ink-2)}
+.price__cta{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-top:36px}
+.price__note{font-size:15.5px;color:var(--ink-2);max-width:40em}
 
 /* ================= ПОДВАЛ ================= */
 footer{background:var(--paper);padding-top:20px}
@@ -549,10 +599,14 @@ footer{background:var(--paper);padding-top:20px}
   .head--split{grid-template-columns:1fr;gap:26px;align-items:start}
   .expert{grid-template-columns:1fr;gap:38px}
   .expert__ph{aspect-ratio:16/11}
-  .results,.research__grid{grid-template-columns:repeat(2,1fr)}
+  .results,.research__grid,.price{grid-template-columns:repeat(2,1fr)}
   .benefits{grid-template-columns:1fr}
+  .gets{grid-template-columns:1fr;gap:36px}
+  .gets__ph{aspect-ratio:16/10}
   .posts{grid-template-columns:1fr}
   .steps,.cells--3{grid-template-columns:1fr}
+  .cells--5{grid-template-columns:1fr}
+  .cells--5 > *,.cells--5 > :nth-child(4),.cells--5 > :nth-child(5){grid-column:auto}
   .band__grid{grid-template-columns:1fr;gap:40px}
   .panel--pad{padding:36px 32px}
   .band{padding:56px 44px}
@@ -600,8 +654,14 @@ footer{background:var(--paper);padding-top:20px}
   .acc__body,.acc--plain .acc__body{padding:0 22px 24px 22px}
   .review{padding:28px 24px}
   .reviews{grid-template-columns:1fr}
-  .prefoot__bar{padding:30px 24px;gap:24px}
-  .prefoot__bar .btn{width:100%}
+  .formats,.price{grid-template-columns:1fr}
+  .fmt__meta{gap:24px}
+  /* график работ: на узком экране вместо шкалы — подпись недель */
+  .sched__head{display:none}
+  .sched__row{grid-template-columns:1fr;gap:0;padding:18px 20px}
+  .sched__track{display:none}
+  .sched__when{display:block}
+  .price__cta .btn{width:100%}
   .foot{grid-template-columns:1fr;gap:28px;padding-top:48px;padding-bottom:28px}
   .foot__about{max-width:none}
   .bigform{grid-template-columns:1fr}

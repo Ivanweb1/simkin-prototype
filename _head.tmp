@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simkin.ru — прототип страницы «Корпоративная программа»</title>
+<script>document.documentElement.className+=" js"</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+
+<!-- ============ ОБЩЕЕ: ШАПКА, ЗАКРЕПЛЕНА ПРИ ПРОКРУТКЕ ============ -->
+<header id="hdr">
+  <div class="topbar">
+    <div class="wrap topbar__in">
+      <span class="topbar__note">Авторская система эргономики Доктора Симкина</span>
+      <a href="#contacts" class="topbar__link">Контакты</a>
+      <button class="topbar__link" data-open>Обратный звонок</button>
+      <a href="tel:+70000000000" class="topbar__tel">+7 (000) 000-00-00</a>
+    </div>
+  </div>
+
+  <div class="wrap hdr">
+    <a href="index.html" class="logo">
+      <span class="logo__mark"></span>
+      <span class="logo__txt"><b>Simkin.ru</b><span>Авторская система эргономики</span></span>
+    </a>
+
+    <nav class="mainnav">
+      <div class="navitem">
+        <a href="company.html">Для компаний <i></i></a>
+        <div class="sub">
+          <a href="company.html#offers">Аудит и консалтинг</a>
+          <a href="company.html#offers">Корпоративная версия курса</a>
+          <a href="company.html#offers">Корпоративная программа</a>
+          <a href="company.html#offers">Подбор и организация рабочих мест</a>
+          <a href="company.html#offers">Промышленная эргономика</a>
+          <a href="company.html#offers">Чек-апы</a>
+        </div>
+      </div>
+      <div class="navitem">
+        <a href="index.html#directions">Для себя <i></i></a>
+        <div class="sub">
+          <a href="#">Онлайн-курс</a>
+          <a href="#">Эргономичные решения</a>
+          <a href="#">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="navitem"><a href="#">Онлайн-курс</a></div>
+      <div class="navitem"><a href="#">Эргономичные решения</a></div>
+      <div class="navitem"><a href="index.html#method">Метод Симкина</a></div>
+      <div class="navitem"><a href="index.html#expert">Дмитрий Симкин</a></div>
+      <div class="navitem"><a href="index.html#articles">Полезные статьи</a></div>
+    </nav>
+
+    <div class="hdr__cta"><a href="#request" class="btn btn--sm btn--fill btn--plain">Обсудить задачу</a></div>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+
+  <!-- мобильное меню -->
+  <nav class="mnav" id="mnav">
+    <div class="wrap mnav__in">
+      <div class="mnav__item">
+        <a href="company.html">Для компаний</a>
+        <div class="mnav__sub">
+          <a href="company.html#offers">Аудит и консалтинг</a>
+          <a href="company.html#offers">Корпоративная версия курса</a>
+          <a href="company.html#offers">Корпоративная программа</a>
+          <a href="company.html#offers">Подбор и организация рабочих мест</a>
+          <a href="company.html#offers">Промышленная эргономика</a>
+          <a href="company.html#offers">Чек-апы</a>
+        </div>
+      </div>
+      <div class="mnav__item">
+        <a href="index.html#directions">Для себя</a>
+        <div class="mnav__sub">
+          <a href="#">Онлайн-курс</a>
+          <a href="#">Эргономичные решения</a>
+          <a href="#">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="mnav__item"><a href="#">Онлайн-курс</a></div>
+      <div class="mnav__item"><a href="#">Эргономичные решения</a></div>
+      <div class="mnav__item"><a href="index.html#method">Метод Симкина</a></div>
+      <div class="mnav__item"><a href="index.html#expert">Дмитрий Симкин</a></div>
+      <div class="mnav__item"><a href="index.html#articles">Полезные статьи</a></div>
+      <a href="tel:+70000000000" class="mnav__tel">+7 (000) 000-00-00</a>
+      <div class="btns"><button class="btn" data-open>Обратный звонок</button></div>
+    </div>
+  </nav>
+</header>
+
