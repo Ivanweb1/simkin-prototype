@@ -25,7 +25,7 @@
   }
   .wrap{max-width:var(--w);margin:0 auto;padding:0 40px}
   .sec{background:var(--paper);border-bottom:1px solid var(--line-2)}
-  .sec__inner{padding:84px 0}
+  .sec__inner{padding-top:84px;padding-bottom:84px}
 
   /* ---------- заглушки ---------- */
   .ph{background:var(--fill);border:1px solid var(--line);position:relative;overflow:hidden}
@@ -96,18 +96,31 @@
   .logo__mark{width:40px;height:40px;border:1px solid var(--line);background:var(--fill);flex:0 0 auto}
   .logo__txt b{display:block;font-size:18px;letter-spacing:-.02em;line-height:1.1}
   .logo__txt span{display:block;font-size:9.5px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.11em;margin-top:3px}
-  .mainnav{display:flex;gap:30px;flex:1 1 auto;justify-content:center}
+  .mainnav{display:flex;gap:20px;flex:1 1 auto;justify-content:center}
+  .navitem{position:relative;display:flex;align-items:center;height:80px}
   .mainnav a{
-    font-size:15px;color:var(--ink);text-decoration:none;white-space:nowrap;
+    font-size:14px;color:var(--ink);text-decoration:none;white-space:nowrap;
     display:inline-flex;align-items:center;gap:5px;padding:6px 0;
     border-bottom:1px solid transparent;transition:border-color .18s ease;
   }
-  .mainnav a:hover{border-color:var(--ink)}
+  .mainnav > .navitem > a:hover{border-color:var(--ink)}
   .mainnav a i{
     display:inline-block;width:0;height:0;border-left:3.5px solid transparent;
     border-right:3.5px solid transparent;border-top:4px solid var(--ink-3);
   }
+  .sub{
+    position:absolute;top:100%;left:-18px;min-width:262px;z-index:70;
+    background:var(--paper);border:1px solid var(--line);padding:8px 0;
+    opacity:0;visibility:hidden;transform:translateY(6px);
+    transition:opacity .18s ease,transform .18s ease,visibility .18s;
+    box-shadow:0 14px 30px rgba(0,0,0,.07);
+  }
+  .navitem:hover .sub{opacity:1;visibility:visible;transform:translateY(0)}
+  .sub a{display:block;padding:10px 18px;font-size:14px;color:var(--ink-2);border-bottom:0;white-space:nowrap}
+  .sub a:hover{background:var(--bg);color:var(--ink);border-bottom:0}
   .hdr__cta{flex:0 0 auto}
+  .topbar__cb{font-size:13px;color:var(--ink-2);background:none;border:0;font-family:inherit;cursor:pointer;border-bottom:1px solid var(--line);padding:0 0 1px}
+  .topbar__cb:hover{color:var(--ink);border-color:var(--ink)}
   .burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:var(--paper);flex-direction:column;justify-content:center;align-items:center;gap:4px;cursor:pointer}
   .burger i{display:block;width:18px;height:1.5px;background:var(--ink)}
 
@@ -150,12 +163,18 @@
   .step__n{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--ink-3);margin-bottom:14px}
   .step .ph{aspect-ratio:16/10;margin-bottom:20px}
 
-  .cols{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
-  .col{padding:30px;border-right:1px solid var(--line);display:flex;flex-direction:column}
-  .col:last-child{border-right:0}
-  .col ul{list-style:none;margin:20px 0 26px}
-  .col li{font-size:14px;color:var(--ink-2);padding:10px 0;border-bottom:1px solid var(--line-2)}
-  .col .btn{margin-top:auto}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .dir{
+    border:1px solid var(--line);background:var(--paper);padding:38px;
+    display:flex;flex-direction:column;text-decoration:none;color:var(--ink);
+    transition:border-color .18s ease;
+  }
+  .dir:hover{border-color:var(--ink)}
+  .dir .icon{width:52px;height:52px;margin-bottom:22px}
+  .dir h3{font-size:24px;font-weight:700;letter-spacing:-.02em}
+  .dir__list{list-style:none;margin:24px 0 28px}
+  .dir__list li{font-size:14.5px;color:var(--ink-2);padding:11px 0;border-bottom:1px solid var(--line-2)}
+  .dir .link{margin-top:auto;align-self:flex-start}
 
   .post .ph{aspect-ratio:16/10;margin-bottom:18px}
   .post .eyebrow{margin-bottom:9px}
@@ -175,7 +194,7 @@
   .agree i{width:16px;height:16px;border:1px solid #6f6f6f;flex:0 0 auto;margin-top:2px;display:block}
 
   .prefoot{background:var(--bg)}
-  .prefoot .sec__inner{padding:64px 0;text-align:center}
+  .prefoot .sec__inner{padding-top:64px;padding-bottom:64px;text-align:center}
   .prefoot .btns{justify-content:center}
 
   footer{background:var(--paper);border-top:1px solid var(--line)}
@@ -184,26 +203,54 @@
   .foot ul{list-style:none}
   .foot li{padding:7px 0;font-size:14px;color:var(--ink-2)}
   .clinic{border:1px solid var(--line);background:var(--bg);padding:18px;font-size:13px;color:var(--ink-2);margin-top:16px;line-height:1.5}
+  .foot__cb{font-size:14px;color:var(--ink);background:none;border:0;font-family:inherit;font-weight:600;cursor:pointer;border-bottom:1px solid var(--line);padding:0 0 2px;margin-top:14px}
+  .foot__cb:hover{border-color:var(--ink)}
+  .soc{display:flex;gap:26px;flex-wrap:wrap;border-top:1px solid var(--line-2);padding:22px 0}
+  .soc a{font-size:14px;color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .18s ease,border-color .18s ease}
+  .soc a:hover{color:var(--ink);border-color:var(--ink)}
   .foot__bottom{border-top:1px solid var(--line-2);padding:22px 0 44px;display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--ink-3);flex-wrap:wrap}
 
-  /* ---------- планшет ---------- */
-  @media (max-width:1180px){
-    .mainnav{gap:20px}
-    .mainnav a{font-size:14px}
-    .hdr{gap:24px}
+  /* ---------- всплывающее окно «Обратный звонок» ---------- */
+  .modal{position:fixed;inset:0;z-index:100;display:none}
+  .modal.is-open{display:block}
+  .modal__back{position:absolute;inset:0;background:rgba(22,22,22,.46)}
+  .modal__box{
+    position:relative;max-width:452px;margin:9vh auto 0;background:var(--paper);
+    border:1px solid var(--line);padding:40px;
   }
-  @media (max-width:1040px){
+  .modal__x{
+    position:absolute;top:14px;right:14px;width:34px;height:34px;border:1px solid var(--line);
+    background:var(--paper);font-size:19px;line-height:1;color:var(--ink-2);cursor:pointer;font-family:inherit;
+  }
+  .modal__x:hover{background:var(--bg);color:var(--ink)}
+  .mform{display:grid;gap:12px;margin-top:26px}
+  .mfield{height:52px;border:1px solid var(--line);background:var(--bg);padding:0 16px;font-size:14px;font-family:inherit;color:var(--ink)}
+  .mfield::placeholder{color:var(--ink-3)}
+  .mfield:focus{outline:none;border-color:var(--ink);background:var(--paper)}
+  .magree{font-size:12px;color:var(--ink-3);display:flex;gap:10px;align-items:flex-start;margin:4px 0 6px}
+  .magree i{width:16px;height:16px;border:1px solid var(--line);flex:0 0 auto;margin-top:2px;display:block}
+
+  /* ---------- планшет ---------- */
+  @media (max-width:1280px){
+    .mainnav{gap:15px}
+    .mainnav a{font-size:13.5px}
+    .hdr{gap:22px}
+  }
+  @media (max-width:1180px){
     .topbar__note{display:none}
     .mainnav{display:none}
     .burger{display:flex}
     .hdr{justify-content:space-between}
     .grid-4{grid-template-columns:repeat(2,1fr)}
   }
+  @media (max-width:1040px){
+    .grid-2{grid-template-columns:1fr}
+  }
 
   /* ---------- мобильная ---------- */
   @media (max-width:900px){
     .wrap{padding:0 20px}
-    .sec__inner{padding:52px 0}
+    .sec__inner{padding-top:52px;padding-bottom:52px}
     h1{font-size:31px}
     h2{font-size:24px}
     .lead{font-size:16px}
@@ -214,9 +261,10 @@
     .logo__txt b{font-size:16px}
     .hero,.expert,.cta__grid{grid-template-columns:1fr;gap:30px}
     .theses,.grid-4,.grid-3,.steps{grid-template-columns:1fr;gap:14px}
-    .cols{grid-template-columns:1fr}
-    .col{border-right:0;border-bottom:1px solid var(--line)}
-    .col:last-child{border-bottom:0}
+    .grid-2{grid-template-columns:1fr;gap:14px}
+    .dir{padding:28px}
+    .dir h3{font-size:21px}
+    .modal__box{margin:0;max-width:none;min-height:100%;padding:28px 20px;border:0}
     .logos{grid-template-columns:repeat(3,1fr)}
     .nums{grid-template-columns:1fr;gap:16px}
     .foot{grid-template-columns:1fr;gap:28px;padding:44px 0 28px}
@@ -238,11 +286,9 @@
     <div class="wrap topbar__in">
       <span class="topbar__note">Авторская система эргономики Доктора Симкина</span>
       <nav class="topbar__nav">
-        <a href="#method">Метод</a>
-        <a href="#expert">Дмитрий Симкин</a>
-        <a href="#articles">Знания</a>
         <a href="#foot">Контакты</a>
       </nav>
+      <button class="topbar__cb" data-open>Обратный звонок</button>
       <a href="tel:+70000000000" class="topbar__tel">+7 (000) 000-00-00</a>
     </div>
   </div>
@@ -252,11 +298,31 @@
       <span class="logo__txt"><b>Simkin.ru</b><span>Эргономика</span></span>
     </a>
     <nav class="mainnav">
-      <a href="#company">Для компаний <i></i></a>
-      <a href="#directions">Онлайн-курс</a>
-      <a href="#directions">Аудит и консалтинг</a>
-      <a href="#directions">Решения <i></i></a>
-      <a href="#directions">Разработки <i></i></a>
+      <div class="navitem">
+        <a href="#directions">Для компаний <i></i></a>
+        <div class="sub">
+          <a href="#">Аудит и консалтинг</a>
+          <a href="#">Корпоративная версия курса</a>
+          <a href="#">Корпоративная программа</a>
+          <a href="#">Подбор и организация рабочих мест</a>
+          <a href="#">Промышленная эргономика</a>
+          <a href="#">Чек-апы</a>
+        </div>
+      </div>
+      <div class="navitem">
+        <a href="#directions">Для себя <i></i></a>
+        <div class="sub">
+          <a href="#">Онлайн-курс</a>
+          <a href="#">Эргономичные решения</a>
+          <a href="#">Авторские разработки</a>
+          <a href="#">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="navitem"><a href="#">Онлайн-курс</a></div>
+      <div class="navitem"><a href="#">Эргономичные решения</a></div>
+      <div class="navitem"><a href="#method">Метод Симкина</a></div>
+      <div class="navitem"><a href="#expert">Дмитрий Симкин</a></div>
+      <div class="navitem"><a href="#articles">Полезные статьи</a></div>
     </nav>
     <div class="hdr__cta">
       <a href="#cta" class="btn btn--sm btn--fill">Обсудить задачу</a>
@@ -274,8 +340,8 @@
         <h1 style="margin-top:20px">Эргономика, которая начинается с человека, а не с мебели</h1>
         <p class="lead">Подзаголовок в две строки: короткое объяснение сути подхода и того, кому он нужен.</p>
         <div class="btns">
-          <a href="#company" class="btn btn--fill">Для компаний</a>
-          <a href="#directions" class="btn">Онлайн-курс</a>
+          <a href="#directions" class="btn btn--fill">Для компаний</a>
+          <a href="#directions" class="btn">Для себя</a>
           <a href="#cta" class="btn">Обсудить задачу</a>
         </div>
       </div>
@@ -323,22 +389,35 @@
   </div>
 </section>
 
-<!-- направления -->
+<!-- два направления -->
 <section class="sec" id="directions">
   <div class="wrap sec__inner">
-    <div class="head"><h2>Основные направления работы</h2></div>
-    <div class="grid-3">
-      <div class="card">
-        <div class="icon sq"></div><h3>Корпоративное обучение</h3>
-        <div class="lines"><div class="line"></div><div class="line m"></div></div>
-        <div class="sublink">Чек-апы: оценка перегрузки и эргономических рисков →</div>
-        <a href="#" class="link">Подробнее</a>
-      </div>
-      <div class="card"><div class="icon sq"></div><h3>Онлайн-курс</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
-      <div class="card"><div class="icon sq"></div><h3>Аудит рабочих мест</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
-      <div class="card"><div class="icon sq"></div><h3>Консалтинг</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
-      <div class="card"><div class="icon sq"></div><h3>Эргономичные решения</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
-      <div class="card"><div class="icon sq"></div><h3>Авторские разработки</h3><div class="lines"><div class="line"></div><div class="line m"></div></div><a href="#" class="link">Подробнее</a></div>
+    <div class="head"><h2>Два направления работы</h2></div>
+    <div class="grid-2">
+      <a href="#" class="dir">
+        <div class="icon sq"></div>
+        <h3>Для компаний</h3>
+        <ul class="dir__list">
+          <li>Аудит и консалтинг</li>
+          <li>Корпоративная версия курса</li>
+          <li>Комплексная корпоративная программа</li>
+          <li>Подбор и организация рабочих мест</li>
+          <li>Промышленная эргономика</li>
+          <li>Чек-апы</li>
+        </ul>
+        <span class="link">Перейти в раздел</span>
+      </a>
+      <a href="#" class="dir">
+        <div class="icon sq"></div>
+        <h3>Для себя</h3>
+        <ul class="dir__list">
+          <li>Онлайн-курс</li>
+          <li>Эргономичные решения для рабочего места</li>
+          <li>Авторские разработки</li>
+          <li>Полезные статьи</li>
+        </ul>
+        <span class="link">Перейти в раздел</span>
+      </a>
     </div>
   </div>
 </section>
@@ -387,35 +466,11 @@
   <div class="wrap sec__inner">
     <div class="head"><h2>Как работает подход</h2></div>
     <div class="steps">
-      <div class="step"><div class="step__n">Шаг 1</div><div class="ph"><span>Иллюстрация</span></div><h3>Понять тело</h3><div class="lines"><div class="line"></div><div class="line m"></div></div></div>
-      <div class="step"><div class="step__n">Шаг 2</div><div class="ph"><span>Иллюстрация</span></div><h3>Научиться устойчивому положению</h3><div class="lines"><div class="line"></div><div class="line m"></div></div></div>
-      <div class="step"><div class="step__n">Шаг 3</div><div class="ph"><span>Иллюстрация</span></div><h3>Адаптировать рабочее место</h3><div class="lines"><div class="line"></div><div class="line m"></div></div></div>
+      <div class="step"><div class="step__n">Шаг 1</div><div class="icon" style="margin-bottom:18px"></div><h3>Понять тело</h3><div class="lines"><div class="line m"></div></div></div>
+      <div class="step"><div class="step__n">Шаг 2</div><div class="icon" style="margin-bottom:18px"></div><h3>Научиться устойчивому положению</h3><div class="lines"><div class="line m"></div></div></div>
+      <div class="step"><div class="step__n">Шаг 3</div><div class="icon" style="margin-bottom:18px"></div><h3>Адаптировать рабочее место</h3><div class="lines"><div class="line m"></div></div></div>
     </div>
     <div class="btns"><a href="#" class="btn">Подробнее о методе</a></div>
-  </div>
-</section>
-
-<!-- форматы -->
-<section class="sec" id="formats">
-  <div class="wrap sec__inner">
-    <div class="head"><h2>Форматы сотрудничества</h2></div>
-    <div class="cols">
-      <div class="col">
-        <div class="eyebrow">Компании</div><h3 style="margin-top:12px">Программа под задачи бизнеса</h3>
-        <ul><li>Корпоративный онлайн-курс</li><li>Очные мастер-классы</li><li>Аудит рабочих мест</li><li>Чек-апы</li></ul>
-        <a href="#cta" class="btn btn--sm">Запросить программу</a>
-      </div>
-      <div class="col">
-        <div class="eyebrow">Сотрудник</div><h3 style="margin-top:12px">Обучение для себя</h3>
-        <ul><li>Онлайн-курс</li><li>Разбор рабочего места</li><li>Подбор решений</li><li>Статьи и материалы</li></ul>
-        <a href="#cta" class="btn btn--sm">Оставить заявку</a>
-      </div>
-      <div class="col">
-        <div class="eyebrow">Производители</div><h3 style="margin-top:12px">Экспертиза мебели и оборудования</h3>
-        <ul><li>Оценка изделий</li><li>Консультации по разработке</li><li>Совместные проекты</li><li>Авторские решения</li></ul>
-        <a href="#cta" class="btn btn--sm">Обсудить задачу</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -456,9 +511,9 @@
 <section class="sec prefoot">
   <div class="wrap sec__inner">
     <h2>Обсудим эргономику в вашей компании</h2>
+    <p class="lead" style="margin:14px auto 0">Короткая подпись под заголовком.</p>
     <div class="btns">
       <a href="#cta" class="btn btn--fill">Обсудить задачу</a>
-      <a href="#cta" class="btn">Получить предложение</a>
     </div>
   </div>
 </section>
@@ -474,18 +529,28 @@
         <div class="lines"><div class="line"></div><div class="line"></div><div class="line s"></div></div>
       </div>
       <div>
-        <h4>Разделы</h4>
-        <ul><li>Для компаний</li><li>Онлайн-курс</li><li>Аудит и консалтинг</li><li>Эргономичные решения</li><li>Авторские разработки</li></ul>
+        <h4>Для компаний</h4>
+        <ul><li>Аудит и консалтинг</li><li>Корпоративная версия курса</li><li>Корпоративная программа</li><li>Подбор рабочих мест</li><li>Промышленная эргономика</li><li>Чек-апы</li></ul>
       </div>
       <div>
-        <h4>О проекте</h4>
-        <ul><li>Метод</li><li>Дмитрий Симкин</li><li>Знания и статьи</li><li>Контакты</li></ul>
+        <h4>Для себя</h4>
+        <ul><li>Онлайн-курс</li><li>Эргономичные решения</li><li>Авторские разработки</li><li>Полезные статьи</li></ul>
+        <h4 style="margin-top:26px">О проекте</h4>
+        <ul><li>Метод Симкина</li><li>Дмитрий Симкин</li><li>Контакты</li></ul>
       </div>
       <div>
         <h4>Контакты</h4>
         <ul><li>+7 (000) 000-00-00</li><li>mail@simkin.ru</li><li>Telegram · WhatsApp</li></ul>
+        <button class="foot__cb" data-open>Заказать обратный звонок</button>
         <div class="clinic">Медицинский приём, остеопатия и запись к врачу — на сайте клиники Doctorsimkin.ru</div>
       </div>
+    </div>
+    <div class="soc">
+      <a href="#">ВКонтакте</a>
+      <a href="#">Telegram</a>
+      <a href="#">MAX</a>
+      <a href="#">YouTube</a>
+      <a href="#">RuTube</a>
     </div>
     <div class="foot__bottom">
       <span>© 2026 Simkin.ru · Реквизиты юридического лица</span>
@@ -494,11 +559,43 @@
   </div>
 </footer>
 
+<!-- всплывающее окно «Обратный звонок» -->
+<div class="modal" id="callback">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="cbTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="cbTitle" style="font-size:26px">Обратный звонок</h2>
+    <p style="color:var(--ink-2);font-size:15px;margin-top:12px">Короткая подпись: когда перезвонят.</p>
+    <form class="mform" onsubmit="return false">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield" placeholder="Удобное время">
+      <label class="magree"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill">Жду звонка</button>
+    </form>
+  </div>
+</div>
+
 <script>
   var hdr = document.getElementById('hdr');
   window.addEventListener('scroll', function(){
     hdr.classList.toggle('is-scrolled', window.scrollY > 120);
   }, {passive:true});
+
+  var modal = document.getElementById('callback');
+  function setModal(open){
+    modal.classList.toggle('is-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  document.querySelectorAll('[data-open]').forEach(function(el){
+    el.addEventListener('click', function(){ setModal(true); });
+  });
+  document.querySelectorAll('[data-close]').forEach(function(el){
+    el.addEventListener('click', function(){ setModal(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') setModal(false);
+  });
 </script>
 
 </body>
