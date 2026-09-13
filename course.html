@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -214,7 +214,7 @@
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
       <h2>Программа <span class="soft">курса</span></h2>
-      <p>Пять разделов и двадцать один модуль. Точные названия придут от заказчика отдельно.</p>
+      <p>Вводный блок и двадцать один тематический — всего двадцать два. Точные названия пришлёт заказчик.</p>
     </div>
     <div class="intro-mod" data-rv>
       <span class="idx">00</span>
@@ -288,12 +288,21 @@
       <div>
         <span class="eyebrow">Демоверсия</span>
         <h2 style="margin-top:20px">Посмотреть <span class="soft">демоверсию курса</span></h2>
-        <p>Фрагмент курса. Формат демоверсии уточняется у заказчика: видео прямо в блоке или отдельная страница.</p>
-        <div class="btns"><a href="#" class="btn btn--light">Смотреть демо</a></div>
+        <p>Короткий ролик из нескольких фрагментов курса. Он даёт ощущение содержания, глубины и качества, но не заменяет сам курс.</p>
+        <ul class="demo__list">
+          <li>Качество и стиль презентаций</li>
+          <li>Фрагменты подачи и озвучки автора</li>
+          <li>Примеры видео и иллюстраций</li>
+          <li>Несколько неочевидных принципов курса</li>
+          <li>Вопросы для закрепления материала</li>
+          <li>Элементы практики и общий формат обучения</li>
+        </ul>
+        <div class="demo__meta">3–5 минут</div>
+        <div class="btns"><button class="btn btn--light btn--plain" data-open="demovideo">Смотреть демо</button></div>
       </div>
-      <div class="demo__ph">
+      <div class="demo__ph" data-open="demovideo" role="button" tabindex="0" aria-label="Смотреть демоверсию">
         <div class="demo__play"></div>
-        <div class="demo__cap">Фрагмент курса</div>
+        <div class="demo__cap">Ролик открывается прямо на странице</div>
       </div>
     </div>
   </div>
@@ -612,6 +621,15 @@
   </div>
 </footer>
 
+<!-- ============ ВСПЛЫВАЮЩЕЕ ОКНО: ДЕМОВЕРСИЯ КУРСА ============ -->
+<div class="modal modal--video" id="demovideo">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-label="Демоверсия курса">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <div class="vid"><span>Видео демоверсии курса, 3–5 минут</span></div>
+  </div>
+</div>
+
 <!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБРАТНЫЙ ЗВОНОК» ============ -->
 <div class="modal" id="callback">
   <div class="modal__back" data-close></div>
@@ -629,6 +647,6 @@
   </div>
 </div>
 
-<script src="script.js?v=7"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>

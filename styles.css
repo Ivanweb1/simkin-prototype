@@ -435,6 +435,39 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
   font-size:11px;color:#8a8a8a;background:#1b1b1b;padding:7px 15px;border-radius:100px;
   white-space:nowrap;font-weight:650;
 }
+.demo__ph{cursor:pointer}
+.demo__ph:hover .demo__play{transform:translate(-50%,-50%) scale(1.07)}
+.demo__play{transition:transform .25s var(--ease)}
+.demo__list{list-style:none;margin-top:28px}
+.demo__list li{
+  padding:11px 0 11px 26px;position:relative;font-size:15px;color:#b4b4b4;
+  border-bottom:1px solid #2c2c2c;
+}
+.demo__list li:last-child{border-bottom:0}
+.demo__list li::before{content:"";position:absolute;left:0;top:20px;width:6px;height:6px;border-radius:50%;background:#5a5a5a}
+.demo__meta{
+  display:inline-flex;align-items:center;gap:9px;margin-top:22px;
+  background:#242424;border-radius:100px;padding:9px 18px;font-size:13px;color:#a8a8a8;font-weight:650;
+}
+
+/* всплывающее окно с видео */
+.modal--video .modal__box{max-width:1000px;background:transparent;padding:0;margin-top:12vh;border-radius:0}
+.modal--video .modal__x{top:-52px;right:0;background:#2a2a2a;color:#fff}
+.modal--video .modal__x:hover{background:#3d3d3d}
+.vid{
+  aspect-ratio:16/9;background:#1b1b1b;border-radius:var(--r-lg);position:relative;overflow:hidden;
+}
+.vid::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(to top right,transparent 49.85%,rgba(255,255,255,.08) 49.85%,rgba(255,255,255,.08) 50.15%,transparent 50.15%),
+    linear-gradient(to top left,transparent 49.85%,rgba(255,255,255,.08) 49.85%,rgba(255,255,255,.08) 50.15%,transparent 50.15%);
+}
+.vid span{
+  position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);
+  font-size:13px;color:#8a8a8a;background:#242424;padding:11px 22px;border-radius:100px;
+  font-weight:650;text-align:center;max-width:calc(100% - 40px);
+}
 
 /* ================= ТАБЛИЦА СРАВНЕНИЯ ================= */
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}

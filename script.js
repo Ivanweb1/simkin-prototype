@@ -18,23 +18,25 @@ mnav.querySelectorAll('a').forEach(function(a){
   });
 });
 
-var modal = document.getElementById('callback');
-function setModal(open){
-  modal.classList.toggle('is-open', open);
-  document.body.style.overflow = open ? 'hidden' : '';
+function closeModals(){
+  document.querySelectorAll('.modal.is-open').forEach(function(m){ m.classList.remove('is-open'); });
+  document.body.style.overflow = '';
 }
 document.querySelectorAll('[data-open]').forEach(function(el){
   el.addEventListener('click', function(){
     mnav.classList.remove('is-open');
     burger.classList.remove('is-on');
-    setModal(true);
+    var m = document.getElementById(el.getAttribute('data-open') || 'callback');
+    if (!m) return;
+    m.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
   });
 });
 document.querySelectorAll('[data-close]').forEach(function(el){
-  el.addEventListener('click', function(){ setModal(false); });
+  el.addEventListener('click', closeModals);
 });
 document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape') setModal(false);
+  if(e.key === 'Escape') closeModals();
 });
 
 var seg = document.querySelector('[data-seg]');
