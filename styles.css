@@ -407,15 +407,13 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 .modules li b{color:var(--ink-3);font-size:12.5px;font-weight:800;padding-top:3px;min-width:26px;font-variant-numeric:tabular-nums}
 
 /* ================= ДЕМОВЕРСИЯ ================= */
-.demo{
-  background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:64px 60px;
-  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
-}
+.demo{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:64px 60px}
+.demo__top{display:grid;grid-template-columns:1fr 1.08fr;gap:64px;align-items:center}
 .demo h2{color:#fff}
 .demo h2 .soft{color:#787878}
 .demo .eyebrow{color:#787878}
 .demo p{color:#9c9c9c;margin-top:18px;font-size:16.5px}
-.demo__ph{aspect-ratio:16/10;border-radius:var(--r);background:#242424;position:relative;overflow:hidden}
+.demo__ph{aspect-ratio:16/9;border-radius:var(--r);background:#242424;position:relative;overflow:hidden}
 .demo__ph::after{
   content:"";position:absolute;inset:0;
   background:
@@ -430,25 +428,25 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
   content:"";border-left:19px solid var(--ink);border-top:12px solid transparent;
   border-bottom:12px solid transparent;margin-left:5px;
 }
-.demo__cap{
-  position:absolute;z-index:1;left:50%;bottom:20px;transform:translateX(-50%);
-  font-size:11px;color:#8a8a8a;background:#1b1b1b;padding:7px 15px;border-radius:100px;
-  white-space:nowrap;font-weight:650;
+/* хронометраж углом на кадре, как на превью видео */
+.demo__time{
+  position:absolute;z-index:1;right:16px;bottom:16px;
+  font-size:12.5px;color:#fff;background:rgba(0,0,0,.66);padding:7px 14px;border-radius:8px;
+  white-space:nowrap;font-weight:700;letter-spacing:.01em;
 }
 .demo__ph{cursor:pointer}
 .demo__ph:hover .demo__play{transform:translate(-50%,-50%) scale(1.07)}
 .demo__play{transition:transform .25s var(--ease)}
-.demo__list{list-style:none;margin-top:28px}
+/* список того, что внутри ролика — полосой под верхним рядом,
+   иначе левая колонка вдвое перевешивает правую */
+.demo__list{
+  list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:2px 44px;
+  margin-top:54px;padding-top:40px;border-top:1px solid #2c2c2c;
+}
 .demo__list li{
-  padding:11px 0 11px 26px;position:relative;font-size:15px;color:#b4b4b4;
-  border-bottom:1px solid #2c2c2c;
+  padding:12px 0 12px 26px;position:relative;font-size:15px;color:#b4b4b4;
 }
-.demo__list li:last-child{border-bottom:0}
-.demo__list li::before{content:"";position:absolute;left:0;top:20px;width:6px;height:6px;border-radius:50%;background:#5a5a5a}
-.demo__meta{
-  display:inline-flex;align-items:center;gap:9px;margin-top:22px;
-  background:#242424;border-radius:100px;padding:9px 18px;font-size:13px;color:#a8a8a8;font-weight:650;
-}
+.demo__list li::before{content:"";position:absolute;left:0;top:21px;width:6px;height:6px;border-radius:50%;background:#5a5a5a}
 
 /* всплывающее окно с видео */
 .modal--video .modal__box{max-width:1000px;background:transparent;padding:0;margin-top:12vh;border-radius:0}
@@ -756,7 +754,8 @@ footer{background:var(--paper);padding-top:20px}
   .expert{grid-template-columns:1fr;gap:38px}
   .expert__ph{aspect-ratio:16/11}
   .results,.research__grid,.price{grid-template-columns:repeat(2,1fr)}
-  .demo,.corp{grid-template-columns:1fr;gap:36px}
+  .demo__top,.corp{grid-template-columns:1fr;gap:36px}
+  .demo__list{grid-template-columns:repeat(2,1fr);margin-top:40px;padding-top:32px}
   .demo{padding:48px 40px}
   .benefits{grid-template-columns:1fr}
   .gets{grid-template-columns:1fr;gap:36px}
@@ -815,7 +814,9 @@ footer{background:var(--paper);padding-top:20px}
   .reviews{grid-template-columns:1fr}
   .formats,.formats--5,.price,.compare,.tariffs{grid-template-columns:1fr}
   .formats--5 > *,.formats--5 > :nth-child(4),.formats--5 > :nth-child(5){grid-column:auto}
-  .demo{padding:34px 24px;gap:28px}
+  .demo{padding:34px 24px}
+  .demo__top{gap:28px}
+  .demo__list{grid-template-columns:1fr;gap:0;margin-top:32px;padding-top:26px}
   .compare__col,.tariff{padding:30px 24px}
   .demo__play{width:60px;height:60px}
   .demo__play::after{border-left-width:15px;border-top-width:10px;border-bottom-width:10px}

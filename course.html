@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 
@@ -285,25 +285,26 @@
 <section class="sec" id="demo">
   <div class="wrap" style="padding-bottom:118px">
     <div class="demo" data-rv>
-      <div>
-        <span class="eyebrow">Демоверсия</span>
-        <h2 style="margin-top:20px">Посмотреть <span class="soft">демоверсию курса</span></h2>
-        <p>Короткий ролик из нескольких фрагментов курса. Он даёт ощущение содержания, глубины и качества, но не заменяет сам курс.</p>
-        <ul class="demo__list">
-          <li>Качество и стиль презентаций</li>
-          <li>Фрагменты подачи и озвучки автора</li>
-          <li>Примеры видео и иллюстраций</li>
-          <li>Несколько неочевидных принципов курса</li>
-          <li>Вопросы для закрепления материала</li>
-          <li>Элементы практики и общий формат обучения</li>
-        </ul>
-        <div class="demo__meta">3–5 минут</div>
-        <div class="btns"><button class="btn btn--light btn--plain" data-open="demovideo">Смотреть демо</button></div>
+      <div class="demo__top">
+        <div>
+          <span class="eyebrow">Демоверсия</span>
+          <h2 style="margin-top:20px">Посмотреть <span class="soft">демоверсию курса</span></h2>
+          <p>Короткий ролик из нескольких фрагментов курса. Он даёт ощущение содержания, глубины и качества, но не заменяет сам курс.</p>
+          <div class="btns"><button class="btn btn--light btn--plain" data-open="demovideo">Смотреть демо</button></div>
+        </div>
+        <div class="demo__ph" data-open="demovideo" role="button" tabindex="0" aria-label="Смотреть демоверсию курса">
+          <div class="demo__play"></div>
+          <div class="demo__time">3–5 минут</div>
+        </div>
       </div>
-      <div class="demo__ph" data-open="demovideo" role="button" tabindex="0" aria-label="Смотреть демоверсию">
-        <div class="demo__play"></div>
-        <div class="demo__cap">Ролик открывается прямо на странице</div>
-      </div>
+      <ul class="demo__list">
+        <li>Качество и стиль презентаций</li>
+        <li>Фрагменты подачи и озвучки автора</li>
+        <li>Примеры видео и иллюстраций</li>
+        <li>Несколько неочевидных принципов курса</li>
+        <li>Вопросы для закрепления материала</li>
+        <li>Элементы практики и общий формат обучения</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -647,6 +648,6 @@
   </div>
 </div>
 
-<script src="script.js?v=8"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>
