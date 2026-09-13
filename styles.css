@@ -602,11 +602,6 @@ header.is-scrolled .topbar{max-height:0;opacity:0}
 
 /* ================= КНОПКИ ДЕЙСТВИЙ ================= */
 .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.actions__note{font-size:13px;color:var(--ink-3);font-weight:650;flex-basis:100%;margin-top:6px}
-/* «Купить» заложена в дизайн, но включается во вторую очередь вместе с корзиной */
-.btn--soon{background:var(--soft);border-color:transparent;color:var(--ink-3);cursor:not-allowed}
-.btn--soon:hover{background:var(--soft);color:var(--ink-3)}
-.btn--soon::after{content:none}
 
 /* ================= ГРУППЫ ПЛАШЕК ================= */
 .group + .group{margin-top:42px}
