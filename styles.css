@@ -1333,4 +1333,29 @@ footer{background:var(--paper);padding-top:20px}
 @media (max-width:600px){
   .hdr .logo__txt{max-width:none}
   .hdr .logo__txt span{display:none}
+  /* поле с inline span 2 в одноколоночной форме создаёт лишнюю колонку */
+  .form > *{grid-column:auto !important}
+  /* поля и плитки не должны распирать колонку своей минимальной шириной */
+  .form > *,.bigform > *,.socials > *{min-width:0}
+  .field{width:100%}
+  .socials{grid-template-columns:1fr 1fr;gap:10px}
+  .socials a{padding:20px 16px 22px}
+  .socials b{font-size:15px}
+  .actions .btn{white-space:normal;height:auto;min-height:54px;padding:13px 20px;text-align:center;line-height:1.28}
+}
+/* 320–420: шапка «логотип + кнопка + бургер» должна влезать в строку */
+@media (max-width:420px){
+  :root{--pad:16px}
+  .hdr{height:60px;gap:8px}
+  .logo{gap:8px}
+  .hdr .logo__mark{width:28px;height:28px;border-radius:8px}
+  .hdr .logo__txt b{font-size:15px}
+  .hdr__cta .btn{height:38px;padding:0 13px;font-size:12px}
+  .burger{width:38px;height:38px}
+  .band{padding:32px 18px}
+  .stage{padding:10px 10px 26px}
+  .stage__n,.stage h3,.stage p{padding-left:8px;padding-right:8px}
+  .demo__time{right:10px;bottom:10px;font-size:11.5px;padding:5px 10px}
+  .demo__ph{aspect-ratio:16/10 !important}
+  .download .btn{white-space:normal;height:auto;min-height:54px;padding:13px 20px;text-align:center;line-height:1.28}
 }
