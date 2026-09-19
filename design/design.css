@@ -1,0 +1,130 @@
+/* =====================================================================
+   Simkin.ru — дизайн главной (поверх прототипа ../styles.css)
+   Цвета — из логотипа «Доктор Симкин»
+   ===================================================================== */
+:root{
+  --brand:#001AE6;        /* основной синий логотипа */
+  --brand-2:#2E80FF;      /* средний */
+  --brand-3:#54C2FF;      /* голубой */
+  --brand-dark:#0012A8;
+  --navy:#0B1238;         /* текст: глубокий синий вместо чёрного */
+  --navy-2:#4B5373;
+  --navy-3:#8990AA;
+  --tint:#F3F6FD;         /* светлая подложка с оттенком бренда */
+  --d-line:rgba(11,18,56,.12);
+}
+body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(--navy)}
+
+/* ================= ШАПКА ================= */
+.d header{background:rgba(255,255,255,.9);border-bottom-color:transparent;transition:border-color .25s ease}
+.d header.is-scrolled{border-bottom-color:var(--d-line)}
+.d .hdr{height:88px;max-width:1600px}
+.d .mainnav{gap:22px}
+.d .logo img{height:44px;width:auto;display:block}
+.d .navitem > a{color:var(--navy-2);font-weight:500;font-size:15px}
+.d .navitem > a:hover{color:var(--navy)}
+.d .navitem > a::before{display:none}
+.d .navitem > a i{border-top-color:var(--navy-3)}
+.d .sub a{color:var(--navy-2)}
+.d .sub a.sub__head{color:var(--navy)}
+.d .sub a:hover{background:var(--tint);color:var(--brand)}
+.d .hdr__cta .btn{
+  height:48px;padding:0 24px;font-size:15px;font-weight:600;
+  background:var(--brand);border-color:var(--brand);color:#fff;
+}
+.d .hdr__cta .btn:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+.d .burger{border-color:var(--d-line)}
+.d .burger i{background:var(--navy)}
+
+/* ================= ПЕРВЫЙ ЭКРАН ================= */
+.dhero{padding:8px 16px 0}
+.dhero__card{
+  position:relative;max-width:1640px;margin:0 auto;border-radius:36px;overflow:hidden;
+  /* фон карточки продолжает светлую стену со снимка */
+  background:linear-gradient(180deg,#f1f0ee 0%,#ebebea 55%,#d9dbdf 100%);
+  min-height:clamp(620px,calc(100vh - 112px),860px);
+  display:flex;align-items:center;
+}
+/* снимок занимает правые ~70%: фигура не заходит под текст; левый край растворяется в фоне */
+.dhero__media{position:absolute;top:0;right:0;bottom:0;width:72%}
+.dhero__media img{width:100%;height:100%;object-fit:cover;object-position:35% 28%}
+.dhero__media picture{display:block;height:100%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 30%);mask-image:linear-gradient(90deg,transparent 0%,#000 30%)}
+.dhero__txt{
+  position:relative;z-index:1;width:100%;max-width:1440px;margin:0 auto;
+  padding:72px clamp(40px,5vw,96px);
+}
+.dhero__txt > *{max-width:600px}
+.dhero h1{
+  font-size:clamp(44px,4.6vw,76px);font-weight:600;line-height:1.02;letter-spacing:-.038em;color:var(--navy);
+  max-width:11.5em;
+}
+.dhero h1 em{font-style:normal;color:var(--brand)}
+.dhero__sub{
+  margin-top:30px;font-size:clamp(19px,1.5vw,22px);font-weight:600;line-height:1.35;color:var(--navy);
+  letter-spacing:-.012em;
+}
+.dhero__lead{margin-top:14px;font-size:18px;line-height:1.6;color:var(--navy-2);max-width:31em}
+.dhero__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+
+.dbtn{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  height:62px;padding:0 32px;border-radius:100px;border:1px solid transparent;
+  font:600 17px/1 inherit;font-family:inherit;text-decoration:none;cursor:pointer;
+  transition:background .22s var(--ease),color .22s var(--ease),border-color .22s var(--ease),transform .22s var(--ease);
+}
+.dbtn svg{width:18px;height:18px;flex:0 0 auto;transition:transform .22s var(--ease)}
+.dbtn:hover svg{transform:translateX(3px)}
+.dbtn--brand{background:var(--brand);color:#fff}
+.dbtn--brand:hover{background:var(--brand-dark)}
+.dbtn--light{background:#fff;color:var(--navy);border-color:var(--d-line)}
+.dbtn--light:hover{border-color:var(--navy)}
+
+/* подпись к фото: кто на снимке */
+.dhero__who{
+  position:absolute;z-index:1;right:32px;bottom:32px;max-width:320px;
+  background:rgba(255,255,255,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-radius:22px;padding:18px 22px;display:flex;gap:14px;align-items:center;
+  box-shadow:0 10px 30px rgba(11,18,56,.08);
+}
+.dhero__who img{width:34px;height:auto;flex:0 0 auto}
+.dhero__who b{display:block;font-size:16px;font-weight:600;color:var(--navy);letter-spacing:-.01em}
+.dhero__who span{display:block;font-size:13.5px;line-height:1.4;color:var(--navy-2);margin-top:3px}
+
+/* планшет: текст уже не помещается рядом с фигурой — фото уходит под текст */
+@media (max-width:1100px){
+  .dhero__card{display:block;min-height:0;background:var(--tint)}
+  .dhero__txt{padding:52px 44px 44px}
+  .dhero__txt > *{max-width:680px}
+  .dhero__media{position:relative;width:auto;aspect-ratio:16/10}
+  .dhero__media picture{-webkit-mask-image:none;mask-image:none}
+  .dhero__media img{object-position:72% 30%}
+  .dhero__media::after{display:none}
+}
+@media (max-width:1500px){
+  .d .mainnav{gap:16px}
+  .d .navitem > a{font-size:14.5px}
+}
+@media (max-width:900px){
+  .d .hdr{height:68px}
+  .d .logo img{height:36px}
+}
+/* телефон: крупный читаемый текст, кнопки во всю ширину */
+@media (max-width:600px){
+  .d .hdr__cta{display:none}
+  .dhero{padding:4px 10px 0}
+  .dhero__card{border-radius:26px}
+  .dhero__txt{padding:34px 20px 28px}
+  .dhero h1{font-size:clamp(34px,9.6vw,42px);line-height:1.06;letter-spacing:-.032em}
+  .dhero__sub{margin-top:20px;font-size:18px}
+  .dhero__lead{font-size:17px}
+  .dhero__lead br{display:none}
+  .dhero__btns{flex-direction:column;margin-top:28px}
+  .dbtn{width:100%;height:58px}
+  .dhero__media{aspect-ratio:4/4.2}
+  .dhero__media img{object-position:66% 18%}
+  .dhero__who{left:12px;right:12px;bottom:12px;max-width:none;padding:14px 16px;border-radius:18px}
+}
+@media (max-width:1365px){
+  .d .hdr__cta{margin-left:auto}
+}
