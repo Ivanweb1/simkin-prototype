@@ -133,20 +133,6 @@ a.dir--dark,a.dir--dark:visited{color:#fff}
 
 /* ================= ОБЩЕЕ: ШАПКА ================= */
 header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2)}
-.topbar{
-  border-bottom:1px solid var(--line-2);background:var(--bg);
-  max-height:44px;overflow:hidden;transition:max-height .3s var(--ease),opacity .24s ease;opacity:1;
-}
-header.is-scrolled .topbar{max-height:0;opacity:0}
-.topbar__in{display:flex;align-items:center;height:44px;gap:26px}
-.topbar__note{font-size:12px;color:var(--ink-3);letter-spacing:.03em;flex:1 1 auto;font-weight:550}
-.topbar__link{
-  font-size:13px;color:var(--ink-2);text-decoration:none;background:none;border:0;
-  font-family:inherit;font-weight:650;cursor:pointer;padding:0;transition:color .2s ease;
-}
-.topbar__link:hover{color:var(--ink)}
-.topbar__tel{font-size:13.5px;font-weight:750;color:var(--ink);text-decoration:none;white-space:nowrap}
-
 .hdr{display:flex;align-items:center;height:80px;gap:28px}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex:0 0 auto}
 .logo__mark{width:38px;height:38px;border-radius:11px;background:var(--soft);flex:0 0 auto}
@@ -1171,7 +1157,6 @@ footer{background:var(--paper);padding-top:20px}
   .hdr{justify-content:space-between}
 }
 @media (max-width:1180px){
-  .topbar__note{display:none}
   .grid-4,.cells--4,.roles,.pcards{grid-template-columns:repeat(2,1fr)}
   .roles--5{grid-template-columns:repeat(2,1fr)}
   .roles--5 > *,.roles--5 > :nth-child(4),.roles--5 > :nth-child(5){grid-column:auto}
@@ -1230,7 +1215,6 @@ footer{background:var(--paper);padding-top:20px}
   .hero__ph{aspect-ratio:4/3}
   .lead{font-size:16.5px}
   .head{margin-bottom:34px}
-  .topbar{display:none}
   .hdr{height:66px;gap:12px}
   .hdr__cta .btn{height:42px;padding:0 17px;font-size:13px}
   .logo__mark{width:34px;height:34px}
@@ -1408,4 +1392,17 @@ footer{background:var(--paper);padding-top:20px}
 .form textarea.field{height:112px;padding:16px 18px;border-radius:var(--r);resize:vertical;line-height:1.5}
 @media (max-width:1180px){
   .sub__group{min-width:230px}
+}
+
+/* всплывающее окно «Обсудить задачу»: длинная форма в две колонки, окно прокручивается */
+.modal{overflow-y:auto}
+.modal__box--wide{max-width:640px;margin-bottom:9vh}
+.mform--2{grid-template-columns:1fr 1fr}
+.mform--2 .mform__full{grid-column:1/-1}
+.mform--2 textarea.mfield{height:112px;padding:16px 18px;border-radius:var(--r);resize:vertical;line-height:1.5}
+.mform--2 .btn{justify-self:start;padding:0 36px}
+@media (max-width:600px){
+  .modal__box--wide{margin:16px;padding:40px 22px 28px}
+  .mform--2{grid-template-columns:1fr}
+  .mform--2 > *{min-width:0}
 }

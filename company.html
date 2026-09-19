@@ -9,21 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=27">
+<link rel="stylesheet" href="styles.css?v=29">
 </head>
 <body>
 
 <!-- ============ ОБЩЕЕ: ШАПКА, ЗАКРЕПЛЕНА ПРИ ПРОКРУТКЕ ============ -->
 <header id="hdr">
-  <div class="topbar">
-    <div class="wrap topbar__in">
-      <span class="topbar__note">Авторская система эргономики Доктора Симкина</span>
-      <a href="contacts.html" class="topbar__link">Контакты</a>
-      <button class="topbar__link" data-open>Обратный звонок</button>
-      <a href="tel:+70000000000" class="topbar__tel">+7 (000) 000-00-00</a>
-    </div>
-  </div>
-
   <div class="wrap hdr">
     <a href="index.html" class="logo">
       <span class="logo__mark"></span>
@@ -63,7 +54,7 @@
       <div class="navitem"><a href="knowledge.html">Полезные статьи</a></div>
     </nav>
 
-    <div class="hdr__cta"><a href="discuss.html" class="btn btn--sm btn--fill btn--plain">Обсудить задачу</a></div>
+    <div class="hdr__cta"><button class="btn btn--sm btn--fill btn--plain" data-open="discuss">Обсудить задачу</button></div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
   </div>
 
@@ -550,6 +541,27 @@
   </div>
 </div>
 
-<script src="script.js?v=27"></script>
+<!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБСУДИТЬ ЗАДАЧУ» (для компаний) ============ -->
+<div class="modal" id="discuss">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box modal__box--wide" role="dialog" aria-modal="true" aria-labelledby="dsTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="dsTitle">Обсудить задачу</h2>
+    <p>Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+    <form class="mform mform--2" data-thanks="discuss">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield" placeholder="Компания">
+      <input class="mfield" placeholder="Должность">
+      <input class="mfield" type="email" placeholder="Почта">
+      <input class="mfield" placeholder="Число сотрудников">
+      <textarea class="mfield mform__full" placeholder="Сообщение"></textarea>
+      <label class="magree mform__full"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill mform__full">Отправить</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js?v=29"></script>
 </body>
 </html>
