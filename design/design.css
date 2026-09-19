@@ -237,7 +237,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .chero{padding:8px 16px 0}
 .chero__grid{
   max-width:1640px;margin:0 auto;display:grid;grid-template-columns:minmax(0,2.15fr) minmax(0,1fr);gap:12px;
-  height:clamp(600px,calc(100vh - 112px),840px);
+  height:clamp(540px,72vh,660px);
 }
 .chero__card{
   position:relative;border-radius:32px;overflow:hidden;display:flex;align-items:center;
