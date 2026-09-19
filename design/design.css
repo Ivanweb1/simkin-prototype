@@ -134,14 +134,14 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
    ===================================================================== */
 .bhero__wrap{max-width:1600px;margin:0 auto;padding:0 24px}
 .bhero__top{
-  display:grid;grid-template-columns:minmax(0,2.3fr) minmax(0,1fr);gap:56px;align-items:end;
+  display:grid;grid-template-columns:minmax(0,2.3fr) minmax(0,1fr);gap:56px;align-items:start;
   padding:40px 16px 32px;
 }
 .bhero h1{
   font-size:clamp(46px,5.4vw,96px);font-weight:600;line-height:.98;letter-spacing:-.047em;color:var(--navy);
 }
 .bhero h1 em{font-style:normal;color:var(--brand)}
-.bhero__aside{padding-bottom:8px}
+.bhero__aside{padding-top:clamp(8px,1.1vw,18px)}
 .bhero__sub{font-size:20px;font-weight:600;line-height:1.35;color:var(--navy);letter-spacing:-.012em}
 .bhero__lead{margin-top:14px;font-size:17px;line-height:1.6;color:var(--navy-2)}
 
@@ -244,9 +244,13 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   background:linear-gradient(180deg,#f1f0ee 0%,#ebebea 55%,#d9dbdf 100%);
 }
 .chero__media{position:absolute;top:0;right:0;bottom:0;width:64%}
-.chero__media picture{display:block;height:100%;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 26%);mask-image:linear-gradient(90deg,transparent 0%,#000 26%)}
-.chero__media img{width:100%;height:100%;object-fit:cover;object-position:48% 0%}
+/* снимок опущен вниз: над головой воздух, фигура «стоит» в кадре; верх и левый край растворяются в фоне */
+.chero__media picture{position:absolute;left:0;right:0;bottom:0;top:9%;display:block;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 26%),linear-gradient(180deg,transparent 0%,#000 7%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(90deg,transparent 0%,#000 26%),linear-gradient(180deg,transparent 0%,#000 7%);
+  mask-composite:intersect}
+.chero__media img{width:100%;height:100%;object-fit:cover;object-position:57% 0%}
 .chero__txt{position:relative;z-index:1;padding:56px clamp(36px,3.6vw,64px);max-width:680px}
 .chero h1{font-size:clamp(40px,3.9vw,66px);font-weight:600;line-height:1.02;letter-spacing:-.04em;color:var(--navy)}
 .chero h1 em{font-style:normal;color:var(--brand)}
@@ -266,8 +270,8 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   .chero__grid{grid-template-columns:1fr;height:auto}
   .chero__card{display:block;background:var(--tint)}
   .chero__txt{padding:48px 40px 40px;max-width:700px}
-  .chero__media{position:relative;width:auto;aspect-ratio:16/10}
-  .chero__media picture{-webkit-mask-image:none;mask-image:none}
+  .chero__media{position:relative;width:auto;aspect-ratio:16/10;background:linear-gradient(180deg,#f1f0ee 0%,#e6e6e6 100%)}
+  .chero__media picture{top:8%;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 7%);mask-image:linear-gradient(180deg,transparent 0%,#000 7%)}
   .chero__media img{object-position:72% 0%}
   .chero__tiles{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .chero__tiles .tile{min-height:220px}
@@ -390,4 +394,17 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   .dchain__dot{width:48px;height:48px;font-size:14px;box-shadow:0 0 0 5px rgba(255,255,255,.14)}
   .dchain__t{font-size:18px}
   .dchain__note{margin-top:28px;padding-top:24px;font-size:17px}
+}
+
+/* иконки в плитках сценариев (вариант C) */
+.tile__ico{
+  position:absolute;left:34px;top:30px;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;
+}
+.tile__ico svg{width:28px;height:28px}
+.tile--brand .tile__ico{background:rgba(255,255,255,.14);color:#fff}
+.tile--light .tile__ico{background:#fff;color:var(--brand)}
+@media (max-width:600px){
+  .tile__ico{left:24px;top:24px;width:50px;height:50px;border-radius:15px}
+  .tile__ico svg{width:24px;height:24px}
+  .chero__tiles .tile{min-height:196px}
 }
