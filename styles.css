@@ -1406,3 +1406,15 @@ footer{background:var(--paper);padding-top:20px}
   .mform--2{grid-template-columns:1fr}
   .mform--2 > *{min-width:0}
 }
+
+/* всплывающее окно «Заявка на курс»: выбор версии и поля компании */
+.mform__label{font-size:13px;font-weight:700;color:var(--ink-2);padding-left:4px}
+.mform--2 .seg{justify-self:start}
+.mform__group{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mform__group[hidden]{display:none}
+.mform__group .mform__full{grid-column:1/-1}
+@media (max-width:600px){
+  .mform__group{grid-template-columns:1fr}
+  .mform__group > *{min-width:0}
+  .mform--2 .seg{justify-self:stretch}
+}

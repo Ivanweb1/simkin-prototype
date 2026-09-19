@@ -30,6 +30,10 @@ document.querySelectorAll('[data-open]').forEach(function(el){
     if (!m) return;
     m.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+    // кнопка может сразу выбрать нужный вариант в форме окна (например, версию курса)
+    var v = el.getAttribute('data-version');
+    var pick = v && m.querySelector('[data-switch] button[data-val="' + v + '"]');
+    if (pick) pick.click();
   });
 });
 document.querySelectorAll('[data-close]').forEach(function(el){

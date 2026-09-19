@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=29">
+<link rel="stylesheet" href="styles.css?v=30">
 </head>
 <body>
 
@@ -54,7 +54,7 @@
       <div class="navitem"><a href="knowledge.html">Полезные статьи</a></div>
     </nav>
 
-    <div class="hdr__cta"><a href="#request" class="btn btn--sm btn--fill btn--plain">Пройти курс</a></div>
+    <div class="hdr__cta"><button class="btn btn--sm btn--fill btn--plain" data-open="course-request">Пройти курс</button></div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
   </div>
 
@@ -113,7 +113,7 @@
         <h1 data-rv style="--d:.06s">Название курса</h1>
         <p class="lead" data-rv style="--d:.12s">Подзаголовок о результате: что человек умеет и что меняется после курса.</p>
         <div class="btns" data-rv style="--d:.18s">
-          <a href="#request" class="btn btn--fill">Оставить заявку</a>
+          <button class="btn btn--fill" data-open="course-request">Оставить заявку</button>
           <a href="#corp" class="btn">Корпоративная версия</a>
         </div>
       </div>
@@ -442,7 +442,7 @@
           <li>Отличие корпоративной версии от версии для себя.</li>
           <li>Отличие корпоративной версии от версии для себя.</li>
         </ul>
-        <div class="btns"><a href="#request" class="btn btn--fill">Запросить корпоративную версию курса</a></div>
+        <div class="btns"><button class="btn btn--fill" data-open="course-request" data-version="company">Запросить корпоративную версию курса</button></div>
       </div>
     </div>
   </div>
@@ -466,7 +466,7 @@
               <li>Что входит в тариф.</li>
               <li>Что входит в тариф.</li>
             </ul>
-            <a href="#request" class="btn btn--fill">Записаться</a>
+            <button class="btn btn--fill" data-open="course-request">Записаться</button>
           </div>
           <div class="tariff tariff--hl">
             <div class="tariff__name">Тариф второй</div>
@@ -477,7 +477,7 @@
               <li>Что входит в тариф.</li>
               <li>Что входит в тариф.</li>
             </ul>
-            <a href="#request" class="btn btn--light">Записаться</a>
+            <button class="btn btn--light" data-open="course-request">Записаться</button>
           </div>
       </div>
     </div>
@@ -485,7 +485,7 @@
       <div class="tariff">
         <div class="tariff__name">Корпоративная версия</div>
         <p style="color:var(--ink-2);margin-top:16px;max-width:36em">Стоимость считается под число сотрудников и формат проведения.</p>
-        <div class="btns"><a href="#request" class="btn btn--fill">Узнать стоимость</a></div>
+        <div class="btns"><button class="btn btn--fill" data-open="course-request">Узнать стоимость</button></div>
       </div>
     </div>
   </div>
@@ -646,6 +646,35 @@
   </div>
 </div>
 
-<script src="script.js?v=29"></script>
+<!-- ============ ВСПЛЫВАЮЩЕЕ ОКНО «ЗАЯВКА НА КУРС» ============ -->
+<div class="modal" id="course-request">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box modal__box--wide" role="dialog" aria-modal="true" aria-labelledby="crTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="crTitle">Заявка на курс</h2>
+    <p>Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+    <form class="mform mform--2" data-thanks="course">
+      <span class="mform__label mform__full">Версия курса</span>
+      <div class="seg mform__full" data-switch="version">
+        <button type="button" data-val="self" class="is-on">Для себя</button>
+        <button type="button" data-val="company">Для компании</button>
+      </div>
+      <input type="hidden" name="version" value="Для себя">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield mform__full" type="email" placeholder="Почта">
+      <div class="mform__group" data-show="company" hidden>
+        <input class="mfield" placeholder="Компания">
+        <input class="mfield" placeholder="Должность">
+        <input class="mfield mform__full" placeholder="Число сотрудников">
+      </div>
+      <textarea class="mfield mform__full" placeholder="Комментарий"></textarea>
+      <label class="magree mform__full"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill mform__full">Отправить заявку</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js?v=30"></script>
 </body>
 </html>
