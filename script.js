@@ -171,3 +171,27 @@ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-m
   // страховка: вкладка открыта в фоне или наблюдатель не сработал — показываем всё
   setTimeout(function(){ if(!fired) showAll(); }, 1600);
 }
+
+// финальная форма: выбор канала связи показывает поле под этот канал
+document.querySelectorAll('[data-channels]').forEach(function(form){
+  var input = form.querySelector('[data-contact]');
+  var kinds = {
+    tg:   ['text',  'Ник или номер в Telegram'],
+    max:  ['tel',   'Номер телефона в MAX'],
+    wa:   ['tel',   'Номер телефона в WhatsApp'],
+    mail: ['email', 'Электронная почта'],
+    tel:  ['tel',   'Телефон']
+  };
+  form.querySelectorAll('[data-ch]').forEach(function(b){
+    b.addEventListener('click', function(){
+      form.querySelectorAll('[data-ch]').forEach(function(x){ x.classList.toggle('is-on', x === b); });
+      var k = kinds[b.getAttribute('data-ch')];
+      input.type = k[0];
+      input.placeholder = k[1];
+      input.required = true;
+      input.hidden = false;
+      input.value = '';
+      input.focus();
+    });
+  });
+});

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=26">
+<link rel="stylesheet" href="styles.css?v=27">
 </head>
 <body>
 
@@ -33,13 +33,18 @@
     <nav class="mainnav">
       <div class="navitem">
         <a href="company.html">Для компаний <i></i></a>
-        <div class="sub">
-          <a href="audit.html">Аудит и консалтинг</a>
-          <a href="company.html#offers">Корпоративная версия курса</a>
-          <a href="program.html">Корпоративная программа</a>
-          <a href="workplace.html">Подбор и организация рабочих мест</a>
-          <a href="industrial.html">Промышленная эргономика</a>
-          <a href="company.html#offers">Чек-апы</a>
+        <div class="sub sub--groups">
+          <div class="sub__group">
+            <a href="company.html#offers" class="sub__head">Офисная эргономика</a>
+            <a href="audit.html">Аудит и консалтинг</a>
+            <a href="company.html#offers">Корпоративная версия курса</a>
+            <a href="program.html">Корпоративная программа</a>
+            <a href="workplace.html">Подбор и организация рабочих мест</a>
+            <a href="company.html#offers">Чек-апы</a>
+          </div>
+          <div class="sub__group">
+            <a href="industrial.html" class="sub__head">Промышленная эргономика</a>
+          </div>
         </div>
       </div>
       <div class="navitem">
@@ -68,12 +73,13 @@
       <div class="mnav__item">
         <a href="company.html">Для компаний</a>
         <div class="mnav__sub">
+          <a href="company.html#offers" class="mnav__head">Офисная эргономика</a>
           <a href="audit.html">Аудит и консалтинг</a>
           <a href="company.html#offers">Корпоративная версия курса</a>
           <a href="program.html">Корпоративная программа</a>
           <a href="workplace.html">Подбор и организация рабочих мест</a>
-          <a href="industrial.html">Промышленная эргономика</a>
           <a href="company.html#offers">Чек-апы</a>
+          <a href="industrial.html" class="mnav__head">Промышленная эргономика</a>
         </div>
       </div>
       <div class="mnav__item">
@@ -101,13 +107,12 @@
   <div class="wrap hero__inner">
     <div class="hero__grid">
       <div>
-        <span class="eyebrow" data-rv>Авторская система эргономики Доктора Симкина</span>
-        <h1 data-rv style="--d:.06s">Эргономика, которая начинается с человека, а не с мебели</h1>
-        <p class="lead" data-rv style="--d:.12s">Подзаголовок в две строки: короткое объяснение сути подхода <br>и того, кому он нужен.</p>
+        <h1 data-rv>Эргономика, которая начинается с человека, а не с мебели</h1>
+        <p class="lead hero__sub" data-rv style="--d:.06s">Для компаний и для себя. В офисе и на производстве.</p>
+        <p class="lead" data-rv style="--d:.12s">Сначала – человек, его тело и рабочая задача.<br>Затем – рабочая поза, мебель, оборудование, микроклимат и освещение.</p>
         <div class="btns" data-rv style="--d:.18s">
           <a href="company.html" class="btn btn--fill">Для компаний</a>
           <a href="self.html" class="btn">Для себя</a>
-          <a href="#cta" class="btn btn--plain">Обсудить задачу</a>
         </div>
       </div>
       <div class="ph ph--lg hero__ph" data-rv style="--d:.24s"><span>Фотография: человек за рабочим местом</span></div>
@@ -115,12 +120,20 @@
   </div>
 </section>
 
-<!-- ============ БЛОК 2. ЧЕМ ПОДХОД ОТЛИЧАЕТСЯ ============ -->
+<!-- ============ БЛОК 2. ЧЕМ ОТЛИЧАЕТСЯ ПОДХОД ============ -->
 <section class="sec" id="difference">
   <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Чем этот подход отличается <span class="soft">от обычных рекомендаций по эргономике</span></h2>
-      <p>Короткий поясняющий абзац к блоку: в двух-трёх строках о сути отличия.</p>
+    <div class="head head--split head--top" data-rv>
+      <div>
+        <span class="eyebrow">Чем отличается подход</span>
+        <h2>Не набор правил, <span class="soft">а понимание того, как работает тело</span></h2>
+      </div>
+      <div class="head__text">
+        <p>Система построена не вокруг списка «правильных» поз и настроек.</p>
+        <p>Сначала человек понимает, как тело распределяет нагрузку, почему возникает мышечное напряжение и как оно адаптируется к рабочей задаче.</p>
+        <p>Тогда рекомендации перестают быть набором инструкций: становится понятно, почему именно такое положение тела подходит для конкретной работы и зачем именно так настраивать рабочее место.</p>
+        <p class="head__accent">Для тех, кто хочет не просто следовать рекомендациям, а понимать их логику и уметь самостоятельно принимать правильные решения.</p>
+      </div>
     </div>
 
     <div class="panel" data-rv style="--d:.06s">
@@ -128,26 +141,29 @@
         <div class="cell">
           <span class="idx">01</span>
           <div class="icon"></div>
-          <h3>Тезис первый</h3>
-          <p>Короткое пояснение тезиса в одну-две строки.</p>
+          <h3>Сначала человек, а не мебель</h3>
+          <p>Рабочее место должно подстраиваться под человека, его тело и задачи, а не человек – под мебель.</p>
+          <p>Если вас «скрючивает», вероятно, это адаптация под неправильно настроенное рабочее место.</p>
         </div>
         <div class="cell">
           <span class="idx">02</span>
           <div class="icon"></div>
-          <h3>Тезис второй</h3>
-          <p>Короткое пояснение тезиса в одну-две строки.</p>
+          <h3>Не существует одной правильной позы</h3>
+          <p>Положение тела зависит от задачи.</p>
+          <p>Важно найти сбалансированное положение без лишнего мышечного напряжения.</p>
         </div>
         <div class="cell">
           <span class="idx">03</span>
           <div class="icon"></div>
-          <h3>Тезис третий</h3>
-          <p>Короткое пояснение тезиса в одну-две строки.</p>
+          <h3>Рабочее место – единая система</h3>
+          <p>Кресло, стол, монитор, клавиатура, мышь, освещение и другие элементы работают вместе.</p>
+          <p>Один неправильно настроенный элемент может заставлять тело постоянно компенсировать и снижать пользу остальных настроек.</p>
         </div>
         <div class="cell">
           <span class="idx">04</span>
           <div class="icon"></div>
-          <h3>Тезис четвёртый</h3>
-          <p>Короткое пояснение тезиса в одну-две строки.</p>
+          <h3>Правильная поза не должна требовать постоянного контроля</h3>
+          <p>При правильной настройке рабочего места сбалансированное положение тела сохраняется привычно и естественно, без необходимости постоянно напоминать себе «сидеть правильно».</p>
         </div>
       </div>
     </div>
@@ -177,9 +193,10 @@
         </div>
         <div class="rail__i">
           <div class="rail__dot">06</div>
-          <div class="rail__t">Среда</div>
+          <div class="rail__t">Микроклимат и освещение</div>
         </div>
       </div>
+      <p class="rail__note">Мы начинаем не с выбора мебели, а с понимания того, как работает тело. И уже затем под выбранное положение тела адаптируем рабочее место и условия работы.</p>
     </div>
   </div>
 </section>
@@ -187,111 +204,70 @@
 <!-- ============ БЛОК 3. ДЛЯ КОГО ============ -->
 <section class="sec" id="audience">
   <div class="wrap sec__inner--tight sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Для кого <span class="soft">этот сайт и эта система</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
+    <div class="head" data-rv>
+      <h2>Для кого</h2>
     </div>
-    <div class="grid-4">
-      <div class="card" data-rv style="--d:.0s">
+    <div class="grid-2">
+      <a href="company.html" class="card" data-rv style="--d:.0s">
         <span class="idx">01</span>
         <div class="icon"></div>
         <h3>Компаниям</h3>
-        <p>Строка текста об этой аудитории.</p>
-        <a href="company.html" class="link">Для компаний</a>
-      </div>
-      <div class="card" data-rv style="--d:.1s">
+        <p>Для собственников, руководителей, HR и специалистов, отвечающих за здоровье сотрудников, условия труда и обучение – как в офисе, так и на производстве.</p>
+        <span class="link">Для компаний</span>
+      </a>
+      <a href="self.html" class="card" data-rv style="--d:.1s">
         <span class="idx">02</span>
         <div class="icon"></div>
-        <h3>Сотрудникам и частным пользователям</h3>
-        <p>Строка текста об этой аудитории.</p>
-        <a href="self.html" class="link">Для себя</a>
-      </div>
-      <div class="card" data-rv style="--d:.2s">
+        <h3>Для себя</h3>
+        <p>Для тех, кто много работает за компьютером – в офисе, дома или в смешанном формате – и хочет сохранить здоровье, меньше уставать и поддерживать высокую работоспособность.</p>
+        <span class="link">Для себя</span>
+      </a>
+      <!-- Плашки 03 и 04 закладываются в дизайн и админку, на старте скрыты -->
+      <div class="card" hidden>
         <span class="idx">03</span>
         <div class="icon"></div>
         <h3>Производителям мебели и оборудования</h3>
-        <p>Строка текста об этой аудитории.</p>
-        <a href="#cta" class="link">Экспертная оценка</a>
+        <p>Для компаний, которые разрабатывают и выпускают мебель, оборудование и аксессуары для рабочих мест и хотят учитывать эргономику уже на этапе создания продукта.</p>
       </div>
-      <div class="card" data-rv style="--d:.3s">
+      <div class="card" hidden>
         <span class="idx">04</span>
         <div class="icon"></div>
-        <h3>Специалистам и партнёрам</h3>
-        <p>Строка текста об этой аудитории.</p>
-        <span class="badge">В перспективе</span>
+        <h3>Специалистам и партнерам</h3>
+        <p>Для специалистов и организаций, работающих в области эргономики, здоровья, обучения и организации рабочих пространств, которым интересны совместные проекты и профессиональное сотрудничество.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 4. ДВА НАПРАВЛЕНИЯ ============ -->
-<section class="sec sec--alt" id="directions">
-  <div class="wrap sec__inner">
-    <div class="head head--center" data-rv>
-      <span class="eyebrow">Направления</span>
-      <h2>Два направления, <span class="soft">два разных маршрута</span></h2>
-      <p>Короткий поясняющий абзац: чем отличаются маршруты для компании и для человека.</p>
-    </div>
-    <div class="grid-2">
-      <a href="company.html" class="dir dir--dark" data-rv style="--d:0s">
-        <div class="icon sq lg"></div>
-        <h3>Для компаний</h3>
-        <ul class="dir__list">
-          <li>Аудит и консалтинг</li>
-          <li>Корпоративная версия курса</li>
-          <li>Комплексная корпоративная программа</li>
-          <li>Подбор и организация рабочих мест</li>
-          <li>Промышленная эргономика</li>
-          <li>Чек-апы</li>
-        </ul>
-        <span class="link">Перейти в раздел</span>
-      </a>
-      <a href="self.html" class="dir" data-rv style="--d:.1s">
-        <div class="icon sq lg"></div>
-        <h3>Для себя</h3>
-        <ul class="dir__list">
-          <li>Онлайн-курс</li>
-          <li>Эргономичные решения для рабочего места</li>
-          <li>Авторские разработки</li>
-          <li>Полезные статьи</li>
-        </ul>
-        <span class="link">Перейти в раздел</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 5. ОБ ЭКСПЕРТЕ ============ -->
+<!-- ============ БЛОК 4. ОБО МНЕ ============ -->
 <section class="sec" id="expert">
   <div class="wrap sec__inner">
     <div class="expert">
       <div class="ph ph--lg expert__ph" data-rv><span>Фотография</span></div>
       <div>
-        <span class="eyebrow" data-rv>Об эксперте</span>
+        <span class="eyebrow" data-rv>Обо мне</span>
         <div class="expert__name" data-rv style="--d:.06s">Дмитрий Симкин</div>
-        <div class="expert__spec" data-rv style="--d:.1s">Врач-остеопат, эксперт по эргономике, автор системы</div>
+        <div class="expert__spec" data-rv style="--d:.1s">Врач-остеопат, эксперт в области офисной и промышленной эргономики, автор собственной системы эргономики.</div>
         <div data-rv style="--d:.16s">
           <ul class="facts">
-          <li><b>1991</b> начало медицинской практики</li>
-          <li><b>2004</b> начало работы с эргономикой</li>
-          <li><b>Клиника</b> основатель Клиники Доктора Симкина</li>
-          <li><b>Разработки</b> автор методик и собственных решений</li>
-          <li><b>Опыт</b> российские и международные компании</li>
-          <li><b>Экспертиза</b> связь рабочей позы, тела и задач человека</li>
+          <li><b>1991</b> начало медицинской практики в области работы с телом</li>
+          <li><b>1996</b> первая запатентованная разработка в области эргономики – подушка под поясницу</li>
+          <li><b>2004</b> начало преподавания эргономики</li>
+          <li><b>2009</b> создание Клиники Доктора Симкина</li>
           </ul>
-          <div class="btns"><a href="about.html" class="btn">Подробнее об эксперте</a></div>
+          <div class="btns"><a href="about.html" class="btn">Подробнее о Дмитрии Симкине</a></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 6. КЛИЕНТЫ ============ -->
+<!-- ============ БЛОК 5. КЛИЕНТЫ ============ -->
 <section class="sec sec--alt" id="clients">
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
-      <h2>Клиенты, <span class="soft">с которыми мы работали</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
+      <h2>Опыт работы <span class="soft">с компаниями</span></h2>
+      <p>Проекты по обучению эргономике для российских и международных компаний.</p>
     </div>
     <div class="logos" data-rv style="--d:.06s">
         <div class="ph"><span>Логотип</span></div>
@@ -300,98 +276,108 @@
         <div class="ph"><span>Логотип</span></div>
         <div class="ph"><span>Логотип</span></div>
     </div>
-    <div class="nums" data-rv style="--d:.12s">
-      <div class="num"><b>000</b><span>компаний</span></div>
-      <div class="num"><b>000</b><span>обученных сотрудников</span></div>
-      <div class="num"><b>00</b><span>лет практики</span></div>
-    </div>
   </div>
 </section>
 
-<!-- ============ БЛОК 7. КАК РАБОТАЕТ ПОДХОД ============ -->
+<!-- ============ БЛОК 6. КАК РАБОТАЕТ СИСТЕМА ============ -->
 <section class="sec" id="method">
   <div class="wrap sec__inner">
-    <div class="head head--split" data-rv>
-      <h2>Как работает подход <span class="soft">— три шага системы</span></h2>
-      <p>Короткий поясняющий абзац к блоку.</p>
+    <div class="head" data-rv>
+      <span class="eyebrow">Как работает система</span>
+      <h2>От понимания тела – <span class="soft">к рабочему месту</span></h2>
     </div>
     <div class="panel" data-rv style="--d:.06s">
       <div class="steps">
         <div class="step">
           <span class="idx--xl">01</span>
           <div class="icon"></div>
-          <h3>Название шага</h3>
-          <p>Одно предложение о том, что происходит на этом шаге.</p>
+          <h3>Понять тело</h3>
+          <p>Понять, как работает тело во время работы: как распределяется нагрузка, почему возникает мышечное напряжение и как рабочая поза влияет на утомление и работоспособность.</p>
         </div>
         <div class="step">
           <span class="idx--xl">02</span>
           <div class="icon"></div>
-          <h3>Название шага</h3>
-          <p>Одно предложение о том, что происходит на этом шаге.</p>
+          <h3>Найти сбалансированное положение</h3>
+          <p>Найти сбалансированное положение тела – комфортное, без постоянного мышечного напряжения и подходящее под конкретные задачи и стиль работы.</p>
         </div>
         <div class="step">
           <span class="idx--xl">03</span>
           <div class="icon"></div>
-          <h3>Название шага</h3>
-          <p>Одно предложение о том, что происходит на этом шаге.</p>
+          <h3>Настроить рабочее место</h3>
+          <p>Адаптировать кресло, стол, монитор, клавиатуру, мышь и другие элементы рабочего места под выбранное положение тела, а также учесть освещение и микроклимат.</p>
         </div>
       </div>
     </div>
-    <div class="btns" data-rv style="--d:.12s"><a href="method.html" class="btn">Подробнее о методе</a></div>
+    <div class="btns" data-rv style="--d:.12s"><a href="method.html" class="btn">Подробнее о системе</a></div>
   </div>
 </section>
 
-<!-- ============ БЛОК 9. СТАТЬИ ============ -->
+<!-- ============ БЛОК 7. ПОЛЕЗНЫЕ СТАТЬИ ============ -->
 <section class="sec sec--alt" id="articles">
   <div class="wrap sec__inner">
-    <div class="head head--row" data-rv>
-      <h2>Статьи <span class="soft">и материалы</span></h2>
-      <a href="knowledge.html" class="link link--u">Все материалы</a>
+    <div class="head head--split" data-rv>
+      <h2>Полезные статьи</h2>
+      <p>Практические материалы о рабочей позе, здоровье, работоспособности и организации рабочего места.</p>
     </div>
-    <div class="posts">
-      <a href="article.html" class="post posts__main" data-rv>
-        <div class="ph ph--lg"><span>Обложка</span></div>
-        <span class="eyebrow">Тема</span>
-        <h3>Заголовок главного материала в две строки</h3>
-        <div class="post__meta">00.00.0000</div>
+    <div class="grid-3">
+      <a href="article.html" class="post post--card" data-rv style="--d:.0s">
+        <div class="ph"><span>Обложка</span></div>
+        <span class="eyebrow">Рабочая поза</span>
+        <h3>Почему совет «сидеть прямо» не всегда работает</h3>
+        <p>Правильная рабочая поза не должна требовать постоянного мышечного контроля. Разбираемся, как найти сбалансированное положение тела и настроить под него рабочее место.</p>
+        <span class="link">Читать</span>
       </a>
-      <div class="posts__side">
-        <a href="article.html" class="post" data-rv style="--d:.08s">
-          <div class="ph"><span>Обложка</span></div>
-          <div>
-            <span class="eyebrow">Тема</span>
-            <h3>Заголовок статьи в две строки</h3>
-            <div class="post__meta">00.00.0000</div>
-          </div>
-        </a>
-        <a href="article.html" class="post" data-rv style="--d:.16s">
-          <div class="ph"><span>Обложка</span></div>
-          <div>
-            <span class="eyebrow">Тема</span>
-            <h3>Заголовок статьи в две строки</h3>
-            <div class="post__meta">00.00.0000</div>
-          </div>
-        </a>
-      </div>
+      <a href="article.html" class="post post--card" data-rv style="--d:.1s">
+        <div class="ph"><span>Обложка</span></div>
+        <span class="eyebrow">Рабочее место</span>
+        <h3>Почему хорошего кресла недостаточно для правильной эргономики</h3>
+        <p>Даже дорогое эргономичное кресло не решит проблему, если монитор, стол, клавиатура и другие элементы рабочего места заставляют тело постоянно адаптироваться.</p>
+        <span class="link">Читать</span>
+      </a>
+      <a href="article.html" class="post post--card" data-rv style="--d:.2s">
+        <div class="ph"><span>Обложка</span></div>
+        <span class="eyebrow">Здоровье и работа</span>
+        <h3>Почему к концу рабочего дня болят шея и спина</h3>
+        <p>Боль и усталость часто связаны не с одним фактором, а с тем, как организовано рабочее место в целом. Разбираем, что стоит проверить в первую очередь.</p>
+        <span class="link">Читать</span>
+      </a>
     </div>
+    <div class="btns btns--center" data-rv style="--d:.12s"><a href="knowledge.html" class="btn">Все статьи</a></div>
   </div>
 </section>
 
-<!-- ============ БЛОК 10. ЗАЯВКА ============ -->
+<!-- ============ БЛОК 8. ФИНАЛЬНЫЙ БЛОК: СВЯЗЬ ============ -->
 <section class="sec" id="cta">
   <div class="wrap sec__inner">
     <div class="band" data-rv>
-      <div class="band__grid">
+      <div class="band__grid band__grid--top">
         <div>
-          <span class="eyebrow">Заявка</span>
-          <h2 style="margin-top:20px">Заголовок блока заявки</h2>
-          <p class="band__sub">Короткая подпись: что произойдёт после отправки и в какой срок ответят.</p>
+          <h2>Есть вопрос <span class="soft">или хотите обсудить задачу?</span></h2>
+          <p class="band__sub">Оставьте контакт удобным для вас способом – ответим и подскажем, куда двигаться дальше.</p>
+          <div class="direct">
+            <span class="direct__t">Или напишите сразу</span>
+            <div class="direct__links">
+              <a href="#">Telegram</a>
+              <a href="#">MAX</a>
+              <a href="#">WhatsApp</a>
+              <a href="mailto:mail@simkin.ru">Email</a>
+            </div>
+          </div>
         </div>
-        <form class="form" onsubmit="return false">
-          <input class="field" placeholder="Имя">
-          <input class="field" placeholder="Телефон">
+        <form class="form" data-thanks="contacts" data-channels>
+          <input class="field form__full" placeholder="Имя" required>
+          <span class="form__label">Как с вами связаться</span>
+          <div class="chan" role="group" aria-label="Способ связи">
+            <button type="button" data-ch="tg">Telegram</button>
+            <button type="button" data-ch="max">MAX</button>
+            <button type="button" data-ch="wa">WhatsApp</button>
+            <button type="button" data-ch="mail">Электронная почта</button>
+            <button type="button" data-ch="tel">Телефон</button>
+          </div>
+          <input class="field form__full" data-contact hidden>
+          <textarea class="field form__full" placeholder="Коротко напишите, что вас интересует (необязательно)"></textarea>
           <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
-          <button class="btn btn--light">Оставить заявку</button>
+          <button class="btn btn--light">Отправить</button>
         </form>
       </div>
     </div>
@@ -485,7 +471,7 @@
   </div>
 </div>
 
-<script src="script.js?v=26"></script>
+<script src="script.js?v=27"></script>
 
 </body>
 </html>

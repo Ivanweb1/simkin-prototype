@@ -1359,3 +1359,53 @@ footer{background:var(--paper);padding-top:20px}
   .demo__ph{aspect-ratio:16/10 !important}
   .download .btn{white-space:normal;height:auto;min-height:54px;padding:13px 20px;text-align:center;line-height:1.28}
 }
+
+/* ================= ГЛАВНАЯ: ОБНОВЛЕНИЕ 19.09 ================= */
+/* меню «Для компаний»: офисная и промышленная эргономика на одном уровне */
+.sub--groups{display:flex;gap:6px}
+.sub__group{min-width:262px}
+.sub__group + .sub__group{border-left:1px solid var(--line-2);padding-left:6px}
+.sub a.sub__head{color:var(--ink);font-weight:750}
+.mnav__sub a.mnav__head{color:var(--ink);font-weight:750;margin-top:4px}
+
+.hero__grid .hero__sub{color:var(--ink);font-weight:700}
+.hero__grid .hero__sub + .lead{margin-top:14px}
+
+.head--top{align-items:start}
+.head--top .eyebrow{margin-bottom:20px}
+.head__text p + p{margin-top:14px}
+.head--split p.head__accent{color:var(--ink);font-weight:650}
+.cell p + p{margin-top:10px}
+.rail__note{margin-top:44px;max-width:48em;color:var(--ink-2);font-size:16px}
+
+.post--card{background:var(--paper);border-radius:var(--r);padding:14px 14px 28px;display:flex;flex-direction:column}
+.post--card .ph{border-radius:var(--r-sm)}
+.post--card .eyebrow,.post--card h3,.post--card p,.post--card .link{margin-left:12px;margin-right:12px}
+.post--card p{font-size:14.5px;color:var(--ink-2);margin-top:12px}
+.post--card .link{margin-top:auto;padding-top:22px;align-self:flex-start}
+.btns--center{justify-content:center}
+
+/* финальный блок: выбор способа связи */
+.band__grid--top{align-items:start}
+.direct{margin-top:40px}
+.direct__t{display:block;font-size:13px;color:#8f8f8f;font-weight:700;margin-bottom:14px}
+.direct__links{display:flex;flex-wrap:wrap;gap:8px}
+.direct__links a{
+  color:#fff;text-decoration:none;font-size:14px;font-weight:650;padding:11px 18px;
+  border:1px solid #3d3d3d;border-radius:100px;transition:border-color .2s ease,background .2s ease;
+}
+.direct__links a:hover{border-color:#fff;background:#1d1d1d}
+.form .form__full,.form__label,.chan{grid-column:1/-1}
+.form__label{font-size:13px;color:#9c9c9c;font-weight:700;margin-top:6px;padding-left:4px}
+.chan{display:flex;flex-wrap:wrap;gap:8px}
+.chan button{
+  height:42px;padding:0 17px;border:1px solid #3d3d3d;background:#1d1d1d;color:#c4c4c4;border-radius:100px;
+  font-family:inherit;font-size:13.5px;font-weight:650;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+.chan button:hover{border-color:#8a8a8a;color:#fff}
+.chan button.is-on{background:#fff;border-color:#fff;color:var(--ink)}
+.form .field[hidden],.card[hidden]{display:none}
+.form textarea.field{height:112px;padding:16px 18px;border-radius:var(--r);resize:vertical;line-height:1.5}
+@media (max-width:1180px){
+  .sub__group{min-width:230px}
+}
