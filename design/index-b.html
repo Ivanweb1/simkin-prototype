@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Simkin.ru — дизайн главной</title>
+<title>Simkin.ru — дизайн главной, вариант B</title>
 <script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,29 +91,41 @@
   </nav>
 </header>
 
-<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН — ДИЗАЙН ============ -->
-<section class="dhero" id="hero">
-  <div class="dhero__card">
-    <div class="dhero__txt">
+<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН — ВАРИАНТ B (бенто) ============ -->
+<section class="bhero" id="hero">
+  <div class="bhero__wrap">
+    <div class="bhero__top">
       <h1>Эргономика, которая начинается <em>с&nbsp;человека,</em> а&nbsp;не&nbsp;с&nbsp;мебели</h1>
-      <p class="dhero__sub">Для компаний и&nbsp;для себя. В&nbsp;офисе и&nbsp;на&nbsp;производстве.</p>
-      <p class="dhero__lead">Сначала – человек, его тело и&nbsp;рабочая задача. <br>Затем – рабочая поза, мебель, оборудование, микроклимат и&nbsp;освещение.</p>
-      <div class="dhero__btns">
-        <a href="../company.html" class="dbtn dbtn--brand">Для компаний
-          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
-        <a href="../self.html" class="dbtn dbtn--light">Для себя
-          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
+      <div class="bhero__aside">
+        <p class="bhero__sub">Для компаний и&nbsp;для себя. В&nbsp;офисе и&nbsp;на&nbsp;производстве.</p>
+        <p class="bhero__lead">Сначала – человек, его тело и&nbsp;рабочая задача. <br>Затем – рабочая поза, мебель, оборудование, микроклимат и&nbsp;освещение.</p>
       </div>
     </div>
-    <div class="dhero__media">
-      <picture>
-        <source srcset="assets/hero.webp" type="image/webp">
-        <img src="assets/hero.jpg" alt="Дмитрий Симкин" width="1672" height="941" fetchpriority="high">
-      </picture>
-      <div class="dhero__who">
-        <img src="assets/logo-mark.svg" alt="" width="34" height="42">
-        <div><b>Дмитрий Симкин</b><span>Врач-остеопат, автор собственной системы эргономики</span></div>
+
+    <div class="bento">
+      <div class="bento__photo">
+        <picture>
+          <source srcset="assets/hero.webp" type="image/webp">
+          <img src="assets/hero.jpg" alt="Дмитрий Симкин" width="1672" height="941" fetchpriority="high">
+        </picture>
+        <div class="bento__who">
+          <img src="assets/logo-mark.svg" alt="" width="30" height="37">
+          <div><b>Дмитрий Симкин</b><span>Врач-остеопат, автор собственной системы эргономики</span></div>
+        </div>
       </div>
+
+      <a href="../company.html" class="tile tile--brand">
+        <span class="tile__spine" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="tile__tag">В офисе и на производстве</span>
+        <span class="tile__t">Для компаний</span>
+        <span class="tile__go"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+      </a>
+
+      <a href="../self.html" class="tile tile--light">
+        <span class="tile__tag">Для тех, кто много работает за&nbsp;компьютером</span>
+        <span class="tile__t">Для себя</span>
+        <span class="tile__go"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
@@ -488,7 +500,7 @@
 </div>
 
 <!-- переключатель вариантов -->
-<nav class="variant" aria-label="Варианты первого экрана"><a href="index.html" class="is-on">Вариант A</a><a href="index-b.html">Вариант B</a></nav>
+<nav class="variant" aria-label="Варианты первого экрана"><a href="index.html">Вариант A</a><a href="index-b.html" class="is-on">Вариант B</a></nav>
 <script src="../script.js?v=30"></script>
 
 </body>
