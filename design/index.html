@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=31">
+<link rel="stylesheet" href="design.css?v=32">
 </head>
 <body class="d">
 
@@ -357,16 +357,16 @@
 </section>
 
 <!-- ============ БЛОК 8. ФИНАЛЬНЫЙ БЛОК: СВЯЗЬ ============ -->
-<section class="sec" id="cta">
-  <div class="wrap sec__inner">
-    <div class="band" data-rv>
-      <div class="band__grid band__grid--top">
-        <div>
-          <h2>Есть вопрос <span class="soft">или хотите обсудить задачу?</span></h2>
-          <p class="band__sub">Оставьте контакт удобным для вас способом – ответим и подскажем, куда двигаться дальше.</p>
-          <div class="direct">
-            <span class="direct__t">Или напишите сразу</span>
-            <div class="direct__links">
+<section class="dsec dsec--cta" id="cta">
+  <div class="dwrap">
+    <div class="dband" data-rv>
+      <div class="dband__grid">
+        <div class="dband__left">
+          <h2 class="dh2 dband__h2">Есть вопрос <span class="dband__soft">или хотите обсудить задачу?</span></h2>
+          <p class="dband__sub">Оставьте контакт удобным для вас способом – ответим и подскажем, куда двигаться дальше.</p>
+          <div class="ddirect">
+            <span class="ddirect__t">Или напишите сразу</span>
+            <div class="ddirect__links">
               <a href="#">Telegram</a>
               <a href="#">MAX</a>
               <a href="#">WhatsApp</a>
@@ -374,20 +374,20 @@
             </div>
           </div>
         </div>
-        <form class="form" data-thanks="contacts" data-channels>
-          <input class="field form__full" placeholder="Имя" required>
-          <span class="form__label">Как с вами связаться</span>
-          <div class="chan" role="group" aria-label="Способ связи">
+        <form class="dform" data-thanks="contacts" data-channels>
+          <input class="dfield" placeholder="Имя" required>
+          <span class="dform__label">Как с вами связаться</span>
+          <div class="dchan" role="group" aria-label="Способ связи">
             <button type="button" data-ch="tg">Telegram</button>
             <button type="button" data-ch="max">MAX</button>
             <button type="button" data-ch="wa">WhatsApp</button>
             <button type="button" data-ch="mail">Электронная почта</button>
             <button type="button" data-ch="tel">Телефон</button>
           </div>
-          <input class="field form__full" data-contact hidden>
-          <textarea class="field form__full" placeholder="Коротко напишите, что вас интересует (необязательно)"></textarea>
-          <label class="agree"><i></i><span>Согласие на обработку персональных данных</span></label>
-          <button class="btn btn--light">Отправить</button>
+          <input class="dfield" data-contact hidden>
+          <textarea class="dfield dfield--area" placeholder="Коротко напишите, что вас интересует (необязательно)"></textarea>
+          <label class="dagree"><i></i><span>Согласие на обработку персональных данных</span></label>
+          <button class="dbtn dbtn--brand dform__submit">Отправить</button>
         </form>
       </div>
     </div>

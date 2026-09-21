@@ -620,3 +620,69 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
     linear-gradient(to top left,transparent 49.8%,rgba(35,43,62,.07) 49.8%,rgba(35,43,62,.07) 50.2%,transparent 50.2%);
 }
 .d .ph span{color:var(--navy-3);font-weight:600;background:rgba(255,255,255,.94)}
+
+/* =====================================================================
+   БЛОК 8. ЕСТЬ ВОПРОС ИЛИ ХОТИТЕ ОБСУДИТЬ ЗАДАЧУ
+   ===================================================================== */
+.dsec--cta{padding-top:0}
+.dband{
+  border-radius:36px;padding:clamp(36px,4.4vw,64px);color:#fff;overflow:hidden;
+  background:linear-gradient(135deg,#001AE6 0%,#1147EE 26%,#2E80FF 62%,#54C2FF 118%);
+}
+.dband__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:clamp(32px,5vw,80px);align-items:start}
+.dband__h2{margin-top:0;color:#fff;max-width:11em}
+.dband__soft{color:rgba(255,255,255,.62)}
+.dband__sub{margin-top:22px;font-size:clamp(17px,1.35vw,19px);line-height:1.6;color:rgba(255,255,255,.84);max-width:30em}
+
+.ddirect{margin-top:clamp(32px,3.4vw,48px)}
+.ddirect__t{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.66);margin-bottom:14px}
+.ddirect__links{display:flex;flex-wrap:wrap;gap:8px}
+.ddirect__links a{
+  display:inline-flex;align-items:center;height:42px;padding:0 18px;border-radius:100px;
+  border:1px solid rgba(255,255,255,.34);color:#fff;text-decoration:none;font-size:15px;font-weight:500;
+  transition:background .22s var(--ease),border-color .22s var(--ease);
+}
+.ddirect__links a:hover{background:rgba(255,255,255,.14);border-color:transparent}
+
+/* форма — белая карточка поверх градиента */
+.dform{
+  display:flex;flex-direction:column;background:#fff;border-radius:26px;
+  padding:clamp(24px,2.4vw,34px);box-shadow:0 24px 60px rgba(9,26,80,.16);
+}
+.dfield{
+  width:100%;height:56px;padding:0 18px;border:1px solid var(--d-line);border-radius:14px;background:var(--tint);
+  font:400 16px/1 inherit;font-family:inherit;color:var(--navy);
+  transition:border-color .2s var(--ease),background .2s var(--ease);
+}
+.dfield::placeholder{color:var(--navy-3)}
+.dfield:focus{outline:none;border-color:var(--brand);background:#fff}
+.dfield[hidden]{display:none}
+.dfield--area{height:96px;padding:16px 18px;line-height:1.5;resize:vertical}
+.dfield + .dfield,.dchan + .dfield{margin-top:10px}
+.dform__label{display:block;margin-top:20px;margin-bottom:10px;font-size:13px;font-weight:600;color:var(--navy-2)}
+
+.dchan{display:flex;flex-wrap:wrap;gap:8px}
+.dchan button{
+  height:40px;padding:0 15px;border-radius:100px;border:1px solid var(--d-line);background:#fff;
+  font:600 14px/1 inherit;font-family:inherit;color:var(--navy-2);cursor:pointer;
+  transition:border-color .2s var(--ease),background .2s var(--ease),color .2s var(--ease);
+}
+.dchan button:hover{border-color:var(--navy-3);color:var(--navy)}
+.dchan button.is-on{background:var(--brand);border-color:var(--brand);color:#fff}
+
+.dagree{display:flex;gap:11px;align-items:flex-start;margin-top:18px;font-size:12.5px;line-height:1.45;color:var(--navy-3)}
+.dagree i{width:17px;height:17px;border:1px solid var(--d-line);border-radius:5px;flex:0 0 auto;margin-top:1px;display:block}
+.dform__submit{margin-top:20px;width:100%}
+
+@media (max-width:980px){
+  .dband__grid{grid-template-columns:1fr;gap:32px}
+  .dband__h2{max-width:none}
+}
+@media (max-width:600px){
+  .dband{border-radius:26px;padding:28px 20px}
+  .dband__sub{font-size:16.5px}
+  .ddirect__links a{height:40px;padding:0 15px;font-size:14.5px}
+  .dform{border-radius:22px;padding:20px 18px}
+  .dfield{height:54px}
+  .dchan button{height:38px;padding:0 13px;font-size:13.5px}
+}
