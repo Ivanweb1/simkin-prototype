@@ -458,6 +458,7 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
   .daud{grid-template-columns:1fr}
   .dhead--split{grid-template-columns:1fr;gap:20px;align-items:start}
   .dhead__note{padding-bottom:0}
+  .dhead__act{justify-content:flex-start;padding-bottom:0}
 }
 @media (max-width:600px){
   .dcard{padding:26px 22px 30px;border-radius:22px}
@@ -548,6 +549,8 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
 .dstep h3{margin-top:30px;font-size:clamp(22px,1.9vw,27px);font-weight:600;line-height:1.16;letter-spacing:-.024em;color:var(--navy);max-width:13em}
 .dstep p{margin-top:14px;font-size:17px;line-height:1.6;color:var(--navy-2)}
 .dsec__btn{margin-top:clamp(28px,3vw,40px)}
+/* кнопка в шапке блока: правый край, по нижней линии заголовка */
+.dhead__act{display:flex;justify-content:flex-end;align-items:flex-end;padding-bottom:6px}
 .dsec__btn--center{display:flex;justify-content:center}
 
 @media (max-width:980px){
