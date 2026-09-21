@@ -717,6 +717,9 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .ddirect__links img{width:18px;height:18px}
   .dform{border-radius:22px;padding:20px 18px}
   .dfield{height:54px}
+  /* у .dfield--area та же специфичность, что у .dfield выше, — без этой строки
+     текстовое поле сжималось до 54px и резало подсказку в две строки */
+  .dfield--area{height:104px}
   .dform__submit{height:62px;font-size:17px}
   .dchan{grid-template-columns:repeat(3,minmax(0,1fr))}
   .dchan button{height:40px;padding:0 6px;font-size:13.5px}
