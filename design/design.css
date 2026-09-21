@@ -532,3 +532,33 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
   .dlogos{grid-template-columns:1fr 1fr;gap:10px}
   .dlogo{border-radius:18px;aspect-ratio:16/9}
 }
+
+/* =====================================================================
+   БЛОК 6. КАК РАБОТАЕТ СИСТЕМА
+   ===================================================================== */
+.dsteps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px)}
+.dstep{background:var(--tint);border-radius:28px;padding:36px 36px 40px;display:flex;flex-direction:column}
+.dstep__head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.dstep__ico{
+  width:60px;height:60px;border-radius:18px;background:#fff;color:var(--brand);
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.dstep__ico svg{width:28px;height:28px}
+.dstep__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);font-variant-numeric:tabular-nums}
+.dstep h3{margin-top:30px;font-size:clamp(22px,1.9vw,27px);font-weight:600;line-height:1.16;letter-spacing:-.024em;color:var(--navy);max-width:13em}
+.dstep p{margin-top:14px;font-size:17px;line-height:1.6;color:var(--navy-2)}
+.dsec__btn{margin-top:clamp(28px,3vw,40px)}
+.dsec__btn--center{display:flex;justify-content:center}
+
+@media (max-width:980px){
+  .dsteps{grid-template-columns:1fr}
+  .dstep h3{max-width:none}
+}
+@media (max-width:600px){
+  .dstep{padding:26px 22px 30px;border-radius:22px}
+  .dstep__ico{width:52px;height:52px;border-radius:15px}
+  .dstep__ico svg{width:25px;height:25px}
+  .dstep h3{margin-top:22px;font-size:23px}
+  .dstep p{font-size:16.5px}
+  .dsec__btn .dbtn{width:100%}
+}
