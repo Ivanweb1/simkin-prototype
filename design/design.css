@@ -557,7 +557,8 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
 }
 a.dpost:visited{color:var(--navy)}
 a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);transform:translateY(-3px)}
-.dpost__ph{aspect-ratio:16/10;border-radius:0;flex:0 0 auto}
+.dpost__ph{display:block;aspect-ratio:16/10;border-radius:0;flex:0 0 auto;overflow:hidden;background:#E7ECF6}
+.dpost__ph img{display:block;width:100%;height:100%;object-fit:cover}
 .dpost__body{display:flex;flex-direction:column;flex:1;padding:26px 30px 30px}
 /* верхняя строка карточки: рубрика слева, дата и время чтения справа */
 .dpost__meta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
