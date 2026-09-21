@@ -468,3 +468,45 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
   .dlink{padding-top:24px}
   .dhead__note{font-size:17px}
 }
+
+/* =====================================================================
+   БЛОК 4. ОБО МНЕ
+   ===================================================================== */
+.dexp{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(36px,5vw,84px);align-items:start}
+/* портрет из первого экрана: вертикальный кадр, фигура по центру */
+.dexp__ph{
+  aspect-ratio:4/5;border-radius:32px;overflow:hidden;position:relative;
+  background:linear-gradient(180deg,#f1f0ee 0%,#e9e9e8 100%);
+}
+.dexp__ph picture,.dexp__ph img{display:block;width:100%;height:100%}
+.dexp__ph img{object-fit:cover;object-position:78% 0%}
+.dexp__body{padding-top:clamp(0px,1.4vw,20px)}
+.dexp .dh2{margin-top:20px}
+.dexp__spec{margin-top:22px;font-size:clamp(18px,1.5vw,21px);line-height:1.5;color:var(--navy-2);max-width:27em}
+
+/* факты по годам — вертикальная шкала */
+.dfacts{list-style:none;margin:clamp(32px,3.2vw,44px) 0 0;padding:0}
+.dfacts li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;padding:18px 0;border-top:1px solid var(--d-line)}
+.dfacts li:first-child{border-top:0;padding-top:0}
+.dfacts__y{
+  display:inline-grid;place-items:center;min-width:76px;height:36px;padding:0 14px;border-radius:100px;
+  background:var(--tint);color:var(--brand);font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;
+}
+.dfacts__t{font-size:17px;line-height:1.5;color:var(--navy-2)}
+.dexp__btn{margin-top:clamp(28px,3vw,40px)}
+
+@media (max-width:980px){
+  .dexp{grid-template-columns:1fr;gap:32px}
+  .dexp__ph{aspect-ratio:16/10;max-width:640px}
+  .dexp__ph img{object-position:66% 0%}
+  .dexp__body{padding-top:0}
+}
+@media (max-width:600px){
+  .dexp__ph{aspect-ratio:4/4.4;border-radius:24px}
+  .dexp__ph img{object-position:72% 0%}
+  .dexp__spec{font-size:17.5px}
+  .dfacts li{grid-template-columns:1fr;gap:10px;align-items:start;padding:16px 0}
+  .dfacts__y{justify-self:start;height:32px;min-width:70px;font-size:14px}
+  .dfacts__t{font-size:16.5px}
+  .dexp__btn .dbtn{width:100%}
+}

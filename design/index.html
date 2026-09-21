@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=21">
+<link rel="stylesheet" href="design.css?v=23">
 </head>
 <body class="d">
 
@@ -223,22 +223,27 @@
 </section>
 
 <!-- ============ БЛОК 4. ОБО МНЕ ============ -->
-<section class="sec" id="expert">
-  <div class="wrap sec__inner">
-    <div class="expert">
-      <div class="ph ph--lg expert__ph" data-rv><span>Фотография</span></div>
-      <div>
-        <span class="eyebrow" data-rv>Обо мне</span>
-        <div class="expert__name" data-rv style="--d:.06s">Дмитрий Симкин</div>
-        <div class="expert__spec" data-rv style="--d:.1s">Врач-остеопат, эксперт в области офисной и промышленной эргономики, автор собственной системы эргономики.</div>
-        <div data-rv style="--d:.16s">
-          <ul class="facts">
-          <li><b>1991</b> начало медицинской практики в области работы с телом</li>
-          <li><b>1996</b> первая запатентованная разработка в области эргономики – подушка под поясницу</li>
-          <li><b>2004</b> начало преподавания эргономики</li>
-          <li><b>2009</b> создание Клиники Доктора Симкина</li>
-          </ul>
-          <div class="btns"><a href="../about.html" class="btn">Подробнее о Дмитрии Симкине</a></div>
+<section class="dsec" id="expert">
+  <div class="dwrap">
+    <div class="dexp">
+      <div class="dexp__ph" data-rv>
+        <picture>
+          <source srcset="assets/hero.webp" type="image/webp">
+          <img src="assets/hero.jpg" alt="Дмитрий Симкин" width="1672" height="941" loading="lazy">
+        </picture>
+      </div>
+      <div class="dexp__body">
+        <span class="deyebrow" data-rv>Обо мне</span>
+        <h2 class="dh2" data-rv style="--d:.06s">Дмитрий Симкин</h2>
+        <p class="dexp__spec" data-rv style="--d:.1s">Врач-остеопат, эксперт в области офисной и промышленной эргономики, автор собственной системы эргономики.</p>
+        <ul class="dfacts" data-rv style="--d:.16s">
+          <li><span class="dfacts__y">1991</span><span class="dfacts__t">Начало медицинской практики в области работы с телом</span></li>
+          <li><span class="dfacts__y">1996</span><span class="dfacts__t">Первая запатентованная разработка в области эргономики – подушка под поясницу</span></li>
+          <li><span class="dfacts__y">2004</span><span class="dfacts__t">Начало преподавания эргономики</span></li>
+          <li><span class="dfacts__y">2009</span><span class="dfacts__t">Создание Клиники Доктора Симкина</span></li>
+        </ul>
+        <div class="dexp__btn" data-rv style="--d:.2s">
+          <a href="../about.html" class="dbtn dbtn--light">Подробнее о Дмитрии Симкине<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
         </div>
       </div>
     </div>
