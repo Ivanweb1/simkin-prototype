@@ -765,8 +765,10 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 /* та же высота и то же скругление, что у плиток соцсетей справа */
 .d .clinic{
   margin-top:0;background:#fff;border:1px solid var(--d-line);border-radius:100px;
-  height:42px;padding:0 22px;display:flex;align-items:center;white-space:nowrap;
-  font-size:14px;line-height:1;color:var(--navy-2);
+  height:42px;padding:0 22px;white-space:nowrap;
+  /* не flex: там текст и ссылка становятся отдельными элементами
+     и пробел между «клиники» и ссылкой схлопывается */
+  display:block;font-size:14px;line-height:40px;color:var(--navy-2);
 }
 .d .clinic a{color:var(--brand);font-weight:600}
 /* строка мессенджеров в контактах: точки-разделители заменены плитками */
@@ -803,7 +805,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 @media (max-width:700px){
   .d .clinic{
     height:auto;padding:16px 20px;border-radius:18px;
-    white-space:normal;line-height:1.5;display:block;
+    white-space:normal;line-height:1.5;
   }
 }
 /* на 1100–1280 пять колонок становились по 204px и ломали длинные пункты —
