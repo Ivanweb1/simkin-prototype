@@ -569,9 +569,12 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
 /* =====================================================================
    БЛОК 7. ПОЛЕЗНЫЕ СТАТЬИ
    ===================================================================== */
-.dhead__aside{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+/* шапка с подписью и кнопкой справа: подпись по верхней линии заголовка,
+   кнопка сразу под ней — обе по левому краю своей колонки */
+.dhead--aside{align-items:start}
+.dhead__aside{display:flex;flex-direction:column;gap:22px;align-items:stretch}
 .dhead__aside .dhead__note{padding-bottom:0}
-.dhead__aside .dhead__act{width:100%}
+.dhead__aside .dhead__act{justify-content:flex-end;padding-bottom:0}
 
 .dposts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(36px,3.6vw,52px)}
 .dpost{
@@ -583,10 +586,14 @@ a.dpost:visited{color:var(--navy)}
 a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);transform:translateY(-3px)}
 .dpost__ph{aspect-ratio:16/10;border-radius:0;flex:0 0 auto}
 .dpost__body{display:flex;flex-direction:column;flex:1;padding:26px 30px 30px}
+/* верхняя строка карточки: рубрика слева, дата и время чтения справа */
+.dpost__meta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .dchip{
-  align-self:flex-start;background:var(--tint);color:var(--brand);border-radius:100px;
-  padding:7px 14px;font-size:13px;font-weight:600;letter-spacing:.01em;
+  background:var(--tint);color:var(--brand);border-radius:100px;
+  padding:5px 11px;font-size:12px;font-weight:600;letter-spacing:.01em;
 }
+.dmeta{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--navy-3);white-space:nowrap}
+.dmeta i{width:3px;height:3px;border-radius:50%;background:currentColor;display:block;opacity:.7}
 .dpost h3{margin-top:18px;font-size:clamp(20px,1.6vw,23px);font-weight:600;line-height:1.24;letter-spacing:-.02em}
 .dpost p{margin-top:12px;font-size:16.5px;line-height:1.6;color:var(--navy-2)}
 .dpost .dlink{padding-top:24px}
