@@ -312,7 +312,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   letter-spacing:.01em;
 }
 /* маркер — «чёрточка» из знака логотипа (пропорции бруска 44,7 x 17) */
-.deyebrow::before{content:"";width:21px;height:8px;border-radius:1.5px;background:var(--brand);flex:0 0 auto}
+.deyebrow::before{content:"";width:21px;height:4px;border-radius:1px;background:var(--brand);flex:0 0 auto}
 .deyebrow--light{color:#fff}
 .deyebrow--light::before{background:var(--brand-3)}
 .dh2{
@@ -415,4 +415,56 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   .tile__ico{left:24px;top:24px;width:50px;height:50px;border-radius:15px}
   .tile__ico svg{width:24px;height:24px}
   .chero__tiles .tile{min-height:196px}
+}
+
+/* =====================================================================
+   БЛОК 3. ДЛЯ КОГО
+   ===================================================================== */
+.dsec--tint{background:var(--tint)}
+.dhead{max-width:1000px}
+.dh2--top{margin-top:0}
+.dhead--split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:end;max-width:none}
+.dhead__note{font-size:18px;line-height:1.6;color:var(--navy-2);max-width:32em;padding-bottom:10px}
+
+.daud{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(36px,3.6vw,52px)}
+.dcard{
+  display:flex;flex-direction:column;background:#fff;border:1px solid var(--d-line);border-radius:28px;
+  padding:36px 40px 40px;text-decoration:none;color:var(--navy);
+  transition:border-color .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease);
+}
+a.dcard:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);transform:translateY(-3px)}
+a.dcard:visited{color:var(--navy)}
+.dcard[hidden]{display:none}
+.dcard__top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.dcard__ico{
+  width:60px;height:60px;border-radius:18px;background:var(--tint);color:var(--brand);
+  display:grid;place-items:center;flex:0 0 auto;transition:background .25s var(--ease),color .25s var(--ease);
+}
+.dcard__ico svg{width:28px;height:28px}
+a.dcard:hover .dcard__ico{background:var(--brand);color:#fff}
+.dcard__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);font-variant-numeric:tabular-nums}
+.dcard h3{margin-top:30px;font-size:clamp(24px,2.1vw,32px);font-weight:600;line-height:1.14;letter-spacing:-.026em;max-width:14em}
+.dcard p{margin-top:16px;font-size:17px;line-height:1.6;color:var(--navy-2);max-width:32em}
+
+/* ссылка со стрелкой */
+.dlink{
+  display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:30px;
+  font-size:16px;font-weight:600;color:var(--brand);
+}
+.dlink svg{width:17px;height:17px;transition:transform .22s var(--ease)}
+a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
+
+@media (max-width:860px){
+  .daud{grid-template-columns:1fr}
+  .dhead--split{grid-template-columns:1fr;gap:20px;align-items:start}
+  .dhead__note{padding-bottom:0}
+}
+@media (max-width:600px){
+  .dcard{padding:26px 22px 30px;border-radius:22px}
+  .dcard__ico{width:52px;height:52px;border-radius:15px}
+  .dcard__ico svg{width:25px;height:25px}
+  .dcard h3{margin-top:22px;font-size:24px}
+  .dcard p{font-size:16.5px}
+  .dlink{padding-top:24px}
+  .dhead__note{font-size:17px}
 }
