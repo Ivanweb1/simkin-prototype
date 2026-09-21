@@ -569,13 +569,6 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
 /* =====================================================================
    БЛОК 7. ПОЛЕЗНЫЕ СТАТЬИ
    ===================================================================== */
-/* шапка с подписью и кнопкой справа: подпись по верхней линии заголовка,
-   кнопка сразу под ней — обе по левому краю своей колонки */
-.dhead--aside{align-items:start}
-.dhead__aside{display:flex;flex-direction:column;gap:22px;align-items:stretch}
-.dhead__aside .dhead__note{padding-bottom:0}
-.dhead__aside .dhead__act{justify-content:flex-end;padding-bottom:0}
-
 .dposts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(36px,3.6vw,52px)}
 .dpost{
   display:flex;flex-direction:column;background:#fff;border:1px solid var(--d-line);border-radius:28px;
@@ -613,7 +606,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dposts > :last-child .dpost__ph{aspect-ratio:16/10}
   .dpost{border-radius:22px}
   .dpost__body{padding:22px 22px 26px}
-  .dhead__aside .dhead__act .dbtn{width:100%}
+  .dsec__btn--center .dbtn{width:100%}
 }
 
 /* заглушки изображений в дизайне — в палитре блока, а не бежевые из прототипа */
@@ -630,7 +623,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
    ===================================================================== */
 .dsec--cta{padding-top:0}
 .dband{
-  border-radius:36px;padding:clamp(36px,4.4vw,64px);color:#fff;overflow:hidden;
+  border-radius:36px;padding:clamp(30px,5vw,84px);color:#fff;overflow:hidden;
   background:linear-gradient(135deg,#001AE6 0%,#1147EE 26%,#2E80FF 62%,#54C2FF 118%);
 }
 .dband__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:clamp(32px,5vw,80px);align-items:start}
@@ -727,11 +720,13 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .clinic a{color:var(--brand);font-weight:600}
 .d .soc{gap:8px;padding-bottom:clamp(32px,3.4vw,44px)}
 .d .soc a{
-  height:42px;padding:0 18px;display:inline-flex;align-items:center;border-radius:100px;
+  height:42px;padding:0 18px 0 12px;display:inline-flex;align-items:center;gap:9px;border-radius:100px;
   background:#fff;border:1px solid var(--d-line);color:var(--navy-2);
   font-family:inherit;font-weight:500;font-size:15px;line-height:1;
   transition:border-color .22s var(--ease),color .22s var(--ease);
 }
+/* фирменные иконки — плитки, углы скругляем до «иконки приложения» */
+.d .soc a img{width:22px;height:22px;flex:0 0 auto;border-radius:6px;display:block}
 .d .soc a:hover{background:#fff;border-color:var(--brand);color:var(--brand)}
 .d .foot__bottom{
   border-top:1px solid var(--d-line);
@@ -756,7 +751,8 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .d .foot h4{margin-bottom:14px}
   .d .foot li{font-size:15.5px}
   .d .foot__cb{width:100%;justify-content:center}
-  .d .soc a{height:40px;padding:0 15px;font-size:14.5px}
+  .d .soc a{height:40px;padding:0 15px 0 10px;gap:8px;font-size:14.5px}
+  .d .soc a img{width:20px;height:20px}
   .d .foot__bottom{flex-direction:column;gap:10px}
 }
 
