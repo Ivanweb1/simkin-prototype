@@ -621,7 +621,6 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 /* =====================================================================
    БЛОК 8. ЕСТЬ ВОПРОС ИЛИ ХОТИТЕ ОБСУДИТЬ ЗАДАЧУ
    ===================================================================== */
-.dsec--cta{padding-top:0}
 .dband{
   border-radius:36px;padding:clamp(30px,5vw,84px);color:#fff;overflow:hidden;
   background:linear-gradient(135deg,#001AE6 0%,#1147EE 26%,#2E80FF 62%,#54C2FF 118%);
@@ -635,10 +634,11 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .ddirect__t{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.66);margin-bottom:14px}
 .ddirect__links{display:flex;flex-wrap:wrap;gap:8px}
 .ddirect__links a{
-  display:inline-flex;align-items:center;height:42px;padding:0 18px;border-radius:100px;
+  display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 18px 0 12px;border-radius:100px;
   border:1px solid rgba(255,255,255,.34);color:#fff;text-decoration:none;font-size:15px;font-weight:500;
   transition:background .22s var(--ease),border-color .22s var(--ease);
 }
+.ddirect__links img{width:20px;height:20px;flex:0 0 auto;border-radius:5px;display:block}
 .ddirect__links a:hover{background:rgba(255,255,255,.14);border-color:transparent}
 
 /* форма — белая карточка поверх градиента */
@@ -678,7 +678,8 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 @media (max-width:600px){
   .dband{border-radius:26px;padding:28px 20px}
   .dband__sub{font-size:16.5px}
-  .ddirect__links a{height:40px;padding:0 15px;font-size:14.5px}
+  .ddirect__links a{height:40px;padding:0 15px 0 10px;gap:8px;font-size:14.5px}
+  .ddirect__links img{width:18px;height:18px}
   .dform{border-radius:22px;padding:20px 18px}
   .dfield{height:54px}
   .dchan button{height:38px;padding:0 13px;font-size:13.5px}
@@ -688,7 +689,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
    ПОДВАЛ
    ===================================================================== */
 /* подвал на светлой подложке бренда: отделяет от белой полосы с CTA-бандом */
-.d footer{background:var(--tint);padding-top:0;margin-top:clamp(72px,8vw,120px)}
+.d footer{background:var(--tint);padding-top:0}
 .d footer .wrap{max-width:1440px;padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
 .d .foot{
   grid-template-columns:minmax(0,1.5fr) minmax(0,.9fr) minmax(0,.9fr) minmax(0,.8fr) minmax(0,1.15fr);
@@ -718,6 +719,10 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   padding:18px 20px;font-size:14px;line-height:1.5;color:var(--navy-2);
 }
 .d .clinic a{color:var(--brand);font-weight:600}
+/* строка мессенджеров в контактах: точки-разделители заменены плитками */
+.d .foot__msg{display:flex;flex-wrap:wrap;gap:9px 16px;padding-top:9px}
+.d .foot__msg a{display:inline-flex;align-items:center;gap:7px}
+.d .foot__msg img{width:18px;height:18px;flex:0 0 auto;border-radius:5px;display:block}
 .d .soc{gap:8px;padding-bottom:clamp(32px,3.4vw,44px)}
 .d .soc a{
   height:42px;padding:0 18px 0 12px;display:inline-flex;align-items:center;gap:9px;border-radius:100px;
@@ -746,7 +751,6 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .d .foot > :last-child{grid-column:1 / -1}
 }
 @media (max-width:600px){
-  .d footer{margin-top:60px}
   .d .foot{padding-top:44px;gap:28px 20px}
   .d .foot h4{margin-bottom:14px}
   .d .foot li{font-size:15.5px}
