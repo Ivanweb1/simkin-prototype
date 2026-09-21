@@ -31,11 +31,12 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .d .sub a{color:var(--navy-2)}
 .d .sub a.sub__head{color:var(--navy)}
 .d .sub a:hover{background:var(--tint);color:var(--brand)}
+/* тихая: главная синяя кнопка страницы — та, что в финальном блоке */
 .d .hdr__cta .btn{
   height:48px;padding:0 24px;font-size:15px;font-weight:600;
-  background:var(--brand);border-color:var(--brand);color:#fff;
+  background:#fff;border-color:var(--d-line);color:var(--navy);
 }
-.d .hdr__cta .btn:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+.d .hdr__cta .btn:hover{background:#fff;border-color:var(--brand);color:var(--brand)}
 .d .burger{border-color:var(--d-line)}
 .d .burger i{background:var(--navy)}
 
@@ -326,19 +327,45 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .ddiff__text p{font-size:18px;line-height:1.65;color:var(--navy-2)}
 .ddiff__text p + p{margin-top:16px}
 .ddiff__quote{
-  margin:clamp(44px,4.4vw,64px) 0 0;padding:6px 0 6px 34px;
+  margin:64px 0 0;padding:34px 40px;border-radius:28px;background:var(--tint);
   font-size:clamp(20px,1.7vw,26px);font-weight:500;line-height:1.4;letter-spacing:-.015em;color:var(--navy);
-  position:relative;max-width:30em;
+  position:relative;padding-left:76px;
 }
 .ddiff__quote::before{
-  content:"";position:absolute;left:0;top:6px;bottom:6px;width:4px;border-radius:4px;
+  content:"";position:absolute;left:40px;top:38px;bottom:38px;width:4px;border-radius:4px;
   background:linear-gradient(180deg,var(--brand-3),var(--brand));
 }
+
+/* Четыре принципа. Раньше это были четыре белые карточки в рамках — четыре
+   тяжёлых прямоугольника подряд, и на странице уже три сетки карточек
+   («Для кого», «Как работает система», статьи). Здесь — типографский список:
+   крупная цифра, тезис и пояснение под волосяной линейкой. Тексты не тронуты. */
+.dprinciples{
+  display:grid;grid-template-columns:1fr 1fr;
+  column-gap:clamp(40px,5vw,88px);margin-top:clamp(48px,5vw,76px);
+}
+.dprin{
+  position:relative;padding:32px 0 34px clamp(66px,5.4vw,104px);
+  border-top:1px solid var(--d-line);
+}
+.dprin__n{
+  position:absolute;left:0;top:28px;
+  font-size:clamp(30px,2.6vw,40px);font-weight:600;line-height:1;letter-spacing:-.03em;
+  color:var(--brand);opacity:.3;font-variant-numeric:tabular-nums;
+  transition:opacity .25s var(--ease);
+}
+.dprin:hover .dprin__n{opacity:1}
+.dprin h3{
+  margin-top:0;font-size:clamp(21px,1.8vw,27px);font-weight:600;line-height:1.2;
+  letter-spacing:-.025em;color:var(--navy);max-width:15em;
+}
+.dprin p{margin-top:14px;font-size:16.5px;line-height:1.6;color:var(--navy-2);max-width:34em}
+.dprin p + p{margin-top:9px}
 
 /* схема: светлая карточка. Яркий градиент оставлен только финальному блоку,
    иначе призыв к действию перестаёт быть самым заметным пятном страницы */
 .dchain{
-  margin-top:clamp(40px,4vw,60px);border-radius:32px;padding:clamp(40px,4.5vw,64px);
+  margin-top:clamp(48px,5vw,76px);border-radius:32px;padding:clamp(40px,4.5vw,64px);
   color:var(--navy);position:relative;overflow:hidden;background:var(--tint);
 }
 .dchain__list{
@@ -362,6 +389,9 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--navy-2);max-width:46em;
 }
 
+@media (max-width:860px){
+  .dprinciples{grid-template-columns:1fr}
+}
 @media (max-width:1100px){
   .ddiff__head{grid-template-columns:1fr;gap:28px}
   .ddiff__text{padding-top:0;max-width:720px}
@@ -370,8 +400,12 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 }
 @media (max-width:600px){
   .ddiff__text p{font-size:17px}
-  .ddiff__quote{margin-top:40px;padding:4px 0 4px 26px;font-size:19px}
-  .ddiff__quote::before{left:0;top:4px;bottom:4px}
+  .ddiff__quote{margin-top:40px;padding:26px 22px 26px 44px;border-radius:22px;font-size:19px}
+  .ddiff__quote::before{left:22px;top:28px;bottom:28px}
+  .dprin{padding:24px 0 26px 52px}
+  .dprin__n{top:21px;font-size:28px}
+  .dprin h3{font-size:21px;max-width:none}
+  .dprin p{font-size:16.5px}
   .dchain{border-radius:26px;padding:32px 22px}
   /* на телефоне цепочка — вертикальный список с линией слева */
   .dchain__list{grid-template-columns:1fr;row-gap:0;margin-top:28px}
@@ -650,7 +684,11 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 
 .dagree{display:flex;gap:11px;align-items:flex-start;margin-top:18px;font-size:12.5px;line-height:1.45;color:var(--navy-3)}
 .dagree i{width:17px;height:17px;border:1px solid var(--d-line);border-radius:5px;flex:0 0 auto;margin-top:1px;display:block}
-.dform__submit{margin-top:20px;width:100%}
+.dform__submit{
+  margin-top:22px;width:100%;height:68px;font-size:18px;
+  box-shadow:0 14px 30px rgba(18,62,158,.28);
+}
+.dform__submit:hover{box-shadow:0 18px 38px rgba(18,62,158,.34)}
 
 @media (max-width:980px){
   .dband__grid{grid-template-columns:1fr;gap:32px}
@@ -663,6 +701,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .ddirect__links img{width:18px;height:18px}
   .dform{border-radius:22px;padding:20px 18px}
   .dfield{height:54px}
+  .dform__submit{height:62px;font-size:17px}
   .dchan button{height:38px;padding:0 13px;font-size:13.5px}
 }
 
