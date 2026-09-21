@@ -75,6 +75,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   display:inline-flex;align-items:center;justify-content:center;gap:12px;
   height:62px;padding:0 32px;border-radius:100px;border:1px solid transparent;
   font-family:inherit;font-weight:600;font-size:17px;line-height:1;text-decoration:none;cursor:pointer;
+  white-space:nowrap;
   transition:background .22s var(--ease),color .22s var(--ease),border-color .22s var(--ease),transform .22s var(--ease);
 }
 .dbtn svg{width:18px;height:18px;flex:0 0 auto;transition:transform .22s var(--ease)}
@@ -127,7 +128,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   .dhero__lead{font-size:17px}
   .dhero__lead br{display:none}
   .dhero__btns{flex-direction:column;margin-top:28px}
-  .dbtn{width:100%;height:58px}
+  .dbtn{width:100%;height:58px;padding:0 18px;font-size:16px}
   .dhero__media{aspect-ratio:4/4.2}
   .dhero__media img{object-position:66% 0%}
   .dhero__who{left:12px;right:12px;bottom:12px;padding:13px 16px;border-radius:16px}
@@ -571,6 +572,16 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
   .dsteps{grid-template-columns:1fr}
   .dstep h3{max-width:none}
 }
+/* На телефоне кнопка из шапки блока вставала между заголовком и плитками.
+   Разворачиваем секцию в колонку и уводим её под все три шага. */
+@media (max-width:860px){
+  #method .dwrap{display:flex;flex-direction:column}
+  #method .dhead{display:contents}
+  #method .dhead > div:first-child{order:1}
+  #method .dsteps{order:2}
+  #method .dhead__act{order:3;margin-top:clamp(28px,3vw,40px);justify-content:stretch}
+  #method .dhead__act .dbtn{width:100%}
+}
 @media (max-width:600px){
   .dstep{padding:26px 22px 30px;border-radius:22px}
   .dstep__ico{width:52px;height:52px;border-radius:15px}
@@ -673,11 +684,15 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dfield + .dfield,.dchan + .dfield{margin-top:10px}
 .dform__label{display:block;margin-top:20px;margin-bottom:10px;font-size:13px;font-weight:600;color:var(--navy-2)}
 
-.dchan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+/* пять каналов в одну строку. 3+2 остаётся только там, где колонка формы
+   узкая: между 980 и 1300, где банд ещё двухколоночный, и на телефоне */
+.dchan{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+@media (max-width:1300px){.dchan{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:980px){.dchan{grid-template-columns:repeat(5,minmax(0,1fr))}}
 .dchan button{
-  height:44px;padding:0 10px;border-radius:100px;border:1px solid var(--d-line);background:#fff;
-  font-family:inherit;font-weight:600;font-size:14px;line-height:1;color:var(--navy-2);cursor:pointer;
-  display:inline-flex;align-items:center;justify-content:center;text-align:center;
+  height:40px;padding:0 8px;border-radius:100px;border:1px solid var(--d-line);background:#fff;
+  font-family:inherit;font-weight:600;font-size:13.5px;line-height:1;color:var(--navy-2);cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap;
   transition:border-color .2s var(--ease),background .2s var(--ease),color .2s var(--ease);
 }
 .dchan button:hover{border-color:var(--navy-3);color:var(--navy)}
@@ -703,7 +718,8 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dform{border-radius:22px;padding:20px 18px}
   .dfield{height:54px}
   .dform__submit{height:62px;font-size:17px}
-  .dchan button{height:42px;padding:0 8px;font-size:13.5px}
+  .dchan{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dchan button{height:40px;padding:0 6px;font-size:13.5px}
 }
 
 /* =====================================================================
@@ -727,7 +743,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .foot li a{color:var(--navy-2);transition:color .2s var(--ease)}
 .d .foot li a:hover{color:var(--brand)}
 .d .foot__cb{
-  margin-top:22px;height:48px;padding:0 22px;border-radius:100px;
+  margin-top:22px;height:48px;padding:0 20px;border-radius:100px;white-space:nowrap;
   background:#fff;border:1px solid var(--d-line);color:var(--navy);
   font-family:inherit;font-weight:600;font-size:15px;line-height:1;
   display:inline-flex;align-items:center;
@@ -743,15 +759,21 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   padding:clamp(26px,2.8vw,36px) 0 clamp(28px,3vw,40px);
   border-top:1px solid var(--d-line);
 }
+/* та же высота и то же скругление, что у плиток соцсетей справа */
 .d .clinic{
-  margin-top:0;background:#fff;border:1px solid var(--d-line);border-radius:18px;
-  padding:16px 22px;font-size:14px;line-height:1.5;color:var(--navy-2);
+  margin-top:0;background:#fff;border:1px solid var(--d-line);border-radius:100px;
+  height:42px;padding:0 22px;display:flex;align-items:center;white-space:nowrap;
+  font-size:14px;line-height:1;color:var(--navy-2);
 }
 .d .clinic a{color:var(--brand);font-weight:600}
 /* строка мессенджеров в контактах: точки-разделители заменены плитками */
-.d .foot__msg{display:flex;flex-wrap:wrap;gap:9px 16px;padding-top:9px}
-.d .foot__msg a{display:inline-flex;align-items:center;gap:7px}
-.d .foot__msg img{width:18px;height:18px;flex:0 0 auto;border-radius:5px;display:block}
+/* мессенджеры: подписи не помещались в узкую колонку и рвались на 2+1,
+   поэтому остались плитки — названия дублировались в ряду соцсетей ниже */
+.d .foot__msg{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding-top:12px}
+.d .foot__msg-t{font-size:15px;color:var(--navy-2);margin-right:2px}
+.d .foot__msg a{display:block;line-height:0;transition:transform .2s var(--ease)}
+.d .foot__msg a:hover{transform:translateY(-2px)}
+.d .foot__msg img{width:26px;height:26px;flex:0 0 auto;border-radius:7px;display:block}
 .d .soc{gap:8px;padding-bottom:0;justify-content:flex-end}
 .d .soc a{
   height:42px;padding:0 18px 0 12px;display:inline-flex;align-items:center;gap:9px;border-radius:100px;
@@ -770,11 +792,20 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .foot__bottom a{color:var(--navy-3);transition:color .2s var(--ease)}
 .d .foot__bottom a:hover{color:var(--brand)}
 
-@media (max-width:1200px){
-  .d .foot__bar{grid-template-columns:1fr;gap:22px}
+@media (max-width:1440px){
+  .d .foot__bar{grid-template-columns:1fr;gap:18px}
   .d .soc{justify-content:flex-start}
 }
-@media (max-width:1100px){
+/* на узком экране текст плашки уже не строка — возвращаем карточку */
+@media (max-width:700px){
+  .d .clinic{
+    height:auto;padding:16px 20px;border-radius:18px;
+    white-space:normal;line-height:1.5;display:block;
+  }
+}
+/* на 1100–1280 пять колонок становились по 204px и ломали длинные пункты —
+   переходим на три широкие раньше */
+@media (max-width:1280px){
   .d .foot{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 28px}
   .d .foot > :first-child{grid-column:1 / -1}
   .d .foot__about{max-width:38em}
