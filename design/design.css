@@ -308,10 +308,11 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .dsec{padding:clamp(88px,10vw,150px) 0}
 .dwrap{max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
 .deyebrow{
-  display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--brand);
+  display:inline-flex;align-items:center;gap:12px;font-size:14px;font-weight:600;color:var(--brand);
   letter-spacing:.01em;
 }
-.deyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--brand)}
+/* маркер — «чёрточка» из знака логотипа (пропорции бруска 44,7 x 17) */
+.deyebrow::before{content:"";width:21px;height:8px;border-radius:1.5px;background:var(--brand);flex:0 0 auto}
 .deyebrow--light{color:#fff}
 .deyebrow--light::before{background:var(--brand-3)}
 .dh2{
@@ -351,7 +352,8 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 /* схема: синяя полоса в цветах логотипа */
 .dchain{
   margin-top:14px;border-radius:32px;padding:clamp(40px,4.5vw,64px);color:#fff;position:relative;overflow:hidden;
-  background:radial-gradient(120% 140% at 100% 0%,#2E80FF 0%,rgba(46,128,255,0) 55%),linear-gradient(135deg,var(--brand-deep) 0%,var(--brand) 100%);
+  /* плавный переход точно по цветам логотипа: #001AE6 → #2E80FF → #54C2FF */
+  background:linear-gradient(135deg,#001AE6 0%,#1147EE 26%,#2E80FF 62%,#54C2FF 118%);
 }
 .dchain__list{
   list-style:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:40px;position:relative;
