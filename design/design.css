@@ -31,12 +31,12 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .d .sub a{color:var(--navy-2)}
 .d .sub a.sub__head{color:var(--navy)}
 .d .sub a:hover{background:var(--tint);color:var(--brand)}
-/* тихая: главная синяя кнопка страницы — та, что в финальном блоке */
+/* обводкой, а не заливкой: главная синяя кнопка страницы — в финальном блоке */
 .d .hdr__cta .btn{
   height:48px;padding:0 24px;font-size:15px;font-weight:600;
-  background:#fff;border-color:var(--d-line);color:var(--navy);
+  background:#fff;border-color:var(--brand);color:var(--brand);
 }
-.d .hdr__cta .btn:hover{background:#fff;border-color:var(--brand);color:var(--brand)}
+.d .hdr__cta .btn:hover{background:var(--brand);border-color:var(--brand);color:#fff}
 .d .burger{border-color:var(--d-line)}
 .d .burger i{background:var(--navy)}
 
@@ -673,10 +673,11 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dfield + .dfield,.dchan + .dfield{margin-top:10px}
 .dform__label{display:block;margin-top:20px;margin-bottom:10px;font-size:13px;font-weight:600;color:var(--navy-2)}
 
-.dchan{display:flex;flex-wrap:wrap;gap:8px}
+.dchan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .dchan button{
-  height:40px;padding:0 15px;border-radius:100px;border:1px solid var(--d-line);background:#fff;
+  height:44px;padding:0 10px;border-radius:100px;border:1px solid var(--d-line);background:#fff;
   font-family:inherit;font-weight:600;font-size:14px;line-height:1;color:var(--navy-2);cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;
   transition:border-color .2s var(--ease),background .2s var(--ease),color .2s var(--ease);
 }
 .dchan button:hover{border-color:var(--navy-3);color:var(--navy)}
@@ -702,7 +703,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dform{border-radius:22px;padding:20px 18px}
   .dfield{height:54px}
   .dform__submit{height:62px;font-size:17px}
-  .dchan button{height:38px;padding:0 13px;font-size:13.5px}
+  .dchan button{height:42px;padding:0 8px;font-size:13.5px}
 }
 
 /* =====================================================================
@@ -712,17 +713,17 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d footer{background:var(--tint);padding-top:0}
 .d footer .wrap{max-width:1440px;padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
 .d .foot{
-  grid-template-columns:minmax(0,1.5fr) minmax(0,.9fr) minmax(0,.9fr) minmax(0,.8fr) minmax(0,1.15fr);
-  gap:clamp(28px,3.4vw,56px);
-  padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(40px,4vw,60px);
-  border-top:0;
+  grid-template-columns:minmax(0,1.15fr) repeat(3,minmax(0,1fr)) minmax(0,1.05fr);
+  gap:clamp(22px,2.2vw,40px);
+  padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(36px,3.6vw,52px);
+  border-top:0;align-items:start;
 }
 .d .foot__about{margin-top:26px;font-size:16px;line-height:1.6;color:var(--navy-2);max-width:25em}
 .d .foot h4{
   margin-bottom:20px;font-size:14px;font-weight:600;letter-spacing:-.01em;
   text-transform:none;color:var(--navy);
 }
-.d .foot li{padding:6px 0;font-size:16px;line-height:1.45}
+.d .foot li{padding:6px 0;font-size:15px;line-height:1.45}
 .d .foot li a{color:var(--navy-2);transition:color .2s var(--ease)}
 .d .foot li a:hover{color:var(--brand)}
 .d .foot__cb{
@@ -733,17 +734,25 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   transition:border-color .22s var(--ease),color .22s var(--ease);
 }
 .d .foot__cb:hover{background:#fff;border-color:var(--brand);color:var(--brand)}
-/* плашка про клинику: медицинский приём остаётся на Doctorsimkin.ru */
+/* нижняя полоса: слева плашка про клинику, справа соцсети.
+   Плашка стояла в колонке контактов и ломала её текст на четыре строки,
+   а соцсети висели отдельной строкой в пустоте под рваными колонками */
+.d .foot__bar{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(20px,2.4vw,40px);align-items:center;
+  padding:clamp(26px,2.8vw,36px) 0 clamp(28px,3vw,40px);
+  border-top:1px solid var(--d-line);
+}
 .d .clinic{
-  margin-top:24px;background:#fff;border:1px solid var(--d-line);border-radius:18px;
-  padding:18px 20px;font-size:14px;line-height:1.5;color:var(--navy-2);
+  margin-top:0;background:#fff;border:1px solid var(--d-line);border-radius:18px;
+  padding:16px 22px;font-size:14px;line-height:1.5;color:var(--navy-2);
 }
 .d .clinic a{color:var(--brand);font-weight:600}
 /* строка мессенджеров в контактах: точки-разделители заменены плитками */
 .d .foot__msg{display:flex;flex-wrap:wrap;gap:9px 16px;padding-top:9px}
 .d .foot__msg a{display:inline-flex;align-items:center;gap:7px}
 .d .foot__msg img{width:18px;height:18px;flex:0 0 auto;border-radius:5px;display:block}
-.d .soc{gap:8px;padding-bottom:clamp(32px,3.4vw,44px)}
+.d .soc{gap:8px;padding-bottom:0;justify-content:flex-end}
 .d .soc a{
   height:42px;padding:0 18px 0 12px;display:inline-flex;align-items:center;gap:9px;border-radius:100px;
   background:#fff;border:1px solid var(--d-line);color:var(--navy-2);
@@ -761,6 +770,10 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .foot__bottom a{color:var(--navy-3);transition:color .2s var(--ease)}
 .d .foot__bottom a:hover{color:var(--brand)}
 
+@media (max-width:1200px){
+  .d .foot__bar{grid-template-columns:1fr;gap:22px}
+  .d .soc{justify-content:flex-start}
+}
 @media (max-width:1100px){
   .d .foot{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 28px}
   .d .foot > :first-child{grid-column:1 / -1}
@@ -773,7 +786,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 @media (max-width:600px){
   .d .foot{padding-top:44px;gap:28px 20px}
   .d .foot h4{margin-bottom:14px}
-  .d .foot li{font-size:15.5px}
+  .d .foot li{font-size:15px}
   .d .foot__cb{width:100%;justify-content:center}
   .d .soc a{height:40px;padding:0 15px 0 10px;gap:8px;font-size:14.5px}
   .d .soc a img{width:20px;height:20px}
