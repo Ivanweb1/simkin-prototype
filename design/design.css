@@ -327,10 +327,26 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .ddiff__text{padding-top:48px}
 .ddiff__text p{font-size:18px;line-height:1.65;color:var(--navy-2)}
 .ddiff__text p + p{margin-top:16px}
+/* кадр и цитата в одной строке: в середине блока шло 234 слова подряд
+   без единой визуальной паузы */
+.ddiff__feature{
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);
+  gap:clamp(18px,2vw,32px);align-items:stretch;
+  margin-top:clamp(44px,4.4vw,64px);
+}
+.ddiff__ph{
+  border-radius:32px;overflow:hidden;background:#E7ECF6;
+  /* высота задаётся явно: при auto снимок диктовал бы её своими пропорциями
+     (615px ширины дают 384px высоты), и строка выходила выше нужного */
+  height:clamp(230px,21vw,320px);
+}
+.ddiff__ph picture,.ddiff__ph img{display:block;width:100%;height:100%}
+.ddiff__ph img{object-fit:cover;object-position:50% 42%}
+
 .ddiff__quote{
-  margin:64px 0 0;padding:34px 40px;border-radius:28px;background:var(--tint);
-  font-size:clamp(20px,1.7vw,26px);font-weight:500;line-height:1.4;letter-spacing:-.015em;color:var(--navy);
-  position:relative;padding-left:76px;
+  margin:0;padding:34px 40px 34px 76px;border-radius:28px;background:var(--tint);
+  font-size:clamp(20px,2vw,30px);font-weight:500;line-height:1.35;letter-spacing:-.018em;color:var(--navy);
+  position:relative;display:flex;align-items:center;
 }
 .ddiff__quote::before{
   content:"";position:absolute;left:40px;top:38px;bottom:38px;width:4px;border-radius:4px;
@@ -366,16 +382,16 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 /* схема: светлая карточка. Яркий градиент оставлен только финальному блоку,
    иначе призыв к действию перестаёт быть самым заметным пятном страницы */
 .dchain{
-  margin-top:clamp(48px,5vw,76px);border-radius:32px;padding:clamp(40px,4.5vw,64px);
+  margin-top:clamp(44px,4.4vw,64px);border-radius:32px;padding:clamp(32px,3.2vw,48px);
   color:var(--navy);position:relative;overflow:hidden;background:var(--tint);
 }
 .dchain__list{
-  list-style:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:40px;position:relative;
+  list-style:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:32px;position:relative;
 }
 /* линия между шагами */
 .dchain__list::before{
   content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;
-  background:linear-gradient(90deg,var(--brand),rgba(35,43,62,.16));
+  background:linear-gradient(90deg,var(--brand),var(--brand-2) 55%,var(--brand-3));
 }
 .dchain__list li{position:relative;display:flex;flex-direction:column;gap:18px}
 .dchain__dot{
@@ -386,12 +402,14 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .dchain__list li:first-child .dchain__dot{background:var(--brand);border-color:var(--brand);color:#fff}
 .dchain__t{font-size:clamp(17px,1.35vw,20px);font-weight:600;line-height:1.25;letter-spacing:-.01em}
 .dchain__note{
-  margin-top:48px;padding-top:32px;border-top:1px solid var(--d-line);
+  margin-top:34px;padding-top:26px;border-top:1px solid var(--d-line);
   font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--navy-2);max-width:46em;
 }
 
 @media (max-width:860px){
   .dprinciples{grid-template-columns:1fr}
+  .ddiff__feature{grid-template-columns:1fr;gap:16px}
+  .ddiff__ph{height:auto;aspect-ratio:16/9}
 }
 @media (max-width:1100px){
   .ddiff__head{grid-template-columns:1fr;gap:28px}
@@ -401,6 +419,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 }
 @media (max-width:600px){
   .ddiff__text p{font-size:17px}
+  .ddiff__ph{height:auto;aspect-ratio:16/11;border-radius:22px}
   .ddiff__quote{margin-top:40px;padding:26px 22px 26px 44px;border-radius:22px;font-size:19px}
   .ddiff__quote::before{left:22px;top:28px;bottom:28px}
   .dprin{padding:24px 0 26px 52px}
