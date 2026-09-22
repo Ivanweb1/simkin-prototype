@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=71">
+<link rel="stylesheet" href="design.css?v=74">
 </head>
 <body class="d">
 
@@ -151,26 +151,27 @@
       <div class="dflow__aside">
         <div class="dflow__sticky">
           <div class="dflow__meta">
-          <span class="deyebrow">Принципы системы</span>
-          <p class="dflow__count"><b data-flow-num>01</b><i>/&nbsp;04</i></p>
-          <ol class="dflow__rail">
-            <li><button type="button" data-flow-go="0" aria-label="Принцип 01: сначала человек, а не мебель"></button></li>
-            <li><button type="button" data-flow-go="1" aria-label="Принцип 02: не существует одной правильной позы"></button></li>
-            <li><button type="button" data-flow-go="2" aria-label="Принцип 03: рабочее место – единая система"></button></li>
-            <li><button type="button" data-flow-go="3" aria-label="Принцип 04: правильная поза не должна требовать постоянного контроля"></button></li>
-          </ol>
+            <span class="deyebrow">Принципы системы</span>
+            <p class="dflow__count"><b data-flow-num>01</b><i>/&nbsp;04</i></p>
+            <ol class="dflow__rail">
+              <li><button type="button" data-flow-go="0" aria-label="Принцип 01: сначала человек, а не мебель"></button></li>
+              <li><button type="button" data-flow-go="1" aria-label="Принцип 02: не существует одной правильной позы"></button></li>
+              <li><button type="button" data-flow-go="2" aria-label="Принцип 03: рабочее место – единая система"></button></li>
+              <li><button type="button" data-flow-go="3" aria-label="Принцип 04: правильная поза не должна требовать постоянного контроля"></button></li>
+            </ol>
           </div>
-          <!-- кадр меняется вместе с номером: на экране всегда один, поэтому
-               ряда карточек не возникает. Файлы кладём в assets/photo/principles,
-               пока их нет — видна серая заглушка. -->
-          <figure class="dflow__ph">
-            <img src="assets/photo/principles/01.jpg" alt="Настройка рабочего места под человека" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
-            <img src="assets/photo/principles/02.jpg" alt="Работа стоя за регулируемым столом" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
-            <img src="assets/photo/principles/03.jpg" alt="Рабочее место целиком: кресло, стол, монитор, клавиатура, свет" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
-            <img src="assets/photo/principles/04.jpg" alt="Человек работает в естественной позе, не контролируя её" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
-          </figure>
         </div>
       </div>
+
+      <!-- кадр привязан к активному тезису: скрипт ставит ему верх и размер по
+           ряду, поэтому квадрат стоит ровно между линейками ряда и переезжает
+           к следующему тезису. Файлы — в assets/photo/principles. -->
+      <figure class="dflow__ph">
+        <img src="assets/photo/principles/01.jpg" alt="Настройка рабочего места под человека" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
+        <img src="assets/photo/principles/02.jpg" alt="Работа стоя за регулируемым столом" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
+        <img src="assets/photo/principles/03.jpg" alt="Рабочее место целиком: кресло, стол, монитор, клавиатура, свет" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
+        <img src="assets/photo/principles/04.jpg" alt="Человек работает в естественной позе, не контролируя её" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
+      </figure>
 
       <div class="dflow__list">
         <article class="dprin" data-flow-item>
@@ -581,9 +582,26 @@
       if(b) b.setAttribute('aria-current', n === i ? 'true' : 'false');
     });
     shots.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    placeShot(items[i]);
     if(num){
       num.textContent = ('0' + (i + 1)).slice(-2);
       if(!reduce){ num.classList.remove('is-swap'); void num.offsetWidth; num.classList.add('is-swap'); }
+    }
+  }
+
+  // кадр встаёт ровно в границы ряда. Шире, чем остаток левой половины, он быть
+  // не может — иначе наехал бы на номер, поэтому размер ограничен сверху.
+  var ph   = flow.querySelector('.dflow__ph');
+  var aside= flow.querySelector('.dflow__aside');
+  var meta = flow.querySelector('.dflow__meta');
+  function placeShot(row){
+    if(!ph || !row || getComputedStyle(ph).display === 'none') return;
+    var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
+    var size = Math.max(0, Math.min(row.offsetHeight, room));
+    ph.style.setProperty('--ph-top', row.offsetTop + 'px');
+    ph.style.setProperty('--ph', Math.round(size) + 'px');
+    if(!ph.classList.contains('is-set')){
+      setTimeout(function(){ ph.classList.add('is-set'); }, 60);
     }
   }
 
@@ -605,7 +623,18 @@
     requestAnimationFrame(function(){ waiting = false; pick(); });
   }
   window.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('resize', onScroll);
+  // после смены ширины даём раскладке устояться: высота ряда меняется вместе с
+  // переносами в тексте, и без паузы кадр получил бы размер от прошлой ширины
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ placeShot(items[cur] || items[0]); }, 150);
+    onScroll();
+  });
+  // шрифт догружается позже разметки и меняет высоту рядов
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(function(){ placeShot(items[cur] || items[0]); });
+  }
   pick();
 
   flow.querySelectorAll('[data-flow-go]').forEach(function(btn){

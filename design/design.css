@@ -336,7 +336,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
    середине --split независимо от того, какой зазор у строки. Ширина левой
    колонки поэтому считается как split минус свой зазор — иначе текст справа,
    плашка с цитатой и тезисы стояли бы на разных линиях (было 806 / 693 / 426). */
-#difference{--split:50%;--gap-head:clamp(40px,7vw,120px);--gap-feat:clamp(18px,2vw,32px);--gap-flow:clamp(40px,5vw,96px);--img:clamp(180px,22vw,340px);--gap-ph:clamp(24px,2.6vw,40px)}
+#difference{--split:50%;--gap-head:clamp(40px,7vw,120px);--gap-feat:clamp(18px,2vw,32px);--gap-flow:clamp(40px,5vw,96px);--meta:clamp(120px,13vw,230px);--gap-ph:clamp(24px,2.6vw,40px)}
 .ddiff__head{
   display:grid;grid-template-columns:calc(var(--split) - var(--gap-head)) minmax(0,1fr);
   column-gap:var(--gap-head);align-items:start;
@@ -400,20 +400,28 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
    Всё живое включается классом .dflow--live, его ставит скрипт: без JS
    и при ошибке скрипта блок остаётся обычным читаемым списком. */
 .dflow{
+  position:relative;
   display:grid;grid-template-columns:calc(var(--split) - var(--gap-flow)) minmax(0,1fr);
   column-gap:var(--gap-flow);margin-top:clamp(48px,5vw,76px);
 }
-/* левая половина: слева номер со шкалой, справа кадр — он прижат к зазору,
-   поэтому колонка занята от края до края, а фото стоит рядом с текстом */
-.dflow__sticky{
-  position:sticky;top:clamp(104px,11vh,148px);
-  display:grid;grid-template-columns:minmax(0,1fr) var(--img);
-  column-gap:var(--gap-ph);align-items:start;
-}
+/* слева номер со шкалой — они липкие и ведут весь блок */
+.dflow__sticky{position:sticky;top:clamp(104px,11vh,148px)}
+.dflow__meta{max-width:var(--meta)}
+/* кадр не липкий: скрипт ставит ему верх и размер по активному ряду, поэтому
+   квадрат стоит ровно между линейками тезиса и переезжает к следующему.
+   Правым краем он прижат к границе левой половины блока. */
 .dflow__ph{
-  margin:0;position:relative;width:var(--img);aspect-ratio:1;
+  margin:0;position:absolute;z-index:2;
+  right:calc(100% - var(--split) + var(--gap-flow));
+  top:var(--ph-top,0px);width:var(--ph,0px);height:var(--ph,0px);
   border-radius:28px;overflow:hidden;background:var(--tint);
 }
+/* первая установка размера — без перехода, иначе на загрузке квадрат вырастал
+   бы из нуля; переезды между тезисами уже анимированы */
+.dflow__ph.is-set{
+  transition:top .5s var(--ease),width .5s var(--ease),height .5s var(--ease);
+}
+.dflow__ph:not([style*="--ph"]){visibility:hidden}
 /* пока кадров нет, видна серая плашка с подписью; подпись лежит под снимками,
    чтобы не проступать сквозь них, когда файлы появятся */
 .dflow__ph::after{
@@ -475,7 +483,8 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 @media (max-width:1000px){
   /* колонка уезжает: номер возвращается в текст, ведёт только подсветка активного */
   .dflow{grid-template-columns:1fr;row-gap:6px}
-  .dflow__sticky{position:static;display:block}
+  .dflow__sticky{position:static}
+  .dflow__meta{max-width:none}
   .dflow__ph{display:none}
   .dflow__count{display:none}
   .dflow__rail{flex-direction:row;gap:8px;margin-top:14px;max-width:none}
@@ -489,6 +498,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 }
 @media (prefers-reduced-motion:reduce){
   .dflow--live .dprin{opacity:1}
+  .dflow__ph.is-set{transition:none}
   .dflow__count b.is-swap{animation:none}
   .dflow .dprin,.dflow__rail button::before{transition:none}
 }
