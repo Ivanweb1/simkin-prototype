@@ -336,7 +336,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
    на отметке --split независимо от того, какой зазор у строки. Ширина левой
    колонки поэтому считается как split минус свой зазор — иначе текст справа и
    плашка с цитатой под ним стояли на разных линиях (было 806 против 693). */
-#difference{--split:57%;--gap-head:clamp(40px,7vw,120px);--gap-feat:clamp(18px,2vw,32px)}
+#difference{--split:57%;--gap-head:clamp(40px,7vw,120px);--gap-feat:clamp(18px,2vw,32px);--gap-flow:clamp(40px,5vw,96px)}
 .ddiff__head{
   display:grid;grid-template-columns:calc(var(--split) - var(--gap-head)) minmax(0,1fr);
   column-gap:var(--gap-head);align-items:start;
@@ -400,8 +400,8 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
    Всё живое включается классом .dflow--live, его ставит скрипт: без JS
    и при ошибке скрипта блок остаётся обычным читаемым списком. */
 .dflow{
-  display:grid;grid-template-columns:minmax(190px,.48fr) minmax(0,1.52fr);
-  column-gap:clamp(40px,5vw,96px);margin-top:clamp(48px,5vw,76px);
+  display:grid;grid-template-columns:calc(var(--split) - var(--gap-flow)) minmax(0,1fr);
+  column-gap:var(--gap-flow);margin-top:clamp(48px,5vw,76px);
 }
 .dflow__sticky{position:sticky;top:clamp(104px,11vh,148px)}
 .dflow__count{display:flex;align-items:baseline;gap:10px;margin-top:16px;line-height:1}
@@ -413,7 +413,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .dflow__count b.is-swap{animation:dflowNum .42s var(--ease) both}
 @keyframes dflowNum{from{opacity:0;transform:translateY(.22em)}to{opacity:1;transform:none}}
 
-.dflow__rail{list-style:none;margin:clamp(24px,2.4vw,34px) 0 0;padding:0;display:flex;flex-direction:column;gap:13px}
+.dflow__rail{list-style:none;margin:clamp(24px,2.4vw,34px) 0 0;padding:0;max-width:160px;display:flex;flex-direction:column;gap:13px}
 .dflow__rail li{margin:0}
 .dflow__rail button{
   -webkit-appearance:none;appearance:none;border:0;background:none;padding:7px 0;margin:0;
@@ -454,7 +454,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   .dflow{grid-template-columns:1fr;row-gap:6px}
   .dflow__sticky{position:static}
   .dflow__count{display:none}
-  .dflow__rail{flex-direction:row;gap:8px;margin-top:14px}
+  .dflow__rail{flex-direction:row;gap:8px;margin-top:14px;max-width:none}
   .dflow__rail button{padding:10px 0}
   .dflow__rail button::before{width:100%}
   .dflow__rail li{flex:1}
