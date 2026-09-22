@@ -41,6 +41,11 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .d .burger i{background:var(--navy)}
 
 /* ================= ПЕРВЫЙ ЭКРАН ================= */
+/* Первый экран проявляется тем же приёмом, что и остальная страница (data-rv
+   в ../styles.css): заголовок, подзаголовок, лид, кнопки — с нарастающей
+   задержкой. Снимку оставлен только проявляющийся тон: он растянут по краям
+   карточки, и сдвиг вверх открыл бы полосу фона над ним. */
+.js .dhero__media[data-rv]{transform:none}
 .dhero{padding:8px 16px 0}
 .dhero__card{
   position:relative;max-width:1640px;margin:0 auto;border-radius:36px;overflow:hidden;
