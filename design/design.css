@@ -1193,69 +1193,22 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 
 /* ================= БЛОК 3. ПОЧЕМУ ЭРГОНОМИКА ВАЖНА ДЛЯ БИЗНЕСА ================= */
-/* Правая колонка всех строк начинается на одной вертикали независимо от длины
-   тезиса слева — так пять доводов читаются как разбор, а не как пять разных
-   вёрсток. Ширина левой колонки взята от той же середины, что в блоке «Чем
-   отличается подход» на главной, но сдвинута влево: тезисы там короткие,
-   а раскрытия длинные, и текст не должен жаться в узкий столбец. */
-#why{--why-split:42%;--why-gap:clamp(28px,4vw,72px)}
-/* вводный абзац здесь длиннее обычной подписи к блоку: на 900-1100px он
-   вырастал до семи строк, и выравнивание по нижней линии заголовка оставляло
-   над заголовком дыру в полсотни пикселей. Ставим обе колонки на верхнюю
-   линию — абзац читается как лид рядом с заголовком на любой ширине. */
-/* только там, где колонки ещё есть: селектор с id перебил бы мобильный
-   брейкпоинт .dhead--split и оставил шапку в две колонки на телефоне */
-@media (min-width:861px){
-  #why .dhead--split{align-items:start;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr)}
-  #why .dhead__note{padding-bottom:0;padding-top:clamp(6px,.9vw,14px)}
-}
-.dwhy{margin-top:clamp(40px,4vw,64px)}
-.dwhy__row{
-  display:grid;grid-template-columns:calc(var(--why-split) - var(--why-gap)) minmax(0,1fr);
-  column-gap:var(--why-gap);align-items:start;
-  padding:clamp(30px,2.8vw,42px) 0;
-  border-top:1px solid var(--d-line);
-}
-/* последняя линия закрывает список снизу: без неё пятый довод визуально
-   «вытекает» в следующий блок */
-.dwhy__row:last-child{border-bottom:1px solid var(--d-line)}
+/* Пошаговое чтение — механика и стили те же, что у принципов на главной.
+   Здесь переопределены только пропорции: на главной левая половина отдана
+   под кадр к каждому тезису, а кадров к доводам ещё нет, поэтому колонка
+   сужена до ширины номера со шкалой, и текст занимает остальное.
+   Когда снимки появятся, --split возвращается к 50% и figure с data-flow-ph
+   встают на место без других правок. */
+#why{--split:26%;--gap-flow:clamp(32px,4vw,72px);--meta:clamp(120px,13vw,230px)}
+/* ряды не равняем по высоте: у доводов от одного до трёх абзацев, и общая
+   сетка растянула бы короткие до высоты самого длинного */
+.dflow--bare .dflow__list{display:block}
+.dflow--bare .dprin h3{max-width:15em}
 
-/* номер над тезисом, а не сбоку: слева уже узкая колонка, и цифра в отступе
-   уводила бы тезис от левого края страницы */
-.dwhy__n{
-  display:block;
-  font-size:clamp(26px,2.2vw,34px);font-weight:600;line-height:1;letter-spacing:-.03em;
-  color:var(--brand);opacity:.32;font-variant-numeric:tabular-nums;
-  transition:opacity .25s var(--ease);
-}
-.dwhy__row:hover .dwhy__n{opacity:1}
-.dwhy__side h3{
-  margin-top:16px;
-  font-size:clamp(21px,1.85vw,28px);font-weight:600;line-height:1.16;letter-spacing:-.026em;
-  color:var(--navy);max-width:13em;
-}
-.dwhy__body p{font-size:17.5px;line-height:1.65;color:var(--navy-2);max-width:36em}
-.dwhy__body p + p{margin-top:14px}
-/* верхняя строка раскрытия садится на ту же линию, что тезис слева: у номера
-   сверху своя высота, поэтому текст справа сдвигается на её величину */
-.dwhy__body{padding-top:clamp(6px,.7vw,10px)}
-
-@media (max-width:1100px){
-  #why{--why-split:46%;--why-gap:clamp(24px,3vw,44px)}
-  .dwhy__side h3{max-width:none}
-}
-@media (max-width:860px){
-  /* колонки складываются: номер и тезис сверху, раскрытие под ними */
-  .dwhy__row{grid-template-columns:1fr;row-gap:16px}
-  .dwhy__body{padding-top:0}
-  .dwhy__side h3{margin-top:12px}
-}
-@media (max-width:600px){
-  .dwhy{margin-top:32px}
-  .dwhy__row{padding:26px 0 28px}
-  .dwhy__n{font-size:24px;opacity:1}
-  .dwhy__side h3{font-size:22px}
-  .dwhy__body p{font-size:16.5px}
+@media (max-width:1000px){
+  /* колонка уезжает по общему правилу .dflow; здесь только возвращаем
+     доводам полную ширину строки */
+  .dflow--bare .dprin h3{max-width:none}
 }
 
 /* ================= БЛОК 4. ЧТО ОТЛИЧАЕТ НАШ ПОДХОД ================= */
@@ -1377,19 +1330,6 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 
 /* ================= БЛОК 6. ФИНАЛЬНЫЙ БЛОК ================= */
-/* Банд без формы: колонок нет, всё по центру. Ширины ограничены по строке,
-   иначе на 1440px текст растянулся бы на всю ширину банда и перестал
-   читаться как обращение. */
-.dband--solo{text-align:center}
-.dband--solo .dband__h2{max-width:15em;margin-left:auto;margin-right:auto}
-.dband--solo .dband__sub{max-width:38em;margin-left:auto;margin-right:auto}
-.dband--solo .dband__sub + .dband__sub{margin-top:14px}
-.dband__act{margin-top:clamp(30px,3.2vw,44px)}
-/* белая заливка на градиенте — самый заметный элемент страницы */
-.dband__cta{height:66px;padding:0 40px;font-size:17.5px;border-color:transparent}
-.dband__cta:hover{background:var(--tint);border-color:transparent;transform:translateY(-1px)}
-
-@media (max-width:600px){
-  .dband--solo .dband__h2{max-width:none}
-  .dband__cta{width:100%;height:58px;padding:0 24px;font-size:16.5px}
-}
+/* Банд и форма целиком те же, что на главной. Здесь только второй абзац
+   обращения: на главной под заголовком одна строка, тут их две. */
+.dband__sub--next{margin-top:14px}

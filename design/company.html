@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=84">
+<link rel="stylesheet" href="design.css?v=85">
 </head>
 <body class="d dco">
 
@@ -128,7 +128,8 @@
 <section class="dsec dsec--tint" id="offers">
   <div class="dwrap">
     <div class="dhead">
-      <h2 class="dh2 dh2--top" data-rv>Решения для компаний</h2>
+      <span class="deyebrow" data-rv>Услуги</span>
+      <h2 class="dh2" data-rv style="--d:.06s">Решения <span class="dh2__soft">для компаний</span></h2>
     </div>
 
     <!-- НАПРАВЛЕНИЕ 01. ОФИСНАЯ ЭРГОНОМИКА -->
@@ -207,73 +208,72 @@
 </section>
 
 <!-- ============ БЛОК 3. ПОЧЕМУ ЭРГОНОМИКА ВАЖНА ДЛЯ БИЗНЕСА ============ -->
-<!-- Пять доводов сильно разной длины: от одного абзаца до трёх. Сетка карточек
-     выровняла бы их по самой длинной и оставила пустоты, а выше уже идут две
-     сетки подряд (решения и пара направлений). Поэтому здесь типографский
-     разбор: слева номер и тезис, справа раскрытие, строки делит волосяная
-     линия. Заголовки складываются в столбец, который читается сам по себе. -->
+<!-- Пять доводов читаются тем же приёмом, что принципы на главной: по скроллу
+     активен ровно один, соседние приглушены, слева меняется крупный номер
+     и заполняется шкала. Шкала кликабельная. Доводы очень разной длины — от
+     одного абзаца до трёх, и пошаговое чтение эту разницу переносит лучше,
+     чем сетка: ряд просто выше или ниже, пустот не остаётся.
+     Кадров к доводам пока нет, поэтому левая колонка узкая — только номер
+     и шкала. Когда снимки появятся, они встают сюда же, как на главной. -->
 <section class="dsec" id="why">
   <div class="dwrap">
     <div class="dhead dhead--split">
-      <h2 class="dh2 dh2--top" data-rv>Почему эргономика<br class="dbr"> важна для бизнеса</h2>
-      <p class="dhead__note" data-rv style="--d:.06s">Рабочая среда влияет не&nbsp;только на&nbsp;комфорт. От&nbsp;того, насколько она соответствует возможностям человека и&nbsp;его рабочим задачам, зависят самочувствие, утомляемость и&nbsp;способность сохранять работоспособность в&nbsp;течение дня.</p>
+      <div>
+        <span class="deyebrow" data-rv>Почему это важно</span>
+        <h2 class="dh2" data-rv style="--d:.06s">Почему эргономика<br class="dbr"> <span class="dh2__soft">важна для бизнеса</span></h2>
+      </div>
+      <p class="dhead__note" data-rv style="--d:.12s">Рабочая среда влияет не&nbsp;только на&nbsp;комфорт. От&nbsp;того, насколько она соответствует возможностям человека и&nbsp;его рабочим задачам, зависят самочувствие, утомляемость и&nbsp;способность сохранять работоспособность в&nbsp;течение дня.</p>
     </div>
 
-    <div class="dwhy">
-      <article class="dwhy__row" data-rv>
-        <div class="dwhy__side">
-          <span class="dwhy__n">01</span>
-          <h3>Меньше избыточной нагрузки</h3>
+    <div class="dflow dflow--bare" data-flow data-rv>
+      <div class="dflow__aside">
+        <div class="dflow__sticky">
+          <div class="dflow__meta">
+            <span class="deyebrow">Пять доводов</span>
+            <p class="dflow__count"><b data-flow-num>01</b><i>/&nbsp;05</i></p>
+            <ol class="dflow__rail">
+              <li><button type="button" data-flow-go="0" aria-label="Довод 01: Меньше избыточной нагрузки"></button></li>
+              <li><button type="button" data-flow-go="1" aria-label="Довод 02: Стабильнее работоспособность"></button></li>
+              <li><button type="button" data-flow-go="2" aria-label="Довод 03: Меньше потерь рабочего времени"></button></li>
+              <li><button type="button" data-flow-go="3" aria-label="Довод 04: Больше отдачи от оборудования и рабочей среды"></button></li>
+              <li><button type="button" data-flow-go="4" aria-label="Довод 05: Забота, которую сотрудник может почувствовать"></button></li>
+            </ol>
+          </div>
         </div>
-        <div class="dwhy__body">
-          <p>Неудобная рабочая поза, неудачно организованное рабочее место или рабочий процесс создают дополнительную нагрузку на&nbsp;тело. Если она повторяется каждый день, дискомфорт может постепенно превращаться в&nbsp;устойчивую проблему.</p>
-        </div>
-      </article>
+      </div>
 
-      <article class="dwhy__row" data-rv>
-        <div class="dwhy__side">
-          <span class="dwhy__n">02</span>
+      <div class="dflow__list">
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">01</span>
+          <h3>Меньше избыточной нагрузки</h3>
+          <p>Неудобная рабочая поза, неудачно организованное рабочее место или рабочий процесс создают дополнительную нагрузку на&nbsp;тело. Если она повторяется каждый день, дискомфорт может постепенно превращаться в&nbsp;устойчивую проблему.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">02</span>
           <h3>Стабильнее работоспособность</h3>
-        </div>
-        <div class="dwhy__body">
           <p>Боль и&nbsp;усталость не&nbsp;всегда приводят к&nbsp;больничному. Часто сотрудник продолжает работать, но&nbsp;ему становится сложнее сохранять прежнюю концентрацию и&nbsp;эффективность.</p>
           <p>Эргономика помогает уменьшить заметную часть факторов, которые приводят к&nbsp;такой повседневной перегрузке.</p>
-        </div>
-      </article>
-
-      <article class="dwhy__row" data-rv>
-        <div class="dwhy__side">
-          <span class="dwhy__n">03</span>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">03</span>
           <h3>Меньше потерь рабочего времени</h3>
-        </div>
-        <div class="dwhy__body">
           <p>Проблемы со&nbsp;здоровьем могут приводить не&nbsp;только к&nbsp;снижению эффективности, но&nbsp;и&nbsp;к&nbsp;отсутствию сотрудника на&nbsp;рабочем месте. Это называют абсентеизмом.</p>
           <p>Эргономика не&nbsp;исключает все причины отсутствия, но&nbsp;помогает снизить влияние факторов рабочей среды, связанных с&nbsp;перегрузкой, болью и&nbsp;ухудшением самочувствия. В&nbsp;результате компания может уменьшить часть потерь рабочего времени и&nbsp;поддерживать более стабильную работу команды.</p>
-        </div>
-      </article>
-
-      <article class="dwhy__row" data-rv>
-        <div class="dwhy__side">
-          <span class="dwhy__n">04</span>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">04</span>
           <h3>Больше отдачи от&nbsp;оборудования и&nbsp;рабочей среды</h3>
-        </div>
-        <div class="dwhy__body">
           <p>Компания может инвестировать значительные средства в&nbsp;мебель, оборудование и&nbsp;организацию рабочих мест, но&nbsp;их&nbsp;возможности не&nbsp;будут использоваться в&nbsp;полной мере, если сотрудники не&nbsp;умеют правильно с&nbsp;ними работать.</p>
           <p>Эргономика помогает реализовать потенциал уже сделанных инвестиций, а&nbsp;не&nbsp;сводится к&nbsp;постоянной покупке нового оборудования.</p>
-        </div>
-      </article>
-
-      <article class="dwhy__row" data-rv>
-        <div class="dwhy__side">
-          <span class="dwhy__n">05</span>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">05</span>
           <h3>Забота, которую сотрудник может почувствовать</h3>
-        </div>
-        <div class="dwhy__body">
           <p>Хорошая эргономика&nbsp;– это не&nbsp;формальная льгота. Это изменения, которые человек замечает непосредственно во&nbsp;время работы: ему удобнее, он&nbsp;меньше устает и&nbsp;лучше понимает, как самостоятельно организовать свое рабочее место и&nbsp;нагрузку.</p>
           <p>Важно и&nbsp;то, сколько сил остается у&nbsp;человека после рабочего дня&nbsp;– не&nbsp;только на&nbsp;работу, но&nbsp;и&nbsp;на&nbsp;жизнь вне&nbsp;ее.</p>
           <p>Для компании это один из&nbsp;способов создавать человекоцентричную рабочую среду, в&nbsp;которой требования бизнеса учитываются вместе с&nbsp;возможностями человека.</p>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -288,7 +288,8 @@
 <section class="dsec dsec--tint" id="approach">
   <div class="dwrap">
     <div class="dhead">
-      <h2 class="dh2 dh2--top" data-rv>Что отличает наш подход<br class="dbr"> к&nbsp;эргономике</h2>
+      <span class="deyebrow" data-rv>Наш подход</span>
+      <h2 class="dh2" data-rv style="--d:.06s">Что отличает наш подход<br class="dbr"> <span class="dh2__soft">к&nbsp;эргономике</span></h2>
     </div>
 
     <article class="dappr__lead" data-rv>
@@ -339,8 +340,11 @@
 <section class="dsec" id="cases">
   <div class="dwrap">
     <div class="dhead dhead--split">
-      <h2 class="dh2 dh2--top" data-rv>Более 20&nbsp;лет практической<br class="dbr"> работы с&nbsp;компаниями</h2>
-      <p class="dhead__note" data-rv style="--d:.06s">За&nbsp;это время мы&nbsp;проводили очные корпоративные обучения, вебинары, аудит и&nbsp;настройку рабочих мест, консультации при создании новых офисов и&nbsp;программы по&nbsp;промышленной эргономике.</p>
+      <div>
+        <span class="deyebrow" data-rv>Клиенты</span>
+        <h2 class="dh2" data-rv style="--d:.06s">Более 20&nbsp;лет практической<br class="dbr"> работы <span class="dh2__soft">с&nbsp;компаниями</span></h2>
+      </div>
+      <p class="dhead__note" data-rv style="--d:.12s">За&nbsp;это время мы&nbsp;проводили очные корпоративные обучения, вебинары, аудит и&nbsp;настройку рабочих мест, консультации при создании новых офисов и&nbsp;программы по&nbsp;промышленной эргономике.</p>
     </div>
 
     <div class="dcases">
@@ -386,19 +390,45 @@
 </section>
 
 <!-- ============ БЛОК 6. ФИНАЛЬНЫЙ БЛОК: ОБСУДИМ ЗАДАЧУ ============ -->
-<!-- Тот же брендовый банд, что завершает главную, но без формы: по тексту
-     здесь одно действие, а не сбор контакта. Поэтому композиция по центру,
-     а кнопка — белая заливка на градиенте: самый заметный элемент страницы.
-     Первый экран отдал ей акцент, там кнопка только обводкой. -->
+<!-- Тот же банд с формой, что завершает главную: слева обращение и прямые
+     каналы связи, справа форма белой карточкой поверх градиента. Тексты —
+     со страницы «Для компаний», подпись кнопки — «Обсудить задачу», как
+     в присланном тексте. Первый экран отдал акцент сюда: там кнопка только
+     обводкой, главная синяя кнопка страницы — здесь. -->
 <section class="dsec dsec--cta" id="cta">
   <div class="dwrap">
-    <div class="dband dband--solo" data-rv>
-      <h2 class="dh2 dband__h2">Обсудим задачу вашей компании</h2>
-      <p class="dband__sub">У&nbsp;разных компаний разные рабочие процессы, оборудование и&nbsp;задачи. Поэтому решение лучше подбирать после короткого обсуждения.</p>
-      <p class="dband__sub">Расскажите, как работают ваши сотрудники и&nbsp;что вы&nbsp;хотели&nbsp;бы изменить. Мы&nbsp;предложим подходящий формат работы.</p>
-      <div class="dband__act">
-        <button class="dbtn dbtn--light dband__cta" data-open="discuss">Обсудить задачу
-          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+    <div class="dband" data-rv>
+      <div class="dband__grid">
+        <div class="dband__left">
+          <h2 class="dh2 dband__h2">Обсудим задачу <span class="dband__soft">вашей компании</span></h2>
+          <p class="dband__sub">У&nbsp;разных компаний разные рабочие процессы, оборудование и&nbsp;задачи. Поэтому решение лучше подбирать после короткого обсуждения.</p>
+          <p class="dband__sub dband__sub--next">Расскажите, как работают ваши сотрудники и&nbsp;что вы&nbsp;хотели&nbsp;бы изменить. Мы&nbsp;предложим подходящий формат работы.</p>
+          <div class="ddirect">
+            <span class="ddirect__t">Или напишите сразу</span>
+            <div class="ddirect__links">
+              <a href="#"><img src="assets/soc/telegram.svg" alt="" width="20" height="20">Telegram</a>
+              <a href="#"><img src="assets/soc/max.svg" alt="" width="20" height="20">MAX</a>
+              <a href="#"><img src="assets/soc/whatsapp.svg" alt="" width="20" height="20">WhatsApp</a>
+              <a href="mailto:mail@simkin.ru"><img src="assets/soc/email.svg" alt="" width="20" height="20">Email</a>
+            </div>
+          </div>
+        </div>
+        <form class="dform" data-thanks="company" data-channels>
+          <input class="dfield" placeholder="Имя" required>
+          <input class="dfield" placeholder="Компания">
+          <span class="dform__label">Как с вами связаться</span>
+          <div class="dchan" role="group" aria-label="Способ связи">
+            <button type="button" data-ch="tg">Telegram</button>
+            <button type="button" data-ch="max">MAX</button>
+            <button type="button" data-ch="wa">WhatsApp</button>
+            <button type="button" data-ch="mail">Почта</button>
+            <button type="button" data-ch="tel">Телефон</button>
+          </div>
+          <input class="dfield" data-contact hidden>
+          <textarea class="dfield dfield--area" placeholder="Коротко напишите, как работают ваши сотрудники и что хотели бы изменить"></textarea>
+          <label class="dagree"><i></i><span>Согласие на обработку персональных данных</span></label>
+          <button class="dbtn dbtn--brand dform__submit">Обсудить задачу</button>
+        </form>
       </div>
     </div>
   </div>
@@ -518,6 +548,110 @@
 
 <!-- переключатель вариантов убран: заказчик утвердил вариант A (index-b.html / index-c.html остаются в репозитории) -->
 <script src="../script.js?v=30"></script>
+
+<script>
+/* Доводы: активен тот, что пересёк линию чтения. Никакого перехвата скролла —
+   страница прокручивается обычно, меняются только акценты. */
+(function(){
+  var flow = document.querySelector('[data-flow]');
+  if(!flow) return;
+  var items = [].slice.call(flow.querySelectorAll('[data-flow-item]'));
+  var rail  = [].slice.call(flow.querySelectorAll('.dflow__rail li'));
+  var shots = [].slice.call(flow.querySelectorAll('[data-flow-ph]'));
+  var num   = flow.querySelector('[data-flow-num]');
+  if(!items.length) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = -1;
+  flow.classList.add('dflow--live');
+
+  function apply(i){
+    if(i === cur) return;
+    cur = i;
+    items.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    rail.forEach(function(li,n){
+      li.classList.toggle('is-done', n <= i);
+      li.classList.toggle('is-now',  n === i);
+      var b = li.firstElementChild;
+      if(b) b.setAttribute('aria-current', n === i ? 'true' : 'false');
+    });
+    shots.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    if(num){
+      num.textContent = ('0' + (i + 1)).slice(-2);
+      if(!reduce){ num.classList.remove('is-swap'); void num.offsetWidth; num.classList.add('is-swap'); }
+    }
+  }
+
+  // каждый кадр встаёт ровно в границы своего ряда. Шире, чем остаток левой
+  // половины, он быть не может — иначе наехал бы на номер, поэтому размер
+  // ограничен сверху.
+  var aside= flow.querySelector('.dflow__aside');
+  var meta = flow.querySelector('.dflow__meta');
+  var GAP = 40; // просвет между соседними кадрами
+  function placeShots(){
+    if(!shots.length || getComputedStyle(shots[0]).display === 'none') return;
+    var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
+    shots.forEach(function(fig,n){
+      var row = items[n];
+      if(!row) return;
+      // верх остаётся на линейке ряда, просвет снимается снизу
+      var size = Math.max(0, Math.min(row.offsetHeight - GAP, room));
+      fig.style.setProperty('--ph-top', row.offsetTop + 'px');
+      fig.style.setProperty('--ph', Math.round(size) + 'px');
+    });
+  }
+  placeShots();
+  // высота ряда меняется от переносов в тексте, ширина колонки — от окна.
+  // Наблюдатель ловит и то и другое; кадры позиционированы абсолютно и на
+  // размеры рядов не влияют, так что зацикливания нет.
+  if(window.ResizeObserver){
+    var ro = new ResizeObserver(placeShots);
+    ro.observe(flow);
+    items.forEach(function(el){ ro.observe(el); });
+  }
+
+  // считаем по заголовку, а не по краю блока: принцип становится активным ровно
+  // тогда, когда его название доходит до середины экрана
+  function pick(){
+    var line = window.innerHeight * 0.45, best = 0;
+    items.forEach(function(el,n){
+      var h = el.querySelector('h3') || el;
+      if(h.getBoundingClientRect().top <= line) best = n;
+    });
+    apply(best);
+  }
+
+  var waiting = false;
+  function onScroll(){
+    if(waiting) return;
+    waiting = true;
+    requestAnimationFrame(function(){ waiting = false; pick(); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  // после смены ширины даём раскладке устояться: высота ряда меняется вместе с
+  // переносами в тексте, и без паузы кадр получил бы размер от прошлой ширины
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(placeShots, 150);
+    onScroll();
+  });
+  // шрифт догружается позже разметки и меняет высоту рядов
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(placeShots);
+  }
+  pick();
+
+  flow.querySelectorAll('[data-flow-go]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = items[+btn.getAttribute('data-flow-go')];
+      if(!el) return;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - window.innerHeight * 0.26;
+      window.scrollTo({top: top, behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
