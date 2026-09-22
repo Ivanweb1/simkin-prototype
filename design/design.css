@@ -1133,7 +1133,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 /* решения внутри направления разделены волосяными линиями, а не вложенными
    карточками: вложенный лист в листе утяжелил бы панель */
 .doffer__grid{
-  display:grid;grid-template-columns:1fr 1fr;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   border-left:1px solid var(--d-line);background:var(--d-line);gap:1px;
 }
 .dsub{
@@ -1148,8 +1148,9 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dsub .dlink{padding-top:22px;font-size:15.5px}
 .dsub:hover .dlink svg{transform:translateX(4px)}
 
-/* пара направлений ниже */
-.doffers{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+/* пара направлений ниже. minmax(0,1fr), а не 1fr: иначе колонка растягивается
+   под минимальную ширину содержимого, а её задаёт неразрывная подпись кнопки */
+.doffers{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:16px}
 
 .doffers__note{
   margin-top:clamp(28px,3vw,40px);font-size:17px;line-height:1.6;color:var(--navy-2);max-width:46em;
@@ -1159,6 +1160,15 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .doffer--lead{grid-template-columns:1fr}
   .doffer__grid{border-left:0;border-top:1px solid var(--d-line)}
   .doffer--lead .doffer__side{padding-bottom:36px}
+}
+/* 861-1000px: направления ещё стоят парой, но в колонку шириной ~400px длинная
+   подпись кнопки одной строкой не влезает и вылезала за край страницы.
+   Ниже 861 колонка одна и кнопка снова помещается в строку. */
+@media (min-width:861px) and (max-width:1000px){
+  .doffer__btn .dbtn{
+    width:100%;height:auto;min-height:54px;padding:14px 20px;font-size:15.5px;line-height:1.3;
+    white-space:normal;text-align:left;justify-content:space-between;
+  }
 }
 @media (max-width:860px){
   .doffers{grid-template-columns:1fr}
@@ -1246,4 +1256,74 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dwhy__n{font-size:24px;opacity:1}
   .dwhy__side h3{font-size:22px}
   .dwhy__body p{font-size:16.5px}
+}
+
+/* ================= БЛОК 4. ЧТО ОТЛИЧАЕТ НАШ ПОДХОД ================= */
+/* Ведущий пункт — белый лист на подложке: слева заголовок и вынесенная цель,
+   справа изложение. Пять абзацев подряд в одну колонку дали бы сплошную
+   простыню, а цель — это вывод, ей место рядом с заголовком, а не в конце
+   перечисления. */
+.dappr__lead{
+  display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);
+  gap:clamp(28px,3.4vw,64px);
+  margin-top:clamp(36px,3.6vw,52px);
+  background:#fff;border:1px solid var(--d-line);border-radius:28px;
+  padding:clamp(32px,3.2vw,48px) clamp(26px,3vw,48px);
+}
+.dappr__side h3{
+  font-size:clamp(24px,2.1vw,32px);font-weight:600;line-height:1.14;letter-spacing:-.026em;
+  color:var(--navy);max-width:12em;
+}
+/* та же чёрточка слева, что у цитаты на главной: отмечает вывод, не вводя
+   ещё одну плашку внутрь и без того плотного листа */
+.dappr__goal{
+  position:relative;margin-top:clamp(24px,2.4vw,34px);padding-left:26px;
+  font-size:clamp(17px,1.45vw,19.5px);font-weight:500;line-height:1.5;letter-spacing:-.01em;
+  color:var(--navy);max-width:22em;
+}
+.dappr__goal::before{
+  content:"";position:absolute;left:0;top:.28em;bottom:.28em;width:4px;border-radius:4px;
+  background:linear-gradient(180deg,var(--brand-3),var(--brand));
+}
+.dappr__body{padding-top:clamp(4px,.6vw,10px)}
+.dappr__body p{font-size:17.5px;line-height:1.65;color:var(--navy-2);max-width:36em}
+.dappr__body p + p{margin-top:14px}
+
+/* Четыре справки — полоса без рамок: карточки в обводке повторили бы решения
+   выше, а здесь это короткие сведения, а не предложения услуг. Колонки делят
+   волосяные линии, высота выравнивается сеткой. */
+.dappr__facts{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  margin-top:clamp(36px,3.6vw,52px);
+}
+.dappr__fact{padding:0 clamp(18px,1.8vw,30px);border-left:1px solid var(--d-line)}
+.dappr__fact:first-child{padding-left:0;border-left:0}
+.dappr__fact:last-child{padding-right:0}
+.dappr__fact h3{
+  font-size:clamp(17px,1.4vw,20px);font-weight:600;line-height:1.24;letter-spacing:-.02em;
+  color:var(--navy);
+}
+.dappr__fact p{margin-top:14px;font-size:16px;line-height:1.6;color:var(--navy-2)}
+.dappr__fact p + p{margin-top:10px}
+
+@media (max-width:1100px){
+  .dappr__lead{grid-template-columns:1fr;gap:clamp(22px,2.6vw,32px)}
+  .dappr__side h3{max-width:none}
+  .dappr__goal{max-width:34em}
+  .dappr__body{padding-top:0}
+  /* четыре колонки на планшете дают по 160px — строки рвутся в столбик */
+  .dappr__facts{grid-template-columns:1fr 1fr;row-gap:clamp(28px,3vw,40px)}
+  .dappr__fact:nth-child(3){padding-left:0;border-left:0}
+}
+@media (max-width:600px){
+  .dappr__lead{border-radius:22px;padding:26px 22px 28px}
+  .dappr__side h3{font-size:24px}
+  .dappr__goal{font-size:17px;padding-left:20px}
+  .dappr__body p{font-size:16.5px}
+  /* на телефоне колонок нет: справки идут списком, линия сверху вместо боковой */
+  .dappr__facts{grid-template-columns:1fr;row-gap:0}
+  .dappr__fact{padding:24px 0 0;border-left:0;border-top:1px solid var(--d-line);margin-top:24px}
+  .dappr__fact:first-child{margin-top:0}
+  .dappr__fact h3{font-size:19px}
+  .dappr__fact p{font-size:16.5px}
 }
