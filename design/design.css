@@ -336,7 +336,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
    середине --split независимо от того, какой зазор у строки. Ширина левой
    колонки поэтому считается как split минус свой зазор — иначе текст справа,
    плашка с цитатой и тезисы стояли бы на разных линиях (было 806 / 693 / 426). */
-#difference{--split:50%;--gap-head:clamp(40px,7vw,120px);--gap-feat:clamp(18px,2vw,32px);--gap-flow:clamp(40px,5vw,96px)}
+#difference{--split:50%;--gap-head:clamp(40px,7vw,120px);--gap-feat:clamp(18px,2vw,32px);--gap-flow:clamp(40px,5vw,96px);--img:clamp(180px,22vw,340px);--gap-ph:clamp(24px,2.6vw,40px)}
 .ddiff__head{
   display:grid;grid-template-columns:calc(var(--split) - var(--gap-head)) minmax(0,1fr);
   column-gap:var(--gap-head);align-items:start;
@@ -403,7 +403,30 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   display:grid;grid-template-columns:calc(var(--split) - var(--gap-flow)) minmax(0,1fr);
   column-gap:var(--gap-flow);margin-top:clamp(48px,5vw,76px);
 }
-.dflow__sticky{position:sticky;top:clamp(104px,11vh,148px)}
+/* левая половина: слева номер со шкалой, справа кадр — он прижат к зазору,
+   поэтому колонка занята от края до края, а фото стоит рядом с текстом */
+.dflow__sticky{
+  position:sticky;top:clamp(104px,11vh,148px);
+  display:grid;grid-template-columns:minmax(0,1fr) var(--img);
+  column-gap:var(--gap-ph);align-items:start;
+}
+.dflow__ph{
+  margin:0;position:relative;width:var(--img);aspect-ratio:1;
+  border-radius:28px;overflow:hidden;background:var(--tint);
+}
+/* пока кадров нет, видна серая плашка с подписью; подпись лежит под снимками,
+   чтобы не проступать сквозь них, когда файлы появятся */
+.dflow__ph::after{
+  content:"кадр";position:absolute;inset:0;z-index:0;display:grid;place-items:center;
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-3);
+}
+.dflow__ph img{
+  position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .55s var(--ease);
+  /* у ненайденного файла браузер рисует текст alt — на заглушке он не нужен */
+  font-size:0;color:transparent;
+}
+.dflow--live .dflow__ph img.is-now{opacity:1}
 .dflow__count{display:flex;align-items:baseline;gap:10px;margin-top:16px;line-height:1}
 .dflow__count b{
   font-size:clamp(54px,5.6vw,88px);font-weight:600;line-height:.9;letter-spacing:-.045em;
@@ -452,7 +475,8 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 @media (max-width:1000px){
   /* колонка уезжает: номер возвращается в текст, ведёт только подсветка активного */
   .dflow{grid-template-columns:1fr;row-gap:6px}
-  .dflow__sticky{position:static}
+  .dflow__sticky{position:static;display:block}
+  .dflow__ph{display:none}
   .dflow__count{display:none}
   .dflow__rail{flex-direction:row;gap:8px;margin-top:14px;max-width:none}
   .dflow__rail button{padding:10px 0}

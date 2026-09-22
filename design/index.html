@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=69">
+<link rel="stylesheet" href="design.css?v=71">
 </head>
 <body class="d">
 
@@ -150,6 +150,7 @@
     <div class="dflow" data-flow data-rv>
       <div class="dflow__aside">
         <div class="dflow__sticky">
+          <div class="dflow__meta">
           <span class="deyebrow">Принципы системы</span>
           <p class="dflow__count"><b data-flow-num>01</b><i>/&nbsp;04</i></p>
           <ol class="dflow__rail">
@@ -158,6 +159,16 @@
             <li><button type="button" data-flow-go="2" aria-label="Принцип 03: рабочее место – единая система"></button></li>
             <li><button type="button" data-flow-go="3" aria-label="Принцип 04: правильная поза не должна требовать постоянного контроля"></button></li>
           </ol>
+          </div>
+          <!-- кадр меняется вместе с номером: на экране всегда один, поэтому
+               ряда карточек не возникает. Файлы кладём в assets/photo/principles,
+               пока их нет — видна серая заглушка. -->
+          <figure class="dflow__ph">
+            <img src="assets/photo/principles/01.jpg" alt="Настройка рабочего места под человека" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
+            <img src="assets/photo/principles/02.jpg" alt="Работа стоя за регулируемым столом" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
+            <img src="assets/photo/principles/03.jpg" alt="Рабочее место целиком: кресло, стол, монитор, клавиатура, свет" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
+            <img src="assets/photo/principles/04.jpg" alt="Человек работает в естественной позе, не контролируя её" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
+          </figure>
         </div>
       </div>
 
@@ -551,6 +562,7 @@
   if(!flow) return;
   var items = [].slice.call(flow.querySelectorAll('[data-flow-item]'));
   var rail  = [].slice.call(flow.querySelectorAll('.dflow__rail li'));
+  var shots = [].slice.call(flow.querySelectorAll('[data-flow-ph]'));
   var num   = flow.querySelector('[data-flow-num]');
   if(!items.length) return;
 
@@ -568,6 +580,7 @@
       var b = li.firstElementChild;
       if(b) b.setAttribute('aria-current', n === i ? 'true' : 'false');
     });
+    shots.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
     if(num){
       num.textContent = ('0' + (i + 1)).slice(-2);
       if(!reduce){ num.classList.remove('is-swap'); void num.offsetWidth; num.classList.add('is-swap'); }
