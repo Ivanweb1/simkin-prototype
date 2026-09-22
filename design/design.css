@@ -332,11 +332,11 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 @media (max-width:1100px){.dbr{display:none}}
 
 /* ================= БЛОК 2. ЧЕМ ОТЛИЧАЕТСЯ ПОДХОД ================= */
-/* Обе строки блока делят ширину по одной вертикали: правая колонка начинается
-   на отметке --split независимо от того, какой зазор у строки. Ширина левой
-   колонки поэтому считается как split минус свой зазор — иначе текст справа и
-   плашка с цитатой под ним стояли на разных линиях (было 806 против 693). */
-#difference{--split:57%;--gap-head:clamp(40px,7vw,120px);--gap-feat:clamp(18px,2vw,32px);--gap-flow:clamp(40px,5vw,96px)}
+/* Блок делится ровно пополам: правая колонка каждой строки начинается на
+   середине --split независимо от того, какой зазор у строки. Ширина левой
+   колонки поэтому считается как split минус свой зазор — иначе текст справа,
+   плашка с цитатой и тезисы стояли бы на разных линиях (было 806 / 693 / 426). */
+#difference{--split:50%;--gap-head:clamp(40px,7vw,120px);--gap-feat:clamp(18px,2vw,32px);--gap-flow:clamp(40px,5vw,96px)}
 .ddiff__head{
   display:grid;grid-template-columns:calc(var(--split) - var(--gap-head)) minmax(0,1fr);
   column-gap:var(--gap-head);align-items:start;
