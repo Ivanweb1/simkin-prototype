@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=74">
+<link rel="stylesheet" href="design.css?v=75">
 </head>
 <body class="d">
 
@@ -163,14 +163,20 @@
         </div>
       </div>
 
-      <!-- кадр привязан к активному тезису: скрипт ставит ему верх и размер по
-           ряду, поэтому квадрат стоит ровно между линейками ряда и переезжает
-           к следующему тезису. Файлы — в assets/photo/principles. -->
-      <figure class="dflow__ph">
-        <img src="assets/photo/principles/01.jpg" alt="Настройка рабочего места под человека" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
-        <img src="assets/photo/principles/02.jpg" alt="Работа стоя за регулируемым столом" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
-        <img src="assets/photo/principles/03.jpg" alt="Рабочее место целиком: кресло, стол, монитор, клавиатура, свет" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
-        <img src="assets/photo/principles/04.jpg" alt="Человек работает в естественной позе, не контролируя её" width="1200" height="1200" loading="lazy" decoding="async" data-flow-ph>
+      <!-- у каждого тезиса свой кадр в габаритах его ряда: ничего не едет,
+           квадрат стоит от линейки до линейки. Неактивные приглушаются вместе
+           со своим тезисом. Файлы — в assets/photo/principles. -->
+      <figure class="dflow__ph" data-flow-ph>
+        <img src="assets/photo/principles/01.jpg" alt="Рабочее место настроено под человека: внешний монитор на уровне глаз" width="1200" height="1200" loading="lazy" decoding="async">
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <img src="assets/photo/principles/02.jpg" alt="Работа стоя за регулируемым по высоте столом" width="1200" height="1200" loading="lazy" decoding="async">
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <img src="assets/photo/principles/03.jpg" alt="Рабочее место целиком: кресло, стол, монитор, клавиатура, освещение" width="1200" height="1200" loading="lazy" decoding="async">
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <img src="assets/photo/principles/04.jpg" alt="Сбалансированная посадка: поясница на спинке, предплечья на столе, стопы на полу" width="1200" height="1200" loading="lazy" decoding="async">
       </figure>
 
       <div class="dflow__list">
@@ -582,27 +588,36 @@
       if(b) b.setAttribute('aria-current', n === i ? 'true' : 'false');
     });
     shots.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
-    placeShot(items[i]);
     if(num){
       num.textContent = ('0' + (i + 1)).slice(-2);
       if(!reduce){ num.classList.remove('is-swap'); void num.offsetWidth; num.classList.add('is-swap'); }
     }
   }
 
-  // кадр встаёт ровно в границы ряда. Шире, чем остаток левой половины, он быть
-  // не может — иначе наехал бы на номер, поэтому размер ограничен сверху.
-  var ph   = flow.querySelector('.dflow__ph');
+  // каждый кадр встаёт ровно в границы своего ряда. Шире, чем остаток левой
+  // половины, он быть не может — иначе наехал бы на номер, поэтому размер
+  // ограничен сверху.
   var aside= flow.querySelector('.dflow__aside');
   var meta = flow.querySelector('.dflow__meta');
-  function placeShot(row){
-    if(!ph || !row || getComputedStyle(ph).display === 'none') return;
+  function placeShots(){
+    if(!shots.length || getComputedStyle(shots[0]).display === 'none') return;
     var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
-    var size = Math.max(0, Math.min(row.offsetHeight, room));
-    ph.style.setProperty('--ph-top', row.offsetTop + 'px');
-    ph.style.setProperty('--ph', Math.round(size) + 'px');
-    if(!ph.classList.contains('is-set')){
-      setTimeout(function(){ ph.classList.add('is-set'); }, 60);
-    }
+    shots.forEach(function(fig,n){
+      var row = items[n];
+      if(!row) return;
+      var size = Math.max(0, Math.min(row.offsetHeight, room));
+      fig.style.setProperty('--ph-top', row.offsetTop + 'px');
+      fig.style.setProperty('--ph', Math.round(size) + 'px');
+    });
+  }
+  placeShots();
+  // высота ряда меняется от переносов в тексте, ширина колонки — от окна.
+  // Наблюдатель ловит и то и другое; кадры позиционированы абсолютно и на
+  // размеры рядов не влияют, так что зацикливания нет.
+  if(window.ResizeObserver){
+    var ro = new ResizeObserver(placeShots);
+    ro.observe(flow);
+    items.forEach(function(el){ ro.observe(el); });
   }
 
   // считаем по заголовку, а не по краю блока: принцип становится активным ровно
@@ -628,12 +643,12 @@
   var resizeTimer;
   window.addEventListener('resize', function(){
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function(){ placeShot(items[cur] || items[0]); }, 150);
+    resizeTimer = setTimeout(placeShots, 150);
     onScroll();
   });
   // шрифт догружается позже разметки и меняет высоту рядов
   if(document.fonts && document.fonts.ready){
-    document.fonts.ready.then(function(){ placeShot(items[cur] || items[0]); });
+    document.fonts.ready.then(placeShots);
   }
   pick();
 
