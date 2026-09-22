@@ -456,6 +456,11 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .dflow--live .dflow__rail li.is-done button::before{background:var(--brand-3)}
 .dflow--live .dflow__rail li.is-now button::before{background:var(--brand);width:84px}
 
+/* ряды уравнены по самому высокому: у второго тезиса заголовок в две строки,
+   и без этого его кадр получался на 8px крупнее соседних */
+@media (min-width:1001px){
+  .dflow__list{display:grid;grid-auto-rows:1fr}
+}
 .dflow .dprin{
   padding:clamp(36px,4vw,64px) 0;
   transition:opacity .5s var(--ease);

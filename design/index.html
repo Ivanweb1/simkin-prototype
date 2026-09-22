@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=75">
+<link rel="stylesheet" href="design.css?v=76">
 </head>
 <body class="d">
 
@@ -599,7 +599,7 @@
   // ограничен сверху.
   var aside= flow.querySelector('.dflow__aside');
   var meta = flow.querySelector('.dflow__meta');
-  var GAP = 20; // просвет между соседними кадрами
+  var GAP = 40; // просвет между соседними кадрами
   function placeShots(){
     if(!shots.length || getComputedStyle(shots[0]).display === 'none') return;
     var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
