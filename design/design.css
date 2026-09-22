@@ -1049,3 +1049,59 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 .d .mnav .btns .btn::after{content:none}
 .d .mnav .btns .btn:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+
+/* =====================================================================
+   СТРАНИЦА «ДЛЯ КОМПАНИЙ»
+   ===================================================================== */
+/* Техническая пометка к странице: заголовки второго уровня крупнее текущих
+   примерно на 12%, чтобы крупные смысловые разделы делили страницу заметнее.
+   Пока — только на этой странице: главная утверждена в текущем масштабе. */
+.dco .dh2{font-size:clamp(38px,4.4vw,67px)}
+
+/* активный пункт в шапке */
+.d .navitem > a.is-current{color:var(--navy);font-weight:600}
+
+/* ================= БЛОК 1. ПЕРВЫЙ ЭКРАН ================= */
+.dcohero{padding:clamp(20px,2.4vw,36px) 0 0}
+.dcohero__card{
+  border-radius:36px;overflow:hidden;background:var(--tint);
+  display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:stretch;
+}
+.dcohero__txt{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(40px,4.4vw,76px) clamp(28px,3.4vw,64px);
+}
+.dcohero h1{
+  margin-top:22px;
+  font-size:clamp(32px,3.3vw,52px);font-weight:600;line-height:1.07;letter-spacing:-.032em;color:var(--navy);
+  max-width:13em;
+}
+.dcohero h1 em{font-style:normal;color:var(--accent)}
+.dcohero__sub{margin-top:26px;font-size:clamp(17px,1.35vw,19px);font-weight:600;line-height:1.45;color:var(--navy);letter-spacing:-.01em;max-width:28em}
+.dcohero__lead{margin-top:14px;font-size:17px;line-height:1.6;color:var(--navy-2);max-width:30em}
+.dcohero__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,3vw,40px)}
+/* кнопка вторичная: обводкой по белому, без заливки — главный акцент страницы
+   остаётся за финальным блоком */
+.dcohero__btns .dbtn--light{height:58px;font-size:16.5px}
+
+.dcohero__media{position:relative;min-height:clamp(320px,34vw,520px)}
+.dcohero__media picture,.dcohero__media img{display:block;width:100%;height:100%}
+.dcohero__media img{object-fit:cover;object-position:50% 38%}
+.js .dcohero__media[data-rv]{transform:none}
+
+@media (max-width:1100px){
+  .dcohero__card{grid-template-columns:1fr}
+  .dcohero__txt{padding:clamp(32px,4vw,52px) clamp(24px,3.4vw,44px)}
+  .dcohero h1{max-width:16em}
+  .dcohero__media{min-height:0;aspect-ratio:16/9}
+}
+@media (max-width:600px){
+  .dcohero{padding-top:12px}
+  .dcohero__card{border-radius:26px}
+  .dcohero__txt{padding:28px 20px 30px}
+  .dcohero h1{margin-top:18px;font-size:clamp(28px,7.6vw,34px);line-height:1.1}
+  .dcohero__sub{margin-top:20px;font-size:17px}
+  .dcohero__lead{font-size:16.5px}
+  .dcohero__btns .dbtn--light{width:100%;height:56px}
+  .dcohero__media{aspect-ratio:4/3}
+}
