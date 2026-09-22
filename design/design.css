@@ -1181,3 +1181,69 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dsub{padding:24px 22px 26px}
   .doffers__note{font-size:16.5px}
 }
+
+/* ================= БЛОК 3. ПОЧЕМУ ЭРГОНОМИКА ВАЖНА ДЛЯ БИЗНЕСА ================= */
+/* Правая колонка всех строк начинается на одной вертикали независимо от длины
+   тезиса слева — так пять доводов читаются как разбор, а не как пять разных
+   вёрсток. Ширина левой колонки взята от той же середины, что в блоке «Чем
+   отличается подход» на главной, но сдвинута влево: тезисы там короткие,
+   а раскрытия длинные, и текст не должен жаться в узкий столбец. */
+#why{--why-split:42%;--why-gap:clamp(28px,4vw,72px)}
+/* вводный абзац здесь длиннее обычной подписи к блоку: на 900-1100px он
+   вырастал до семи строк, и выравнивание по нижней линии заголовка оставляло
+   над заголовком дыру в полсотни пикселей. Ставим обе колонки на верхнюю
+   линию — абзац читается как лид рядом с заголовком на любой ширине. */
+/* только там, где колонки ещё есть: селектор с id перебил бы мобильный
+   брейкпоинт .dhead--split и оставил шапку в две колонки на телефоне */
+@media (min-width:861px){
+  #why .dhead--split{align-items:start;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr)}
+  #why .dhead__note{padding-bottom:0;padding-top:clamp(6px,.9vw,14px)}
+}
+.dwhy{margin-top:clamp(40px,4vw,64px)}
+.dwhy__row{
+  display:grid;grid-template-columns:calc(var(--why-split) - var(--why-gap)) minmax(0,1fr);
+  column-gap:var(--why-gap);align-items:start;
+  padding:clamp(30px,2.8vw,42px) 0;
+  border-top:1px solid var(--d-line);
+}
+/* последняя линия закрывает список снизу: без неё пятый довод визуально
+   «вытекает» в следующий блок */
+.dwhy__row:last-child{border-bottom:1px solid var(--d-line)}
+
+/* номер над тезисом, а не сбоку: слева уже узкая колонка, и цифра в отступе
+   уводила бы тезис от левого края страницы */
+.dwhy__n{
+  display:block;
+  font-size:clamp(26px,2.2vw,34px);font-weight:600;line-height:1;letter-spacing:-.03em;
+  color:var(--brand);opacity:.32;font-variant-numeric:tabular-nums;
+  transition:opacity .25s var(--ease);
+}
+.dwhy__row:hover .dwhy__n{opacity:1}
+.dwhy__side h3{
+  margin-top:16px;
+  font-size:clamp(21px,1.85vw,28px);font-weight:600;line-height:1.16;letter-spacing:-.026em;
+  color:var(--navy);max-width:13em;
+}
+.dwhy__body p{font-size:17.5px;line-height:1.65;color:var(--navy-2);max-width:36em}
+.dwhy__body p + p{margin-top:14px}
+/* верхняя строка раскрытия садится на ту же линию, что тезис слева: у номера
+   сверху своя высота, поэтому текст справа сдвигается на её величину */
+.dwhy__body{padding-top:clamp(6px,.7vw,10px)}
+
+@media (max-width:1100px){
+  #why{--why-split:46%;--why-gap:clamp(24px,3vw,44px)}
+  .dwhy__side h3{max-width:none}
+}
+@media (max-width:860px){
+  /* колонки складываются: номер и тезис сверху, раскрытие под ними */
+  .dwhy__row{grid-template-columns:1fr;row-gap:16px}
+  .dwhy__body{padding-top:0}
+  .dwhy__side h3{margin-top:12px}
+}
+@media (max-width:600px){
+  .dwhy{margin-top:32px}
+  .dwhy__row{padding:26px 0 28px}
+  .dwhy__n{font-size:24px;opacity:1}
+  .dwhy__side h3{font-size:22px}
+  .dwhy__body p{font-size:16.5px}
+}
