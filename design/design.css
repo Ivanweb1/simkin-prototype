@@ -326,17 +326,29 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   margin-top:22px;font-size:clamp(34px,3.9vw,60px);font-weight:600;line-height:1.06;letter-spacing:-.035em;color:var(--navy);
 }
 .dh2__soft{color:var(--navy-3)}
+/* ручной перенос в заголовках: на десктопе строка ломается там, где нужно,
+   на узких экранах ломается сама */
+.dbr{display:inline}
+@media (max-width:1100px){.dbr{display:none}}
 
 /* ================= БЛОК 2. ЧЕМ ОТЛИЧАЕТСЯ ПОДХОД ================= */
-.ddiff__head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(40px,7vw,120px);align-items:start}
+/* Обе строки блока делят ширину по одной вертикали: правая колонка начинается
+   на отметке --split независимо от того, какой зазор у строки. Ширина левой
+   колонки поэтому считается как split минус свой зазор — иначе текст справа и
+   плашка с цитатой под ним стояли на разных линиях (было 806 против 693). */
+#difference{--split:57%;--gap-head:clamp(40px,7vw,120px);--gap-feat:clamp(18px,2vw,32px)}
+.ddiff__head{
+  display:grid;grid-template-columns:calc(var(--split) - var(--gap-head)) minmax(0,1fr);
+  column-gap:var(--gap-head);align-items:start;
+}
 .ddiff__text{padding-top:48px}
 .ddiff__text p{font-size:18px;line-height:1.65;color:var(--navy-2)}
 .ddiff__text p + p{margin-top:16px}
 /* кадр и цитата в одной строке: в середине блока шло 234 слова подряд
    без единой визуальной паузы */
 .ddiff__feature{
-  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);
-  gap:clamp(18px,2vw,32px);align-items:stretch;
+  display:grid;grid-template-columns:calc(var(--split) - var(--gap-feat)) minmax(0,1fr);
+  column-gap:var(--gap-feat);align-items:stretch;
   margin-top:clamp(44px,4.4vw,64px);
 }
 .ddiff__ph{
