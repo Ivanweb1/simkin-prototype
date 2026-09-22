@@ -1327,3 +1327,69 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dappr__fact h3{font-size:19px}
   .dappr__fact p{font-size:16.5px}
 }
+
+/* ================= БЛОК 5. РАБОТА С КОМПАНИЯМИ ================= */
+.dcases{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;
+  margin-top:clamp(36px,3.6vw,52px);
+}
+.dcase{
+  display:flex;flex-direction:column;
+  background:#fff;border:1px solid var(--d-line);border-radius:28px;
+  padding:clamp(28px,2.8vw,40px) clamp(24px,2.6vw,40px) clamp(26px,2.6vw,36px);
+}
+/* название компании вместо логотипа: набрано как заголовок карточки,
+   чтобы четыре кейса читались одинаково независимо от длины имени */
+.dcase h3{
+  font-size:clamp(22px,1.9vw,28px);font-weight:600;line-height:1.14;letter-spacing:-.026em;color:var(--navy);
+}
+.dcase p{margin-top:16px;font-size:16.5px;line-height:1.6;color:var(--navy-2)}
+/* цитата заказчика — плашка на подложке с той же чёрточкой, что у цели
+   в блоке выше: отделяет чужую речь от нашего описания кейса */
+.dcase__q{
+  position:relative;margin:22px 0 0;padding:20px 24px 20px 30px;
+  background:var(--tint);border-radius:18px;
+  font-size:clamp(17px,1.4vw,19px);font-weight:500;line-height:1.45;letter-spacing:-.012em;color:var(--navy);
+}
+.dcase__q::before{
+  content:"";position:absolute;left:14px;top:20px;bottom:20px;width:4px;border-radius:4px;
+  background:linear-gradient(180deg,var(--brand-3),var(--brand));
+}
+/* ссылка прижата к низу: у кейсов разная длина, но действие у всех на одной
+   линии — сетка равняет карточки по высоте */
+.dcase__link{
+  display:inline-flex;align-items:center;gap:9px;align-self:flex-start;
+  margin-top:auto;padding-top:clamp(22px,2.4vw,30px);
+  font-size:15.5px;font-weight:600;color:var(--brand);text-decoration:none;
+}
+.dcase__link svg{width:17px;height:17px;transition:transform .22s var(--ease)}
+.dcase__link:hover svg{transform:translateX(4px)}
+
+@media (max-width:860px){
+  .dcases{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .dcase{border-radius:22px;padding:26px 22px 28px}
+  .dcase h3{font-size:22px}
+  .dcase p{font-size:16.5px}
+  .dcase__q{padding:18px 20px 18px 26px;font-size:17px;border-radius:16px}
+  .dcase__q::before{left:12px}
+}
+
+/* ================= БЛОК 6. ФИНАЛЬНЫЙ БЛОК ================= */
+/* Банд без формы: колонок нет, всё по центру. Ширины ограничены по строке,
+   иначе на 1440px текст растянулся бы на всю ширину банда и перестал
+   читаться как обращение. */
+.dband--solo{text-align:center}
+.dband--solo .dband__h2{max-width:15em;margin-left:auto;margin-right:auto}
+.dband--solo .dband__sub{max-width:38em;margin-left:auto;margin-right:auto}
+.dband--solo .dband__sub + .dband__sub{margin-top:14px}
+.dband__act{margin-top:clamp(30px,3.2vw,44px)}
+/* белая заливка на градиенте — самый заметный элемент страницы */
+.dband__cta{height:66px;padding:0 40px;font-size:17.5px;border-color:transparent}
+.dband__cta:hover{background:var(--tint);border-color:transparent;transform:translateY(-1px)}
+
+@media (max-width:600px){
+  .dband--solo .dband__h2{max-width:none}
+  .dband__cta{width:100%;height:58px;padding:0 24px;font-size:16.5px}
+}
