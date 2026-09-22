@@ -599,13 +599,15 @@
   // ограничен сверху.
   var aside= flow.querySelector('.dflow__aside');
   var meta = flow.querySelector('.dflow__meta');
+  var GAP = 20; // просвет между соседними кадрами
   function placeShots(){
     if(!shots.length || getComputedStyle(shots[0]).display === 'none') return;
     var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
     shots.forEach(function(fig,n){
       var row = items[n];
       if(!row) return;
-      var size = Math.max(0, Math.min(row.offsetHeight, room));
+      // верх остаётся на линейке ряда, просвет снимается снизу
+      var size = Math.max(0, Math.min(row.offsetHeight - GAP, room));
       fig.style.setProperty('--ph-top', row.offsetTop + 'px');
       fig.style.setProperty('--ph', Math.round(size) + 'px');
     });
