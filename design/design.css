@@ -1105,3 +1105,79 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dcohero__btns .dbtn--light{width:100%;height:56px}
   .dcohero__media{aspect-ratio:4/3}
 }
+
+/* ================= БЛОК 2. РЕШЕНИЯ ДЛЯ КОМПАНИЙ ================= */
+/* Карточка направления — тот же белый лист со скруглением 28px, что у .dcard
+   на главной. Ведущее направление шире и делится на две колонки: описание
+   и сетка своих решений. */
+.doffer{
+  display:flex;flex-direction:column;background:#fff;border:1px solid var(--d-line);border-radius:28px;
+  padding:36px 40px 40px;color:var(--navy);
+}
+.doffer__top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.doffer h3{margin-top:30px;font-size:clamp(24px,2.1vw,32px);font-weight:600;line-height:1.14;letter-spacing:-.026em;max-width:14em}
+.doffer p{margin-top:16px;font-size:17px;line-height:1.6;color:var(--navy-2);max-width:34em}
+.doffer p + p{margin-top:10px}
+.doffer__btn{margin-top:auto;padding-top:clamp(26px,2.6vw,36px)}
+.doffer__btn .dbtn{height:56px;font-size:16px}
+.doffer__btn .dbtn--light{border-color:var(--d-line)}
+.doffer__btn .dbtn--light:hover{border-color:var(--brand);color:var(--brand)}
+
+/* ведущее направление */
+.doffer--lead{
+  display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:0;
+  margin-top:clamp(36px,3.6vw,52px);padding:0;overflow:hidden;
+}
+.doffer__side{display:flex;flex-direction:column;padding:36px 40px 40px}
+.doffer--lead h3{margin-top:30px}
+/* решения внутри направления разделены волосяными линиями, а не вложенными
+   карточками: вложенный лист в листе утяжелил бы панель */
+.doffer__grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-left:1px solid var(--d-line);background:var(--d-line);gap:1px;
+}
+.dsub{
+  display:flex;flex-direction:column;background:#fff;padding:32px 34px 34px;
+  text-decoration:none;color:var(--navy);
+  transition:background .25s var(--ease);
+}
+.dsub:hover{background:var(--tint)}
+.dsub:visited{color:var(--navy)}
+.dsub h4{font-size:clamp(18px,1.5vw,21px);font-weight:600;line-height:1.2;letter-spacing:-.02em;max-width:16em}
+.dsub p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2)}
+.dsub .dlink{padding-top:22px;font-size:15.5px}
+.dsub:hover .dlink svg{transform:translateX(4px)}
+
+/* пара направлений ниже */
+.doffers{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+
+.doffers__note{
+  margin-top:clamp(28px,3vw,40px);font-size:17px;line-height:1.6;color:var(--navy-2);max-width:46em;
+}
+
+@media (max-width:1100px){
+  .doffer--lead{grid-template-columns:1fr}
+  .doffer__grid{border-left:0;border-top:1px solid var(--d-line)}
+  .doffer--lead .doffer__side{padding-bottom:36px}
+}
+@media (max-width:860px){
+  .doffers{grid-template-columns:1fr}
+  .doffer h3{max-width:none}
+}
+@media (max-width:600px){
+  .doffer{padding:26px 22px 30px;border-radius:22px}
+  /* .doffer сверху уже вернул падинги — у ведущей панели их держит .doffer__side */
+  .doffer--lead{padding:0;border-radius:22px}
+  .doffer__side{padding:26px 22px 28px}
+  .doffer h3{margin-top:22px;font-size:24px}
+  .doffer p{font-size:16.5px}
+  /* на телефоне длинная подпись переносится: раскладываем её по левому краю,
+     а стрелку держим у правого — иначе строки идут рваной лесенкой по центру */
+  .doffer__btn .dbtn{
+    width:100%;height:auto;min-height:54px;padding:14px 20px;font-size:15.5px;line-height:1.3;
+    white-space:normal;text-align:left;justify-content:space-between;
+  }
+  .doffer__grid{grid-template-columns:1fr}
+  .dsub{padding:24px 22px 26px}
+  .doffers__note{font-size:16.5px}
+}
