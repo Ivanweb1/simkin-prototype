@@ -154,9 +154,21 @@ if (thanksBox) {
   thanksBox.querySelector('p').textContent = v[1];
 }
 
-var reveals = document.querySelectorAll('[data-rv]');
+var reveals = [].slice.call(document.querySelectorAll('[data-rv]'));
 function showAll(){
   reveals.forEach(function(el){ el.classList.add('is-in'); });
+}
+// Первый экран видно без прокрутки, поэтому он проявляется сразу при загрузке,
+// а не через наблюдателя: тот не засчитывает нижние 12% экрана, и подпись к фото
+// на мобильной — она стоит ровно там — ждала бы скролла.
+var atOnce = [].slice.call(document.querySelectorAll('.dhero [data-rv], .dcohero [data-rv]'));
+if (atOnce.length) {
+  reveals = reveals.filter(function(el){ return atOnce.indexOf(el) === -1; });
+  atOnce.forEach(function(el){
+    el.style.transitionDelay = el.style.getPropertyValue('--d') || '0s';
+  });
+  void document.body.offsetHeight; // рефлоу: стартовое состояние зафиксировано, переход сыграет
+  atOnce.forEach(function(el){ el.classList.add('is-in'); });
 }
 if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   showAll();
