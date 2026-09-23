@@ -1079,16 +1079,19 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .navitem > a.is-current{color:var(--navy);font-weight:600}
 
 /* ================= БЛОК 1. ПЕРВЫЙ ЭКРАН ================= */
-/* поле вокруг карточки первого экрана одинаковое со всех четырёх сторон:
-   та же величина, что у боковых отступов .dwrap */
-.dcohero{padding:clamp(20px,4vw,56px) 0}
+/* первый экран во всю ширину окна, как на главной: карточка выходит из колонки
+   .dwrap и держит только свой максимум в 1640px. Поле вокруг одинаковое со
+   всех сторон и такое же, как у карточки на главной. */
+.dcohero{padding:16px}
+.dcohero .dwrap{max-width:none;padding:0}
 .dcohero__card{
+  max-width:1640px;margin:0 auto;
   border-radius:36px;overflow:hidden;background:var(--tint);
   display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:stretch;
 }
 .dcohero__txt{
   display:flex;flex-direction:column;justify-content:center;
-  padding:clamp(40px,4.4vw,76px) clamp(28px,3.4vw,64px);
+  padding:clamp(40px,4.4vw,80px) clamp(28px,4vw,84px);
 }
 .dcohero h1{
   margin-top:22px;
@@ -1115,7 +1118,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dcohero__media{min-height:0;aspect-ratio:16/9}
 }
 @media (max-width:600px){
-  .dcohero{padding-top:12px}
+  .dcohero{padding:10px}
   .dcohero__card{border-radius:26px}
   .dcohero__txt{padding:28px 20px 30px}
   /* размер подобран под утверждённую разбивку строк: при 28px строка
@@ -1150,6 +1153,21 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .doffer__btn .dbtn--light{border-color:var(--navy-3)}
 .doffer__btn .dbtn--light:hover{border-color:var(--brand);color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand)}
 
+/* второй абзац — «что это даёт компании» — свёрнут: видимая часть у всех трёх
+   карточек одинаковая, кнопки встают на одну линию, а длинное описание больше
+   не задирает высоту ряда. Нативный <details>: работает без скрипта. */
+.dmore{margin-top:18px;border-top:1px solid var(--d-line);padding-top:14px}
+.dmore > summary{
+  display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;
+  font-size:15.5px;font-weight:600;color:var(--brand);
+}
+.dmore > summary::-webkit-details-marker{display:none}
+.dmore > summary:hover{color:var(--brand-dark)}
+.dmore__ch{width:16px;height:16px;flex:0 0 auto;transition:transform .22s var(--ease)}
+.dmore[open] > summary .dmore__ch{transform:rotate(180deg)}
+.dmore p{margin-top:12px}
+.dmore > summary:focus-visible{outline:2px solid var(--brand);outline-offset:4px;border-radius:6px}
+
 .doffers{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:16px}
 .doffers--three{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(36px,3.6vw,52px)}
 
@@ -1171,52 +1189,47 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 
 /* ================= БЛОК 3. ПОЧЕМУ ЭРГОНОМИКА ВАЖНА ДЛЯ БИЗНЕСА ================= */
-/* Без фотографий, как просил заказчик: три довода делит волосяная линия,
-   единственный графический акцент — иконка на светлой подложке. */
-.dwhy{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  margin-top:clamp(36px,3.6vw,52px);
+/* Пошаговое чтение — механика и стили те же, что у принципов на главной.
+   Здесь переопределены только пропорции: кадров к доводам нет (заказчик
+   просил блок без фотографий), поэтому левая колонка сужена до ширины номера
+   со шкалой, а текст занимает остальное. */
+#why{--split:26%;--gap-flow:clamp(32px,4vw,72px);--meta:clamp(120px,13vw,230px)}
+/* ряды не равняем по высоте: у доводов от одного до двух абзацев, и общая
+   сетка растянула бы короткий до высоты самого длинного */
+.dflow--bare .dflow__list{display:block}
+.dflow--bare .dprin h3{max-width:15em}
+/* иконка — единственный графический акцент, о котором просил заказчик.
+   Гаснет вместе со своим доводом, у активного заливка становится брендовой */
+.dprin__ico{
+  display:grid;place-items:center;width:54px;height:54px;border-radius:16px;
+  background:var(--tint);color:var(--brand);margin-bottom:20px;
+  transition:background .3s var(--ease),color .3s var(--ease);
 }
-.dwhy__item{padding:0 clamp(22px,2.4vw,42px);border-left:1px solid var(--d-line)}
-.dwhy__item:first-child{padding-left:0;border-left:0}
-.dwhy__item:last-child{padding-right:0}
-.dwhy__ico{
-  display:grid;place-items:center;width:56px;height:56px;border-radius:17px;
-  background:var(--tint);color:var(--brand);
-}
-.dwhy__ico svg{width:27px;height:27px}
-.dwhy__item h3{
-  margin-top:26px;font-size:clamp(19px,1.6vw,23px);font-weight:600;line-height:1.2;
-  letter-spacing:-.022em;color:var(--navy);max-width:14em;
-}
-.dwhy__item p{margin-top:15px;font-size:16.5px;line-height:1.6;color:var(--navy-2)}
-.dwhy__item p + p{margin-top:10px}
+.dprin__ico svg{width:26px;height:26px}
+.dflow--live .dprin.is-now .dprin__ico{background:var(--brand);color:#fff}
 
 @media (max-width:1000px){
-  /* третий довод длиннее двух других вдвое — он и уходит на всю строку */
-  .dwhy{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:clamp(30px,3.2vw,44px)}
-  .dwhy__item:last-child{grid-column:1 / -1;padding-left:0;border-left:0;padding-top:clamp(30px,3.2vw,44px);border-top:1px solid var(--d-line)}
+  .dflow--bare .dprin h3{max-width:none}
 }
-@media (max-width:640px){
-  .dwhy{grid-template-columns:1fr;row-gap:0}
-  .dwhy__item{padding:26px 0 0;border-left:0;border-top:1px solid var(--d-line);margin-top:26px}
-  .dwhy__item:first-child{margin-top:0;padding-top:0;border-top:0}
-  .dwhy__item:last-child{padding-top:26px;margin-top:26px}
-  .dwhy__ico{width:50px;height:50px;border-radius:15px}
-  .dwhy__ico svg{width:24px;height:24px}
-  .dwhy__item h3{margin-top:20px;font-size:20px;max-width:none}
+@media (max-width:600px){
+  .dprin__ico{width:48px;height:48px;border-radius:14px;margin-bottom:16px}
+  .dprin__ico svg{width:23px;height:23px}
 }
 
 /* ================= БЛОК 4. ЧТО ОТЛИЧАЕТ НАШ ПОДХОД ================= */
 /* Снимок вертикальный, поэтому он занимает колонку целиком и не кадрируется
    в полосу. Три пункта справа — не карточки, а список: это характеристики
    подхода, а не отдельные предложения, и действий у них нет. */
+/* Заголовок стоит в левой колонке над снимком, а не отдельной строкой сверху:
+   иначе справа от него оставался пустой угол во всю ширину страницы. Список
+   пунктов начинается на одной линии с заголовком и этот угол закрывает. */
 .dappr{
   display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1fr);
   gap:clamp(32px,4vw,72px);align-items:start;
-  margin-top:clamp(36px,3.6vw,52px);
 }
-.dappr__ph{margin:0;border-radius:28px;overflow:hidden;background:var(--d-line)}
+.dappr__side{display:flex;flex-direction:column}
+.dappr__side .dh2{max-width:11em}
+.dappr__ph{margin:clamp(28px,3vw,44px) 0 0;border-radius:28px;overflow:hidden;background:var(--d-line)}
 .dappr__ph picture,.dappr__ph img{display:block;width:100%;height:auto}
 
 .dappr__list{display:flex;flex-direction:column}
@@ -1236,6 +1249,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   /* портрет во всю ширину был бы на пол-экрана высотой — ограничиваем
      и прижимаем к левому краю, текст идёт под ним */
   .dappr{grid-template-columns:1fr;gap:clamp(26px,3vw,38px)}
+  .dappr__side .dh2{max-width:none}
   .dappr__ph{max-width:420px}
 }
 @media (max-width:600px){

@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=96">
+<link rel="stylesheet" href="design.css?v=99">
 </head>
 <body class="d dco">
 
@@ -139,7 +139,10 @@
         </div>
         <h3>Офисная эргономика</h3>
         <p>Помогаем сотрудникам организовать рабочее место и&nbsp;рабочую позу так, чтобы меньше уставать, комфортнее себя чувствовать, сохранять работоспособность в&nbsp;течение дня и&nbsp;больше сил после работы.</p>
-        <p>Для компании это означает более стабильную продуктивность и&nbsp;качество работы сотрудников, меньше потерь из-за боли, утомления и&nbsp;отсутствия на&nbsp;работе по&nbsp;болезни, а&nbsp;также более эффективное использование рабочей среды, мебели и&nbsp;оборудования.</p>
+        <details class="dmore">
+          <summary>Что это даёт компании<svg class="dmore__ch" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg></summary>
+          <p>Для компании это означает более стабильную продуктивность и&nbsp;качество работы сотрудников, меньше потерь из-за боли, утомления и&nbsp;отсутствия на&nbsp;работе по&nbsp;болезни, а&nbsp;также более эффективное использование рабочей среды, мебели и&nbsp;оборудования.</p>
+        </details>
         <div class="doffer__btn">
           <a href="#" class="dbtn dbtn--light">Подробнее об&nbsp;офисной эргономике
             <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
@@ -153,7 +156,10 @@
         </div>
         <h3>Промышленная эргономика</h3>
         <p>Помогаем снижать избыточную физическую нагрузку и&nbsp;адаптировать рабочие процессы, оборудование и&nbsp;рабочие места к&nbsp;возможностям человека.</p>
-        <p>Это помогает создавать более безопасные и&nbsp;рациональные условия работы, снижать влияние эргономических рисков и&nbsp;повышать эффективность рабочих процессов.</p>
+        <details class="dmore">
+          <summary>Что это даёт компании<svg class="dmore__ch" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg></summary>
+          <p>Это помогает создавать более безопасные и&nbsp;рациональные условия работы, снижать влияние эргономических рисков и&nbsp;повышать эффективность рабочих процессов.</p>
+        </details>
         <div class="doffer__btn">
           <a href="../industrial.html" class="dbtn dbtn--light">Подробнее о&nbsp;промышленной эргономике
             <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
@@ -167,7 +173,10 @@
         </div>
         <h3>Медицинские чек-апы сотрудников</h3>
         <p>Программы оценки здоровья сотрудников с&nbsp;участием врачей Клиники Доктора Симкина.</p>
-        <p>Помогают выявлять проблемы опорно-двигательной системы и&nbsp;другие факторы, которые могут влиять на&nbsp;самочувствие, работоспособность и&nbsp;качество жизни сотрудников.</p>
+        <details class="dmore">
+          <summary>Что это даёт компании<svg class="dmore__ch" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg></summary>
+          <p>Помогают выявлять проблемы опорно-двигательной системы и&nbsp;другие факторы, которые могут влиять на&nbsp;самочувствие, работоспособность и&nbsp;качество жизни сотрудников.</p>
+        </details>
         <div class="doffer__btn">
           <a href="#" class="dbtn dbtn--light">Подробнее о&nbsp;медицинских программах
             <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
@@ -190,25 +199,47 @@
       <p class="dhead__note" data-rv style="--d:.12s">Рабочая среда влияет не&nbsp;только на&nbsp;комфорт. От&nbsp;того, насколько она соответствует возможностям человека и&nbsp;его рабочим задачам, зависят самочувствие, утомляемость и&nbsp;способность сохранять работоспособность.</p>
     </div>
 
-    <div class="dwhy">
-      <article class="dwhy__item" data-rv>
-        <span class="dwhy__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 19.4h17.2"/><path d="M4 15.6l4.8-5.2 3.6 3 6.4-7"/><path d="M15.2 6.4h4v4"/></svg></span>
-        <h3>Стабильнее продуктивность</h3>
-        <p>Боль, дискомфорт и&nbsp;усталость могут снижать концентрацию и&nbsp;качество работы еще до&nbsp;того, как сотрудник берет больничный.</p>
-      </article>
+    <!-- Пошаговое чтение: активен ровно один довод, соседние приглушены.
+         Так три довода очень разной длины перестают спорить друг с другом —
+         ряд просто выше или ниже, пустот в сетке не остаётся. Кадров нет:
+         заказчик просил этот блок без фотографий, поэтому левая колонка
+         узкая — только номер и шкала. -->
+    <div class="dflow dflow--bare" data-flow data-rv>
+      <div class="dflow__aside">
+        <div class="dflow__sticky">
+          <div class="dflow__meta">
+            <span class="deyebrow">Три довода</span>
+            <p class="dflow__count"><b data-flow-num>01</b><i>/&nbsp;03</i></p>
+            <ol class="dflow__rail">
+              <li><button type="button" data-flow-go="0" aria-label="Довод 01: Стабильнее продуктивность"></button></li>
+              <li><button type="button" data-flow-go="1" aria-label="Довод 02: Меньше потерь рабочего времени"></button></li>
+              <li><button type="button" data-flow-go="2" aria-label="Довод 03: Больше отдачи от инвестиций в сотрудников"></button></li>
+            </ol>
+          </div>
+        </div>
+      </div>
 
-      <article class="dwhy__item" data-rv style="--d:.08s">
-        <span class="dwhy__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12.8" r="7.8"/><path d="M12 8.6v4.2l2.8 1.8"/><path d="M9 2.8h6"/></svg></span>
-        <h3>Меньше потерь рабочего времени</h3>
-        <p>Снижение избыточной рабочей нагрузки помогает уменьшать влияние факторов, связанных с&nbsp;ухудшением самочувствия и&nbsp;отсутствием сотрудников по&nbsp;болезни.</p>
-      </article>
-
-      <article class="dwhy__item" data-rv style="--d:.16s">
-        <span class="dwhy__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.4" cy="8" r="3.4"/><path d="M3 19.6v-1.4a6.4 6.4 0 0 1 12.8 0v1.4"/><path d="M17.6 4.6l1.1 2.4 2.4 1.1-2.4 1.1-1.1 2.4-1.1-2.4-2.4-1.1 2.4-1.1z"/></svg></span>
-        <h3>Больше отдачи от&nbsp;инвестиций в&nbsp;сотрудников</h3>
-        <p>Компания инвестирует в&nbsp;подбор, профессиональное обучение, развитие и&nbsp;мотивацию сотрудников. Но&nbsp;возможности человека зависят не&nbsp;только от&nbsp;его знаний и&nbsp;желания работать&nbsp;– его физические ресурсы ограничены.</p>
-        <p>Эргономика помогает эффективнее использовать уже сделанные инвестиции в&nbsp;человеческий капитал, создавая условия, в&nbsp;которых сотрудники могут полнее реализовывать свой профессиональный потенциал.</p>
-      </article>
+      <div class="dflow__list">
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">01</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 19.4h17.2"/><path d="M4 15.6l4.8-5.2 3.6 3 6.4-7"/><path d="M15.2 6.4h4v4"/></svg></span>
+          <h3>Стабильнее продуктивность</h3>
+          <p>Боль, дискомфорт и&nbsp;усталость могут снижать концентрацию и&nbsp;качество работы еще до&nbsp;того, как сотрудник берет больничный.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">02</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12.8" r="7.8"/><path d="M12 8.6v4.2l2.8 1.8"/><path d="M9 2.8h6"/></svg></span>
+          <h3>Меньше потерь рабочего времени</h3>
+          <p>Снижение избыточной рабочей нагрузки помогает уменьшать влияние факторов, связанных с&nbsp;ухудшением самочувствия и&nbsp;отсутствием сотрудников по&nbsp;болезни.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">03</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.4" cy="8" r="3.4"/><path d="M3 19.6v-1.4a6.4 6.4 0 0 1 12.8 0v1.4"/><path d="M17.6 4.6l1.1 2.4 2.4 1.1-2.4 1.1-1.1 2.4-1.1-2.4-2.4-1.1 2.4-1.1z"/></svg></span>
+          <h3>Больше отдачи от&nbsp;инвестиций в&nbsp;сотрудников</h3>
+          <p>Компания инвестирует в&nbsp;подбор, профессиональное обучение, развитие и&nbsp;мотивацию сотрудников. Но&nbsp;возможности человека зависят не&nbsp;только от&nbsp;его знаний и&nbsp;желания работать&nbsp;– его физические ресурсы ограничены.</p>
+          <p>Эргономика помогает эффективнее использовать уже сделанные инвестиции в&nbsp;человеческий капитал, создавая условия, в&nbsp;которых сотрудники могут полнее реализовывать свой профессиональный потенциал.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -218,18 +249,17 @@
      справа списком с волосяными линиями — так кадр не приходится кадрировать. -->
 <section class="dsec dsec--tint" id="approach">
   <div class="dwrap">
-    <div class="dhead">
-      <span class="deyebrow" data-rv>Наш подход</span>
-      <h2 class="dh2" data-rv style="--d:.06s">Что отличает наш подход<br class="dbr"> <span class="dh2__soft">к&nbsp;эргономике</span></h2>
-    </div>
-
     <div class="dappr">
-      <figure class="dappr__ph" data-rv>
+      <div class="dappr__side">
+        <span class="deyebrow" data-rv>Наш подход</span>
+        <h2 class="dh2 dh2--top" data-rv style="--d:.06s">Что отличает<br class="dbr"> наш подход <span class="dh2__soft">к&nbsp;эргономике</span></h2>
+        <figure class="dappr__ph" data-rv style="--d:.12s">
         <picture>
           <source srcset="assets/photo/co-approach.webp" type="image/webp">
           <img src="assets/photo/co-approach.jpg" alt="Дмитрий Симкин у экрана с презентацией «Практическая эргономика офиса»" width="1097" height="1434" loading="lazy" decoding="async">
         </picture>
-      </figure>
+        </figure>
+      </div>
 
       <div class="dappr__list">
         <article class="dappr__item" data-rv style="--d:.06s">
@@ -472,7 +502,109 @@
 <!-- переключатель вариантов убран: заказчик утвердил вариант A (index-b.html / index-c.html остаются в репозитории) -->
 <script src="../script.js?v=32"></script>
 
-<!-- блок с пошаговым чтением убран из структуры — скрипт к нему больше не нужен -->
+<script>
+/* Доводы: активен тот, что пересёк линию чтения. Никакого перехвата скролла —
+   страница прокручивается обычно, меняются только акценты. */
+(function(){
+  var flow = document.querySelector('[data-flow]');
+  if(!flow) return;
+  var items = [].slice.call(flow.querySelectorAll('[data-flow-item]'));
+  var rail  = [].slice.call(flow.querySelectorAll('.dflow__rail li'));
+  var shots = [].slice.call(flow.querySelectorAll('[data-flow-ph]'));
+  var num   = flow.querySelector('[data-flow-num]');
+  if(!items.length) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = -1;
+  flow.classList.add('dflow--live');
+
+  function apply(i){
+    if(i === cur) return;
+    cur = i;
+    items.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    rail.forEach(function(li,n){
+      li.classList.toggle('is-done', n <= i);
+      li.classList.toggle('is-now',  n === i);
+      var b = li.firstElementChild;
+      if(b) b.setAttribute('aria-current', n === i ? 'true' : 'false');
+    });
+    shots.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    if(num){
+      num.textContent = ('0' + (i + 1)).slice(-2);
+      if(!reduce){ num.classList.remove('is-swap'); void num.offsetWidth; num.classList.add('is-swap'); }
+    }
+  }
+
+  // каждый кадр встаёт ровно в границы своего ряда. Шире, чем остаток левой
+  // половины, он быть не может — иначе наехал бы на номер, поэтому размер
+  // ограничен сверху.
+  var aside= flow.querySelector('.dflow__aside');
+  var meta = flow.querySelector('.dflow__meta');
+  var GAP = 40; // просвет между соседними кадрами
+  function placeShots(){
+    if(!shots.length || getComputedStyle(shots[0]).display === 'none') return;
+    var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
+    shots.forEach(function(fig,n){
+      var row = items[n];
+      if(!row) return;
+      // верх остаётся на линейке ряда, просвет снимается снизу
+      var size = Math.max(0, Math.min(row.offsetHeight - GAP, room));
+      fig.style.setProperty('--ph-top', row.offsetTop + 'px');
+      fig.style.setProperty('--ph', Math.round(size) + 'px');
+    });
+  }
+  placeShots();
+  // высота ряда меняется от переносов в тексте, ширина колонки — от окна.
+  // Наблюдатель ловит и то и другое; кадры позиционированы абсолютно и на
+  // размеры рядов не влияют, так что зацикливания нет.
+  if(window.ResizeObserver){
+    var ro = new ResizeObserver(placeShots);
+    ro.observe(flow);
+    items.forEach(function(el){ ro.observe(el); });
+  }
+
+  // считаем по заголовку, а не по краю блока: принцип становится активным ровно
+  // тогда, когда его название доходит до середины экрана
+  function pick(){
+    var line = window.innerHeight * 0.45, best = 0;
+    items.forEach(function(el,n){
+      var h = el.querySelector('h3') || el;
+      if(h.getBoundingClientRect().top <= line) best = n;
+    });
+    apply(best);
+  }
+
+  var waiting = false;
+  function onScroll(){
+    if(waiting) return;
+    waiting = true;
+    requestAnimationFrame(function(){ waiting = false; pick(); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  // после смены ширины даём раскладке устояться: высота ряда меняется вместе с
+  // переносами в тексте, и без паузы кадр получил бы размер от прошлой ширины
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(placeShots, 150);
+    onScroll();
+  });
+  // шрифт догружается позже разметки и меняет высоту рядов
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(placeShots);
+  }
+  pick();
+
+  flow.querySelectorAll('[data-flow-go]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = items[+btn.getAttribute('data-flow-go')];
+      if(!el) return;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - window.innerHeight * 0.26;
+      window.scrollTo({top: top, behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
