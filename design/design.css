@@ -660,7 +660,7 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
   background:linear-gradient(180deg,#f1f0ee 0%,#e9e9e8 100%);
 }
 .dexp__ph picture,.dexp__ph img{display:block;width:100%;height:100%}
-.dexp__ph img{object-fit:cover;object-position:76% 0%}
+.dexp__ph img{object-fit:cover;object-position:50% 8%}
 .dexp__body{padding-top:clamp(0px,1.4vw,20px)}
 .dexp .dh2{margin-top:20px}
 .dexp__spec{margin-top:22px;font-size:clamp(18px,1.5vw,21px);line-height:1.5;color:var(--navy-2);max-width:27em}
@@ -679,13 +679,14 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
 
 @media (max-width:980px){
   .dexp{grid-template-columns:1fr;gap:32px}
-  .dexp__ph{aspect-ratio:16/10;min-height:0;max-width:640px}
-  .dexp__ph img{object-position:66% 0%}
+  /* кадр вертикальный, поэтому в одну колонку он идёт своей пропорцией
+     и ограничен по ширине, а не режется в полосу */
+  .dexp__ph{aspect-ratio:auto;min-height:0;max-width:420px}
+  .dexp__ph picture,.dexp__ph img{height:auto}
   .dexp__body{padding-top:0}
 }
 @media (max-width:600px){
-  .dexp__ph{aspect-ratio:4/4.4;border-radius:24px}
-  .dexp__ph img{object-position:72% 0%}
+  .dexp__ph{border-radius:24px;max-width:none}
   .dexp__spec{font-size:17.5px}
   .dfacts li{grid-template-columns:1fr;gap:10px;align-items:start;padding:16px 0}
   .dfacts__y{justify-self:start;height:32px;min-width:70px;font-size:14px}
@@ -1262,6 +1263,17 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 
 @media (max-width:1000px){
   .dflow--bare .dprin h3{max-width:none}
+  /* на телефоне номер и иконка стоят одной строкой и выровнены по центру
+     друг друга: раньше номер был на абсолютном позиционировании и его
+     середина не совпадала с серединой квадрата */
+  .dflow--bare .dprin{
+    padding-left:0;display:grid;grid-template-columns:auto minmax(0,1fr);
+    column-gap:14px;align-items:center;
+  }
+  .dflow--bare .dprin__n{position:static;grid-column:1;grid-row:1;align-self:center;margin:0}
+  .dflow--bare .dprin__ico{grid-column:2;grid-row:1;justify-self:start;margin-bottom:0}
+  .dflow--bare .dprin h3{grid-column:1 / -1;margin-top:18px}
+  .dflow--bare .dprin p{grid-column:1 / -1}
 }
 @media (max-width:600px){
   .dprin__ico{width:48px;height:48px;border-radius:14px;margin-bottom:16px}
@@ -1378,6 +1390,14 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 
 @media (max-width:860px){
   .dcases{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  /* на телефоне широкая полоса выходила всего ~132px высотой и читалась как
+     марка. Кадру задана вдвое большая высота, лишнее срезается по бокам —
+     логотип РОСНАНО, выступающий и экран остаются в кадре */
+  .dcases__ph{aspect-ratio:1.27}
+  .dcases__ph picture{display:block;height:100%}
+  .dcases__ph img{height:100%;object-fit:cover;object-position:50% 50%}
 }
 @media (max-width:600px){
   .dcases__ph{border-radius:22px}
