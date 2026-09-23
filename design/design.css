@@ -345,6 +345,9 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
    на узких экранах ломается сама */
 .dbr{display:inline}
 @media (max-width:1100px){.dbr{display:none}}
+/* перенос только на телефоне: на широких экранах строка ломается сама */
+.dbr-m{display:none}
+@media (max-width:600px){.dbr-m{display:inline}}
 
 /* ================= БЛОК 2. ЧЕМ ОТЛИЧАЕТСЯ ПОДХОД ================= */
 /* Блок делится ровно пополам: правая колонка каждой строки начинается на
@@ -1115,7 +1118,9 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dcohero{padding-top:12px}
   .dcohero__card{border-radius:26px}
   .dcohero__txt{padding:28px 20px 30px}
-  .dcohero h1{margin-top:18px;font-size:clamp(28px,7.6vw,34px);line-height:1.1}
+  /* размер подобран под утверждённую разбивку строк: при 28px строка
+     «и здоровье сотрудников» в колонку 295px не входит */
+  .dcohero h1{margin-top:18px;font-size:clamp(22px,6.7vw,30px);line-height:1.12}
   .dcohero__sub{margin-top:20px;font-size:17px}
   .dcohero__lead{font-size:16.5px}
   .dcohero__btns .dbtn--light{width:100%;height:56px}
@@ -1311,24 +1316,3 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
    верхний отступ секции ему не нужен: вместе с нижним отступом предыдущей
    секции получалось почти 300px пустоты */
 .dco .dsec--cta{padding-top:clamp(16px,1.8vw,32px)}
-
-.dband--compact{
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  padding:clamp(44px,5vw,88px) clamp(24px,4vw,72px);
-}
-.dband--compact .dband__h2{max-width:16em}
-.dband--compact .dband__sub{margin-top:18px;max-width:34em}
-.dband__act{margin-top:clamp(28px,3vw,40px)}
-/* главная кнопка страницы: белая заливка на градиенте — самый сильный
-   контраст, который есть на странице */
-.dband__cta{
-  background:#fff;color:var(--brand);height:62px;padding:0 36px;font-size:17px;
-  box-shadow:0 10px 30px rgba(9,26,72,.24);
-}
-.dband__cta:hover{background:var(--tint);color:var(--brand-dark)}
-
-@media (max-width:600px){
-  .dband--compact{padding:36px 22px 40px}
-  .dband__act{width:100%}
-  .dband__cta{width:100%;height:56px;padding:0 20px;font-size:16px}
-}

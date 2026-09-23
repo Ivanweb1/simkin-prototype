@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=93">
+<link rel="stylesheet" href="design.css?v=95">
 </head>
 <body class="d dco">
 
@@ -101,7 +101,7 @@
     <div class="dcohero__card">
       <div class="dcohero__txt">
         <span class="deyebrow" data-rv>Для компаний</span>
-        <h1 data-rv style="--d:.06s">Продуктивность и&nbsp;здоровье сотрудников&nbsp;– <em>для устойчивой эффективности бизнеса</em></h1>
+        <h1 data-rv style="--d:.06s">Продуктивность <br class="dbr-m">и&nbsp;здоровье сотрудников <br class="dbr-m">– <em>для устойчивой эффективности бизнеса</em></h1>
         <p class="dcohero__sub" data-rv style="--d:.12s">Помогаем компаниям создавать рабочую среду, которая учитывает возможности человека, характер его работы и&nbsp;реальные нагрузки.</p>
         <p class="dcohero__lead" data-rv style="--d:.18s">Обучение сотрудников, аудит и&nbsp;настройка рабочих мест, промышленная эргономика и&nbsp;медицинские программы.</p>
         <div class="dcohero__btns" data-rv style="--d:.24s">
@@ -317,17 +317,41 @@
 </section>
 
 <!-- ============ БЛОК 6. ФИНАЛЬНЫЙ БЛОК ============ -->
-<!-- Страница входная, поэтому финал короткий: вопрос, строка пояснения
-     и главная кнопка страницы. Форма живёт во всплывающем окне #discuss,
-     которое эта кнопка и открывает. -->
+<!-- Банд с формой — тот же, что завершает главную. Тексты обращения заменены
+     на присланные заказчиком, подпись кнопки — «Обсудить задачу». -->
 <section class="dsec dsec--cta" id="cta">
   <div class="dwrap">
-    <div class="dband dband--compact" data-rv>
-      <h2 class="dh2 dband__h2">Не&nbsp;знаете, какой формат подойдет?</h2>
-      <p class="dband__sub">Поможем определить подходящее направление и&nbsp;формат работы.</p>
-      <div class="dband__act">
-        <button class="dbtn dband__cta" data-open="discuss">Обсудить задачу
-          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+    <div class="dband" data-rv>
+      <div class="dband__grid">
+        <div class="dband__left">
+          <h2 class="dh2 dband__h2">Не&nbsp;знаете, <span class="dband__soft">какой формат подойдет?</span></h2>
+          <p class="dband__sub">Поможем определить подходящее направление и&nbsp;формат работы.</p>
+          <div class="ddirect">
+            <span class="ddirect__t">Или напишите сразу</span>
+            <div class="ddirect__links">
+              <a href="#"><img src="assets/soc/telegram.svg" alt="" width="20" height="20">Telegram</a>
+              <a href="#"><img src="assets/soc/max.svg" alt="" width="20" height="20">MAX</a>
+              <a href="#"><img src="assets/soc/whatsapp.svg" alt="" width="20" height="20">WhatsApp</a>
+              <a href="mailto:mail@simkin.ru"><img src="assets/soc/email.svg" alt="" width="20" height="20">Email</a>
+            </div>
+          </div>
+        </div>
+        <form class="dform" data-thanks="company" data-channels>
+          <input class="dfield" placeholder="Имя" required>
+          <input class="dfield" placeholder="Компания">
+          <span class="dform__label">Как с вами связаться</span>
+          <div class="dchan" role="group" aria-label="Способ связи">
+            <button type="button" data-ch="tg">Telegram</button>
+            <button type="button" data-ch="max">MAX</button>
+            <button type="button" data-ch="wa">WhatsApp</button>
+            <button type="button" data-ch="mail">Почта</button>
+            <button type="button" data-ch="tel">Телефон</button>
+          </div>
+          <input class="dfield" data-contact hidden>
+          <textarea class="dfield dfield--area" placeholder="Коротко напишите, как работают ваши сотрудники и что хотели бы изменить"></textarea>
+          <label class="dagree"><i></i><span>Согласие на обработку персональных данных</span></label>
+          <button class="dbtn dbtn--brand dform__submit">Обсудить задачу</button>
+        </form>
       </div>
     </div>
   </div>
