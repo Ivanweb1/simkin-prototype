@@ -1085,7 +1085,10 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dcohero{padding:16px}
 .dcohero .dwrap{max-width:none;padding:0}
 .dcohero__card{
-  max-width:1640px;margin:0 auto;
+  /* без верхнего предела по ширине: иначе на широких экранах карточка упирается
+     в него и по бокам остаётся 133px белого против 16px сверху и снизу —
+     поле вокруг перестаёт быть равным. Длину строк держат не габариты
+     карточки, а собственные max-width текста внутри неё. */
   border-radius:36px;overflow:hidden;background:var(--tint);
   display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:stretch;
 }
