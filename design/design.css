@@ -1069,10 +1069,13 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 /* =====================================================================
    СТРАНИЦА «ДЛЯ КОМПАНИЙ»
    ===================================================================== */
-/* Техническая пометка к странице: заголовки второго уровня крупнее текущих
-   примерно на 12%, чтобы крупные смысловые разделы делили страницу заметнее.
-   Пока — только на этой странице: главная утверждена в текущем масштабе. */
-.dco .dh2{font-size:clamp(38px,4.4vw,67px)}
+/* Техническая пометка к странице: заголовки второго уровня подняты ещё
+   примерно на 12% по просьбе заказчика — крупные смысловые разделы должны
+   делить страницу заметнее. Итого относительно главной они крупнее на ~25%.
+   Только на этой странице: главная утверждена в текущем масштабе.
+   ВНИМАНИЕ: после этой правки H2 разделов крупнее H1 первого экрана
+   (при 1440px — 70 против 48). Вынесено в вопросы заказчику. */
+.dco .dh2{font-size:clamp(42px,4.9vw,75px)}
 
 /* активный пункт в шапке */
 .d .navitem > a.is-current{color:var(--navy);font-weight:600}
@@ -1123,200 +1126,155 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 
 /* ================= БЛОК 2. РЕШЕНИЯ ДЛЯ КОМПАНИЙ ================= */
-/* Карточка направления — тот же белый лист со скруглением 28px, что у .dcard
-   на главной. Ведущее направление шире и делится на две колонки: описание
-   и сетка своих решений. */
+/* Три равнозначных направления одним рядом. Форматы работы внутри направлений
+   здесь не раскрываются, поэтому ведущей панели с вложенной сеткой больше нет:
+   карточки одинаковые, отличаются только длиной описания. */
 .doffer{
-  display:flex;flex-direction:column;background:#fff;border:1px solid var(--d-line);border-radius:28px;
-  padding:36px 40px 40px;color:var(--navy);
+  display:flex;flex-direction:column;background:#fff;border:1px solid rgba(35,43,62,.07);border-radius:28px;
+  padding:36px 34px 38px;color:var(--navy);
+  box-shadow:0 2px 4px rgba(35,43,62,.04),0 14px 34px rgba(35,43,62,.08);
 }
 .doffer__top{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.doffer h3{margin-top:30px;font-size:clamp(24px,2.1vw,32px);font-weight:600;line-height:1.14;letter-spacing:-.026em;max-width:14em}
-.doffer p{margin-top:16px;font-size:17px;line-height:1.6;color:var(--navy-2);max-width:34em}
+.doffer h3{margin-top:28px;font-size:clamp(22px,1.9vw,28px);font-weight:600;line-height:1.16;letter-spacing:-.026em;max-width:14em}
+.doffer p{margin-top:16px;font-size:16.5px;line-height:1.6;color:var(--navy-2)}
 .doffer p + p{margin-top:10px}
 .doffer__btn{margin-top:auto;padding-top:clamp(26px,2.6vw,36px)}
-.doffer__btn .dbtn{height:56px;font-size:16px}
+/* подписи кнопок длинные, а колонка узкая: кнопка занимает всю ширину
+   карточки, текст по левому краю, стрелка прижата к правому */
+.doffer__btn .dbtn{
+  width:100%;height:auto;min-height:56px;padding:14px 22px;font-size:15.5px;line-height:1.3;
+  white-space:normal;text-align:left;justify-content:space-between;
+}
 .doffer__btn .dbtn--light{border-color:var(--navy-3)}
 .doffer__btn .dbtn--light:hover{border-color:var(--brand);color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand)}
 
-/* ведущее направление */
-.doffer--lead{
-  display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:0;
-  margin-top:clamp(36px,3.6vw,52px);padding:0;overflow:hidden;
-}
-.doffer__side{display:flex;flex-direction:column;padding:36px 40px 40px}
-.doffer--lead h3{margin-top:30px}
-/* решения внутри направления разделены волосяными линиями, а не вложенными
-   карточками: вложенный лист в листе утяжелил бы панель */
-.doffer__grid{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  border-left:1px solid var(--d-line);background:var(--d-line);gap:1px;
-}
-.dsub{
-  display:flex;flex-direction:column;background:#fff;padding:32px 34px 34px;
-  text-decoration:none;color:var(--navy);
-  transition:background .25s var(--ease);
-}
-.dsub:hover{background:var(--tint)}
-.dsub:visited{color:var(--navy)}
-.dsub h4{font-size:clamp(18px,1.5vw,21px);font-weight:600;line-height:1.2;letter-spacing:-.02em;max-width:16em}
-.dsub p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2)}
-.dsub .dlink{padding-top:22px;font-size:15.5px}
-.dsub:hover .dlink svg{transform:translateX(4px)}
-
-/* пара направлений ниже. minmax(0,1fr), а не 1fr: иначе колонка растягивается
-   под минимальную ширину содержимого, а её задаёт неразрывная подпись кнопки */
 .doffers{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:16px}
+.doffers--three{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(36px,3.6vw,52px)}
 
-.doffers__note{
-  margin-top:clamp(28px,3vw,40px);font-size:17px;line-height:1.6;color:var(--navy-2);max-width:46em;
+@media (max-width:1140px){
+  /* три колонки по ~300px уже не держат описание — направления идут парой,
+     третье занимает всю строку: так последняя карточка не висит полупустой */
+  .doffers--three{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .doffers--three .doffer:last-child{grid-column:1 / -1}
 }
-
-@media (max-width:1100px){
-  .doffer--lead{grid-template-columns:1fr}
-  .doffer__grid{border-left:0;border-top:1px solid var(--d-line)}
-  .doffer--lead .doffer__side{padding-bottom:36px}
-}
-/* 861-1000px: направления ещё стоят парой, но в колонку шириной ~400px длинная
-   подпись кнопки одной строкой не влезает и вылезала за край страницы.
-   Ниже 861 колонка одна и кнопка снова помещается в строку. */
-@media (min-width:861px) and (max-width:1000px){
-  .doffer__btn .dbtn{
-    width:100%;height:auto;min-height:54px;padding:14px 20px;font-size:15.5px;line-height:1.3;
-    white-space:normal;text-align:left;justify-content:space-between;
-  }
-}
-@media (max-width:860px){
-  .doffers{grid-template-columns:1fr}
+@media (max-width:760px){
+  .doffers,.doffers--three{grid-template-columns:1fr}
+  .doffers--three .doffer:last-child{grid-column:auto}
   .doffer h3{max-width:none}
 }
 @media (max-width:600px){
   .doffer{padding:26px 22px 30px;border-radius:22px}
-  /* .doffer сверху уже вернул падинги — у ведущей панели их держит .doffer__side */
-  .doffer--lead{padding:0;border-radius:22px}
-  .doffer__side{padding:26px 22px 28px}
-  .doffer h3{margin-top:22px;font-size:24px}
+  .doffer h3{margin-top:22px;font-size:23px}
   .doffer p{font-size:16.5px}
-  /* на телефоне длинная подпись переносится: раскладываем её по левому краю,
-     а стрелку держим у правого — иначе строки идут рваной лесенкой по центру */
-  .doffer__btn .dbtn{
-    width:100%;height:auto;min-height:54px;padding:14px 20px;font-size:15.5px;line-height:1.3;
-    white-space:normal;text-align:left;justify-content:space-between;
-  }
-  .doffer__grid{grid-template-columns:1fr}
-  .dsub{padding:24px 22px 26px}
-  .doffers__note{font-size:16.5px}
 }
 
 /* ================= БЛОК 3. ПОЧЕМУ ЭРГОНОМИКА ВАЖНА ДЛЯ БИЗНЕСА ================= */
-/* Пошаговое чтение — механика и стили те же, что у принципов на главной.
-   Здесь переопределены только пропорции: на главной левая половина отдана
-   под кадр к каждому тезису, а кадров к доводам ещё нет, поэтому колонка
-   сужена до ширины номера со шкалой, и текст занимает остальное.
-   Когда снимки появятся, --split возвращается к 50% и figure с data-flow-ph
-   встают на место без других правок. */
-#why{--split:26%;--gap-flow:clamp(32px,4vw,72px);--meta:clamp(120px,13vw,230px)}
-/* ряды не равняем по высоте: у доводов от одного до трёх абзацев, и общая
-   сетка растянула бы короткие до высоты самого длинного */
-.dflow--bare .dflow__list{display:block}
-.dflow--bare .dprin h3{max-width:15em}
+/* Без фотографий, как просил заказчик: три довода делит волосяная линия,
+   единственный графический акцент — иконка на светлой подложке. */
+.dwhy{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  margin-top:clamp(36px,3.6vw,52px);
+}
+.dwhy__item{padding:0 clamp(22px,2.4vw,42px);border-left:1px solid var(--d-line)}
+.dwhy__item:first-child{padding-left:0;border-left:0}
+.dwhy__item:last-child{padding-right:0}
+.dwhy__ico{
+  display:grid;place-items:center;width:56px;height:56px;border-radius:17px;
+  background:var(--tint);color:var(--brand);
+}
+.dwhy__ico svg{width:27px;height:27px}
+.dwhy__item h3{
+  margin-top:26px;font-size:clamp(19px,1.6vw,23px);font-weight:600;line-height:1.2;
+  letter-spacing:-.022em;color:var(--navy);max-width:14em;
+}
+.dwhy__item p{margin-top:15px;font-size:16.5px;line-height:1.6;color:var(--navy-2)}
+.dwhy__item p + p{margin-top:10px}
 
 @media (max-width:1000px){
-  /* колонка уезжает по общему правилу .dflow; здесь только возвращаем
-     доводам полную ширину строки */
-  .dflow--bare .dprin h3{max-width:none}
+  /* третий довод длиннее двух других вдвое — он и уходит на всю строку */
+  .dwhy{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:clamp(30px,3.2vw,44px)}
+  .dwhy__item:last-child{grid-column:1 / -1;padding-left:0;border-left:0;padding-top:clamp(30px,3.2vw,44px);border-top:1px solid var(--d-line)}
+}
+@media (max-width:640px){
+  .dwhy{grid-template-columns:1fr;row-gap:0}
+  .dwhy__item{padding:26px 0 0;border-left:0;border-top:1px solid var(--d-line);margin-top:26px}
+  .dwhy__item:first-child{margin-top:0;padding-top:0;border-top:0}
+  .dwhy__item:last-child{padding-top:26px;margin-top:26px}
+  .dwhy__ico{width:50px;height:50px;border-radius:15px}
+  .dwhy__ico svg{width:24px;height:24px}
+  .dwhy__item h3{margin-top:20px;font-size:20px;max-width:none}
 }
 
 /* ================= БЛОК 4. ЧТО ОТЛИЧАЕТ НАШ ПОДХОД ================= */
-/* Ведущий пункт — белый лист на подложке: слева заголовок и вынесенная цель,
-   справа изложение. Пять абзацев подряд в одну колонку дали бы сплошную
-   простыню, а цель — это вывод, ей место рядом с заголовком, а не в конце
-   перечисления. */
-.dappr__lead{
-  display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);
-  gap:clamp(28px,3.4vw,64px);
-  margin-top:clamp(36px,3.6vw,52px);
-  background:#fff;border:1px solid var(--d-line);border-radius:28px;
-  padding:clamp(32px,3.2vw,48px) clamp(26px,3vw,48px);
-}
-.dappr__side h3{
-  font-size:clamp(24px,2.1vw,32px);font-weight:600;line-height:1.14;letter-spacing:-.026em;
-  color:var(--navy);max-width:12em;
-}
-/* та же чёрточка слева, что у цитаты на главной: отмечает вывод, не вводя
-   ещё одну плашку внутрь и без того плотного листа */
-.dappr__goal{
-  position:relative;margin-top:clamp(24px,2.4vw,34px);padding-left:26px;
-  font-size:clamp(17px,1.45vw,19.5px);font-weight:500;line-height:1.5;letter-spacing:-.01em;
-  color:var(--navy);max-width:22em;
-}
-.dappr__goal::before{
-  content:"";position:absolute;left:0;top:.28em;bottom:.28em;width:4px;border-radius:4px;
-  background:linear-gradient(180deg,var(--brand-3),var(--brand));
-}
-.dappr__body{padding-top:clamp(4px,.6vw,10px)}
-.dappr__body p{font-size:17.5px;line-height:1.65;color:var(--navy-2);max-width:36em}
-.dappr__body p + p{margin-top:14px}
-
-/* Четыре справки — полоса без рамок: карточки в обводке повторили бы решения
-   выше, а здесь это короткие сведения, а не предложения услуг. Колонки делят
-   волосяные линии, высота выравнивается сеткой. */
-.dappr__facts{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+/* Снимок вертикальный, поэтому он занимает колонку целиком и не кадрируется
+   в полосу. Три пункта справа — не карточки, а список: это характеристики
+   подхода, а не отдельные предложения, и действий у них нет. */
+.dappr{
+  display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1fr);
+  gap:clamp(32px,4vw,72px);align-items:start;
   margin-top:clamp(36px,3.6vw,52px);
 }
-.dappr__fact{padding:0 clamp(18px,1.8vw,30px);border-left:1px solid var(--d-line)}
-.dappr__fact:first-child{padding-left:0;border-left:0}
-.dappr__fact:last-child{padding-right:0}
-.dappr__fact h3{
-  font-size:clamp(17px,1.4vw,20px);font-weight:600;line-height:1.24;letter-spacing:-.02em;
-  color:var(--navy);
-}
-.dappr__fact p{margin-top:14px;font-size:16px;line-height:1.6;color:var(--navy-2)}
-.dappr__fact p + p{margin-top:10px}
+.dappr__ph{margin:0;border-radius:28px;overflow:hidden;background:var(--d-line)}
+.dappr__ph picture,.dappr__ph img{display:block;width:100%;height:auto}
 
-@media (max-width:1100px){
-  .dappr__lead{grid-template-columns:1fr;gap:clamp(22px,2.6vw,32px)}
-  .dappr__side h3{max-width:none}
-  .dappr__goal{max-width:34em}
-  .dappr__body{padding-top:0}
-  /* четыре колонки на планшете дают по 160px — строки рвутся в столбик */
-  .dappr__facts{grid-template-columns:1fr 1fr;row-gap:clamp(28px,3vw,40px)}
-  .dappr__fact:nth-child(3){padding-left:0;border-left:0}
+.dappr__list{display:flex;flex-direction:column}
+.dappr__item{padding:clamp(26px,2.6vw,36px) 0;border-top:1px solid var(--d-line)}
+.dappr__item:first-child{padding-top:0;border-top:0}
+.dappr__item:last-child{padding-bottom:0}
+.dappr__n{
+  display:block;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);
+}
+.dappr__item h3{
+  margin-top:14px;font-size:clamp(21px,1.8vw,27px);font-weight:600;line-height:1.18;
+  letter-spacing:-.024em;color:var(--navy);max-width:16em;
+}
+.dappr__item p{margin-top:14px;font-size:17px;line-height:1.62;color:var(--navy-2);max-width:34em}
+
+@media (max-width:980px){
+  /* портрет во всю ширину был бы на пол-экрана высотой — ограничиваем
+     и прижимаем к левому краю, текст идёт под ним */
+  .dappr{grid-template-columns:1fr;gap:clamp(26px,3vw,38px)}
+  .dappr__ph{max-width:420px}
 }
 @media (max-width:600px){
-  .dappr__lead{border-radius:22px;padding:26px 22px 28px}
-  .dappr__side h3{font-size:24px}
-  .dappr__goal{font-size:17px;padding-left:20px}
-  .dappr__body p{font-size:16.5px}
-  /* на телефоне колонок нет: справки идут списком, линия сверху вместо боковой */
-  .dappr__facts{grid-template-columns:1fr;row-gap:0}
-  .dappr__fact{padding:24px 0 0;border-left:0;border-top:1px solid var(--d-line);margin-top:24px}
-  .dappr__fact:first-child{margin-top:0}
-  .dappr__fact h3{font-size:19px}
-  .dappr__fact p{font-size:16.5px}
+  .dappr__ph{max-width:none;border-radius:22px}
+  .dappr__item h3{font-size:21px;max-width:none}
+  .dappr__item p{font-size:16.5px}
 }
 
 /* ================= БЛОК 5. РАБОТА С КОМПАНИЯМИ ================= */
+/* Общий кадр с обучения идёт широкой полосой под заголовком: он про масштаб,
+   поэтому показан целиком по ширине, а не врезкой в карточку. */
+.dcases__ph{
+  margin:clamp(32px,3.4vw,48px) 0 0;border-radius:28px;overflow:hidden;background:var(--d-line);
+}
+.dcases__ph picture,.dcases__ph img{display:block;width:100%;height:auto}
+
 .dcases{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;
-  margin-top:clamp(36px,3.6vw,52px);
+  margin-top:clamp(28px,3vw,40px);
 }
 .dcase{
   display:flex;flex-direction:column;
-  background:#fff;border:1px solid var(--d-line);border-radius:28px;
+  background:#fff;border:1px solid rgba(35,43,62,.07);border-radius:28px;
   padding:clamp(28px,2.8vw,40px) clamp(24px,2.6vw,40px) clamp(26px,2.6vw,36px);
+  box-shadow:0 2px 4px rgba(35,43,62,.04),0 14px 34px rgba(35,43,62,.08);
 }
 /* название компании вместо логотипа: набрано как заголовок карточки,
    чтобы четыре кейса читались одинаково независимо от длины имени */
 .dcase h3{
   font-size:clamp(22px,1.9vw,28px);font-weight:600;line-height:1.14;letter-spacing:-.026em;color:var(--navy);
 }
+/* формат работы — служебная строка под названием, а не часть описания */
+.dcase__fmt{
+  margin-top:10px;font-size:14.5px;font-weight:600;letter-spacing:.01em;color:var(--brand);
+}
 .dcase p{margin-top:16px;font-size:16.5px;line-height:1.6;color:var(--navy-2)}
-/* цитата заказчика — плашка на подложке с той же чёрточкой, что у цели
-   в блоке выше: отделяет чужую речь от нашего описания кейса */
+.dcase .dcase__fmt + p{margin-top:14px}
+/* цитата заказчика — плашка на подложке с чёрточкой: отделяет чужую речь
+   от нашего описания кейса */
 .dcase__q{
-  position:relative;margin:22px 0 0;padding:20px 24px 20px 30px;
+  position:relative;margin:20px 0 0;padding:20px 24px 20px 30px;
   background:var(--tint);border-radius:18px;
   font-size:clamp(17px,1.4vw,19px);font-weight:500;line-height:1.45;letter-spacing:-.012em;color:var(--navy);
 }
@@ -1338,6 +1296,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dcases{grid-template-columns:1fr}
 }
 @media (max-width:600px){
+  .dcases__ph{border-radius:22px}
   .dcase{border-radius:22px;padding:26px 22px 28px}
   .dcase h3{font-size:22px}
   .dcase p{font-size:16.5px}
@@ -1346,6 +1305,28 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 
 /* ================= БЛОК 6. ФИНАЛЬНЫЙ БЛОК ================= */
-/* Банд и форма целиком те же, что на главной. Здесь только второй абзац
-   обращения: на главной под заголовком одна строка, тут их две. */
+/* Страница входная, поэтому финал короткий: вопрос, строка пояснения и одна
+   кнопка по центру. Форма не дублируется на странице — она во всплывающем
+   окне #discuss, которое открывает эта кнопка. */
 .dband__sub--next{margin-top:14px}
+
+.dband--compact{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:clamp(44px,5vw,88px) clamp(24px,4vw,72px);
+}
+.dband--compact .dband__h2{max-width:16em}
+.dband--compact .dband__sub{margin-top:18px;max-width:34em}
+.dband__act{margin-top:clamp(28px,3vw,40px)}
+/* главная кнопка страницы: белая заливка на градиенте — самый сильный
+   контраст, который есть на странице */
+.dband__cta{
+  background:#fff;color:var(--brand);height:62px;padding:0 36px;font-size:17px;
+  box-shadow:0 10px 30px rgba(9,26,72,.24);
+}
+.dband__cta:hover{background:var(--tint);color:var(--brand-dark)}
+
+@media (max-width:600px){
+  .dband--compact{padding:36px 22px 40px}
+  .dband__act{width:100%}
+  .dband__cta{width:100%;height:56px;padding:0 20px;font-size:16px}
+}
