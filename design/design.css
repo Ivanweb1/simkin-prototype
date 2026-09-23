@@ -1208,6 +1208,23 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dprin__ico svg{width:26px;height:26px}
 .dflow--live .dprin.is-now .dprin__ico{background:var(--brand);color:#fff}
 
+/* иконка слева от текста, а не над ним: текст начинается правее, и справа
+   остаётся меньше пустого поля. Ниже 1001px колонка шкалы складывается,
+   номер возвращается в текст — там иконка снова встаёт над заголовком. */
+@media (min-width:1001px){
+  .dflow--bare .dprin{
+    display:grid;grid-template-columns:auto minmax(0,1fr);
+    column-gap:clamp(20px,2vw,30px);align-items:start;
+  }
+  /* всё, кроме иконки, идёт во вторую колонку; иконка — в первую, в одну
+     строку с заголовком. Без явного размещения браузер уводит абзац
+     в колонку иконки и та растягивается на ширину текста. */
+  .dflow--bare .dprin > *{grid-column:2}
+  .dflow--bare .dprin__ico{grid-column:1;grid-row:1;margin-bottom:0}
+  .dflow--bare .dprin h3{max-width:none}
+  .dflow--bare .dprin p{max-width:44em}
+}
+
 @media (max-width:1000px){
   .dflow--bare .dprin h3{max-width:none}
 }
@@ -1220,17 +1237,26 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 /* Снимок вертикальный, поэтому он занимает колонку целиком и не кадрируется
    в полосу. Три пункта справа — не карточки, а список: это характеристики
    подхода, а не отдельные предложения, и действий у них нет. */
-/* Заголовок стоит в левой колонке над снимком, а не отдельной строкой сверху:
-   иначе справа от него оставался пустой угол во всю ширину страницы. Список
-   пунктов начинается на одной линии с заголовком и этот угол закрывает. */
+/* Снимок слева во всю высоту блока, заголовок и пункты — в правой колонке.
+   Снимок положен абсолютом внутрь своей рамки, поэтому собственной высоты
+   не имеет: высоту ряда задаёт колонка с текстом, а кадр под неё подстраивается.
+   Так не остаётся ни пустого угла сверху (заголовок больше не стоит отдельной
+   строкой во всю ширину), ни пустого угла снизу (портрет больше не торчит
+   ниже текста). Пропорции колонки почти совпадают с пропорциями кадра,
+   так что обрезка минимальная. */
 .dappr{
   display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1fr);
-  gap:clamp(32px,4vw,72px);align-items:start;
+  gap:clamp(32px,4vw,72px);align-items:stretch;
 }
-.dappr__side{display:flex;flex-direction:column}
-.dappr__side .dh2{max-width:11em}
-.dappr__ph{margin:clamp(28px,3vw,44px) 0 0;border-radius:28px;overflow:hidden;background:var(--d-line)}
-.dappr__ph picture,.dappr__ph img{display:block;width:100%;height:auto}
+.dappr__ph{
+  position:relative;margin:0;border-radius:28px;overflow:hidden;background:var(--d-line);
+  min-height:clamp(380px,40vw,660px);
+}
+.dappr__ph picture{position:absolute;inset:0;display:block;height:100%}
+.dappr__ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:46% 22%}
+.dappr__body{display:flex;flex-direction:column}
+.dappr__body .dh2{max-width:13em}
+.dappr__list{margin-top:clamp(30px,3.2vw,48px)}
 
 .dappr__list{display:flex;flex-direction:column}
 .dappr__item{padding:clamp(26px,2.6vw,36px) 0;border-top:1px solid var(--d-line)}
@@ -1246,11 +1272,17 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dappr__item p{margin-top:14px;font-size:17px;line-height:1.62;color:var(--navy-2);max-width:34em}
 
 @media (max-width:980px){
-  /* портрет во всю ширину был бы на пол-экрана высотой — ограничиваем
-     и прижимаем к левому краю, текст идёт под ним */
+  /* в одну колонку кадр возвращается к своим пропорциям: растягивать его
+     тут не подо что, а обрезать в полосу незачем */
   .dappr{grid-template-columns:1fr;gap:clamp(26px,3vw,38px)}
-  .dappr__side .dh2{max-width:none}
-  .dappr__ph{max-width:420px}
+  .dappr__body .dh2{max-width:none}
+  .dappr__ph{min-height:0;max-width:420px}
+  .dappr__ph picture{position:static;height:auto}
+  .dappr__ph img{height:auto}
+  /* заголовок читается первым, кадр — после него */
+  .dappr__ph{order:2}
+  .dappr__body{order:1}
+  .dappr__list{margin-top:clamp(24px,3vw,36px)}
 }
 @media (max-width:600px){
   .dappr__ph{max-width:none;border-radius:22px}
@@ -1330,3 +1362,8 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
    верхний отступ секции ему не нужен: вместе с нижним отступом предыдущей
    секции получалось почти 300px пустоты */
 .dco .dsec--cta{padding-top:clamp(16px,1.8vw,32px)}
+
+/* первый экран прижат к краям окна, а секция под ним открывалась общим
+   отступом в 150px — переход читался как провал. Первой секции отступ сверху
+   уменьшен, дальше по странице ритм прежний, как на главной. */
+.dco #offers{padding-top:clamp(56px,6.4vw,104px)}
