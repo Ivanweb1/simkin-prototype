@@ -1079,9 +1079,9 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .navitem > a.is-current{color:var(--navy);font-weight:600}
 
 /* ================= БЛОК 1. ПЕРВЫЙ ЭКРАН ================= */
-/* снизу нужен просвет: карточка первого экрана и следующая секция обе на
-   светлой подложке, без него их скругления слипаются в одно пятно */
-.dcohero{padding:clamp(20px,2.4vw,36px) 0 clamp(30px,3.2vw,54px)}
+/* поле вокруг карточки первого экрана одинаковое со всех четырёх сторон:
+   та же величина, что у боковых отступов .dwrap */
+.dcohero{padding:clamp(20px,4vw,56px) 0}
 .dcohero__card{
   border-radius:36px;overflow:hidden;background:var(--tint);
   display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:stretch;
