@@ -122,27 +122,28 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
    уже на 1365px, поэтому на обычном ноутбуке (1920x1200 при масштабе 150%
    окно отдаёт браузеру 1280 CSS-пикселей) меню исчезало, хотя место было.
    Ниже шапка отдаёт место меню постепенно — кегль, отступы меню, отступы
-   шапки, логотип и кнопка, — и горизонтальное меню доживает до 1240px.
-   Значения выверены замером: на каждой ступени остаётся запас,
-   меню нигде не идёт впритык.
+   шапки, логотип и кнопка, — и горизонтальное меню доживает до 1224px.
+   Границы ступеней посчитаны от просвета: меню растягивается, пока до
+   логотипа слева и до кнопки справа остаётся не меньше 30px. На нижней
+   границе каждой ступени ровно этот просвет, дальше включается следующая.
    --------------------------------------------------------------------- */
-@media (max-width:1540px){
+@media (max-width:1505px){
   .d .mainnav{gap:16px}
   .d .navitem > a{font-size:14.5px}
 }
-@media (max-width:1477px){
+@media (max-width:1440px){
   .d .hdr{gap:22px}
   .d .mainnav{gap:13px}
   .d .navitem > a{font-size:14px}
 }
-@media (max-width:1417px){
+@media (max-width:1393px){
   .d .hdr{gap:18px;padding-left:28px;padding-right:28px}
   .d .mainnav{gap:11px}
   .d .navitem > a{font-size:13.5px}
   .d .logo img{height:40px}
   .d .hdr__cta .btn{height:44px;padding:0 18px;font-size:14px}
 }
-@media (max-width:1309px){
+@media (max-width:1293px){
   .d .hdr{gap:14px;padding-left:22px;padding-right:22px}
   .d .mainnav{gap:9px}
   .d .navitem > a{font-size:13px}
@@ -151,7 +152,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 }
 /* до 1240px меню остаётся горизонтальным: перекрываем правило прототипа,
    которое прячет его уже на 1365px */
-@media (min-width:1240px){
+@media (min-width:1224px){
   .d .mainnav{display:flex}
   .d .burger{display:none}
   .d .hdr{justify-content:flex-start}
