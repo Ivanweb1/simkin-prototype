@@ -750,7 +750,13 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
   display:grid;place-items:center;padding:14px;
   transition:border-color .25s var(--ease),box-shadow .25s var(--ease);
 }
-.dlogo:hover{border-color:transparent;box-shadow:0 14px 36px rgba(35,43,62,.07)}
+/* Наведение — только там, где указатель действительно наводят. На тач-экране
+   события наведения нет: в одних браузерах эффект не сработает никогда, в
+   других «залипнет» после тапа, и один знак останется цветным посреди серого
+   ряда. Поэтому на телефоне ряд просто ровно обесцвечен — как и задумано. */
+@media (hover:hover) and (pointer:fine){
+  .dlogo:hover{border-color:transparent;box-shadow:0 14px 36px rgba(35,43,62,.07)}
+}
 .dlogo img{
   max-width:78%;max-height:var(--logo-h,38px);width:auto;height:auto;object-fit:contain;
   /* приглушение одним только grayscale делало светлые знаки (Kraft Foods)
@@ -760,7 +766,9 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
   filter:var(--logo-tone,grayscale(1) contrast(1.25) brightness(.9));
   transition:filter .25s var(--ease);
 }
-.dlogo:hover img{filter:none}
+@media (hover:hover) and (pointer:fine){
+  .dlogo:hover img{filter:none}
+}
 /* подпись показывается только там, где файла логотипа ещё нет */
 .dlogo span{display:none;font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--navy-2);text-align:center;line-height:1.2}
 .dlogo.is-empty span{display:block}
