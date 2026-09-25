@@ -13,7 +13,7 @@
   --navy:#343D55;         /* текст: тёмно-графитовый с синим подтоном, на тон светлее чёрного */
   --navy-2:#5A6379;
   --navy-3:#98A0B2;
-  --navy-nav:#434C63;     /* текст верхнего меню: темнее основного серо-синего */
+  --navy-nav:#3A4259;     /* текст верхнего меню: темнее основного серо-синего */
   --tint:#F2F5FB;         /* светлая подложка с оттенком бренда */
   --d-line:rgba(35,43,62,.12);
 }
@@ -26,7 +26,7 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .d .mainnav{gap:22px}
 .d .logo img{height:44px;width:auto;display:block}
 .d .navitem > a{color:var(--navy-nav);font-weight:500;font-size:15px}
-.d .navitem > a:hover{color:var(--navy)}
+.d .navitem > a:hover{color:var(--brand)}
 .d .navitem > a::before{display:none}
 .d .navitem > a i{border-top-color:var(--navy-2)}
 .d .sub a{color:var(--navy-2)}
@@ -179,7 +179,10 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   .dhero__lead{margin-top:10px;font-size:15.5px;line-height:1.5}
   .dhero__lead br{display:none}
   .dhero__btns{flex-direction:column;gap:10px;margin-top:20px}
-  .dbtn{width:100%;height:52px;padding:0 18px;font-size:15.5px}
+  .dbtn{
+    width:100%;min-height:52px;height:auto;padding:13px 18px;font-size:15.5px;
+    white-space:normal;line-height:1.25;text-align:center;
+  }
   .dhero__media{flex:1 1 auto;aspect-ratio:auto;min-height:230px}
   /* высота блока приходит от flex, а не от aspect-ratio — проценты по ней
      не считаются, и снимок остался бы в свои 16:10, открыв полосу подложки
@@ -978,8 +981,8 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
    Плашка стояла в колонке контактов и ломала её текст на четыре строки,
    а соцсети висели отдельной строкой в пустоте под рваными колонками */
 .d .foot__bar{
-  display:grid;grid-template-columns:minmax(0,1fr) auto;
-  gap:clamp(20px,2.4vw,40px);align-items:center;
+  display:grid;grid-template-columns:1fr;
+  gap:18px;align-items:center;
   padding:clamp(26px,2.8vw,36px) 0 clamp(28px,3vw,40px);
   border-top:1px solid var(--d-line);
 }
@@ -1000,7 +1003,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .foot__msg a{display:block;line-height:0;transition:transform .2s var(--ease)}
 .d .foot__msg a:hover{transform:translateY(-2px)}
 .d .foot__msg img{width:26px;height:26px;flex:0 0 auto;border-radius:7px;display:block}
-.d .soc{gap:8px;padding-bottom:0;justify-content:flex-end}
+.d .soc{gap:8px;padding-bottom:0;justify-content:flex-start}
 .d .soc a{
   height:42px;padding:0 18px 0 12px;display:inline-flex;align-items:center;gap:9px;border-radius:100px;
   background:#fff;border:1px solid var(--d-line);color:var(--navy-2);
@@ -1018,10 +1021,6 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .foot__bottom a{color:var(--navy-3);transition:color .2s var(--ease)}
 .d .foot__bottom a:hover{color:var(--brand)}
 
-@media (max-width:1440px){
-  .d .foot__bar{grid-template-columns:1fr;gap:18px}
-  .d .soc{justify-content:flex-start}
-}
 /* на узком экране текст плашки уже не строка — возвращаем карточку.
    Строка про запись к врачу занимает 910px в одну строку, поэтому таблетка
    живёт, пока нижняя полоса шире этого, — примерно до 1040px, дальше карточка */
