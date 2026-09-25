@@ -752,24 +752,26 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
 }
 .dlogo:hover{border-color:transparent;box-shadow:0 14px 36px rgba(35,43,62,.07)}
 .dlogo img{
-  max-width:78%;max-height:38px;width:auto;height:auto;object-fit:contain;
-  filter:grayscale(1);opacity:.78;
-  transition:filter .25s var(--ease),opacity .25s var(--ease);
+  max-width:78%;max-height:var(--logo-h,38px);width:auto;height:auto;object-fit:contain;
+  /* приглушение одним только grayscale делало светлые знаки (Kraft Foods)
+     почти невидимыми, поэтому обесцвечивание идёт с добором контраста */
+  filter:grayscale(1) contrast(1.25) brightness(.9);
+  transition:filter .25s var(--ease);
 }
-.dlogo:hover img{filter:none;opacity:1}
+.dlogo:hover img{filter:none}
 /* подпись показывается только там, где файла логотипа ещё нет */
 .dlogo span{display:none;font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--navy-2);text-align:center;line-height:1.2}
 .dlogo.is-empty span{display:block}
 
 @media (max-width:1100px){
   .dlogo{border-radius:18px;padding:12px}
-  .dlogo img{max-height:32px}
+  .dlogo img{max-height:calc(var(--logo-h,38px) * .84)}
   .dlogo span{font-size:13.5px}
 }
 @media (max-width:720px){
   .dlogos{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .dlogo{aspect-ratio:16/8}
-  .dlogo img{max-height:30px;max-width:80%}
+  .dlogo img{max-height:calc(var(--logo-h,38px) * .78);max-width:80%}
   .dlogo span{font-size:14px}
 }
 
