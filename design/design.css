@@ -924,6 +924,23 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 
 .dagree{display:flex;gap:11px;align-items:flex-start;margin-top:18px;font-size:12.5px;line-height:1.45;color:var(--navy-3)}
 .dagree i{width:17px;height:17px;border:1px solid var(--d-line);border-radius:5px;flex:0 0 auto;margin-top:1px;display:block}
+
+/* Согласие на обработку данных: коробочка рисуется на <i>, но переключает её
+   настоящий чекбокс внутри <label> — раньше в разметке был только <i>, и
+   галочка не нажималась. Сам input убран с глаз, а не display:none: так он
+   остаётся достижим с клавиатуры и попадает в данные формы. */
+.d .dagree,.d .magree{cursor:pointer}
+.d .dagree input,.d .magree input{position:absolute;width:1px;height:1px;opacity:0;margin:0}
+.d .dagree i,.d .magree i{position:relative;transition:background .18s var(--ease),border-color .18s var(--ease)}
+.d .dagree:hover i,.d .magree:hover i{border-color:var(--navy-3)}
+.d .dagree input:checked + i,.d .magree input:checked + i{background:var(--brand);border-color:var(--brand)}
+.d .dagree input:checked + i::after,.d .magree input:checked + i::after{
+  content:"";position:absolute;left:4.5px;top:1.5px;width:4px;height:8px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+.d .dagree input:focus-visible + i,.d .magree input:focus-visible + i{
+  outline:2px solid var(--brand);outline-offset:2px;
+}
 .dform__submit{
   margin-top:22px;width:100%;height:68px;font-size:18px;
   box-shadow:0 14px 30px rgba(18,62,158,.28);

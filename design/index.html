@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=126">
+<link rel="stylesheet" href="design.css?v=127">
 </head>
 <body class="d">
 
@@ -443,7 +443,7 @@
           </div>
           <input class="dfield" data-contact hidden>
           <textarea class="dfield dfield--area" placeholder="Коротко напишите, что вас интересует (необязательно)"></textarea>
-          <label class="dagree"><i></i><span>Согласие на обработку персональных данных</span></label>
+          <label class="dagree"><input type="checkbox" name="agree" required><i></i><span>Согласие на обработку персональных данных</span></label>
           <button class="dbtn dbtn--brand dform__submit">Отправить</button>
         </form>
       </div>
@@ -536,7 +536,7 @@
       <input class="mfield" placeholder="Имя">
       <input class="mfield" placeholder="Телефон">
       <input class="mfield" placeholder="Удобное время">
-      <label class="magree"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <label class="magree"><input type="checkbox" name="agree" required><i></i><span>Согласие на обработку персональных данных</span></label>
       <button class="btn btn--fill">Жду звонка</button>
     </form>
   </div>
@@ -557,7 +557,7 @@
       <input class="mfield" type="email" placeholder="Почта">
       <input class="mfield" placeholder="Число сотрудников">
       <textarea class="mfield mform__full" placeholder="Сообщение"></textarea>
-      <label class="magree mform__full"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <label class="magree mform__full"><input type="checkbox" name="agree" required><i></i><span>Согласие на обработку персональных данных</span></label>
       <button class="btn btn--fill mform__full">Отправить</button>
     </form>
   </div>
