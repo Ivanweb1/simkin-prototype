@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=124">
+<link rel="stylesheet" href="design.css?v=125">
 </head>
 <body class="d">
 
@@ -305,13 +305,18 @@
       </div>
       <p class="dhead__note" data-rv style="--d:.12s">Проекты по обучению эргономике для российских и международных компаний.</p>
     </div>
-    <!-- Логотипы клиентов — заглушки: согласия на публикацию в открытых вопросах к заказчику -->
+    <!-- Логотипы: файлы кладутся в design/assets/logos/ под именами из списка ниже
+         (см. design/assets/logos/README.md). Пока файла нет, ячейка показывает
+         название набором — вёрстку при замене менять не нужно. -->
     <div class="dlogos" data-rv style="--d:.06s">
-      <div class="dlogo"><span>Логотип</span></div>
-      <div class="dlogo"><span>Логотип</span></div>
-      <div class="dlogo"><span>Логотип</span></div>
-      <div class="dlogo"><span>Логотип</span></div>
-      <div class="dlogo"><span>Логотип</span></div>
+      <div class="dlogo" data-logo><img src="assets/logos/citibank.svg" alt="Citibank" loading="lazy" decoding="async"><span>Citibank</span></div>
+      <div class="dlogo" data-logo><img src="assets/logos/deloitte.svg" alt="Deloitte" loading="lazy" decoding="async"><span>Deloitte</span></div>
+      <div class="dlogo" data-logo><img src="assets/logos/ford.svg" alt="Ford" loading="lazy" decoding="async"><span>Ford</span></div>
+      <div class="dlogo" data-logo><img src="assets/logos/sanofi.svg" alt="Sanofi" loading="lazy" decoding="async"><span>Sanofi</span></div>
+      <div class="dlogo" data-logo><img src="assets/logos/kraft-foods.svg" alt="Kraft Foods" loading="lazy" decoding="async"><span>Kraft Foods</span></div>
+      <div class="dlogo" data-logo><img src="assets/logos/rosnano.svg" alt="РОСНАНО" loading="lazy" decoding="async"><span>РОСНАНО</span></div>
+      <div class="dlogo" data-logo><img src="assets/logos/inter-rao.svg" alt="Интер РАО" loading="lazy" decoding="async"><span>Интер РАО</span></div>
+      <div class="dlogo" data-logo><img src="assets/logos/gazprom-pererabotka.svg" alt="Газпром переработка" loading="lazy" decoding="async"><span>Газпром переработка</span></div>
     </div>
   </div>
 </section>
@@ -503,7 +508,7 @@
     </div>
 
     <div class="foot__bar">
-      <div class="clinic">Медицинский приём, остеопатия и запись к врачу — на сайте клиники <a href="https://doctorsimkin.ru">DoctorSimkin.ru</a></div>
+      <div class="clinic">Запись на остеопатический и другие медицинские приёмы — на сайте Клиники Доктора Симкина <a href="https://doctorsimkin.ru">DoctorSimkin.ru</a></div>
       <div class="soc">
       <a href="#"><img src="assets/soc/vk.svg" alt="" width="22" height="22">ВКонтакте</a>
       <a href="#"><img src="assets/soc/telegram.svg" alt="" width="22" height="22">Telegram</a>
@@ -562,6 +567,27 @@
 <script src="../script.js?v=32"></script>
 
 <script>
+/* Логотипы клиентов: пробуем svg, затем png, jpg, webp. Если файла нет ни в
+   одном формате, ячейка переключается на текстовую подпись — блок остаётся
+   целым, пока логотипы не присланы. */
+(function(){
+  var EXT = ['svg','png','jpg','webp'];
+  [].forEach.call(document.querySelectorAll('[data-logo]'), function(cell){
+    var img = cell.querySelector('img');
+    if(!img){ cell.classList.add('is-empty'); return; }
+    var base = img.getAttribute('src').replace(/\.[a-z0-9]+$/i, '');
+    var i = 0;
+    function next(){
+      i++;
+      if(i < EXT.length){ img.src = base + '.' + EXT[i]; return; }
+      img.remove();
+      cell.classList.add('is-empty');
+    }
+    img.addEventListener('error', next);
+    if(img.complete && img.naturalWidth === 0) next();
+  });
+})();
+
 /* Принципы: активен тот, что пересёк линию чтения. Никакого перехвата скролла —
    страница прокручивается обычно, меняются только акценты. */
 (function(){
