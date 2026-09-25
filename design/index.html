@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=134">
+<link rel="stylesheet" href="design.css?v=136">
 </head>
 <body class="d">
 
@@ -309,14 +309,14 @@
          (см. design/assets/logos/README.md). Пока файла нет, ячейка показывает
          название набором — вёрстку при замене менять не нужно. -->
     <div class="dlogos" data-rv style="--d:.06s">
-      <div class="dlogo" data-logo><img src="assets/logos/citibank.svg" alt="Citibank" loading="lazy" decoding="async"><span>Citibank</span></div>
-      <div class="dlogo" data-logo style="--logo-h:29px"><img src="assets/logos/deloitte.svg" alt="Deloitte" loading="lazy" decoding="async"><span>Deloitte</span></div>
-      <div class="dlogo" data-logo style="--logo-h:34px;--logo-tone:grayscale(1) contrast(.85) brightness(1.18)"><img src="assets/logos/ford.svg" alt="Ford" loading="lazy" decoding="async"><span>Ford</span></div>
-      <div class="dlogo" data-logo style="--logo-h:34px"><img src="assets/logos/sanofi.svg" alt="Sanofi" loading="lazy" decoding="async"><span>Sanofi</span></div>
-      <div class="dlogo" data-logo style="--logo-h:40px"><img src="assets/logos/kraft-foods.svg" alt="Kraft Foods" loading="lazy" decoding="async"><span>Kraft Foods</span></div>
-      <div class="dlogo" data-logo style="--logo-h:44px"><img src="assets/logos/rosnano.svg" alt="РОСНАНО" loading="lazy" decoding="async"><span>РОСНАНО</span></div>
-      <div class="dlogo" data-logo style="--logo-h:50px"><img src="assets/logos/inter-rao.svg" alt="Интер РАО" loading="lazy" decoding="async"><span>Интер РАО</span></div>
-      <div class="dlogo" data-logo style="--logo-h:50px"><img src="assets/logos/gazprom-pererabotka.svg" alt="Газпром переработка" loading="lazy" decoding="async"><span>Газпром переработка</span></div>
+      <div class="dlogo" data-logo style="--logo-h:36px"><img src="assets/logos/citibank.png" alt="Citibank" loading="lazy" decoding="async"><span>Citibank</span></div>
+      <div class="dlogo" data-logo style="--logo-h:29px"><img src="assets/logos/deloitte.png" alt="Deloitte" loading="lazy" decoding="async"><span>Deloitte</span></div>
+      <div class="dlogo" data-logo style="--logo-h:34px;--logo-tone:grayscale(1) contrast(.85) brightness(1.18)"><img src="assets/logos/ford.png" alt="Ford" loading="lazy" decoding="async"><span>Ford</span></div>
+      <div class="dlogo" data-logo style="--logo-h:34px"><img src="assets/logos/sanofi.png" alt="Sanofi" loading="lazy" decoding="async"><span>Sanofi</span></div>
+      <div class="dlogo" data-logo style="--logo-h:40px"><img src="assets/logos/kraft-foods.png" alt="Kraft Foods" loading="lazy" decoding="async"><span>Kraft Foods</span></div>
+      <div class="dlogo" data-logo style="--logo-h:44px"><img src="assets/logos/rosnano.png" alt="РОСНАНО" loading="lazy" decoding="async"><span>РОСНАНО</span></div>
+      <div class="dlogo" data-logo style="--logo-h:50px"><img src="assets/logos/inter-rao.png" alt="Интер РАО" loading="lazy" decoding="async"><span>Интер РАО</span></div>
+      <div class="dlogo" data-logo style="--logo-h:50px"><img src="assets/logos/gazprom-pererabotka.png" alt="Газпром переработка" loading="lazy" decoding="async"><span>Газпром переработка</span></div>
     </div>
   </div>
 </section>
@@ -571,15 +571,16 @@
    одном формате, ячейка переключается на текстовую подпись — блок остаётся
    целым, пока логотипы не присланы. */
 (function(){
-  var EXT = ['svg','png','jpg','webp'];
+  var EXT = ['svg','png','webp','jpg'];
   [].forEach.call(document.querySelectorAll('[data-logo]'), function(cell){
     var img = cell.querySelector('img');
     if(!img){ cell.classList.add('is-empty'); return; }
-    var base = img.getAttribute('src').replace(/\.[a-z0-9]+$/i, '');
-    var i = 0;
+    var src   = img.getAttribute('src');
+    var base  = src.replace(/\.[a-z0-9]+$/i, '');
+    var cur   = (src.match(/\.([a-z0-9]+)$/i) || ['',''])[1].toLowerCase();
+    var queue = EXT.filter(function(e){ return e !== cur; });
     function next(){
-      i++;
-      if(i < EXT.length){ img.src = base + '.' + EXT[i]; return; }
+      if(queue.length){ img.src = base + '.' + queue.shift(); return; }
       img.remove();
       cell.classList.add('is-empty');
     }
