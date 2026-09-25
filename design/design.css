@@ -770,6 +770,12 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
 @media (hover:hover) and (pointer:fine){
   .dlogo:hover img{filter:none}
 }
+/* На тач-экране возврата цвета по наведению не будет никогда, а по два знака
+   в ряд они стоят не так плотно, как по четыре на десктопе, и за внимание
+   почти не дерутся — поэтому там логотипы сразу цветные. */
+@media (hover:none){
+  .dlogo img{filter:none}
+}
 /* подпись показывается только там, где файла логотипа ещё нет */
 .dlogo span{display:none;font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--navy-2);text-align:center;line-height:1.2}
 .dlogo.is-empty span{display:block}
