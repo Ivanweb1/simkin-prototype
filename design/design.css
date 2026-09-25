@@ -1304,14 +1304,21 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .doffers--three{grid-template-columns:repeat(2,minmax(0,1fr))}
   .doffers--three .doffer:last-child{grid-column:1 / -1}
 }
-/* ниже 820px колонка короче самой длинной подписи («Подробнее о промышленной
-   эргономике»), поэтому там кегль кнопки привязан к ширине окна: подпись
-   остаётся в одну строку, но уменьшается ровно настолько, чтобы влезть. */
-@media (max-width:820px){
+/* Ниже 1401px карточки идут в две колонки, и колонка становится вдвое уже
+   самой длинной подписи: чтобы удержать её в одну строку, кегль пришлось бы
+   опустить до 10,7px — нечитаемо. Поэтому подпись переносится, а высота
+   кнопки считается по содержимому. Прежнее правило вместо этого ужимало
+   кегль по ширине окна, но множитель был подобран так, что срабатывал только
+   ниже 476px: в диапазоне 761–820px подпись оставалась строкой шириной 359px
+   в колонке 300px и распирала страницу за правый край. */
+@media (max-width:1400px){
   .doffer__btn .dbtn{
-    height:56px;padding:0 14px;gap:6px;line-height:1.2;white-space:nowrap;
-    font-size:clamp(11.5px,3.15vw,15px);
+    white-space:normal;height:auto;min-height:56px;padding:12px 18px;
+    line-height:1.25;
   }
+}
+@media (max-width:820px){
+  .doffer__btn .dbtn{padding:12px 14px;gap:6px;font-size:14px}
   .doffer__btn .dbtn svg{width:16px;height:16px}
 }
 @media (max-width:760px){
