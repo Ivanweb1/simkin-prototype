@@ -1050,6 +1050,19 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .foot__bottom a{color:var(--navy-3);transition:color .2s var(--ease)}
 .d .foot__bottom a:hover{color:var(--brand)}
 
+/* Нижняя полоса в одну строку: плашка слева, соцсети справа. Ряд соцсетей
+   с подписями занимает 650px, плашке нужно 888px, а полоса шире 1328px не
+   бывает — вместе они не помещаются. Поэтому в строке соцсети идут одними
+   значками; название сети остаётся в подсказке и для чтения с экрана.
+   Ниже, где строка перестаёт помещаться, всё как раньше: друг под другом
+   и с подписями. */
+@media (min-width:1320px){
+  .d .foot__bar{grid-template-columns:auto auto;justify-content:space-between;gap:clamp(20px,2.4vw,40px)}
+  .d .soc{flex-wrap:nowrap;justify-content:flex-end}
+  .d .soc a{width:42px;padding:0;gap:0;justify-content:center}
+  .d .soc a span{display:none}
+}
+
 /* на узком экране текст плашки уже не строка — возвращаем карточку.
    Строка про запись к врачу занимает 910px в одну строку, поэтому таблетка
    живёт, пока нижняя полоса шире этого, — примерно до 1040px, дальше карточка */
