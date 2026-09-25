@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=137">
+<link rel="stylesheet" href="design.css?v=138">
 </head>
 <body class="d">
 
@@ -567,25 +567,21 @@
 <script src="../script.js?v=32"></script>
 
 <script>
-/* Логотипы клиентов: пробуем svg, затем png, jpg, webp. Если файла нет ни в
-   одном формате, ячейка переключается на текстовую подпись — блок остаётся
-   целым, пока логотипы не присланы. */
+/* Логотипы клиентов: если файла нет, ячейка показывает название набором,
+   и блок остаётся целым. Перебора расширений больше нет — src ведёт прямо
+   на существующий файл, а перебор на каждый недостающий знак давал по
+   четыре запроса и столько же 404 в консоли. Меняете формат файла —
+   поменяйте расширение в src. */
 (function(){
-  var EXT = ['svg','png','webp','jpg'];
   [].forEach.call(document.querySelectorAll('[data-logo]'), function(cell){
     var img = cell.querySelector('img');
     if(!img){ cell.classList.add('is-empty'); return; }
-    var src   = img.getAttribute('src');
-    var base  = src.replace(/\.[a-z0-9]+$/i, '');
-    var cur   = (src.match(/\.([a-z0-9]+)$/i) || ['',''])[1].toLowerCase();
-    var queue = EXT.filter(function(e){ return e !== cur; });
-    function next(){
-      if(queue.length){ img.src = base + '.' + queue.shift(); return; }
+    function fallback(){
       img.remove();
       cell.classList.add('is-empty');
     }
-    img.addEventListener('error', next);
-    if(img.complete && img.naturalWidth === 0) next();
+    img.addEventListener('error', fallback);
+    if(img.complete && img.naturalWidth === 0) fallback();
   });
 })();
 
