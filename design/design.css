@@ -754,8 +754,10 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
 .dlogo img{
   max-width:78%;max-height:var(--logo-h,38px);width:auto;height:auto;object-fit:contain;
   /* приглушение одним только grayscale делало светлые знаки (Kraft Foods)
-     почти невидимыми, поэтому обесцвечивание идёт с добором контраста */
-  filter:grayscale(1) contrast(1.25) brightness(.9);
+     почти невидимыми, поэтому обесцвечивание идёт с добором контраста.
+     Знак со сплошной заливкой во всю плашку (овал Ford) от этого, наоборот,
+     чернеет и перетягивает ряд, поэтому тон тоже настраивается на ячейке */
+  filter:var(--logo-tone,grayscale(1) contrast(1.25) brightness(.9));
   transition:filter .25s var(--ease);
 }
 .dlogo:hover img{filter:none}
