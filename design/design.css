@@ -117,46 +117,38 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
   .dhero__media::after{display:none}
 }
 /* ---------------------------------------------------------------------
-   ШАПКА: ступенчатое сжатие вместо раннего бургера.
-   Семь пунктов меню занимают ~960px при кегле 14,5px. Прототип прятал их
-   уже на 1365px, поэтому на обычном ноутбуке (1920x1200 при масштабе 150%
-   окно отдаёт браузеру 1280 CSS-пикселей) меню исчезало, хотя место было.
-   Ниже шапка отдаёт место меню постепенно — кегль, отступы меню, отступы
-   шапки, логотип и кнопка, — и горизонтальное меню доживает до 1224px.
-   Границы ступеней посчитаны от просвета: меню растягивается, пока до
-   логотипа слева и до кнопки справа остаётся не меньше 30px. На нижней
-   границе каждой ступени ровно этот просвет, дальше включается следующая.
+   ШАПКА: плавное сжатие вместо ступеней.
+   Семь пунктов меню занимают ~1030px при кегле 15px. Прототип прятал их уже
+   на 1365px, поэтому на обычном ноутбуке (1920x1200 при масштабе 150% окно
+   отдаёт браузеру 1280 CSS-пикселей) меню исчезало, хотя место было.
+   Сжатие ступенями эту беду чинило, но плодило другую: на каждой ступени
+   кегль падал скачком, меню разом становилось уже, и просвет прыгал с 30
+   до 65px — почти весь диапазон место простаивало.
+   Поэтому кегль, зазоры меню, отступы шапки, логотип и кнопка меняются
+   непрерывно между 1224 и 1506px: наверху диапазона значения как были,
+   внизу — минимально допустимые. Просвет до логотипа и до кнопки при этом
+   держится около 30px на всей ширине, а не только на границе.
+   Ниже 1224px место кончается честно — там бургер.
    --------------------------------------------------------------------- */
-@media (max-width:1505px){
-  .d .mainnav{gap:16px}
-  .d .navitem > a{font-size:14.5px}
-}
-@media (max-width:1440px){
-  .d .hdr{gap:22px}
-  .d .mainnav{gap:13px}
-  .d .navitem > a{font-size:14px}
-}
-@media (max-width:1393px){
-  .d .hdr{gap:18px;padding-left:28px;padding-right:28px}
-  .d .mainnav{gap:11px}
-  .d .navitem > a{font-size:13.5px}
-  .d .logo img{height:40px}
-  .d .hdr__cta .btn{height:44px;padding:0 18px;font-size:14px}
-}
-@media (max-width:1293px){
-  .d .hdr{gap:14px;padding-left:22px;padding-right:22px}
-  .d .mainnav{gap:9px}
-  .d .navitem > a{font-size:13px}
-  .d .logo img{height:38px}
-  .d .hdr__cta .btn{height:42px;padding:0 15px;font-size:13.5px}
-}
-/* до 1240px меню остаётся горизонтальным: перекрываем правило прототипа,
-   которое прячет его уже на 1365px */
 @media (min-width:1224px){
-  .d .mainnav{display:flex}
+  .d .mainnav{display:flex;gap:clamp(9px, calc(-47.426px + 4.6099vw), 22px)}
   .d .burger{display:none}
-  .d .hdr{justify-content:flex-start}
+  .d .hdr{
+    justify-content:flex-start;
+    gap:clamp(14px, calc(-46.766px + 4.9645vw), 28px);
+    padding-left:clamp(22px, calc(-56.128px + 6.3830vw), 40px);
+    padding-right:clamp(22px, calc(-56.128px + 6.3830vw), 40px);
+  }
+  .d .navitem > a{font-size:clamp(13px, calc(4.319px + 0.7092vw), 15px)}
+  .d .logo img{height:clamp(38px, calc(11.957px + 2.1277vw), 44px)}
+  .d .hdr__cta .btn{
+    height:clamp(42px, calc(15.957px + 2.1277vw), 48px);
+    padding-left:clamp(15px, calc(-24.064px + 3.1915vw), 24px);
+    padding-right:clamp(15px, calc(-24.064px + 3.1915vw), 24px);
+    font-size:clamp(13.5px, calc(6.989px + 0.5319vw), 15px);
+  }
 }
+
 @media (max-width:900px){
   .d .hdr{height:68px}
   .d .logo img{height:36px}
