@@ -1751,7 +1751,9 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 #sequence{--split:26%;--gap-flow:clamp(32px,4vw,72px);--meta:clamp(150px,15vw,240px)}
 .dk-seqflow{margin-top:clamp(36px,4vw,60px)}
 .dflow__rail--labels{max-width:none}
-.dflow__rail--labels button{display:flex;align-items:center;gap:14px}
+/* кнопка не наследует шрифт страницы сама — без font:inherit подписи
+   выходили системным шрифтом с засечками */
+.dflow__rail--labels button{display:flex;align-items:center;gap:14px;font:inherit}
 .dflow__rail--labels button span{
   font-size:14.5px;font-weight:500;color:var(--navy-3);white-space:nowrap;transition:color .35s var(--ease);
 }
