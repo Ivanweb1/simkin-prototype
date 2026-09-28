@@ -46,6 +46,8 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .d .sub a{color:var(--navy-2)}
 .d .sub a.sub__head{color:var(--navy)}
 .d .sub a:hover{background:var(--tint);color:var(--brand)}
+/* пункт после двух направлений — отделён линией: чек-апы не третье направление */
+.d .sub a.sub__sep{margin-top:6px;padding-top:12px;border-top:1px solid var(--d-line);border-radius:0 0 var(--r-sm) var(--r-sm)}
 /* обводкой, а не заливкой: главная синяя кнопка страницы — в финальном блоке */
 .d .hdr__cta .btn{
   height:48px;padding:0 24px;font-size:15px;font-weight:600;
@@ -2125,3 +2127,41 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 @keyframes dkFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.dk-prog--live .dk-mod.is-on{animation:none}}
 
+
+/* ================= «ДЛЯ КОМПАНИЙ»: ДВА НАПРАВЛЕНИЯ ================= */
+/* Офисная и промышленная эргономика — парой; строки карточек выровнены
+   по общей сетке, как было у трёх (плашки «что это даёт» на одной линии) */
+@media (min-width:761px){
+  .doffers--two{grid-template-rows:repeat(5,auto);margin-top:clamp(36px,3.6vw,52px)}
+  .doffers--two .doffer{display:grid;grid-template-rows:subgrid;grid-row:span 5;align-content:start}
+  .doffers--two .doffer__btn{margin-top:0;align-self:end}
+  .doffers--two .doffer h3{max-width:none}
+}
+@media (max-width:760px){.doffers--two{margin-top:clamp(36px,3.6vw,52px)}}
+.doffers--two .doffer__btn .dbtn{white-space:normal;height:auto;min-height:56px;padding:12px 18px;line-height:1.25}
+@media (min-width:1101px){.doffers--two .doffer__btn .dbtn{width:auto;min-width:340px}}
+
+/* комплексная программа для офиса и производства — не третье направление,
+   а пояснение под парой карточек */
+.dco-both{
+  display:flex;align-items:center;gap:16px;margin-top:16px;padding:20px 26px;border-radius:22px;
+  background:#fff;border:1px dashed rgba(26,95,224,.35);
+  font-size:clamp(16.5px,1.3vw,18px);font-weight:500;line-height:1.5;color:var(--navy);
+}
+.dco-both__ico{flex:0 0 auto;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--tint);color:var(--brand)}
+.dco-both__ico svg{width:24px;height:24px}
+
+/* чек-апы — небольшой отдельный блок со ссылкой на сайт клиники */
+.dcheck{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(18px,2.4vw,32px);align-items:center;
+  margin-top:clamp(40px,4vw,56px);padding:clamp(22px,2.4vw,32px) clamp(22px,2.8vw,40px);border-radius:28px;background:#fff;
+  box-shadow:0 2px 4px rgba(35,43,62,.04),0 14px 34px rgba(35,43,62,.06);
+}
+.dcheck h3{font-size:clamp(20px,1.7vw,24px);font-weight:600;line-height:1.2;letter-spacing:-.022em;color:var(--navy)}
+.dcheck p{margin-top:8px;font-size:16px;line-height:1.55;color:var(--navy-2);max-width:48em}
+.dcheck__btn{height:52px;padding:0 22px;font-size:15.5px}
+@media (max-width:760px){
+  .dco-both{align-items:flex-start;padding:18px 18px}
+  .dcheck{grid-template-columns:auto minmax(0,1fr);border-radius:22px}
+  .dcheck__btn{grid-column:1 / -1;width:100%}
+}

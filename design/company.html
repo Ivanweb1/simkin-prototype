@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=164">
+<link rel="stylesheet" href="design.css?v=166">
 </head>
 <body class="d dco">
 
@@ -22,18 +22,10 @@
     <nav class="mainnav">
       <div class="navitem">
         <a href="company.html" class="is-current" aria-current="page">Для компаний <i></i></a>
-        <div class="sub sub--groups">
-          <div class="sub__group">
-            <a href="company.html#offers" class="sub__head">Офисная эргономика</a>
-            <a href="../audit.html">Аудит и консалтинг</a>
-            <a href="company.html#offers">Корпоративная версия курса</a>
-            <a href="../program.html">Корпоративная программа</a>
-            <a href="../workplace.html">Подбор и организация рабочих мест</a>
-            <a href="company.html#offers">Чек-апы</a>
-          </div>
-          <div class="sub__group">
-            <a href="../industrial.html" class="sub__head">Промышленная эргономика</a>
-          </div>
+        <div class="sub">
+          <a href="company.html#offers" class="sub__head">Офисная эргономика</a>
+          <a href="../industrial.html" class="sub__head">Промышленная эргономика</a>
+          <a href="company.html#checkups" class="sub__sep">Остеопатические чек-апы сотрудников</a>
         </div>
       </div>
       <div class="navitem">
@@ -63,12 +55,8 @@
         <a href="company.html">Для компаний</a>
         <div class="mnav__sub">
           <a href="company.html#offers" class="mnav__head">Офисная эргономика</a>
-          <a href="../audit.html">Аудит и консалтинг</a>
-          <a href="company.html#offers">Корпоративная версия курса</a>
-          <a href="../program.html">Корпоративная программа</a>
-          <a href="../workplace.html">Подбор и организация рабочих мест</a>
-          <a href="company.html#offers">Чек-апы</a>
           <a href="../industrial.html" class="mnav__head">Промышленная эргономика</a>
+          <a href="company.html#checkups">Остеопатические чек-апы сотрудников</a>
         </div>
       </div>
       <div class="mnav__item">
@@ -120,9 +108,10 @@
 </section>
 
 <!-- ============ БЛОК 2. РЕШЕНИЯ ДЛЯ КОМПАНИЙ ============ -->
-<!-- Три направления равнозначны и идут одним рядом карточек. Форматы работы
-     внутри направлений здесь намеренно не раскрываются: страница остаётся
-     входной, подробности живут на страницах направлений.
+<!-- Два направления — офисная и промышленная эргономика — идут парой
+     карточек; комплексная программа для компаний с офисом и производством
+     не отдельное направление, а фраза под ними. Чек-апы — небольшим блоком
+     со ссылкой на сайт клиники. Подробности — на страницах направлений.
      Якорь #offers — из меню шапки и подвала. -->
 <section class="dsec dsec--tint" id="offers">
   <div class="dwrap">
@@ -131,13 +120,13 @@
       <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Решения <span class="dh2__soft">для компаний</span></h2>
     </div>
 
-    <div class="doffers doffers--three">
+    <div class="doffers doffers--two">
       <article class="doffer" data-rv>
         <div class="doffer__top">
           <span class="dcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="4.4" width="18.4" height="11.4" rx="1.8"/><path d="M8.4 19.6h7.2M12 15.8v3.8"/></svg></span>
           <span class="dcard__n">01</span>
         </div>
-        <h3>Офисная<br>эргономика</h3>
+        <h3>Офисная эргономика</h3>
         <p>Помогаем сотрудникам организовать рабочее место и&nbsp;рабочую позу так, чтобы меньше уставать, комфортнее себя чувствовать, сохранять работоспособность в&nbsp;течение дня и&nbsp;больше сил после работы.</p>
         <div class="dgain">
           <span class="dgain__t">Для компании это означает</span>
@@ -148,7 +137,7 @@
           </ul>
         </div>
         <div class="doffer__btn">
-          <a href="#" class="dbtn dbtn--light">Подробнее об&nbsp;офисной эргономике
+          <a href="company.html#offers" class="dbtn dbtn--light">Подробнее об&nbsp;офисной эргономике
             <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
         </div>
       </article>
@@ -174,26 +163,20 @@
         </div>
       </article>
 
-      <article class="doffer" data-rv style="--d:.16s">
-        <div class="doffer__top">
-          <span class="dcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 12.4h4l1.6-3.6 2.8 7.2 2-5 1.4 3.2h5.8"/><path d="M20.4 8.6a4 4 0 0 0-7.2-2.2 4 4 0 0 0-7.2 2.2"/></svg></span>
-          <span class="dcard__n">03</span>
-        </div>
-        <h3>Медицинские чек-апы сотрудников</h3>
-        <p>Программы оценки здоровья сотрудников с&nbsp;участием врачей Клиники Доктора Симкина.</p>
-        <div class="dgain">
-          <span class="dgain__t">Помогают выявлять</span>
-          <ul class="dgain__list">
-            <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>проблемы опорно-двигательной системы</li>
-            <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>другие факторы, которые могут влиять на&nbsp;самочувствие, работоспособность и&nbsp;качество жизни сотрудников</li>
-          </ul>
-        </div>
-        <div class="doffer__btn">
-          <a href="#" class="dbtn dbtn--light">Подробнее о&nbsp;медицинских программах
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
-        </div>
-      </article>
     </div>
+
+    <p class="dco-both" data-rv><span class="dco-both__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="12" r="5.5"/><circle cx="15.5" cy="12" r="5.5"/></svg></span>Если у&nbsp;компании есть и&nbsp;офисные, и&nbsp;производственные рабочие места, работа может объединять оба направления в&nbsp;одну комплексную программу.</p>
+
+    <!-- Чек-апы — медицинское направление клиники, отдельной страницы на
+         Simkin.ru нет: небольшой блок со ссылкой на DoctorSimkin.ru. -->
+    <aside class="dcheck" id="checkups" data-rv>
+      <span class="dcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 12.4h4l1.6-3.6 2.8 7.2 2-5 1.4 3.2h5.8"/><path d="M20.4 8.6a4 4 0 0 0-7.2-2.2 4 4 0 0 0-7.2 2.2"/></svg></span>
+      <div class="dcheck__txt">
+        <h3>Остеопатические чек-апы сотрудников</h3>
+        <p>Программы оценки здоровья сотрудников с&nbsp;участием врачей Клиники Доктора Симкина. Это медицинское направление клиники&nbsp;– подробности и&nbsp;запись на&nbsp;её сайте.</p>
+      </div>
+      <a href="https://doctorsimkin.ru" target="_blank" rel="noopener" class="dbtn dbtn--light dcheck__btn">DoctorSimkin.ru<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13 13 5M6.5 5H13v6.5"/></svg></a>
+    </aside>
   </div>
 </section>
 
@@ -489,12 +472,9 @@
       <div>
         <h4>Для компаний</h4>
         <ul>
-          <li><a href="../audit.html">Аудит и консалтинг</a></li>
-          <li><a href="company.html#offers">Корпоративная версия курса</a></li>
-          <li><a href="../program.html">Корпоративная программа</a></li>
-          <li><a href="../workplace.html">Подбор рабочих мест</a></li>
+          <li><a href="company.html#offers">Офисная эргономика</a></li>
           <li><a href="../industrial.html">Промышленная эргономика</a></li>
-          <li><a href="company.html#offers">Чек-апы</a></li>
+          <li><a href="company.html#checkups">Остеопатические чек-апы</a></li>
         </ul>
       </div>
 
