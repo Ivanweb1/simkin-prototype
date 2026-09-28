@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=161">
+<link rel="stylesheet" href="design.css?v=163">
 </head>
 <body class="d dco dcrs">
 
@@ -267,8 +267,11 @@
 </section>
 
 <!-- ============ БЛОК 5. РАБОЧЕЕ МЕСТО – ЭТО СИСТЕМА ============ -->
-<!-- Слева тезис крупно, справа пояснение. Элементы рабочего места — набором
-     плашек, связанных в одну систему; «всё или ничего» — выводом внизу. -->
+<!-- Слева тезис и пояснение, справа — схема системы: в центре рабочая поза,
+     вокруг элементы рабочего места, каждый связан с центром, все — на одном
+     кольце. Элемент можно «выключить» нажатием: его связь рвётся, и центр
+     показывает, что поза нарушается — так видно «всё или ничего». Логика —
+     [data-sysmap] в script.js; без скрипта схема просто статична. -->
 <section class="dsec" id="system">
   <div class="dwrap">
     <div class="dk-sys">
@@ -276,14 +279,40 @@
         <span class="deyebrow" data-rv>Системный подход</span>
         <h2 class="dh2" data-rv style="--d:.06s">Рабочее место&nbsp;– <span class="dh2__soft">это система</span></h2>
         <p class="dk-sys__lead" data-rv style="--d:.12s">Можно правильно настроить почти всё&nbsp;– и&nbsp;всё равно продолжать перегружать тело из-за всего одного элемента, который меняет рабочую позу.</p>
-      </div>
-      <div class="dk-sys__body" data-rv style="--d:.12s">
-        <div class="dk-parts" aria-label="Элементы рабочего места">
-          <span>Кресло</span><span>Стол</span><span>Монитор</span><span>Клавиатура</span><span>Мышь</span><span>Ноутбук</span><span>Документы</span><span>Освещение</span><span class="dk-parts__more">и&nbsp;другие элементы</span>
+        <div class="dk-sys__body" data-rv style="--d:.16s">
+          <p>Кресло, стол, монитор, клавиатура, мышь, ноутбук, документы, освещение и&nbsp;другие элементы работают не&nbsp;отдельно, а&nbsp;вместе.</p>
+          <p>Поэтому курс построен по&nbsp;системному принципу: последовательно проверить все значимые элементы и&nbsp;настроить их&nbsp;так, чтобы они поддерживали оптимальную рабочую позу.</p>
         </div>
-        <p>Кресло, стол, монитор, клавиатура, мышь, ноутбук, документы, освещение и&nbsp;другие элементы работают не&nbsp;отдельно, а&nbsp;вместе.</p>
-        <p>Поэтому курс построен по&nbsp;системному принципу: последовательно проверить все значимые элементы и&nbsp;настроить их&nbsp;так, чтобы они поддерживали оптимальную рабочую позу.</p>
       </div>
+      <figure class="dk-map" data-sysmap data-rv style="--d:.1s">
+        <div class="dk-map__stage">
+        <svg class="dk-map__lines" viewBox="0 0 100 100" aria-hidden="true" preserveAspectRatio="none">
+          <circle cx="50" cy="50" r="39" class="dk-map__ring"/>
+          <line x1="50" y1="50" x2="50.00" y2="11.00" data-link="0"/>
+          <line x1="50" y1="50" x2="77.58" y2="22.42" data-link="1"/>
+          <line x1="50" y1="50" x2="89.00" y2="50.00" data-link="2"/>
+          <line x1="50" y1="50" x2="77.58" y2="77.58" data-link="3"/>
+          <line x1="50" y1="50" x2="50.00" y2="89.00" data-link="4"/>
+          <line x1="50" y1="50" x2="22.42" y2="77.58" data-link="5"/>
+          <line x1="50" y1="50" x2="11.00" y2="50.00" data-link="6"/>
+          <line x1="50" y1="50" x2="22.42" y2="22.42" data-link="7"/>
+        </svg>
+        <div class="dk-map__core">
+          <span class="dk-map__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2.4"/><path d="M12 6.8v13M7.2 10h9.6M7.6 14h8.8M8.2 18h7.6"/></svg></span>
+          <b>Оптимальная рабочая поза</b>
+          <span class="dk-map__state" aria-live="polite"></span>
+        </div>
+        <button type="button" class="dk-map__node" style="left:50.00%;top:11.00%" data-node="0" aria-pressed="true">Кресло</button>
+        <button type="button" class="dk-map__node" style="left:77.58%;top:22.42%" data-node="1" aria-pressed="true">Стол</button>
+        <button type="button" class="dk-map__node" style="left:89.00%;top:50.00%" data-node="2" aria-pressed="true">Монитор</button>
+        <button type="button" class="dk-map__node" style="left:77.58%;top:77.58%" data-node="3" aria-pressed="true">Клавиатура</button>
+        <button type="button" class="dk-map__node" style="left:50.00%;top:89.00%" data-node="4" aria-pressed="true">Мышь</button>
+        <button type="button" class="dk-map__node" style="left:22.42%;top:77.58%" data-node="5" aria-pressed="true">Ноутбук</button>
+        <button type="button" class="dk-map__node" style="left:11.00%;top:50.00%" data-node="6" aria-pressed="true">Документы</button>
+        <button type="button" class="dk-map__node" style="left:22.42%;top:22.42%" data-node="7" aria-pressed="true">Освещение</button>
+        </div>
+        <figcaption class="dk-map__hint">Нажмите на&nbsp;элемент, чтобы «убрать» его из&nbsp;системы</figcaption>
+      </figure>
     </div>
     <div class="dk-allor" data-rv>
       <span class="dk-allor__t">«Всё или ничего»</span>
@@ -718,7 +747,7 @@
   </div>
 </div>
 
-<script src="../script.js?v=36"></script>
+<script src="../script.js?v=37"></script>
 
 <script>
 /* Пошаговое чтение — «Сначала понимание» и «Что отличает этот курс» (тот же

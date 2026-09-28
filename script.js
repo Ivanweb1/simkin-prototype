@@ -381,6 +381,28 @@ document.querySelectorAll('[data-tabs]').forEach(function(box){
   show(0);
 });
 
+// Схема «рабочее место — это система» [data-sysmap]: элемент выключается
+// и включается нажатием. Выключенный рвёт свою связь с центром, а центр
+// показывает, что поза нарушается, — пока выключен хотя бы один элемент.
+document.querySelectorAll('[data-sysmap]').forEach(function(map){
+  var state = map.querySelector('.dk-map__state');
+  function sync(){
+    var off = map.querySelectorAll('.dk-map__node.is-off').length;
+    map.classList.toggle('is-broken', off > 0);
+    if (state) state.textContent = off ? (off === 1 ? 'нарушается из-за одного элемента' : 'нарушается') : '';
+  }
+  map.querySelectorAll('[data-node]').forEach(function(node){
+    var n = node.getAttribute('data-node');
+    var link = map.querySelector('[data-link="' + n + '"]');
+    node.addEventListener('click', function(){
+      var off = node.classList.toggle('is-off');
+      node.setAttribute('aria-pressed', off ? 'false' : 'true');
+      if (link) link.classList.toggle('is-off', off);
+      sync();
+    });
+  });
+});
+
 // финальная форма: выбор канала связи показывает поле под этот канал
 document.querySelectorAll('[data-channels]').forEach(function(form){
   var input = form.querySelector('[data-contact]');
