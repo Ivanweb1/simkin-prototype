@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=148">
+<link rel="stylesheet" href="design.css?v=149">
 </head>
 <body class="d dco">
 
@@ -361,10 +361,9 @@
 <!-- Все отзывы компаний живут здесь, отдельной страницы нет. Якорь #reviews —
      цель ссылок «Все отзывы» со всего сайта; #review-<id> — цель логотипов
      на главной: карточка подсвечивается, и скан сразу открывается крупно.
-     Сканы: design/assets/reviews/<id>.jpg (крупно) и <id>-sm.jpg (превью).
-     Карточка показывается, когда с неё снят атрибут hidden: снимать его
-     вместе с появлением файлов, иначе браузер запрашивал бы несуществующие
-     превью и сыпал 404 в консоль. Превью подставляет скрипт. -->
+     Сканы: design/assets/reviews/<id>.jpg (крупно) и <id>-sm.jpg (превью
+     шириной 600px). Новый отзыв — два файла и карточка с тем же <id>;
+     превью подставляет скрипт. Порядок — от новых к старым. -->
 <section class="dsec dsec--tint" id="reviews">
   <div class="dwrap">
     <div class="dhead">
@@ -373,57 +372,65 @@
     </div>
 
     <div class="drevs" data-reviews>
-      <button type="button" class="drev" id="review-gazprom-pererabotka" data-rev="gazprom-pererabotka" hidden>
+      <button type="button" class="drev" id="review-gazprom-pererabotka" data-rev="gazprom-pererabotka">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">Газпром переработка</span><span class="drev__meta">Тренинг «Эргономика рабочих мест», 2022</span>
       </button>
-      <button type="button" class="drev" id="review-rosnano" data-rev="rosnano" hidden>
+      <button type="button" class="drev" id="review-citibank" data-rev="citibank">
+        <span class="drev__ph"><img alt="" decoding="async"></span>
+        <span class="drev__name">Citibank</span><span class="drev__meta">Вебинар для сотрудников, 2021</span>
+      </button>
+      <button type="button" class="drev" id="review-sanofi" data-rev="sanofi">
+        <span class="drev__ph"><img alt="" decoding="async"></span>
+        <span class="drev__name">Sanofi</span><span class="drev__meta">Обучение промышленной эргономике, 2020</span>
+      </button>
+      <button type="button" class="drev" id="review-rosnano" data-rev="rosnano">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">РОСНАНО</span><span class="drev__meta">Семинар по&nbsp;эргономике, 2018</span>
       </button>
-      <button type="button" class="drev" id="review-nordic-council" data-rev="nordic-council" hidden>
+      <button type="button" class="drev" id="review-nordic-council" data-rev="nordic-council">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">Информационное бюро Совета министров Северных стран</span><span class="drev__meta">Аудит, обучение и&nbsp;настройка рабочих мест, 2013</span>
       </button>
-      <button type="button" class="drev" id="review-inter-rao" data-rev="inter-rao" hidden>
+      <button type="button" class="drev" id="review-inter-rao" data-rev="inter-rao">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">Интер РАО</span><span class="drev__meta">Консультации при создании нового офиса, 2012</span>
       </button>
-      <button type="button" class="drev" id="review-deutsche-bank" data-rev="deutsche-bank" hidden>
+      <button type="button" class="drev" id="review-deutsche-bank" data-rev="deutsche-bank">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">Deutsche Bank</span><span class="drev__meta">Тренинги и&nbsp;консультации, 2010</span>
       </button>
-      <button type="button" class="drev" id="review-citibank" data-rev="citibank" hidden>
+      <button type="button" class="drev" id="review-deloitte" data-rev="deloitte">
         <span class="drev__ph"><img alt="" decoding="async"></span>
-        <span class="drev__name">Citibank</span><span class="drev__meta">Онлайн-обучение</span>
+        <span class="drev__name">Deloitte</span><span class="drev__meta">Обучение эргономике, 2007</span>
       </button>
-      <button type="button" class="drev" id="review-deloitte" data-rev="deloitte" hidden>
-        <span class="drev__ph"><img alt="" decoding="async"></span>
-        <span class="drev__name">Deloitte</span><span class="drev__meta">Корпоративное обучение</span>
-      </button>
-      <button type="button" class="drev" id="review-sanofi" data-rev="sanofi" hidden>
-        <span class="drev__ph"><img alt="" decoding="async"></span>
-        <span class="drev__name">Sanofi</span><span class="drev__meta">Обучение промышленной эргономике</span>
-      </button>
-      <button type="button" class="drev" id="review-alcoa" data-rev="alcoa" hidden>
+      <button type="button" class="drev" id="review-alcoa" data-rev="alcoa">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">Алкоа Металлург Рус</span><span class="drev__meta">Тренинг по&nbsp;основам эргономики, 2007</span>
       </button>
-      <button type="button" class="drev" id="review-georeconstruction" data-rev="georeconstruction" hidden>
+      <button type="button" class="drev" id="review-georeconstruction" data-rev="georeconstruction">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">Геореконструкция-Фундаментпроект</span><span class="drev__meta">Обучение эргономике офиса, 2007</span>
       </button>
-      <button type="button" class="drev" id="review-ford" data-rev="ford" hidden>
+      <button type="button" class="drev" id="review-ford" data-rev="ford">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">Ford</span><span class="drev__meta">Тренинг по&nbsp;эргономике для специалистов, 2006</span>
       </button>
-      <button type="button" class="drev" id="review-kraft-foods" data-rev="kraft-foods" hidden>
+      <button type="button" class="drev" id="review-kraft-foods" data-rev="kraft-foods">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">Kraft Foods</span><span class="drev__meta">Тренинги и&nbsp;консалтинг, 2005</span>
       </button>
-      <button type="button" class="drev" id="review-restec" data-rev="restec" hidden>
+      <button type="button" class="drev" id="review-restec" data-rev="restec">
         <span class="drev__ph"><img alt="" decoding="async"></span>
         <span class="drev__name">ВО «Рестэк»</span><span class="drev__meta">Тренинги по&nbsp;эргономике, 2005</span>
+      </button>
+      <button type="button" class="drev" id="review-delta-telecom" data-rev="delta-telecom">
+        <span class="drev__ph"><img alt="" decoding="async"></span>
+        <span class="drev__name">Дельта Телеком</span><span class="drev__meta">Семинар по&nbsp;эргономике офиса, 2004</span>
+      </button>
+      <button type="button" class="drev" id="review-chudovo-rws" data-rev="chudovo-rws">
+        <span class="drev__ph"><img alt="" decoding="async"></span>
+        <span class="drev__name">Чудово-RWS</span><span class="drev__meta">Семинар «Удобный офис», 2004</span>
       </button>
     </div>
   </div>
@@ -598,7 +605,7 @@
   </div>
 </div>
 
-<script src="../script.js?v=33"></script>
+<script src="../script.js?v=34"></script>
 
 <script>
 /* Доводы: активен тот, что пересёк линию чтения. Никакого перехвата скролла —

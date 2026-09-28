@@ -244,6 +244,7 @@ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-m
       '<button class="modal__x" data-close aria-label="Закрыть">&times;</button>' +
       '<div class="drv__head"><span class="drv__name" id="drvName"></span><span class="drv__meta"></span></div>' +
       '<div class="drv__sheet"><img alt=""></div>' +
+      '<a class="drv__full" target="_blank" rel="noopener">Открыть скан в&nbsp;полном размере</a>' +
       '<div class="drv__nav"><button type="button" data-step="-1">' + arrowL + 'Предыдущий</button>' +
       '<button type="button" data-step="1">Следующий' + arrowR + '</button></div>' +
     '</div>';
@@ -253,6 +254,7 @@ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-m
   var vMeta = viewer.querySelector('.drv__meta');
   var vImg  = viewer.querySelector('.drv__sheet img');
   var vNav  = viewer.querySelector('.drv__nav');
+  var vFull = viewer.querySelector('.drv__full');
   var cur = null;
 
   function shown(){ return cards.filter(function(c){ return !c.hidden; }); }
@@ -262,7 +264,7 @@ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-m
     var meta = card.querySelector('.drev__meta');
     vName.textContent = name;
     vMeta.textContent = meta ? meta.textContent : '';
-    vImg.src = DIR + card.getAttribute('data-rev') + '.jpg';
+    vImg.src = vFull.href = DIR + card.getAttribute('data-rev') + '.jpg';
     vImg.alt = 'Отзыв компании ' + name;
     vNav.hidden = shown().length < 2;
     viewer.classList.add('is-open');
