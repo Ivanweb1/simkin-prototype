@@ -1564,6 +1564,16 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 @media (min-width:861px){
   .dco .dhead--split{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4.5vw,72px)}
 }
+/* Шапки секций стоят на сетке карточек «Решения для компаний»: там, где
+   карточки идут тремя колонками, заголовок занимает две, а пояснение
+   начинается ровно по левому краю третьей карточки. Ниже 1401px карточек
+   две, и в половину ширины заголовки рвались бы на 3–4 строки — там
+   остаётся пропорция 1.5 : 1. */
+@media (min-width:1401px){
+  .dco .dhead--split{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .dco .dhead--split > :first-child{grid-column:span 2}
+  .dco .dhead--split .dhead__note{max-width:none}
+}
 .dco .dh2__soft{display:block}
 /* исключение для коротких заголовков: если весь заголовок влезает в строку,
    переносить хвост не нужно — рвать посередине там нечего. На узких экранах
