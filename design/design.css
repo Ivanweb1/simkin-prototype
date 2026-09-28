@@ -1077,6 +1077,17 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .d .soc a{width:42px;padding:0;gap:0;justify-content:center}
   .d .soc a span{display:none}
 }
+/* Пока подвал в пять колонок, нижняя полоса стоит на той же сетке:
+   плашка клиники занимает первые четыре, соцсети начинаются ровно по
+   левому краю колонки «Контакты». Колонки и зазор — как у .foot выше. */
+@media (min-width:1281px){
+  .d .foot__bar{
+    grid-template-columns:minmax(0,1.15fr) repeat(3,minmax(0,1fr)) minmax(0,1.05fr);
+    gap:clamp(22px,2.2vw,40px);justify-content:stretch;
+  }
+  .d .clinic{grid-column:1 / 5;justify-self:start}
+  .d .soc{grid-column:5;justify-content:flex-start}
+}
 
 /* на узком экране текст плашки уже не строка — возвращаем карточку.
    Строка про запись к врачу занимает 823px в одну строку, поэтому таблетка
