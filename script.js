@@ -133,11 +133,43 @@ document.querySelectorAll('[data-topic]').forEach(function(t){
   });
 });
 
-// отправка формы ведёт на «Спасибо»; в адресе только источник, без данных из полей
+// отправка формы ведёт на «Спасибо»; в адресе только источник, без данных из полей.
+// Страница «Спасибо» одна, в корне: из папки design/ к ней ведёт ../
 document.querySelectorAll('form[data-thanks]').forEach(function(f){
   f.addEventListener('submit', function(e){
     e.preventDefault();
-    location.href = 'thanks.html?from=' + encodeURIComponent(f.getAttribute('data-thanks'));
+    var base = /\/design\//.test(location.pathname) ? '../' : '';
+    location.href = base + 'thanks.html?from=' + encodeURIComponent(f.getAttribute('data-thanks'));
+  });
+});
+
+// MAX: прямой ссылки на чат по номеру у мессенджера нет, контакт ищут по
+// телефону. Поэтому ссылка открывает окно с номером и кнопками «Скопировать»
+// и «Открыть MAX». Без скрипта ссылка просто ведёт в веб-версию MAX.
+document.querySelectorAll('[data-max]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var m = document.getElementById('maxinfo');
+    if (!m) return;
+    e.preventDefault();
+    mnav.classList.remove('is-open');
+    burger.classList.remove('is-on');
+    m.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click', function(){
+    var text = b.getAttribute('data-copy');
+    var label = b.textContent;
+    function done(){ b.textContent = 'Номер скопирован'; setTimeout(function(){ b.textContent = label; }, 2000); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function(){});
+    } else {
+      var t = document.createElement('textarea');
+      t.value = text; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); done(); } catch (err) {}
+      t.remove();
+    }
   });
 });
 
@@ -145,9 +177,10 @@ document.querySelectorAll('form[data-thanks]').forEach(function(f){
 var thanksBox = document.querySelector('[data-thanks-page]');
 if (thanksBox) {
   var variants = {
-    discuss: ['Заявка отправлена', 'Свяжемся, чтобы обсудить задачу. Ответим в течение 00 часов.'],
-    course: ['Заявка на курс принята', 'Пришлём подробности о курсе и выбранной версии. Ответим в течение 00 часов.'],
-    contacts: ['Сообщение отправлено', 'Ответим на обращение в течение 00 часов.']
+    discuss: ['Заявка отправлена', 'Свяжемся с вами, чтобы обсудить задачу.'],
+    company: ['Заявка отправлена', 'Свяжемся с вами, уточним задачу и предложим подходящий формат работы.'],
+    course: ['Заявка на курс принята', 'Пришлём подробности о курсе и выбранной версии.'],
+    contacts: ['Сообщение отправлено', 'Спасибо за обращение – скоро ответим.']
   };
   var v = variants[new URLSearchParams(location.search).get('from')] || variants.contacts;
   thanksBox.querySelector('h1').textContent = v[0];
@@ -187,6 +220,119 @@ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-m
   // страховка: вкладка открыта в фоне или наблюдатель не сработал — показываем всё
   setTimeout(function(){ if(!fired) showAll(); }, 1600);
 }
+
+// Отзывы компаний: превью-карточки .drev[data-rev] и просмотр скана крупно.
+// Скан лежит в design/assets/reviews/<id>.jpg, превью — <id>-sm.jpg; превью
+// подставляется только карточкам без hidden (для скрытых файла ещё нет).
+// Карточка, у которой превью всё же не загрузилось, скрывается; если скрыты
+// все — скрывается и блок, и ссылки на него. Адрес вида #review-<id> (с
+// логотипа на главной) прокручивает к карточке и сразу открывает скан.
+(function(){
+  var cards = [].slice.call(document.querySelectorAll('.drev[data-rev]'));
+  if (!cards.length) return;
+  var DIR = 'assets/reviews/';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var arrowL = '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9H3M8 4 3 9l5 5"/></svg>';
+  var arrowR = '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg>';
+
+  var viewer = document.createElement('div');
+  viewer.className = 'modal modal--rev';
+  viewer.id = 'revview';
+  viewer.innerHTML =
+    '<div class="modal__back" data-close></div>' +
+    '<div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="drvName">' +
+      '<button class="modal__x" data-close aria-label="Закрыть">&times;</button>' +
+      '<div class="drv__head"><span class="drv__name" id="drvName"></span><span class="drv__meta"></span></div>' +
+      '<div class="drv__sheet"><img alt=""></div>' +
+      '<div class="drv__nav"><button type="button" data-step="-1">' + arrowL + 'Предыдущий</button>' +
+      '<button type="button" data-step="1">Следующий' + arrowR + '</button></div>' +
+    '</div>';
+  document.body.appendChild(viewer);
+  viewer.querySelectorAll('[data-close]').forEach(function(el){ el.addEventListener('click', closeModals); });
+  var vName = viewer.querySelector('.drv__name');
+  var vMeta = viewer.querySelector('.drv__meta');
+  var vImg  = viewer.querySelector('.drv__sheet img');
+  var vNav  = viewer.querySelector('.drv__nav');
+  var cur = null;
+
+  function shown(){ return cards.filter(function(c){ return !c.hidden; }); }
+  function open(card){
+    cur = card;
+    var name = card.querySelector('.drev__name').textContent;
+    var meta = card.querySelector('.drev__meta');
+    vName.textContent = name;
+    vMeta.textContent = meta ? meta.textContent : '';
+    vImg.src = DIR + card.getAttribute('data-rev') + '.jpg';
+    vImg.alt = 'Отзыв компании ' + name;
+    vNav.hidden = shown().length < 2;
+    viewer.classList.add('is-open');
+    viewer.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function step(d){
+    var list = shown(), i = list.indexOf(cur);
+    if (i < 0) return;
+    open(list[(i + d + list.length) % list.length]);
+  }
+  vNav.addEventListener('click', function(e){
+    var b = e.target.closest('[data-step]');
+    if (b) step(+b.getAttribute('data-step'));
+  });
+  document.addEventListener('keydown', function(e){
+    if (!viewer.classList.contains('is-open')) return;
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+  cards.forEach(function(c){ c.addEventListener('click', function(){ open(c); }); });
+
+  function go(id){
+    var card = document.getElementById(id);
+    if (card && card.classList.contains('drev') && !card.hidden) {
+      cards.forEach(function(c){ c.classList.toggle('is-target', c === card); });
+      card.scrollIntoView({block:'center', behavior: reduce ? 'auto' : 'smooth'});
+      open(card);
+    } else {
+      var sec = document.getElementById('reviews');
+      if (sec && !sec.hidden) sec.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+    }
+  }
+  document.querySelectorAll('[data-rev-link]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      go(a.getAttribute('href').slice(1));
+    });
+  });
+
+  // когда ясно, какие превью есть, прячем пустое и отрабатываем адрес
+  var left = cards.length;
+  function settled(){
+    if (--left > 0) return;
+    document.querySelectorAll('[data-reviews]').forEach(function(grid){
+      if (grid.querySelector('.drev:not([hidden])')) return;
+      var sec = grid.closest('section');
+      if (sec) sec.hidden = true;
+    });
+    document.querySelectorAll('[data-rev-link]').forEach(function(a){
+      var c = document.getElementById(a.getAttribute('href').slice(1));
+      if (!c || c.hidden) a.hidden = true;
+    });
+    var sec = document.getElementById('reviews');
+    if (sec && sec.hidden) {
+      document.querySelectorAll('a[href="#reviews"]').forEach(function(a){
+        var box = a.closest('.dsec__btn') || a;
+        box.hidden = true;
+      });
+    }
+    if (/^#review-/.test(location.hash)) go(location.hash.slice(1));
+  }
+  cards.forEach(function(c){
+    var img = c.querySelector('img');
+    if (c.hidden || !img) { c.hidden = true; settled(); return; }
+    img.addEventListener('load', settled);
+    img.addEventListener('error', function(){ c.hidden = true; settled(); });
+    img.src = DIR + c.getAttribute('data-rev') + '-sm.jpg';
+  });
+})();
 
 // финальная форма: выбор канала связи показывает поле под этот канал
 document.querySelectorAll('[data-channels]').forEach(function(form){

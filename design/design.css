@@ -17,7 +17,21 @@
   --tint:#F2F5FB;         /* светлая подложка с оттенком бренда */
   --d-line:rgba(35,43,62,.12);
 }
-body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(--navy)}
+/* прототип (../styles.css) включает всему тексту моноширинные цифры "tnum":
+   у Onest узкая «1» в них стоит в поле ширины «0», и год «1996» в строке
+   читался вразрядку. В дизайне цифры обычные, пропорциональные; счётчики,
+   которым нужна ровная ширина, включают tabular-nums у себя. */
+body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(--navy);font-feature-settings:"ss01"}
+
+/* атрибут hidden сильнее любого display из стилей блока */
+.d [hidden]{display:none !important}
+
+/* Текстовые ссылки — одно правило на весь сайт: без подчёркивания, при
+   наведении меняется цвет. Кнопки и карточки-ссылки задают себе своё. */
+.d a{text-decoration:none}
+.d a:hover{text-decoration:none}
+.d .clinic a,.d .dtext-link{color:var(--brand);font-weight:600;transition:color .2s var(--ease)}
+.d .clinic a:hover,.d .dtext-link:hover{color:var(--brand-deep)}
 
 /* ================= ШАПКА ================= */
 .d header{background:rgba(255,255,255,.9);border-bottom-color:transparent;transition:border-color .25s ease}
@@ -743,6 +757,9 @@ a:hover > .dlink svg,a.dcard:hover .dlink svg{transform:translateX(4px)}
   display:grid;place-items:center;padding:14px;
   transition:border-color .25s var(--ease),box-shadow .25s var(--ease);
 }
+/* логотип — ссылка на отзыв компании */
+a.dlogo{cursor:pointer}
+a.dlogo:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
 /* Наведение — только там, где указатель действительно наводят. На тач-экране
    события наведения нет: в одних браузерах эффект не сработает никогда, в
    других «залипнет» после тапа, и один знак останется цветным посреди серого
@@ -1022,7 +1039,6 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
      и пробел между «клиники» и ссылкой схлопывается */
   display:block;font-size:14px;line-height:40px;color:var(--navy-2);
 }
-.d .clinic a{color:var(--brand);font-weight:600}
 /* строка мессенджеров в контактах: точки-разделители заменены плитками */
 /* мессенджеры: подписи не помещались в узкую колонку и рвались на 2+1,
    поэтому остались плитки — названия дублировались в ряду соцсетей ниже */
@@ -1133,7 +1149,14 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .mform .btn::after{content:none}
 .d .mform .btn:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
 
+/* окно «Написать в MAX»: номер крупно, две кнопки в строку */
+.dmax__tel{display:inline-block;margin-top:14px;font-size:clamp(24px,2.2vw,28px);font-weight:600;letter-spacing:-.02em;color:var(--navy);transition:color .2s var(--ease)}
+.dmax__tel:hover{color:var(--brand)}
+.dmax__btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.dmax__btns .dbtn{height:52px;padding:0 24px;font-size:16px}
+
 @media (max-width:600px){
+  .dmax__btns .dbtn{width:100%}
   /* на телефоне окно остаётся карточкой с полями по краям, а не сплошным листом во весь экран */
   .d .modal__box,.d .modal__box--wide{
     margin:4vh 12px 12px;max-width:none;min-height:0;
@@ -1197,10 +1220,13 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   display:flex;flex-direction:column;justify-content:center;
   padding:clamp(40px,4.4vw,80px) clamp(28px,4vw,84px);
 }
+/* H1 на всех страницах — ровно кегль главной (.dhero h1), и на десктопе,
+   и на телефоне (ниже 600px). Длинный заголовок укладывается шириной колонки и балансом
+   строк, а не уменьшением кегля. */
 .dcohero h1{
   margin-top:22px;
-  font-size:clamp(32px,3.3vw,52px);font-weight:600;line-height:1.07;letter-spacing:-.032em;color:var(--navy);
-  max-width:13em;
+  font-size:clamp(34px,3.55vw,58px);font-weight:600;line-height:1.04;letter-spacing:-.034em;color:var(--navy);
+  max-width:14em;text-wrap:balance;
 }
 .dcohero h1 em{font-style:normal;color:var(--accent)}
 .dcohero__sub{margin-top:26px;font-size:clamp(17px,1.35vw,19px);font-weight:600;line-height:1.45;color:var(--navy);letter-spacing:-.01em;max-width:28em}
@@ -1225,9 +1251,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dcohero{padding:10px}
   .dcohero__card{border-radius:26px}
   .dcohero__txt{padding:28px 20px 30px}
-  /* размер подобран под утверждённую разбивку строк: при 28px строка
-     «и здоровье сотрудников» в колонку 295px не входит */
-  .dcohero h1{margin-top:18px;font-size:clamp(22px,6.7vw,30px);line-height:1.12}
+  .dcohero h1{margin-top:18px;font-size:clamp(27px,7.6vw,32px);line-height:1.08;letter-spacing:-.03em}
   .dcohero__sub{margin-top:20px;font-size:17px}
   .dcohero__lead{font-size:16.5px}
   .dcohero__btns .dbtn--light{width:100%;height:56px}
@@ -1550,3 +1574,71 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 /* тот же принцип в финальном банде: там второй тон — это продолжение фразы,
    и оно тоже должно начинаться с новой строки, а не рвать её посередине */
 .dco .dband__soft{display:block}
+
+/* =====================================================================
+   ОТЗЫВЫ КОМПАНИЙ (company.html#reviews; те же карточки пойдут на страницы
+   офисной и промышленной эргономики)
+   Превью одного формата: верх скана листа A4 в рамке, под ним компания
+   и год. По клику скан открывается крупно, с листанием соседних.
+   Скан — design/assets/reviews/<id>.jpg; карточка без файла скрывается.
+   ===================================================================== */
+.drevs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);margin-top:clamp(32px,3.4vw,48px)}
+.drev{
+  display:flex;flex-direction:column;text-align:left;width:100%;
+  padding:0;border:0;background:none;font:inherit;color:var(--navy);cursor:zoom-in;
+  scroll-margin-top:110px;
+}
+.drev[hidden]{display:none}
+.drev__ph{
+  position:relative;display:block;aspect-ratio:4/5;overflow:hidden;
+  background:#fff;border:1px solid var(--d-line);border-radius:20px;
+  transition:border-color .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease);
+}
+.drev__ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+/* низ листа тает: превью читается как начало письма, а не обрезанный кадр */
+.drev__ph::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:34%;
+  background:linear-gradient(180deg,rgba(255,255,255,0),#fff 92%);
+}
+.drev__name{display:block;margin-top:16px;font-size:clamp(17px,1.35vw,19px);font-weight:600;line-height:1.3;letter-spacing:-.012em}
+.drev__meta{display:block;margin-top:4px;font-size:14px;line-height:1.45;color:var(--navy-3)}
+@media (hover:hover) and (pointer:fine){
+  .drev:hover .drev__ph{border-color:transparent;box-shadow:0 16px 40px rgba(35,43,62,.1);transform:translateY(-3px)}
+  .drev:hover .drev__name{color:var(--brand)}
+}
+.drev:focus-visible{outline:none}
+.drev:focus-visible .drev__ph{outline:2px solid var(--brand);outline-offset:3px}
+/* карточка, к которой пришли с логотипа на главной */
+.drev.is-target .drev__ph{border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,95,224,.18)}
+
+@media (max-width:1280px){.drevs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:860px){.drevs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){
+  .drevs{gap:18px 12px}
+  .drev__ph{border-radius:16px}
+  .drev__name{margin-top:12px;font-size:16px}
+  .drev__meta{font-size:13px}
+}
+@media (max-width:360px){.drevs{grid-template-columns:1fr}}
+
+/* просмотр скана: лист во всю доступную ширину (до 880px), прокрутка
+   страницей окна; стрелки листают соседние отзывы */
+.d .modal--rev .modal__box{max-width:880px;margin:4vh auto 6vh;padding:clamp(22px,2.6vw,36px)}
+.drv__head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;padding-right:48px}
+.drv__name{font-size:clamp(20px,1.8vw,24px);font-weight:600;letter-spacing:-.02em;color:var(--navy)}
+.drv__meta{font-size:14px;color:var(--navy-3)}
+.drv__sheet{margin-top:18px;border:1px solid var(--d-line);border-radius:14px;overflow:hidden;background:#fff}
+.drv__sheet img{display:block;width:100%;height:auto}
+.drv__nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.drv__nav button{
+  display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:100px;
+  border:1px solid var(--d-line);background:#fff;font:inherit;font-size:15px;font-weight:600;color:var(--navy);cursor:pointer;
+  transition:border-color .2s var(--ease),color .2s var(--ease);
+}
+.drv__nav button:hover{border-color:var(--brand);color:var(--brand)}
+.drv__nav svg{width:16px;height:16px}
+@media (max-width:600px){
+  .d .modal--rev .modal__box{margin:10px;padding:18px 14px 16px;border-radius:20px}
+  .drv__sheet{margin-top:14px;border-radius:10px}
+  .drv__nav button{height:44px;padding:0 16px;font-size:14.5px}
+}
