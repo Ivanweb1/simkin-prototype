@@ -46,10 +46,6 @@ body.d{font-family:"Onest","Manrope","Segoe UI",system-ui,sans-serif;color:var(-
 .d .sub a{color:var(--navy-2)}
 .d .sub a.sub__head{color:var(--navy)}
 .d .sub a:hover{background:var(--tint);color:var(--brand)}
-/* два направления колонками, под ними строкой во всю ширину — чек-апы:
-   это не третье направление, а отдельная услуга клиники */
-.d .sub--groups{display:grid;grid-template-columns:auto auto;column-gap:6px;width:max-content}
-.d .sub a.sub__foot{grid-column:1 / -1;margin-top:6px;padding-top:12px;border-top:1px solid var(--d-line);border-radius:0 0 var(--r-sm) var(--r-sm)}
 /* обводкой, а не заливкой: главная синяя кнопка страницы — в финальном блоке */
 .d .hdr__cta .btn{
   height:48px;padding:0 24px;font-size:15px;font-weight:600;
