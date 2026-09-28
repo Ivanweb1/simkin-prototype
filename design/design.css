@@ -1869,21 +1869,72 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dk-mod h3{font-size:21px}
 }
 
-/* ---- Практический результат: три карточки со своим абзацем и вывод ---- */
+/* ---- Практический результат: трек из трёх шагов и вывод ----
+   Над карточками — линия с узлами 01 → 02 → 03: от узла к узлу она набирает
+   цвет, последний узел залит — это итог. Номер живёт в узле, а не в углу
+   карточки. На узком экране трек становится вертикальным слева. */
 .dk-res3{
+  --res-gap:16px;--node:52px;
   list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(36px,3.4vw,52px);
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--res-gap);
 }
-.dk-res3 li{position:relative;display:flex;flex-direction:column;background:var(--tint);border-radius:28px;padding:32px 32px 36px}
-/* стрелка в просвете между карточками: одна составляющая ведёт к следующей */
-.dk-res3 li + li::before{
-  content:"";position:absolute;top:58px;left:calc(-1 * clamp(36px,3.4vw,52px) / 2 - 7px);
-  width:14px;height:14px;border-top:2px solid var(--brand-3);border-right:2px solid var(--brand-3);
-  transform:rotate(45deg);
+.dk-res3 li{position:relative;display:flex;flex-direction:column}
+.dk-res__node{
+  position:relative;z-index:1;display:grid;place-items:center;width:var(--node);height:var(--node);border-radius:50%;
+  margin-left:32px;background:#fff;border:2px solid var(--brand-3);color:var(--brand);
+  font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;
 }
-.dk-res__top{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.dk-res3 h3{margin-top:26px;font-size:clamp(21px,1.75vw,26px);font-weight:600;line-height:1.18;letter-spacing:-.024em;color:var(--navy)}
+.dk-res3 li:nth-child(2) .dk-res__node{border-color:var(--brand-2)}
+.dk-res3 li:last-child .dk-res__node{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 8px 20px rgba(26,95,224,.28)}
+/* отрезок трека — от своего узла до узла следующей карточки, со стрелкой */
+.dk-res3 li:not(:last-child)::before{
+  content:"";position:absolute;top:calc(var(--node) / 2 - 1px);height:2px;
+  left:calc(32px + var(--node));width:calc(100% + var(--res-gap) - var(--node));
+  background:linear-gradient(90deg,var(--brand-3),var(--brand-2));
+}
+.dk-res3 li:nth-child(2)::before{background:linear-gradient(90deg,var(--brand-2),var(--brand))}
+.dk-res3 li:not(:last-child)::after{
+  content:"";position:absolute;top:calc(var(--node) / 2 - 6px);
+  left:calc(100% + var(--res-gap) + 32px - 13px);
+  border-style:solid;border-width:6px 0 6px 9px;border-color:transparent transparent transparent var(--brand-2);
+}
+.dk-res3 li:nth-child(2)::after{border-left-color:var(--brand)}
+.dk-res__card{
+  flex:1;margin-top:20px;background:var(--tint);border-radius:28px;padding:30px 32px 34px;position:relative;
+}
+/* уголок-указатель от карточки к её узлу */
+.dk-res__card::before{
+  content:"";position:absolute;left:calc(32px + var(--node) / 2 - 9px);top:-9px;width:18px;height:18px;
+  background:var(--tint);transform:rotate(45deg);border-radius:3px;
+}
+.dk-res3 h3{margin-top:22px;font-size:clamp(21px,1.75vw,26px);font-weight:600;line-height:1.18;letter-spacing:-.024em;color:var(--navy)}
 .dk-res3 p{margin-top:12px;font-size:16.5px;line-height:1.62;color:var(--navy-2)}
+@media (max-width:980px){
+  .dk-res3{grid-template-columns:1fr;gap:18px;--node:48px}
+  .dk-res3 li{display:grid;grid-template-columns:var(--node) minmax(0,1fr);column-gap:18px;align-items:start}
+  .dk-res__node{margin-left:0}
+  .dk-res__card{margin-top:0}
+  .dk-res__card::before{left:-8px;top:calc(var(--node) / 2 - 9px)}
+  /* трек вертикальный: отрезок от узла вниз до следующего */
+  .dk-res3 li:not(:last-child)::before{
+    top:var(--node);left:calc(var(--node) / 2 - 1px);width:2px;height:calc(100% - var(--node) + 18px);
+    background:linear-gradient(180deg,var(--brand-3),var(--brand-2));
+  }
+  .dk-res3 li:nth-child(2)::before{background:linear-gradient(180deg,var(--brand-2),var(--brand))}
+  .dk-res3 li:not(:last-child)::after{
+    left:calc(var(--node) / 2 - 6px);top:auto;bottom:-18px;
+    border-width:9px 6px 0 6px;border-color:var(--brand-2) transparent transparent transparent;
+  }
+  .dk-res3 li:nth-child(2)::after{border-color:var(--brand) transparent transparent transparent}
+}
+@media (max-width:600px){
+  .dk-res3{--node:40px;gap:16px}
+  .dk-res3 li{column-gap:12px}
+  .dk-res__node{font-size:13.5px}
+  .dk-res__card{padding:22px 20px 24px;border-radius:22px}
+  .dk-res3 h3{margin-top:16px;font-size:20px}
+  .dk-res3 p{font-size:16px}
+}
 .dk-res__out{
   display:flex;align-items:center;gap:clamp(18px,2vw,28px);
   margin-top:16px;padding:clamp(26px,2.8vw,38px) clamp(24px,3vw,44px);border-radius:28px;
@@ -1893,14 +1944,8 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dk-res__arr{flex:0 0 auto;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.16)}
 .dk-res__arr svg{width:22px;height:22px}
 @media (max-width:980px){
-  .dk-res3{grid-template-columns:1fr;gap:34px}
-  .dk-res3 li + li::before{top:-24px;left:40px;transform:rotate(135deg)}
 }
 @media (max-width:600px){
-  .dk-res3 li{padding:24px 22px 26px;border-radius:22px}
-  .dk-res3 h3{margin-top:20px;font-size:21px}
-  .dk-res3 p{font-size:16px}
-  .dk-res3 li + li::before{left:32px}
   .dk-res__out{flex-direction:column;align-items:flex-start;border-radius:22px;font-size:18.5px}
   .dk-res__arr{width:46px;height:46px}
 }

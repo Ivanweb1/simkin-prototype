@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=160">
+<link rel="stylesheet" href="design.css?v=161">
 </head>
 <body class="d dco dcrs">
 
@@ -362,9 +362,10 @@
 </section>
 
 <!-- ============ БЛОК 7. ПРАКТИЧЕСКИЙ РЕЗУЛЬТАТ ============ -->
-<!-- Текст разложен по трём составляющим результата: у каждой — свой абзац,
-     карточки связаны стрелками (системный подход → практический опыт →
-     непосредственное применение). Вывод — крупной фразой на брендовой плашке. -->
+<!-- Текст разложен по трём составляющим результата, у каждой — свой абзац.
+     Последовательность показана треком над карточками: узлы 01 → 02 → 03
+     на линии, которая набирает цвет к последнему шагу. Вывод — крупной
+     фразой на брендовой плашке. -->
 <section class="dsec" id="result">
   <div class="dwrap">
     <div class="dhead">
@@ -373,19 +374,28 @@
     </div>
     <ol class="dk-res3">
       <li data-rv>
-        <span class="dk-res__top"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span><span class="dstep__n">01</span></span>
-        <h3>Системный подход</h3>
-        <p>Он учитывает не&nbsp;один отдельный фактор, а&nbsp;весь комплекс условий, которые могут влиять на&nbsp;самочувствие и&nbsp;работоспособность: положение тела, мебель, оборудование, рабочую среду, режим работы и&nbsp;индивидуальные особенности.</p>
+        <span class="dk-res__node">01</span>
+        <div class="dk-res__card">
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span>
+          <h3>Системный подход</h3>
+          <p>Он учитывает не&nbsp;один отдельный фактор, а&nbsp;весь комплекс условий, которые могут влиять на&nbsp;самочувствие и&nbsp;работоспособность: положение тела, мебель, оборудование, рабочую среду, режим работы и&nbsp;индивидуальные особенности.</p>
+        </div>
       </li>
       <li data-rv style="--d:.06s">
-        <span class="dk-res__top"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg></span><span class="dstep__n">02</span></span>
-        <h3>Практический опыт</h3>
-        <p>Курс создан не&nbsp;как теоретический обзор, а&nbsp;на&nbsp;основе многолетней практической работы с&nbsp;телом человека и&nbsp;реальными рабочими местами.</p>
+        <span class="dk-res__node">02</span>
+        <div class="dk-res__card">
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg></span>
+          <h3>Практический опыт</h3>
+          <p>Курс создан не&nbsp;как теоретический обзор, а&nbsp;на&nbsp;основе многолетней практической работы с&nbsp;телом человека и&nbsp;реальными рабочими местами.</p>
+        </div>
       </li>
       <li data-rv style="--d:.12s">
-        <span class="dk-res__top"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.6l4.8 4.8L20 6.2"/></svg></span><span class="dstep__n">03</span></span>
-        <h3>Непосредственное применение</h3>
-        <p>Полученные знания можно сразу применять к&nbsp;собственному рабочему месту. После каждого блока человек использует рекомендации на&nbsp;практике и&nbsp;отвечает на&nbsp;вопросы для закрепления материала.</p>
+        <span class="dk-res__node">03</span>
+        <div class="dk-res__card">
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.6l4.8 4.8L20 6.2"/></svg></span>
+          <h3>Непосредственное применение</h3>
+          <p>Полученные знания можно сразу применять к&nbsp;собственному рабочему месту. После каждого блока человек использует рекомендации на&nbsp;практике и&nbsp;отвечает на&nbsp;вопросы для закрепления материала.</p>
+        </div>
       </li>
     </ol>
     <p class="dk-res__out" data-rv><span class="dk-res__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>В&nbsp;результате он&nbsp;не&nbsp;просто узнаёт правила эргономики, а&nbsp;учится самостоятельно организовывать рабочее место под своё тело и&nbsp;рабочие задачи.</p>
