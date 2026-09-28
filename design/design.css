@@ -1122,7 +1122,10 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 /* =====================================================================
    ВСПЛЫВАЮЩИЕ ОКНА: ОБРАТНЫЙ ЗВОНОК, ОБСУДИТЬ ЗАДАЧУ
    ===================================================================== */
-.d .modal__back{background:rgba(18,26,56,.48);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+/* подложка закреплена на экране: окно прокручивается внутри .modal, и
+   при absolute она уезжала вверх вместе с длинным содержимым (скан отзыва),
+   открывая страницу под окном */
+.d .modal__back{position:fixed;background:rgba(18,26,56,.48);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 .d .modal__box{
   max-width:500px;margin-top:8vh;background:#fff;border-radius:28px;
   padding:clamp(30px,3.2vw,44px);box-shadow:0 30px 80px rgba(9,26,80,.22);
@@ -1662,6 +1665,27 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 .drv__nav button:hover{border-color:var(--brand);color:var(--brand)}
 .drv__nav svg{width:16px;height:16px}
+/* Десктоп: окно целиком в экране, без прокрутки. Высота окна — экран минус
+   поля, лист занимает всё, что осталось между шапкой и кнопками, и
+   вписывается по высоте; ширина окна подогнана под пропорцию листа A4,
+   чтобы по бокам не оставалось пустоты. На низком экране (меньше 640px)
+   лист стал бы нечитаемо мелким — там окно прокручивается, как на телефоне. */
+@media (min-width:861px) and (min-height:640px){
+  .d .modal--rev{overflow:hidden}
+  .d .modal--rev .modal__box{
+    display:flex;flex-direction:column;
+    height:calc(100vh - 48px);margin:24px auto;padding:28px 32px 26px;
+    width:min(880px, calc((100vh - 250px) * .72 + 64px));max-width:calc(100vw - 48px);
+  }
+  .drv__head,.drv__full,.drv__nav{flex:0 0 auto}
+  .drv__full{align-self:center}
+  .drv__sheet{
+    flex:1 1 auto;min-height:0;display:flex;justify-content:center;
+    border:0;border-radius:0;background:none;overflow:visible;
+  }
+  .drv__sheet img{width:auto;height:100%;max-width:100%;object-fit:contain;border:1px solid var(--d-line);border-radius:10px}
+  .drv__nav{margin-top:14px}
+}
 @media (max-width:600px){
   .d .modal--rev .modal__box{margin:10px;padding:18px 14px 16px;border-radius:20px}
   .drv__sheet{margin-top:14px;border-radius:10px}
