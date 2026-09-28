@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=153">
+<link rel="stylesheet" href="design.css?v=157">
 </head>
 <body class="d dco dcrs">
 
@@ -106,7 +106,7 @@
         <p class="dcohero__lead" data-rv style="--d:.18s">Он объясняет, зачем нужна эргономика, как рабочая поза, оборудование и&nbsp;рабочая среда влияют на&nbsp;самочувствие и&nbsp;работоспособность человека, и&nbsp;учит адаптировать рабочее место под человека и&nbsp;его задачу.</p>
       </div>
       <div class="dcohero__media dk-hero__media" data-rv style="--d:.06s">
-        <div class="dshot dshot--fill"><span>Экран курса</span></div>
+        <div class="dshot dk-hero__shot"><span>Экран курса</span></div>
       </div>
     </div>
   </div>
@@ -273,6 +273,8 @@
      курса (пришлёт заказчик). -->
 <section class="dsec dsec--tint" id="program">
   <div class="dwrap">
+    <!-- заголовок слева, объём курса — одной панелью справа, по нижнему краю заголовка -->
+    <div class="dk-proghead">
     <div class="dhead">
       <span class="deyebrow" data-rv>Программа</span>
       <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Что входит <span class="dh2__soft">в&nbsp;курс</span></h2>
@@ -282,9 +284,14 @@
       <li><b>77</b><span>видео</span></li>
       <li><b class="dk-stats__word">Озвучка</b><span>большинства слайдов</span></li>
     </ul>
+    </div>
 
+    <!-- Разделы программы — вкладками: слева список, справа слайд и описание
+         выбранного раздела. Список строит script.js по заголовкам карточек;
+         без скрипта и ниже 861px разделы идут обычными карточками. -->
+    <div class="dk-prog" data-tabs>
     <div class="dk-mods">
-      <article class="dk-mod" data-rv>
+      <article class="dk-mod" data-tab data-rv>
         <div class="dshot"><span>Слайд курса</span></div>
         <div class="dk-mod__body">
           <span class="dk-mod__n">Раздел 1</span>
@@ -292,7 +299,7 @@
           <p>Как рабочая поза влияет на&nbsp;тело, почему появляется избыточное мышечное напряжение, как работают позвоночник, суставы и&nbsp;дыхательная механика и&nbsp;каким должно быть сбалансированное положение тела.</p>
         </div>
       </article>
-      <article class="dk-mod" data-rv style="--d:.06s">
+      <article class="dk-mod" data-tab data-rv style="--d:.06s">
         <div class="dshot"><span>Слайд курса</span></div>
         <div class="dk-mod__body">
           <span class="dk-mod__n">Раздел 2</span>
@@ -300,7 +307,7 @@
           <p>Кресло, стол, монитор, клавиатура, мышь, подставки и&nbsp;другие элементы рабочего места, а&nbsp;также разные варианты их&nbsp;настройки.</p>
         </div>
       </article>
-      <article class="dk-mod" data-rv style="--d:.12s">
+      <article class="dk-mod" data-tab data-rv style="--d:.12s">
         <div class="dshot"><span>Слайд курса</span></div>
         <div class="dk-mod__body">
           <span class="dk-mod__n">Раздел 3</span>
@@ -308,7 +315,7 @@
           <p>Ноутбук, смартфон, планшет, бумажные документы, несколько мониторов, кронштейны, работа стоя и&nbsp;ситуации, когда полноценного рабочего места рядом нет.</p>
         </div>
       </article>
-      <article class="dk-mod" data-rv>
+      <article class="dk-mod" data-tab data-rv>
         <div class="dshot"><span>Слайд курса</span></div>
         <div class="dk-mod__body">
           <span class="dk-mod__n">Раздел 4</span>
@@ -316,7 +323,7 @@
           <p>Освещение, микроклимат, режим работы, перерывы, упражнения, поддержание работоспособности и&nbsp;организация работы вне офиса.</p>
         </div>
       </article>
-      <article class="dk-mod" data-rv style="--d:.06s">
+      <article class="dk-mod" data-tab data-rv style="--d:.06s">
         <div class="dshot"><span>Слайд курса</span></div>
         <div class="dk-mod__body">
           <span class="dk-mod__n">Раздел 5</span>
@@ -324,6 +331,7 @@
           <p>Что проверить в&nbsp;рабочей позе и&nbsp;рабочем месте, если появляются боль или дискомфорт в&nbsp;спине, шее, плечах, локтях, запястьях и&nbsp;других областях.</p>
         </div>
       </article>
+    </div>
     </div>
   </div>
 </section>
@@ -366,8 +374,9 @@
 </section>
 
 <!-- ============ БЛОК 8. ДЕМОВЕРСИЯ ============ -->
-<!-- Светлая карточка: текст и кнопка слева, место под кадр демоверсии
-     справа. Список — что именно покажет демо; длительность не указана. -->
+<!-- Светлая карточка: текст и кнопка слева, кадр демоверсии 16:9 справа —
+     по высоте они совпадают. Под ними строкой — что именно покажет демо;
+     длительность не указана. -->
 <section class="dsec dsec--tint" id="demo">
   <div class="dwrap">
     <div class="dk-demo" data-rv>
@@ -375,58 +384,84 @@
         <span class="deyebrow">Демоверсия</span>
         <h2 class="dh2">Посмотрите, <span class="dh2__soft">как устроен курс</span></h2>
         <p class="dk-demo__lead">Демоверсия позволяет увидеть стиль, глубину и&nbsp;качество материала до&nbsp;прохождения полного курса.</p>
-        <ul class="dgain__list dk-demo__list">
-          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>фрагменты реальных презентаций</li>
-          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>авторская озвучка и&nbsp;видео</li>
-          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>примеры иллюстраций</li>
-          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>несколько неочевидных принципов</li>
-          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>вопросы для закрепления</li>
-          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>элементы практического применения</li>
-        </ul>
         <!-- адрес демоверсии появится, когда она будет готова -->
         <div class="dk-demo__btn">
           <a href="#demo" class="dbtn dbtn--brand">Посмотреть демоверсию<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
         </div>
       </div>
       <div class="dshot dshot--play"><span>Кадр демоверсии</span><i aria-hidden="true"></i></div>
+      <ul class="dgain__list dk-demo__list">
+        <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>фрагменты реальных презентаций</li>
+        <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>авторская озвучка и&nbsp;видео</li>
+        <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>примеры иллюстраций</li>
+        <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>несколько неочевидных принципов</li>
+        <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>вопросы для закрепления</li>
+        <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>элементы практического применения</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- ============ БЛОК 9. ЧТО ОТЛИЧАЕТ ЭТОТ КУРС ============ -->
-<!-- Сетка 3×2: первая ячейка — заголовок блока, в остальных пять отличий. -->
+<!-- Пошаговое чтение — как «Почему эргономика важна» на «Для компаний»:
+     слева крупный номер и шкала, справа пять отличий; по прокрутке активно
+     одно, соседние приглушены. Шкала кликабельна. -->
 <section class="dsec" id="features">
   <div class="dwrap">
-    <div class="dk-feat">
-      <div class="dk-feat__head">
-        <span class="deyebrow" data-rv>Отличия</span>
-        <h2 class="dh2" data-rv style="--d:.06s">Что отличает <span class="dh2__soft">этот курс</span></h2>
+    <div class="dhead">
+      <span class="deyebrow" data-rv>Отличия</span>
+      <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Что отличает <span class="dh2__soft">этот курс</span></h2>
+    </div>
+
+    <div class="dflow dflow--bare" data-flow data-rv>
+      <div class="dflow__aside">
+        <div class="dflow__sticky">
+          <div class="dflow__meta">
+            <span class="deyebrow">Пять отличий</span>
+            <p class="dflow__count"><b data-flow-num>01</b><i>/&nbsp;05</i></p>
+            <ol class="dflow__rail">
+              <li><button type="button" data-flow-go="0" aria-label="Отличие 01: Начинается с человека, а не с мебели"></button></li>
+              <li><button type="button" data-flow-go="1" aria-label="Отличие 02: Объясняет причины"></button></li>
+              <li><button type="button" data-flow-go="2" aria-label="Отличие 03: Рассматривает рабочее место целиком"></button></li>
+              <li><button type="button" data-flow-go="3" aria-label="Отличие 04: Учитывает разные сценарии"></button></li>
+              <li><button type="button" data-flow-go="4" aria-label="Отличие 05: Помогает искать источник проблемы"></button></li>
+            </ol>
+          </div>
+        </div>
       </div>
-      <article data-rv>
-        <span class="dk-feat__n">01</span>
-        <h3>Начинается с&nbsp;человека, а&nbsp;не&nbsp;с&nbsp;мебели</h3>
-        <p>Сначала человек разбирается, как работает его тело и&nbsp;какое положение ему нужно, и&nbsp;только потом настраивает оборудование.</p>
-      </article>
-      <article data-rv style="--d:.06s">
-        <span class="dk-feat__n">02</span>
-        <h3>Объясняет причины</h3>
-        <p>Не&nbsp;просто «поставьте монитор так», а&nbsp;почему именно эта настройка подходит при конкретной задаче и&nbsp;положении тела.</p>
-      </article>
-      <article data-rv>
-        <span class="dk-feat__n">03</span>
-        <h3>Рассматривает рабочее место целиком</h3>
-        <p>От&nbsp;рабочей позы до&nbsp;кресла, стола, устройств, освещения, микроклимата и&nbsp;режима работы.</p>
-      </article>
-      <article data-rv style="--d:.06s">
-        <span class="dk-feat__n">04</span>
-        <h3>Учитывает разные сценарии</h3>
-        <p>Офис, дом, ноутбук, смартфон, работа стоя, несколько мониторов, документы и&nbsp;другие реальные ситуации.</p>
-      </article>
-      <article data-rv style="--d:.12s">
-        <span class="dk-feat__n">05</span>
-        <h3>Помогает искать источник проблемы</h3>
-        <p>Если что-то болит или быстро устаёт, курс помогает разобраться, какие элементы рабочего места и&nbsp;рабочей позы стоит проверить.</p>
-      </article>
+
+      <div class="dflow__list">
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">01</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.8" r="3.6"/><path d="M4.8 20.4v-1.2a7.2 7.2 0 0 1 14.4 0v1.2"/></svg></span>
+          <h3>Начинается с&nbsp;человека, а&nbsp;не&nbsp;с&nbsp;мебели</h3>
+          <p>Сначала человек разбирается, как работает его тело и&nbsp;какое положение ему нужно, и&nbsp;только потом настраивает оборудование.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">02</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></span>
+          <h3>Объясняет причины</h3>
+          <p>Не&nbsp;просто «поставьте монитор так», а&nbsp;почему именно эта настройка подходит при конкретной задаче и&nbsp;положении тела.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">03</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5 12 4l9 4.5-9 4.5-9-4.5Z"/><path d="M3 12.5 12 17l9-4.5M3 16.5 12 21l9-4.5"/></svg></span>
+          <h3>Рассматривает рабочее место целиком</h3>
+          <p>От&nbsp;рабочей позы до&nbsp;кресла, стола, устройств, освещения, микроклимата и&nbsp;режима работы.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">04</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="4.4" width="13" height="9.6" rx="1.4"/><path d="M6.4 17.6h5.8M9.3 14v3.6"/><rect x="17.2" y="8.4" width="4.4" height="10.8" rx="1.2"/></svg></span>
+          <h3>Учитывает разные сценарии</h3>
+          <p>Офис, дом, ноутбук, смартфон, работа стоя, несколько мониторов, документы и&nbsp;другие реальные ситуации.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">05</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.6" cy="10.6" r="6.4"/><path d="M15.4 15.4 20.6 20.6"/></svg></span>
+          <h3>Помогает искать источник проблемы</h3>
+          <p>Если что-то болит или быстро устаёт, курс помогает разобраться, какие элементы рабочего места и&nbsp;рабочей позы стоит проверить.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -654,7 +689,111 @@
   </div>
 </div>
 
-<script src="../script.js?v=35"></script>
+<script src="../script.js?v=36"></script>
+
+<script>
+/* Отличия (тот же скрипт, что у доводов на «Для компаний»): активен тот, что пересёк линию чтения. Никакого перехвата скролла —
+   страница прокручивается обычно, меняются только акценты. */
+(function(){
+  var flow = document.querySelector('[data-flow]');
+  if(!flow) return;
+  var items = [].slice.call(flow.querySelectorAll('[data-flow-item]'));
+  var rail  = [].slice.call(flow.querySelectorAll('.dflow__rail li'));
+  var shots = [].slice.call(flow.querySelectorAll('[data-flow-ph]'));
+  var num   = flow.querySelector('[data-flow-num]');
+  if(!items.length) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = -1;
+  flow.classList.add('dflow--live');
+
+  function apply(i){
+    if(i === cur) return;
+    cur = i;
+    items.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    rail.forEach(function(li,n){
+      li.classList.toggle('is-done', n <= i);
+      li.classList.toggle('is-now',  n === i);
+      var b = li.firstElementChild;
+      if(b) b.setAttribute('aria-current', n === i ? 'true' : 'false');
+    });
+    shots.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    if(num){
+      num.textContent = ('0' + (i + 1)).slice(-2);
+      if(!reduce){ num.classList.remove('is-swap'); void num.offsetWidth; num.classList.add('is-swap'); }
+    }
+  }
+
+  // каждый кадр встаёт ровно в границы своего ряда. Шире, чем остаток левой
+  // половины, он быть не может — иначе наехал бы на номер, поэтому размер
+  // ограничен сверху.
+  var aside= flow.querySelector('.dflow__aside');
+  var meta = flow.querySelector('.dflow__meta');
+  var GAP = 40; // просвет между соседними кадрами
+  function placeShots(){
+    if(!shots.length || getComputedStyle(shots[0]).display === 'none') return;
+    var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
+    shots.forEach(function(fig,n){
+      var row = items[n];
+      if(!row) return;
+      // верх остаётся на линейке ряда, просвет снимается снизу
+      var size = Math.max(0, Math.min(row.offsetHeight - GAP, room));
+      fig.style.setProperty('--ph-top', row.offsetTop + 'px');
+      fig.style.setProperty('--ph', Math.round(size) + 'px');
+    });
+  }
+  placeShots();
+  // высота ряда меняется от переносов в тексте, ширина колонки — от окна.
+  // Наблюдатель ловит и то и другое; кадры позиционированы абсолютно и на
+  // размеры рядов не влияют, так что зацикливания нет.
+  if(window.ResizeObserver){
+    var ro = new ResizeObserver(placeShots);
+    ro.observe(flow);
+    items.forEach(function(el){ ro.observe(el); });
+  }
+
+  // считаем по заголовку, а не по краю блока: принцип становится активным ровно
+  // тогда, когда его название доходит до середины экрана
+  function pick(){
+    var line = window.innerHeight * 0.45, best = 0;
+    items.forEach(function(el,n){
+      var h = el.querySelector('h3') || el;
+      if(h.getBoundingClientRect().top <= line) best = n;
+    });
+    apply(best);
+  }
+
+  var waiting = false;
+  function onScroll(){
+    if(waiting) return;
+    waiting = true;
+    requestAnimationFrame(function(){ waiting = false; pick(); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  // после смены ширины даём раскладке устояться: высота ряда меняется вместе с
+  // переносами в тексте, и без паузы кадр получил бы размер от прошлой ширины
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(placeShots, 150);
+    onScroll();
+  });
+  // шрифт догружается позже разметки и меняет высоту рядов
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(placeShots);
+  }
+  pick();
+
+  flow.querySelectorAll('[data-flow-go]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = items[+btn.getAttribute('data-flow-go')];
+      if(!el) return;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - window.innerHeight * 0.26;
+      window.scrollTo({top: top, behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+})();
+</script>
 
 
 </body>

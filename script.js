@@ -337,6 +337,50 @@ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-m
   });
 })();
 
+// Вкладки [data-tabs]: список строится по заголовкам панелей [data-tab],
+// показана одна панель. Класс --live включает вид вкладок (в CSS — только
+// на широком экране); без скрипта панели остаются обычными карточками.
+document.querySelectorAll('[data-tabs]').forEach(function(box){
+  var panels = [].slice.call(box.querySelectorAll('[data-tab]'));
+  if (panels.length < 2) return;
+  var nav = document.createElement('div');
+  nav.className = 'dk-prog__nav';
+  nav.setAttribute('role', 'tablist');
+  var tabs = panels.map(function(panel, i){
+    var id = 'tab-' + Math.random().toString(36).slice(2, 8);
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.id = id;
+    b.setAttribute('role', 'tab');
+    b.innerHTML = '<span class="dk-prog__n">' + ('0' + (i + 1)).slice(-2) + '</span>' +
+                  '<span class="dk-prog__t">' + panel.querySelector('h3').innerHTML + '</span>';
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', id);
+    b.addEventListener('click', function(){ show(i); });
+    b.addEventListener('keydown', function(e){
+      var d = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = (i + d + panels.length) % panels.length;
+      show(n); tabs[n].focus();
+    });
+    nav.appendChild(b);
+    return b;
+  });
+  function show(n){
+    tabs.forEach(function(t, i){
+      var on = i === n;
+      t.classList.toggle('is-on', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      panels[i].classList.toggle('is-on', on);
+    });
+  }
+  box.insertBefore(nav, box.firstChild);
+  box.classList.add('dk-prog--live');
+  show(0);
+});
+
 // финальная форма: выбор канала связи показывает поле под этот канал
 document.querySelectorAll('[data-channels]').forEach(function(form){
   var input = form.querySelector('[data-contact]');
