@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=157">
+<link rel="stylesheet" href="design.css?v=159">
 </head>
 <body class="d dco dcrs">
 
@@ -188,9 +188,7 @@
 </section>
 
 <!-- ============ БЛОК 4. СНАЧАЛА ПОНИМАНИЕ ============ -->
-<!-- Последовательность показана графически: пять точек на одной линии,
-     под каждой — шаг и пояснение. На узком экране линия становится
-     вертикальной. Главный принцип — плашкой с чёрточкой, как цитата. -->
+<!-- Пять шагов читаются по одному; главный принцип — плашкой с чёрточкой. -->
 <section class="dsec dsec--tint" id="sequence">
   <div class="dwrap">
     <div class="dhead dhead--split">
@@ -204,38 +202,65 @@
       </div>
     </div>
 
-    <ol class="dk-seq" data-rv>
-      <li>
-        <span class="dk-seq__dot">01</span>
-        <span class="dk-seq__tag">Тело</span>
-        <h3>Разобраться, как работает тело</h3>
-        <p>Понять, как положение тела влияет на&nbsp;распределение нагрузки, мышечное напряжение, позвоночник, суставы, дыхание и&nbsp;самочувствие.</p>
-      </li>
-      <li>
-        <span class="dk-seq__dot">02</span>
-        <span class="dk-seq__tag">Рабочая поза</span>
-        <h3>Найти оптимальную рабочую позу</h3>
-        <p>Определить положение тела, подходящее человеку и&nbsp;конкретной рабочей задаче.</p>
-      </li>
-      <li>
-        <span class="dk-seq__dot">03</span>
-        <span class="dk-seq__tag">Рабочее место</span>
-        <h3>Настроить рабочее место</h3>
-        <p>Адаптировать под эту позу кресло, стол, монитор, клавиатуру, мышь, устройства и&nbsp;другие элементы рабочего места.</p>
-      </li>
-      <li>
-        <span class="dk-seq__dot">04</span>
-        <span class="dk-seq__tag">Рабочая среда</span>
-        <h3>Учесть условия рабочей среды</h3>
-        <p>Оценить влияние освещения, микроклимата, режима работы и&nbsp;других факторов на&nbsp;самочувствие и&nbsp;работоспособность.</p>
-      </li>
-      <li>
-        <span class="dk-seq__dot">05</span>
-        <span class="dk-seq__tag">Поиск причины</span>
-        <h3>Если что-то продолжает беспокоить&nbsp;– понять, что проверить</h3>
-        <p>Разобраться, какие факторы рабочей позы, рабочего места или режима работы могут быть связаны с&nbsp;дискомфортом и&nbsp;на&nbsp;что обратить внимание в&nbsp;первую очередь.</p>
-      </li>
-    </ol>
+    <!-- Последовательность — пошаговым чтением, как отличия ниже. Схема
+         «тело → поза → рабочее место → среда → поиск причины» стала шкалой
+         слева: деления подписаны, активный шаг подсвечен, по шкале можно
+         перейти к шагу. -->
+    <div class="dflow dflow--bare dk-seqflow" data-flow data-rv>
+      <div class="dflow__aside">
+        <div class="dflow__sticky">
+          <div class="dflow__meta">
+            <span class="deyebrow">Пять шагов</span>
+            <p class="dflow__count"><b data-flow-num>01</b><i>/&nbsp;05</i></p>
+            <ol class="dflow__rail dflow__rail--labels">
+              <li><button type="button" data-flow-go="0" aria-label="Шаг 01: Тело"><span>Тело</span></button></li>
+              <li><button type="button" data-flow-go="1" aria-label="Шаг 02: Рабочая поза"><span>Рабочая поза</span></button></li>
+              <li><button type="button" data-flow-go="2" aria-label="Шаг 03: Рабочее место"><span>Рабочее место</span></button></li>
+              <li><button type="button" data-flow-go="3" aria-label="Шаг 04: Рабочая среда"><span>Рабочая среда</span></button></li>
+              <li><button type="button" data-flow-go="4" aria-label="Шаг 05: Поиск причины"><span>Поиск причины</span></button></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="dflow__list">
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">01</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2.4"/><path d="M12 6.8v13M7.2 10h9.6M7.6 14h8.8M8.2 18h7.6"/></svg></span>
+          <span class="dk-seq__tag">Тело</span>
+          <h3>Разобраться, как работает тело</h3>
+          <p>Понять, как положение тела влияет на&nbsp;распределение нагрузки, мышечное напряжение, позвоночник, суставы, дыхание и&nbsp;самочувствие.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">02</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5v15M6.5 19.5h11M4 8.5h16"/><path d="M4 8.5 1.8 14h4.4L4 8.5ZM20 8.5 17.8 14h4.4L20 8.5Z"/></svg></span>
+          <span class="dk-seq__tag">Рабочая поза</span>
+          <h3>Найти оптимальную рабочую позу</h3>
+          <p>Определить положение тела, подходящее человеку и&nbsp;конкретной рабочей задаче.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">03</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="4.4" width="18.4" height="11.4" rx="1.8"/><path d="M8.4 19.6h7.2M12 15.8v3.8"/></svg></span>
+          <span class="dk-seq__tag">Рабочее место</span>
+          <h3>Настроить рабочее место</h3>
+          <p>Адаптировать под эту позу кресло, стол, монитор, клавиатуру, мышь, устройства и&nbsp;другие элементы рабочего места.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">04</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.2M12 19v2.2M2.8 12h2.2M19 12h2.2M5.5 5.5l1.6 1.6M16.9 16.9l1.6 1.6M5.5 18.5l1.6-1.6M16.9 7.1l1.6-1.6"/></svg></span>
+          <span class="dk-seq__tag">Рабочая среда</span>
+          <h3>Учесть условия рабочей среды</h3>
+          <p>Оценить влияние освещения, микроклимата, режима работы и&nbsp;других факторов на&nbsp;самочувствие и&nbsp;работоспособность.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">05</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.6" cy="10.6" r="6.4"/><path d="M15.4 15.4 20.6 20.6"/></svg></span>
+          <span class="dk-seq__tag">Поиск причины</span>
+          <h3>Если что-то продолжает беспокоить&nbsp;– понять, что проверить</h3>
+          <p>Разобраться, какие факторы рабочей позы, рабочего места или режима работы могут быть связаны с&nbsp;дискомфортом и&nbsp;на&nbsp;что обратить внимание в&nbsp;первую очередь.</p>
+        </article>
+      </div>
+    </div>
 
     <p class="dk-principle" data-rv><b>Главный принцип:</b> не&nbsp;человек должен приспосабливаться к&nbsp;рабочему месту&nbsp;– рабочее место должно быть адаптировано под человека и&nbsp;его задачу.</p>
   </div>
@@ -337,39 +362,33 @@
 </section>
 
 <!-- ============ БЛОК 7. ПРАКТИЧЕСКИЙ РЕЗУЛЬТАТ ============ -->
-<!-- Текст слева, справа — три составляющие результата цепочкой:
-     системный подход → практический опыт → непосредственное применение. -->
+<!-- Текст разложен по трём составляющим результата: у каждой — свой абзац,
+     карточки связаны стрелками (системный подход → практический опыт →
+     непосредственное применение). Вывод — крупной фразой на брендовой плашке. -->
 <section class="dsec" id="result">
   <div class="dwrap">
-    <div class="dk-res">
-      <div class="dk-res__txt">
-        <span class="deyebrow" data-rv>Результат</span>
-        <h2 class="dh2" data-rv style="--d:.06s">Курс, рассчитанный <span class="dh2__soft">на&nbsp;практический результат</span></h2>
-        <div data-rv style="--d:.12s">
-          <p>Курс создан не&nbsp;как теоретический обзор, а&nbsp;на&nbsp;основе многолетней практической работы с&nbsp;телом человека и&nbsp;реальными рабочими местами.</p>
-          <p>Он учитывает не&nbsp;один отдельный фактор, а&nbsp;весь комплекс условий, которые могут влиять на&nbsp;самочувствие и&nbsp;работоспособность: положение тела, мебель, оборудование, рабочую среду, режим работы и&nbsp;индивидуальные особенности.</p>
-          <p>Полученные знания можно сразу применять к&nbsp;собственному рабочему месту. После каждого блока человек использует рекомендации на&nbsp;практике и&nbsp;отвечает на&nbsp;вопросы для закрепления материала.</p>
-          <p class="dk-strong">В&nbsp;результате он&nbsp;не&nbsp;просто узнаёт правила эргономики, а&nbsp;учится самостоятельно организовывать рабочее место под своё тело и&nbsp;рабочие задачи.</p>
-        </div>
-      </div>
-      <ol class="dk-trio" data-rv style="--d:.1s">
-        <li>
-          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span>
-          <b>Системный подход</b>
-          <span>Все значимые факторы вместе, а&nbsp;не&nbsp;один отдельный</span>
-        </li>
-        <li>
-          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg></span>
-          <b>Практический опыт</b>
-          <span>Многолетняя работа с&nbsp;телом человека и&nbsp;реальными рабочими местами</span>
-        </li>
-        <li>
-          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.6l4.8 4.8L20 6.2"/></svg></span>
-          <b>Непосредственное применение</b>
-          <span>Рекомендации сразу на&nbsp;своём рабочем месте и&nbsp;вопросы для закрепления</span>
-        </li>
-      </ol>
+    <div class="dhead">
+      <span class="deyebrow" data-rv>Результат</span>
+      <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Курс, рассчитанный <span class="dh2__soft">на&nbsp;практический результат</span></h2>
     </div>
+    <ol class="dk-res3">
+      <li data-rv>
+        <span class="dk-res__top"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span><span class="dstep__n">01</span></span>
+        <h3>Системный подход</h3>
+        <p>Он учитывает не&nbsp;один отдельный фактор, а&nbsp;весь комплекс условий, которые могут влиять на&nbsp;самочувствие и&nbsp;работоспособность: положение тела, мебель, оборудование, рабочую среду, режим работы и&nbsp;индивидуальные особенности.</p>
+      </li>
+      <li data-rv style="--d:.06s">
+        <span class="dk-res__top"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg></span><span class="dstep__n">02</span></span>
+        <h3>Практический опыт</h3>
+        <p>Курс создан не&nbsp;как теоретический обзор, а&nbsp;на&nbsp;основе многолетней практической работы с&nbsp;телом человека и&nbsp;реальными рабочими местами.</p>
+      </li>
+      <li data-rv style="--d:.12s">
+        <span class="dk-res__top"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.6l4.8 4.8L20 6.2"/></svg></span><span class="dstep__n">03</span></span>
+        <h3>Непосредственное применение</h3>
+        <p>Полученные знания можно сразу применять к&nbsp;собственному рабочему месту. После каждого блока человек использует рекомендации на&nbsp;практике и&nbsp;отвечает на&nbsp;вопросы для закрепления материала.</p>
+      </li>
+    </ol>
+    <p class="dk-res__out" data-rv><span class="dk-res__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>В&nbsp;результате он&nbsp;не&nbsp;просто узнаёт правила эргономики, а&nbsp;учится самостоятельно организовывать рабочее место под своё тело и&nbsp;рабочие задачи.</p>
   </div>
 </section>
 
@@ -692,11 +711,12 @@
 <script src="../script.js?v=36"></script>
 
 <script>
-/* Отличия (тот же скрипт, что у доводов на «Для компаний»): активен тот, что пересёк линию чтения. Никакого перехвата скролла —
+/* Пошаговое чтение — «Сначала понимание» и «Что отличает этот курс» (тот же
+   скрипт, что у доводов на «Для компаний»): активен тот пункт, что пересёк линию чтения. Никакого перехвата скролла —
    страница прокручивается обычно, меняются только акценты. */
 (function(){
-  var flow = document.querySelector('[data-flow]');
-  if(!flow) return;
+  [].forEach.call(document.querySelectorAll('[data-flow]'), initFlow);
+  function initFlow(flow){
   var items = [].slice.call(flow.querySelectorAll('[data-flow-item]'));
   var rail  = [].slice.call(flow.querySelectorAll('.dflow__rail li'));
   var shots = [].slice.call(flow.querySelectorAll('[data-flow-ph]'));
@@ -792,6 +812,7 @@
       window.scrollTo({top: top, behavior: reduce ? 'auto' : 'smooth'});
     });
   });
+}
 })();
 </script>
 
