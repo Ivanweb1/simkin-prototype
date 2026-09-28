@@ -1001,7 +1001,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d footer{background:var(--tint);padding-top:0}
 .d footer .wrap{max-width:1440px;padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
 .d .foot{
-  grid-template-columns:minmax(0,1.15fr) repeat(3,minmax(0,1fr)) minmax(0,1.05fr);
+  grid-template-columns:minmax(0,1.15fr) repeat(3,minmax(0,1fr)) minmax(0,1.2fr);
   gap:clamp(22px,2.2vw,40px);
   padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(36px,3.6vw,52px);
   border-top:0;align-items:start;
@@ -1069,11 +1069,11 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
    с подписями занимает 650px, плашке нужно 823px, а полоса шире 1328px не
    бывает — вместе они не помещаются. Поэтому в строке соцсети идут одними
    значками (242px); название сети остаётся в подсказке и для чтения с экрана.
-   Ниже 1210px строка перестаёт помещаться, и всё как раньше: друг под другом
+   Ниже 1230px строка (с пятью значками) перестаёт помещаться, и всё как раньше: друг под другом
    и с подписями. */
-@media (min-width:1210px){
+@media (min-width:1230px){
   .d .foot__bar{grid-template-columns:auto auto;justify-content:space-between;gap:clamp(20px,2.4vw,40px)}
-  .d .soc{flex-wrap:nowrap;justify-content:flex-end}
+  .d .soc{flex-wrap:nowrap;justify-content:flex-end;gap:6px}
   .d .soc a{width:42px;padding:0;gap:0;justify-content:center}
   .d .soc a span{display:none}
 }
@@ -1082,11 +1082,13 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
    левому краю колонки «Контакты». Колонки и зазор — как у .foot выше. */
 @media (min-width:1281px){
   .d .foot__bar{
-    grid-template-columns:minmax(0,1.15fr) repeat(3,minmax(0,1fr)) minmax(0,1.05fr);
+    grid-template-columns:minmax(0,1.15fr) repeat(3,minmax(0,1fr)) minmax(0,1.2fr);
     gap:clamp(22px,2.2vw,40px);justify-content:stretch;
   }
   .d .clinic{grid-column:1 / 5;justify-self:start}
-  .d .soc{grid-column:5;justify-content:flex-start}
+  /* пять значков (с YouTube) — 234px: колонка контактов расширена до 1.2fr,
+     чтобы ряд влезал в неё и на 1281px */
+  .d .soc{grid-column:5;justify-content:flex-start;gap:6px}
 }
 
 /* на узком экране текст плашки уже не строка — возвращаем карточку.
@@ -1690,4 +1692,304 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .d .modal--rev .modal__box{margin:10px;padding:18px 14px 16px;border-radius:20px}
   .drv__sheet{margin-top:14px;border-radius:10px}
   .drv__nav button{height:44px;padding:0 16px;font-size:14.5px}
+}
+
+/* =====================================================================
+   ОНЛАЙН-КУРС (course.html, body.dcrs)
+   Общие приёмы — те же, что на главной и «Для компаний»: подложка --tint
+   через секцию, карточки с тенью, чёрточка-маркер, номера 01–05.
+   ===================================================================== */
+
+/* Место под настоящий экран или слайд курса. Материалы пришлёт заказчик,
+   стоковые снимки не используем: пока файла нет, видна светлая плашка
+   с подписью. Картинка кладётся внутрь <img> и закрывает подпись. */
+.dshot{
+  position:relative;overflow:hidden;border-radius:20px;aspect-ratio:16/10;
+  background:
+    radial-gradient(120% 90% at 85% 10%,rgba(84,194,255,.22),transparent 60%),
+    linear-gradient(180deg,#EEF3FC,#E4EBF8);
+  display:grid;place-items:center;
+}
+.dshot > span{
+  position:relative;z-index:0;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-3);
+}
+.dshot img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover}
+.dshot--fill{position:absolute;inset:0;aspect-ratio:auto;border-radius:0}
+/* кадр демоверсии: кнопка воспроизведения поверх */
+.dshot--play i{
+  position:absolute;z-index:2;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;
+  background:#fff;box-shadow:0 14px 34px rgba(18,62,158,.2);
+}
+.dshot--play i::after{
+  content:"";position:absolute;left:31px;top:25px;border-style:solid;border-width:13px 0 13px 21px;
+  border-color:transparent transparent transparent var(--brand);
+}
+.dshot--play > span{position:absolute;bottom:22px;left:0;right:0;text-align:center}
+.dk-hero__media{background:#E4EBF8}
+
+.dk-strong{color:var(--navy);font-weight:600}
+.dhead__note p + p{margin-top:12px}
+
+/* ---- Кому подойдёт: четыре плитки в ряд ---- */
+.dk-fit{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px)}
+.dk-fit .dstep h3{font-size:clamp(20px,1.55vw,23px);max-width:none}
+.dk-fit .dstep p{font-size:16px}
+@media (max-width:1280px){.dk-fit{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.dk-fit{grid-template-columns:1fr}}
+
+/* ---- Последовательность: пять точек на одной линии ---- */
+.dk-seq{
+  list-style:none;margin:clamp(40px,4.4vw,64px) 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(14px,1.6vw,24px);position:relative;
+}
+/* линия от первой точки к последней: тело → … → поиск причины */
+.dk-seq::before{
+  content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;
+  background:linear-gradient(90deg,var(--brand),var(--brand-2) 55%,var(--brand-3));
+}
+.dk-seq li{position:relative;display:flex;flex-direction:column}
+.dk-seq__dot{
+  width:56px;height:56px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;position:relative;
+  background:#fff;color:var(--brand);font-size:15px;font-weight:600;border:1px solid var(--d-line);
+}
+.dk-seq li:first-child .dk-seq__dot{background:var(--brand);border-color:var(--brand);color:#fff}
+.dk-seq__tag{
+  align-self:flex-start;margin-top:20px;padding:5px 12px;border-radius:100px;background:#fff;
+  font-size:13px;font-weight:600;color:var(--brand);
+}
+.dk-seq h3{margin-top:14px;font-size:clamp(18px,1.4vw,21px);font-weight:600;line-height:1.22;letter-spacing:-.018em;color:var(--navy)}
+.dk-seq p{margin-top:10px;font-size:15.5px;line-height:1.55;color:var(--navy-2)}
+.dk-principle{
+  position:relative;margin-top:clamp(40px,4.4vw,60px);padding:30px 40px 30px 76px;border-radius:28px;background:#fff;
+  font-size:clamp(19px,1.75vw,26px);font-weight:500;line-height:1.38;letter-spacing:-.016em;color:var(--navy);
+}
+.dk-principle b{font-weight:600;color:var(--brand)}
+.dk-principle::before{
+  content:"";position:absolute;left:40px;top:34px;bottom:34px;width:4px;border-radius:4px;
+  background:linear-gradient(180deg,var(--brand-3),var(--brand));
+}
+/* ниже 1101px пять колонок не держат текст — линия встаёт вертикально */
+@media (max-width:1100px){
+  .dk-seq{grid-template-columns:1fr;gap:0}
+  .dk-seq::before{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto;
+    background:linear-gradient(180deg,var(--brand),var(--brand-2) 55%,var(--brand-3))}
+  .dk-seq li{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:22px;padding-bottom:30px}
+  .dk-seq li:last-child{padding-bottom:0}
+  .dk-seq__dot{grid-row:1 / span 3}
+  .dk-seq__tag{margin-top:2px}
+  .dk-seq h3,.dk-seq p{grid-column:2;max-width:36em}
+}
+@media (max-width:600px){
+  .dk-seq::before{left:23px}
+  .dk-seq li{grid-template-columns:48px minmax(0,1fr);column-gap:16px}
+  .dk-seq__dot{width:48px;height:48px;font-size:14px}
+  .dk-seq h3{font-size:19px}
+  .dk-seq p{font-size:16px}
+  .dk-principle{padding:24px 22px 24px 44px;border-radius:22px;font-size:18.5px}
+  .dk-principle::before{left:22px;top:26px;bottom:26px}
+}
+
+/* ---- Рабочее место — это система ---- */
+.dk-sys{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,110px);align-items:start}
+.dk-sys__lead{margin-top:28px;font-size:clamp(20px,1.8vw,26px);font-weight:500;line-height:1.38;letter-spacing:-.016em;color:var(--navy);max-width:22em}
+.dk-sys__body{padding-top:clamp(0px,3.4vw,48px)}
+.dk-sys__body p{margin-top:16px;font-size:18px;line-height:1.62;color:var(--navy-2);max-width:32em}
+/* элементы рабочего места — одной связанной группой */
+.dk-parts{
+  display:flex;flex-wrap:wrap;gap:8px;padding:20px;border-radius:24px;background:var(--tint);margin-bottom:10px;
+}
+.dk-parts span{
+  display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:100px;background:#fff;
+  font-size:15px;font-weight:600;color:var(--navy);box-shadow:0 1px 2px rgba(35,43,62,.06);
+}
+.dk-parts .dk-parts__more{background:none;box-shadow:none;color:var(--navy-3);font-weight:500;padding:0 6px}
+.dk-allor{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,48px);align-items:center;
+  margin-top:clamp(40px,4.4vw,64px);padding:clamp(26px,2.8vw,40px) clamp(24px,3vw,44px);border-radius:28px;
+  background:linear-gradient(135deg,#001AE6 0%,#1147EE 30%,#2E80FF 75%,#54C2FF 125%);color:#fff;
+}
+.dk-allor__t{font-size:clamp(24px,2.3vw,34px);font-weight:600;letter-spacing:-.03em;line-height:1.1;white-space:nowrap}
+.dk-allor p{font-size:clamp(16.5px,1.3vw,18.5px);line-height:1.6;color:rgba(255,255,255,.9);max-width:46em}
+@media (max-width:980px){
+  .dk-sys{grid-template-columns:1fr;gap:28px}
+  .dk-sys__body{padding-top:0}
+  .dk-allor{grid-template-columns:1fr;gap:12px}
+}
+@media (max-width:600px){
+  .dk-sys__body p{font-size:17px}
+  .dk-parts{padding:14px;border-radius:20px}
+  .dk-parts span{height:36px;padding:0 13px;font-size:14px}
+  .dk-allor{border-radius:22px;padding:24px 22px}
+}
+
+/* ---- Что входит в курс ---- */
+.dk-stats{list-style:none;margin:clamp(28px,3vw,40px) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px}
+.dk-stats li{
+  display:flex;flex-direction:column;gap:6px;min-width:190px;padding:20px 26px;border-radius:22px;background:#fff;
+  box-shadow:0 2px 4px rgba(35,43,62,.04),0 10px 26px rgba(35,43,62,.06);
+}
+.dk-stats b{font-size:clamp(34px,3vw,46px);font-weight:600;line-height:1;letter-spacing:-.04em;color:var(--brand)}
+.dk-stats b.dk-stats__word{font-size:clamp(22px,1.9vw,28px);line-height:1.1;letter-spacing:-.025em;padding-top:clamp(6px,.8vw,12px)}
+.dk-stats span{font-size:14.5px;color:var(--navy-2)}
+/* пять разделов: три в первом ряду, два — во втором, шире */
+.dk-mods{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:clamp(36px,3.6vw,52px)}
+.dk-mod{
+  grid-column:span 2;display:flex;flex-direction:column;background:#fff;border-radius:28px;padding:14px;
+  border:1px solid rgba(35,43,62,.07);box-shadow:0 2px 4px rgba(35,43,62,.04),0 14px 34px rgba(35,43,62,.08);
+}
+.dk-mod:nth-child(n+4){grid-column:span 3}
+.dk-mod:nth-child(n+4) .dshot{aspect-ratio:16/8}
+.dk-mod__body{padding:22px 18px 18px}
+.dk-mod__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--brand)}
+.dk-mod h3{margin-top:10px;font-size:clamp(21px,1.75vw,26px);font-weight:600;line-height:1.16;letter-spacing:-.024em;color:var(--navy)}
+.dk-mod p{margin-top:12px;font-size:16px;line-height:1.58;color:var(--navy-2)}
+@media (max-width:1100px){
+  .dk-mods{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dk-mod,.dk-mod:nth-child(n+4){grid-column:auto}
+  .dk-mod:nth-child(n+4) .dshot{aspect-ratio:16/10}
+  .dk-mod:last-child{grid-column:1 / -1}
+  .dk-mod:last-child .dshot{aspect-ratio:16/7}
+}
+@media (max-width:700px){
+  .dk-mods{grid-template-columns:1fr}
+  .dk-mod:last-child .dshot{aspect-ratio:16/10}
+}
+@media (max-width:600px){
+  .dk-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .dk-stats li{min-width:0;padding:14px 14px;border-radius:18px}
+  .dk-stats b{font-size:30px}
+  .dk-stats b.dk-stats__word{font-size:18px;padding-top:6px}
+  .dk-stats span{font-size:13px}
+  .dk-mod{border-radius:22px;padding:10px}
+  .dk-mod__body{padding:18px 12px 14px}
+  .dk-mod h3{font-size:21px}
+}
+
+/* ---- Практический результат ---- */
+.dk-res{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,6vw,110px);align-items:center}
+.dk-res__txt .dh2{max-width:13em}
+.dk-res__txt p{margin-top:16px;font-size:18px;line-height:1.62;color:var(--navy-2);max-width:34em}
+.dk-res__txt .dh2 + div{margin-top:clamp(22px,2.4vw,32px)}
+.dk-res__txt .dh2 + div p:first-child{margin-top:0}
+/* три составляющие — вертикальной цепочкой со стрелками между ними */
+.dk-trio{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:34px}
+.dk-trio li{
+  position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:18px;row-gap:4px;align-items:center;
+  padding:22px 24px;border-radius:24px;background:var(--tint);
+}
+.dk-trio li .dstep__ico{grid-row:1 / span 2}
+.dk-trio b{font-size:clamp(19px,1.5vw,22px);font-weight:600;letter-spacing:-.018em;color:var(--navy);align-self:end}
+.dk-trio li > span:last-child{font-size:15.5px;line-height:1.45;color:var(--navy-2);align-self:start}
+.dk-trio li + li::before{
+  content:"";position:absolute;left:53px;top:-30px;width:2px;height:26px;background:var(--brand-3);
+}
+.dk-trio li + li::after{
+  content:"";position:absolute;left:48px;top:-10px;border-style:solid;border-width:7px 6px 0 6px;
+  border-color:var(--brand-3) transparent transparent transparent;
+}
+.dk-trio li:last-child{background:var(--brand)}
+.dk-trio li:last-child b{color:#fff}
+.dk-trio li:last-child > span:last-child{color:rgba(255,255,255,.84)}
+@media (max-width:980px){.dk-res{grid-template-columns:1fr;gap:36px}}
+@media (max-width:600px){
+  .dk-res__txt p{font-size:17px}
+  .dk-trio{gap:30px}
+  .dk-trio li{padding:18px;border-radius:20px;column-gap:14px}
+  .dk-trio li + li::before{left:43px}
+  .dk-trio li + li::after{left:38px}
+}
+
+/* ---- Демоверсия ---- */
+.dk-demo{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,64px);align-items:center;
+  background:#fff;border-radius:36px;padding:clamp(24px,3.4vw,56px);
+  box-shadow:0 2px 4px rgba(35,43,62,.04),0 20px 50px rgba(35,43,62,.08);
+}
+.dk-demo .dh2{margin-top:20px}
+.dk-demo__lead{margin-top:20px;font-size:18px;line-height:1.6;color:var(--navy-2);max-width:30em}
+.dk-demo__list{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:12px 22px}
+.dk-demo__list li{font-size:16px}
+.dk-demo__btn{margin-top:clamp(28px,3vw,40px)}
+.dk-demo .dshot{aspect-ratio:16/11;border-radius:24px}
+@media (max-width:980px){.dk-demo{grid-template-columns:1fr}.dk-demo .dshot{order:-1}}
+@media (max-width:600px){
+  .dk-demo{border-radius:26px;padding:12px 12px 24px}
+  .dk-demo__txt{padding:0 10px}
+  .dk-demo .dshot{border-radius:18px}
+  .dk-demo__list{grid-template-columns:1fr}
+  .dk-demo__btn .dbtn{width:100%}
+}
+
+/* ---- Что отличает этот курс: сетка 3×2, в первой ячейке заголовок ---- */
+.dk-feat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(24px,3vw,48px)}
+.dk-feat__head{padding:0 0 40px}
+.dk-feat article{padding:30px 0 40px;border-top:1px solid var(--d-line)}
+.dk-feat__head + article,.dk-feat__head + article + article{border-top:0;padding-top:clamp(0px,5vw,72px)}
+.dk-feat__n{font-size:clamp(30px,2.6vw,40px);font-weight:600;line-height:1;letter-spacing:-.03em;color:var(--brand);opacity:.3}
+.dk-feat h3{margin-top:18px;font-size:clamp(21px,1.75vw,26px);font-weight:600;line-height:1.18;letter-spacing:-.024em;color:var(--navy);max-width:15em}
+.dk-feat p{margin-top:12px;font-size:16.5px;line-height:1.6;color:var(--navy-2);max-width:30em}
+.dk-feat article:hover .dk-feat__n{opacity:1;transition:opacity .25s var(--ease)}
+@media (max-width:1000px){
+  .dk-feat{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dk-feat__head{grid-column:1 / -1;padding-bottom:12px}
+  .dk-feat__head + article,.dk-feat__head + article + article{padding-top:30px;border-top:1px solid var(--d-line)}
+}
+@media (max-width:640px){
+  .dk-feat{grid-template-columns:1fr}
+  .dk-feat article{padding:24px 0 26px}
+  .dk-feat h3{font-size:21px;max-width:none}
+}
+
+/* ---- Автор ---- */
+.dk-author__note{margin-top:clamp(20px,2.2vw,28px);font-size:17px;line-height:1.6;color:var(--navy-2);max-width:34em}
+
+/* ---- Вопросы и ответы ---- */
+.dk-faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,110px);align-items:start}
+.dk-faq .dh2{max-width:9em}
+.dk-faq__list{border-top:1px solid var(--d-line)}
+.dk-faq details{border-bottom:1px solid var(--d-line)}
+.dk-faq summary{
+  list-style:none;cursor:pointer;position:relative;padding:24px 56px 24px 0;
+  font-size:clamp(18px,1.45vw,21px);font-weight:600;line-height:1.35;letter-spacing:-.015em;color:var(--navy);
+  transition:color .2s var(--ease);
+}
+.dk-faq summary::-webkit-details-marker{display:none}
+.dk-faq summary:hover{color:var(--brand)}
+.dk-faq summary:focus-visible{outline:2px solid var(--brand);outline-offset:4px;border-radius:6px}
+/* плюс в кружке, в открытом вопросе — минус */
+.dk-faq summary::before,.dk-faq summary::after{
+  content:"";position:absolute;right:15px;top:50%;width:14px;height:2px;margin-top:-1px;border-radius:2px;background:var(--brand);
+  transition:transform .25s var(--ease);
+}
+.dk-faq summary::after{transform:rotate(90deg)}
+.dk-faq details[open] summary::after{transform:rotate(0)}
+.dk-faq summary{background:radial-gradient(circle at calc(100% - 22px) 50%,var(--tint) 21px,transparent 22px)}
+.dk-faq details > div{padding:0 56px 26px 0}
+.dk-faq details p{font-size:17px;line-height:1.62;color:var(--navy-2);max-width:40em}
+.dk-faq details p + p{margin-top:10px}
+@media (max-width:980px){.dk-faq{grid-template-columns:1fr;gap:26px}.dk-faq .dh2{max-width:none}}
+@media (max-width:600px){
+  .dk-faq summary{padding:20px 50px 20px 0;font-size:17.5px}
+  .dk-faq details > div{padding:0 0 22px}
+  .dk-faq details p{font-size:16.5px}
+}
+
+/* ---- Финальный банд без формы ---- */
+/* без формы правая половина банда пустовала — содержимое по центру */
+.dk-band{text-align:center;display:flex;flex-direction:column;align-items:center}
+.dk-band .dband__h2{max-width:16em;text-wrap:balance}
+.dco .dk-band .dband__soft{display:inline}
+.dk-band .dband__sub{margin-left:auto;margin-right:auto}
+.dk-band__act{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 28px;margin-top:clamp(28px,3vw,40px)}
+.dk-band__btn{background:#fff;color:var(--brand-deep)}
+.dk-band__btn:hover{background:#EAF1FF}
+.dk-band__link{display:inline-flex;align-items:center;gap:9px;font-size:17px;font-weight:600;color:#fff;transition:opacity .2s var(--ease)}
+.dk-band__link svg{width:17px;height:17px;transition:transform .22s var(--ease)}
+.dk-band__link:hover{opacity:.82}
+.dk-band__link:hover svg{transform:translateX(4px)}
+@media (max-width:600px){
+  .dk-band{text-align:left;align-items:stretch}
+  .dk-band__act{flex-direction:column;align-items:stretch}
+  .dk-band__btn{width:100%}
+  .dk-band__link{justify-content:center;padding:6px 0}
 }

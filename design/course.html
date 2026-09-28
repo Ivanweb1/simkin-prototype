@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Онлайн-курс — Simkin.ru (дизайн)</title>
+<script>document.documentElement.className+=" js"</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../styles.css?v=30">
+<link rel="stylesheet" href="design.css?v=153">
+</head>
+<body class="d dco dcrs">
+
+<!-- ============ ОБЩЕЕ: ШАПКА, ЗАКРЕПЛЕНА ПРИ ПРОКРУТКЕ ============ -->
+<header id="hdr">
+  <div class="wrap hdr">
+    <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Доктор Симкин" width="139" height="44"></a>
+
+    <nav class="mainnav">
+      <div class="navitem">
+        <a href="company.html" class="is-current" aria-current="page">Для компаний <i></i></a>
+        <div class="sub sub--groups">
+          <div class="sub__group">
+            <a href="company.html#offers" class="sub__head">Офисная эргономика</a>
+            <a href="../audit.html">Аудит и консалтинг</a>
+            <a href="company.html#offers">Корпоративная версия курса</a>
+            <a href="../program.html">Корпоративная программа</a>
+            <a href="../workplace.html">Подбор и организация рабочих мест</a>
+            <a href="company.html#offers">Чек-апы</a>
+          </div>
+          <div class="sub__group">
+            <a href="../industrial.html" class="sub__head">Промышленная эргономика</a>
+          </div>
+        </div>
+      </div>
+      <div class="navitem">
+        <a href="../self.html">Для себя <i></i></a>
+        <div class="sub">
+          <a href="course.html">Онлайн-курс</a>
+          <a href="../solutions.html">Эргономичные решения</a>
+          <a href="../products.html">Авторские разработки</a>
+          <a href="../knowledge.html">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="navitem"><a href="course.html">Онлайн-курс</a></div>
+      <div class="navitem"><a href="../solutions.html">Эргономичные решения</a></div>
+      <div class="navitem"><a href="../method.html">Метод Симкина</a></div>
+      <div class="navitem"><a href="../about.html">Дмитрий Симкин</a></div>
+      <div class="navitem"><a href="../knowledge.html">Полезные статьи</a></div>
+    </nav>
+
+    <div class="hdr__cta"><button class="btn btn--sm btn--fill btn--plain" data-open="discuss">Обсудить задачу</button></div>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+
+  <!-- мобильное меню -->
+  <nav class="mnav" id="mnav">
+    <div class="wrap mnav__in">
+      <div class="mnav__item">
+        <a href="company.html">Для компаний</a>
+        <div class="mnav__sub">
+          <a href="company.html#offers" class="mnav__head">Офисная эргономика</a>
+          <a href="../audit.html">Аудит и консалтинг</a>
+          <a href="company.html#offers">Корпоративная версия курса</a>
+          <a href="../program.html">Корпоративная программа</a>
+          <a href="../workplace.html">Подбор и организация рабочих мест</a>
+          <a href="company.html#offers">Чек-апы</a>
+          <a href="../industrial.html" class="mnav__head">Промышленная эргономика</a>
+        </div>
+      </div>
+      <div class="mnav__item">
+        <a href="../self.html">Для себя</a>
+        <div class="mnav__sub">
+          <a href="course.html">Онлайн-курс</a>
+          <a href="../solutions.html">Эргономичные решения</a>
+          <a href="../products.html">Авторские разработки</a>
+          <a href="../knowledge.html">Полезные статьи</a>
+        </div>
+      </div>
+      <div class="mnav__item"><a href="course.html">Онлайн-курс</a></div>
+      <div class="mnav__item"><a href="../solutions.html">Эргономичные решения</a></div>
+      <div class="mnav__item"><a href="../method.html">Метод Симкина</a></div>
+      <div class="mnav__item"><a href="../about.html">Дмитрий Симкин</a></div>
+      <div class="mnav__item"><a href="../knowledge.html">Полезные статьи</a></div>
+      <a href="tel:+79219566447" class="mnav__tel">+7 921 956-64-47</a>
+      <div class="btns"><button class="btn" data-open>Обратный звонок</button></div>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
+<!-- Карточка как на «Для компаний». Кнопок нет намеренно: переходы для
+     частных и корпоративных пользователей — в следующем блоке, демоверсия —
+     ниже, когда уже понятно, что за курс. Справа — место под настоящий
+     экран курса (материалы пришлёт заказчик, стоковые снимки не используем). -->
+<section class="dcohero" id="hero">
+  <div class="dwrap">
+    <div class="dcohero__card">
+      <div class="dcohero__txt">
+        <span class="deyebrow" data-rv>Система эргономики Доктора Симкина</span>
+        <h1 data-rv style="--d:.06s">Онлайн-курс по&nbsp;эргономике <em>рабочего места</em></h1>
+        <p class="dcohero__sub" data-rv style="--d:.12s">Курс создан врачом-остеопатом на&nbsp;основе многолетней работы с&nbsp;телом человека и&nbsp;более чем 20-летнего опыта корпоративного обучения эргономике в&nbsp;российских и&nbsp;зарубежных компаниях.</p>
+        <p class="dcohero__lead" data-rv style="--d:.18s">Он объясняет, зачем нужна эргономика, как рабочая поза, оборудование и&nbsp;рабочая среда влияют на&nbsp;самочувствие и&nbsp;работоспособность человека, и&nbsp;учит адаптировать рабочее место под человека и&nbsp;его задачу.</p>
+      </div>
+      <div class="dcohero__media dk-hero__media" data-rv style="--d:.06s">
+        <div class="dshot dshot--fill"><span>Экран курса</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 2. ОДИН КУРС – ДВА ФОРМАТА ============ -->
+<!-- Две карточки-перехода в разделы, без покупки с этой страницы. -->
+<section class="dsec dsec--tint" id="formats">
+  <div class="dwrap">
+    <div class="dhead">
+      <span class="deyebrow" data-rv>Форматы</span>
+      <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Один курс&nbsp;– <span class="dh2__soft">два формата использования</span></h2>
+    </div>
+    <div class="daud">
+      <a href="../self.html" class="dcard" data-rv>
+        <span class="dcard__top">
+          <span class="dcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.8" r="3.6"/><path d="M4.8 20.4v-1.2a7.2 7.2 0 0 1 14.4 0v1.2"/></svg></span>
+          <span class="dcard__n">01</span>
+        </span>
+        <h3>Для себя</h3>
+        <p>Проходя курс, вы&nbsp;разберётесь, как работа влияет на&nbsp;ваше тело, найдёте оптимальную рабочую позу, последовательно настроите рабочее место под себя и&nbsp;ответите на&nbsp;вопросы для закрепления материала в&nbsp;конце каждого блока.</p>
+        <span class="dlink">Перейти в&nbsp;раздел «Для себя»<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+      </a>
+      <a href="company.html" class="dcard" data-rv style="--d:.1s">
+        <span class="dcard__top">
+          <span class="dcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V6l7-3v18M19 21V11l-7-3"/><path d="M8 9h1M8 12.5h1M8 16h1M15 14h1M15 17.5h1"/></svg></span>
+          <span class="dcard__n">02</span>
+        </span>
+        <h3>Для компании</h3>
+        <p>Компания может использовать тот же курс для обучения сотрудников самостоятельно или как часть комплексной программы офисной эргономики с&nbsp;аудитом, практической настройкой рабочих мест и&nbsp;контролем результата.</p>
+        <span class="dlink">Перейти в&nbsp;раздел «Для компаний»<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3. КОМУ ПОДОЙДЁТ КУРС ============ -->
+<section class="dsec" id="audience">
+  <div class="dwrap">
+    <div class="dhead">
+      <span class="deyebrow" data-rv>Для кого</span>
+      <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Кому <span class="dh2__soft">подойдёт курс</span></h2>
+    </div>
+    <div class="dk-fit">
+      <article class="dstep" data-rv>
+        <span class="dstep__head">
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="4.4" width="18.4" height="11.4" rx="1.8"/><path d="M8.4 19.6h7.2M12 15.8v3.8"/></svg></span>
+          <span class="dstep__n">01</span>
+        </span>
+        <h3>Тем, кто много работает за&nbsp;компьютером</h3>
+        <p>В&nbsp;офисе, дома или в&nbsp;гибридном формате&nbsp;– и&nbsp;хочет меньше уставать и&nbsp;лучше организовать своё рабочее место.</p>
+      </article>
+      <article class="dstep" data-rv style="--d:.06s">
+        <span class="dstep__head">
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2.4"/><path d="M12 6.8v13M7.2 10h9.6M7.6 14h8.8M8.2 18h7.6"/></svg></span>
+          <span class="dstep__n">02</span>
+        </span>
+        <h3>Тем, у&nbsp;кого к&nbsp;концу дня появляется дискомфорт</h3>
+        <p>В&nbsp;спине, шее, плечах, руках или других областях&nbsp;– и&nbsp;кто хочет разобраться, какие элементы рабочей позы и&nbsp;рабочего места стоит проверить.</p>
+      </article>
+      <article class="dstep" data-rv style="--d:.12s">
+        <span class="dstep__head">
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11V5.6A1.6 1.6 0 0 1 7.6 4h8.8A1.6 1.6 0 0 1 18 5.6V11"/><path d="M4.4 11h15.2v4H4.4zM12 15v4.4M8 20h8"/></svg></span>
+          <span class="dstep__n">03</span>
+        </span>
+        <h3>Тем, кто уже купил хорошую мебель, но&nbsp;всё равно устаёт</h3>
+        <p>Качественное кресло или регулируемый стол сами по&nbsp;себе не&nbsp;гарантируют хорошей эргономики. Важно правильно использовать их&nbsp;возможности и&nbsp;согласовать элементы рабочего места между собой.</p>
+      </article>
+      <article class="dstep" data-rv style="--d:.18s">
+        <span class="dstep__head">
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V6l7-3v18M19 21V11l-7-3"/><path d="M8 9h1M8 12.5h1M8 16h1M15 14h1M15 17.5h1"/></svg></span>
+          <span class="dstep__n">04</span>
+        </span>
+        <h3>Компаниям</h3>
+        <p>Которые хотят снижать утомляемость сотрудников, поддерживать стабильную продуктивность и&nbsp;качество работы, а&nbsp;также эффективнее использовать уже имеющуюся мебель и&nbsp;оборудование.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4. СНАЧАЛА ПОНИМАНИЕ ============ -->
+<!-- Последовательность показана графически: пять точек на одной линии,
+     под каждой — шаг и пояснение. На узком экране линия становится
+     вертикальной. Главный принцип — плашкой с чёрточкой, как цитата. -->
+<section class="dsec dsec--tint" id="sequence">
+  <div class="dwrap">
+    <div class="dhead dhead--split">
+      <div>
+        <span class="deyebrow" data-rv>Подход</span>
+        <h2 class="dh2" data-rv style="--d:.06s">Не&nbsp;просто инструкции&nbsp;– <span class="dh2__soft">сначала понимание</span></h2>
+      </div>
+      <div class="dhead__note" data-rv style="--d:.12s">
+        <p>Большинство рекомендаций по&nbsp;эргономике начинаются с&nbsp;готовых правил: как поставить монитор, на&nbsp;какой высоте должен быть стол, под каким углом держать руки.</p>
+        <p class="dk-strong">Мы идём в&nbsp;другой последовательности.</p>
+      </div>
+    </div>
+
+    <ol class="dk-seq" data-rv>
+      <li>
+        <span class="dk-seq__dot">01</span>
+        <span class="dk-seq__tag">Тело</span>
+        <h3>Разобраться, как работает тело</h3>
+        <p>Понять, как положение тела влияет на&nbsp;распределение нагрузки, мышечное напряжение, позвоночник, суставы, дыхание и&nbsp;самочувствие.</p>
+      </li>
+      <li>
+        <span class="dk-seq__dot">02</span>
+        <span class="dk-seq__tag">Рабочая поза</span>
+        <h3>Найти оптимальную рабочую позу</h3>
+        <p>Определить положение тела, подходящее человеку и&nbsp;конкретной рабочей задаче.</p>
+      </li>
+      <li>
+        <span class="dk-seq__dot">03</span>
+        <span class="dk-seq__tag">Рабочее место</span>
+        <h3>Настроить рабочее место</h3>
+        <p>Адаптировать под эту позу кресло, стол, монитор, клавиатуру, мышь, устройства и&nbsp;другие элементы рабочего места.</p>
+      </li>
+      <li>
+        <span class="dk-seq__dot">04</span>
+        <span class="dk-seq__tag">Рабочая среда</span>
+        <h3>Учесть условия рабочей среды</h3>
+        <p>Оценить влияние освещения, микроклимата, режима работы и&nbsp;других факторов на&nbsp;самочувствие и&nbsp;работоспособность.</p>
+      </li>
+      <li>
+        <span class="dk-seq__dot">05</span>
+        <span class="dk-seq__tag">Поиск причины</span>
+        <h3>Если что-то продолжает беспокоить&nbsp;– понять, что проверить</h3>
+        <p>Разобраться, какие факторы рабочей позы, рабочего места или режима работы могут быть связаны с&nbsp;дискомфортом и&nbsp;на&nbsp;что обратить внимание в&nbsp;первую очередь.</p>
+      </li>
+    </ol>
+
+    <p class="dk-principle" data-rv><b>Главный принцип:</b> не&nbsp;человек должен приспосабливаться к&nbsp;рабочему месту&nbsp;– рабочее место должно быть адаптировано под человека и&nbsp;его задачу.</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5. РАБОЧЕЕ МЕСТО – ЭТО СИСТЕМА ============ -->
+<!-- Слева тезис крупно, справа пояснение. Элементы рабочего места — набором
+     плашек, связанных в одну систему; «всё или ничего» — выводом внизу. -->
+<section class="dsec" id="system">
+  <div class="dwrap">
+    <div class="dk-sys">
+      <div>
+        <span class="deyebrow" data-rv>Системный подход</span>
+        <h2 class="dh2" data-rv style="--d:.06s">Рабочее место&nbsp;– <span class="dh2__soft">это система</span></h2>
+        <p class="dk-sys__lead" data-rv style="--d:.12s">Можно правильно настроить почти всё&nbsp;– и&nbsp;всё равно продолжать перегружать тело из-за всего одного элемента, который меняет рабочую позу.</p>
+      </div>
+      <div class="dk-sys__body" data-rv style="--d:.12s">
+        <div class="dk-parts" aria-label="Элементы рабочего места">
+          <span>Кресло</span><span>Стол</span><span>Монитор</span><span>Клавиатура</span><span>Мышь</span><span>Ноутбук</span><span>Документы</span><span>Освещение</span><span class="dk-parts__more">и&nbsp;другие элементы</span>
+        </div>
+        <p>Кресло, стол, монитор, клавиатура, мышь, ноутбук, документы, освещение и&nbsp;другие элементы работают не&nbsp;отдельно, а&nbsp;вместе.</p>
+        <p>Поэтому курс построен по&nbsp;системному принципу: последовательно проверить все значимые элементы и&nbsp;настроить их&nbsp;так, чтобы они поддерживали оптимальную рабочую позу.</p>
+      </div>
+    </div>
+    <div class="dk-allor" data-rv>
+      <span class="dk-allor__t">«Всё или ничего»</span>
+      <p>Именно поэтому эргономика работает по&nbsp;принципу «всё или ничего». Если хотя&nbsp;бы один фактор не&nbsp;учтён, он&nbsp;может заставлять человека отклоняться от&nbsp;оптимальной рабочей позы. Тогда эффективность остальных правильных настроек снижается.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 6. ЧТО ВХОДИТ В КУРС ============ -->
+<!-- Объём — тремя цифрами. Программа — пятью смысловыми разделами, не
+     списком всех презентаций. У каждого раздела место под настоящий слайд
+     курса (пришлёт заказчик). -->
+<section class="dsec dsec--tint" id="program">
+  <div class="dwrap">
+    <div class="dhead">
+      <span class="deyebrow" data-rv>Программа</span>
+      <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Что входит <span class="dh2__soft">в&nbsp;курс</span></h2>
+    </div>
+    <ul class="dk-stats" data-rv style="--d:.12s">
+      <li><b>22</b><span>презентации</span></li>
+      <li><b>77</b><span>видео</span></li>
+      <li><b class="dk-stats__word">Озвучка</b><span>большинства слайдов</span></li>
+    </ul>
+
+    <div class="dk-mods">
+      <article class="dk-mod" data-rv>
+        <div class="dshot"><span>Слайд курса</span></div>
+        <div class="dk-mod__body">
+          <span class="dk-mod__n">Раздел 1</span>
+          <h3>Поза и&nbsp;тело</h3>
+          <p>Как рабочая поза влияет на&nbsp;тело, почему появляется избыточное мышечное напряжение, как работают позвоночник, суставы и&nbsp;дыхательная механика и&nbsp;каким должно быть сбалансированное положение тела.</p>
+        </div>
+      </article>
+      <article class="dk-mod" data-rv style="--d:.06s">
+        <div class="dshot"><span>Слайд курса</span></div>
+        <div class="dk-mod__body">
+          <span class="dk-mod__n">Раздел 2</span>
+          <h3>Рабочее место</h3>
+          <p>Кресло, стол, монитор, клавиатура, мышь, подставки и&nbsp;другие элементы рабочего места, а&nbsp;также разные варианты их&nbsp;настройки.</p>
+        </div>
+      </article>
+      <article class="dk-mod" data-rv style="--d:.12s">
+        <div class="dshot"><span>Слайд курса</span></div>
+        <div class="dk-mod__body">
+          <span class="dk-mod__n">Раздел 3</span>
+          <h3>Устройства и&nbsp;разные сценарии работы</h3>
+          <p>Ноутбук, смартфон, планшет, бумажные документы, несколько мониторов, кронштейны, работа стоя и&nbsp;ситуации, когда полноценного рабочего места рядом нет.</p>
+        </div>
+      </article>
+      <article class="dk-mod" data-rv>
+        <div class="dshot"><span>Слайд курса</span></div>
+        <div class="dk-mod__body">
+          <span class="dk-mod__n">Раздел 4</span>
+          <h3>Среда, работоспособность и&nbsp;восстановление</h3>
+          <p>Освещение, микроклимат, режим работы, перерывы, упражнения, поддержание работоспособности и&nbsp;организация работы вне офиса.</p>
+        </div>
+      </article>
+      <article class="dk-mod" data-rv style="--d:.06s">
+        <div class="dshot"><span>Слайд курса</span></div>
+        <div class="dk-mod__body">
+          <span class="dk-mod__n">Раздел 5</span>
+          <h3>Если что-то болит</h3>
+          <p>Что проверить в&nbsp;рабочей позе и&nbsp;рабочем месте, если появляются боль или дискомфорт в&nbsp;спине, шее, плечах, локтях, запястьях и&nbsp;других областях.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 7. ПРАКТИЧЕСКИЙ РЕЗУЛЬТАТ ============ -->
+<!-- Текст слева, справа — три составляющие результата цепочкой:
+     системный подход → практический опыт → непосредственное применение. -->
+<section class="dsec" id="result">
+  <div class="dwrap">
+    <div class="dk-res">
+      <div class="dk-res__txt">
+        <span class="deyebrow" data-rv>Результат</span>
+        <h2 class="dh2" data-rv style="--d:.06s">Курс, рассчитанный <span class="dh2__soft">на&nbsp;практический результат</span></h2>
+        <div data-rv style="--d:.12s">
+          <p>Курс создан не&nbsp;как теоретический обзор, а&nbsp;на&nbsp;основе многолетней практической работы с&nbsp;телом человека и&nbsp;реальными рабочими местами.</p>
+          <p>Он учитывает не&nbsp;один отдельный фактор, а&nbsp;весь комплекс условий, которые могут влиять на&nbsp;самочувствие и&nbsp;работоспособность: положение тела, мебель, оборудование, рабочую среду, режим работы и&nbsp;индивидуальные особенности.</p>
+          <p>Полученные знания можно сразу применять к&nbsp;собственному рабочему месту. После каждого блока человек использует рекомендации на&nbsp;практике и&nbsp;отвечает на&nbsp;вопросы для закрепления материала.</p>
+          <p class="dk-strong">В&nbsp;результате он&nbsp;не&nbsp;просто узнаёт правила эргономики, а&nbsp;учится самостоятельно организовывать рабочее место под своё тело и&nbsp;рабочие задачи.</p>
+        </div>
+      </div>
+      <ol class="dk-trio" data-rv style="--d:.1s">
+        <li>
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span>
+          <b>Системный подход</b>
+          <span>Все значимые факторы вместе, а&nbsp;не&nbsp;один отдельный</span>
+        </li>
+        <li>
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.5 9.7l5.9-.9z"/></svg></span>
+          <b>Практический опыт</b>
+          <span>Многолетняя работа с&nbsp;телом человека и&nbsp;реальными рабочими местами</span>
+        </li>
+        <li>
+          <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.6l4.8 4.8L20 6.2"/></svg></span>
+          <b>Непосредственное применение</b>
+          <span>Рекомендации сразу на&nbsp;своём рабочем месте и&nbsp;вопросы для закрепления</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 8. ДЕМОВЕРСИЯ ============ -->
+<!-- Светлая карточка: текст и кнопка слева, место под кадр демоверсии
+     справа. Список — что именно покажет демо; длительность не указана. -->
+<section class="dsec dsec--tint" id="demo">
+  <div class="dwrap">
+    <div class="dk-demo" data-rv>
+      <div class="dk-demo__txt">
+        <span class="deyebrow">Демоверсия</span>
+        <h2 class="dh2">Посмотрите, <span class="dh2__soft">как устроен курс</span></h2>
+        <p class="dk-demo__lead">Демоверсия позволяет увидеть стиль, глубину и&nbsp;качество материала до&nbsp;прохождения полного курса.</p>
+        <ul class="dgain__list dk-demo__list">
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>фрагменты реальных презентаций</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>авторская озвучка и&nbsp;видео</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>примеры иллюстраций</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>несколько неочевидных принципов</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>вопросы для закрепления</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>элементы практического применения</li>
+        </ul>
+        <!-- адрес демоверсии появится, когда она будет готова -->
+        <div class="dk-demo__btn">
+          <a href="#demo" class="dbtn dbtn--brand">Посмотреть демоверсию<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+      <div class="dshot dshot--play"><span>Кадр демоверсии</span><i aria-hidden="true"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 9. ЧТО ОТЛИЧАЕТ ЭТОТ КУРС ============ -->
+<!-- Сетка 3×2: первая ячейка — заголовок блока, в остальных пять отличий. -->
+<section class="dsec" id="features">
+  <div class="dwrap">
+    <div class="dk-feat">
+      <div class="dk-feat__head">
+        <span class="deyebrow" data-rv>Отличия</span>
+        <h2 class="dh2" data-rv style="--d:.06s">Что отличает <span class="dh2__soft">этот курс</span></h2>
+      </div>
+      <article data-rv>
+        <span class="dk-feat__n">01</span>
+        <h3>Начинается с&nbsp;человека, а&nbsp;не&nbsp;с&nbsp;мебели</h3>
+        <p>Сначала человек разбирается, как работает его тело и&nbsp;какое положение ему нужно, и&nbsp;только потом настраивает оборудование.</p>
+      </article>
+      <article data-rv style="--d:.06s">
+        <span class="dk-feat__n">02</span>
+        <h3>Объясняет причины</h3>
+        <p>Не&nbsp;просто «поставьте монитор так», а&nbsp;почему именно эта настройка подходит при конкретной задаче и&nbsp;положении тела.</p>
+      </article>
+      <article data-rv>
+        <span class="dk-feat__n">03</span>
+        <h3>Рассматривает рабочее место целиком</h3>
+        <p>От&nbsp;рабочей позы до&nbsp;кресла, стола, устройств, освещения, микроклимата и&nbsp;режима работы.</p>
+      </article>
+      <article data-rv style="--d:.06s">
+        <span class="dk-feat__n">04</span>
+        <h3>Учитывает разные сценарии</h3>
+        <p>Офис, дом, ноутбук, смартфон, работа стоя, несколько мониторов, документы и&nbsp;другие реальные ситуации.</p>
+      </article>
+      <article data-rv style="--d:.12s">
+        <span class="dk-feat__n">05</span>
+        <h3>Помогает искать источник проблемы</h3>
+        <p>Если что-то болит или быстро устаёт, курс помогает разобраться, какие элементы рабочего места и&nbsp;рабочей позы стоит проверить.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 10. АВТОР КУРСА ============ -->
+<!-- Тот же блок, что «Обо мне» на главной; снимок — в медицинской рубашке
+     Клиники Доктора Симкина. -->
+<section class="dsec dsec--tint" id="author">
+  <div class="dwrap">
+    <div class="dexp">
+      <div class="dexp__ph" data-rv>
+        <picture>
+          <source srcset="assets/photo/simkin-2.webp?v=2" type="image/webp">
+          <img src="assets/photo/simkin-2.jpg?v=2" alt="Дмитрий Симкин" width="853" height="960" loading="lazy" decoding="async">
+        </picture>
+      </div>
+      <div class="dexp__body">
+        <span class="deyebrow" data-rv>Автор курса</span>
+        <h2 class="dh2" data-rv style="--d:.06s">Дмитрий Симкин</h2>
+        <p class="dexp__spec" data-rv style="--d:.1s">Врач-остеопат, специалист по&nbsp;эргономике с&nbsp;1996&nbsp;года.</p>
+        <ul class="dfacts" data-rv style="--d:.16s">
+          <li><span class="dfacts__y">1991</span><span class="dfacts__t">Начало медицинской практики</span></li>
+          <li><span class="dfacts__y">1996</span><span class="dfacts__t">Первая запатентованная разработка в&nbsp;области эргономики</span></li>
+          <li><span class="dfacts__y">2004</span><span class="dfacts__t">Начало преподавания эргономики</span></li>
+          <li><span class="dfacts__y">2009</span><span class="dfacts__t">Основание Клиники Доктора Симкина</span></li>
+        </ul>
+        <p class="dk-author__note" data-rv style="--d:.18s">Курс объединяет врачебное понимание работы тела и&nbsp;многолетний опыт практической эргономики&nbsp;– от&nbsp;корпоративного обучения до&nbsp;анализа и&nbsp;настройки реальных рабочих мест.</p>
+        <div class="dexp__btn" data-rv style="--d:.2s">
+          <a href="../about.html" class="dbtn dbtn--light">Подробнее о&nbsp;Дмитрии Симкине<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 11. ВОПРОСЫ И ОТВЕТЫ ============ -->
+<!-- Раскрывающийся список на <details>: работает без скрипта и с клавиатуры. -->
+<section class="dsec" id="faq">
+  <div class="dwrap">
+    <div class="dk-faq">
+      <div>
+        <span class="deyebrow" data-rv>FAQ</span>
+        <h2 class="dh2" data-rv style="--d:.06s">Вопросы <span class="dh2__soft">и&nbsp;ответы</span></h2>
+      </div>
+      <div class="dk-faq__list" data-rv style="--d:.1s">
+        <details>
+          <summary>Нужно&nbsp;ли проходить весь курс за&nbsp;один раз?</summary>
+          <div><p>Нет. Материал лучше проходить последовательно и&nbsp;после каждого раздела сразу применять рекомендации на&nbsp;практике.</p></div>
+        </details>
+        <details>
+          <summary>Подойдёт&nbsp;ли курс для работы из&nbsp;дома?</summary>
+          <div><p>Да. Курс рассматривает не&nbsp;только классическое офисное рабочее место, но&nbsp;и&nbsp;ноутбук, мобильные устройства и&nbsp;работу вне офиса.</p></div>
+        </details>
+        <details>
+          <summary>А&nbsp;если у&nbsp;меня уже хорошее эргономичное кресло?</summary>
+          <div><p>Качественное кресло&nbsp;– только один элемент системы. Важно правильно его настроить и&nbsp;согласовать с&nbsp;высотой стола, монитором, клавиатурой, мышью и&nbsp;конкретной рабочей задачей.</p></div>
+        </details>
+        <details>
+          <summary>А&nbsp;если у&nbsp;меня плохое кресло или неудобный стол&nbsp;– есть&nbsp;ли смысл проходить курс?</summary>
+          <div>
+            <p>Да. Не&nbsp;всегда для улучшения рабочего места нужно сразу менять мебель.</p>
+            <p>Во&nbsp;многих случаях имеющееся кресло можно лучше настроить, а&nbsp;недостатки рабочего места частично компенсировать правильной организацией и&nbsp;дополнительными аксессуарами.</p>
+            <p>Курс поможет сначала максимально использовать возможности того, что у&nbsp;вас уже есть.</p>
+            <p>Если в&nbsp;дальнейшем вы&nbsp;решите усовершенствовать рабочее место, вы&nbsp;будете понимать, как выбирать кресло, стол и&nbsp;оборудование не&nbsp;только по&nbsp;внешнему виду, но&nbsp;и&nbsp;по&nbsp;тому, насколько они способны адаптироваться к&nbsp;особенностям вашего тела и&nbsp;вашей работы.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Подойдёт&nbsp;ли курс, если уже болит спина или шея?</summary>
+          <div>
+            <p>В&nbsp;курсе есть разделы, которые помогают проверить возможные факторы рабочего места и&nbsp;рабочей позы, связанные с&nbsp;болью и&nbsp;дискомфортом.</p>
+            <p>При этом онлайн-курс не&nbsp;заменяет медицинскую диагностику и&nbsp;лечение.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Можно&nbsp;ли пройти курс сотрудникам компании?</summary>
+          <div><p>Да. Для компаний предусмотрен корпоративный формат обучения. Подробнее о&nbsp;нём&nbsp;– в&nbsp;разделе <a href="company.html" class="dtext-link">«Для компаний»</a>.</p></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 12. ФИНАЛЬНЫЙ БЛОК ============ -->
+<!-- Банд, как на главной, но без формы: одна главная кнопка в раздел
+     «Для себя» и рядом ссылка «Для компаний». -->
+<section class="dsec dsec--cta" id="cta">
+  <div class="dwrap">
+    <div class="dband dk-band" data-rv>
+      <h2 class="dh2 dband__h2">Настройте рабочее место под себя&nbsp;– <span class="dband__soft">осознанно</span></h2>
+      <p class="dband__sub">Разберитесь, как работает ваше тело, найдите оптимальную рабочую позу и&nbsp;последовательно настройте под неё рабочее место.</p>
+      <div class="dk-band__act">
+        <a href="../self.html" class="dbtn dk-band__btn">Перейти в&nbsp;раздел «Для себя»<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
+        <a href="company.html" class="dk-band__link">Для компаний<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ОБЩЕЕ: ПОДВАЛ ============ -->
+<footer id="contacts">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Доктор Симкин" width="139" height="44"></a>
+        <p class="foot__about">Авторская система эргономики Доктора Симкина: обучение и&nbsp;практические решения для компаний и&nbsp;частных пользователей.</p>
+      </div>
+
+      <div>
+        <h4>Для компаний</h4>
+        <ul>
+          <li><a href="../audit.html">Аудит и консалтинг</a></li>
+          <li><a href="company.html#offers">Корпоративная версия курса</a></li>
+          <li><a href="../program.html">Корпоративная программа</a></li>
+          <li><a href="../workplace.html">Подбор рабочих мест</a></li>
+          <li><a href="../industrial.html">Промышленная эргономика</a></li>
+          <li><a href="company.html#offers">Чек-апы</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Для себя</h4>
+        <ul>
+          <li><a href="course.html">Онлайн-курс</a></li>
+          <li><a href="../solutions.html">Эргономичные решения</a></li>
+          <li><a href="../products.html">Авторские разработки</a></li>
+          <li><a href="../knowledge.html">Полезные статьи</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>О проекте</h4>
+        <ul>
+          <li><a href="../method.html">Метод Симкина</a></li>
+          <li><a href="../about.html">Дмитрий Симкин</a></li>
+          <li><a href="../contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+79219566447">+7 921 956-64-47</a></li>
+          <li><a href="mailto:mail@simkin.ru">mail@simkin.ru</a></li>
+          <li class="foot__msg">
+            <span class="foot__msg-t">Написать:</span>
+            <a href="https://t.me/+79219566447" target="_blank" rel="noopener" aria-label="Написать в Telegram" title="Telegram"><img src="assets/soc/telegram.svg" alt="" width="26" height="26"></a>
+            <a href="https://wa.me/79219566447" target="_blank" rel="noopener" aria-label="Написать в WhatsApp" title="WhatsApp"><img src="assets/soc/whatsapp.svg" alt="" width="26" height="26"></a>
+            <a href="https://web.max.ru/" target="_blank" rel="noopener" data-max aria-label="Написать в MAX" title="MAX"><img src="assets/soc/max.svg" alt="" width="26" height="26"></a>
+          </li>
+        </ul>
+        <button class="foot__cb" data-open>Обратный звонок</button>
+      </div>
+    </div>
+
+    <div class="foot__bar">
+      <div class="clinic">Запись на остеопатический и другие медицинские приёмы — на сайте Клиники Доктора Симкина <a href="https://doctorsimkin.ru">DoctorSimkin.ru</a></div>
+      <div class="soc">
+      <a href="https://vk.com/doctorsimkin" target="_blank" rel="noopener" aria-label="ВКонтакте" title="ВКонтакте"><img src="assets/soc/vk.svg" alt="" width="22" height="22"><span>ВКонтакте</span></a>
+      <a href="https://t.me/doctorsimkin" target="_blank" rel="noopener" aria-label="Telegram-канал" title="Telegram-канал"><img src="assets/soc/telegram.svg" alt="" width="22" height="22"><span>Telegram</span></a>
+      <a href="https://max.ru/id7802476076_biz" target="_blank" rel="noopener" aria-label="MAX-канал" title="MAX-канал"><img src="assets/soc/max.svg" alt="" width="22" height="22"><span>MAX</span></a>
+      <!-- YouTube: ссылку на канал заказчик пришлёт позже — поставить в href -->
+      <a href="#" aria-label="YouTube" title="YouTube"><img src="assets/soc/youtube.svg" alt="" width="22" height="22"><span>YouTube</span></a>
+      <a href="https://rutube.ru/channel/39326891/" target="_blank" rel="noopener" aria-label="RUTUBE" title="RUTUBE"><img src="assets/soc/rutube.svg" alt="" width="22" height="22"><span>RUTUBE</span></a>
+      </div>
+    </div>
+
+    <div class="foot__bottom">
+      <span>© 2026 Simkin.ru · Реквизиты юридического лица</span>
+      <span><a href="#">Политика конфиденциальности</a> · <a href="#">Согласие на обработку данных</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБРАТНЫЙ ЗВОНОК» ============ -->
+<div class="modal" id="callback">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="cbTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="cbTitle">Обратный звонок</h2>
+    <p>Оставьте номер телефона – перезвоним и&nbsp;ответим на&nbsp;ваши вопросы.</p>
+    <form class="mform" onsubmit="return false">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield" placeholder="Удобное время">
+      <label class="magree"><input type="checkbox" name="agree" required><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill">Жду звонка</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБСУДИТЬ ЗАДАЧУ» (для компаний) ============ -->
+<div class="modal" id="discuss">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box modal__box--wide" role="dialog" aria-modal="true" aria-labelledby="dsTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="dsTitle">Обсудить задачу</h2>
+    <p>Расскажите коротко о&nbsp;задаче – свяжемся с&nbsp;вами, уточним детали и&nbsp;предложим подходящий формат работы.</p>
+    <form class="mform mform--2" data-thanks="discuss">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield" placeholder="Компания">
+      <input class="mfield" placeholder="Должность">
+      <input class="mfield" type="email" placeholder="Почта">
+      <input class="mfield" placeholder="Число сотрудников">
+      <textarea class="mfield mform__full" placeholder="Сообщение"></textarea>
+      <label class="magree mform__full"><input type="checkbox" name="agree" required><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill mform__full">Отправить</button>
+    </form>
+  </div>
+</div>
+
+<!-- переключатель вариантов убран: заказчик утвердил вариант A (index-b.html / index-c.html остаются в репозитории) -->
+<!-- ============ ОБЩЕЕ: ОКНО «НАПИСАТЬ В MAX» ============ -->
+<div class="modal" id="maxinfo">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="mxTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="mxTitle">Написать в MAX</h2>
+    <p>Найдите нас в&nbsp;MAX по&nbsp;номеру телефона:</p>
+    <a href="tel:+79219566447" class="dmax__tel">+7 921 956-64-47</a>
+    <div class="dmax__btns">
+      <button type="button" class="dbtn dbtn--light" data-copy="+79219566447">Скопировать номер</button>
+      <a href="https://web.max.ru/" target="_blank" rel="noopener" class="dbtn dbtn--brand">Открыть MAX</a>
+    </div>
+  </div>
+</div>
+
+<script src="../script.js?v=35"></script>
+
+
+</body>
+</html>
