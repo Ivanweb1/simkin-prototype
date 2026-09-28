@@ -10,6 +10,43 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="styles.css?v=30">
+<style>
+/* Отзывы: карточки и просмотр скана — как в дизайне (design/design.css),
+   переведённые на серые токены прототипа */
+.drevs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:44px}
+.drev{display:flex;flex-direction:column;text-align:left;width:100%;padding:0;border:0;background:none;font:inherit;color:var(--ink);cursor:zoom-in;scroll-margin-top:110px}
+.drev[hidden]{display:none}
+.drev__ph{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:var(--r);transition:box-shadow .25s var(--ease),transform .25s var(--ease)}
+.drev__ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.drev__ph::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(180deg,rgba(255,255,255,0),#fff 92%)}
+.drev__name{display:block;margin-top:16px;font-size:18px;font-weight:700;line-height:1.3;letter-spacing:-.015em}
+.drev__meta{display:block;margin-top:4px;font-size:14px;line-height:1.45;color:var(--ink-2)}
+@media (hover:hover) and (pointer:fine){.drev:hover .drev__ph{box-shadow:0 16px 40px rgba(0,0,0,.08);transform:translateY(-3px)}}
+.drev.is-target .drev__ph{border-color:var(--ink)}
+@media (max-width:1100px){.drevs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.drevs{gap:18px 12px}.drev__name{font-size:16px}.drev__meta{font-size:13px}}
+.modal__back{position:fixed}
+.modal--rev .modal__box{max-width:880px;margin:24px auto;padding:30px}
+.drv__head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;padding-right:48px}
+.drv__name{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.drv__meta{font-size:14px;color:var(--ink-2)}
+.drv__sheet{margin-top:16px;display:flex;justify-content:center}
+.drv__sheet img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px}
+.drv__full{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:var(--ink);text-decoration:none}
+.drv__nav{display:flex;justify-content:space-between;gap:10px;margin-top:14px}
+.drv__nav button{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:100px;border:1px solid var(--line);background:#fff;font:inherit;font-size:15px;font-weight:700;color:var(--ink);cursor:pointer}
+.drv__nav svg{width:16px;height:16px}
+/* десктоп: окно целиком в экране, лист вписан по высоте */
+@media (min-width:861px) and (min-height:640px){
+  .modal--rev{overflow:hidden}
+  .modal--rev .modal__box{display:flex;flex-direction:column;height:calc(100vh - 48px);width:min(880px, calc((100vh - 250px) * .72 + 60px));max-width:calc(100vw - 48px)}
+  .drv__head,.drv__full,.drv__nav{flex:0 0 auto}
+  .drv__full{align-self:center}
+  .drv__sheet{flex:1 1 auto;min-height:0}
+  .drv__sheet img{width:auto;height:100%;max-width:100%;object-fit:contain}
+}
+@media (max-width:600px){.modal--rev .modal__box{margin:10px;padding:18px 14px 16px;border-radius:20px;min-height:0}}
+</style>
 </head>
 <body>
 
@@ -169,45 +206,34 @@
 <section class="sec sec--alt" id="results">
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
-      <h2>Опыт <span class="soft">и результаты</span></h2>
-      <p>Логотипы, отзывы и благодарственные письма переносятся со старого сайта и актуализируются.</p>
+      <h2>Отзывы <span class="soft">компаний</span></h2>
+      <p>Четыре отзыва о&nbsp;промышленной эргономике. Все отзывы собраны на&nbsp;странице «Для компаний».</p>
     </div>
 
-    <div class="logos" data-rv style="--d:.06s">
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
-        <div class="ph"><span>Логотип</span></div>
+    <!-- Те же карточки и тот же просмотр скана, что в блоке «Отзывы компаний»
+         на design/company.html (логика — в script.js). Отобраны отзывы про
+         производство: Sanofi, Ford, Алкоа, Kraft Foods. -->
+    <div class="drevs" data-reviews data-rv style="--d:.06s">
+      <button type="button" class="drev" id="review-sanofi" data-rev="sanofi">
+        <span class="drev__ph"><img alt="" decoding="async"></span>
+        <span class="drev__name">Sanofi</span><span class="drev__meta">Обучение промышленной эргономике, 2020</span>
+      </button>
+      <button type="button" class="drev" id="review-ford" data-rev="ford">
+        <span class="drev__ph"><img alt="" decoding="async"></span>
+        <span class="drev__name">Ford</span><span class="drev__meta">Тренинг по&nbsp;эргономике для специалистов, 2006</span>
+      </button>
+      <button type="button" class="drev" id="review-alcoa" data-rev="alcoa">
+        <span class="drev__ph"><img alt="" decoding="async"></span>
+        <span class="drev__name">Алкоа Металлург Рус</span><span class="drev__meta">Тренинг по&nbsp;основам эргономики, 2007</span>
+      </button>
+      <button type="button" class="drev" id="review-kraft-foods" data-rev="kraft-foods">
+        <span class="drev__ph"><img alt="" decoding="async"></span>
+        <span class="drev__name">Kraft Foods</span><span class="drev__meta">Тренинги и&nbsp;консалтинг, 2005</span>
+      </button>
     </div>
 
-    <div class="reviews" style="margin-top:44px">
-      <div class="review" data-rv>
-        <div class="review__mark">«</div>
-        <p class="review__txt">Цитата из отзыва: что было до обучения, что изменилось после и на чём это видно.</p>
-        <div class="review__who">
-          <div class="ph review__ph"></div>
-          <div><b>Имя Фамилия</b><span>Должность, предприятие</span></div>
-        </div>
-      </div>
-      <div class="review" data-rv style="--d:.08s">
-        <div class="review__mark">«</div>
-        <p class="review__txt">Цитата из отзыва: что было до обучения, что изменилось после и на чём это видно.</p>
-        <div class="review__who">
-          <div class="ph review__ph"></div>
-          <div><b>Имя Фамилия</b><span>Должность, предприятие</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:44px" data-rv>
-      <span class="eyebrow" style="margin-bottom:20px">Благодарственные письма</span>
-      <div class="letters">
-        <div class="ph"><span>Письмо</span></div>
-        <div class="ph"><span>Письмо</span></div>
-        <div class="ph"><span>Письмо</span></div>
-        <div class="ph"><span>Письмо</span></div>
-      </div>
+    <div class="btns" style="margin-top:40px;justify-content:center" data-rv>
+      <a href="design/company.html#reviews" class="btn">Все отзывы</a>
     </div>
   </div>
 </section>
@@ -355,6 +381,6 @@
   </div>
 </div>
 
-<script src="script.js?v=32"></script>
+<script src="script.js?v=35"></script>
 </body>
 </html>

@@ -230,7 +230,8 @@ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-m
 (function(){
   var cards = [].slice.call(document.querySelectorAll('.drev[data-rev]'));
   if (!cards.length) return;
-  var DIR = 'assets/reviews/';
+  // сканы лежат в design/assets/reviews; страницы прототипа — в корне
+  var DIR = (/\/design\//.test(location.pathname) ? '' : 'design/') + 'assets/reviews/';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var arrowL = '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9H3M8 4 3 9l5 5"/></svg>';
   var arrowR = '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg>';
