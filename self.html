@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Simkin.ru — прототип страницы «Для себя»</title>
+<title>Simkin.ru — прототип страницы «Эргономика для себя»</title>
+<!-- Рабочий URL: /ergonomika-dlya-sebya/ -->
 <script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,16 +26,17 @@
       <div class="navitem">
         <a href="company.html">Для компаний <i></i></a>
         <div class="sub">
-          <a href="company.html#offers">Офисная эргономика</a>
+          <a href="audit.html">Офисная эргономика</a>
           <a href="industrial.html">Промышленная эргономика</a>
-          <a href="course.html">Корпоративная версия курса</a>
-          <a href="design/company.html#checkups">Остеопатические чек-апы</a>
+          <a href="course.html#corp">Корпоративная версия курса</a>
+          <a href="company.html#checkups">Остеопатические чек-апы</a>
         </div>
       </div>
       <div class="navitem">
         <a href="self.html">Для себя <i></i></a>
         <div class="sub">
           <a href="course.html">Онлайн-курс</a>
+          <a href="workplace.html">Индивидуальная консультация</a>
           <a href="solutions.html">Эргономичные решения</a>
           <a href="products.html">Авторские разработки</a>
           <a href="knowledge.html">Полезные статьи</a>
@@ -57,16 +59,17 @@
       <div class="mnav__item">
         <a href="company.html">Для компаний</a>
         <div class="mnav__sub">
-          <a href="company.html#offers">Офисная эргономика</a>
+          <a href="audit.html">Офисная эргономика</a>
           <a href="industrial.html">Промышленная эргономика</a>
-          <a href="course.html">Корпоративная версия курса</a>
-          <a href="design/company.html#checkups">Остеопатические чек-апы</a>
+          <a href="course.html#corp">Корпоративная версия курса</a>
+          <a href="company.html#checkups">Остеопатические чек-апы</a>
         </div>
       </div>
       <div class="mnav__item">
         <a href="self.html">Для себя</a>
         <div class="mnav__sub">
           <a href="course.html">Онлайн-курс</a>
+          <a href="workplace.html">Индивидуальная консультация</a>
           <a href="solutions.html">Эргономичные решения</a>
           <a href="products.html">Авторские разработки</a>
           <a href="knowledge.html">Полезные статьи</a>
@@ -98,11 +101,11 @@
     <div class="hero__grid">
       <div>
         <span class="eyebrow" data-rv>Для себя</span>
-        <h1 data-rv style="--d:.06s">Заголовок первого экрана</h1>
+        <h1 data-rv style="--d:.06s">Эргономика для себя</h1>
         <p class="lead" data-rv style="--d:.12s">Подзаголовок: короткое объяснение, что человек получает от работы с эргономикой своего рабочего места.</p>
         <div class="btns" data-rv style="--d:.18s">
           <a href="course.html" class="btn btn--fill">Пройти курс</a>
-          <a href="solutions.html" class="btn">Решения для рабочего места</a>
+          <a href="workplace.html" class="btn">Записаться на консультацию</a>
         </div>
       </div>
       <div class="ph ph--lg hero__ph" data-rv style="--d:.24s"><span>Фотография</span></div>
@@ -149,14 +152,16 @@
   </div>
 </section>
 
-<!-- ============ БЛОК 3. ОСНОВНОЙ МАРШРУТ ============ -->
+<!-- ============ БЛОК 3. ТРИ ОСНОВНЫХ ВХОДА ============ -->
+<!-- Три основных входа раздела. Авторские разработки и статьи — ниже,
+     дополнительными разделами. -->
 <section class="sec" id="route">
   <div class="wrap sec__inner">
     <div class="head head--split" data-rv>
-      <h2>Основной <span class="soft">маршрут</span></h2>
+      <h2>С чего <span class="soft">начать</span></h2>
       <p>Короткий поясняющий абзац к блоку.</p>
     </div>
-    <div class="grid-4">
+    <div class="grid-3">
       <a href="course.html" class="card" data-rv style="--d:.0s">
         <span class="idx">01</span>
         <div class="icon sq"></div>
@@ -164,24 +169,17 @@
         <p>Одна строка о том, что это и кому подойдёт.</p>
         <span class="link">Перейти</span>
       </a>
-      <a href="solutions.html" class="card" data-rv style="--d:.1s">
+      <a href="workplace.html" class="card" data-rv style="--d:.1s">
         <span class="idx">02</span>
         <div class="icon sq"></div>
-        <h3>Эргономичные решения для рабочего места</h3>
+        <h3>Индивидуальная консультация</h3>
         <p>Одна строка о том, что это и кому подойдёт.</p>
         <span class="link">Перейти</span>
       </a>
-      <a href="products.html" class="card" data-rv style="--d:.2s">
+      <a href="solutions.html" class="card" data-rv style="--d:.2s">
         <span class="idx">03</span>
         <div class="icon sq"></div>
-        <h3>Авторские разработки</h3>
-        <p>Одна строка о том, что это и кому подойдёт.</p>
-        <span class="link">Перейти</span>
-      </a>
-      <a href="knowledge.html" class="card" data-rv style="--d:.3s">
-        <span class="idx">04</span>
-        <div class="icon sq"></div>
-        <h3>Полезные статьи</h3>
+        <h3>Эргономичные решения</h3>
         <p>Одна строка о том, что это и кому подойдёт.</p>
         <span class="link">Перейти</span>
       </a>
@@ -202,8 +200,32 @@
   </div>
 </section>
 
-<!-- ============ БЛОК 5. ПОЛЕЗНЫЕ СТАТЬИ ============ -->
-<section class="sec" id="articles">
+<!-- ============ БЛОК 5. АВТОРСКИЕ РАЗРАБОТКИ (дополнительный раздел) ============ -->
+<section class="sec" id="products">
+  <div class="wrap sec__inner">
+    <div class="head head--row" data-rv>
+      <h2>Авторские <span class="soft">разработки</span></h2>
+      <a href="products.html" class="link link--u">Все разработки</a>
+    </div>
+    <div class="grid-3">
+      <a href="product.html" class="post" data-rv style="--d:.0s">
+        <div class="ph"><span>Фотография</span></div>
+        <h3>Название разработки</h3>
+      </a>
+      <a href="product.html" class="post" data-rv style="--d:.1s">
+        <div class="ph"><span>Фотография</span></div>
+        <h3>Название разработки</h3>
+      </a>
+      <a href="product.html" class="post" data-rv style="--d:.2s">
+        <div class="ph"><span>Фотография</span></div>
+        <h3>Название разработки</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 6. ПОЛЕЗНЫЕ СТАТЬИ (дополнительный раздел) ============ -->
+<section class="sec sec--alt" id="articles">
   <div class="wrap sec__inner">
     <div class="head head--row" data-rv>
       <h2>Полезные <span class="soft">статьи</span></h2>
@@ -232,8 +254,8 @@
   </div>
 </section>
 
-<!-- ============ БЛОК 6. ВОПРОСЫ И ОТВЕТЫ ============ -->
-<section class="sec sec--alt" id="faq">
+<!-- ============ БЛОК 7. ВОПРОСЫ И ОТВЕТЫ ============ -->
+<section class="sec" id="faq">
   <div class="wrap sec__inner">
     <div class="head head--center" data-rv>
       <span class="eyebrow">FAQ</span>
@@ -264,7 +286,7 @@
   </div>
 </section>
 
-<!-- ============ БЛОК 7. ЗАЯВКА ============ -->
+<!-- ============ БЛОК 8. ЗАЯВКА ============ -->
 <section class="sec" id="request">
   <div class="wrap sec__inner">
     <div class="band" data-rv>
@@ -300,10 +322,10 @@
       <div>
         <h4>Для компаний</h4>
         <ul>
-          <li><a href="company.html#offers">Офисная эргономика</a></li>
+          <li><a href="audit.html">Офисная эргономика</a></li>
           <li><a href="industrial.html">Промышленная эргономика</a></li>
-          <li><a href="course.html">Корпоративная версия курса</a></li>
-          <li><a href="design/company.html#checkups">Остеопатические чек-апы</a></li>
+          <li><a href="course.html#corp">Корпоративная версия курса</a></li>
+          <li><a href="company.html#checkups">Остеопатические чек-апы</a></li>
         </ul>
       </div>
 
@@ -311,6 +333,7 @@
         <h4>Для себя</h4>
         <ul>
           <li><a href="course.html">Онлайн-курс</a></li>
+          <li><a href="workplace.html">Индивидуальная консультация</a></li>
           <li><a href="solutions.html">Эргономичные решения</a></li>
           <li><a href="products.html">Авторские разработки</a></li>
           <li><a href="knowledge.html">Полезные статьи</a></li>

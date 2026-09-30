@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Simkin.ru — прототип страницы «Для компаний»</title>
+<title>Simkin.ru — прототип страницы «Эргономика для компаний»</title>
+<!-- Рабочий URL: /ergonomika-dlya-kompaniy/ -->
 <script>document.documentElement.className+=" js"</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,16 +26,17 @@
       <div class="navitem">
         <a href="company.html">Для компаний <i></i></a>
         <div class="sub">
-          <a href="company.html#offers">Офисная эргономика</a>
+          <a href="audit.html">Офисная эргономика</a>
           <a href="industrial.html">Промышленная эргономика</a>
-          <a href="course.html">Корпоративная версия курса</a>
-          <a href="design/company.html#checkups">Остеопатические чек-апы</a>
+          <a href="course.html#corp">Корпоративная версия курса</a>
+          <a href="company.html#checkups">Остеопатические чек-апы</a>
         </div>
       </div>
       <div class="navitem">
         <a href="self.html">Для себя <i></i></a>
         <div class="sub">
           <a href="course.html">Онлайн-курс</a>
+          <a href="workplace.html">Индивидуальная консультация</a>
           <a href="solutions.html">Эргономичные решения</a>
           <a href="products.html">Авторские разработки</a>
           <a href="knowledge.html">Полезные статьи</a>
@@ -57,16 +59,17 @@
       <div class="mnav__item">
         <a href="company.html">Для компаний</a>
         <div class="mnav__sub">
-          <a href="#offers">Офисная эргономика</a>
+          <a href="audit.html">Офисная эргономика</a>
           <a href="industrial.html">Промышленная эргономика</a>
-          <a href="course.html">Корпоративная версия курса</a>
-          <a href="design/company.html#checkups">Остеопатические чек-апы</a>
+          <a href="course.html#corp">Корпоративная версия курса</a>
+          <a href="company.html#checkups">Остеопатические чек-апы</a>
         </div>
       </div>
       <div class="mnav__item">
         <a href="self.html">Для себя</a>
         <div class="mnav__sub">
           <a href="course.html">Онлайн-курс</a>
+          <a href="workplace.html">Индивидуальная консультация</a>
           <a href="solutions.html">Эргономичные решения</a>
           <a href="products.html">Авторские разработки</a>
           <a href="knowledge.html">Полезные статьи</a>
@@ -97,11 +100,11 @@
   <div class="wrap hero__inner">
     <div class="hero__grid">
       <div>
-        <span class="eyebrow" data-rv>Для компаний</span>
-        <h1 data-rv style="--d:.06s">Заголовок первого экрана</h1>
+        <span class="eyebrow" data-rv>Офис и производство</span>
+        <h1 data-rv style="--d:.06s">Эргономика для компаний</h1>
         <p class="lead" data-rv style="--d:.12s">Подзаголовок: короткое объяснение, что компания получает от работы с эргономикой.</p>
         <div class="btns" data-rv style="--d:.18s">
-          <a href="#request" class="btn btn--fill">Запросить корпоративную программу</a>
+          <a href="#offers" class="btn btn--fill">Выбрать направление</a>
           <a href="#request" class="btn btn--plain">Обсудить задачу</a>
         </div>
       </div>
@@ -239,59 +242,47 @@
   </div>
 </section>
 
-<!-- ============ БЛОК 5. ЧТО МЫ ПРЕДЛАГАЕМ КОМПАНИИ ============ -->
+<!-- ============ БЛОК 5. НАПРАВЛЕНИЯ ДЛЯ КОМПАНИЙ ============ -->
+<!-- Страница обзорная: два направления, каждое ведёт на свою страницу.
+     Комплексный формат отдельной страницей не делаем — он раскрыт внутри
+     офисной и промышленной эргономики. Чек-апы — небольшим медицинским
+     блоком со ссылкой на сайт клиники, отдельной страницы на Simkin.ru нет. -->
 <section class="sec" id="offers">
   <div class="wrap sec__inner">
     <div class="head head--center" data-rv>
-      <span class="eyebrow">Услуги</span>
-      <h2>Что мы предлагаем <span class="soft">компании</span></h2>
+      <span class="eyebrow">Направления</span>
+      <h2>Два направления <span class="soft">работы с компаниями</span></h2>
       <p>Короткий поясняющий абзац к блоку.</p>
     </div>
     <div class="panel" data-rv style="--d:.06s">
-      <div class="cells cells--3">
+      <div class="cells cells--2">
         <div class="cell">
           <span class="idx">01</span>
           <div class="icon sq"></div>
-          <h3>Аудит и консалтинг</h3>
-          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-          <a href="audit.html" class="link">Подробнее</a>
+          <h3>Офисная эргономика</h3>
+          <p>Аудит и консалтинг, обучение сотрудников, настройка рабочих мест, подбор мебели и оборудования, сопровождение новых офисов, комплексная программа и контроль результата.</p>
+          <a href="audit.html" class="link">Подробнее об офисной эргономике</a>
         </div>
         <div class="cell">
           <span class="idx">02</span>
           <div class="icon sq"></div>
-          <h3>Корпоративная версия курса</h3>
-          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-          <a href="#" class="link">Подробнее</a>
-        </div>
-        <div class="cell">
-          <span class="idx">03</span>
-          <div class="icon sq"></div>
-          <h3>Комплексная корпоративная программа</h3>
-          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-          <a href="program.html" class="link">Подробнее</a>
-        </div>
-        <div class="cell">
-          <span class="idx">04</span>
-          <div class="icon sq"></div>
-          <h3>Подбор и организация рабочих мест</h3>
-          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-          <a href="workplace.html" class="link">Подробнее</a>
-        </div>
-        <div class="cell">
-          <span class="idx">05</span>
-          <div class="icon sq"></div>
           <h3>Промышленная эргономика</h3>
-          <p>Две строки текста с коротким описанием услуги и того, что входит в работу.</p>
-          <a href="industrial.html" class="link">Подробнее</a>
-        </div>
-        <div class="cell">
-          <span class="idx">06</span>
-          <div class="icon sq"></div>
-          <h3>Чек-апы</h3>
-          <p>Корпоративная оценка перегрузки и эргономических рисков. Не медицинская диагностика.</p>
-          <a href="https://doctorsimkin.ru" class="link">Клиника Доктора Симкина</a>
+          <p>Аудит производственных рабочих мест и операций, оценка эргономических рисков, консалтинг, обучение и практика на рабочих местах, комплексная программа и контроль результата.</p>
+          <a href="industrial.html" class="link">Подробнее о промышленной эргономике</a>
         </div>
       </div>
+    </div>
+    <p data-rv style="margin:28px auto 0;max-width:40em;text-align:center;font-size:16px;color:var(--ink-2)">Если у компании есть и офисные, и производственные рабочие места, программа может объединять оба направления.</p>
+
+    <div class="download" id="checkups" data-rv style="margin-top:44px">
+      <div class="download__in">
+        <div class="icon" style="flex:0 0 auto"></div>
+        <div>
+          <h3>Остеопатические чек-апы сотрудников</h3>
+          <p>Медицинское направление Клиники Доктора Симкина. Подробности и запись — на сайте клиники.</p>
+        </div>
+      </div>
+      <a href="https://doctorsimkin.ru" class="btn">DoctorSimkin.ru</a>
     </div>
   </div>
 </section>
@@ -459,10 +450,10 @@
       <div>
         <h4>Для компаний</h4>
         <ul>
-          <li><a href="company.html#offers">Офисная эргономика</a></li>
+          <li><a href="audit.html">Офисная эргономика</a></li>
           <li><a href="industrial.html">Промышленная эргономика</a></li>
-          <li><a href="course.html">Корпоративная версия курса</a></li>
-          <li><a href="design/company.html#checkups">Остеопатические чек-апы</a></li>
+          <li><a href="course.html#corp">Корпоративная версия курса</a></li>
+          <li><a href="company.html#checkups">Остеопатические чек-апы</a></li>
         </ul>
       </div>
 
@@ -470,6 +461,7 @@
         <h4>Для себя</h4>
         <ul>
           <li><a href="course.html">Онлайн-курс</a></li>
+          <li><a href="workplace.html">Индивидуальная консультация</a></li>
           <li><a href="solutions.html">Эргономичные решения</a></li>
           <li><a href="products.html">Авторские разработки</a></li>
           <li><a href="knowledge.html">Полезные статьи</a></li>
