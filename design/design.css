@@ -2177,9 +2177,6 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dcheck__btn{grid-column:1 / -1;width:100%}
 }
 
-/* иконка остеопатических чек-апов: ладонь врача лежит поверх спины —
-   заливка цветом плашки скрывает контур спины под ладонью */
-.dico-cover{fill:var(--tint)}
 
 /* видео-визитка на «Для компаний»: широкий кадр 16:9 во всю ширину сетки;
    за ним сразу идёт белый блок клиентов, поэтому низ без полного отступа */
@@ -2193,3 +2190,11 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dvideo i::after{left:26px;top:21px;border-width:11px 0 11px 18px}
   .dvideo > span{bottom:14px;font-size:11px}
 }
+
+/* настоящие слайды курса: показываются целиком, без обрезки. Слайд 4:3
+   вписывается в рамку 16:9 с белыми полями — у слайдов белый фон, поля
+   с ним сливаются */
+.dshot--slide{background:#fff}
+.dshot--slide::after{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;box-shadow:inset 0 0 0 1px var(--d-line);pointer-events:none}
+.dshot--slide picture{position:absolute;inset:0;z-index:1}
+.dshot--slide img{object-fit:contain}
