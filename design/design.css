@@ -1047,6 +1047,14 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .d .foot__msg a{display:block;line-height:0;transition:transform .2s var(--ease)}
 .d .foot__msg a:hover{transform:translateY(-2px)}
 .d .foot__msg img{width:26px;height:26px;flex:0 0 auto;border-radius:7px;display:block}
+/* мессенджеры на телефоне: значок крупнее на ~15% (26 → 30px), а зона
+   нажатия — 48×48, чтобы попадать пальцем без промаха */
+@media (max-width:600px){
+  .d .foot__msg{gap:0}
+  .d .foot__msg-t{margin-right:4px}
+  .d .foot__msg a{display:flex;align-items:center;justify-content:center;width:48px;height:48px}
+  .d .foot__msg img{width:30px;height:30px;border-radius:8px}
+}
 .d .soc{gap:8px;padding-bottom:0;justify-content:flex-start}
 .d .soc a{
   height:42px;padding:0 18px 0 12px;display:inline-flex;align-items:center;gap:9px;border-radius:100px;
@@ -1188,7 +1196,10 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 /* =====================================================================
    МОБИЛЬНОЕ МЕНЮ
    ===================================================================== */
-.d .mnav{background:#fff;border-top:1px solid var(--d-line);max-height:calc(100vh - 68px)}
+/* 100dvh учитывает выезжающие панели браузера на iPhone и Android;
+   100vh остаётся запасным вариантом для старых браузеров */
+.d .mnav{background:#fff;border-top:1px solid var(--d-line);
+  max-height:calc(100vh - 68px);max-height:calc(100dvh - 68px)}
 .d .mnav__in{max-width:1440px;padding-top:14px;padding-bottom:32px;
   padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
 .d .mnav__item{border-bottom:1px solid var(--d-line)}
