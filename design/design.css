@@ -2393,43 +2393,40 @@ a.dprod:visited{color:var(--navy)}
 .dprd .dsec--tint .dfuture .dstep__ico{background:#fff}
 
 /* «Для кого» на главной: карточка 03 «Производителям мебели» — на всю ширину
-   сетки, в две колонки. Иконка и номер — только над левой колонкой, панель
-   справа начинается от верха карточки, без пустой полосы над ней: слева описание, условие амбассадорства цитатой и кнопка; справа —
-   панель «Что входит в работу» с пунктами 01–04. На телефоне панель встаёт
-   между описанием и цитатой, кнопка — последней. */
+   сетки, в две колонки. Порядок чтения: слева что делаем и пункты работы
+   (01–04), справа панель «Результат совместной работы» — следствие
+   (рекомендации и амбассадорство) и кнопка. Панель тянется по высоте левой
+   колонки, кнопка стоит внизу. На телефоне тот же порядок одной колонкой. */
 .dcard--wide{
-  grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
   column-gap:clamp(32px,5vw,88px);align-items:stretch;
 }
 .dcard__main{display:flex;flex-direction:column}
-.dcard__main p{max-width:30em}
-.dcard--wide .dcard__note{
-  margin-top:26px;padding-left:20px;border-left:3px solid var(--brand);
-  font-size:16.5px;line-height:1.6;color:var(--navy-2);
-}
-.dcard__btn{margin-top:auto;padding-top:34px}
-.dmk{background:var(--tint);border-radius:22px;padding:26px 30px 14px;display:flex;flex-direction:column}
-.dmk__t{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-3)}
-/* пункты делят высоту панели поровну: панель тянется по левой колонке, и
-   без этого под последним пунктом оставалась пустота */
-.dmk__list{list-style:none;margin:14px 0 0;padding:0;flex:1;display:grid;grid-auto-rows:1fr}
+.dcard__main > p{max-width:30em}
+.dmk__list{list-style:none;margin:22px 0 0;padding:0;border-bottom:1px solid var(--d-line)}
 .dmk__list li{
-  display:grid;grid-template-columns:40px minmax(0,1fr);align-items:baseline;align-content:center;
-  padding:17px 0;border-top:1px solid var(--d-line);
+  display:grid;grid-template-columns:40px minmax(0,1fr);align-items:baseline;
+  padding:15px 0;border-top:1px solid var(--d-line);
   font-size:17px;line-height:1.45;color:var(--navy);
 }
 .dmk__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
+.dmk{
+  display:flex;flex-direction:column;align-items:flex-start;
+  background:var(--tint);border-radius:24px;padding:clamp(26px,2.6vw,36px);
+}
+.dmk__ico{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:#fff;color:var(--brand)}
+.dmk__ico svg{width:24px;height:24px}
+.dmk__t{display:block;margin-top:22px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-3)}
+.dmk__txt{margin-top:12px;font-size:clamp(18px,1.45vw,21px);font-weight:500;line-height:1.5;letter-spacing:-.01em;color:var(--navy)}
+.dcard__btn{margin-top:auto;padding-top:32px}
 @media (max-width:860px){
   .dcard--wide{display:flex;flex-direction:column}
-  .dcard__main{display:contents}
-  .dmk{order:1;margin-top:24px}
-  .dmk__list{grid-auto-rows:auto}
-  .dcard--wide .dcard__note{order:2}
-  .dcard__btn{order:3;margin-top:0;padding-top:28px}
+  .dmk{margin-top:26px}
+  .dcard__btn{padding-top:26px;width:100%}
 }
 @media (max-width:600px){
-  .dmk{border-radius:18px;padding:20px 18px 8px}
-  .dmk__list li{grid-template-columns:34px minmax(0,1fr);padding:14px 0;font-size:16px}
-  .dcard--wide .dcard__note{font-size:15.5px;padding-left:16px}
+  .dmk__list li{grid-template-columns:34px minmax(0,1fr);padding:13px 0;font-size:16px}
+  .dmk{border-radius:18px;padding:22px 18px}
+  .dmk__txt{font-size:17px}
   .dcard__btn .dbtn{width:100%}
 }
