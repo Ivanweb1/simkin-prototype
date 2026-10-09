@@ -2244,3 +2244,151 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 @media (prefers-reduced-motion:reduce){
   .dvw,.dvw:not(.is-open):hover{transition:none;transform:none}
 }
+
+/* =====================================================================
+   АВТОРСКИЕ РАЗРАБОТКИ: общая страница и четыре страницы разработок
+   (products.html, product-*.html). Каркас раздела заложен целиком; тексты
+   и фото пришлёт заказчик. Где фактов ещё нет — серые строки .dskel, как
+   в сером прототипе: так видно объём текста, но нет выдуманных цифр.
+   ===================================================================== */
+
+/* строки-заглушки под будущий текст */
+.dskel{display:block;height:12px;border-radius:6px;background:rgba(35,43,62,.09);margin-top:12px}
+.dskel:first-child{margin-top:0}
+.dskel--w80{width:80%}.dskel--w60{width:60%}.dskel--w40{width:40%}
+.dskel--lg{height:18px}
+
+/* статус разработки: в продаже / скоро / в разработке */
+.dchip{
+  display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 13px;border-radius:100px;
+  background:var(--tint);color:var(--brand);font-size:13px;font-weight:600;line-height:1;white-space:nowrap;
+}
+.dchip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.dchip--soon{background:var(--navy);color:#fff}
+.dchip--soon::before{background:var(--brand-3)}
+.dchip--dev{background:#fff;color:var(--navy-2);box-shadow:inset 0 0 0 1px var(--d-line)}
+.dchip--dev::before{background:var(--navy-3)}
+.dchips{display:flex;flex-wrap:wrap;gap:8px}
+
+/* возврат в раздел над H1 на страницах разработок */
+.dback{
+  display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--brand);
+  transition:color .2s var(--ease);
+}
+.dback svg{width:16px;height:16px;transition:transform .22s var(--ease)}
+.dback:hover{color:var(--brand-deep)}
+.dback:hover svg{transform:translateX(-3px)}
+.dcohero .dchips{margin-top:clamp(24px,2.6vw,34px)}
+
+/* первый экран раздела: справа место под фото, 4:3 вместо 16:9 */
+.dprd .dcohero__media .dshot{position:absolute;inset:0;aspect-ratio:auto;border-radius:0}
+
+/* ---------- карточки разработок ---------- */
+.dprods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:clamp(36px,3.6vw,52px)}
+.dprods--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.dprod{
+  display:flex;flex-direction:column;background:#fff;border:1px solid rgba(35,43,62,.07);border-radius:28px;
+  padding:12px;color:var(--navy);
+  box-shadow:0 2px 4px rgba(35,43,62,.04),0 14px 34px rgba(35,43,62,.09);
+  transition:border-color .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease);
+}
+a.dprod:hover{border-color:transparent;box-shadow:0 2px 4px rgba(35,43,62,.05),0 30px 68px rgba(35,43,62,.18);transform:translateY(-3px)}
+a.dprod:visited{color:var(--navy)}
+.dprod .dshot{aspect-ratio:4/3;border-radius:20px}
+.dprod .dchip{position:absolute;left:16px;top:16px;z-index:2}
+/* плашка лежит прямо в .dshot: подпись заглушки (капс, разрядка) ей не нужна */
+.dshot > .dchip{text-transform:none;letter-spacing:0;font-size:13px}
+.dshot--lock .dchip--soon,.dshot--lock .dchip--dev{background:#fff;color:var(--navy);box-shadow:none}
+.dshot--lock .dchip--soon::before{background:var(--brand)}
+.dprod__body{display:flex;flex-direction:column;flex:1;padding:24px 22px 24px}
+.dprod__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);font-variant-numeric:tabular-nums}
+.dprod h3{margin-top:12px;font-size:clamp(24px,2.1vw,32px);font-weight:600;line-height:1.14;letter-spacing:-.026em}
+.dprod p{margin-top:14px;font-size:17px;line-height:1.6;color:var(--navy-2);max-width:32em}
+.dprods--3 .dprod h3{font-size:clamp(21px,1.7vw,25px)}
+.dprods--3 .dprod p{font-size:16px}
+/* закрытая конструкция: вместо фото — замок поверх тёмной плашки */
+.dshot--lock{background:radial-gradient(120% 100% at 80% 0%,rgba(84,194,255,.28),transparent 60%),linear-gradient(160deg,#2B3550,#1B2238)}
+.dshot--lock > span:not(.dchip){color:rgba(255,255,255,.62);display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:0 24px;line-height:1.5}
+.dshot--lock svg{width:34px;height:34px;color:#fff;opacity:.9}
+
+/* ---------- текст + фото в две колонки ---------- */
+.dsplit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,5vw,96px);align-items:center}
+.dsplit--rev > :first-child{order:2}
+.dsplit .dshot{aspect-ratio:4/3;border-radius:28px}
+.dtext{margin-top:28px}
+.dtext p{font-size:18px;line-height:1.65;color:var(--navy-2);max-width:34em}
+.dtext p + p{margin-top:16px}
+.dtext .dskel{max-width:34em}
+
+/* ---------- перспективные направления ---------- */
+.dfuture{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px)}
+.dfuture .dstep{background:transparent;border:1.5px dashed rgba(35,43,62,.18)}
+.dfuture .dstep__ico{background:var(--tint)}
+.dfuture .dchip{align-self:flex-start;margin-top:22px}
+
+/* ---------- модели поясничных подушек ---------- */
+.dmodels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:clamp(36px,3.6vw,52px)}
+.dmodel{background:#fff;border:1px solid rgba(35,43,62,.07);border-radius:28px;padding:12px;display:flex;flex-direction:column;
+  box-shadow:0 2px 4px rgba(35,43,62,.04),0 14px 34px rgba(35,43,62,.09)}
+.dmodel .dshot{aspect-ratio:4/3;border-radius:20px}
+.dmodel__body{display:flex;flex-direction:column;flex:1;padding:26px 24px 26px}
+.dmodel__name{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.dmodel h3{font-size:clamp(30px,2.8vw,42px);font-weight:600;line-height:1;letter-spacing:-.035em;color:var(--navy)}
+.dmodel__lead{margin-top:16px;font-size:18px;font-weight:600;line-height:1.45;color:var(--navy);letter-spacing:-.01em}
+.dmodel .dgain__list{margin-top:20px}
+.dmodel__specs{margin-top:24px;padding-top:22px;border-top:1px solid var(--d-line);display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 24px;font-size:15px}
+.dmodel__specs dt{color:var(--navy-3);font-weight:500}
+.dmodel__specs dd{margin:0;align-self:center}
+.dmodel .dlink{margin-top:auto}
+
+/* ---------- исследование РГПУ им. А. И. Герцена ---------- */
+.dstudy{background:#fff;border-radius:36px;padding:clamp(28px,4vw,64px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,84px);align-items:start;
+  box-shadow:0 2px 4px rgba(35,43,62,.04),0 14px 34px rgba(35,43,62,.07)}
+.dstudy .dh2{font-size:clamp(30px,3vw,46px)}
+.dstudy__meta{margin-top:28px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 24px;font-size:15.5px;line-height:1.45}
+.dstudy__meta dt{color:var(--navy-3);font-weight:500}
+.dstudy__meta dd{margin:0;color:var(--navy);font-weight:600}
+.dstudy .dshot{aspect-ratio:16/10;border-radius:22px}
+.dstudy__finds{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.dstudy__finds li{background:var(--tint);border-radius:20px;padding:20px 20px 22px}
+.dstudy__finds b{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--brand);margin-bottom:14px}
+.dstudy__note{margin-top:18px;font-size:13.5px;line-height:1.5;color:var(--navy-3)}
+
+/* ---------- тизер: что известно о разработке ---------- */
+.dfacts3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px)}
+
+/* форма «Узнать о запуске первым»: банд с формой, как на главной */
+.dlaunch .dband__h2{max-width:12em}
+.dlaunch__list{margin-top:clamp(28px,3vw,40px);list-style:none;padding:0;display:flex;flex-direction:column;gap:12px}
+.dlaunch__list li{display:flex;gap:12px;align-items:flex-start;font-size:16.5px;line-height:1.5;color:rgba(255,255,255,.9)}
+.dlaunch__list svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--brand-3)}
+
+@media (max-width:1100px){
+  .dprods--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dstudy{grid-template-columns:1fr}
+}
+@media (max-width:980px){
+  .dfacts3{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .dprods,.dprods--3,.dmodels,.dfuture{grid-template-columns:1fr}
+  .dsplit{grid-template-columns:1fr}
+  .dsplit--rev > :first-child{order:0}
+}
+@media (max-width:600px){
+  .dprod,.dmodel{border-radius:22px;padding:10px}
+  .dprod .dshot,.dmodel .dshot{border-radius:16px}
+  .dprod__body{padding:20px 14px 18px}
+  .dprod h3{font-size:24px}
+  .dprod p{font-size:16.5px}
+  .dmodel__body{padding:22px 14px 18px}
+  .dsplit .dshot{border-radius:22px}
+  .dtext p{font-size:17px}
+  .dstudy{border-radius:26px;padding:24px 18px}
+  .dstudy__finds{grid-template-columns:1fr}
+}
+/* карточки на светлой подложке секции: белые, иначе сливаются с фоном */
+.dprd .dsec--tint .dstep{background:#fff}
+.dprd .dsec--tint .dstep__ico{background:var(--tint)}
+.dprd .dsec--tint .dfuture .dstep{background:transparent}
+.dprd .dsec--tint .dfuture .dstep__ico{background:#fff}

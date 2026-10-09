@@ -18,8 +18,8 @@
 | Онлайн-курс (с программой и демоверсией) | «Онлайн-курс» | Система эргономики Доктора Симкина + строкой ниже «Онлайн-курс по эргономике рабочего места» | `/kurs-po-ergonomike/` | `course.html`, `design/course.html` |
 | Эргономичные решения | «Эргономичные решения» | (без изменений) | `/ergonomichnye-resheniya/` | `solutions.html` |
 | Отдельное решение | — | — | `/ergonomichnye-resheniya/<reshenie>/` | `solution.html` |
-| Авторские разработки | «Авторские разработки» | (без изменений) | `/avtorskie-razrabotki/` | `products.html` |
-| Отдельная разработка | — | — | `/avtorskie-razrabotki/<razrabotka>/` | `product.html` |
+| Авторские разработки | «Авторские разработки» | (без изменений) | `/avtorskie-razrabotki/` | `products.html`, `design/products.html` |
+| Отдельная разработка | — | — | `/avtorskie-razrabotki/<razrabotka>/` | `product.html`, `design/product-*.html` |
 | Метод / система эргономики | «Метод Симкина» | (без изменений) | `/metod-simkina/` | `method.html` |
 | Дмитрий Симкин | «Дмитрий Симкин» | (без изменений) | `/dmitriy-simkin/` | `about.html` |
 | Полезные статьи | «Полезные статьи» | (без изменений) | `/stati-po-ergonomike/` | `knowledge.html` |
@@ -35,11 +35,17 @@
 - `/ergonomichnye-resheniya/kresla/`
 - `/ergonomichnye-resheniya/stoly/`
 
-Отдельные авторские разработки (остальные — по тому же принципу, с названием разработки в URL):
+Отдельные авторские разработки — четыре страницы, раздел заложен целиком:
 
-- `/avtorskie-razrabotki/ergonomichnyy-stol/`
-- `/avtorskie-razrabotki/ortopedicheskaya-podushka/`
-- `/avtorskie-razrabotki/ergonomicheskie-aksessuary/`
+| Разработка | URL | Прототип | Формат |
+|---|---|---|---|
+| Подушка под голову | `/avtorskie-razrabotki/ortopedicheskaya-podushka/` | `design/product-pillow.html` | полная: разработка, конструкция, подбор, использование |
+| Поясничные подушки | `/avtorskie-razrabotki/poyasnichnye-podushki/` | `design/product-lumbar.html` | полная: модели Mini и Universal, исследование Mini (РГПУ им. А. И. Герцена) |
+| Компьютерный стол | `/avtorskie-razrabotki/ergonomichnyy-stol/` | `design/product-desk.html` | тизер: запатентован, конструкция не раскрывается, форма «Узнать о запуске первым» |
+| Подставка для работы с ноутбуком | `/avtorskie-razrabotki/podstavka-dlya-noutbuka/` | `design/product-stand.html` | тизер: в разработке, не запатентована, форма «Узнать о запуске первым» |
+
+Перспективные направления (эргономичные компьютерные кресла, мягкая мебель) обозначены
+на общей странице раздела, отдельных страниц у них нет.
 
 ## Чего нет отдельными страницами
 
