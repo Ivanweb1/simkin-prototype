@@ -2393,25 +2393,41 @@ a.dprod:visited{color:var(--navy)}
 .dprd .dsec--tint .dfuture .dstep__ico{background:#fff}
 
 /* «Для кого» на главной: карточка 03 «Производителям мебели» — на всю ширину
-   сетки. Слева описание и кнопка, справа что входит в работу и условие
-   амбассадорства. Карточка не ссылка: действие — кнопка с окном заявки. */
-.dcard--wide{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(32px,5vw,96px);align-items:start}
-.dcard__main{display:flex;flex-direction:column;height:100%}
-.dcard__btn{margin-top:auto;padding-top:30px}
-.dcard--wide .dcard__side{padding-top:clamp(0px,6.2vw,90px)}
-.dcard--wide .dgain__list{margin-top:0;gap:12px}
-.dcard--wide .dgain__list li{font-size:17px;line-height:1.5}
-.dcard__note{margin-top:22px;padding:18px 20px;border-radius:18px;background:var(--tint);font-size:16px;line-height:1.6;color:var(--navy-2)}
+   сетки. Сверху, как у соседних карточек, иконка и номер по краям. Ниже две
+   колонки: слева описание, условие амбассадорства цитатой и кнопка; справа —
+   панель «Что входит в работу» с пунктами 01–04. На телефоне панель встаёт
+   между описанием и цитатой, кнопка — последней. */
+.dcard--wide{
+  grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  column-gap:clamp(32px,5vw,88px);align-items:stretch;
+}
+.dcard--wide .dcard__top{grid-column:1 / -1}
+.dcard__main{display:flex;flex-direction:column}
+.dcard__main p{max-width:30em}
+.dcard--wide .dcard__note{
+  margin-top:26px;padding-left:20px;border-left:3px solid var(--brand);
+  font-size:16.5px;line-height:1.6;color:var(--navy-2);
+}
+.dcard__btn{margin-top:auto;padding-top:34px}
+.dmk{margin-top:30px;background:var(--tint);border-radius:22px;padding:26px 30px 14px}
+.dmk__t{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-3)}
+.dmk__list{list-style:none;margin:14px 0 0;padding:0}
+.dmk__list li{
+  display:grid;grid-template-columns:40px minmax(0,1fr);align-items:baseline;
+  padding:17px 0;border-top:1px solid var(--d-line);
+  font-size:17px;line-height:1.45;color:var(--navy);
+}
+.dmk__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
 @media (max-width:860px){
-  .dcard--wide{grid-template-columns:1fr}
-  .dcard--wide .dcard__side{padding-top:24px}
-  .dcard__btn{order:3;padding-top:0;margin-top:24px}
+  .dcard--wide{display:flex;flex-direction:column}
   .dcard__main{display:contents}
-  .dcard--wide{display:flex;flex-direction:column;align-items:stretch}
-  .dcard--wide .dcard__side{order:2}
+  .dmk{order:1;margin-top:24px}
+  .dcard--wide .dcard__note{order:2}
+  .dcard__btn{order:3;margin-top:0;padding-top:28px}
 }
 @media (max-width:600px){
-  .dcard--wide .dgain__list li{font-size:16px}
-  .dcard__note{font-size:15.5px;padding:16px}
+  .dmk{border-radius:18px;padding:20px 18px 8px}
+  .dmk__list li{grid-template-columns:34px minmax(0,1fr);padding:14px 0;font-size:16px}
+  .dcard--wide .dcard__note{font-size:15.5px;padding-left:16px}
   .dcard__btn .dbtn{width:100%}
 }
