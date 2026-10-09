@@ -2393,15 +2393,14 @@ a.dprod:visited{color:var(--navy)}
 .dprd .dsec--tint .dfuture .dstep__ico{background:#fff}
 
 /* «Для кого» на главной: карточка 03 «Производителям мебели» — на всю ширину
-   сетки. Сверху, как у соседних карточек, иконка и номер по краям. Ниже две
-   колонки: слева описание, условие амбассадорства цитатой и кнопка; справа —
+   сетки, в две колонки. Иконка и номер — только над левой колонкой, панель
+   справа начинается от верха карточки, без пустой полосы над ней: слева описание, условие амбассадорства цитатой и кнопка; справа —
    панель «Что входит в работу» с пунктами 01–04. На телефоне панель встаёт
    между описанием и цитатой, кнопка — последней. */
 .dcard--wide{
   grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   column-gap:clamp(32px,5vw,88px);align-items:stretch;
 }
-.dcard--wide .dcard__top{grid-column:1 / -1}
 .dcard__main{display:flex;flex-direction:column}
 .dcard__main p{max-width:30em}
 .dcard--wide .dcard__note{
@@ -2409,11 +2408,13 @@ a.dprod:visited{color:var(--navy)}
   font-size:16.5px;line-height:1.6;color:var(--navy-2);
 }
 .dcard__btn{margin-top:auto;padding-top:34px}
-.dmk{margin-top:30px;background:var(--tint);border-radius:22px;padding:26px 30px 14px}
+.dmk{background:var(--tint);border-radius:22px;padding:26px 30px 14px;display:flex;flex-direction:column}
 .dmk__t{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-3)}
-.dmk__list{list-style:none;margin:14px 0 0;padding:0}
+/* пункты делят высоту панели поровну: панель тянется по левой колонке, и
+   без этого под последним пунктом оставалась пустота */
+.dmk__list{list-style:none;margin:14px 0 0;padding:0;flex:1;display:grid;grid-auto-rows:1fr}
 .dmk__list li{
-  display:grid;grid-template-columns:40px minmax(0,1fr);align-items:baseline;
+  display:grid;grid-template-columns:40px minmax(0,1fr);align-items:baseline;align-content:center;
   padding:17px 0;border-top:1px solid var(--d-line);
   font-size:17px;line-height:1.45;color:var(--navy);
 }
@@ -2422,6 +2423,7 @@ a.dprod:visited{color:var(--navy)}
   .dcard--wide{display:flex;flex-direction:column}
   .dcard__main{display:contents}
   .dmk{order:1;margin-top:24px}
+  .dmk__list{grid-auto-rows:auto}
   .dcard--wide .dcard__note{order:2}
   .dcard__btn{order:3;margin-top:0;padding-top:28px}
 }
