@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=181">
+<link rel="stylesheet" href="design.css?v=182">
 </head>
 <body class="d dco">
 
@@ -287,17 +287,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ БЛОК 4а. ВИДЕО-ВИЗИТКА ============ -->
-<!-- ЗАГЛУШКА: короткую видео-визитку корпоративного направления пришлёт
-     заказчик. Место согласовано — широким блоком между «Что отличает наш
-     подход» и «Более 20 лет практической работы». Когда файл придёт: кадр-обложка
-     в <img> внутри .dshot, ролик — во всплывающем окне по клику. -->
-<section class="dsec dsec--video" id="video">
-  <div class="dwrap">
-    <div class="dshot dshot--play dvideo" data-rv><span>Видео-визитка</span><i aria-hidden="true"></i></div>
   </div>
 </section>
 
@@ -615,6 +604,28 @@
   </div>
 </div>
 
+<!-- ============ ВИДЕОВИДЖЕТ (правый нижний угол) ============ -->
+<div class="dvw is-pending is-muted" data-vw hidden>
+  <video muted loop playsinline preload="none" poster="assets/video/company-poster.jpg" data-src="assets/video/company.mp4"></video>
+  <button type="button" class="dvw__open" aria-label="Смотреть видео со звуком"></button>
+  <span class="dvw__hint"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg><span>Смотреть</span></span>
+  <span class="dvw__stage" data-vw-toggle aria-hidden="true"></span>
+  <div class="dvw__bar">
+    <button type="button" class="dvw__btn" data-vw-toggle aria-label="Пауза">
+      <svg data-ic="pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg>
+      <svg data-ic="play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+    </button>
+    <span class="dvw__track" data-vw-track><i></i></span>
+    <button type="button" class="dvw__btn" data-vw-mute aria-label="Выключить звук">
+      <svg data-ic="sound" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 6h3l4-3.5v11L5 10H2z"/><path d="M11 5.2a4 4 0 0 1 0 5.6M12.8 3.4a6.5 6.5 0 0 1 0 9.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <svg data-ic="muted" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 6h3l4-3.5v11L5 10H2z"/><path d="M11 6l4 4M15 6l-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <button type="button" class="dvw__x" data-vw-close aria-label="Закрыть видео">
+    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8"/></svg>
+  </button>
+</div>
+
 <script src="../script.js?v=37"></script>
 
 <script>
@@ -718,6 +729,88 @@
       window.scrollTo({top: top, behavior: reduce ? 'auto' : 'smooth'});
     });
   });
+})();
+</script>
+
+<script>
+/* Видеовиджет. Ролик грузится только после загрузки страницы, чтобы не
+   мешать первому экрану. Свёрнутый крутится без звука; при раскрытии
+   запускается с начала со звуком. Крестик на свёрнутом прячет виджет до
+   конца визита, на раскрытом — сворачивает обратно. */
+(function(){
+  var w = document.querySelector('[data-vw]');
+  if(!w) return;
+  var v = w.querySelector('video');
+  var bar = w.querySelector('[data-vw-track] i');
+  var toggleBtn = w.querySelector('.dvw__bar [data-vw-toggle]');
+  var muteBtn = w.querySelector('[data-vw-mute]');
+  var KEY = 'dvwClosed';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  try { if(sessionStorage.getItem(KEY)) return; } catch(e){}
+
+  function sync(){
+    w.classList.toggle('is-paused', v.paused);
+    w.classList.toggle('is-muted', v.muted);
+    toggleBtn.setAttribute('aria-label', v.paused ? 'Смотреть' : 'Пауза');
+    muteBtn.setAttribute('aria-label', v.muted ? 'Включить звук' : 'Выключить звук');
+  }
+  function play(){ var p = v.play(); if(p && p.catch) p.catch(sync); }
+
+  function start(){
+    v.src = v.getAttribute('data-src');
+    w.hidden = false;
+    requestAnimationFrame(function(){ w.classList.remove('is-pending'); });
+    if(!reduce) play();
+  }
+  if(document.readyState === 'complete') setTimeout(start, 600);
+  else window.addEventListener('load', function(){ setTimeout(start, 600); });
+
+  function open(){
+    w.classList.add('is-open');
+    v.loop = false;
+    v.currentTime = 0;
+    v.muted = false;
+    play();
+    sync();
+  }
+  function collapse(){
+    w.classList.remove('is-open');
+    v.loop = true;
+    v.muted = true;
+    if(reduce) v.pause(); else play();
+    sync();
+  }
+
+  w.querySelector('.dvw__open').addEventListener('click', open);
+  w.querySelectorAll('[data-vw-toggle]').forEach(function(el){
+    el.addEventListener('click', function(){ if(v.paused) play(); else v.pause(); });
+  });
+  muteBtn.addEventListener('click', function(){ v.muted = !v.muted; sync(); });
+  w.querySelector('[data-vw-track]').addEventListener('click', function(e){
+    if(!v.duration) return;
+    var r = this.getBoundingClientRect();
+    v.currentTime = v.duration * Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+  });
+  w.querySelector('[data-vw-close]').addEventListener('click', function(){
+    if(w.classList.contains('is-open')){ collapse(); return; }
+    v.pause();
+    w.hidden = true;
+    try { sessionStorage.setItem(KEY, '1'); } catch(e){}
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && w.classList.contains('is-open')) collapse();
+  });
+
+  v.addEventListener('play', sync);
+  v.addEventListener('pause', sync);
+  v.addEventListener('volumechange', sync);
+  v.addEventListener('timeupdate', function(){
+    if(v.duration) bar.style.width = (v.currentTime / v.duration * 100) + '%';
+  });
+  // досмотрели до конца со звуком — сворачиваем обратно в превью
+  v.addEventListener('ended', collapse);
+  sync();
 })();
 </script>
 

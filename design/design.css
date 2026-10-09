@@ -2178,19 +2178,6 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 
 
-/* видео-визитка на «Для компаний»: широкий кадр 16:9 во всю ширину сетки;
-   за ним сразу идёт белый блок клиентов, поэтому низ без полного отступа */
-.dsec--video{padding-bottom:0}
-.dvideo{border-radius:28px}
-.dvideo i{width:96px;height:96px;margin:-48px 0 0 -48px}
-.dvideo i::after{left:39px;top:31px;border-width:17px 0 17px 27px}
-@media (max-width:600px){
-  .dvideo{border-radius:20px}
-  .dvideo i{width:64px;height:64px;margin:-32px 0 0 -32px}
-  .dvideo i::after{left:26px;top:21px;border-width:11px 0 11px 18px}
-  .dvideo > span{bottom:14px;font-size:11px}
-}
-
 /* настоящие слайды курса: показываются целиком, без обрезки. Слайд 4:3
    вписывается в рамку 16:9 с белыми полями — у слайдов белый фон, поля
    с ним сливаются */
@@ -2198,3 +2185,62 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dshot--slide::after{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;box-shadow:inset 0 0 0 1px var(--d-line);pointer-events:none}
 .dshot--slide picture{position:absolute;inset:0;z-index:1}
 .dshot--slide img{object-fit:contain}
+
+/* видеовиджет на «Для компаний»: в правом нижнем углу маленькое превью без
+   звука, по кругу. По клику раскрывается и играет со звуком с начала.
+   Крестик на свёрнутом убирает виджет до конца визита. Ролик вертикальный,
+   субтитры вшиты в кадр, поэтому превью понятно и без звука. */
+.dvw{
+  position:fixed;right:24px;bottom:24px;z-index:95;
+  width:120px;aspect-ratio:9 / 16;border-radius:20px;overflow:hidden;
+  background:var(--navy);box-shadow:0 0 0 3px #fff,0 14px 40px rgba(35,43,62,.32);
+  transition:width .35s var(--ease),border-radius .35s var(--ease),transform .25s var(--ease),opacity .3s var(--ease);
+}
+.dvw.is-pending{opacity:0;transform:translateY(16px);pointer-events:none}
+.dvw:not(.is-open):hover{transform:scale(1.04)}
+.dvw.is-open{width:min(300px,calc(100vw - 32px));border-radius:24px}
+.dvw video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.dvw__open{position:absolute;inset:0;z-index:1;width:100%;border:0;padding:0;background:transparent;cursor:pointer}
+.dvw__open::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+  background:linear-gradient(to top,rgba(18,26,56,.55),rgba(18,26,56,0));
+}
+.dvw__hint{
+  position:absolute;left:8px;right:8px;bottom:9px;z-index:2;display:flex;align-items:center;justify-content:center;gap:6px;
+  color:#fff;font-size:12px;font-weight:600;line-height:1;pointer-events:none;
+}
+.dvw__hint svg{width:14px;height:14px;flex:none}
+.dvw.is-open .dvw__open,.dvw.is-open .dvw__hint{display:none}
+.dvw__x,.dvw__btn{
+  position:absolute;z-index:3;display:grid;place-items:center;width:28px;height:28px;padding:0;border:0;border-radius:50%;
+  background:rgba(18,26,56,.55);color:#fff;cursor:pointer;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .2s var(--ease);
+}
+.dvw__x:hover,.dvw__btn:hover{background:rgba(18,26,56,.8)}
+.dvw__x{top:6px;right:6px}
+.dvw__x svg{width:12px;height:12px}
+.dvw.is-open .dvw__x{top:12px;right:12px;width:36px;height:36px}
+.dvw.is-open .dvw__x svg{width:14px;height:14px}
+/* в раскрытом: пауза и звук внизу, поверх тонкая шкала прогресса */
+.dvw__bar{display:none}
+.dvw.is-open .dvw__bar{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:center;gap:8px;padding:28px 12px 12px;
+  background:linear-gradient(to top,rgba(18,26,56,.5),rgba(18,26,56,0));
+}
+.dvw__bar .dvw__btn{position:static;width:36px;height:36px;flex:none}
+.dvw__btn svg{width:16px;height:16px}
+.dvw__track{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.35);overflow:hidden;cursor:pointer}
+.dvw__track i{display:block;height:100%;width:0;background:#fff}
+.dvw [data-ic]{display:none}
+.dvw:not(.is-paused) [data-ic="pause"],.dvw.is-paused [data-ic="play"],
+.dvw:not(.is-muted) [data-ic="sound"],.dvw.is-muted [data-ic="muted"]{display:block}
+/* в раскрытом сам кадр ставит на паузу и снимает с неё */
+.dvw__stage{display:none}
+.dvw.is-open .dvw__stage{display:block;position:absolute;inset:0;z-index:1;cursor:pointer}
+@media (max-width:600px){
+  .dvw{right:16px;bottom:16px;width:92px;border-radius:16px}
+  .dvw__hint span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .dvw,.dvw:not(.is-open):hover{transition:none;transform:none}
+}
