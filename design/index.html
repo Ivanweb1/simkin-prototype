@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=183">
+<link rel="stylesheet" href="design.css?v=184">
 </head>
 <body class="d">
 
@@ -239,14 +239,28 @@
         <p>Для тех, кто много работает за компьютером – в офисе, дома или в смешанном формате – и хочет сохранить здоровье, меньше уставать и поддерживать высокую работоспособность.</p>
         <span class="dlink">Подробнее<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
       </a>
-      <!-- Плашки 03 и 04 закладываются в дизайн и админку, на старте скрыты -->
-      <div class="dcard" hidden>
-        <span class="dcard__top">
-          <span class="dcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5 12 4l9 4.5-9 4.5-9-4.5Z"/><path d="M3 12.5 12 17l9-4.5M3 16.5 12 21l9-4.5"/></svg></span>
-          <span class="dcard__n">03</span>
-        </span>
-        <h3>Производителям мебели и оборудования</h3>
-        <p>Для компаний, которые разрабатывают и выпускают мебель, оборудование и аксессуары для рабочих мест и хотят учитывать эргономику уже на этапе создания продукта.</p>
+      <!-- 03 — производителям мебели: на всю ширину, описание и кнопка слева,
+           что входит в работу — справа. Плашка 04 заложена в дизайн и админку,
+           на старте скрыта. -->
+      <div class="dcard dcard--wide" id="makers" data-rv>
+        <div class="dcard__main">
+          <span class="dcard__top">
+            <span class="dcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10l-1 8H8z"/><path d="M5.5 11.5h13M8 11.5 7 20.5M16 11.5l1 9M12 11.5v5"/></svg></span>
+            <span class="dcard__n">03</span>
+          </span>
+          <h3>Производителям мебели</h3>
+          <p>Совместная разработка и&nbsp;совершенствование мебели с&nbsp;моим участием как врача-остеопата и&nbsp;специалиста по&nbsp;эргономике.</p>
+          <div class="dcard__btn"><button type="button" class="dbtn dbtn--brand" data-open="partner">Обсудить совместную разработку<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button></div>
+        </div>
+        <div class="dcard__side">
+          <ul class="dgain__list">
+            <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span><span>оценка конструкции с&nbsp;точки зрения биомеханики человека;</span></li>
+            <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span><span>участие в&nbsp;разработке новых моделей;</span></li>
+            <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span><span>тестирование и&nbsp;доработка прототипов;</span></li>
+            <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span><span>рекомендации по&nbsp;повышению эргономических характеристик.</span></li>
+          </ul>
+          <p class="dcard__note">Если в&nbsp;результате совместной работы создаётся продукт, в&nbsp;эргономических качествах которого я&nbsp;действительно уверен, я&nbsp;готов рекомендовать его в&nbsp;своих образовательных материалах и&nbsp;выступать его амбассадором.</p>
+        </div>
       </div>
       <div class="dcard" hidden>
         <span class="dcard__top">
@@ -536,6 +550,25 @@
   </div>
 </div>
 
+<!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБСУДИТЬ СОВМЕСТНУЮ РАЗРАБОТКУ» (производителям мебели) ============ -->
+<div class="modal" id="partner">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box modal__box--wide" role="dialog" aria-modal="true" aria-labelledby="ptTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="ptTitle">Обсудить совместную разработку</h2>
+    <p>Расскажите коротко о&nbsp;компании и&nbsp;продукте&nbsp;– свяжемся с&nbsp;вами и&nbsp;обсудим, как может быть устроена совместная работа.</p>
+    <form class="mform mform--2" data-thanks="partner">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Компания">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield" type="email" placeholder="Почта">
+      <textarea class="mfield mform__full" placeholder="Коротко о продукте или задаче"></textarea>
+      <label class="magree mform__full"><input type="checkbox" name="agree" required><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill mform__full">Отправить</button>
+    </form>
+  </div>
+</div>
+
 <!-- ============ ОБЩЕЕ: ВСПЛЫВАЮЩЕЕ ОКНО «ОБСУДИТЬ ЗАДАЧУ» (для компаний) ============ -->
 <div class="modal" id="discuss">
   <div class="modal__back" data-close></div>
@@ -573,7 +606,7 @@
   </div>
 </div>
 
-<script src="../script.js?v=38"></script>
+<script src="../script.js?v=39"></script>
 
 <script>
 /* Логотипы клиентов: если файла нет, ячейка показывает название набором,

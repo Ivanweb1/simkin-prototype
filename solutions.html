@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=30">
+<link rel="stylesheet" href="styles.css?v=31">
 </head>
 <body>
 
@@ -248,8 +248,29 @@
   </div>
 </section>
 
+<!-- ============ БЛОК 5а. СОВМЕСТНЫЕ РАЗРАБОТКИ С ПРОИЗВОДИТЕЛЯМИ МЕБЕЛИ ============ -->
+<!-- Конкретных производителей пока не называем. Кнопка открывает окно
+     «Обсудить совместную разработку». -->
+<section class="sec sec--alt" id="makers">
+  <div class="wrap sec__inner--tight sec__inner">
+    <div class="why" data-rv>
+      <div>
+        <span class="eyebrow">Производителям мебели</span>
+        <h2 style="margin-top:20px">Совместные разработки <span class="soft">с производителями мебели</span></h2>
+      </div>
+      <div>
+        <p class="why__txt makers__txt">На рынке много хороших кресел, но я пока не встретил компьютерного кресла или кресла для отдыха, которое с точки зрения эргономики считал бы действительно доведённым до совершенства.</p>
+        <p class="why__txt makers__txt">Поэтому одно из направлений, которое мне особенно интересно, – совместная работа с производителями мебели над созданием и совершенствованием кресел для работы за компьютером и для отдыха.</p>
+        <p class="why__txt makers__txt">Со своей стороны я готов участвовать в таких проектах как врач-остеопат и специалист по эргономике – оценивать конструкцию с точки зрения биомеханики человека, участвовать в разработке новых моделей, тестировать прототипы и помогать улучшать эргономические характеристики мебели.</p>
+        <p class="why__txt">Если в результате совместной работы создаётся продукт, в эргономических качествах которого я действительно уверен, я буду заинтересован в его продвижении – смогу рекомендовать такую мебель в своих образовательных материалах и выступать её амбассадором.</p>
+        <button class="btn btn--fill" data-open="partner">Обсудить совместную разработку</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ БЛОК 6. ВОПРОСЫ И ОТВЕТЫ ============ -->
-<section class="sec sec--alt" id="faq">
+<section class="sec" id="faq">
   <div class="wrap sec__inner">
     <div class="head head--center" data-rv>
       <span class="eyebrow">FAQ</span>
@@ -281,7 +302,7 @@
 </section>
 
 <!-- ============ БЛОК 7. ФОРМА ПОДБОРА ============ -->
-<section class="sec" id="request">
+<section class="sec sec--alt" id="request">
   <div class="wrap sec__inner">
     <div class="band" data-rv>
       <span class="eyebrow">Подбор решения</span>
@@ -384,6 +405,25 @@
   </div>
 </div>
 
-<script src="script.js?v=32"></script>
+<!-- ============ ВСПЛЫВАЮЩЕЕ ОКНО «ОБСУДИТЬ СОВМЕСТНУЮ РАЗРАБОТКУ» ============ -->
+<div class="modal" id="partner">
+  <div class="modal__back" data-close></div>
+  <div class="modal__box modal__box--wide" role="dialog" aria-modal="true" aria-labelledby="ptTitle">
+    <button class="modal__x" data-close aria-label="Закрыть">&times;</button>
+    <h2 id="ptTitle">Обсудить совместную разработку</h2>
+    <p>Расскажите коротко о компании и продукте – свяжемся с вами и обсудим, как может быть устроена совместная работа.</p>
+    <form class="mform mform--2" data-thanks="partner">
+      <input class="mfield" placeholder="Имя">
+      <input class="mfield" placeholder="Компания">
+      <input class="mfield" placeholder="Телефон">
+      <input class="mfield" type="email" placeholder="Почта">
+      <textarea class="mfield mform__full" placeholder="Коротко о продукте или задаче"></textarea>
+      <label class="magree mform__full"><i></i><span>Согласие на обработку персональных данных</span></label>
+      <button class="btn btn--fill mform__full">Отправить</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js?v=33"></script>
 </body>
 </html>

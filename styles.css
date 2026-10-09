@@ -1418,3 +1418,6 @@ footer{background:var(--paper);padding-top:20px}
   .mform__group > *{min-width:0}
   .mform--2 .seg{justify-self:stretch}
 }
+
+/* «Эргономичные решения»: несколько абзацев подряд в правой колонке .why */
+.why__txt.makers__txt{margin-bottom:16px}
