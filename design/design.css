@@ -2324,7 +2324,6 @@ a.dprod:visited{color:var(--navy)}
 .dfuture{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px)}
 .dfuture .dstep{background:transparent;border:1.5px dashed rgba(35,43,62,.18)}
 .dfuture .dstep__ico{background:var(--tint)}
-.dfuture .dchip{align-self:flex-start;margin-top:22px}
 
 /* ---------- модели поясничных подушек ---------- */
 .dmodels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:clamp(36px,3.6vw,52px)}
