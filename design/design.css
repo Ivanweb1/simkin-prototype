@@ -2743,3 +2743,5 @@ a.dprod:hover h3{color:var(--brand)}
 .dsoon__txt small{display:block;margin-top:3px;font-size:14px;line-height:1.35;color:rgba(255,255,255,.72)}
 .dsoon__go{flex:none;width:18px;height:18px;opacity:.7;transition:transform .2s var(--ease),opacity .2s var(--ease)}
 .dsoon__item:hover .dsoon__go{transform:translateX(3px);opacity:1}
+/* в одну колонку (планшет, телефон) список не нужен: он заполнял пустоту слева от формы */
+@media (max-width:980px){.dsoon{display:none}}
