@@ -2806,23 +2806,16 @@ a.dprod:hover h3{color:var(--brand)}
   .dpickr__panel{border-radius:22px;padding:22px 18px}
 }
 
-/* ---------- «Почему подбор индивидуальный»: цепочка системы ---------- */
+/* ---------- «Почему подбор индивидуальный»: схема метода как на главной, пять звеньев ---------- */
 .dsln #why .dhead--split{align-items:start}
 .dsln #why .dhead__note{padding-top:44px}
-.dsys{margin-top:clamp(36px,3.6vw,52px);background:var(--tint);border-radius:32px;padding:clamp(28px,3.4vw,52px)}
-.dsys__t{font-size:17px;font-weight:600;color:var(--navy)}
-.dsys__list{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.dsys__list li{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;font-size:clamp(16px,1.25vw,18px);font-weight:600;color:var(--navy)}
-/* одна линия от первой иконки до последней, как в схеме метода на главной */
-.dsys__list{position:relative}
-.dsys__list::before{
-  content:"";position:absolute;top:31px;height:2px;left:calc((100% - 48px) / 10);right:calc((100% - 48px) / 10);
-  background:linear-gradient(90deg,var(--brand),var(--brand-2) 55%,var(--brand-3));
-}
-.dsys__list li{z-index:1}
-.dsys__ico{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#fff;color:var(--brand);box-shadow:0 8px 20px rgba(35,43,62,.06)}
-.dsys__ico svg{width:28px;height:28px}
-.dsys__btn{margin-top:clamp(28px,3vw,40px)}
+.dchain--5 .dchain__list{grid-template-columns:repeat(5,minmax(0,1fr))}
+/* линия заканчивается на последней точке, а не уходит в пустоту за ней */
+.dchain--5 .dchain__list::before{right:calc((100% - 48px) / 5 - 28px)}
+@media (max-width:1100px){.dchain--5 .dchain__list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){.dchain--5 .dchain__list{grid-template-columns:1fr}}
+.dchain__lead{font-size:clamp(19px,1.5vw,22px);font-weight:600;line-height:1.3;letter-spacing:-.015em;color:var(--navy)}
+.dchain__foot{margin-top:34px;padding-top:26px;border-top:1px solid var(--d-line)}
 
 /* ---------- «Что важно учитывать»: три карточки с «Подробнее» ---------- */
 .dtips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px);align-items:stretch}
@@ -2915,18 +2908,13 @@ a.dprod:hover h3{color:var(--brand)}
 @media (max-width:980px){
   .dhelp,.dstart{grid-template-columns:1fr}
   .dstart__ph{aspect-ratio:16/10}
-  .dsys__list{grid-template-columns:1fr;gap:10px}
-  .dsys__list li{flex-direction:row;text-align:left;gap:16px}
-  .dsys__list::before{top:28px;bottom:28px;left:27px;right:auto;width:2px;height:auto;background:linear-gradient(180deg,var(--brand),var(--brand-3))}
-  .dsys__ico{width:56px;height:56px}
-  .dsys__ico svg{width:24px;height:24px}
 }
 @media (max-width:700px){
   .dminis{grid-template-columns:1fr}
   .dtip,.dmini{border-radius:22px}
   .dhelp__card p{font-size:16.5px}
-  .dsys,.dhelp__card,.dmakers{border-radius:24px;padding:24px 18px}
-  .dsys__btn,.dhelp__btn .dbtn,.dstart__btn{width:100%;justify-content:center}
+  .dhelp__card,.dmakers{border-radius:24px;padding:24px 18px}
+  .dchain__foot .dbtn,.dhelp__btn .dbtn,.dstart__btn{width:100%;justify-content:center}
   .dstart__ph{border-radius:22px}
   .dmakers{grid-template-columns:1fr;gap:18px}
   .dmakers__ico{width:52px;height:52px;border-radius:16px}
