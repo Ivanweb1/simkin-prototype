@@ -2868,14 +2868,34 @@ a.dprod:hover h3{color:var(--brand)}
 .dhelp__btn{margin-top:auto;padding-top:clamp(26px,2.6vw,36px)}
 
 /* ---------- «Не обязательно начинать с покупки» ---------- */
-.dstart{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(36px,5vw,96px);align-items:center}
-.dstart__key{padding-left:18px;border-left:3px solid var(--brand);color:var(--navy) !important;font-weight:600}
-.dstart__ph{border-radius:32px;overflow:hidden;aspect-ratio:4/5}
+/* два абзаца карточками слева, фото справа той же высоты */
+.dstart{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:clamp(36px,3.6vw,52px);align-items:stretch}
+.dstart__cards{display:grid;grid-template-rows:1fr 1fr;gap:14px}
+.dstart__card{display:flex;flex-direction:column;background:#fff;border-radius:28px;padding:clamp(24px,2.6vw,36px)}
+.dstart__ico{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--brand)}
+.dstart__ico svg{width:26px;height:26px}
+.dstart__card p{margin-top:20px;font-size:17px;line-height:1.6;color:var(--navy-2)}
+.dstart__card p b{display:block;margin-bottom:8px;font-size:clamp(19px,1.5vw,22px);font-weight:600;line-height:1.3;letter-spacing:-.015em;color:var(--navy)}
+/* высоту ряда задают карточки, фото заполняет её целиком */
+.dstart__ph{position:relative;border-radius:28px;overflow:hidden;min-height:320px}
+.dstart__ph picture{position:absolute;inset:0}
 .dstart__ph picture,.dstart__ph img{display:block;width:100%;height:100%}
 .dstart__ph img{object-fit:cover;object-position:62% 50%}
-.dstart__voice{margin-top:clamp(40px,4vw,60px)}
-.dstart__voice .dvoice__side{display:flex;flex-direction:column;gap:24px}
-.dstart__voice .dvoice__by{margin-top:0;padding-top:0;border-top:0}
+/* порядок: сначала поза и настройка, затем — нужна ли замена */
+.dorder{margin-top:14px;background:#fff;border-radius:28px;padding:clamp(22px,2.6vw,36px)}
+.dorder__list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:clamp(16px,2.4vw,36px);align-items:center}
+.dorder__list li:not(.dorder__arrow){display:flex;align-items:flex-start;gap:16px}
+.dorder__n{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;font-size:15px;font-weight:600}
+.dorder__list li:last-child .dorder__n{background:var(--tint);color:var(--brand)}
+.dorder__txt{padding-top:8px;font-size:clamp(17px,1.4vw,20px);font-weight:600;line-height:1.4;letter-spacing:-.01em;color:var(--navy)}
+.dorder__arrow{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--tint);color:var(--brand)}
+.dorder__arrow svg{width:20px;height:20px}
+/* цитата: справа абзац о привычной посадке, подпись и кнопка */
+.dstart__voice{margin-top:clamp(40px,4vw,60px);align-items:stretch}
+.dstart__voice .dvoice__big{align-self:end}
+.dstart__voice .dvoice__side{display:flex;flex-direction:column;gap:22px}
+.dstart__voice .dvoice__side > p{font-size:17px;line-height:1.65;color:var(--navy-2)}
+.dstart__voice .dvoice__by{margin-top:auto;padding-top:22px;border-top:1px solid var(--d-line)}
 .dstart__btn{align-self:flex-start}
 
 /* ---------- «Авторские разработки»: принцип и четыре мини-карточки ---------- */
@@ -2915,7 +2935,9 @@ a.dprod:hover h3{color:var(--brand)}
 }
 @media (max-width:980px){
   .dhelp,.dstart{grid-template-columns:1fr}
-  .dstart__ph{aspect-ratio:16/10}
+  .dstart__ph{aspect-ratio:16/10;min-height:0}
+  .dorder__list{grid-template-columns:1fr}
+  .dorder__arrow{transform:rotate(90deg);margin-left:0}
 }
 @media (max-width:700px){
   .dminis{grid-template-columns:1fr}
