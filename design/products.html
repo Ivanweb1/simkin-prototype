@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=193">
+<link rel="stylesheet" href="design.css?v=198">
 </head>
 <body class="d dco dprd">
 
@@ -107,27 +107,28 @@
 </section>
 
 <!-- ============ БЛОК 2. ПОЧЕМУ ПОЯВЛЯЮТСЯ СОБСТВЕННЫЕ РАЗРАБОТКИ ============ -->
-<!-- Слева основной текст, справа — авторский блок от первого лица (.dvoice):
-     белый лист, подпись с портретом, кавычка. Так же оформлены обе истории ниже. -->
+<!-- Сверху заголовок и основной текст, ниже — цитата автора во всю ширину
+     (.dvoice): белый лист, кавычка, подпись с портретом. Так же оформлены
+     обе истории ниже. -->
 <section class="dsec dsec--tint" id="why">
   <div class="dwrap">
-    <div class="dwhy">
-      <div class="dwhy__main">
+    <div class="dhead dhead--split">
+      <div>
         <span class="deyebrow" data-rv>Принцип</span>
         <h2 class="dh2" data-rv style="--d:.06s">Почему появляются <span class="dh2__soft">собственные разработки</span></h2>
-        <p class="dwhy__p" data-rv style="--d:.12s">В&nbsp;основе большинства разработок&nbsp;– конкретная практическая задача, для которой среди существующих изделий не&nbsp;находилось достаточно хорошего решения.</p>
       </div>
-      <figure class="dvoice dvoice--quote" data-rv style="--d:.1s">
-        <blockquote>
-          <p class="dvoice__big">У&nbsp;меня есть простой принцип: <em>хочешь сделать хорошо&nbsp;– сделай сам.</em></p>
-          <p>Если среди готовых решений я&nbsp;не&nbsp;нахожу того, которое соответствует моим требованиям к&nbsp;эргономике, возникает задача создать собственное.</p>
-        </blockquote>
+      <div class="dhead__note" data-rv style="--d:.12s"><p>В&nbsp;основе большинства разработок&nbsp;– конкретная практическая задача, для которой среди существующих изделий не&nbsp;находилось достаточно хорошего решения.</p></div>
+    </div>
+    <figure class="dvoice dvoice--quote" data-rv style="--d:.1s">
+      <p class="dvoice__big">У&nbsp;меня есть простой принцип: <em>хочешь сделать хорошо&nbsp;– сделай сам.</em></p>
+      <div class="dvoice__side">
+        <p>Если среди готовых решений я&nbsp;не&nbsp;нахожу того, которое соответствует моим требованиям к&nbsp;эргономике, возникает задача создать собственное.</p>
         <figcaption class="dvoice__by">
-          <span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="380" height="214" loading="lazy"></span>
+          <span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span>
           <span><b>Дмитрий Симкин</b><small>Автор разработок</small></span>
         </figcaption>
-      </figure>
-    </div>
+      </div>
+    </figure>
   </div>
 </section>
 
@@ -144,7 +145,7 @@
       </div>
       <article class="dvoice" data-rv style="--d:.08s">
         <div class="dvoice__by">
-          <span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="380" height="214" loading="lazy"></span>
+          <span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span>
           <span><b>Дмитрий Симкин</b><small>Рассказывает автор</small></span>
         </div>
         <div class="dvoice__text">
@@ -165,7 +166,8 @@
 
 <!-- ============ БЛОК 4. ИСТОРИЯ: ПОДУШКА ПОД ГОЛОВУ ============ -->
 <!-- «Как развивалась конструкция» — продолжение этой истории (тоже от первого
-     лица), поэтому лежит в раскрывающейся части: два этапа рядом. -->
+     лица), поэтому лежит в раскрывающейся части: два этапа лентой сверху вниз
+     (номер и линия слева, плашки технологии, текст на всю ширину). -->
 <section class="dsec dsec--tint" id="story-pillow">
   <div class="dwrap">
     <div class="dstory dstory--rev">
@@ -176,7 +178,7 @@
       </div>
       <article class="dvoice" data-rv style="--d:.08s">
         <div class="dvoice__by">
-          <span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="380" height="214" loading="lazy"></span>
+          <span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span>
           <span><b>Дмитрий Симкин</b><small>Рассказывает автор</small></span>
         </div>
         <div class="dvoice__text">
@@ -192,14 +194,18 @@
           <h3 class="dvoice__h">Как развивалась конструкция</h3>
           <div class="dstages">
             <div class="dstage">
-              <span class="dstage__n">Этап 1</span>
+              <span class="dstage__n">1</span>
+              <span class="dstage__step">Этап 1</span>
               <b class="dstage__name">«Седьмое небо»</b>
+              <span class="dstage__tech"><span>Свободное вспенивание</span><span>Контурная резка</span></span>
               <p>Первые мои подушки под голову назывались «Седьмое небо». Пенополиуретан для них изготавливался методом свободного вспенивания, а&nbsp;затем заготовке придавали необходимые очертания с&nbsp;помощью контурной резки.</p>
               <p>Эта технология позволяла создавать достаточно сложную геометрию, но&nbsp;всё&nbsp;же имела ограничения: не&nbsp;все необходимые изгибы, переходы и&nbsp;участки поддержки можно было точно реализовать методом контурной резки.</p>
             </div>
-            <div class="dstage dstage--next">
-              <span class="dstage__n">Этап 2</span>
+            <div class="dstage">
+              <span class="dstage__n">2</span>
+              <span class="dstage__step">Этап 2</span>
               <b class="dstage__name">«Ночная Симфония»</b>
+              <span class="dstage__tech"><span>Литьё в&nbsp;пресс-форме</span><span>Пенополиуретан с&nbsp;эффектом памяти</span></span>
               <p>Следующим этапом стала «Ночная Симфония». Эти подушки уже отливались в&nbsp;пресс-форме из&nbsp;пенополиуретана с&nbsp;эффектом памяти. Такая технология позволила получить именно ту&nbsp;конструкцию, которая была нужна с&nbsp;точки зрения поддержки головы и&nbsp;шеи и&nbsp;которую невозможно было полноценно изготовить методом контурной резки.</p>
             </div>
           </div>
@@ -266,40 +272,94 @@
 </section>
 
 <!-- ============ БЛОК 6. ОТ ИДЕИ ДО ГОТОВОГО РЕШЕНИЯ ============ -->
-<!-- Пять коротких этапов, открыто целиком: на десктопе в ряд, номера соединены
-     линией; на телефоне — столбиком с вертикальной линией. -->
+<!-- Лестница: пять ступеней растут слева направо, от идеи к готовому решению.
+     Текст открыт целиком. При появлении блока ступени по очереди
+     подсвечиваются полосой сверху; последняя — залита, это результат. -->
 <section class="dsec dsec--tint" id="route">
   <div class="dwrap">
     <div class="dhead">
       <span class="deyebrow" data-rv>Как создаются разработки</span>
       <h2 class="dh2" data-rv style="--d:.06s">От&nbsp;идеи <span class="dh2__soft">до&nbsp;готового решения</span></h2>
     </div>
-    <ol class="droute">
-      <li data-rv><span class="droute__n">1</span><h3>Практическая задача</h3><p>Определяется, чего не&nbsp;хватает существующим решениям с&nbsp;точки зрения положения и&nbsp;поддержки тела.</p></li>
-      <li data-rv style="--d:.05s"><span class="droute__n">2</span><h3>Анализ существующих решений</h3><p>Оценивается, можно&nbsp;ли решить задачу уже имеющимися средствами и&nbsp;какие ограничения у&nbsp;них есть.</p></li>
-      <li data-rv style="--d:.1s"><span class="droute__n">3</span><h3>Требования к&nbsp;будущему решению</h3><p>Определяется, какую поддержку должно получать тело и&nbsp;какие положения и&nbsp;сценарии использования необходимо учитывать.</p></li>
-      <li data-rv style="--d:.15s"><span class="droute__n">4</span><h3>Разработка и&nbsp;доработка</h3><p>Создаётся конструкция, которая проверяется на&nbsp;практике и&nbsp;постепенно совершенствуется.</p></li>
-      <li data-rv style="--d:.2s"><span class="droute__n">5</span><h3>Защита разработки</h3><p>Для новых решений при необходимости используется патентная защита.</p></li>
+    <ol class="dstairs" data-rv>
+      <li style="--i:0">
+        <div class="dstairs__top"><span class="dstairs__n">01</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></span></div>
+        <h3>Практическая задача</h3>
+        <p>Определяется, чего не&nbsp;хватает существующим решениям с&nbsp;точки зрения положения и&nbsp;поддержки тела.</p>
+      </li>
+      <li style="--i:1">
+        <div class="dstairs__top"><span class="dstairs__n">02</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.6" cy="10.6" r="6.4"/><path d="M15.4 15.4 20.6 20.6"/></svg></span></div>
+        <h3>Анализ существующих решений</h3>
+        <p>Оценивается, можно&nbsp;ли решить задачу уже имеющимися средствами и&nbsp;какие ограничения у&nbsp;них есть.</p>
+      </li>
+      <li style="--i:2">
+        <div class="dstairs__top"><span class="dstairs__n">03</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3.5h6v1"/><path d="M8.5 10.5l1.5 1.5 2.5-2.5M8.5 16l1.5 1.5 2.5-2.5M14.5 11h1.5M14.5 16.5h1.5"/></svg></span></div>
+        <h3>Требования к&nbsp;будущему решению</h3>
+        <p>Определяется, какую поддержку должно получать тело и&nbsp;какие положения и&nbsp;сценарии использования необходимо учитывать.</p>
+      </li>
+      <li style="--i:3">
+        <div class="dstairs__top"><span class="dstairs__n">04</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z"/><path d="M13.5 7.5l3 3"/></svg></span></div>
+        <h3>Разработка и&nbsp;доработка</h3>
+        <p>Создаётся конструкция, которая проверяется на&nbsp;практике и&nbsp;постепенно совершенствуется.</p>
+      </li>
+      <li style="--i:4" class="dstairs__end">
+        <div class="dstairs__top"><span class="dstairs__n">05</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg></span></div>
+        <h3>Защита разработки</h3>
+        <p>Для новых решений при необходимости используется патентная защита.</p>
+      </li>
     </ol>
+    <div class="dstairs__axis" aria-hidden="true"><span>Идея</span><i></i><span>Готовое решение</span></div>
   </div>
 </section>
 
 <!-- ============ БЛОК 7. БОЛЕЕ 30 ЛЕТ АВТОРСКИХ РАЗРАБОТОК ============ -->
-<!-- Лента по годам. Последний пункт «Дальше» — «Работа над новыми решениями
-     продолжается»: пунктир, лента уходит вперёд. Порядок пунктов — как в тексте. -->
+<!-- Переключатель по годам: шкала сверху, ниже выбранный период — год крупно
+     и описание. Пока блок на экране, периоды листаются сами (полоса внизу —
+     таймер); после клика по шкале — только вручную. Без JS — все периоды
+     списком. «Дальше» — подпись на шкале для пункта «Работа продолжается». -->
 <section class="dsec" id="years">
   <div class="dwrap">
     <div class="dhead">
       <span class="deyebrow" data-rv>История</span>
       <h2 class="dh2" data-rv style="--d:.06s">Более 30&nbsp;лет <span class="dh2__soft">авторских разработок</span></h2>
     </div>
-    <ol class="dyears">
-      <li data-rv><b>1996</b><p>Одна из&nbsp;первых запатентованных разработок в&nbsp;области поддержки поясницы.</p></li>
-      <li data-rv style="--d:.05s"><b>2002</b><p>Исследование поясничной подушки «Мини» в&nbsp;РГПУ им.&nbsp;А.&nbsp;И.&nbsp;Герцена.</p></li>
-      <li data-rv style="--d:.1s"><b>Начало 2000-х</b><p>Развитие собственных конструкций подушек для сна и&nbsp;получение патентов на&nbsp;разработки в&nbsp;этой области.</p></li>
-      <li data-rv style="--d:.15s"><b>Сегодня</b><p>Подушки «Мини» и&nbsp;«Универсал», «Ночная Симфония», запатентованный компьютерный стол и&nbsp;новая подставка для работы с&nbsp;ноутбуком.</p></li>
-      <li class="dyears__next" data-rv style="--d:.2s"><b>Работа над новыми решениями продолжается</b><p>Часть разработок уже используется много лет, часть находится на&nbsp;этапе подготовки к&nbsp;реализации, другие ещё проходят этап разработки.</p></li>
-    </ol>
+    <div class="dera" data-rv style="--d:.1s">
+      <div class="dera__rail" role="tablist" aria-label="Периоды">
+        <span class="dera__line"><span class="dera__fill"></span></span>
+        <button type="button" role="tab" id="era-t1" aria-controls="era-1" aria-selected="true"><i></i><span>1996</span></button>
+        <button type="button" role="tab" id="era-t2" aria-controls="era-2" aria-selected="false" tabindex="-1"><i></i><span>2002</span></button>
+        <button type="button" role="tab" id="era-t3" aria-controls="era-3" aria-selected="false" tabindex="-1"><i></i><span>Начало 2000-х</span></button>
+        <button type="button" role="tab" id="era-t4" aria-controls="era-4" aria-selected="false" tabindex="-1"><i></i><span>Сегодня</span></button>
+        <button type="button" role="tab" id="era-t5" aria-controls="era-5" aria-selected="false" tabindex="-1" class="dera__next"><i></i><span>Дальше</span></button>
+      </div>
+      <div class="dera__stage">
+        <div class="dera__panel is-on" role="tabpanel" id="era-1" aria-labelledby="era-t1">
+          <b class="dera__big">1996</b>
+          <div class="dera__txt"><p>Одна из&nbsp;первых запатентованных разработок в&nbsp;области поддержки поясницы.</p>
+            <a href="product-lumbar.html" class="dlink">Поясничные подушки<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
+        </div>
+        <div class="dera__panel" role="tabpanel" id="era-2" aria-labelledby="era-t2">
+          <b class="dera__big">2002</b>
+          <div class="dera__txt"><p>Исследование поясничной подушки «Мини» в&nbsp;РГПУ им.&nbsp;А.&nbsp;И.&nbsp;Герцена.</p>
+            <a href="product-lumbar.html#research" class="dlink">Об&nbsp;исследовании<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
+        </div>
+        <div class="dera__panel" role="tabpanel" id="era-3" aria-labelledby="era-t3">
+          <b class="dera__big dera__big--sm">Начало 2000-х</b>
+          <div class="dera__txt"><p>Развитие собственных конструкций подушек для сна и&nbsp;получение патентов на&nbsp;разработки в&nbsp;этой области.</p>
+            <a href="product-pillow.html" class="dlink">Подушка под голову<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
+        </div>
+        <div class="dera__panel" role="tabpanel" id="era-4" aria-labelledby="era-t4">
+          <b class="dera__big">Сегодня</b>
+          <div class="dera__txt"><p>Подушки <a href="product-lumbar.html">«Мини» и&nbsp;«Универсал»</a>, <a href="product-pillow.html">«Ночная Симфония»</a>, <a href="product-desk.html">запатентованный компьютерный стол</a> и&nbsp;<a href="product-stand.html">новая подставка для работы с&nbsp;ноутбуком</a>.</p></div>
+        </div>
+        <div class="dera__panel dera__panel--next" role="tabpanel" id="era-5" aria-labelledby="era-t5">
+          <b class="dera__big dera__big--sm">Работа над новыми решениями продолжается</b>
+          <div class="dera__txt"><p>Часть разработок уже используется много лет, часть находится на&nbsp;этапе подготовки к&nbsp;реализации, другие ещё проходят этап разработки.</p>
+            <a href="#launch" class="dlink">Сообщить о&nbsp;запуске<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
+        </div>
+        <span class="dera__timer"><span></span></span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -495,6 +555,61 @@ document.querySelectorAll('.dvoice__btn').forEach(function(btn){
     if(e.propertyName === 'max-height') box.style.maxHeight = '';
   });
 });
+</script>
+<script>
+/* «Более 30 лет»: переключатель периодов. Пока блок на экране, листает сам
+   (6 с на период, полоса-таймер внизу), на наведении — пауза; после клика
+   или стрелок — только вручную. */
+(function(){
+  var era = document.querySelector('.dera'); if(!era) return;
+  var tabs = [].slice.call(era.querySelectorAll('[role=tab]'));
+  var panels = tabs.map(function(t){ return document.getElementById(t.getAttribute('aria-controls')); });
+  var fill = era.querySelector('.dera__fill');
+  var timer = era.querySelector('.dera__timer');
+  var cur = 0, auto = !window.matchMedia('(prefers-reduced-motion: reduce)').matches, seen = false, t;
+  era.classList.add('is-live');
+  function place(){
+    var line = fill.parentNode.getBoundingClientRect();
+    var dot = tabs[cur].querySelector('i').getBoundingClientRect();
+    fill.style.width = Math.max(0, dot.left + dot.width/2 - line.left) + 'px';
+  }
+  function show(i, user){
+    cur = (i + tabs.length) % tabs.length;
+    tabs.forEach(function(b, k){
+      var on = k === cur;
+      b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
+      b.classList.toggle('is-past', k < cur);
+      panels[k].classList.toggle('is-on', on);
+    });
+    place();
+    if(user){ auto = false; era.classList.remove('is-auto'); }
+    run();
+  }
+  function run(){
+    clearTimeout(t);
+    timer.classList.remove('is-run'); void timer.offsetWidth;
+    if(!auto || !seen) return;
+    era.classList.add('is-auto');
+    timer.classList.add('is-run');
+    t = setTimeout(function(){ show(cur + 1); }, 6000);
+  }
+  tabs.forEach(function(b, k){
+    b.addEventListener('click', function(){ show(k, true); });
+    b.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if(!d) return; e.preventDefault(); show(cur + d, true); tabs[cur].focus();
+    });
+  });
+  era.addEventListener('mouseenter', function(){ if(auto){ clearTimeout(t); era.classList.add('is-paused'); } });
+  era.addEventListener('mouseleave', function(){ if(auto){ era.classList.remove('is-paused'); run(); } });
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){
+      seen = en[0].isIntersecting; if(seen) run(); else clearTimeout(t);
+    }, {threshold:.45}).observe(era);
+  }
+  window.addEventListener('resize', place);
+  show(0);
+})();
 </script>
 
 </body>

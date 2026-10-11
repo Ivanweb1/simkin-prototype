@@ -2436,32 +2436,37 @@ a.dprod:visited{color:var(--navy)}
    крупная кавычка, подпись с портретом. Основной текст страницы лежит прямо
    на фоне секции, без подложки. */
 
-/* «Почему появляются»: слева основной текст, справа авторская цитата */
-.dwhy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(36px,5vw,96px);align-items:center}
-.dwhy__p{margin-top:28px;font-size:clamp(18px,1.4vw,20px);line-height:1.6;color:var(--navy-2);max-width:30em}
-
 .dvoice{
   position:relative;margin:0;background:#fff;border-radius:32px;
   padding:clamp(28px,3.4vw,52px) clamp(24px,3.4vw,56px) clamp(26px,3vw,44px);
   box-shadow:0 2px 4px rgba(35,43,62,.04),0 14px 34px rgba(35,43,62,.08);
 }
 .dsec:not(.dsec--tint) .dvoice{background:var(--tint);box-shadow:none}
-/* кавычка из знака логотипа: тот же синий, крупно в правом верхнем углу */
+/* кавычка — небольшой знак справа вверху, по центру строки с подписью
+   (верхнее поле + половина портрета 56px − половина знака 26px) */
 .dvoice::before{
-  content:"\201C";position:absolute;right:clamp(22px,3vw,44px);top:clamp(4px,1vw,14px);
-  font-size:clamp(110px,10vw,150px);line-height:1;font-weight:600;color:var(--brand);opacity:.14;pointer-events:none;
+  content:"";position:absolute;right:clamp(24px,3.4vw,56px);top:calc(clamp(28px,3.4vw,52px) + 15px);width:34px;height:26px;
+  background:var(--brand);opacity:.22;pointer-events:none;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 26'%3E%3Cpath d='M0 26V15.6C0 6.9 4.6 1.7 13.2 0l1.6 3.9C10 5.4 7.6 8.3 7.4 12.2H14V26zm19.2 0V15.6C19.2 6.9 23.8 1.7 32.4 0L34 3.9c-4.8 1.5-7.2 4.4-7.4 8.3h6.6V26z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 26'%3E%3Cpath d='M0 26V15.6C0 6.9 4.6 1.7 13.2 0l1.6 3.9C10 5.4 7.6 8.3 7.4 12.2H14V26zm19.2 0V15.6C19.2 6.9 23.8 1.7 32.4 0L34 3.9c-4.8 1.5-7.2 4.4-7.4 8.3h6.6V26z'/%3E%3C/svg%3E") center/contain no-repeat;
 }
-.dvoice blockquote{margin:0}
-.dvoice__big{font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.22;letter-spacing:-.025em;color:var(--navy);max-width:17em}
+/* цитата в «Почему появляются»: во всю ширину, слева фраза, справа пояснение и подпись */
+.dvoice--quote{
+  margin-top:clamp(40px,4vw,60px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  gap:clamp(28px,5vw,96px);align-items:end;padding:clamp(32px,4vw,64px);
+}
+.dvoice--quote::before{left:clamp(32px,4vw,64px);right:auto;top:clamp(32px,4vw,64px);opacity:1}
+.dvoice__big{font-size:clamp(26px,2.6vw,40px);font-weight:600;line-height:1.18;letter-spacing:-.028em;color:var(--navy);max-width:15em}
+.dvoice--quote .dvoice__big{padding-top:52px}
 .dvoice__big em{font-style:normal;color:var(--accent)}
-.dvoice blockquote p + p{margin-top:20px;font-size:18px;line-height:1.6;color:var(--navy-2);max-width:30em}
+.dvoice__side > p{font-size:18px;line-height:1.6;color:var(--navy-2);max-width:30em}
 
 .dvoice__by{display:flex;align-items:center;gap:14px}
-.dvoice--quote .dvoice__by{margin-top:clamp(26px,2.6vw,36px);padding-top:22px;border-top:1px solid var(--d-line)}
+.dvoice--quote .dvoice__by{margin-top:26px;padding-top:22px;border-top:1px solid var(--d-line)}
 .dvoice > .dvoice__by{margin-bottom:clamp(22px,2.2vw,30px)}
-/* портрет — кадр из фото первого экрана главной, лицо в круге */
+/* портрет — кадр из фото первого экрана главной: голова целиком и верх плеч */
 .dvoice__ava{position:relative;flex:none;width:56px;height:56px;border-radius:50%;overflow:hidden;background:var(--tint)}
-.dvoice__ava img{position:absolute;max-width:none;width:380px;height:auto;left:-204px;top:-14px}
+.dvoice__ava img{position:absolute;max-width:none;width:250px;height:auto;left:-125px;top:-1px}
 .dvoice__by b{display:block;font-size:16px;font-weight:600;color:var(--navy)}
 .dvoice__by small{display:block;margin-top:2px;font-size:14px;color:var(--navy-3)}
 
@@ -2470,14 +2475,10 @@ a.dprod:visited{color:var(--navy)}
 /* первый абзац истории — заход, чуть крупнее */
 .dvoice > .dvoice__text p:first-child{font-size:clamp(19px,1.5vw,21px);line-height:1.55;font-weight:500;letter-spacing:-.01em}
 .dvoice__more{margin-top:16px}
-.dvoice__end{font-weight:600}
 
-/* свёрнутая часть: видны первые строки, ниже растворяются */
-.dvoice__more{overflow:hidden;transition:max-height .5s var(--ease)}
-.dvoice__more.is-folded{
-  max-height:5.4em;
-  -webkit-mask-image:linear-gradient(#000 0,transparent 100%);mask-image:linear-gradient(#000 0,transparent 100%);
-}
+/* свёрнутая часть скрыта целиком: до кнопки видно только открытое начало */
+.dvoice__more{overflow:hidden;transition:max-height .5s var(--ease),margin-top .5s var(--ease)}
+.dvoice__more.is-folded{max-height:0;margin-top:0}
 .dvoice__btn{
   display:none;align-items:center;gap:10px;margin-top:22px;padding:0 22px;height:48px;border-radius:999px;
   border:1px solid var(--navy-3);background:transparent;color:var(--navy);font:inherit;font-size:15.5px;font-weight:600;cursor:pointer;
@@ -2495,37 +2496,50 @@ a.dprod:visited{color:var(--navy)}
 .dstory--rev{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
 .dstory--rev .dstory__side{order:2}
 
-/* «Как развивалась конструкция» внутри истории подушки: два этапа рядом */
-.dvoice__h{margin-top:clamp(30px,3vw,40px);font-size:clamp(21px,1.7vw,25px);font-weight:600;line-height:1.2;letter-spacing:-.02em;color:var(--navy)}
-.dstages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0 22px}
-.dstage{position:relative;background:#fff;border-radius:22px;padding:22px 22px 24px}
-.dsec--tint .dstage{background:var(--tint)}
-.dstage__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--brand)}
-.dstage__name{display:block;margin-top:8px;font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--navy)}
-.dstage p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2)}
-/* стрелка «следующий этап» между карточками */
-.dstage--next::before{
-  content:"";position:absolute;left:-12px;top:30px;width:12px;height:2px;background:var(--brand);opacity:.5;
+/* «Как развивалась конструкция» внутри истории подушки: этапы лентой сверху
+   вниз — номер в круге и линия слева, под названием плашки технологии,
+   текст на всю ширину рассказа */
+.dvoice__h{margin-top:clamp(32px,3vw,44px);font-size:clamp(21px,1.7vw,25px);font-weight:600;line-height:1.2;letter-spacing:-.02em;color:var(--navy)}
+.dstages{margin:26px 0 30px}
+.dstage{position:relative;padding:0 0 32px 60px}
+.dstage:last-child{padding-bottom:0}
+.dstage::before{content:"";position:absolute;left:19px;top:44px;bottom:6px;width:2px;background:rgba(26,95,224,.18)}
+.dstage:last-child::before{display:none}
+.dstage__n{
+  position:absolute;left:0;top:0;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;
+  background:var(--brand);color:#fff;font-size:16px;font-weight:600;
 }
+.dstage__step{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--brand);line-height:1.2}
+.dstage__name{display:block;margin-top:4px;font-size:clamp(20px,1.6vw,23px);font-weight:600;line-height:1.2;letter-spacing:-.02em;color:var(--navy)}
+.dstage__tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.dstage__tech span{padding:6px 12px;border-radius:999px;background:var(--tint);font-size:13.5px;font-weight:500;line-height:1.3;color:var(--navy-2)}
+.dsec:not(.dsec--tint) .dstage__tech span{background:#fff}
+.dstage p{margin-top:14px;font-size:17px;line-height:1.65;color:var(--navy)}
+.dstage p + p{margin-top:12px}
+/* вывод истории — отбит линией слева */
+.dvoice__end{padding-left:18px;border-left:3px solid var(--brand);font-weight:600}
 
 @media (max-width:980px){
-  .dwhy,.dstory{grid-template-columns:1fr}
+  .dstory,.dvoice--quote{grid-template-columns:1fr}
+  .dvoice--quote{gap:24px}
   .dstory__side{position:static}
   .dstory--rev .dstory__side{order:0}
   .dstory__side .dshot{aspect-ratio:16/9}
 }
 @media (max-width:700px){
-  .dstages{grid-template-columns:1fr}
-  .dstage--next::before{left:30px;top:-12px;width:2px;height:12px}
 }
 @media (max-width:600px){
   .dvoice{border-radius:24px;padding:24px 18px 24px}
-  .dvoice::before{font-size:96px;right:16px;top:2px}
-  .dvoice__text p,.dvoice blockquote p + p{font-size:17px}
+  .dvoice::before{right:18px;top:41px;width:28px;height:22px}
+  .dvoice--quote::before{left:18px;top:24px}
+  .dvoice--quote .dvoice__big{padding-top:42px}
+  .dvoice__text p,.dvoice__side > p{font-size:17px}
   .dvoice > .dvoice__text p:first-child{font-size:18px}
   .dvoice__btn{width:100%;justify-content:center}
   .dstory__side .dshot{aspect-ratio:4/3;border-radius:22px}
-  .dstage{padding:20px 18px 22px}
+  .dstage{padding-left:48px}
+  .dstage__n{width:34px;height:34px;font-size:15px}
+  .dstage::before{left:16px;top:38px}
 }
 
 /* ================= АВТОРСКИЕ РАЗРАБОТКИ: КАРТОЧКИ, ЭТАПЫ, ГОДЫ, ЗАПУСК ================= */
@@ -2542,27 +2556,6 @@ a.dprod:hover h3{color:var(--brand)}
 }
 .dprod__note svg{flex:none;width:22px;height:22px;color:var(--brand)}
 .dprod .dlink{margin-top:auto;padding-top:22px}
-
-/* «От идеи до готового решения»: пять этапов в ряд, номера на общей линии */
-.droute{list-style:none;margin:clamp(40px,4vw,60px) 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;position:relative}
-.droute::before{content:"";position:absolute;left:24px;right:24px;top:24px;height:2px;background:rgba(26,95,224,.18)}
-.droute li{position:relative}
-.droute__n{
-  position:relative;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;
-  background:var(--brand);color:#fff;font-size:18px;font-weight:600;box-shadow:0 0 0 8px var(--tint);
-}
-.droute h3{margin-top:26px;font-size:clamp(19px,1.45vw,22px);font-weight:600;line-height:1.22;letter-spacing:-.02em;color:var(--navy);max-width:11em}
-.droute p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2);padding-right:8px}
-
-/* «Более 30 лет»: лента по годам, последний пункт пунктиром — работа идёт дальше */
-.dyears{list-style:none;margin:clamp(40px,4vw,60px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.3fr);gap:0}
-.dyears li{position:relative;padding:34px 24px 0 0;border-top:2px solid var(--brand)}
-.dyears li::before{content:"";position:absolute;left:0;top:-8px;width:14px;height:14px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 5px #fff}
-.dyears b{display:block;font-size:clamp(26px,2.4vw,38px);font-weight:600;line-height:1.05;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:lining-nums}
-.dyears p{margin-top:14px;font-size:16px;line-height:1.6;color:var(--navy-2)}
-.dyears__next{border-top-style:dashed !important;border-top-color:rgba(26,95,224,.45) !important}
-.dyears__next::before{background:#fff !important;border:2px solid var(--brand)}
-.dyears .dyears__next b{font-size:clamp(19px,1.5vw,22px);line-height:1.25;letter-spacing:-.02em;color:var(--brand);max-width:14em}
 
 /* выбор разработки в форме запуска: можно отметить несколько */
 .dpick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
@@ -2581,22 +2574,116 @@ a.dprod:hover h3{color:var(--brand)}
 .dpick input:focus-visible + span{outline:2px solid var(--brand);outline-offset:2px}
 .dpick + .dform__label{margin-top:20px}
 
+@media (max-width:700px){
+  .dpick{grid-template-columns:1fr}
+}
+
+/* ---------- «От идеи до готового решения»: лестница из пяти ступеней ---------- */
+/* ступени растут слева направо; полоса сверху подсвечивает их по очереди,
+   когда блок появился на экране (класс is-in от общего проявления) */
+.dstairs{list-style:none;margin:clamp(40px,4vw,60px) 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:end}
+.dstairs li{
+  position:relative;display:flex;flex-direction:column;min-height:calc(270px + var(--i) * 46px);
+  background:#fff;border-radius:26px;padding:22px 22px 26px;overflow:hidden;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.dstairs li::before{
+  content:"";position:absolute;left:0;top:0;height:4px;width:0;background:var(--brand);
+  transition:width .7s var(--ease) calc(.3s + var(--i) * .22s);
+}
+.dstairs.is-in li::before{width:100%}
+.dstairs li:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(35,43,62,.04),0 22px 48px rgba(35,43,62,.12)}
+.dstairs__top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.dstairs__n{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);font-variant-numeric:tabular-nums;
+  transition:color .4s var(--ease) calc(.5s + var(--i) * .22s)}
+.dstairs.is-in .dstairs__n{color:var(--brand)}
+.dstairs__ico{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--tint);color:var(--brand)}
+.dstairs__ico svg{width:24px;height:24px}
+.dstairs h3{margin-top:auto;padding-top:28px;font-size:clamp(19px,1.45vw,22px);font-weight:600;line-height:1.22;letter-spacing:-.02em;color:var(--navy)}
+.dstairs p{margin-top:10px;font-size:15.5px;line-height:1.55;color:var(--navy-2)}
+/* последняя ступень — результат: залита синим */
+.dstairs li.dstairs__end{background:linear-gradient(160deg,var(--brand) 0%,var(--brand-deep) 100%)}
+.dstairs__end::before{background:var(--brand-3) !important}
+.dstairs__end h3{color:#fff}
+.dstairs__end p{color:rgba(255,255,255,.84)}
+.dstairs .dstairs__end .dstairs__n{color:rgba(255,255,255,.72)}
+.dstairs__end .dstairs__ico{background:rgba(255,255,255,.16);color:#fff}
+/* ось под лестницей: от идеи к готовому решению */
+.dstairs__axis{display:flex;align-items:center;gap:16px;margin-top:22px;font-size:14px;font-weight:600;color:var(--navy-3)}
+.dstairs__axis span:last-child{color:var(--brand)}
+.dstairs__axis i{position:relative;flex:1;height:2px;background:linear-gradient(90deg,rgba(26,95,224,.12),var(--brand))}
+.dstairs__axis i::after{content:"";position:absolute;right:-1px;top:50%;width:9px;height:9px;margin-top:-5px;border:solid var(--brand);border-width:2px 2px 0 0;transform:rotate(45deg)}
+
+/* ---------- «Более 30 лет»: переключатель периодов ---------- */
+.dera{margin-top:clamp(40px,4vw,60px)}
+.dera__rail{display:none}
+.dera.is-live .dera__rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+.dera__line{position:absolute;left:10px;right:0;top:9px;height:2px;background:var(--d-line)}
+.dera__fill{display:block;height:100%;width:0;background:var(--brand);transition:width .6s var(--ease)}
+.dera__rail button{position:relative;padding:0 12px 6px 0;border:0;background:none;font:inherit;text-align:left;color:var(--navy-3);cursor:pointer}
+.dera__rail i{
+  display:block;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid rgba(35,43,62,.22);
+  transition:border-color .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease);
+}
+.dera__rail .dera__next i{border-style:dashed}
+.dera__rail button span{display:block;margin-top:18px;font-size:clamp(18px,1.6vw,24px);font-weight:600;line-height:1.15;letter-spacing:-.02em;transition:color .25s var(--ease)}
+.dera__rail button:hover span{color:var(--navy)}
+.dera__rail button:hover i{border-color:var(--brand)}
+.dera__rail button.is-past i{background:var(--brand);border-color:var(--brand)}
+.dera__rail button.is-past span{color:var(--navy-2)}
+.dera__rail button[aria-selected="true"] i{border-color:var(--brand);background:radial-gradient(circle,var(--brand) 0 4px,#fff 4.5px);box-shadow:0 0 0 7px rgba(26,95,224,.14)}
+.dera__rail button[aria-selected="true"] span{color:var(--navy)}
+.dera__rail button:focus-visible{outline:none}
+.dera__rail button:focus-visible span{outline:2px solid var(--brand);outline-offset:4px;border-radius:4px}
+
+.dera__stage{position:relative;margin-top:clamp(28px,3vw,40px);background:var(--tint);border-radius:36px;padding:clamp(28px,4.4vw,72px);overflow:hidden}
+.dera__panel{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:center}
+.dera__panel + .dera__panel{margin-top:48px}
+/* с JS панели лежат друг на друге в одной ячейке: высота сцены — по самой высокой */
+.dera.is-live .dera__stage{display:grid}
+.dera.is-live .dera__panel{
+  grid-area:1/1;margin:0;opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .4s var(--ease),transform .5s var(--ease),visibility 0s .4s;
+}
+.dera.is-live .dera__panel.is-on{opacity:1;visibility:visible;transform:none;transition:opacity .5s var(--ease) .08s,transform .6s var(--ease) .08s,visibility 0s}
+.dera__big{
+  font-size:clamp(76px,10.4vw,172px);font-weight:600;line-height:.9;letter-spacing:-.055em;font-variant-numeric:lining-nums;
+  background:linear-gradient(120deg,var(--brand-deep) 0%,var(--brand) 45%,var(--brand-3) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em;
+}
+.dera__big--sm{font-size:clamp(46px,5.6vw,92px);line-height:1;letter-spacing:-.045em}
+.dera__panel--next .dera__big{font-size:clamp(32px,3.4vw,54px);line-height:1.08;letter-spacing:-.035em}
+.dera__txt p{font-size:clamp(19px,1.6vw,24px);font-weight:500;line-height:1.45;letter-spacing:-.012em;color:var(--navy);max-width:24em}
+.dera__txt p a{color:var(--brand);box-shadow:inset 0 -1px 0 rgba(26,95,224,.35);transition:color .2s var(--ease),box-shadow .2s var(--ease)}
+.dera__txt p a:hover{color:var(--brand-deep);box-shadow:inset 0 -2px 0 var(--brand-deep)}
+.dera__txt .dlink{margin-top:26px}
+/* таймер автолистания */
+.dera__timer{display:none;position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(26,95,224,.1)}
+.dera.is-auto .dera__timer{display:block}
+.dera__timer span{display:block;height:100%;width:0;background:var(--brand)}
+.dera__timer.is-run span{animation:deraT 6s linear forwards}
+.dera.is-paused .dera__timer span{animation-play-state:paused}
+@keyframes deraT{to{width:100%}}
+
 @media (max-width:1180px){
-  .droute{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}
-  .droute::before{display:none}
-  .dyears{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px}
-  .dyears__next{grid-column:1/-1}
+  /* лестница становится столбиком; ступени уходят вправо — подъём сохраняется */
+  .dstairs{grid-template-columns:1fr;gap:10px}
+  .dstairs li{min-height:0;margin-left:calc(var(--i) * clamp(10px,4vw,48px))}
+  .dstairs h3{padding-top:18px}
+  .dstairs__axis{display:none}
+  .dera__panel{grid-template-columns:1fr;gap:20px}
 }
 @media (max-width:700px){
-  /* столбиком: номер слева, вертикальная линия через все этапы */
-  .droute{grid-template-columns:1fr;row-gap:28px}
-  .droute::before{display:block;left:23px;right:auto;top:24px;bottom:24px;width:2px;height:auto}
-  .droute li{padding-left:72px}
-  .droute__n{position:absolute;left:0;top:0}
-  .droute h3{margin-top:11px}
-  .dyears{grid-template-columns:1fr;row-gap:0}
-  .dyears li{border-top:0;border-left:2px solid var(--brand);padding:0 0 32px 30px}
-  .dyears li::before{left:-8px;top:4px}
-  .dyears__next{border-left-style:dashed !important;border-left-color:rgba(26,95,224,.45) !important;padding-bottom:0 !important}
-  .dpick{grid-template-columns:1fr}
+  .dstairs li{border-radius:22px;padding:20px 18px 22px}
+  .dstairs p{font-size:16px}
+  .dera__rail button{padding-right:6px}
+  .dera__rail button span{margin-top:12px;font-size:14px;line-height:1.25;letter-spacing:0}
+  .dera__line{left:8px}
+  .dera__rail i{width:17px;height:17px}
+  .dera__line{top:7.5px}
+  .dera__stage{border-radius:24px;padding:28px 20px 34px}
+  .dera__big{font-size:68px}
+  .dera__big--sm{font-size:40px}
+  .dera__panel--next .dera__big{font-size:28px}
+  .dera__txt p{font-size:18px}
 }
