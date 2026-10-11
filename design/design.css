@@ -2928,3 +2928,23 @@ a.dprod:hover h3{color:var(--brand)}
   .dmakers__ico{width:52px;height:52px;border-radius:16px}
 }
 .dcohero__h1sub + .dcohero__lead{margin-top:26px}
+
+/* ---------- раскрытый текст в карточках «Что важно учитывать» ---------- */
+/* пример — в плашке; перечисление — списком с галочками; вывод — с чертой */
+.dtip .dmore > :first-child{margin-top:18px}
+.dmore__ex{margin-top:14px;padding:16px 18px;border-radius:16px;background:var(--tint)}
+.dmore__ex p{margin-top:6px !important;font-size:15.5px !important;line-height:1.6;color:var(--navy) !important}
+.dmore__lbl{display:block;font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--brand)}
+.dmore__lead{margin-top:18px !important;font-weight:600;color:var(--navy) !important}
+.dmore__list{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.dmore__list li{position:relative;padding-left:28px;font-size:16px;line-height:1.5;color:var(--navy-2)}
+.dmore__list li::before{
+  content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:rgba(26,95,224,.1);
+}
+.dmore__list li::after{
+  content:"";position:absolute;left:6.5px;top:7px;width:4px;height:7.5px;border:solid var(--brand);border-width:0 1.8px 1.8px 0;transform:rotate(45deg);
+}
+.dmore__key{margin-top:18px !important;padding-left:16px;border-left:3px solid var(--brand);font-weight:600;color:var(--navy) !important}
+.dmore__steps{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.dmore__steps li{padding:14px 18px;border-radius:16px;background:var(--tint)}
+.dmore__steps p{margin-top:6px !important;font-size:15.5px !important;line-height:1.6;color:var(--navy) !important}
