@@ -2884,7 +2884,7 @@ a.dprod:hover h3{color:var(--brand)}
 .dstart__ph img{object-fit:cover;object-position:62% 50%}
 /* порядок: сначала поза и настройка, затем — нужна ли замена */
 .dorder{margin-top:14px;background:#fff;border-radius:28px;padding:clamp(22px,2.6vw,36px)}
-.dorder__list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:clamp(16px,2.4vw,36px);align-items:center}
+.dorder__list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:clamp(16px,2.4vw,36px);align-items:start}
 .dorder__list li:not(.dorder__arrow){display:flex;align-items:flex-start;gap:16px}
 .dorder__n{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;font-size:15px;font-weight:600}
 .dorder__list li:last-child .dorder__n{background:var(--tint);color:var(--brand)}
