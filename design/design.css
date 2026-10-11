@@ -2527,3 +2527,76 @@ a.dprod:visited{color:var(--navy)}
   .dstory__side .dshot{aspect-ratio:4/3;border-radius:22px}
   .dstage{padding:20px 18px 22px}
 }
+
+/* ================= АВТОРСКИЕ РАЗРАБОТКИ: КАРТОЧКИ, ЭТАПЫ, ГОДЫ, ЗАПУСК ================= */
+/* статус разработки над названием: точка + подпись */
+.dprod__st{display:inline-flex;align-items:baseline;gap:10px;font-size:14px;font-weight:600;line-height:1.4;color:var(--brand)}
+.dprod__st::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:currentColor;transform:translateY(-1px)}
+.dprod__st--dev{color:var(--navy-3)}
+.dprod__st + h3{margin-top:14px}
+a.dprod h3{transition:color .2s var(--ease)}
+a.dprod:hover h3{color:var(--brand)}
+.dprod__note{
+  display:flex;gap:12px;align-items:flex-start;margin-top:16px;padding:14px 16px;border-radius:16px;background:var(--tint);
+  font-size:15px;line-height:1.5;color:var(--navy);max-width:32em;
+}
+.dprod__note svg{flex:none;width:22px;height:22px;color:var(--brand)}
+.dprod .dlink{margin-top:auto;padding-top:22px}
+
+/* «От идеи до готового решения»: пять этапов в ряд, номера на общей линии */
+.droute{list-style:none;margin:clamp(40px,4vw,60px) 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;position:relative}
+.droute::before{content:"";position:absolute;left:24px;right:24px;top:24px;height:2px;background:rgba(26,95,224,.18)}
+.droute li{position:relative}
+.droute__n{
+  position:relative;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;
+  background:var(--brand);color:#fff;font-size:18px;font-weight:600;box-shadow:0 0 0 8px var(--tint);
+}
+.droute h3{margin-top:26px;font-size:clamp(19px,1.45vw,22px);font-weight:600;line-height:1.22;letter-spacing:-.02em;color:var(--navy);max-width:11em}
+.droute p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2);padding-right:8px}
+
+/* «Более 30 лет»: лента по годам, последний пункт пунктиром — работа идёт дальше */
+.dyears{list-style:none;margin:clamp(40px,4vw,60px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) minmax(0,1.3fr);gap:0}
+.dyears li{position:relative;padding:34px 24px 0 0;border-top:2px solid var(--brand)}
+.dyears li::before{content:"";position:absolute;left:0;top:-8px;width:14px;height:14px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 5px #fff}
+.dyears b{display:block;font-size:clamp(26px,2.4vw,38px);font-weight:600;line-height:1.05;letter-spacing:-.03em;color:var(--navy);font-variant-numeric:lining-nums}
+.dyears p{margin-top:14px;font-size:16px;line-height:1.6;color:var(--navy-2)}
+.dyears__next{border-top-style:dashed !important;border-top-color:rgba(26,95,224,.45) !important}
+.dyears__next::before{background:#fff !important;border:2px solid var(--brand)}
+.dyears .dyears__next b{font-size:clamp(19px,1.5vw,22px);line-height:1.25;letter-spacing:-.02em;color:var(--brand);max-width:14em}
+
+/* выбор разработки в форме запуска: можно отметить несколько */
+.dpick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.dpick label{position:relative;cursor:pointer}
+.dpick input{position:absolute;width:1px;height:1px;opacity:0;margin:0}
+.dpick span{
+  display:flex;align-items:center;min-height:48px;height:100%;padding:10px 14px 10px 40px;border-radius:14px;
+  border:1px solid var(--d-line);background:#fff;font-size:14.5px;font-weight:500;line-height:1.3;color:var(--navy-2);
+  transition:border-color .18s var(--ease),background .18s var(--ease),color .18s var(--ease);position:relative;
+}
+.dpick span::before{content:"";position:absolute;left:14px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:5px;border:1.5px solid var(--navy-3);background:#fff}
+.dpick label:hover span{border-color:var(--navy-3);color:var(--navy)}
+.dpick input:checked + span{border-color:var(--brand);color:var(--navy);background:rgba(26,95,224,.06)}
+.dpick input:checked + span::before{background:var(--brand);border-color:var(--brand)}
+.dpick input:checked + span::after{content:"";position:absolute;left:19.5px;top:50%;margin-top:-6px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.dpick input:focus-visible + span{outline:2px solid var(--brand);outline-offset:2px}
+.dpick + .dform__label{margin-top:20px}
+
+@media (max-width:1180px){
+  .droute{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:40px}
+  .droute::before{display:none}
+  .dyears{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:44px}
+  .dyears__next{grid-column:1/-1}
+}
+@media (max-width:700px){
+  /* столбиком: номер слева, вертикальная линия через все этапы */
+  .droute{grid-template-columns:1fr;row-gap:28px}
+  .droute::before{display:block;left:23px;right:auto;top:24px;bottom:24px;width:2px;height:auto}
+  .droute li{padding-left:72px}
+  .droute__n{position:absolute;left:0;top:0}
+  .droute h3{margin-top:11px}
+  .dyears{grid-template-columns:1fr;row-gap:0}
+  .dyears li{border-top:0;border-left:2px solid var(--brand);padding:0 0 32px 30px}
+  .dyears li::before{left:-8px;top:4px}
+  .dyears__next{border-left-style:dashed !important;border-left-color:rgba(26,95,224,.45) !important;padding-bottom:0 !important}
+  .dpick{grid-template-columns:1fr}
+}
