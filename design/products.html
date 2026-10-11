@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=206">
+<link rel="stylesheet" href="design.css?v=207">
 </head>
 <body class="d dco dprd">
 
@@ -286,9 +286,10 @@
 </section>
 
 <!-- ============ БЛОК 6. ОТ ИДЕИ ДО ГОТОВОГО РЕШЕНИЯ ============ -->
-<!-- Лестница: пять ступеней растут слева направо, от идеи к готовому решению.
-     Текст открыт целиком. При появлении блока ступени по очереди
-     подсвечиваются полосой сверху; последняя — залита, это результат. -->
+<!-- Пять этапов в ряд, карточки одной высоты: заголовки и описания на общих
+     линиях. Движение к результату — шкала из пяти делений (у этапа N закрашено
+     N), деления заполняются по очереди при появлении блока; последний этап
+     залит — это результат. Текст открыт целиком. -->
 <section class="dsec dsec--tint" id="route">
   <div class="dwrap">
     <div class="dhead">
@@ -297,27 +298,27 @@
     </div>
     <ol class="dstairs" data-rv>
       <li style="--i:0">
-        <div class="dstairs__top"><span class="dstairs__n">01</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></span></div>
+        <div class="dstairs__top"><span class="dstairs__n">01</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i><i></i></span></div>
         <h3>Практическая задача</h3>
         <p>Определяется, чего не&nbsp;хватает существующим решениям с&nbsp;точки зрения положения и&nbsp;поддержки тела.</p>
       </li>
       <li style="--i:1">
-        <div class="dstairs__top"><span class="dstairs__n">02</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.6" cy="10.6" r="6.4"/><path d="M15.4 15.4 20.6 20.6"/></svg></span></div>
+        <div class="dstairs__top"><span class="dstairs__n">02</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.6" cy="10.6" r="6.4"/><path d="M15.4 15.4 20.6 20.6"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i></i><i></i><i></i></span></div>
         <h3>Анализ существующих решений</h3>
         <p>Оценивается, можно&nbsp;ли решить задачу уже имеющимися средствами и&nbsp;какие ограничения у&nbsp;них есть.</p>
       </li>
       <li style="--i:2">
-        <div class="dstairs__top"><span class="dstairs__n">03</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3.5h6v1"/><path d="M8.5 10.5l1.5 1.5 2.5-2.5M8.5 16l1.5 1.5 2.5-2.5M14.5 11h1.5M14.5 16.5h1.5"/></svg></span></div>
+        <div class="dstairs__top"><span class="dstairs__n">03</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3.5h6v1"/><path d="M8.5 10.5l1.5 1.5 2.5-2.5M8.5 16l1.5 1.5 2.5-2.5M14.5 11h1.5M14.5 16.5h1.5"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i></i><i></i></span></div>
         <h3>Требования к&nbsp;будущему решению</h3>
         <p>Определяется, какую поддержку должно получать тело и&nbsp;какие положения и&nbsp;сценарии использования необходимо учитывать.</p>
       </li>
       <li style="--i:3">
-        <div class="dstairs__top"><span class="dstairs__n">04</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z"/><path d="M13.5 7.5l3 3"/></svg></span></div>
+        <div class="dstairs__top"><span class="dstairs__n">04</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z"/><path d="M13.5 7.5l3 3"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i></i></span></div>
         <h3>Разработка и&nbsp;доработка</h3>
         <p>Создаётся конструкция, которая проверяется на&nbsp;практике и&nbsp;постепенно совершенствуется.</p>
       </li>
       <li style="--i:4" class="dstairs__end">
-        <div class="dstairs__top"><span class="dstairs__n">05</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg></span></div>
+        <div class="dstairs__top"><span class="dstairs__n">05</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i></span></div>
         <h3>Защита разработки</h3>
         <p>Для новых решений при необходимости используется патентная защита.</p>
       </li>

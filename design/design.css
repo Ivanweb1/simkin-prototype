@@ -2592,20 +2592,13 @@ a.dprod:hover h3{color:var(--brand)}
   .dpick{grid-template-columns:1fr}
 }
 
-/* ---------- «От идеи до готового решения»: лестница из пяти ступеней ---------- */
-/* ступени растут слева направо; полоса сверху подсвечивает их по очереди,
-   когда блок появился на экране (класс is-in от общего проявления) */
-.dstairs{list-style:none;margin:clamp(40px,4vw,60px) 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:end}
+/* ---------- «От идеи до готового решения»: пять этапов, шкала прогресса ---------- */
+.dstairs{list-style:none;margin:clamp(40px,4vw,60px) 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:stretch}
 .dstairs li{
-  position:relative;display:flex;flex-direction:column;min-height:calc(270px + var(--i) * 46px);
+  position:relative;display:flex;flex-direction:column;
   background:#fff;border-radius:26px;padding:22px 22px 26px;overflow:hidden;
   transition:transform .3s var(--ease),box-shadow .3s var(--ease);
 }
-.dstairs li::before{
-  content:"";position:absolute;left:0;top:0;height:4px;width:0;background:var(--brand);
-  transition:width .7s var(--ease) calc(.3s + var(--i) * .22s);
-}
-.dstairs.is-in li::before{width:100%}
 .dstairs li:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(35,43,62,.04),0 22px 48px rgba(35,43,62,.12)}
 .dstairs__top{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .dstairs__n{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);font-variant-numeric:tabular-nums;
@@ -2613,15 +2606,24 @@ a.dprod:hover h3{color:var(--brand)}
 .dstairs.is-in .dstairs__n{color:var(--brand)}
 .dstairs__ico{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--tint);color:var(--brand)}
 .dstairs__ico svg{width:24px;height:24px}
-.dstairs h3{margin-top:auto;padding-top:28px;font-size:clamp(19px,1.45vw,22px);font-weight:600;line-height:1.22;letter-spacing:-.02em;color:var(--navy)}
+.dstairs__top{flex-wrap:wrap}
+.dstairs__meter{order:3;flex:0 0 100%;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:18px}
+.dstairs__meter i{height:4px;border-radius:2px;background:rgba(35,43,62,.1);position:relative;overflow:hidden}
+.dstairs__meter i.is-on::after{
+  content:"";position:absolute;inset:0;background:var(--brand);transform:scaleX(0);transform-origin:left;
+  transition:transform .45s var(--ease) calc(.3s + var(--i) * .2s);
+}
+.dstairs.is-in .dstairs__meter i.is-on::after{transform:none}
+.dstairs__end .dstairs__meter i{background:rgba(255,255,255,.22)}
+.dstairs__end .dstairs__meter i.is-on::after{background:#fff}
+.dstairs h3{margin-top:auto;padding-top:24px;font-size:clamp(19px,1.45vw,22px);font-weight:600;line-height:1.22;letter-spacing:-.02em;color:var(--navy)}
 .dstairs p{margin-top:10px;font-size:15.5px;line-height:1.55;color:var(--navy-2)}
-/* заголовки и описания всех ступеней — на одних линиях, как в таблице:
-   карточки делят общие строки сетки (subgrid), а подъём лестницы задаёт
-   отступ сверху. Лишняя высота высоких ступеней уходит над заголовком. */
+/* заголовки и описания всех этапов — на одних линиях, как в таблице:
+   карточки делят общие строки сетки (subgrid) */
 @supports (grid-template-rows:subgrid){
   @media (min-width:1181px){
     .dstairs{grid-template-rows:auto auto auto;row-gap:0;align-items:stretch}
-    .dstairs li{grid-row:span 3;display:grid;grid-template-rows:subgrid;row-gap:0;min-height:0;margin-top:calc((4 - var(--i)) * 46px)}
+    .dstairs li{grid-row:span 3;display:grid;grid-template-rows:subgrid;row-gap:0;min-height:0}
     .dstairs__top{align-self:start}
     .dstairs h3{margin-top:0;align-self:start}
     .dstairs p{align-self:start}
@@ -2629,7 +2631,6 @@ a.dprod:hover h3{color:var(--brand)}
 }
 /* последняя ступень — результат: залита синим */
 .dstairs li.dstairs__end{background:linear-gradient(160deg,var(--brand) 0%,var(--brand-deep) 100%)}
-.dstairs__end::before{background:var(--brand-3) !important}
 .dstairs__end h3{color:#fff}
 .dstairs__end p{color:rgba(255,255,255,.84)}
 .dstairs .dstairs__end .dstairs__n{color:rgba(255,255,255,.72)}
@@ -2694,7 +2695,7 @@ a.dprod:hover h3{color:var(--brand)}
 @media (max-width:1180px){
   /* лестница становится столбиком; ступени уходят вправо — подъём сохраняется */
   .dstairs{grid-template-columns:1fr;gap:10px}
-  .dstairs li{min-height:0;margin-left:calc(var(--i) * clamp(10px,4vw,48px))}
+  .dstairs li{min-height:0}
   .dstairs h3{padding-top:18px}
   .dstairs__axis{display:none}
   .dera__panel{grid-template-columns:1fr;gap:20px}
