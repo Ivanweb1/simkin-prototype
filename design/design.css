@@ -2808,7 +2808,8 @@ a.dprod:hover h3{color:var(--brand)}
 
 /* ---------- «Почему подбор индивидуальный»: схема метода как на главной, пять звеньев ---------- */
 .dsln .dhead--btn{align-items:start}
-.dsln .dhead--btn .dhead__note{padding-top:44px}
+/* текст справа начинается вровень с заголовком — только когда шапка в две колонки */
+@media (min-width:861px){.dsln .dhead--btn .dhead__note{padding-top:44px}}
 .dchain--5 .dchain__list{grid-template-columns:repeat(5,minmax(0,1fr))}
 /* линия заканчивается на последней точке, а не уходит в пустоту за ней */
 .dchain--5 .dchain__list::before{right:calc((100% - 48px) / 5 - 28px)}
@@ -2949,7 +2950,8 @@ a.dprod:hover h3{color:var(--brand)}
   .dhelp,.dstart{grid-template-columns:1fr}
   .dstart__ph{aspect-ratio:16/10;min-height:0}
   .dorder__list{grid-template-columns:1fr}
-  .dorder__arrow{transform:rotate(90deg);margin-left:0}
+  /* шаги друг под другом: номера 01 и 02 и так задают порядок, стрелка не нужна */
+  .dorder__arrow{display:none}
 }
 @media (max-width:700px){
   .dminis{grid-template-columns:1fr}
