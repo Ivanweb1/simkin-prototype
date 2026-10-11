@@ -2430,3 +2430,100 @@ a.dprod:visited{color:var(--navy)}
   .dmk__txt{font-size:17px}
   .dcard__btn .dbtn{width:100%}
 }
+
+/* ================= АВТОРСКИЕ РАЗРАБОТКИ: ГОЛОС АВТОРА ================= */
+/* Текст от первого лица (.dvoice) отделён от основного: белый лист с тенью,
+   крупная кавычка, подпись с портретом. Основной текст страницы лежит прямо
+   на фоне секции, без подложки. */
+
+/* «Почему появляются»: слева основной текст, справа авторская цитата */
+.dwhy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(36px,5vw,96px);align-items:center}
+.dwhy__p{margin-top:28px;font-size:clamp(18px,1.4vw,20px);line-height:1.6;color:var(--navy-2);max-width:30em}
+
+.dvoice{
+  position:relative;margin:0;background:#fff;border-radius:32px;
+  padding:clamp(28px,3.4vw,52px) clamp(24px,3.4vw,56px) clamp(26px,3vw,44px);
+  box-shadow:0 2px 4px rgba(35,43,62,.04),0 14px 34px rgba(35,43,62,.08);
+}
+.dsec:not(.dsec--tint) .dvoice{background:var(--tint);box-shadow:none}
+/* кавычка из знака логотипа: тот же синий, крупно в правом верхнем углу */
+.dvoice::before{
+  content:"\201C";position:absolute;right:clamp(22px,3vw,44px);top:clamp(4px,1vw,14px);
+  font-size:clamp(110px,10vw,150px);line-height:1;font-weight:600;color:var(--brand);opacity:.14;pointer-events:none;
+}
+.dvoice blockquote{margin:0}
+.dvoice__big{font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.22;letter-spacing:-.025em;color:var(--navy);max-width:17em}
+.dvoice__big em{font-style:normal;color:var(--accent)}
+.dvoice blockquote p + p{margin-top:20px;font-size:18px;line-height:1.6;color:var(--navy-2);max-width:30em}
+
+.dvoice__by{display:flex;align-items:center;gap:14px}
+.dvoice--quote .dvoice__by{margin-top:clamp(26px,2.6vw,36px);padding-top:22px;border-top:1px solid var(--d-line)}
+.dvoice > .dvoice__by{margin-bottom:clamp(22px,2.2vw,30px)}
+/* портрет — кадр из фото первого экрана главной, лицо в круге */
+.dvoice__ava{position:relative;flex:none;width:56px;height:56px;border-radius:50%;overflow:hidden;background:var(--tint)}
+.dvoice__ava img{position:absolute;max-width:none;width:380px;height:auto;left:-204px;top:-14px}
+.dvoice__by b{display:block;font-size:16px;font-weight:600;color:var(--navy)}
+.dvoice__by small{display:block;margin-top:2px;font-size:14px;color:var(--navy-3)}
+
+.dvoice__text p{font-size:18px;line-height:1.65;color:var(--navy)}
+.dvoice__text p + p{margin-top:16px}
+/* первый абзац истории — заход, чуть крупнее */
+.dvoice > .dvoice__text p:first-child{font-size:clamp(19px,1.5vw,21px);line-height:1.55;font-weight:500;letter-spacing:-.01em}
+.dvoice__more{margin-top:16px}
+.dvoice__end{font-weight:600}
+
+/* свёрнутая часть: видны первые строки, ниже растворяются */
+.dvoice__more{overflow:hidden;transition:max-height .5s var(--ease)}
+.dvoice__more.is-folded{
+  max-height:5.4em;
+  -webkit-mask-image:linear-gradient(#000 0,transparent 100%);mask-image:linear-gradient(#000 0,transparent 100%);
+}
+.dvoice__btn{
+  display:none;align-items:center;gap:10px;margin-top:22px;padding:0 22px;height:48px;border-radius:999px;
+  border:1px solid var(--navy-3);background:transparent;color:var(--navy);font:inherit;font-size:15.5px;font-weight:600;cursor:pointer;
+  transition:border-color .22s var(--ease),box-shadow .22s var(--ease);
+}
+.js .dvoice__btn{display:inline-flex}
+.dvoice__btn:hover{border-color:var(--navy);box-shadow:inset 0 0 0 1px var(--navy)}
+.dvoice__btn svg{width:18px;height:18px;transition:transform .3s var(--ease)}
+.dvoice__btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+
+/* история: слева заголовок и фото (липкие), справа рассказ автора */
+.dstory{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(36px,5vw,96px);align-items:start}
+.dstory__side{position:sticky;top:120px}
+.dstory__side .dshot{margin-top:clamp(28px,3vw,40px);aspect-ratio:4/3;border-radius:28px}
+.dstory--rev{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.dstory--rev .dstory__side{order:2}
+
+/* «Как развивалась конструкция» внутри истории подушки: два этапа рядом */
+.dvoice__h{margin-top:clamp(30px,3vw,40px);font-size:clamp(21px,1.7vw,25px);font-weight:600;line-height:1.2;letter-spacing:-.02em;color:var(--navy)}
+.dstages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0 22px}
+.dstage{position:relative;background:#fff;border-radius:22px;padding:22px 22px 24px}
+.dsec--tint .dstage{background:var(--tint)}
+.dstage__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--brand)}
+.dstage__name{display:block;margin-top:8px;font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--navy)}
+.dstage p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2)}
+/* стрелка «следующий этап» между карточками */
+.dstage--next::before{
+  content:"";position:absolute;left:-12px;top:30px;width:12px;height:2px;background:var(--brand);opacity:.5;
+}
+
+@media (max-width:980px){
+  .dwhy,.dstory{grid-template-columns:1fr}
+  .dstory__side{position:static}
+  .dstory--rev .dstory__side{order:0}
+  .dstory__side .dshot{aspect-ratio:16/9}
+}
+@media (max-width:700px){
+  .dstages{grid-template-columns:1fr}
+  .dstage--next::before{left:30px;top:-12px;width:2px;height:12px}
+}
+@media (max-width:600px){
+  .dvoice{border-radius:24px;padding:24px 18px 24px}
+  .dvoice::before{font-size:96px;right:16px;top:2px}
+  .dvoice__text p,.dvoice blockquote p + p{font-size:17px}
+  .dvoice > .dvoice__text p:first-child{font-size:18px}
+  .dvoice__btn{width:100%;justify-content:center}
+  .dstory__side .dshot{aspect-ratio:4/3;border-radius:22px}
+  .dstage{padding:20px 18px 22px}
+}
