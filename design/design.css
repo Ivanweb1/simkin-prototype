@@ -2871,7 +2871,8 @@ a.dprod:hover h3{color:var(--brand)}
 /* ---------- «Не обязательно начинать с покупки» ---------- */
 /* два абзаца карточками слева, фото справа той же высоты */
 .dstart{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:clamp(36px,3.6vw,52px);align-items:stretch}
-.dstart__cards{display:grid;grid-template-rows:1fr 1fr;gap:14px}
+/* карточки по своему тексту, без пустого низа; фото тянется на их общую высоту */
+.dstart__cards{display:grid;grid-template-rows:auto auto;align-content:start;gap:14px}
 .dstart__card{display:flex;flex-direction:column;background:#fff;border-radius:28px;padding:clamp(24px,2.6vw,36px)}
 .dstart__ico{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--brand)}
 .dstart__ico svg{width:26px;height:26px}
