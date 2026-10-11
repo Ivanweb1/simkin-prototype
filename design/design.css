@@ -2748,45 +2748,108 @@ a.dprod:hover h3{color:var(--brand)}
 
 /* ================= ЭРГОНОМИЧНЫЕ РЕШЕНИЯ ================= */
 
-/* ---------- «Выберите решение по задаче»: шесть карточек ---------- */
-.dsols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px)}
-.dsol{
-  position:relative;display:flex;flex-direction:column;background:var(--tint);border-radius:28px;
-  padding:clamp(24px,2.2vw,32px) clamp(22px,2vw,30px);color:var(--navy);
-  transition:background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease);
-}
-.dsol__ico{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:#fff;color:var(--brand)}
-.dsol__ico svg{width:26px;height:26px}
-.dsol h3{margin-top:26px;font-size:clamp(21px,1.7vw,25px);font-weight:600;line-height:1.2;letter-spacing:-.022em;transition:color .2s var(--ease)}
-.dsol p{margin-top:12px;font-size:16.5px;line-height:1.6;color:var(--navy-2)}
-.dsol__go{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:22px;font-size:15.5px;font-weight:600;color:var(--brand)}
-.dsol__go svg{width:17px;height:17px;transition:transform .22s var(--ease)}
-.d a.dsol:visited{color:var(--navy)}
-a.dsol:hover{background:#fff;box-shadow:0 2px 4px rgba(35,43,62,.04),0 22px 48px rgba(35,43,62,.12);transform:translateY(-3px)}
-a.dsol:hover h3{color:var(--brand)}
-a.dsol:hover .dsol__go svg{transform:translateX(3px)}
+/* ---------- «Выберите решение по задаче»: список слева, панель справа ---------- */
+/* без JS и на телефоне — все решения карточками подряд; с JS на десктопе —
+   список задач переключает панель, панели лежат в одной ячейке */
+.dpickr{margin-top:clamp(36px,3.6vw,52px)}
+.dpickr__list{display:none}
+.dpickr__stage{display:grid;gap:12px}
+.dpickr__panel{position:relative;display:flex;flex-direction:column;background:var(--tint);border-radius:28px;padding:26px 22px 24px;overflow:hidden}
+.dpickr__big{display:grid;place-items:center;width:56px;height:56px;border-radius:18px;background:#fff;color:var(--brand)}
+.dpickr__big svg{width:28px;height:28px}
+.dpickr__n{display:none}
+.dpickr__panel h3{margin-top:20px;font-size:22px;font-weight:600;line-height:1.2;letter-spacing:-.022em;color:var(--navy)}
+.dpickr__panel p{margin-top:12px;font-size:16.5px;line-height:1.6;color:var(--navy-2);max-width:34em}
+.dpickr__cta{margin-top:20px}
 
-/* ---------- «Как подбирается решение»: шаги строками ---------- */
-.dhow{list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;border-top:1px solid var(--d-line)}
-.dhow li{
-  display:grid;grid-template-columns:minmax(0,96px) minmax(0,.85fr) minmax(0,1.5fr);gap:clamp(20px,3vw,48px);
-  padding:clamp(28px,3vw,40px) 0;border-bottom:1px solid var(--d-line);align-items:start;
+@media (min-width:861px){
+  .dpickr.is-live{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,3vw,48px);align-items:stretch}
+  .dpickr.is-live .dpickr__list{display:flex;flex-direction:column;gap:4px}
+  .dpickr__list button{
+    display:flex;align-items:center;gap:16px;width:100%;padding:12px 18px 12px 12px;border:0;border-radius:20px;background:none;
+    font:inherit;text-align:left;color:var(--navy);cursor:pointer;
+    transition:background .2s var(--ease),color .2s var(--ease);
+  }
+  .dpickr__list button:hover{background:var(--tint)}
+  .dpickr__ico{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--brand);transition:background .2s var(--ease),color .2s var(--ease)}
+  .dpickr__ico svg{width:26px;height:26px}
+  .dpickr__t{flex:1;font-size:clamp(18px,1.45vw,21px);font-weight:600;line-height:1.25;letter-spacing:-.018em}
+  .dpickr__list button > svg{flex:none;width:18px;height:18px;color:var(--brand);opacity:0;transform:translateX(-6px);transition:opacity .2s var(--ease),transform .2s var(--ease)}
+  .dpickr__list button[aria-selected="true"]{background:var(--tint);color:var(--brand)}
+  .dpickr__list button[aria-selected="true"] .dpickr__ico{background:var(--brand);color:#fff}
+  .dpickr__list button[aria-selected="true"] > svg{opacity:1;transform:none}
+  .dpickr__list button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+  .dpickr.is-live .dpickr__stage{display:grid;gap:0}
+  .dpickr.is-live .dpickr__panel{
+    grid-area:1/1;border-radius:32px;padding:clamp(32px,3.6vw,56px);
+    opacity:0;visibility:hidden;transform:translateY(10px);
+    transition:opacity .3s var(--ease),transform .4s var(--ease),visibility 0s .3s;
+  }
+  .dpickr.is-live .dpickr__panel.is-on{opacity:1;visibility:visible;transform:none;transition:opacity .4s var(--ease),transform .5s var(--ease),visibility 0s}
+  /* крупная иконка-иллюстрация в углу панели */
+  .dpickr.is-live .dpickr__big{position:absolute;right:clamp(28px,3.4vw,52px);top:clamp(28px,3.4vw,52px);width:clamp(120px,11vw,168px);height:clamp(120px,11vw,168px);border-radius:50%}
+  .dpickr.is-live .dpickr__big svg{width:46%;height:46%;stroke-width:1.2}
+  .dpickr.is-live .dpickr__n{display:block;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
+  .dpickr.is-live .dpickr__panel h3{margin-top:auto;padding-top:clamp(120px,10vw,160px);font-size:clamp(28px,2.6vw,40px);line-height:1.1;letter-spacing:-.03em;max-width:12em}
+  .dpickr.is-live .dpickr__panel p{margin-top:18px;font-size:clamp(17px,1.35vw,19px);line-height:1.6;color:var(--navy)}
+  .dpickr.is-live .dpickr__cta{margin-top:clamp(26px,2.6vw,36px)}
 }
-.dhow__n{font-size:clamp(34px,3vw,46px);font-weight:600;line-height:1;letter-spacing:-.04em;color:var(--brand);font-variant-numeric:lining-nums}
-.dhow h3{font-size:clamp(22px,1.9vw,28px);font-weight:600;line-height:1.2;letter-spacing:-.024em;color:var(--navy);padding-top:4px}
-.dhow__txt p{font-size:17.5px;line-height:1.65;color:var(--navy-2);max-width:40em}
-.dhow__txt p + p{margin-top:14px}
+@media (max-width:860px){
+  .dpickr__cta .dbtn{width:100%;justify-content:center}
+}
+@media (max-width:600px){
+  .dpickr__panel{border-radius:22px;padding:22px 18px}
+}
+
+/* ---------- «Как подбирается решение»: три шага на общей линии ---------- */
+.dsteps3{
+  list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;position:relative;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto auto auto;column-gap:14px;row-gap:0;
+}
+/* линия от первого номера до последнего; синяя часть заполняется при появлении */
+.dsteps3::before,.dsteps3::after{content:"";position:absolute;top:27px;height:2px;left:calc((100% - 28px) / 6);right:calc((100% - 28px) / 6)}
+.dsteps3::before{background:rgba(26,95,224,.15)}
+.dsteps3::after{background:linear-gradient(90deg,var(--brand),var(--brand-2));transform:scaleX(0);transform-origin:left;transition:transform 1.1s var(--ease) .25s}
+.dsteps3.is-in::after{transform:none}
+.dsteps3 li{position:relative;grid-row:span 4;display:grid;grid-template-rows:subgrid;row-gap:0;z-index:1}
+/* белая карточка под названием, плашками и текстом — номер остаётся над ней, на линии */
+.dsteps3 li::after{
+  content:"";grid-row:2 / 5;grid-column:1;background:#fff;border-radius:28px;z-index:-1;
+  transition:box-shadow .3s var(--ease),transform .3s var(--ease);
+}
+.dsteps3 li:hover::after{box-shadow:0 2px 4px rgba(35,43,62,.04),0 22px 48px rgba(35,43,62,.12)}
+.dsteps3__dot{
+  justify-self:center;display:grid;place-items:center;width:56px;height:56px;margin-bottom:22px;border-radius:50%;
+  background:#fff;border:2px solid rgba(26,95,224,.2);color:var(--navy-3);font-size:18px;font-weight:600;
+  transition:background .4s var(--ease) calc(.35s + var(--i) * .45s),border-color .4s var(--ease) calc(.35s + var(--i) * .45s),color .4s var(--ease) calc(.35s + var(--i) * .45s);
+}
+.dsteps3.is-in .dsteps3__dot{background:var(--brand);border-color:var(--brand);color:#fff}
+.dsteps3 h3,.dsteps3__tags,.dsteps3__txt{grid-column:1;padding-left:clamp(22px,2.2vw,32px);padding-right:clamp(22px,2.2vw,32px)}
+.dsteps3 h3{grid-row:2;padding-top:clamp(26px,2.4vw,34px);font-size:clamp(21px,1.7vw,25px);font-weight:600;line-height:1.2;letter-spacing:-.022em;color:var(--navy)}
+.dsteps3__tags{grid-row:3;display:flex;flex-wrap:wrap;align-content:flex-start;gap:6px;padding-top:16px}
+.dsteps3__tags span{padding:6px 12px;border-radius:999px;background:var(--tint);font-size:13.5px;font-weight:500;line-height:1.3;color:var(--navy-2)}
+.dsteps3__txt{grid-row:4;padding-top:18px;padding-bottom:clamp(26px,2.4vw,34px)}
+.dsteps3__txt p{font-size:16.5px;line-height:1.6;color:var(--navy-2)}
+.dsteps3__txt p + p{margin-top:12px}
 
 /* ---------- «Почему подбор индивидуальный»: цепочка системы ---------- */
-.dchain{margin-top:clamp(36px,3.6vw,52px);background:var(--tint);border-radius:32px;padding:clamp(28px,3.4vw,52px)}
-.dchain__t{font-size:17px;font-weight:600;color:var(--navy)}
-.dchain__list{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.dchain__list li{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;font-size:clamp(16px,1.25vw,18px);font-weight:600;color:var(--navy)}
-/* черта между звеньями — как в формуле «человек – задача – ...» */
-.dchain__list li + li::before{content:"";position:absolute;top:32px;left:calc(-50% + 32px);right:calc(50% + 44px);height:2px;background:rgba(26,95,224,.25)}
-.dchain__ico{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#fff;color:var(--brand);box-shadow:0 8px 20px rgba(35,43,62,.06)}
-.dchain__ico svg{width:28px;height:28px}
-.dchain__btn{margin-top:clamp(28px,3vw,40px)}
+.dsln #why .dhead--split{align-items:start}
+.dsln #why .dhead__note{padding-top:44px}
+.dsys{margin-top:clamp(36px,3.6vw,52px);background:var(--tint);border-radius:32px;padding:clamp(28px,3.4vw,52px)}
+.dsys__t{font-size:17px;font-weight:600;color:var(--navy)}
+.dsys__list{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.dsys__list li{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;font-size:clamp(16px,1.25vw,18px);font-weight:600;color:var(--navy)}
+/* одна линия от первой иконки до последней, как в схеме метода на главной */
+.dsys__list{position:relative}
+.dsys__list::before{
+  content:"";position:absolute;top:31px;height:2px;left:calc((100% - 48px) / 10);right:calc((100% - 48px) / 10);
+  background:linear-gradient(90deg,var(--brand),var(--brand-2) 55%,var(--brand-3));
+}
+.dsys__list li{z-index:1}
+.dsys__ico{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#fff;color:var(--brand);box-shadow:0 8px 20px rgba(35,43,62,.06)}
+.dsys__ico svg{width:28px;height:28px}
+.dsys__btn{margin-top:clamp(28px,3vw,40px)}
 
 /* ---------- «Что важно учитывать»: три карточки с «Подробнее» ---------- */
 .dtips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px);align-items:stretch}
@@ -2842,8 +2905,8 @@ a.dsol:hover .dsol__go svg{transform:translateX(3px)}
 .dstart__btn{align-self:flex-start}
 
 /* ---------- «Авторские разработки»: принцип и четыре мини-карточки ---------- */
-.dprin .dprin__q{font-size:clamp(20px,1.7vw,25px);font-weight:600;line-height:1.3;letter-spacing:-.02em;color:var(--navy)}
-.dprin__q em{font-style:normal;color:var(--accent)}
+.dmotto .dmotto__q{font-size:clamp(20px,1.7vw,25px);font-weight:600;line-height:1.3;letter-spacing:-.02em;color:var(--navy)}
+.dmotto__q em{font-style:normal;color:var(--accent)}
 .dminis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(36px,3.6vw,52px)}
 .dmini{
   position:relative;display:flex;flex-direction:column;background:var(--tint);border-radius:24px;padding:24px 22px 22px;color:var(--navy);
@@ -2877,26 +2940,29 @@ a.dsol:hover .dsol__go svg{transform:translateX(3px)}
   .dtips{grid-template-columns:1fr}
 }
 @media (max-width:980px){
-  .dsols{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .dhow li{grid-template-columns:64px minmax(0,1fr)}
-  .dhow__txt{grid-column:2}
+  /* шаги столбиком: номер внутри карточки, линия не нужна */
+  .dsteps3{grid-template-columns:1fr;grid-template-rows:none;row-gap:12px}
+  .dsteps3::before,.dsteps3::after{display:none}
+  .dsteps3 li{grid-row:auto;display:block;background:#fff;border-radius:24px;padding:24px 22px}
+  .dsteps3 li::after{display:none}
+  .dsteps3__dot{width:44px;height:44px;margin-bottom:16px;font-size:16px}
+  .dsteps3 h3,.dsteps3__tags,.dsteps3__txt{padding-left:0;padding-right:0}
+  .dsteps3 h3{padding-top:0}
+  .dsteps3__txt{padding-bottom:0}
   .dhelp,.dstart{grid-template-columns:1fr}
   .dstart__ph{aspect-ratio:16/10}
-  .dchain__list{grid-template-columns:1fr;gap:10px}
-  .dchain__list li{flex-direction:row;text-align:left;gap:16px}
-  .dchain__list li + li::before{top:-10px;left:27px;right:auto;width:2px;height:10px}
-  .dchain__ico{width:56px;height:56px}
-  .dchain__ico svg{width:24px;height:24px}
+  .dsys__list{grid-template-columns:1fr;gap:10px}
+  .dsys__list li{flex-direction:row;text-align:left;gap:16px}
+  .dsys__list::before{top:28px;bottom:28px;left:27px;right:auto;width:2px;height:auto;background:linear-gradient(180deg,var(--brand),var(--brand-3))}
+  .dsys__ico{width:56px;height:56px}
+  .dsys__ico svg{width:24px;height:24px}
 }
 @media (max-width:700px){
-  .dsols,.dminis{grid-template-columns:1fr}
-  .dsol,.dtip,.dmini{border-radius:22px}
-  .dhow li{grid-template-columns:1fr;gap:10px}
-  .dhow__txt{grid-column:auto}
-  .dhow__n{font-size:30px}
-  .dhow__txt p,.dhelp__card p{font-size:16.5px}
-  .dchain,.dhelp__card,.dmakers{border-radius:24px;padding:24px 18px}
-  .dchain__btn,.dhelp__btn .dbtn,.dstart__btn{width:100%;justify-content:center}
+  .dminis{grid-template-columns:1fr}
+  .dtip,.dmini{border-radius:22px}
+  .dhelp__card p{font-size:16.5px}
+  .dsys,.dhelp__card,.dmakers{border-radius:24px;padding:24px 18px}
+  .dsys__btn,.dhelp__btn .dbtn,.dstart__btn{width:100%;justify-content:center}
   .dstart__ph{border-radius:22px}
   .dmakers{grid-template-columns:1fr;gap:18px}
   .dmakers__ico{width:52px;height:52px;border-radius:16px}
