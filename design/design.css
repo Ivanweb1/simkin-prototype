@@ -1730,6 +1730,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 .dshot > span{
   position:relative;z-index:0;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-3);
+  padding:0 24px;text-align:center;line-height:1.5;
 }
 .dshot img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover}
 .dshot--fill{position:absolute;inset:0;aspect-ratio:auto;border-radius:0}
@@ -2648,7 +2649,7 @@ a.dprod:hover h3{color:var(--brand)}
 .dera.is-live .dera__rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
 .dera__line{position:absolute;left:10px;right:0;top:9px;height:2px;background:var(--d-line)}
 .dera__fill{display:block;height:100%;width:0;background:var(--brand);transition:width .6s var(--ease)}
-.dera__rail button{position:relative;padding:0 12px 6px 0;border:0;background:none;font:inherit;text-align:left;color:var(--navy-3);cursor:pointer}
+.dera__rail button{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:0 12px 6px 0;border:0;background:none;font:inherit;text-align:left;color:var(--navy-3);cursor:pointer}
 .dera__rail i{
   display:block;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid rgba(35,43,62,.22);
   transition:border-color .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease);
@@ -2702,16 +2703,16 @@ a.dprod:hover h3{color:var(--brand)}
   .dstairs li{min-height:0}
   .dstairs h3{padding-top:18px}
   .dstairs__axis{display:none}
-  .dera__panel{grid-template-columns:1fr;gap:20px}
+  .dera__panel{grid-template-columns:1fr;gap:20px;align-content:start}
 }
 @media (max-width:700px){
   .dstairs li{border-radius:22px;padding:20px 18px 22px}
   .dstairs p{font-size:16px}
-  .dera__rail button{padding-right:6px}
+  /* на телефоне точки и подписи по центру колонок, линия — от первой точки до последней */
+  .dera__rail button{padding:0 2px 6px;text-align:center;align-items:center}
   .dera__rail button span{margin-top:12px;font-size:14px;line-height:1.25;letter-spacing:0}
-  .dera__line{left:8px}
-  .dera__rail i{width:17px;height:17px}
-  .dera__line{top:7.5px}
+  .dera__rail i{width:17px;height:17px;margin:0 auto}
+  .dera__line{left:10%;right:10%;top:7.5px}
   .dera__stage{border-radius:24px;padding:28px 20px 34px}
   .dera__big{font-size:68px}
   .dera__big--sm{font-size:40px}
