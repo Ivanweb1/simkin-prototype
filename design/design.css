@@ -2607,15 +2607,16 @@ a.dprod:hover h3{color:var(--brand)}
 .dstairs__ico{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--tint);color:var(--brand)}
 .dstairs__ico svg{width:24px;height:24px}
 .dstairs__top{flex-wrap:wrap}
-.dstairs__meter{order:3;flex:0 0 100%;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:18px}
-.dstairs__meter i{height:4px;border-radius:2px;background:rgba(35,43,62,.1);position:relative;overflow:hidden}
+.dstairs__meter{order:3;flex:0 0 100%;display:grid;grid-template-columns:repeat(5,1fr);gap:3px;margin-top:18px}
+/* шкала — тихая подсказка, не акцент: тонкая и бледная */
+.dstairs__meter i{height:2px;border-radius:1px;background:rgba(35,43,62,.06);position:relative;overflow:hidden}
 .dstairs__meter i.is-on::after{
-  content:"";position:absolute;inset:0;background:var(--brand);transform:scaleX(0);transform-origin:left;
+  content:"";position:absolute;inset:0;background:rgba(26,95,224,.32);transform:scaleX(0);transform-origin:left;
   transition:transform .45s var(--ease) calc(.3s + var(--i) * .2s);
 }
 .dstairs.is-in .dstairs__meter i.is-on::after{transform:none}
-.dstairs__end .dstairs__meter i{background:rgba(255,255,255,.22)}
-.dstairs__end .dstairs__meter i.is-on::after{background:#fff}
+.dstairs__end .dstairs__meter i{background:rgba(255,255,255,.12)}
+.dstairs__end .dstairs__meter i.is-on::after{background:rgba(255,255,255,.42)}
 .dstairs h3{margin-top:auto;padding-top:24px;font-size:clamp(19px,1.45vw,22px);font-weight:600;line-height:1.22;letter-spacing:-.02em;color:var(--navy)}
 .dstairs p{margin-top:10px;font-size:15.5px;line-height:1.55;color:var(--navy-2)}
 /* заголовки и описания всех этапов — на одних линиях, как в таблице:
