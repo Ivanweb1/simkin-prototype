@@ -2807,23 +2807,24 @@ a.dprod:hover h3{color:var(--brand)}
 }
 
 /* ---------- «Почему подбор индивидуальный»: схема метода как на главной, пять звеньев ---------- */
-.dsln #why .dhead--split{align-items:start}
-.dsln #why .dhead__note{padding-top:44px}
+.dsln .dhead--btn{align-items:start}
+.dsln .dhead--btn .dhead__note{padding-top:44px}
 .dchain--5 .dchain__list{grid-template-columns:repeat(5,minmax(0,1fr))}
 /* линия заканчивается на последней точке, а не уходит в пустоту за ней */
 .dchain--5 .dchain__list::before{right:calc((100% - 48px) / 5 - 28px)}
 @media (max-width:1100px){.dchain--5 .dchain__list{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:600px){.dchain--5 .dchain__list{grid-template-columns:1fr}}
 .dchain__lead{font-size:clamp(19px,1.5vw,22px);font-weight:600;line-height:1.3;letter-spacing:-.015em;color:var(--navy)}
-/* «Подробнее о методе» — под заголовком слева, низом вровень с описанием справа;
-   на узких экранах шапка в одну колонку, кнопка — после описания */
+/* шапка с кнопкой: кнопка под заголовком слева, низом вровень с текстом справа;
+   на узких экранах шапка в одну колонку, кнопка — после текста */
 @media (min-width:861px){
-  .dsln #why .dhead--split{grid-template-rows:auto 1fr}
-  .dsln #why .dhead--split > :first-child{grid-row:1}
-  .dsln #why .dhead__note{grid-row:1 / span 2;grid-column:-2 / -1}
-  .dsln #why .dwhy__btn{grid-row:2;grid-column:1;align-self:end;margin-bottom:10px}
+  .dsln .dhead--btn{grid-template-rows:auto 1fr}
+  .dsln .dhead--btn > :first-child{grid-row:1}
+  .dsln .dhead--btn .dhead__note{grid-row:1 / span 2;grid-column:-2 / -1}
+  .dsln .dhead--btn .dhead__btn{grid-row:2;grid-column:1;align-self:end;margin-bottom:10px}
 }
-@media (max-width:600px){.dwhy__btn .dbtn{width:100%;justify-content:center}}
+@media (max-width:600px){.dhead__btn .dbtn{width:100%;justify-content:center}}
+.dnw{white-space:nowrap}
 
 /* ---------- «Что важно учитывать»: три карточки с «Подробнее» ---------- */
 .dtips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px);align-items:stretch}
@@ -2903,21 +2904,21 @@ a.dprod:hover h3{color:var(--brand)}
 .dmotto__q em{font-style:normal;color:var(--accent)}
 .dminis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(36px,3.6vw,52px)}
 .dmini{
-  position:relative;display:flex;flex-direction:column;background:var(--tint);border-radius:24px;padding:24px 22px 22px;color:var(--navy);
+  position:relative;display:flex;flex-direction:column;background:var(--tint);border-radius:24px;padding:22px 22px 26px;color:var(--navy);
   transition:background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease);
 }
 .d .dmini:visited{color:var(--navy)}
-.dmini__st{display:inline-flex;align-items:baseline;gap:9px;font-size:13.5px;font-weight:600;color:var(--brand)}
-.dmini__st::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:currentColor;transform:translateY(-1px)}
-.dmini__st--dev{color:var(--navy-3)}
-.dmini h3{margin-top:14px;font-size:clamp(18px,1.4vw,21px);font-weight:600;line-height:1.25;letter-spacing:-.02em;transition:color .2s var(--ease)}
-.dmini p{margin-top:10px;margin-bottom:22px;font-size:15.5px;line-height:1.55;color:var(--navy-2)}
-.dmini__go{display:grid;place-items:center;width:40px;height:40px;margin-top:auto;border-radius:50%;background:#fff;color:var(--brand);transition:background .22s var(--ease),color .22s var(--ease)}
+.dmini__top{display:flex;align-items:center;justify-content:space-between}
+.dmini__ico{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#fff;color:var(--brand)}
+.dmini__ico svg{width:24px;height:24px}
+.dmini h3{margin-top:22px;font-size:clamp(18px,1.4vw,21px);font-weight:600;line-height:1.25;letter-spacing:-.02em;transition:color .2s var(--ease)}
+.dmini p{margin-top:10px;font-size:15.5px;line-height:1.55;color:var(--navy-2)}
+.dmini__go{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--brand);transition:background .22s var(--ease),color .22s var(--ease),transform .22s var(--ease)}
 .dmini__go svg{width:17px;height:17px}
 .dmini:hover{background:#fff;box-shadow:0 2px 4px rgba(35,43,62,.04),0 22px 48px rgba(35,43,62,.12);transform:translateY(-3px)}
 .dmini:hover h3{color:var(--brand)}
-.dmini:hover .dmini__go{background:var(--brand);color:#fff}
-.dminis__btn{margin-top:clamp(28px,3vw,40px)}
+.dmini:hover .dmini__ico{background:var(--tint)}
+.dmini:hover .dmini__go{background:var(--brand);color:#fff;transform:translateX(2px)}
 
 /* ---------- «Совместные разработки»: компактный анонс ---------- */
 .dmakers{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start;background:#fff;border-radius:32px;padding:clamp(28px,3.6vw,56px)}
