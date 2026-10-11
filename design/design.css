@@ -1257,6 +1257,8 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 .dcohero h1 em{font-style:normal;color:var(--accent)}
 .dcohero__h1sub{margin-top:14px;font-size:clamp(19px,1.7vw,24px);font-weight:600;line-height:1.3;letter-spacing:-.02em;color:var(--navy);max-width:24em}
+/* подзаголовок в одну строку на десктопе (на «Авторских разработках»); на телефоне переносится */
+.dcohero__h1sub--line{max-width:none;font-size:clamp(18px,1.55vw,22px)}
 .dcohero__sub{margin-top:26px;font-size:clamp(17px,1.35vw,19px);font-weight:600;line-height:1.45;color:var(--navy);letter-spacing:-.01em;max-width:28em}
 .dcohero__lead{margin-top:14px;font-size:17px;line-height:1.6;color:var(--navy-2);max-width:30em}
 .dcohero__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,3vw,40px)}
