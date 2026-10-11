@@ -2927,8 +2927,17 @@ a.dprod:hover h3{color:var(--brand)}
 .dmakers__ico svg{width:30px;height:30px}
 .dmakers__h{margin-top:16px;font-size:clamp(26px,2.6vw,40px);font-weight:600;line-height:1.1;letter-spacing:-.03em;color:var(--navy);max-width:20em}
 .dmakers__lead{margin-top:16px;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--navy-2);max-width:40em}
-.dmakers .dmore p{margin-top:14px;font-size:17px;line-height:1.65;color:var(--navy);max-width:46em}
-.dmakers .dmore p:first-child{margin-top:22px}
+/* раскрытый текст: слева мысль и контекст, справа что готов делать — списком,
+   ниже результат в плашке */
+.dmakers__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);margin-top:26px;padding-top:26px;border-top:1px solid var(--d-line)}
+.dmakers .dmore p{font-size:17px;line-height:1.65;color:var(--navy-2)}
+.dmakers__grid > div > p + p{margin-top:14px}
+.dmakers .dmore__key{margin-top:0 !important}
+.dmakers .dmore__lead{margin-top:0 !important}
+.dmakers .dmore__list li{font-size:16.5px}
+.dmakers .dmore__ex{margin-top:22px;padding:20px 22px}
+.dmakers .dmore__ex p{font-size:16.5px !important}
+@media (max-width:860px){.dmakers__grid{grid-template-columns:1fr;gap:22px}}
 .dmakers__cta{padding:26px 0 4px}
 
 @media (max-width:1180px){
