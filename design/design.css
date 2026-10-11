@@ -2982,3 +2982,12 @@ a.dprod:hover h3{color:var(--brand)}
 .dmore__steps{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
 .dmore__steps li{padding:14px 18px;border-radius:16px;background:var(--tint)}
 .dmore__steps p{margin-top:6px !important;font-size:15.5px !important;line-height:1.6;color:var(--navy) !important}
+/* телефон: длинные подписи кнопок — мельче кегль и поля, чтобы влезали в строку;
+   если всё же переносятся — две строки по центру, кнопка растёт по высоте.
+   В «Выберите решение» консультация в каждой карточке не повторяется. */
+@media (max-width:600px){
+  .dsln .dbtn{font-size:14.5px;padding:12px 14px;gap:8px;height:auto;min-height:56px;line-height:1.25;text-align:center}
+  .dsln .dbtn svg{display:none}
+  .dsln .dpickr__cta button[data-open]{display:none}
+  .dsln .dpickr__panel .dpickr__cta:has(button[data-open]){display:none}
+}
