@@ -2815,16 +2815,15 @@ a.dprod:hover h3{color:var(--brand)}
 @media (max-width:1100px){.dchain--5 .dchain__list{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:600px){.dchain--5 .dchain__list{grid-template-columns:1fr}}
 .dchain__lead{font-size:clamp(19px,1.5vw,22px);font-weight:600;line-height:1.3;letter-spacing:-.015em;color:var(--navy)}
-/* кнопка в шапке панели, на строке с подписью; на телефоне — под схемой */
-.dchain--5{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"lead btn" "list list";column-gap:24px;align-items:center}
-.dchain--5 .dchain__lead{grid-area:lead}
-.dchain--5 .dchain__btn{grid-area:btn}
-.dchain--5 .dchain__list{grid-area:list}
-@media (max-width:600px){
-  .dchain--5{grid-template-columns:1fr;grid-template-areas:"lead" "list" "btn"}
-  .dchain--5 .dchain__btn{margin-top:24px}
-  .dchain--5 .dchain__btn .dbtn{width:100%;justify-content:center}
+/* «Подробнее о методе» — под заголовком слева, низом вровень с описанием справа;
+   на узких экранах шапка в одну колонку, кнопка — после описания */
+@media (min-width:861px){
+  .dsln #why .dhead--split{grid-template-rows:auto 1fr}
+  .dsln #why .dhead--split > :first-child{grid-row:1}
+  .dsln #why .dhead__note{grid-row:1 / span 2;grid-column:-2 / -1}
+  .dsln #why .dwhy__btn{grid-row:2;grid-column:1;align-self:end;margin-bottom:10px}
 }
+@media (max-width:600px){.dwhy__btn .dbtn{width:100%;justify-content:center}}
 
 /* ---------- «Что важно учитывать»: три карточки с «Подробнее» ---------- */
 .dtips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px);align-items:stretch}
