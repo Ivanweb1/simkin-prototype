@@ -2787,11 +2787,14 @@ a.dprod:hover h3{color:var(--brand)}
     transition:opacity .3s var(--ease),transform .4s var(--ease),visibility 0s .3s;
   }
   .dpickr.is-live .dpickr__panel.is-on{opacity:1;visibility:visible;transform:none;transition:opacity .4s var(--ease),transform .5s var(--ease),visibility 0s}
-  /* крупная иконка-иллюстрация в углу панели */
-  .dpickr.is-live .dpickr__big{position:absolute;right:clamp(28px,3.4vw,52px);top:clamp(28px,3.4vw,52px);width:clamp(120px,11vw,168px);height:clamp(120px,11vw,168px);border-radius:50%}
-  .dpickr.is-live .dpickr__big svg{width:46%;height:46%;stroke-width:1.2}
+  /* высоту ряда задаёт список: сцена в расчёте высоты не участвует и тянется по нему */
+  .dpickr.is-live .dpickr__stage{height:0;min-height:100%}
+  /* иконка обычного размера, в одной строке с номером */
+  .dpickr.is-live .dpickr__panel{padding:clamp(28px,3vw,44px)}
+  .dpickr.is-live .dpickr__big{width:56px;height:56px;border-radius:18px}
+  .dpickr.is-live .dpickr__n{position:absolute;right:clamp(28px,3vw,44px);top:clamp(28px,3vw,44px);line-height:56px}
   .dpickr.is-live .dpickr__n{display:block;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
-  .dpickr.is-live .dpickr__panel h3{margin-top:auto;padding-top:clamp(120px,10vw,160px);font-size:clamp(28px,2.6vw,40px);line-height:1.1;letter-spacing:-.03em;max-width:12em}
+  .dpickr.is-live .dpickr__panel h3{margin-top:auto;padding-top:24px;font-size:clamp(28px,2.6vw,40px);line-height:1.1;letter-spacing:-.03em;max-width:12em}
   .dpickr.is-live .dpickr__panel p{margin-top:18px;font-size:clamp(17px,1.35vw,19px);line-height:1.6;color:var(--navy)}
   .dpickr.is-live .dpickr__cta{margin-top:clamp(26px,2.6vw,36px)}
 }
