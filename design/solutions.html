@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=220">
+<link rel="stylesheet" href="design.css?v=221">
 </head>
 <body class="d dco dsln">
 
@@ -177,38 +177,53 @@
 </section>
 
 <!-- ============ БЛОК 3. КАК ПОДБИРАЕТСЯ РЕШЕНИЕ ============ -->
-<!-- Три шага рядом: номера на общей линии, линия заполняется и номера
-     загораются по очереди при появлении блока. Названия, плашки-ключевые слова
-     (из текста шага) и тексты — на общих строках сетки (subgrid). -->
+<!-- Тот же блок, что «Почему эргономика важна для бизнеса» на странице
+     «Для компаний»: слева счётчик «01 / 03» и шкала (липнут при прокрутке),
+     справа шаги; активен шаг, чей заголовок дошёл до середины экрана,
+     соседние приглушены. -->
 <section class="dsec dsec--tint" id="how">
   <div class="dwrap">
     <div class="dhead">
       <span class="deyebrow" data-rv>Подбор</span>
       <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Как подбирается <span class="dh2__soft">решение</span></h2>
     </div>
-    <ol class="dsteps3" data-rv>
-      <li style="--i:0">
-        <span class="dsteps3__dot">1</span>
-        <h3>Определяем задачу</h3>
-        <span class="dsteps3__tags"><span>Компьютер</span><span>Ноутбук</span><span>Планшет и&nbsp;смартфон</span><span>Документы и&nbsp;чертежи</span><span>Совещания</span></span>
-        <div class="dsteps3__txt">
+    <div class="dflow dflow--bare" data-flow data-rv>
+      <div class="dflow__aside">
+        <div class="dflow__sticky">
+          <div class="dflow__meta">
+            <span class="deyebrow">Шаг</span>
+            <p class="dflow__count"><b data-flow-num>01</b><i>/&nbsp;03</i></p>
+            <ol class="dflow__rail">
+              <li><button type="button" data-flow-go="0" aria-label="Шаг 01: Определяем задачу"></button></li>
+              <li><button type="button" data-flow-go="1" aria-label="Шаг 02: Учитываем человека"></button></li>
+              <li><button type="button" data-flow-go="2" aria-label="Шаг 03: Подбираем и настраиваем оборудование"></button></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="dflow__list">
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">01</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></span>
+          <h3>Определяем задачу</h3>
           <p>Сначала нужно понять, как именно человек работает: за&nbsp;стационарным компьютером или ноутбуком, с&nbsp;планшетом или смартфоном, печатает, читает, работает с&nbsp;документами и&nbsp;чертежами, проводит совещания, много общается с&nbsp;коллегами или сочетает несколько таких сценариев.</p>
           <p>От&nbsp;характера работы зависит и&nbsp;оптимальная рабочая поза, и&nbsp;требования к&nbsp;креслу, столу, расположению оборудования и&nbsp;другим элементам рабочего места.</p>
-        </div>
-      </li>
-      <li style="--i:1">
-        <span class="dsteps3__dot">2</span>
-        <h3>Учитываем человека</h3>
-        <span class="dsteps3__tags"><span>Рост</span><span>Пропорции тела</span><span>Рабочая поза</span><span>Привычки</span><span>Ограничения</span></span>
-        <div class="dsteps3__txt"><p>Рост, пропорции тела, особенности рабочей позы, привычки и&nbsp;индивидуальные ограничения могут существенно менять требования к&nbsp;рабочему месту.</p></div>
-      </li>
-      <li style="--i:2">
-        <span class="dsteps3__dot">3</span>
-        <h3>Подбираем и&nbsp;настраиваем оборудование</h3>
-        <span class="dsteps3__tags"><span>Подбор</span><span>Настройка</span><span>Согласование элементов</span></span>
-        <div class="dsteps3__txt"><p>Даже хорошее кресло или правильно выбранный стол не&nbsp;дадут максимального результата, если они неправильно настроены или не&nbsp;согласованы с&nbsp;остальными элементами рабочего места.</p></div>
-      </li>
-    </ol>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">02</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.8" r="3.6"/><path d="M4.8 20.4v-1.2a7.2 7.2 0 0 1 14.4 0v1.2"/></svg></span>
+          <h3>Учитываем человека</h3>
+          <p>Рост, пропорции тела, особенности рабочей позы, привычки и&nbsp;индивидуальные ограничения могут существенно менять требования к&nbsp;рабочему месту.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">03</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4v6M5 14v6M12 4v3M12 11v9M19 4v9M19 17v3"/><path d="M3 12h4M10 9h4M17 15h4"/></svg></span>
+          <h3>Подбираем и&nbsp;настраиваем оборудование</h3>
+          <p>Даже хорошее кресло или правильно выбранный стол не&nbsp;дадут максимального результата, если они неправильно настроены или не&nbsp;согласованы с&nbsp;остальными элементами рабочего места.</p>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -588,6 +603,110 @@
 </div>
 
 <script src="../script.js?v=39"></script>
+
+<script>
+/* Доводы: активен тот, что пересёк линию чтения. Никакого перехвата скролла —
+   страница прокручивается обычно, меняются только акценты. */
+(function(){
+  var flow = document.querySelector('[data-flow]');
+  if(!flow) return;
+  var items = [].slice.call(flow.querySelectorAll('[data-flow-item]'));
+  var rail  = [].slice.call(flow.querySelectorAll('.dflow__rail li'));
+  var shots = [].slice.call(flow.querySelectorAll('[data-flow-ph]'));
+  var num   = flow.querySelector('[data-flow-num]');
+  if(!items.length) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = -1;
+  flow.classList.add('dflow--live');
+
+  function apply(i){
+    if(i === cur) return;
+    cur = i;
+    items.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    rail.forEach(function(li,n){
+      li.classList.toggle('is-done', n <= i);
+      li.classList.toggle('is-now',  n === i);
+      var b = li.firstElementChild;
+      if(b) b.setAttribute('aria-current', n === i ? 'true' : 'false');
+    });
+    shots.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    if(num){
+      num.textContent = ('0' + (i + 1)).slice(-2);
+      if(!reduce){ num.classList.remove('is-swap'); void num.offsetWidth; num.classList.add('is-swap'); }
+    }
+  }
+
+  // каждый кадр встаёт ровно в границы своего ряда. Шире, чем остаток левой
+  // половины, он быть не может — иначе наехал бы на номер, поэтому размер
+  // ограничен сверху.
+  var aside= flow.querySelector('.dflow__aside');
+  var meta = flow.querySelector('.dflow__meta');
+  var GAP = 40; // просвет между соседними кадрами
+  function placeShots(){
+    if(!shots.length || getComputedStyle(shots[0]).display === 'none') return;
+    var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
+    shots.forEach(function(fig,n){
+      var row = items[n];
+      if(!row) return;
+      // верх остаётся на линейке ряда, просвет снимается снизу
+      var size = Math.max(0, Math.min(row.offsetHeight - GAP, room));
+      fig.style.setProperty('--ph-top', row.offsetTop + 'px');
+      fig.style.setProperty('--ph', Math.round(size) + 'px');
+    });
+  }
+  placeShots();
+  // высота ряда меняется от переносов в тексте, ширина колонки — от окна.
+  // Наблюдатель ловит и то и другое; кадры позиционированы абсолютно и на
+  // размеры рядов не влияют, так что зацикливания нет.
+  if(window.ResizeObserver){
+    var ro = new ResizeObserver(placeShots);
+    ro.observe(flow);
+    items.forEach(function(el){ ro.observe(el); });
+  }
+
+  // считаем по заголовку, а не по краю блока: принцип становится активным ровно
+  // тогда, когда его название доходит до середины экрана
+  function pick(){
+    var line = window.innerHeight * 0.45, best = 0;
+    items.forEach(function(el,n){
+      var h = el.querySelector('h3') || el;
+      if(h.getBoundingClientRect().top <= line) best = n;
+    });
+    apply(best);
+  }
+
+  var waiting = false;
+  function onScroll(){
+    if(waiting) return;
+    waiting = true;
+    requestAnimationFrame(function(){ waiting = false; pick(); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  // после смены ширины даём раскладке устояться: высота ряда меняется вместе с
+  // переносами в тексте, и без паузы кадр получил бы размер от прошлой ширины
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(placeShots, 150);
+    onScroll();
+  });
+  // шрифт догружается позже разметки и меняет высоту рядов
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(placeShots);
+  }
+  pick();
+
+  flow.querySelectorAll('[data-flow-go]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = items[+btn.getAttribute('data-flow-go')];
+      if(!el) return;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - window.innerHeight * 0.26;
+      window.scrollTo({top: top, behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+})();
+</script>
 <script>
 /* «Подробнее»: свёрнутый текст раскрывается целиком, высота анимируется
    от 0 до scrollHeight. Без JS текст открыт. */
