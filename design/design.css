@@ -2495,6 +2495,15 @@ a.dprod:visited{color:var(--navy)}
 .dstory__side .dshot{margin-top:clamp(28px,3vw,40px);aspect-ratio:4/3;border-radius:28px}
 .dstory--rev{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
 .dstory--rev .dstory__side{order:2}
+/* пока история свёрнута, фото тянется до низа карточки рассказа; раскрыли —
+   фото снова 4:3 и липнет при прокрутке, а не растягивается на весь текст */
+@media (min-width:981px){
+  .js .dstory{align-items:stretch}
+  .js .dstory__side{display:flex;flex-direction:column}
+  .js .dstory__side .dshot{flex:1 1 auto;aspect-ratio:auto;min-height:240px}
+  .js .dstory.is-open{align-items:start}
+  .js .dstory.is-open .dstory__side .dshot{flex:none;aspect-ratio:4/3}
+}
 
 /* «Как развивалась конструкция» внутри истории подушки: этапы лентой сверху
    вниз — номер в круге и линия слева, под названием плашки технологии,
