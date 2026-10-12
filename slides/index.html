@@ -105,10 +105,13 @@ img{display:block;max-width:100%}
 .chips{display:flex;flex-wrap:wrap;gap:1em;margin-top:1.6em}
 .chips li{list-style:none;display:flex;align-items:center;gap:.8em;padding:.9em 1.4em;border-radius:1.4em;background:var(--tint);font-size:2.1em;font-weight:500}
 .chips li span{font-size:.72em;font-weight:600;color:var(--brand)}
-.l-heat__note{margin-top:2.8em;display:grid;grid-template-columns:1fr 1fr;gap:1.6em}
-.note{border-radius:2.4em;padding:2.6em 2.8em;font-size:2em;line-height:1.42}
-.note--plain{background:var(--tint);color:var(--navy-2)}
-.note--key{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;font-weight:600}
+.l-heat__note{margin-top:2.8em;background:var(--tint);border-radius:2.4em;padding:2.6em 3em}
+.l-heat__note p{font-size:2em;line-height:1.45;color:var(--navy-2)}
+.note-key{display:flex;align-items:center;gap:1.6em;margin-top:2em;padding-top:2em;border-top:1px solid var(--line)}
+.note-key i{flex:0 0 auto;display:grid;place-items:center;width:4.8em;height:4.8em;border-radius:50%;background:var(--brand);color:#fff}
+.note-key svg{width:2.4em;height:2.4em}
+.note-key b{font-size:2.6em;font-weight:600;line-height:1.2;letter-spacing:-.02em;color:var(--navy)}
+.note-key b em{font-style:normal;color:var(--accent)}
 .l-heat .s-photo{height:100%}
 .l-heat .s-photo img{object-position:40% 50%}
 
@@ -126,7 +129,7 @@ img{display:block;max-width:100%}
   <header class="intro">
     <img class="intro__logo" src="../design/assets/logo.svg?v=2" alt="Доктор Симкин" width="139" height="44">
     <h1>Слайды курса <em>в стиле нового сайта</em></h1>
-    <p>Три слайда из текущих презентаций курса, переоформленные в стиле сайта: тот же шрифт, цвета и подача. Содержание не менялось, перенесено слово в слово, фото взяты из исходных слайдов. Слева было, справа стало.</p>
+    <p>Три слайда из текущих презентаций курса, переоформленные в стиле сайта: тот же шрифт, цвета и подача. Текст перенесён слово в слово. Фото подобраны заново под смысл каждого слайда, в единой светлой гамме. Слева было, справа стало.</p>
   </header>
 
   <!-- 1 -->
@@ -201,8 +204,11 @@ img{display:block;max-width:100%}
                 <li><span>05</span>Принятие решений</li>
               </ul>
               <div class="l-heat__note">
-                <p class="note note--plain">Часть ресурсов организма расходуется на терморегуляцию, а не на выполнение рабочих задач.</p>
-                <p class="note note--key">В первую очередь страдает интеллектуальная работа</p>
+                <p>Часть ресурсов организма расходуется на терморегуляцию, а не на выполнение рабочих задач.</p>
+                <div class="note-key">
+                  <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+                  <b>В первую очередь страдает <em>интеллектуальная работа</em></b>
+                </div>
               </div>
             </div>
             <div class="s-photo"><img src="img/heat.jpg" alt=""></div>
