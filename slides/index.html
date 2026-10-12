@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Слайды курса — было и стало</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+<style>
+/* Цвета и шрифт — те же, что в design/design.css сайта */
+:root{
+  --brand:#1A5FE0; --accent:#2C63C4; --brand-2:#2E80FF; --brand-3:#54C2FF; --brand-deep:#123E9E;
+  --navy:#343D55; --navy-2:#5A6379; --navy-3:#98A0B2; --tint:#F2F5FB; --line:rgba(35,43,62,.12);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Onest","Segoe UI",system-ui,sans-serif;color:var(--navy);background:#E9EDF5;font-feature-settings:"ss01";-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+
+/* ---------- страница-обёртка ---------- */
+.page{max-width:1240px;margin:0 auto;padding:64px 24px 96px}
+.intro{max-width:760px;margin-bottom:56px}
+.intro__logo{width:139px;margin-bottom:40px}
+.intro h1{font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.05;letter-spacing:-.034em}
+.intro h1 em{font-style:normal;color:var(--accent)}
+.intro p{margin-top:18px;font-size:18px;line-height:1.6;color:var(--navy-2)}
+
+.pair{margin-top:64px}
+.pair__head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.pair__num{font-size:15px;font-weight:600;color:var(--brand)}
+.pair__title{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.pair__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.6fr);gap:20px;align-items:start}
+.tag{display:inline-block;margin-bottom:10px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-3)}
+.tag--new{color:var(--brand)}
+.before img{border-radius:14px;box-shadow:0 1px 2px rgba(20,30,60,.08)}
+.before small{display:block;margin-top:10px;font-size:13px;line-height:1.45;color:var(--navy-2)}
+.after{min-width:0}
+.open{margin-top:12px;font:600 14px/1 inherit;font-family:inherit;color:var(--brand);background:none;border:0;cursor:pointer;padding:6px 0}
+.open:hover{color:var(--brand-deep)}
+@media (max-width:860px){
+  .pair__grid{grid-template-columns:1fr}
+  .before{max-width:420px}
+}
+
+/* ---------- слайд 16:9 ----------
+   1em = 10 px макета 1600×900, масштаб от ширины контейнера */
+.slide-wrap{container-type:inline-size;width:100%}
+.slide{
+  position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;
+  font-size:calc(100cqw / 160);background:#fff;border-radius:18px;
+  box-shadow:0 1px 2px rgba(20,30,60,.06),0 18px 48px -24px rgba(20,40,90,.28);
+  padding:6.4em 8.8em 10.4em;display:flex;flex-direction:column;
+}
+.s-top{display:flex;justify-content:space-between;align-items:center;flex:0 0 auto}
+.s-eyebrow{display:inline-flex;align-items:center;gap:1.2em;font-size:1.9em;font-weight:500;color:var(--navy-2)}
+.s-eyebrow::before{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--brand-3);box-shadow:0 0 0 .3em rgba(84,194,255,.22)}
+.s-logo{width:15.6em;height:auto}
+.s-body{flex:1 1 auto;min-height:0;margin-top:4em}
+.s-foot{position:absolute;left:8.8em;right:8.8em;bottom:4em;display:flex;justify-content:space-between;font-size:1.5em;color:var(--navy-3)}
+.s-foot b{font-weight:600;color:var(--navy)}
+.s-h{font-size:6.4em;font-weight:600;line-height:1.04;letter-spacing:-.034em;color:var(--navy)}
+.s-h em{font-style:normal;color:var(--accent)}
+.s-photo{position:relative;border-radius:2.8em;overflow:hidden;background:var(--tint)}
+.s-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.l-dist,.l-seat,.l-heat{grid-template-rows:minmax(0,1fr)}
+
+/* 1. Расстояние */
+.l-dist{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);gap:4.8em;height:100%}
+.l-dist .s-photo{height:100%}
+.l-dist__side{display:flex;flex-direction:column}
+.stat{background:var(--tint);border-radius:2.4em;padding:3em 3.2em}
+.stat + .stat{margin-top:1.6em}
+.stat__n{font-size:7.2em;font-weight:600;line-height:1;letter-spacing:-.04em;color:var(--brand)}
+.stat__n small{font-size:.42em;font-weight:600;letter-spacing:-.01em;margin-left:.2em}
+.stat__t{margin-top:1.1em;font-size:2.1em;line-height:1.4;color:var(--navy-2)}
+.stat--sec .stat__n{color:var(--navy)}
+.l-dist__side .s-h{margin-bottom:auto}
+
+/* размерная линия «глаз — экран» поверх фото */
+.measure{position:absolute;left:33.5%;right:21.5%;top:24.5%;height:0;border-top:.3em solid var(--brand);z-index:1}
+.measure::before,.measure::after{content:"";position:absolute;top:-1.5em;width:.3em;height:2.7em;background:var(--brand);border-radius:.2em}
+.measure::before{left:-.15em}
+.measure::after{right:-.15em}
+.measure span{position:absolute;left:50%;top:0;transform:translate(-50%,-50%);padding:.6em 1.4em;border-radius:99em;background:var(--brand);color:#fff;font-size:2.2em;font-weight:600;white-space:nowrap;box-shadow:0 .4em 1.2em -.4em rgba(18,62,158,.5)}
+
+/* 2. Виды посадки */
+.l-seat{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1fr) minmax(0,1fr);gap:2.4em;height:100%}
+.l-seat__text{display:flex;flex-direction:column;justify-content:space-between;padding-right:2em}
+.l-seat__list{list-style:none}
+.l-seat__list li{display:flex;gap:1.2em;align-items:baseline;padding:1.5em 0;border-top:1px solid var(--line);font-size:2.4em;font-weight:500}
+.l-seat__list li span{font-size:.7em;font-weight:600;color:var(--brand)}
+.seat{position:relative;height:100%}
+.seat .s-photo{height:100%}
+.seat img{object-position:50% 50%}
+.seat__label{position:absolute;left:1.6em;bottom:1.6em;display:flex;align-items:center;gap:1em;
+  padding:.9em;border-radius:99em;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);font-size:2em;font-weight:600}
+.seat__label i{display:grid;place-items:center;width:1.7em;height:1.7em;border-radius:50%;background:var(--brand);color:#fff;font-style:normal;font-size:.72em}
+
+/* 3. Температура */
+.l-heat{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:5.6em;height:100%}
+.l-heat .s-h{font-size:5.2em}
+.l-heat__lead{margin-top:2em;font-size:2.1em;color:var(--navy-2)}
+.chips{display:flex;flex-wrap:wrap;gap:1em;margin-top:1.6em}
+.chips li{list-style:none;display:flex;align-items:center;gap:.8em;padding:.9em 1.4em;border-radius:1.4em;background:var(--tint);font-size:2.1em;font-weight:500}
+.chips li span{font-size:.72em;font-weight:600;color:var(--brand)}
+.l-heat__note{margin-top:2.8em;display:grid;grid-template-columns:1fr 1fr;gap:1.6em}
+.note{border-radius:2.4em;padding:2.6em 2.8em;font-size:2em;line-height:1.42}
+.note--plain{background:var(--tint);color:var(--navy-2)}
+.note--key{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-deep) 100%);color:#fff;font-weight:600}
+.l-heat .s-photo{height:100%}
+.l-heat .s-photo img{object-position:40% 50%}
+
+/* ---------- полноэкранный показ ---------- */
+.show{position:fixed;inset:0;z-index:10;background:#0E1426;display:none;align-items:center;justify-content:center;padding:2vmin}
+.show.is-on{display:flex}
+.show__stage{width:min(96vw,calc(96vh * 16 / 9))}
+.show__stage .slide{border-radius:1.2em;box-shadow:none}
+.show__hint{position:absolute;left:0;right:0;bottom:1.4vh;text-align:center;font-size:13px;color:rgba(255,255,255,.45)}
+.show__close{position:absolute;top:14px;right:18px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;font-size:22px;cursor:pointer}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="intro">
+    <img class="intro__logo" src="../design/assets/logo.svg?v=2" alt="Доктор Симкин" width="139" height="44">
+    <h1>Слайды курса <em>в стиле нового сайта</em></h1>
+    <p>Три слайда из текущих презентаций курса, переоформленные в стиле сайта: тот же шрифт, цвета и подача. Содержание не менялось, перенесено слово в слово, фото взяты из исходных слайдов. Слева было, справа стало.</p>
+  </header>
+
+  <!-- 1 -->
+  <section class="pair">
+    <div class="pair__head"><span class="pair__num">01</span><h2 class="pair__title">Расстояние до монитора</h2></div>
+    <div class="pair__grid">
+      <div class="before"><span class="tag">Было</span><img src="../design/assets/course/slide-03.jpg" alt="Исходный слайд «Расстояние»" loading="lazy"></div>
+      <div class="after">
+        <span class="tag tag--new">Стало</span>
+        <div class="slide-wrap"><div class="slide">
+          <div class="s-top"><span class="s-eyebrow">Размер и положение монитора</span><img class="s-logo" src="../design/assets/logo.svg?v=2" alt="Доктор Симкин"></div>
+          <div class="s-body l-dist">
+            <div class="s-photo"><img src="img/distance.jpg" alt=""><div class="measure"><span>≈ 60 см</span></div></div>
+            <div class="l-dist__side">
+              <h3 class="s-h">Расстояние</h3>
+              <div class="stat"><div class="stat__n">≈60<small>см</small></div><p class="stat__t">для полноформатных мониторов 4K и ниже</p></div>
+              <div class="stat stat--sec"><div class="stat__n">40–50<small>см</small></div><p class="stat__t">для 13-дюймового монитора с разрешением 4K</p></div>
+            </div>
+          </div>
+          <div class="s-foot"><span>simkin.ru</span><span><b>05</b> / 11</span></div>
+        </div></div>
+        <button class="open" type="button" data-open="0">Смотреть на весь экран →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="pair">
+    <div class="pair__head"><span class="pair__num">02</span><h2 class="pair__title">Виды посадки</h2></div>
+    <div class="pair__grid">
+      <div class="before"><span class="tag">Было</span><img src="../design/assets/course/slide-04.jpg" alt="Исходный слайд «Виды посадки»" loading="lazy"></div>
+      <div class="after">
+        <span class="tag tag--new">Стало</span>
+        <div class="slide-wrap"><div class="slide">
+          <div class="s-top"><span class="s-eyebrow">Рабочая поза</span><img class="s-logo" src="../design/assets/logo.svg?v=2" alt="Доктор Симкин"></div>
+          <div class="s-body l-seat">
+            <div class="l-seat__text">
+              <h3 class="s-h">Виды <em>посадки</em></h3>
+              <ul class="l-seat__list">
+                <li><span>01</span>Компьютерная</li>
+                <li><span>02</span>Автомобильная</li>
+              </ul>
+            </div>
+            <div class="seat"><div class="s-photo"><img src="img/seat-pc.jpg" alt=""></div><span class="seat__label"><i>01</i></span></div>
+            <div class="seat"><div class="s-photo"><img src="img/seat-car.jpg" alt=""></div><span class="seat__label"><i>02</i></span></div>
+          </div>
+          <div class="s-foot"><span>simkin.ru</span><span><b>06</b> / 14</span></div>
+        </div></div>
+        <button class="open" type="button" data-open="1">Смотреть на весь экран →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="pair">
+    <div class="pair__head"><span class="pair__num">03</span><h2 class="pair__title">Температура и работоспособность</h2></div>
+    <div class="pair__grid">
+      <div class="before"><span class="tag">Было</span><img src="../design/assets/course/slide-05.jpg" alt="Исходный слайд о температуре" loading="lazy"><small>Исходный слайд в формате 4:3, в новом шаблоне все слайды 16:9.</small></div>
+      <div class="after">
+        <span class="tag tag--new">Стало</span>
+        <div class="slide-wrap"><div class="slide">
+          <div class="s-top"><span class="s-eyebrow">Микроклимат и работоспособность</span><img class="s-logo" src="../design/assets/logo.svg?v=2" alt="Доктор Симкин"></div>
+          <div class="s-body l-heat">
+            <div>
+              <h3 class="s-h">Как повышенная температура <em>влияет на работоспособность</em></h3>
+              <p class="l-heat__lead">При повышенной температуре воздуха ухудшаются:</p>
+              <ul class="chips">
+                <li><span>01</span>Скорость и точность реакций</li>
+                <li><span>02</span>Рабочая память</li>
+                <li><span>03</span>Концентрация внимания</li>
+                <li><span>04</span>Способность к обучению</li>
+                <li><span>05</span>Принятие решений</li>
+              </ul>
+              <div class="l-heat__note">
+                <p class="note note--plain">Часть ресурсов организма расходуется на терморегуляцию, а не на выполнение рабочих задач.</p>
+                <p class="note note--key">В первую очередь страдает интеллектуальная работа</p>
+              </div>
+            </div>
+            <div class="s-photo"><img src="img/heat.jpg" alt=""></div>
+          </div>
+          <div class="s-foot"><span>simkin.ru</span><span><b>03</b> / 13</span></div>
+        </div></div>
+        <button class="open" type="button" data-open="2">Смотреть на весь экран →</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="show" id="show" aria-hidden="true">
+  <button class="show__close" type="button" aria-label="Закрыть">×</button>
+  <div class="show__stage slide-wrap" id="stage"></div>
+  <div class="show__hint">← → листать · Esc выйти</div>
+</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.after .slide'));
+  var show=document.getElementById('show'),stage=document.getElementById('stage'),cur=0;
+  function render(i){cur=(i+slides.length)%slides.length;stage.innerHTML='';stage.appendChild(slides[cur].cloneNode(true))}
+  function open(i){render(i);show.classList.add('is-on');show.setAttribute('aria-hidden','false');
+    if(show.requestFullscreen){show.requestFullscreen().catch(function(){})}}
+  function close(){show.classList.remove('is-on');show.setAttribute('aria-hidden','true');
+    if(document.fullscreenElement){document.exitFullscreen()}}
+  document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){open(+b.dataset.open)})});
+  slides.forEach(function(s,i){s.style.cursor='zoom-in';s.addEventListener('click',function(){open(i)})});
+  show.querySelector('.show__close').addEventListener('click',close);
+  stage.addEventListener('click',function(){render(cur+1)});
+  document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&show.classList.contains('is-on'))close()});
+  document.addEventListener('keydown',function(e){
+    if(!show.classList.contains('is-on'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();render(cur+1)}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();render(cur-1)}
+  });
+})();
+</script>
+</body>
+</html>
