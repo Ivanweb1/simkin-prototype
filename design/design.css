@@ -2190,6 +2190,10 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dshot--slide picture{position:absolute;inset:0;z-index:1}
 .dshot--slide img{object-fit:contain}
 
+/* предметное фото на белом (товар со старого сайта): вписывается целиком с полями */
+.dshot--obj{background:#fff}
+.dshot--obj img{inset:10% 12%;width:76%;height:80%;object-fit:contain}
+
 /* видеовиджет на «Для компаний»: в правом нижнем углу маленькое превью без
    звука, по кругу. По клику раскрывается и играет со звуком с начала.
    Крестик на свёрнутом убирает виджет до конца визита. Ролик вертикальный,
