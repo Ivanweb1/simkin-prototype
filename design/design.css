@@ -3215,3 +3215,9 @@ a.dprod:hover h3{color:var(--brand)}
   .modal .dpick span{padding:0 6px;font-size:13px}
   .modal .dpick input:checked + span::before{display:none}
 }
+/* «Поза без постоянного контроля»: кадр квадратный — на телефоне показываем
+   целиком, по его собственной пропорции, чтобы человек был виден полностью */
+@media (max-width:980px){
+  #control .dstart__ph{aspect-ratio:auto;min-height:0}
+  #control .dstart__ph img{height:auto}
+}
