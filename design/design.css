@@ -3102,12 +3102,13 @@ a.dprod:hover h3{color:var(--brand)}
 .dmt-ghead__lead{margin-top:clamp(20px,2vw,28px);font-size:17px;line-height:1.65;color:var(--navy-2);max-width:36em}
 .dmt-note{padding-bottom:0}
 .dmt-note .dmt-note__key{
-  display:flex;align-items:center;gap:16px;margin-top:0;padding:18px 22px;border-radius:20px;background:#fff;
-  font-size:clamp(17px,1.35vw,19px);font-weight:600;line-height:1.4;color:var(--navy);
-  box-shadow:0 2px 4px rgba(35,43,62,.03),0 10px 26px rgba(35,43,62,.06);
+  position:relative;margin-top:0;padding:24px 28px 24px 50px;border-radius:22px;background:#fff;
+  font-size:clamp(17px,1.35vw,19px);font-weight:600;line-height:1.42;letter-spacing:-.01em;color:var(--navy);text-wrap:balance;
 }
-.dmt-note__ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--brand);color:#fff}
-.dmt-note__ico svg{width:24px;height:24px}
+.dmt-note .dmt-note__key::before{
+  content:"";position:absolute;left:26px;top:26px;bottom:26px;width:4px;border-radius:4px;
+  background:linear-gradient(180deg,var(--brand-3),var(--brand));
+}
 
 /* три совета: схема → «Общий совет» → разбор «На деле» */
 .dmyths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px);align-items:stretch}
@@ -3128,7 +3129,8 @@ a.dprod:hover h3{color:var(--brand)}
 @media (max-width:980px){.dmyths{grid-template-columns:1fr}}
 @media (max-width:600px){
   .dmyth{border-radius:22px}
-  .dmt-note .dmt-note__key{padding:16px 18px;gap:14px}
+  .dmt-note .dmt-note__key{padding:20px 20px 20px 40px}
+  .dmt-note .dmt-note__key::before{left:20px;top:22px;bottom:22px}
 }
 
 /* ---------- «Почему эргономика начинается не с мебели» ---------- */
