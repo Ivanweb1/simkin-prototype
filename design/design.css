@@ -2189,6 +2189,17 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dshot--slide::after{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;box-shadow:inset 0 0 0 1px var(--d-line);pointer-events:none}
 .dshot--slide picture{position:absolute;inset:0;z-index:1}
 .dshot--slide img{object-fit:contain}
+/* ширина рамки слайда задана явно, высота — от неё по 16:9. Иначе Safari
+   может растянуть рамку по высоте строки и вывести ширину из пропорции —
+   слайд выходит за край экрана. */
+.dshot--slide{width:100%;max-width:100%;min-width:0;height:auto}
+.dk-mod{min-width:0}
+.dk-mod > .dshot--slide{flex:none}
+@media (max-width:1100px){
+  .dcohero__card{grid-template-columns:minmax(0,1fr)}
+  .dk-hero__media{display:block}
+}
+@media (max-width:700px){.dk-mods{grid-template-columns:minmax(0,1fr)}}
 
 /* предметное фото на белом (товар со старого сайта): вписывается целиком с полями */
 .dshot--obj{background:#fff}
@@ -2839,17 +2850,8 @@ a.dprod:hover h3{color:var(--brand)}
 .dtip p{margin-top:14px;font-size:16.5px;line-height:1.6;color:var(--navy-2)}
 .dtip > p + p{margin-top:10px}
 .dtip .dmore p:first-child{margin-top:16px}
-.dtip--voice > p:first-of-type{color:var(--navy);font-weight:600}
-.dtip--voice::before{
-  content:"";position:absolute;right:clamp(22px,2.2vw,32px);top:clamp(26px,2.4vw,34px);width:28px;height:22px;background:var(--brand);opacity:.22;
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 26'%3E%3Cpath d='M0 26V15.6C0 6.9 4.6 1.7 13.2 0l1.6 3.9C10 5.4 7.6 8.3 7.4 12.2H14V26zm19.2 0V15.6C19.2 6.9 23.8 1.7 32.4 0L34 3.9c-4.8 1.5-7.2 4.4-7.4 8.3h6.6V26z'/%3E%3C/svg%3E") center/contain no-repeat;
-          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 26'%3E%3Cpath d='M0 26V15.6C0 6.9 4.6 1.7 13.2 0l1.6 3.9C10 5.4 7.6 8.3 7.4 12.2H14V26zm19.2 0V15.6C19.2 6.9 23.8 1.7 32.4 0L34 3.9c-4.8 1.5-7.2 4.4-7.4 8.3h6.6V26z'/%3E%3C/svg%3E") center/contain no-repeat;
-}
 /* кнопка «Подробнее» у нижнего края: у всех трёх карточек на одной линии */
 .dtip > .dmore-btn{margin-top:auto;padding-top:20px}
-.dtip__by{display:flex;align-items:center;gap:12px;margin-top:18px;font-size:14.5px;color:var(--navy)}
-.dtip__by .dvoice__ava{width:40px;height:40px}
-.dtip__by .dvoice__ava img{width:180px;left:-90px;top:-1px}
 
 /* общее «Подробнее»: свёрнутый текст скрыт целиком, кнопка-ссылка со стрелкой вниз */
 .dmore{overflow:hidden;transition:max-height .5s var(--ease)}
@@ -2904,11 +2906,9 @@ a.dprod:hover h3{color:var(--brand)}
 .dstart__voice .dvoice__side{display:flex;flex-direction:column;gap:22px}
 .dstart__voice .dvoice__side > p{font-size:17px;line-height:1.65;color:var(--navy-2)}
 .dstart__voice .dvoice__by{margin-top:auto;padding-top:22px;border-top:1px solid var(--d-line)}
-.dstart__btn{align-self:flex-start}
+.dstart__btn{align-self:flex-start;max-width:100%;height:auto;min-height:62px;padding-top:14px;padding-bottom:14px;white-space:normal;line-height:1.25;text-align:center}
 
 /* ---------- «Авторские разработки»: принцип и четыре мини-карточки ---------- */
-.dmotto .dmotto__q{font-size:clamp(20px,1.7vw,25px);font-weight:600;line-height:1.3;letter-spacing:-.02em;color:var(--navy)}
-.dmotto__q em{font-style:normal;color:var(--accent)}
 .dminis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(36px,3.6vw,52px)}
 .dmini{
   position:relative;display:flex;flex-direction:column;background:var(--tint);border-radius:24px;padding:22px 22px 26px;color:var(--navy);
@@ -2996,4 +2996,29 @@ a.dprod:hover h3{color:var(--brand)}
   .dsln .dbtn svg{display:none}
   .dsln .dpickr__cta button[data-open]{display:none}
   .dsln .dpickr__panel .dpickr__cta:has(button[data-open]){display:none}
+}
+
+/* ---------- Компактная цитата автора (.dcite) ----------
+   Короткие высказывания Дмитрия Симкина внутри блоков: тот же знак кавычки,
+   что у крупной цитаты (.dvoice--quote), отдельный абзац, шрифт заметнее
+   основного текста, подпись с портретом. Крупная цитата остаётся одна —
+   про «части одной системы». */
+.dcite{margin:20px 0 0;padding:0}
+.dcite::before{
+  content:"";display:block;width:28px;height:22px;margin-bottom:14px;background:var(--brand);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 26'%3E%3Cpath d='M0 26V15.6C0 6.9 4.6 1.7 13.2 0l1.6 3.9C10 5.4 7.6 8.3 7.4 12.2H14V26zm19.2 0V15.6C19.2 6.9 23.8 1.7 32.4 0L34 3.9c-4.8 1.5-7.2 4.4-7.4 8.3h6.6V26z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 26'%3E%3Cpath d='M0 26V15.6C0 6.9 4.6 1.7 13.2 0l1.6 3.9C10 5.4 7.6 8.3 7.4 12.2H14V26zm19.2 0V15.6C19.2 6.9 23.8 1.7 32.4 0L34 3.9c-4.8 1.5-7.2 4.4-7.4 8.3h6.6V26z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.dcite__q{margin:0;padding:0;border:0}
+.dcite .dcite__q p{margin:0;font-size:clamp(19px,1.5vw,22px);font-weight:600;line-height:1.32;letter-spacing:-.018em;color:var(--navy)}
+.dcite__q em{font-style:normal;color:var(--accent)}
+.dcite__by{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:14.5px;color:var(--navy)}
+.dcite__by b{font-weight:600}
+.dcite__by .dvoice__ava{width:36px;height:36px}
+.dcite__by .dvoice__ava img{width:162px;left:-81px;top:-1px}
+.dcite + p{margin-top:18px}
+.dhead__note > .dcite:first-child{margin-top:0}
+@media (max-width:600px){
+  .dcite::before{width:24px;height:19px;margin-bottom:12px}
+  .dcite .dcite__q p{font-size:19px}
 }

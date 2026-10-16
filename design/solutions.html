@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=237">
+<link rel="stylesheet" href="design.css?v=238">
 </head>
 <body class="d dco dsln">
 
@@ -258,7 +258,7 @@
 
 <!-- ============ БЛОК 5. ЧТО ВАЖНО УЧИТЫВАТЬ ПРИ ВЫБОРЕ МЕБЕЛИ ============ -->
 <!-- Три компактные карточки: заголовок и тезис открыты, полный текст — по
-     кнопке «Подробнее». Третья — слова автора, с кавычкой. -->
+     кнопке «Подробнее». В третьей — компактная цитата автора (.dcite). -->
 <section class="dsec dsec--tint" id="tips">
   <div class="dwrap">
     <div class="dhead">
@@ -290,10 +290,13 @@
         </div>
         <button type="button" class="dmore-btn" aria-expanded="false" aria-controls="tip2-more"><span>Подробнее</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg></button>
       </article>
-      <article class="dtip dtip--voice" data-rv style="--d:.12s">
+      <article class="dtip" data-rv style="--d:.12s">
         <span class="dtip__n">03</span>
         <h3>Выбирать красивое из&nbsp;удобного, а&nbsp;не&nbsp;удобное из&nbsp;красивого</h3>
-        <p>Я&nbsp;всегда говорю: выбирать нужно красивое из&nbsp;удобного, а&nbsp;не&nbsp;удобное из&nbsp;красивого.</p>
+        <figure class="dcite">
+          <blockquote class="dcite__q"><p>Я&nbsp;всегда говорю: выбирать нужно <em>красивое из&nbsp;удобного, а&nbsp;не&nbsp;удобное из&nbsp;красивого</em></p></blockquote>
+          <figcaption class="dcite__by"><span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span><b>Дмитрий Симкин</b></figcaption>
+        </figure>
         <p>Если мебелью пользуются каждый день, функциональность для меня важнее дизайна.</p>
         <div class="dmore" id="tip3-more">
           <p>При проектировании офиса большое внимание закономерно уделяется внешнему виду пространства. Но&nbsp;мебель, выбранная прежде всего по&nbsp;дизайну, нередко имеет ограниченные возможности настройки под конкретного человека. Особенно заметно это в&nbsp;креслах, в&nbsp;том числе в&nbsp;кабинетах руководителей.</p>
@@ -303,7 +306,6 @@
           </ol>
           <p class="dmore__key">Иначе мебель рискует превратиться в&nbsp;эффектную интерьерную инсталляцию&nbsp;– на&nbsp;неё приятно смотреть, но&nbsp;пользоваться ею&nbsp;неудобно.</p>
         </div>
-        <div class="dtip__by"><span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span><b>Дмитрий Симкин</b></div>
         <button type="button" class="dmore-btn" aria-expanded="false" aria-controls="tip3-more"><span>Подробнее</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg></button>
       </article>
     </div>
@@ -387,7 +389,8 @@
 
 <!-- ============ БЛОК 8. АВТОРСКИЕ РАЗРАБОТКИ ============ -->
 <!-- Шапка как у «Почему подбор индивидуальный»: слева заголовок и кнопка
-     (низом вровень с текстом справа), справа принцип. Карточка целиком —
+     (низом вровень с текстом справа), справа принцип — компактной цитатой
+     автора (.dcite), как в третьей карточке «Что важно учитывать». Карточка целиком —
      ссылка на страницу разработки, название подсвечивается при наведении. -->
 <section class="dsec" id="products">
   <div class="dwrap">
@@ -396,8 +399,11 @@
         <span class="deyebrow" data-rv>Собственные решения</span>
         <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Авторские <span class="dh2__soft">разработки</span></h2>
       </div>
-      <div class="dhead__note dmotto" data-rv style="--d:.12s">
-        <p class="dmotto__q">У&nbsp;меня есть простой принцип: <em>хочешь сделать хорошо&nbsp;– <span class="dnw">сделай сам</span></em></p>
+      <div class="dhead__note" data-rv style="--d:.12s">
+        <figure class="dcite">
+          <blockquote class="dcite__q"><p>У&nbsp;меня есть простой принцип: <em>хочешь сделать хорошо&nbsp;– <span class="dnw">сделай сам</span></em></p></blockquote>
+          <figcaption class="dcite__by"><span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span><b>Дмитрий Симкин</b></figcaption>
+        </figure>
         <p>Поэтому, когда существующие решения не&nbsp;позволяют добиться нужного результата, я&nbsp;разрабатываю собственные.</p>
       </div>
       <div class="dhead__btn" data-rv style="--d:.16s"><a href="products.html" class="dbtn dbtn--light">Все авторские разработки<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
