@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=239">
+<link rel="stylesheet" href="design.css?v=244">
 </head>
 <body class="d dco dmtd">
 
@@ -113,69 +113,128 @@
 </section>
 
 <!-- ============ БЛОК 2. ПОЧЕМУ ОБЩИЕ РЕКОМЕНДАЦИИ НЕ ВСЕГДА РАБОТАЮТ ============ -->
-<!-- Слева заголовок, справа пояснение. Ниже три распространённых совета
-     карточками: совет — в кавычках заголовком, под ним разбор. -->
+<!-- Слева заголовок и чем отличаются люди — плашками; справа пояснение
+     и вывод белой карточкой. Ниже три распространённых совета: сверху схема
+     (серым пунктиром — общее правило, синим — как на самом деле), метка
+     «Общий совет», совет в кавычках, под линией — разбор «На деле». -->
 <section class="dsec dsec--tint" id="general">
   <div class="dwrap">
-    <div class="dhead dhead--split">
+    <div class="dhead dhead--split dmt-ghead">
       <div>
         <span class="deyebrow" data-rv>Общие правила</span>
         <h2 class="dh2" data-rv style="--d:.06s">Почему общие рекомендации <span class="dh2__soft">не&nbsp;всегда работают</span></h2>
+        <ul class="dmt-diff" data-rv style="--d:.1s" aria-label="Чем отличаются люди и задачи">
+          <li>Рост</li><li>Пропорции тела</li><li>Подвижность</li><li>Привычки</li><li>Характер работы</li><li>Рабочие задачи</li>
+        </ul>
       </div>
-      <div class="dhead__note" data-rv style="--d:.12s">
-        <p>Большинство рекомендаций по&nbsp;эргономике сформулированы как&nbsp;универсальные правила. Но люди отличаются ростом, пропорциями тела, подвижностью, привычками и&nbsp;характером работы. Разными бывают и&nbsp;сами рабочие задачи.</p>
-        <p class="dk-strong">Поэтому одна и&nbsp;та же рекомендация не&nbsp;может одинаково хорошо подходить всем.</p>
+      <div class="dhead__note dmt-note" data-rv style="--d:.12s">
+        <p>Большинство рекомендаций по&nbsp;эргономике сформулированы как&nbsp;универсальные правила. Но&nbsp;люди отличаются ростом, пропорциями тела, подвижностью, привычками и&nbsp;характером работы. Разными бывают и&nbsp;сами рабочие задачи.</p>
+        <p class="dmt-note__key"><span class="dmt-note__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9.5" r="2.4"/><path d="M2.5 20v-.8A5.5 5.5 0 0 1 13.5 19.2v.8M13 15.2a4.6 4.6 0 0 1 8.5 2.4v.9"/></svg></span><span>Поэтому одна и&nbsp;та же рекомендация не&nbsp;может одинаково хорошо подходить всем.</span></p>
       </div>
     </div>
-    <div class="dtips">
-      <article class="dtip" data-rv>
-        <span class="dtip__n">Совет 01</span>
-        <h3>«Сидите под углом 90°»</h3>
-        <p>Рекомендация сидеть с&nbsp;углом 90° между туловищем и&nbsp;бедрами слишком упрощена. Сам по&nbsp;себе такой угол не&nbsp;является оптимальным и&nbsp;физиологичным для&nbsp;человеческого тела. Рабочая поза должна зависеть от&nbsp;выполняемой задачи, используемого оборудования и&nbsp;особенностей человека.</p>
+    <div class="dmyths">
+      <article class="dmyth" data-rv>
+        <div class="dmyth__fig" aria-hidden="true">
+          <svg viewBox="0 0 240 140" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path class="g" d="M112 98V30" stroke-dasharray="4 5"/>
+            <path class="g" d="M112 82h14v16" stroke-dasharray="3 3"/>
+            <text class="gt" x="120" y="44">90°</text>
+            <path class="c" d="M98 106h64M104 106 88 40M130 106v22M114 128h32"/>
+            <circle class="b" cx="86" cy="22" r="9"/>
+            <path class="b" d="M112 98 90 34"/>
+            <path class="b" d="M112 98h50l8 30"/>
+          </svg>
+          <span class="dmyth__n">01</span>
+        </div>
+        <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>Общий совет</span>
+        <h3>«Сидите под&nbsp;углом 90°»</h3>
+        <div class="dmyth__real">
+          <span class="dmyth__tag dmyth__tag--yes"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.3l2.3 2.3L9.5 3.6"/></svg>На&nbsp;деле</span>
+          <p>Рекомендация сидеть с&nbsp;углом 90° между туловищем и&nbsp;бедрами слишком упрощена. Сам по&nbsp;себе такой угол не&nbsp;является оптимальным и&nbsp;физиологичным для&nbsp;человеческого тела. Рабочая поза должна зависеть от&nbsp;выполняемой задачи, используемого оборудования и&nbsp;особенностей человека.</p>
+        </div>
       </article>
-      <article class="dtip" data-rv style="--d:.06s">
-        <span class="dtip__n">Совет 02</span>
+      <article class="dmyth" data-rv style="--d:.06s">
+        <div class="dmyth__fig" aria-hidden="true">
+          <svg viewBox="0 0 240 140" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle class="b" cx="52" cy="46" r="13"/>
+            <path class="b" d="M52 59v40M36 120l16-21 16 21"/>
+            <rect class="g" x="160" y="22" width="44" height="32" rx="4"/>
+            <path class="g" d="M66 42h90" stroke-dasharray="4 5"/>
+            <rect class="b" x="150" y="62" width="54" height="38" rx="4"/>
+            <path class="b" d="M177 100v14M164 114h26"/>
+            <path class="b" d="M66 48 146 76" stroke-dasharray="4 5"/>
+          </svg>
+          <span class="dmyth__n">02</span>
+        </div>
+        <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>Общий совет</span>
         <h3>«Монитор должен находиться на&nbsp;уровне глаз»</h3>
-        <p>Это правило справедливо далеко не&nbsp;всегда. Оптимальное положение монитора зависит от&nbsp;его&nbsp;размера, расстояния до&nbsp;глаз, характера работы и&nbsp;рабочей позы. Важно расположить экран так, чтобы человеку не&nbsp;приходилось длительно наклонять или запрокидывать голову и&nbsp;создавать лишнее напряжение в&nbsp;шее.</p>
+        <div class="dmyth__real">
+          <span class="dmyth__tag dmyth__tag--yes"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.3l2.3 2.3L9.5 3.6"/></svg>На&nbsp;деле</span>
+          <p>Это правило справедливо далеко не&nbsp;всегда. Оптимальное положение монитора зависит от&nbsp;его&nbsp;размера, расстояния до&nbsp;глаз, характера работы и&nbsp;рабочей позы. Важно расположить экран так, чтобы человеку не&nbsp;приходилось длительно наклонять или запрокидывать голову и&nbsp;создавать лишнее напряжение в&nbsp;шее.</p>
+        </div>
       </article>
-      <article class="dtip" data-rv style="--d:.12s">
-        <span class="dtip__n">Совет 03</span>
+      <article class="dmyth" data-rv style="--d:.12s">
+        <div class="dmyth__fig" aria-hidden="true">
+          <svg viewBox="0 0 240 140" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path class="b" d="M104 20h36l-3 46h-30z"/>
+            <path class="b" d="M94 74h56M122 74v28M100 120l22-18 22 18"/>
+            <path class="b" d="M96 74l-3-14M148 74l3-14"/>
+            <path class="g" d="M176 70v40M170 78l6-8 6 8M170 102l6 8 6-8" stroke-dasharray="0"/>
+            <path class="g" d="M62 96h20M66 90l-6 6 6 6M78 90l6 6-6 6"/>
+          </svg>
+          <span class="dmyth__n">03</span>
+        </div>
+        <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>Общий совет</span>
         <h3>«Купите эргономичное кресло»</h3>
-        <p>Даже хорошее кресло не&nbsp;решит проблему, если оно не&nbsp;подходит человеку, неправильно настроено или остальные элементы рабочего места заставляют тело принимать неудобное положение.</p>
+        <div class="dmyth__real">
+          <span class="dmyth__tag dmyth__tag--yes"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.3l2.3 2.3L9.5 3.6"/></svg>На&nbsp;деле</span>
+          <p>Даже хорошее кресло не&nbsp;решит проблему, если оно не&nbsp;подходит человеку, неправильно настроено или остальные элементы рабочего места заставляют тело принимать неудобное положение.</p>
+        </div>
       </article>
     </div>
   </div>
 </section>
 
 <!-- ============ БЛОК 3. ПОЧЕМУ ЭРГОНОМИКА НАЧИНАЕТСЯ НЕ С МЕБЕЛИ ============ -->
-<!-- Порядок «сначала поза и опора → потом мебель» — двумя шагами, как на
-     «Эргономичных решениях». Ниже — крупная авторская цитата: знак кавычки
-     графический, поэтому обычные кавычки в тексте не ставим. -->
+<!-- Путь в три звена слева направо: «Отправная точка – человек» брендовой
+     карточкой → 01 поза и опора → 02 только потом мебель. Ниже — крупная
+     авторская цитата (кавычка графическая, обычных кавычек в тексте нет);
+     справа в ней — три части, которые сходятся в одну систему. -->
 <section class="dsec" id="start">
   <div class="dwrap">
-    <div class="dhead dhead--split">
-      <div>
-        <span class="deyebrow" data-rv>Отправная точка</span>
-        <h2 class="dh2" data-rv style="--d:.06s">Почему эргономика начинается <span class="dh2__soft">не&nbsp;с&nbsp;мебели</span></h2>
-      </div>
-      <div class="dhead__note" data-rv style="--d:.12s">
-        <p class="dmt-key">Отправная точка&nbsp;– человек.</p>
-      </div>
+    <div class="dhead">
+      <span class="deyebrow" data-rv>Отправная точка</span>
+      <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Почему эргономика начинается <span class="dh2__soft">не&nbsp;с&nbsp;мебели</span></h2>
     </div>
-    <div class="dorder dmt-order" data-rv>
-      <ol class="dorder__list">
-        <li><span class="dorder__n">01</span><span class="dorder__txt">Сначала нужно понять, какое положение тела оптимально для&nbsp;конкретной рабочей задачи и&nbsp;какую опору должно получать тело в&nbsp;этом положении.</span></li>
-        <li class="dorder__arrow" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></li>
-        <li><span class="dorder__n">02</span><span class="dorder__txt">И&nbsp;только после этого имеет смысл определять, какими должны быть кресло, стол, монитор, клавиатура, мышь и&nbsp;другие элементы рабочего места.</span></li>
-      </ol>
-    </div>
+    <ol class="dmt-path">
+      <li class="dmt-path__start" data-rv>
+        <span class="dmt-path__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2.4"/><path d="M12 6.8v13M7.2 10h9.6M7.6 14h8.8M8.2 18h7.6"/></svg></span>
+        <p>Отправная точка&nbsp;– человек.</p>
+      </li>
+      <li class="dmt-path__step" data-rv style="--d:.06s">
+        <span class="dmt-path__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+        <span class="dmt-path__n">01 · Сначала</span>
+        <p>Сначала нужно понять, какое положение тела оптимально для&nbsp;конкретной рабочей задачи и&nbsp;какую опору должно получать тело в&nbsp;этом положении.</p>
+      </li>
+      <li class="dmt-path__step" data-rv style="--d:.12s">
+        <span class="dmt-path__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+        <span class="dmt-path__n">02 · Потом</span>
+        <p>И&nbsp;только после этого имеет смысл определять, какими должны быть кресло, стол, монитор, клавиатура, мышь и&nbsp;другие элементы рабочего места.</p>
+      </li>
+    </ol>
     <figure class="dvoice dvoice--quote dmt-voice" data-rv>
-      <p class="dvoice__big">Подбор мебели, обучение правильной рабочей позе и&nbsp;настройку рабочего места я&nbsp;рассматриваю <em>как&nbsp;части одной системы</em></p>
-      <div class="dvoice__side">
+      <div class="dmt-voice__main">
+        <p class="dvoice__big">Подбор мебели, обучение правильной рабочей позе и&nbsp;настройку рабочего места я&nbsp;рассматриваю <em>как части одной системы</em></p>
         <figcaption class="dvoice__by">
           <span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span>
           <span><b>Дмитрий Симкин</b><small>Автор метода</small></span>
         </figcaption>
+      </div>
+      <div class="dmt-sys3" aria-hidden="true">
+        <span class="dmt-sys3__item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10l-1 8H8z"/><path d="M5.5 11.5h13M8 11.5 7 20.5M16 11.5l1 9M12 11.5v5"/></svg></i>Подбор мебели</span>
+        <span class="dmt-sys3__item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2.4"/><path d="M12 6.8v13M7.2 10h9.6M7.6 14h8.8M8.2 18h7.6"/></svg></i>Обучение рабочей позе</span>
+        <span class="dmt-sys3__item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4v6M5 14v6M12 4v3M12 11v9M19 4v9M19 17v3"/><path d="M3 12h4M10 9h4M17 15h4"/></svg></i>Настройка рабочего места</span>
+        <span class="dmt-sys3__all">Одна система</span>
       </div>
     </figure>
   </div>
@@ -470,29 +529,40 @@
 </section>
 
 <!-- ============ БЛОК 10. ПОЧЕМУ ОДНОЙ ХОРОШЕЙ МЕБЕЛИ НЕДОСТАТОЧНО ============ -->
-<!-- Текст сверху, порядок «понимание → настройка → оценка замены» — тремя
-     шагами в одной строке (блок «сначала… а уже затем…» на три шага). -->
+<!-- Справа пояснение и вывод «части одной системы» белой карточкой (как
+     в «Общих правилах»). Порядок — путём в три звена (как «Отправная точка»):
+     понимание → настройка → оценка замены; итог — брендовым звеном. -->
 <section class="dsec dsec--tint" id="furniture">
   <div class="dwrap">
-    <div class="dhead dhead--split">
+    <div class="dhead dhead--split dmt-ghead">
       <div>
         <span class="deyebrow" data-rv>Мебель и&nbsp;обучение</span>
         <h2 class="dh2" data-rv style="--d:.06s">Почему одной хорошей мебели <span class="dh2__soft">недостаточно</span></h2>
       </div>
-      <div class="dhead__note" data-rv style="--d:.12s">
-        <p>Даже самое современное регулируемое кресло не&nbsp;принесёт полной пользы, если человек не&nbsp;знает, как&nbsp;его&nbsp;настроить и&nbsp;какое положение тела ему&nbsp;необходимо.</p>
-        <p>Поэтому мебель, настройку рабочего места и&nbsp;обучение мы&nbsp;рассматриваем не&nbsp;как&nbsp;отдельные решения, а&nbsp;как&nbsp;части одной системы.</p>
+      <div class="dhead__note dmt-note" data-rv style="--d:.12s">
+        <p>Даже самое современное регулируемое кресло не&nbsp;принесёт полной пользы, если человек не&nbsp;знает, как его настроить и&nbsp;какое положение тела ему необходимо.</p>
+        <p class="dmt-note__key"><span class="dmt-note__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span><span>Поэтому мебель, настройку рабочего места и&nbsp;обучение мы&nbsp;рассматриваем не&nbsp;как отдельные решения, а&nbsp;как части одной системы.</span></p>
       </div>
     </div>
-    <div class="dorder dorder--3 dmt-order" data-rv>
-      <ol class="dorder__list">
-        <li><span class="dorder__n">01</span><span class="dorder__txt">Сначала&nbsp;– понимание принципов и&nbsp;рабочей позы.</span></li>
-        <li class="dorder__arrow" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></li>
-        <li><span class="dorder__n">02</span><span class="dorder__txt">Затем&nbsp;– настройка оборудования.</span></li>
-        <li class="dorder__arrow" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></li>
-        <li><span class="dorder__n">03</span><span class="dorder__txt">И&nbsp;только после этого можно объективно оценить, действительно ли что-то необходимо заменить.</span></li>
-      </ol>
-    </div>
+    <ol class="dmt-path dmt-path--3">
+      <li class="dmt-path__step" data-rv>
+        <span class="dmt-path__n">01 · Сначала</span>
+        <span class="dmt-path__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2.4"/><path d="M12 6.8v13M7.2 10h9.6M7.6 14h8.8M8.2 18h7.6"/></svg></span>
+        <p>Понимание принципов и&nbsp;рабочей позы.</p>
+      </li>
+      <li class="dmt-path__step" data-rv style="--d:.06s">
+        <span class="dmt-path__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+        <span class="dmt-path__n">02 · Затем</span>
+        <span class="dmt-path__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4v6M5 14v6M12 4v3M12 11v9M19 4v9M19 17v3"/><path d="M3 12h4M10 9h4M17 15h4"/></svg></span>
+        <p>Настройка оборудования.</p>
+      </li>
+      <li class="dmt-path__step dmt-path__step--brand" data-rv style="--d:.12s">
+        <span class="dmt-path__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+        <span class="dmt-path__n">03 · Только после этого</span>
+        <span class="dmt-path__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10l-1 8H8z"/><path d="M5.5 11.5h13M8 11.5 7 20.5M16 11.5l1 9M12 11.5v5"/></svg></span>
+        <p>Можно объективно оценить, действительно&nbsp;ли что-то необходимо заменить.</p>
+      </li>
+    </ol>
   </div>
 </section>
 

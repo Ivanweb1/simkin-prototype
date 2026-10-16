@@ -3035,9 +3035,6 @@ a.dprod:hover h3{color:var(--brand)}
   .dk-principle--hero{padding:18px 18px 18px 38px;font-size:16.5px}
   .dk-principle--hero::before{left:18px;top:20px;bottom:20px}
 }
-/* «Отправная точка – человек» — крупно, как главный тезис */
-.dmt-key{font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.15;letter-spacing:-.028em;color:var(--navy)}
-.dmt-key + p{margin-top:14px}
 /* «сначала… затем…» на белом фоне секции — подложка в тон */
 .dsec:not(.dsec--tint) .dorder{background:var(--tint)}
 .dsec:not(.dsec--tint) .dorder__arrow,
@@ -3049,10 +3046,6 @@ a.dprod:hover h3{color:var(--brand)}
   .dorder--3 .dorder__list{grid-template-columns:1fr}
   .dorder--3 .dorder__arrow{transform:rotate(90deg)}
 }
-/* цитата без пояснения справа: в одну колонку, подпись под фразой */
-.dmt-voice{grid-template-columns:minmax(0,1fr);gap:0}
-.dmt-voice .dvoice__big{max-width:22em}
-.dmt-voice .dvoice__by{max-width:420px}
 /* параметры настройки — галочками в две колонки на белой карточке */
 .dmt-params{margin-top:clamp(36px,3.6vw,52px);background:#fff;border-radius:28px;padding:clamp(26px,3vw,44px)}
 .dmt-params .dgain__list{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,auto);grid-auto-flow:column;gap:18px 40px}
@@ -3104,3 +3097,100 @@ a.dprod:hover h3{color:var(--brand)}
 .modal .dpick--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:420px){.dpick--3 span{font-size:13px;padding:0 6px}}
 
+/* ---------- «Почему общие рекомендации не всегда работают» ---------- */
+.dmt-ghead{align-items:start}
+/* чем отличаются люди — плашками под заголовком */
+.dmt-diff{list-style:none;margin:clamp(22px,2.4vw,32px) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;max-width:34em}
+.dmt-diff li{padding:9px 16px;border-radius:100px;background:#fff;border:1px solid var(--d-line);font-size:14.5px;font-weight:500;line-height:1.2;color:var(--navy)}
+/* справа: абзац и вывод белой карточкой с иконкой */
+@media (min-width:861px){.dmt-note{padding-top:44px}}
+.dmt-note p:first-child{font-size:17px;line-height:1.65}
+.dmt-note .dmt-note__key{
+  display:flex;align-items:center;gap:16px;margin-top:22px;padding:18px 22px;border-radius:20px;background:#fff;
+  font-size:clamp(17px,1.35vw,19px);font-weight:600;line-height:1.4;color:var(--navy);
+  box-shadow:0 2px 4px rgba(35,43,62,.03),0 10px 26px rgba(35,43,62,.06);
+}
+.dmt-note__ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--brand);color:#fff}
+.dmt-note__ico svg{width:24px;height:24px}
+
+/* три совета: схема → «Общий совет» → разбор «На деле» */
+.dmyths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px);align-items:stretch}
+.dmyth{display:flex;flex-direction:column;background:#fff;border-radius:28px;padding:12px 12px clamp(24px,2.4vw,32px)}
+.dmyth > :not(.dmyth__fig){margin-left:clamp(12px,1.4vw,20px);margin-right:clamp(12px,1.4vw,20px)}
+.dmyth__fig{position:relative;border-radius:20px;background:var(--tint);aspect-ratio:12/7;display:grid;place-items:center;overflow:hidden}
+.dmyth__fig svg{width:86%;height:auto;max-height:100%}
+.dmyth__fig .g{stroke:var(--navy-3);stroke-width:2}
+.dmyth__fig .b{stroke:var(--brand);stroke-width:2.6}
+.dmyth__fig .c{stroke:#C9D0DE;stroke-width:3}
+.dmyth__fig .gt{fill:var(--navy-3);stroke:none;font:600 13px/1 "Onest",system-ui,sans-serif}
+.dmyth__n{position:absolute;left:14px;top:12px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
+.dmyth__tag{
+  align-self:flex-start;display:inline-flex;align-items:center;gap:7px;margin-top:22px;padding:6px 12px 6px 8px;border-radius:100px;
+  background:#FBEDEE;color:#B23A48;font-size:12.5px;font-weight:600;letter-spacing:.02em;line-height:1;
+}
+.dmyth__tag svg{width:14px;height:14px;padding:2px;border-radius:50%;background:currentColor;stroke:#fff;box-sizing:content-box}
+.dmyth__tag--yes{margin-top:0;background:var(--tint);color:var(--brand)}
+.dmyth h3{margin-top:14px;font-size:clamp(20px,1.6vw,24px);font-weight:600;line-height:1.22;letter-spacing:-.022em;color:var(--navy)}
+.dmyth__real{margin-top:20px;padding-top:20px;border-top:1px solid var(--d-line)}
+.dmyth__real p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2)}
+@media (max-width:980px){.dmyths{grid-template-columns:1fr}.dmyth__fig{aspect-ratio:16/7}}
+@media (max-width:600px){
+  .dmyth{border-radius:22px}
+  .dmyth__fig{border-radius:16px;aspect-ratio:12/7}
+  .dmt-note .dmt-note__key{padding:16px 18px;gap:14px}
+  .dmt-diff li{font-size:13.5px;padding:8px 13px}
+}
+
+/* ---------- «Почему эргономика начинается не с мебели» ---------- */
+/* путь: человек → 01 → 02, между звеньями стрелка на стыке карточек */
+.dmt-path{list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);gap:14px}
+.dmt-path li{position:relative;border-radius:28px;padding:clamp(24px,2.6vw,36px)}
+.dmt-path__start,.dmt-path__step--brand{
+  display:flex;flex-direction:column;justify-content:space-between;gap:28px;color:#fff;
+  background:linear-gradient(135deg,#001AE6 0%,#1147EE 30%,#2E80FF 75%,#54C2FF 125%);
+}
+.dmt-path__ico{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.16)}
+.dmt-path__step .dmt-path__ico{margin-top:22px;background:#fff;color:var(--brand)}
+.dmt-path__step--brand .dmt-path__ico{margin-top:0;background:rgba(255,255,255,.16);color:#fff}
+.dmt-path__ico svg{width:26px;height:26px}
+.dmt-path__start p{font-size:clamp(24px,2.2vw,32px);font-weight:600;line-height:1.15;letter-spacing:-.028em}
+.dmt-path__step{background:var(--tint)}
+.dmt-path__n{display:inline-block;padding:7px 14px;border-radius:100px;background:#fff;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--brand)}
+.dmt-path__step p{margin-top:18px;font-size:clamp(17px,1.35vw,19px);font-weight:500;line-height:1.5;color:var(--navy)}
+.dmt-path__arr{
+  position:absolute;z-index:1;left:-29px;top:50%;margin-top:-22px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;
+  background:#fff;color:var(--brand);box-shadow:0 0 0 6px var(--ring,#fff),0 6px 16px rgba(26,95,224,.18);
+}
+.dmt-path__arr svg{width:20px;height:20px}
+@media (max-width:980px){
+  .dmt-path{grid-template-columns:1fr;gap:20px}
+  .dmt-path__arr{left:50%;top:-32px;margin:0 0 0 -22px;transform:rotate(90deg)}
+}
+@media (max-width:600px){.dmt-path li{border-radius:22px}}
+
+/* цитата: слева фраза и подпись, справа три части сходятся в одну систему */
+.dmt-voice{align-items:center}
+.dmt-voice__main .dvoice__by{margin-top:clamp(26px,2.6vw,36px);padding-top:22px;border-top:1px solid var(--d-line);max-width:420px}
+.dmt-sys3{position:relative;display:flex;flex-direction:column;gap:10px;padding-left:34px}
+/* скобка слева сводит три части к итогу */
+.dmt-sys3::before{content:"";position:absolute;left:0;top:26px;bottom:26px;width:18px;border:2px solid var(--brand-3);border-right:0;border-radius:14px 0 0 14px}
+.dmt-sys3__item{display:flex;align-items:center;gap:14px;padding:12px 18px 12px 12px;border-radius:18px;background:#fff;font-size:clamp(16px,1.3vw,18px);font-weight:600;color:var(--navy)}
+.dmt-sys3__item i{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--tint);color:var(--brand)}
+.dmt-sys3__item svg{width:22px;height:22px}
+.dmt-sys3__all{
+  align-self:flex-start;margin-top:6px;padding:12px 20px;border-radius:100px;color:#fff;font-size:15px;font-weight:600;
+  background:linear-gradient(135deg,#1147EE 0%,#2E80FF 100%);box-shadow:0 8px 20px rgba(26,95,224,.24);
+}
+@media (max-width:600px){.dmt-sys3{padding-left:26px}.dmt-sys3::before{width:14px}}
+/* путь в три равных звена на тонированном фоне: звенья белые, итог — брендовый */
+.dmt-path--3{grid-template-columns:repeat(3,minmax(0,1fr));--ring:var(--tint)}
+.dmt-path--3 .dmt-path__step{display:flex;flex-direction:column;background:#fff}
+.dmt-path--3 .dmt-path__step p{margin-top:18px;font-size:clamp(19px,1.6vw,23px);font-weight:600;line-height:1.3;letter-spacing:-.018em}
+.dmt-path--3 .dmt-path__n{align-self:flex-start;background:var(--tint)}
+.dmt-path--3 .dmt-path__step:not(.dmt-path__step--brand) .dmt-path__ico{background:var(--tint)}
+.dmt-path__step--brand .dmt-path__n{background:rgba(255,255,255,.16);color:#fff}
+.dmt-path--3 .dmt-path__step--brand{justify-content:flex-start;gap:0;background:linear-gradient(135deg,#001AE6 0%,#1147EE 30%,#2E80FF 75%,#54C2FF 125%)}
+.dmt-path--3 .dmt-path__step--brand .dmt-path__ico{margin-top:22px}
+.dmt-path--3 .dmt-path__step--brand p{color:#fff}
+
+@media (max-width:980px){.dmt-path--3{grid-template-columns:1fr}}
