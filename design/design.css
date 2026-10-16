@@ -3099,9 +3099,6 @@ a.dprod:hover h3{color:var(--brand)}
 
 /* ---------- «Почему общие рекомендации не всегда работают» ---------- */
 .dmt-ghead{align-items:start}
-/* чем отличаются люди — плашками под заголовком */
-.dmt-diff{list-style:none;margin:clamp(22px,2.4vw,32px) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;max-width:34em}
-.dmt-diff li{padding:9px 16px;border-radius:100px;background:#fff;border:1px solid var(--d-line);font-size:14.5px;font-weight:500;line-height:1.2;color:var(--navy)}
 /* справа: абзац и вывод белой карточкой с иконкой */
 @media (min-width:861px){.dmt-note{padding-top:44px}}
 .dmt-note p:first-child{font-size:17px;line-height:1.65}
@@ -3115,15 +3112,11 @@ a.dprod:hover h3{color:var(--brand)}
 
 /* три совета: схема → «Общий совет» → разбор «На деле» */
 .dmyths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px);align-items:stretch}
-.dmyth{display:flex;flex-direction:column;background:#fff;border-radius:28px;padding:12px 12px clamp(24px,2.4vw,32px)}
-.dmyth > :not(.dmyth__fig){margin-left:clamp(12px,1.4vw,20px);margin-right:clamp(12px,1.4vw,20px)}
-.dmyth__fig{position:relative;border-radius:20px;background:var(--tint);aspect-ratio:12/7;display:grid;place-items:center;overflow:hidden}
-.dmyth__fig svg{width:86%;height:auto;max-height:100%}
-.dmyth__fig .g{stroke:var(--navy-3);stroke-width:2}
-.dmyth__fig .b{stroke:var(--brand);stroke-width:2.6}
-.dmyth__fig .c{stroke:#C9D0DE;stroke-width:3}
-.dmyth__fig .gt{fill:var(--navy-3);stroke:none;font:600 13px/1 "Onest",system-ui,sans-serif}
-.dmyth__n{position:absolute;left:14px;top:12px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
+.dmyth{display:flex;flex-direction:column;background:#fff;border-radius:28px;padding:clamp(24px,2.4vw,32px)}
+.dmyth__head{display:flex;align-items:center;justify-content:space-between}
+.dmyth__ico{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--brand)}
+.dmyth__ico svg{width:26px;height:26px}
+.dmyth__n{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
 .dmyth__tag{
   align-self:flex-start;display:inline-flex;align-items:center;gap:7px;margin-top:22px;padding:6px 12px 6px 8px;border-radius:100px;
   background:#FBEDEE;color:#B23A48;font-size:12.5px;font-weight:600;letter-spacing:.02em;line-height:1;
@@ -3133,12 +3126,10 @@ a.dprod:hover h3{color:var(--brand)}
 .dmyth h3{margin-top:14px;font-size:clamp(20px,1.6vw,24px);font-weight:600;line-height:1.22;letter-spacing:-.022em;color:var(--navy)}
 .dmyth__real{margin-top:20px;padding-top:20px;border-top:1px solid var(--d-line)}
 .dmyth__real p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2)}
-@media (max-width:980px){.dmyths{grid-template-columns:1fr}.dmyth__fig{aspect-ratio:16/7}}
+@media (max-width:980px){.dmyths{grid-template-columns:1fr}}
 @media (max-width:600px){
   .dmyth{border-radius:22px}
-  .dmyth__fig{border-radius:16px;aspect-ratio:12/7}
   .dmt-note .dmt-note__key{padding:16px 18px;gap:14px}
-  .dmt-diff li{font-size:13.5px;padding:8px 13px}
 }
 
 /* ---------- «Почему эргономика начинается не с мебели» ---------- */
