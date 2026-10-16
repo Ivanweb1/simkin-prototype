@@ -3203,3 +3203,15 @@ a.dprod:hover h3{color:var(--brand)}
   .dmyth{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-content:start}
   .dmyth__tag{justify-self:start;align-self:start}
 }
+/* узкие телефоны (до 400px): метки путей в одну строку, кнопки без разрыва
+   по дефису, в окне консультации чипы без галочки — выбранный и так синий */
+@media (max-width:400px){
+  .dpath__top{gap:10px}
+  .dpath__who{white-space:nowrap;font-size:12px;padding:7px 11px;letter-spacing:0}
+  .dpath__ico,.dpath__ava{width:44px;height:44px}
+  .dpath__ava img{width:196px;left:-98px}
+  .dpath__act .dbtn{font-size:15px;padding-left:18px;padding-right:18px;hyphens:none}
+  .dpath__act .dbtn span,.dpath__act .dbtn{word-break:normal;overflow-wrap:normal}
+  .modal .dpick span{padding:0 6px;font-size:13px}
+  .modal .dpick input:checked + span::before{display:none}
+}
