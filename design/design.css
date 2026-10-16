@@ -3098,12 +3098,11 @@ a.dprod:hover h3{color:var(--brand)}
 @media (max-width:420px){.dpick--3 span{font-size:13px;padding:0 6px}}
 
 /* ---------- «Почему общие рекомендации не всегда работают» ---------- */
-.dmt-ghead{align-items:start}
-/* справа: абзац и вывод белой карточкой с иконкой */
-@media (min-width:861px){.dmt-note{padding-top:44px}}
-.dmt-note p:first-child{font-size:17px;line-height:1.65}
+.dmt-ghead{align-items:end}
+.dmt-ghead__lead{margin-top:clamp(20px,2vw,28px);font-size:17px;line-height:1.65;color:var(--navy-2);max-width:36em}
+.dmt-note{padding-bottom:0}
 .dmt-note .dmt-note__key{
-  display:flex;align-items:center;gap:16px;margin-top:22px;padding:18px 22px;border-radius:20px;background:#fff;
+  display:flex;align-items:center;gap:16px;margin-top:0;padding:18px 22px;border-radius:20px;background:#fff;
   font-size:clamp(17px,1.35vw,19px);font-weight:600;line-height:1.4;color:var(--navy);
   box-shadow:0 2px 4px rgba(35,43,62,.03),0 10px 26px rgba(35,43,62,.06);
 }
@@ -3185,3 +3184,10 @@ a.dprod:hover h3{color:var(--brand)}
 .dmt-path--3 .dmt-path__step--brand p{color:#fff}
 
 @media (max-width:980px){.dmt-path--3{grid-template-columns:1fr}}
+/* три совета в ряд: строки карточек общие (subgrid) — иконка, метка,
+   совет и «На деле» стоят на одной линии, даже если совет в две строки */
+@media (min-width:981px){
+  .dmyths{grid-template-rows:repeat(4,auto);row-gap:0}
+  .dmyth{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;align-content:start}
+  .dmyth__tag{justify-self:start;align-self:start}
+}
