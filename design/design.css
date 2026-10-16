@@ -2195,6 +2195,16 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 .dshot--slide{width:100%;max-width:100%;min-width:0;height:auto}
 .dk-mod{min-width:0}
 .dk-mod > .dshot--slide{flex:none}
+/* пропорция 16:9 — отступом сверху, без aspect-ratio: часть версий iOS Safari
+   в колонке flex считала ширину рамки от её высоты, и слайд выходил за экран
+   примерно вдвое. Отступ в процентах всегда считается от ширины. Положение
+   картинки задано и через top/left: inset старые Safari не знают. */
+.dshot--slide{display:block;aspect-ratio:auto;height:0;padding-top:56.25%}
+.dshot--slide picture,.dshot--slide img{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;max-width:100%}
+@media (max-width:860px){
+  .dk-mod{display:block;overflow:hidden}
+  .dk-prog,.dk-mods{max-width:100%;min-width:0}
+}
 @media (max-width:1100px){
   .dcohero__card{grid-template-columns:minmax(0,1fr)}
   .dk-hero__media{display:block}
