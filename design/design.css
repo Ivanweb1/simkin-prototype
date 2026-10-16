@@ -3022,3 +3022,85 @@ a.dprod:hover h3{color:var(--brand)}
   .dcite::before{width:24px;height:19px;margin-bottom:12px}
   .dcite .dcite__q p{font-size:19px}
 }
+
+/* =====================================================================
+   МЕТОД СИМКИНА (method.html, body.dmtd)
+   Почти всё — уже согласованные блоки курса и «Эргономичных решений».
+   Ниже только то, чего на них не было.
+   --------------------------------------------------------------------- */
+/* базовый принцип на первом экране — та же плашка, что на курсе, компактнее */
+.dk-principle--hero{margin-top:clamp(24px,2.4vw,32px);padding:20px 24px 20px 46px;border-radius:22px;font-size:clamp(17px,1.3vw,19px);max-width:34em}
+.dk-principle--hero::before{left:24px;top:22px;bottom:22px}
+@media (max-width:600px){
+  .dk-principle--hero{padding:18px 18px 18px 38px;font-size:16.5px}
+  .dk-principle--hero::before{left:18px;top:20px;bottom:20px}
+}
+/* «Отправная точка – человек» — крупно, как главный тезис */
+.dmt-key{font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.15;letter-spacing:-.028em;color:var(--navy)}
+.dmt-key + p{margin-top:14px}
+/* «сначала… затем…» на белом фоне секции — подложка в тон */
+.dsec:not(.dsec--tint) .dorder{background:var(--tint)}
+.dsec:not(.dsec--tint) .dorder__arrow,
+.dsec:not(.dsec--tint) .dorder__list li:last-child .dorder__n{background:#fff}
+.dmt-order{margin-top:clamp(36px,3.6vw,52px)}
+.dorder--3 .dorder__list{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1.3fr)}
+.dorder--3 .dorder__list li:nth-child(3) .dorder__n{background:var(--brand-2)}
+@media (max-width:980px){
+  .dorder--3 .dorder__list{grid-template-columns:1fr}
+  .dorder--3 .dorder__arrow{transform:rotate(90deg)}
+}
+/* цитата без пояснения справа: в одну колонку, подпись под фразой */
+.dmt-voice{grid-template-columns:minmax(0,1fr);gap:0}
+.dmt-voice .dvoice__big{max-width:22em}
+.dmt-voice .dvoice__by{max-width:420px}
+/* параметры настройки — галочками в две колонки на белой карточке */
+.dmt-params{margin-top:clamp(36px,3.6vw,52px);background:#fff;border-radius:28px;padding:clamp(26px,3vw,44px)}
+.dmt-params .dgain__list{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,auto);grid-auto-flow:column;gap:18px 40px}
+.dmt-params .dgain__list li{font-size:clamp(17px,1.35vw,19px);color:var(--navy);gap:14px}
+.dmt-params .dgain__ic{width:24px;height:24px}
+.dmt-params .dgain__ic svg{width:14px;height:14px}
+@media (max-width:700px){.dmt-params .dgain__list{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;gap:14px}}
+/* только правила / понимание принципов */
+.dmt-vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.dmt-vs__card{border-radius:28px;padding:clamp(26px,2.8vw,40px);background:var(--tint)}
+.dmt-vs__lbl{display:inline-block;padding:7px 14px;border-radius:100px;background:#fff;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--navy-2)}
+.dmt-vs__card p{margin-top:18px;font-size:clamp(17px,1.4vw,20px);line-height:1.5;color:var(--navy-2)}
+.dmt-vs__card--yes{background:linear-gradient(135deg,#001AE6 0%,#1147EE 30%,#2E80FF 75%,#54C2FF 125%)}
+.dmt-vs__card--yes .dmt-vs__lbl{background:rgba(255,255,255,.16);color:#fff}
+.dmt-vs__card--yes p{color:#fff;font-weight:500}
+@media (max-width:860px){.dmt-vs{grid-template-columns:1fr}}
+@media (max-width:600px){.dmt-vs__card{border-radius:22px}}
+
+/* ---------- «Как применить метод»: четыре разных пути ----------
+   У каждого пути метка «кто ведёт»: самостоятельно, лично автор,
+   специалисты команды, компании. Личная консультация автора выделена
+   белой карточкой с синей рамкой и портретом — её не спутать с подбором
+   мебели командой. */
+.dpaths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px)}
+.dpath{display:flex;flex-direction:column;border-radius:28px;padding:clamp(26px,3vw,44px);background:var(--tint);border:2px solid transparent}
+.dpath__top{display:flex;align-items:center;gap:14px}
+.dpath__ico{display:grid;place-items:center;flex:none;width:52px;height:52px;border-radius:16px;background:#fff;color:var(--brand)}
+.dpath__ico svg{width:26px;height:26px}
+.dpath__who{display:inline-block;padding:7px 14px;border-radius:100px;background:#fff;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--navy-2)}
+.dpath h3{margin-top:22px;font-size:clamp(22px,1.9vw,28px);font-weight:600;line-height:1.16;letter-spacing:-.024em;color:var(--navy);max-width:20em}
+.dpath p{margin-top:14px;font-size:17px;line-height:1.6;color:var(--navy-2);max-width:34em}
+.dpath__act{margin-top:auto;padding-top:clamp(24px,2.4vw,32px)}
+.dpath__act .dbtn{max-width:100%;height:auto;min-height:58px;padding-top:14px;padding-bottom:14px;white-space:normal;line-height:1.25;text-align:left}
+.dpath .dpath__note{margin-top:12px;font-size:14.5px;line-height:1.45;color:var(--navy-3)}
+.dpath--author{background:#fff;border-color:var(--brand);box-shadow:0 2px 4px rgba(35,43,62,.04),0 18px 40px rgba(26,95,224,.12)}
+.dpath--author .dpath__who{background:var(--brand);color:#fff}
+.dpath__ava{width:52px;height:52px}
+.dpath__ava img{width:232px;left:-116px}
+.dpath--company .dpath__who{background:var(--navy);color:#fff}
+@media (max-width:980px){.dpaths{grid-template-columns:1fr}}
+@media (max-width:600px){
+  .dpath{border-radius:22px;padding:24px 20px}
+  .dpath__act .dbtn{width:100%;justify-content:center;text-align:center}
+}
+/* выбор в форме личной консультации: формат и способ связи */
+.modal .dpick span{height:46px;font-size:14px}
+/* в окне варианты всегда в строку: их два-три, подписи короткие */
+.modal .dpick{grid-template-columns:repeat(2,minmax(0,1fr))}
+.modal .dpick--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:420px){.dpick--3 span{font-size:13px;padding:0 6px}}
+
