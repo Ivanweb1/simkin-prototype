@@ -3221,3 +3221,64 @@ a.dprod:hover h3{color:var(--brand)}
   #control .dstart__ph{aspect-ratio:auto;min-height:0}
   #control .dstart__ph img{height:auto}
 }
+
+/* ---------------------------------------------------------------------
+   МЕТОД СИМКИНА: спокойная палитра (правки заказчика, 19.10.2026)
+   — крупные смысловые плашки: тёмный фирменный синий, близкий к логотипу
+     (#2A3892, чуть приглушён серым);
+   — фон и второстепенное: светлый серо-голубой (--tint);
+   — яркий синий: только мелкие акценты — кнопки, стрелки, иконки, номера;
+   — красный не используем: «неправильные» советы и выключенные элементы
+     схемы — графитовым.
+   Только для body.dmtd, остальные страницы не меняются.
+   --------------------------------------------------------------------- */
+.dmtd{
+  --mt-deep:#2A3892;
+  --mt-deep-bg:linear-gradient(135deg,#2A3892 0%,#323E86 100%);
+  --mt-graph:#4A5266;     /* графит: метки общих советов, «выключено» на схеме */
+  --mt-graph-bg:#ECEEF2;
+}
+.dmtd .dmt-path__start,
+.dmtd .dmt-path--3 .dmt-path__step--brand,
+.dmtd .dk-allor,
+.dmtd .dk-res__out,
+.dmtd .dmt-vs__card--yes{background:var(--mt-deep-bg)}
+.dmtd .dk-res__arr,
+.dmtd .dmt-path__start .dmt-path__ico,
+.dmtd .dmt-path__step--brand .dmt-path__ico{background:rgba(255,255,255,.12)}
+
+/* «Общий совет» — графитовая метка вместо красной: не ругаем, а показываем
+   ограниченность универсальных правил */
+.dmtd .dmyth__tag{background:var(--mt-graph-bg);color:var(--mt-graph)}
+.dmtd .dmyth__tag--yes{background:var(--tint);color:var(--brand)}
+
+/* схема «Всё или ничего»: центр — тёмный фирменный; «сломано» — графит */
+.dmtd .dk-map__core{background:var(--mt-deep);box-shadow:0 0 0 10px rgba(42,56,146,.08),0 0 0 22px rgba(42,56,146,.04),0 18px 40px rgba(42,56,146,.22)}
+.dmtd .dk-map.is-broken .dk-map__core{background:var(--mt-graph);box-shadow:0 0 0 10px rgba(74,82,102,.1),0 0 0 22px rgba(74,82,102,.05),0 18px 40px rgba(35,43,62,.2)}
+.dmtd .dk-map__lines line.is-off{stroke:#B6BCC8}
+.dmtd .dk-map__node.is-off{background:#F3F4F7;border-color:#D6DAE2;color:#6B7386}
+.dmtd .dk-map__node.is-off::before{background:#9AA1B0}
+@media (max-width:600px){
+  .dmtd .dk-map__core{box-shadow:0 0 0 6px rgba(42,56,146,.08),0 0 0 14px rgba(42,56,146,.04),0 12px 28px rgba(42,56,146,.2)}
+  .dmtd .dk-map.is-broken .dk-map__core{box-shadow:0 0 0 6px rgba(74,82,102,.1),0 0 0 14px rgba(74,82,102,.05)}
+}
+
+/* «Почему эргономика начинается не с мебели»: человек → 01 → 02 → 03 */
+#start .dmt-path{grid-template-columns:minmax(0,.78fr) repeat(3,minmax(0,1fr))}
+#start .dmt-path__step{display:flex;flex-direction:column}
+#start .dmt-path__n{align-self:flex-start}
+.dmt-path__t{margin-top:18px;font-size:clamp(19px,1.55vw,22px);font-weight:600;line-height:1.25;letter-spacing:-.018em;color:var(--navy);text-wrap:balance}
+#start .dmt-path__t + p{margin-top:12px;font-size:16.5px;font-weight:400;line-height:1.6;color:var(--navy-2)}
+@media (max-width:1100px){
+  #start .dmt-path{grid-template-columns:1fr;gap:20px}
+  #start .dmt-path__arr{left:50%;top:-32px;margin:0 0 0 -22px;transform:rotate(90deg)}
+}
+/* пометка для корпоративных программ — светлой плашкой с чёрточкой */
+.dmt-corp{
+  display:flex;align-items:center;gap:18px;margin-top:14px;padding:22px 28px;border-radius:22px;background:var(--tint);
+  font-size:clamp(16.5px,1.3vw,18px);line-height:1.55;color:var(--navy);
+}
+.dmt-corp b{font-weight:600;color:var(--mt-deep)}
+.dmt-corp__ico{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#fff;color:var(--brand)}
+.dmt-corp__ico svg{width:24px;height:24px}
+@media (max-width:600px){.dmt-corp{align-items:flex-start;padding:20px;gap:14px}.dmt-corp__ico{width:42px;height:42px}}

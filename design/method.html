@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=252">
+<link rel="stylesheet" href="design.css?v=253">
 </head>
 <body class="d dco dmtd">
 
@@ -90,7 +90,11 @@
 <!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
 <!-- Слева название метода, подзаголовок и два абзаца; под ними — базовый
      принцип эргономики белой плашкой с чёрточкой (как на странице курса).
-     Справа фото человека за рабочим местом: эргономика начинается с человека. -->
+     Справа фото человека за рабочим местом: эргономика начинается с человека.
+     Фото ждёт замены (19.10.2026): поза на нынешнем кадре не соответствует
+     методу — опора поясницы, ноги рядом, корпус ближе к столу, отдельная
+     клавиатура. Новый кадр положить как assets/photo/method-hero.jpg/.webp;
+     posture.jpg остаётся обложкой статьи на главной. -->
 <section class="dcohero" id="hero">
   <div class="dwrap">
     <div class="dcohero__card">
@@ -171,8 +175,9 @@
 </section>
 
 <!-- ============ БЛОК 3. ПОЧЕМУ ЭРГОНОМИКА НАЧИНАЕТСЯ НЕ С МЕБЕЛИ ============ -->
-<!-- Путь в три звена слева направо: «Отправная точка – человек» брендовой
-     карточкой → 01 поза и опора → 02 только потом мебель. Ниже — крупная
+<!-- Путь слева направо: «Отправная точка – человек» тёмной фирменной
+     карточкой → 01 понять зачем → 02 рабочая поза → 03 только потом рабочее
+     место. Под путём — короткая пометка для корпоративных программ. Ниже — крупная
      авторская цитата (кавычка графическая, обычных кавычек в тексте нет);
      справа в ней — три части, которые сходятся в одну систему. -->
 <section class="dsec" id="start">
@@ -188,15 +193,24 @@
       </li>
       <li class="dmt-path__step" data-rv style="--d:.06s">
         <span class="dmt-path__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
-        <span class="dmt-path__n">01 · Сначала</span>
-        <p>Сначала нужно понять, какое положение тела оптимально для&nbsp;конкретной рабочей задачи и&nbsp;какую опору должно получать тело в&nbsp;этом положении.</p>
+        <span class="dmt-path__n">01</span>
+        <h3 class="dmt-path__t">Сначала&nbsp;– понять зачем</h3>
+        <p>Сначала человеку важно понять, как&nbsp;рабочая поза, нагрузка и&nbsp;движения в&nbsp;течение рабочего дня влияют на&nbsp;его&nbsp;самочувствие, работоспособность и&nbsp;здоровье&nbsp;– и&nbsp;зачем ему вообще что-то менять.</p>
       </li>
       <li class="dmt-path__step" data-rv style="--d:.12s">
         <span class="dmt-path__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
-        <span class="dmt-path__n">02 · Потом</span>
+        <span class="dmt-path__n">02</span>
+        <h3 class="dmt-path__t">Затем&nbsp;– определить рабочую позу</h3>
+        <p>После этого нужно понять, какое положение тела оптимально для&nbsp;конкретной рабочей задачи и&nbsp;какую опору должно получать тело в&nbsp;этом положении.</p>
+      </li>
+      <li class="dmt-path__step" data-rv style="--d:.18s">
+        <span class="dmt-path__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+        <span class="dmt-path__n">03</span>
+        <h3 class="dmt-path__t">И&nbsp;только потом&nbsp;– настраивать рабочее место</h3>
         <p>И&nbsp;только после этого имеет смысл определять, какими должны быть кресло, стол, монитор, клавиатура, мышь и&nbsp;другие элементы рабочего места.</p>
       </li>
     </ol>
+    <p class="dmt-corp" data-rv><span class="dmt-corp__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg></span><span><b>Для компаний.</b> В&nbsp;корпоративном обучении особенно важно сначала заинтересовать сотрудников&nbsp;– показать, зачем им&nbsp;нужна эргономика и&nbsp;что&nbsp;она может изменить в&nbsp;их&nbsp;самочувствии и&nbsp;работе.</span></p>
     <figure class="dvoice dvoice--quote dmt-voice" data-rv>
       <div class="dmt-voice__main">
         <p class="dvoice__big">Подбор мебели, обучение правильной рабочей позе и&nbsp;настройку рабочего места я&nbsp;рассматриваю <em>как части одной системы</em></p>
