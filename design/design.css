@@ -3282,3 +3282,6 @@ a.dprod:hover h3{color:var(--brand)}
 .dmt-corp__ico{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#fff;color:var(--brand)}
 .dmt-corp__ico svg{width:24px;height:24px}
 @media (max-width:600px){.dmt-corp{align-items:flex-start;padding:20px;gap:14px}.dmt-corp__ico{width:42px;height:42px}}
+/* первый экран «Метода»: кадр с ноутбуком на подставке — держим в рамке
+   и спинку кресла, и ноутбук справа */
+.dmtd .dcohero__media img{object-position:66% 50%}
