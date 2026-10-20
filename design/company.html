@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=254">
+<link rel="stylesheet" href="design.css?v=255">
 </head>
 <body class="d dco">
 
@@ -625,6 +625,12 @@
     <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8"/></svg>
   </button>
 </div>
+<!-- после закрытия виджет не исчезает совсем: остаётся небольшая кнопка
+     «Видео», по ней превью возвращается. При следующем заходе на страницу
+     превью снова показывается целиком. -->
+<button type="button" class="dvw-pill" data-vw-pill hidden aria-label="Показать видео">
+  <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg><span>Видео</span>
+</button>
 
 <script src="../script.js?v=40"></script>
 
@@ -733,21 +739,25 @@
 </script>
 
 <script>
-/* Видеовиджет. Ролик грузится только после загрузки страницы, чтобы не
-   мешать первому экрану. Свёрнутый крутится без звука; при раскрытии
-   запускается с начала со звуком. Крестик на свёрнутом прячет виджет до
-   конца визита, на раскрытом — сворачивает обратно. */
+/* Видеовиджет. Превью (постер) показывается сразу после разбора страницы,
+   сам ролик начинает грузиться после полной загрузки — первому экрану он не
+   мешает. Свёрнутый крутится без звука; при раскрытии запускается с начала
+   со звуком. Крестик на раскрытом сворачивает обратно, на свёрнутом — убирает
+   превью в небольшую кнопку «Видео» до конца просмотра этой страницы. Ничего
+   не запоминаем: при следующем заходе превью снова на месте. */
 (function(){
   var w = document.querySelector('[data-vw]');
   if(!w) return;
+  var pill = document.querySelector('[data-vw-pill]');
   var v = w.querySelector('video');
   var bar = w.querySelector('[data-vw-track] i');
   var toggleBtn = w.querySelector('.dvw__bar [data-vw-toggle]');
   var muteBtn = w.querySelector('[data-vw-mute]');
-  var KEY = 'dvwClosed';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var loaded = false;
 
-  try { if(sessionStorage.getItem(KEY)) return; } catch(e){}
+  // старая версия прятала виджет до конца сессии — убираем её пометку
+  try { sessionStorage.removeItem('dvwClosed'); } catch(e){}
 
   function sync(){
     w.classList.toggle('is-paused', v.paused);
@@ -756,17 +766,32 @@
     muteBtn.setAttribute('aria-label', v.muted ? 'Включить звук' : 'Выключить звук');
   }
   function play(){ var p = v.play(); if(p && p.catch) p.catch(sync); }
-
-  function start(){
+  function load(){
+    if(loaded) return; loaded = true;
     v.src = v.getAttribute('data-src');
-    w.hidden = false;
-    requestAnimationFrame(function(){ w.classList.remove('is-pending'); });
-    if(!reduce) play();
   }
-  if(document.readyState === 'complete') setTimeout(start, 600);
-  else window.addEventListener('load', function(){ setTimeout(start, 600); });
+
+  function show(){
+    pill.hidden = true;
+    w.hidden = false;
+    w.classList.add('is-pending');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ w.classList.remove('is-pending'); }); });
+    if(loaded && !reduce) play();
+  }
+  function hide(){
+    v.pause();
+    w.hidden = true;
+    pill.hidden = false;
+  }
+
+  // превью — сразу, ролик — после загрузки страницы
+  function start(){ load(); if(!w.hidden && !reduce) play(); }
+  setTimeout(show, 800);
+  if(document.readyState === 'complete') setTimeout(start, 900);
+  else window.addEventListener('load', function(){ setTimeout(start, 300); });
 
   function open(){
+    load();
     w.classList.add('is-open');
     v.loop = false;
     v.currentTime = 0;
@@ -794,10 +819,9 @@
   });
   w.querySelector('[data-vw-close]').addEventListener('click', function(){
     if(w.classList.contains('is-open')){ collapse(); return; }
-    v.pause();
-    w.hidden = true;
-    try { sessionStorage.setItem(KEY, '1'); } catch(e){}
+    hide();
   });
+  pill.addEventListener('click', show);
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && w.classList.contains('is-open')) collapse();
   });

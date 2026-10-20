@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=254">
+<link rel="stylesheet" href="design.css?v=255">
 </head>
 <body class="d dco dsln">
 
@@ -94,7 +94,7 @@
         <span class="deyebrow" data-rv>Эргономичные решения</span>
         <h1 data-rv style="--d:.06s">Эргономичные <em>решения</em></h1>
         <p class="dcohero__h1sub" data-rv style="--d:.1s">Не&nbsp;просто мебель и&nbsp;аксессуары&nbsp;– решение под конкретного человека и&nbsp;его задачи</p>
-        <p class="dcohero__lead" data-rv style="--d:.14s">Универсального «правильного» рабочего места не&nbsp;существует. Выбор кресла, стола, подушек и&nbsp;другого оборудования зависит от&nbsp;роста и&nbsp;пропорций тела человека, характера работы, используемой техники, рабочей позы и&nbsp;индивидуальных особенностей.</p>
+        <p class="dcohero__lead" data-rv style="--d:.14s">Универсального «правильного» рабочего места не&nbsp;существует. Выбор кресла, стола, поясничной поддержки и&nbsp;другого оборудования зависит от&nbsp;роста и&nbsp;пропорций тела человека, характера работы, используемой техники, рабочей позы и&nbsp;индивидуальных особенностей.</p>
         <p class="dcohero__sub" data-rv style="--d:.18s">Задача&nbsp;– не&nbsp;просто выбрать хорошую мебель, а&nbsp;создать рабочее место, которое подходит конкретному человеку и&nbsp;конкретному сценарию работы.</p>
         <div class="dcohero__btns" data-rv style="--d:.22s"><button type="button" class="dbtn dbtn--brand" data-open="pick">Получить консультацию по&nbsp;подбору<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button></div>
       </div>
@@ -110,8 +110,8 @@
 
 <!-- ============ БЛОК 2. ВЫБЕРИТЕ РЕШЕНИЕ ПО ЗАДАЧЕ ============ -->
 <!-- Выбор: слева список задач, справа панель выбранного решения (крупная
-     иконка, текст, следующий шаг). Поясница и подушки ведут на страницы
-     разработок, у остальных — консультация по подбору. Переключение по клику,
+     иконка, текст, следующий шаг). Поясница ведёт на страницу
+     разработки, у остальных — консультация по подбору. Переключение по клику,
      наведению и стрелкам. На телефоне и без JS — все решения карточками подряд. -->
 <section class="dsec" id="choose">
   <div class="dwrap">
@@ -124,49 +124,41 @@
         <button type="button" role="tab" id="sol-t1" aria-controls="sol-1" aria-selected="true"><span class="dpickr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8.5 20h7"/></svg></span><span class="dpickr__t">Для работы за&nbsp;компьютером</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
         <button type="button" role="tab" id="sol-t2" aria-controls="sol-2" aria-selected="false" tabindex="-1"><span class="dpickr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="10" rx="1.5"/><path d="M2.5 18.5h19l-1.5-3.5H4z"/></svg></span><span class="dpickr__t">Для работы с&nbsp;ноутбуком</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
         <button type="button" role="tab" id="sol-t3" aria-controls="sol-3" aria-selected="false" tabindex="-1"><span class="dpickr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3.5v10.5h9"/><path d="M7.5 14 6 20.5M16.5 14l1.5 6.5"/><path d="M7.5 7.5c2.3.5 3 1.6 3 2.8s-.7 2.3-3 2.8"/></svg></span><span class="dpickr__t">Для поддержки поясницы</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
-        <button type="button" role="tab" id="sol-t4" aria-controls="sol-4" aria-selected="false" tabindex="-1"><span class="dpickr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5C4 7.3 5.6 6 8 6h8c2.4 0 4 1.3 4 3.5v5c0 2.2-1.6 3.5-4 3.5H8c-2.4 0-4-1.3-4-3.5z"/><path d="M8 12c1.3-1.2 2.7-1.2 4 0s2.7 1.2 4 0"/></svg></span><span class="dpickr__t">Подушки</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
-        <button type="button" role="tab" id="sol-t5" aria-controls="sol-5" aria-selected="false" tabindex="-1"><span class="dpickr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10l-1 8H8z"/><path d="M5.5 11.5h13M8 11.5 7 20.5M16 11.5l1 9M12 11.5v5"/></svg></span><span class="dpickr__t">Кресла</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
-        <button type="button" role="tab" id="sol-t6" aria-controls="sol-6" aria-selected="false" tabindex="-1"><span class="dpickr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5h18v2.5H3z"/><path d="M5 11v9M19 11v9M5 15.5h14"/></svg></span><span class="dpickr__t">Столы</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+        <button type="button" role="tab" id="sol-t4" aria-controls="sol-4" aria-selected="false" tabindex="-1"><span class="dpickr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10l-1 8H8z"/><path d="M5.5 11.5h13M8 11.5 7 20.5M16 11.5l1 9M12 11.5v5"/></svg></span><span class="dpickr__t">Кресла</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+        <button type="button" role="tab" id="sol-t5" aria-controls="sol-5" aria-selected="false" tabindex="-1"><span class="dpickr__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5h18v2.5H3z"/><path d="M5 11v9M19 11v9M5 15.5h14"/></svg></span><span class="dpickr__t">Столы</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
       </div>
       <div class="dpickr__stage">
         <div class="dpickr__panel is-on" role="tabpanel" id="sol-1" aria-labelledby="sol-t1">
           <span class="dpickr__big" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8.5 20h7"/></svg></span>
-          <span class="dpickr__n">01 / 06</span>
+          <span class="dpickr__n">01 / 05</span>
           <h3>Для работы за&nbsp;компьютером</h3>
           <p>Кресло, стол, монитор, клавиатура, мышь и&nbsp;их&nbsp;взаимное расположение должны работать как единая система.</p>
           <div class="dpickr__cta"><button type="button" class="dbtn dbtn--light" data-open="pick">Получить консультацию по&nbsp;подбору<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button></div>
         </div>
         <div class="dpickr__panel" role="tabpanel" id="sol-2" aria-labelledby="sol-t2">
           <span class="dpickr__big" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="10" rx="1.5"/><path d="M2.5 18.5h19l-1.5-3.5H4z"/></svg></span>
-          <span class="dpickr__n">02 / 06</span>
+          <span class="dpickr__n">02 / 05</span>
           <h3>Для работы с&nbsp;ноутбуком</h3>
           <p>Организация рабочего места зависит от&nbsp;того, как именно используется ноутбук&nbsp;– для набора текста, просмотра информации или как часть стационарного рабочего места.</p>
           <div class="dpickr__cta"><button type="button" class="dbtn dbtn--light" data-open="pick">Получить консультацию по&nbsp;подбору<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button></div>
         </div>
         <div class="dpickr__panel" role="tabpanel" id="sol-3" aria-labelledby="sol-t3">
           <span class="dpickr__big" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 3.5v10.5h9"/><path d="M7.5 14 6 20.5M16.5 14l1.5 6.5"/><path d="M7.5 7.5c2.3.5 3 1.6 3 2.8s-.7 2.3-3 2.8"/></svg></span>
-          <span class="dpickr__n">03 / 06</span>
+          <span class="dpickr__n">03 / 05</span>
           <h3>Для поддержки поясницы</h3>
           <p>Правильно подобранная поясничная поддержка создаёт устойчивую опору и&nbsp;помогает комфортнее сохранять физиологичное положение тела во&nbsp;время работы и&nbsp;отдыха сидя.</p>
           <div class="dpickr__cta"><a href="product-lumbar.html" class="dbtn dbtn--brand">Поясничные подушки<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
         </div>
         <div class="dpickr__panel" role="tabpanel" id="sol-4" aria-labelledby="sol-t4">
-          <span class="dpickr__big" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5C4 7.3 5.6 6 8 6h8c2.4 0 4 1.3 4 3.5v5c0 2.2-1.6 3.5-4 3.5H8c-2.4 0-4-1.3-4-3.5z"/><path d="M8 12c1.3-1.2 2.7-1.2 4 0s2.7 1.2 4 0"/></svg></span>
-          <span class="dpickr__n">04 / 06</span>
-          <h3>Подушки</h3>
-          <p>Подушки для сна и&nbsp;поддержки тела, форма и&nbsp;высота которых подбираются с&nbsp;учётом положения человека и&nbsp;особенностей его телосложения.</p>
-          <div class="dpickr__cta"><a href="product-pillow.html" class="dbtn dbtn--brand">Подушка под голову<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
-        </div>
-        <div class="dpickr__panel" role="tabpanel" id="sol-5" aria-labelledby="sol-t5">
           <span class="dpickr__big" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10l-1 8H8z"/><path d="M5.5 11.5h13M8 11.5 7 20.5M16 11.5l1 9M12 11.5v5"/></svg></span>
-          <span class="dpickr__n">05 / 06</span>
+          <span class="dpickr__n">04 / 05</span>
           <h3>Кресла</h3>
           <p>При выборе важны размеры кресла, форма спинки и&nbsp;сиденья, расположение опор и&nbsp;возможности регулировки под конкретного человека и&nbsp;его задачи.</p>
           <div class="dpickr__cta"><button type="button" class="dbtn dbtn--light" data-open="pick">Получить консультацию по&nbsp;подбору<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button></div>
         </div>
-        <div class="dpickr__panel" role="tabpanel" id="sol-6" aria-labelledby="sol-t6">
+        <div class="dpickr__panel" role="tabpanel" id="sol-5" aria-labelledby="sol-t5">
           <span class="dpickr__big" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5h18v2.5H3z"/><path d="M5 11v9M19 11v9M5 15.5h14"/></svg></span>
-          <span class="dpickr__n">06 / 06</span>
+          <span class="dpickr__n">05 / 05</span>
           <h3>Столы</h3>
           <p>При выборе стола важны его высота, ширина и&nbsp;глубина, возможность наклона рабочей поверхности и&nbsp;правильного расположения оборудования&nbsp;– с&nbsp;учётом параметров человека и&nbsp;его рабочих задач.</p>
           <div class="dpickr__cta"><button type="button" class="dbtn dbtn--light" data-open="pick">Получить консультацию по&nbsp;подбору<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button></div>
@@ -294,8 +286,8 @@
         <span class="dtip__n">03</span>
         <h3>Выбирать красивое из&nbsp;удобного, а&nbsp;не&nbsp;удобное из&nbsp;красивого</h3>
         <figure class="dcite">
-          <blockquote class="dcite__q"><p>Я&nbsp;всегда говорю: выбирать нужно <em>красивое из&nbsp;удобного, а&nbsp;не&nbsp;удобное из&nbsp;красивого</em></p></blockquote>
-          <figcaption class="dcite__by"><span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span><b>Дмитрий Симкин</b></figcaption>
+          <blockquote class="dcite__q"><p>Выбирать нужно <em>красивое из&nbsp;удобного, а&nbsp;не&nbsp;удобное из&nbsp;красивого.</em></p></blockquote>
+          <figcaption class="dcite__by"><span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span><span><b>Дмитрий Симкин</b><small>Автор системы эргономики</small></span></figcaption>
         </figure>
         <p>Если мебелью пользуются каждый день, функциональность для меня важнее дизайна.</p>
         <div class="dmore" id="tip3-more">
@@ -332,6 +324,10 @@
         <h3>Для частных клиентов</h3>
         <p>В&nbsp;моей клинике специалисты помогают подобрать подходящие элементы рабочего места из&nbsp;ассортимента решений, с&nbsp;которыми мы&nbsp;работаем: кресла, поясничные поддержки и&nbsp;другое эргономическое оборудование.</p>
         <p>При подборе учитываются рост и&nbsp;пропорции тела человека, особенности посадки, характер работы и&nbsp;параметры рабочего места.</p>
+        <div class="dspec">
+          <span class="dspec__t">Прямые контакты специалистов</span>
+          <div class="dspec__links"><a href="tel:+79216573909"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.2l1.6 4-2 1.3a10.5 10.5 0 0 0 6.9 6.9l1.3-2 4 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.5 20.1 3.9 13.5 3.4 5.7A1.6 1.6 0 0 1 5 4Z"/></svg>+7&nbsp;921&nbsp;657-39-09</a><a href="mailto:ergo12@bk.ru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>ergo12@bk.ru</a></div>
+        </div>
         <div class="dhelp__btn"><button type="button" class="dbtn dbtn--brand" data-open="pick">Помочь с&nbsp;подбором<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button></div>
       </article>
     </div>
@@ -402,7 +398,7 @@
       <div class="dhead__note" data-rv style="--d:.12s">
         <figure class="dcite">
           <blockquote class="dcite__q"><p>У&nbsp;меня есть простой принцип: <em>хочешь сделать хорошо&nbsp;– <span class="dnw">сделай сам</span></em></p></blockquote>
-          <figcaption class="dcite__by"><span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span><b>Дмитрий Симкин</b></figcaption>
+          <figcaption class="dcite__by"><span class="dvoice__ava"><img src="assets/hero.jpg" alt="" width="250" height="141" loading="lazy"></span><span><b>Дмитрий Симкин</b><small>Автор системы эргономики</small></span></figcaption>
         </figure>
         <p>Поэтому, когда существующие решения не&nbsp;позволяют добиться нужного результата, я&nbsp;разрабатываю собственные.</p>
       </div>
@@ -609,6 +605,7 @@
       <label class="magree"><input type="checkbox" name="agree" required><i></i><span>Согласие на обработку персональных данных</span></label>
       <button class="btn btn--fill">Отправить</button>
     </form>
+    <p class="mspec">Или напрямую специалистам: <a href="tel:+79216573909">+7&nbsp;921&nbsp;657-39-09</a>, <a href="mailto:ergo12@bk.ru">ergo12@bk.ru</a></p>
   </div>
 </div>
 

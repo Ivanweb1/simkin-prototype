@@ -3223,45 +3223,25 @@ a.dprod:hover h3{color:var(--brand)}
 }
 
 /* ---------------------------------------------------------------------
-   МЕТОД СИМКИНА: спокойная палитра (правки заказчика, 19.10.2026)
-   — крупные смысловые плашки: тёмный фирменный синий, близкий к логотипу
-     (#2A3892, чуть приглушён серым);
-   — фон и второстепенное: светлый серо-голубой (--tint);
-   — яркий синий: только мелкие акценты — кнопки, стрелки, иконки, номера;
-   — красный не используем: «неправильные» советы и выключенные элементы
-     схемы — графитовым.
-   Только для body.dmtd, остальные страницы не меняются.
+   МЕТОД СИМКИНА: графитовые метки вместо красного (правки заказчика, 19.10.2026)
+   «неправильные» советы и выключенные элементы схемы — графитом.
+   Крупные плашки — светлые, см. «Спокойная палитра» в конце файла.
    --------------------------------------------------------------------- */
 .dmtd{
   --mt-deep:#2A3892;
-  --mt-deep-bg:linear-gradient(135deg,#2A3892 0%,#323E86 100%);
   --mt-graph:#4A5266;     /* графит: метки общих советов, «выключено» на схеме */
   --mt-graph-bg:#ECEEF2;
 }
-.dmtd .dmt-path__start,
-.dmtd .dmt-path--3 .dmt-path__step--brand,
-.dmtd .dk-allor,
-.dmtd .dk-res__out,
-.dmtd .dmt-vs__card--yes{background:var(--mt-deep-bg)}
-.dmtd .dk-res__arr,
-.dmtd .dmt-path__start .dmt-path__ico,
-.dmtd .dmt-path__step--brand .dmt-path__ico{background:rgba(255,255,255,.12)}
 
 /* «Общий совет» — графитовая метка вместо красной: не ругаем, а показываем
    ограниченность универсальных правил */
 .dmtd .dmyth__tag{background:var(--mt-graph-bg);color:var(--mt-graph)}
 .dmtd .dmyth__tag--yes{background:var(--tint);color:var(--brand)}
 
-/* схема «Всё или ничего»: центр — тёмный фирменный; «сломано» — графит */
-.dmtd .dk-map__core{background:var(--mt-deep);box-shadow:0 0 0 10px rgba(42,56,146,.08),0 0 0 22px rgba(42,56,146,.04),0 18px 40px rgba(42,56,146,.22)}
-.dmtd .dk-map.is-broken .dk-map__core{background:var(--mt-graph);box-shadow:0 0 0 10px rgba(74,82,102,.1),0 0 0 22px rgba(74,82,102,.05),0 18px 40px rgba(35,43,62,.2)}
+/* схема «Всё или ничего»: «сломано» — графит */
 .dmtd .dk-map__lines line.is-off{stroke:#B6BCC8}
 .dmtd .dk-map__node.is-off{background:#F3F4F7;border-color:#D6DAE2;color:#6B7386}
 .dmtd .dk-map__node.is-off::before{background:#9AA1B0}
-@media (max-width:600px){
-  .dmtd .dk-map__core{box-shadow:0 0 0 6px rgba(42,56,146,.08),0 0 0 14px rgba(42,56,146,.04),0 12px 28px rgba(42,56,146,.2)}
-  .dmtd .dk-map.is-broken .dk-map__core{box-shadow:0 0 0 6px rgba(74,82,102,.1),0 0 0 14px rgba(74,82,102,.05)}
-}
 
 /* «Почему эргономика начинается не с мебели»: человек → 01 → 02 → 03 */
 #start .dmt-path{grid-template-columns:minmax(0,.78fr) repeat(3,minmax(0,1fr))}
@@ -3285,3 +3265,178 @@ a.dprod:hover h3{color:var(--brand)}
 /* первый экран «Метода»: кадр с ноутбуком на подставке — держим в рамке
    и спинку кресла, и ноутбук справа */
 .dmtd .dcohero__media img{object-position:66% 50%}
+
+/* =====================================================================
+   СПОКОЙНАЯ ПАЛИТРА ДЛЯ ВСЕГО САЙТА (правки заказчика, 20.10.2026)
+   — большие фоны и смысловые плашки: белые, светло-серые или очень
+     светлые серо-голубые (--soft, --soft-2);
+   — тёмный фирменный синий (--ink): заголовки в плашках, цифры, иконки,
+     линии, небольшие акценты;
+   — яркий синий (--brand): прежде всего кнопки и интерактивные элементы.
+   Большие насыщенные заливки (яркие и тёмно-синие) не используем.
+   ===================================================================== */
+:root{
+  --ink:#2A3892;            /* тёмный фирменный синий, из логотипа */
+  --soft:#EDF1F8;           /* очень светлый серо-голубой: плашки на белом */
+  --soft-2:#E4EAF5;         /* на тон плотнее: выделенная плашка рядом с --tint */
+  --graph:#4A5266;          /* графит: «выключено», общие советы */
+  --graph-bg:#ECEEF2;
+}
+
+/* плашка-вывод: светлый фон, чёрточка слева, тёмный текст */
+.dk-allor,.dk-res__out{
+  position:relative;background:var(--soft);color:var(--navy);
+  box-shadow:inset 0 0 0 1px rgba(42,56,146,.06);
+}
+.dk-allor__t{color:var(--ink)}
+.dk-allor p{color:var(--navy-2)}
+.dk-res__out{font-weight:500;color:var(--navy)}
+.dk-res__arr{background:#fff;color:var(--ink);box-shadow:0 4px 12px rgba(42,56,146,.08)}
+/* на тонированной секции та же плашка — белая */
+.dsec--tint .dk-allor,.dsec--tint .dk-res__out{background:#fff}
+
+/* «Отправная точка – человек» и «Только после этого»: выделены тоном, не заливкой */
+.dmt-path__start,.dmt-path__step--brand,
+.dmt-path--3 .dmt-path__step--brand{background:var(--soft-2);color:var(--navy)}
+.dmt-path__start p{color:var(--ink)}
+.dmt-path__start .dmt-path__ico,
+.dmt-path__step--brand .dmt-path__ico,
+.dmt-path--3 .dmt-path__step--brand .dmt-path__ico{background:#fff;color:var(--ink)}
+.dmt-path__step--brand .dmt-path__n{background:#fff;color:var(--ink)}
+.dmt-path--3 .dmt-path__step--brand p{color:var(--ink)}
+
+/* «Только правила / Понимание принципов»: вторая карточка — тоном плотнее
+   и тёмно-синей меткой */
+.dmt-vs__card--yes{background:var(--soft-2);box-shadow:inset 0 0 0 1px rgba(42,56,146,.08)}
+.dmt-vs__card--yes .dmt-vs__lbl{background:#fff;color:var(--ink)}
+.dmt-vs__card--yes p{color:var(--navy)}
+
+/* «Одна система» — небольшой акцент, не кнопка: тёмно-синий */
+.dmt-sys3__all{background:var(--ink);box-shadow:0 8px 20px rgba(42,56,146,.18)}
+
+/* схема «Всё или ничего»: центр — светлый круг с тёмно-синей подписью;
+   выключенный элемент — графит (как на странице метода) */
+.dk-map__core{
+  background:#fff;color:var(--ink);
+  box-shadow:inset 0 0 0 2px var(--ink),0 0 0 10px rgba(42,56,146,.07),0 0 0 22px rgba(42,56,146,.035),0 18px 40px rgba(42,56,146,.12);
+}
+.dk-map.is-broken .dk-map__core{
+  background:var(--graph-bg);color:var(--graph);
+  box-shadow:inset 0 0 0 2px #9AA1B0,0 0 0 10px rgba(74,82,102,.07),0 0 0 22px rgba(74,82,102,.035),0 18px 40px rgba(35,43,62,.1);
+}
+.dk-map__lines line{stroke:#9DB0D8}
+.dk-map__lines line.is-off{stroke:#B6BCC8;opacity:1}
+.dk-map__node.is-off{background:#F3F4F7;border-color:#D6DAE2;color:#6B7386}
+.dk-map__node.is-off::before{background:#9AA1B0}
+@media (max-width:600px){
+  .dk-map__core{box-shadow:inset 0 0 0 2px var(--ink),0 0 0 6px rgba(42,56,146,.07),0 0 0 14px rgba(42,56,146,.035),0 12px 28px rgba(42,56,146,.12)}
+  .dk-map.is-broken .dk-map__core{box-shadow:inset 0 0 0 2px #9AA1B0,0 0 0 6px rgba(74,82,102,.07),0 0 0 14px rgba(74,82,102,.035)}
+}
+
+/* шаги-кружки «01 → 02 → 03»: итоговый номер — тёмно-синий, не яркий */
+.dk-res3 li:last-child .dk-res__node{background:var(--ink);border-color:var(--ink);box-shadow:0 8px 20px rgba(42,56,146,.18)}
+
+/* последняя ступень разработок — светлой плашкой */
+.dstairs li.dstairs__end{background:var(--soft-2)}
+.dstairs__end h3{color:var(--ink)}
+.dstairs__end p{color:var(--navy-2)}
+.dstairs .dstairs__end .dstairs__n{color:var(--ink)}
+.dstairs__end .dstairs__ico{background:#fff;color:var(--ink)}
+
+/* плитка-направление на главной — светлая, синей остаётся только кнопка-стрелка */
+.tile--brand{background:var(--soft-2);color:var(--navy)}
+.tile--brand:hover{background:#DCE4F3}
+.tile--brand .tile__tag{color:var(--navy-2)}
+.tile--brand .tile__go{background:var(--brand);color:#fff}
+
+/* финальный банд (с формой и без): светлый серо-голубой фон, тёмный текст,
+   яркой остаётся только главная кнопка */
+.dband{background:var(--soft);color:var(--navy);box-shadow:inset 0 0 0 1px rgba(42,56,146,.06)}
+.dsec--tint .dband{background:#fff}
+.dband__h2{color:var(--navy)}
+.dband__soft{color:var(--ink)}
+.dband__sub{color:var(--navy-2)}
+.ddirect__t{color:var(--navy-2)}
+.ddirect__links a{background:#fff;border-color:var(--d-line);color:var(--navy)}
+.ddirect__links a:hover{background:#fff;border-color:var(--brand);color:var(--brand)}
+.dform{box-shadow:0 20px 50px rgba(42,56,146,.10)}
+.dk-band__btn{background:var(--brand);color:#fff}
+.dk-band__btn:hover{background:var(--brand-dark)}
+.dk-band__link{color:var(--brand)}
+.dk-band__link:hover{opacity:1;color:var(--brand-deep)}
+
+/* Курс, первый экран (десктоп): слайд — полноценный второй акцент. Колонка
+   со слайдом шире, поля вокруг меньше; пропорция 16:9 сохраняется.
+   Ниже 1101px ничего не меняется — там слайд вписан по ширине экрана. */
+@media (min-width:1101px){
+  .dcrs .dcohero__card{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+  .dcrs .dcohero__txt{padding-right:clamp(24px,2.6vw,48px)}
+  .dcrs .dk-hero__media{padding:clamp(20px,1.8vw,32px)}
+  .dcrs .dk-hero__shot{border-radius:16px;box-shadow:0 20px 50px rgba(42,56,146,.14)}
+}
+
+/* прямые контакты специалистов по подбору мебели и оборудования —
+   в карточке консультации и в окне заявки */
+.dspec{margin-top:22px}
+.dspec__t{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--navy-2);margin-bottom:10px}
+.dspec__links{display:flex;flex-wrap:wrap;gap:8px}
+.dspec__links a{
+  display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px 0 12px;border-radius:100px;
+  background:#fff;border:1px solid var(--d-line);color:var(--navy);font-size:15px;font-weight:600;white-space:nowrap;
+  transition:border-color .2s var(--ease),color .2s var(--ease);
+}
+.dspec__links a:hover{border-color:var(--brand);color:var(--brand)}
+.dspec__links svg{width:17px;height:17px;flex:none;color:var(--ink)}
+.dspec__links a:hover svg{color:var(--brand)}
+.dsec:not(.dsec--tint) .dhelp__card .dspec__links a{background:#fff}
+.d .modal__box p.mspec{margin-top:16px;font-size:14.5px;line-height:1.5;color:var(--navy-2)}
+.d .mspec a{color:var(--brand);font-weight:600;white-space:nowrap}
+.d .mspec a:hover{color:var(--brand-deep)}
+
+/* Цитаты автора — одна визуальная система (правки заказчика, 20.10.2026).
+   Крупная (.dvoice--quote) и компактная (.dcite) — разного размера, но одного
+   типа: светлая плашка, кавычка того же знака и цвета слева вверху, фраза
+   полужирным с акцентом, под чертой — портрет, имя и подпись. */
+.dcite{
+  position:relative;margin-top:20px;padding:clamp(20px,1.8vw,26px) clamp(20px,1.8vw,26px) clamp(18px,1.6vw,22px);
+  border-radius:22px;background:var(--tint);
+}
+.dsec--tint .dhead__note .dcite{background:#fff}
+.dcite::before{width:28px;height:22px;margin-bottom:14px;opacity:1}
+.dcite__q em,.dvoice__big em{color:var(--accent)}
+.dcite__by{margin-top:16px;padding-top:14px;border-top:1px solid var(--d-line)}
+.dcite__by > span{display:flex;flex-direction:column}
+.dcite__by b{font-size:15px;color:var(--navy)}
+.dcite__by small{margin-top:1px;font-size:13px;color:var(--navy-3)}
+.dcite__by .dvoice__ava{width:40px;height:40px}
+.dcite__by .dvoice__ava img{width:180px;left:-90px}
+/* у крупной цитаты знак — того же цвета, что у компактной, без прозрачности */
+.dvoice--quote::before{background:var(--brand);opacity:1}
+
+/* видеовиджет закрыт — остаётся небольшая кнопка «Видео» в том же углу */
+.dvw-pill{
+  position:fixed;right:24px;bottom:24px;z-index:95;display:inline-flex;align-items:center;gap:8px;
+  height:44px;padding:0 18px 0 14px;border:0;border-radius:100px;cursor:pointer;
+  background:#fff;color:var(--ink);font:inherit;font-size:14.5px;font-weight:600;
+  box-shadow:0 0 0 1px var(--d-line),0 10px 28px rgba(35,43,62,.18);
+  transition:color .2s var(--ease),box-shadow .2s var(--ease);
+}
+.dvw-pill:hover{color:var(--brand);box-shadow:0 0 0 1px var(--brand),0 10px 28px rgba(35,43,62,.2)}
+.dvw-pill svg{width:14px;height:14px;flex:none}
+@media (max-width:600px){.dvw-pill{right:16px;bottom:16px;height:40px;padding:0 15px 0 12px;font-size:14px}}
+
+/* содержимое светлого банда: список «скоро» и пункты запуска — тёмным текстом */
+.dsoon__item{background:#fff;border-color:var(--d-line);color:var(--navy)}
+.dsoon__item:hover{background:#fff;border-color:var(--brand)}
+.d .dsoon__item:visited{color:var(--navy)}
+.dsoon__ico{background:var(--tint);color:var(--ink)}
+.dsoon__txt small{color:var(--navy-3)}
+.dsoon__go{color:var(--brand)}
+.dlaunch__list li{color:var(--navy)}
+.dlaunch__list svg{color:var(--ink)}
+
+/* закрытая конструкция (стол, подставка): вместо тёмной плашки — светлая
+   серо-голубая, замок и подпись тёмно-синим */
+.dshot--lock{background:linear-gradient(160deg,#EEF2F8,#E2E8F3)}
+.dshot--lock > span:not(.dchip){color:var(--navy-2)}
+.dshot--lock svg{color:var(--ink);opacity:1}
