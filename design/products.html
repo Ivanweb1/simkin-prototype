@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=255">
+<link rel="stylesheet" href="design.css?v=256">
 </head>
 <body class="d dco dprd">
 
@@ -331,7 +331,8 @@
 <!-- Переключатель по годам: шкала сверху, ниже выбранный период — год крупно
      и описание. Пока блок на экране, периоды листаются сами (полоса внизу —
      таймер); после клика по шкале — только вручную. Без JS — все периоды
-     списком. «Дальше» — подпись на шкале для пункта «Работа продолжается». -->
+     списком. Диапазоны лет крупно в две строки — размер цифр у всех периодов один.
+     На узком экране шкала листается вбок, активный период держится в поле зрения. -->
 <section class="dsec" id="years">
   <div class="dwrap">
     <div class="dhead">
@@ -339,37 +340,54 @@
       <h2 class="dh2" data-rv style="--d:.06s">Более 30&nbsp;лет <span class="dh2__soft">авторских разработок</span></h2>
     </div>
     <div class="dera" data-rv style="--d:.1s">
-      <div class="dera__rail" role="tablist" aria-label="Периоды">
-        <span class="dera__line"><span class="dera__fill"></span></span>
-        <button type="button" role="tab" id="era-t1" aria-controls="era-1" aria-selected="true"><i></i><span>1996</span></button>
-        <button type="button" role="tab" id="era-t2" aria-controls="era-2" aria-selected="false" tabindex="-1"><i></i><span>2002</span></button>
-        <button type="button" role="tab" id="era-t3" aria-controls="era-3" aria-selected="false" tabindex="-1"><i></i><span>Начало 2000-х</span></button>
-        <button type="button" role="tab" id="era-t4" aria-controls="era-4" aria-selected="false" tabindex="-1"><i></i><span>Сегодня</span></button>
-        <button type="button" role="tab" id="era-t5" aria-controls="era-5" aria-selected="false" tabindex="-1" class="dera__next"><i></i><span>Дальше</span></button>
+      <div class="dera__rail">
+        <div class="dera__track" role="tablist" aria-label="Периоды">
+          <span class="dera__line"><span class="dera__fill"></span></span>
+          <button type="button" role="tab" id="era-t1" aria-controls="era-1" aria-selected="true"><i></i><span>1995</span></button>
+          <button type="button" role="tab" id="era-t2" aria-controls="era-2" aria-selected="false" tabindex="-1"><i></i><span>1996–1997</span></button>
+          <button type="button" role="tab" id="era-t3" aria-controls="era-3" aria-selected="false" tabindex="-1"><i></i><span>2000</span></button>
+          <button type="button" role="tab" id="era-t4" aria-controls="era-4" aria-selected="false" tabindex="-1"><i></i><span>2001–2003</span></button>
+          <button type="button" role="tab" id="era-t5" aria-controls="era-5" aria-selected="false" tabindex="-1"><i></i><span>2005–2006</span></button>
+          <button type="button" role="tab" id="era-t6" aria-controls="era-6" aria-selected="false" tabindex="-1"><i></i><span>2010</span></button>
+          <button type="button" role="tab" id="era-t7" aria-controls="era-7" aria-selected="false" tabindex="-1"><i></i><span>2025</span></button>
+          <button type="button" role="tab" id="era-t8" aria-controls="era-8" aria-selected="false" tabindex="-1"><i></i><span>Сегодня</span></button>
+        </div>
       </div>
       <div class="dera__stage">
         <div class="dera__panel is-on" role="tabpanel" id="era-1" aria-labelledby="era-t1">
-          <b class="dera__big">1996</b>
-          <div class="dera__txt"><p>Одна из&nbsp;первых запатентованных разработок в&nbsp;области поддержки поясницы.</p>
-            <a href="product-lumbar.html" class="dlink">Поясничные подушки<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
+          <b class="dera__big">1995</b>
+          <div class="dera__txt"><p>Начало разработок в&nbsp;области эргономики.</p></div>
         </div>
         <div class="dera__panel" role="tabpanel" id="era-2" aria-labelledby="era-t2">
-          <b class="dera__big">2002</b>
-          <div class="dera__txt"><p>Исследование поясничной подушки «Мини» в&nbsp;РГПУ им.&nbsp;А.&nbsp;И.&nbsp;Герцена.</p>
-            <a href="product-lumbar.html#research" class="dlink">Об&nbsp;исследовании<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
+          <b class="dera__big">1996–<br>1997</b>
+          <div class="dera__txt"><p>Первая запатентованная разработка: «Кресло и&nbsp;его опора&#8209;реклинатор».</p></div>
         </div>
         <div class="dera__panel" role="tabpanel" id="era-3" aria-labelledby="era-t3">
-          <b class="dera__big dera__big--sm">Начало<br><span class="dera__nw">2000-х</span></b>
-          <div class="dera__txt"><p>Развитие собственных конструкций подушек для сна и&nbsp;получение патентов на&nbsp;разработки в&nbsp;этой области.</p>
-            <a href="product-pillow.html" class="dlink">Подушка под голову<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
+          <b class="dera__big">2000</b>
+          <div class="dera__txt"><p>Клинические испытания поясничной подушки в&nbsp;СПбГМУ им.&nbsp;И.&nbsp;П.&nbsp;Павлова.</p>
+            <a href="product-lumbar.html" class="dlink">Поясничные подушки<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
         </div>
         <div class="dera__panel" role="tabpanel" id="era-4" aria-labelledby="era-t4">
-          <b class="dera__big dera__big--md">Сегодня</b>
-          <div class="dera__txt"><p>Подушки <a href="product-lumbar.html">«Мини» и&nbsp;«Универсал»</a>, <a href="product-pillow.html">«Ночная Симфония»</a>, <a href="product-desk.html">запатентованный компьютерный стол</a> и&nbsp;<a href="product-stand.html">новая подставка для работы с&nbsp;ноутбуком</a>.</p></div>
+          <b class="dera__big">2001–<br>2003</b>
+          <div class="dera__txt"><p>Развитие и&nbsp;патентование решений для сидячего положения и&nbsp;подушки под голову для сна.</p></div>
         </div>
-        <div class="dera__panel dera__panel--next" role="tabpanel" id="era-5" aria-labelledby="era-t5">
-          <b class="dera__big dera__big--sm">Работа над новыми решениями продолжается</b>
-          <div class="dera__txt"><p>Часть разработок уже используется много лет, часть находится на&nbsp;этапе подготовки к&nbsp;реализации, другие ещё проходят этап разработки.</p>
+        <div class="dera__panel" role="tabpanel" id="era-5" aria-labelledby="era-t5">
+          <b class="dera__big">2005–<br>2006</b>
+          <div class="dera__txt"><p>Дальнейшее развитие конструкций подушек, в&nbsp;том числе полезная модель «Подушка многослойная».</p></div>
+        </div>
+        <div class="dera__panel" role="tabpanel" id="era-6" aria-labelledby="era-t6">
+          <b class="dera__big">2010</b>
+          <div class="dera__txt"><p>Начало выпуска подушки под голову «Ночная Симфония».</p>
+            <a href="product-pillow.html" class="dlink">Подушка «Ночная Симфония»<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
+        </div>
+        <div class="dera__panel" role="tabpanel" id="era-7" aria-labelledby="era-t7">
+          <b class="dera__big">2025</b>
+          <div class="dera__txt"><p>Запатентован регулируемый компьютерный стол.</p>
+            <a href="product-desk.html" class="dlink">Компьютерный стол<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
+        </div>
+        <div class="dera__panel" role="tabpanel" id="era-8" aria-labelledby="era-t8">
+          <b class="dera__big dera__big--md">Сегодня</b>
+          <div class="dera__txt"><p>Развитие существующих моделей и&nbsp;работа над новыми эргономичными решениями.</p>
             <a href="#launch" class="dlink">Сообщить о&nbsp;запуске<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
         </div>
         <span class="dera__timer"><span></span></span>
@@ -584,6 +602,7 @@ document.querySelectorAll('.dvoice__btn').forEach(function(btn){
   var era = document.querySelector('.dera'); if(!era) return;
   var tabs = [].slice.call(era.querySelectorAll('[role=tab]'));
   var panels = tabs.map(function(t){ return document.getElementById(t.getAttribute('aria-controls')); });
+  var rail = era.querySelector('.dera__rail');
   var fill = era.querySelector('.dera__fill');
   var timer = era.querySelector('.dera__timer');
   var cur = 0, auto = !window.matchMedia('(prefers-reduced-motion: reduce)').matches, seen = false, t;
@@ -592,6 +611,10 @@ document.querySelectorAll('.dvoice__btn').forEach(function(btn){
     var line = fill.parentNode.getBoundingClientRect();
     var dot = tabs[cur].querySelector('i').getBoundingClientRect();
     fill.style.width = Math.max(0, dot.left + dot.width/2 - line.left) + 'px';
+    if(rail.scrollWidth > rail.clientWidth){
+      var b = tabs[cur];
+      rail.scrollTo({left: b.offsetLeft - (rail.clientWidth - b.offsetWidth)/2, behavior: seen ? 'smooth' : 'auto'});
+    }
   }
   function show(i, user){
     cur = (i + tabs.length) % tabs.length;
