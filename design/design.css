@@ -3356,7 +3356,7 @@ a.dprod:hover h3{color:var(--brand)}
 .dband{background:var(--soft);color:var(--navy);box-shadow:inset 0 0 0 1px rgba(42,56,146,.06)}
 .dsec--tint .dband{background:#fff}
 .dband__h2{color:var(--navy)}
-.dband__soft{color:var(--ink)}
+.dband__soft{color:var(--accent)}  /* выделение в заголовке — тем же синим, что в H1 (em) */
 .dband__sub{color:var(--navy-2)}
 .ddirect__t{color:var(--navy-2)}
 .ddirect__links a{background:#fff;border-color:var(--d-line);color:var(--navy)}
@@ -3532,7 +3532,7 @@ a.dprod:hover h3{color:var(--brand)}
 .dself-path .dmt-path__n{align-self:center}
 .dself-path .dmt-path__t{margin-top:28px;font-size:clamp(22px,1.9vw,28px);letter-spacing:-.022em}
 .dself-path .dmt-path__step p{margin-top:12px;font-size:16.5px;font-weight:400;line-height:1.6;color:var(--navy-2);letter-spacing:0}
-.dself-path .dmt-path__step--brand .dmt-path__t{color:var(--ink)}
+.dself-path .dmt-path__step--brand .dmt-path__t{color:var(--accent)}
 .dself-path .dmt-path__step--brand p{color:var(--navy)}
 #approach .dk-res__out{margin-top:16px}
 @media (max-width:600px){
