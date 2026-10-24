@@ -139,7 +139,7 @@ document.querySelectorAll('form[data-thanks]').forEach(function(f){
   f.addEventListener('submit', function(e){
     e.preventDefault();
     var base = /\/design\//.test(location.pathname) ? '../' : '';
-    location.href = base + 'thanks.html?from=' + encodeURIComponent(f.getAttribute('data-thanks'));
+    location.href = base + 'spasibo.html?from=' + encodeURIComponent(f.getAttribute('data-thanks'));
   });
 });
 

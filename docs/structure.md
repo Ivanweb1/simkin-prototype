@@ -2,29 +2,31 @@
 
 Зафиксированная версия перед переходом к дизайну. Прототипы лежат в корне
 репозитория (серые) и в `design/` (дизайн). Имена файлов прототипов —
-рабочие; адреса на Simkin.ru — только из этой таблицы. GitHub-адреса
-прототипов к URL-логике сайта не относятся.
+транслитерация русских названий страниц и совпадают с их адресами на
+Simkin.ru (24.10.2026: английские рабочие имена вроде company, course,
+solutions, products, method заменены). Адреса на Simkin.ru — только из этой
+таблицы. GitHub-адреса прототипов к URL-логике сайта не относятся.
 
 ## Содержательные страницы
 
 | Страница | В меню | H1 | URL | Прототип |
 |---|---|---|---|---|
 | Главная | — | (без изменений) | `/` | `index.html`, `design/index.html` |
-| Для компаний (обзорная) | «Для компаний» | Эргономика для компаний | `/ergonomika-dlya-kompaniy/` | `company.html`, `design/company.html` |
-| Офисная эргономика | «Офисная эргономика» | Офисная эргономика для компаний | `/ofisnaya-ergonomika/` | `audit.html` |
-| Промышленная эргономика | «Промышленная эргономика» | Промышленная эргономика для компаний | `/promyshlennaya-ergonomika/` | `industrial.html` |
-| Для себя (обзорная) | «Для себя» | Эргономика для себя | `/ergonomika-dlya-sebya/` | `self.html` |
-| Индивидуальная консультация | «Индивидуальная консультация» | Индивидуальная консультация по эргономике рабочего места | `/konsultaciya-po-ergonomike/` | `workplace.html` |
-| Онлайн-курс (с программой и демоверсией) | «Онлайн-курс» | Система эргономики Доктора Симкина + строкой ниже «Онлайн-курс по эргономике рабочего места» | `/kurs-po-ergonomike/` | `course.html`, `design/course.html` |
-| Эргономичные решения | «Эргономичные решения» | (без изменений) | `/ergonomichnye-resheniya/` | `solutions.html` |
-| Отдельное решение | — | — | `/ergonomichnye-resheniya/<reshenie>/` | `solution.html` |
-| Авторские разработки | «Авторские разработки» | (без изменений) | `/avtorskie-razrabotki/` | `products.html`, `design/products.html` |
-| Отдельная разработка | — | — | `/avtorskie-razrabotki/<razrabotka>/` | `product.html`, `design/product-*.html` |
-| Метод / система эргономики | «Метод Симкина» | (без изменений) | `/metod-simkina/` | `method.html` |
-| Дмитрий Симкин | «Дмитрий Симкин» | (без изменений) | `/dmitriy-simkin/` | `about.html` |
-| Полезные статьи | «Полезные статьи» | (без изменений) | `/stati-po-ergonomike/` | `knowledge.html` |
-| Отдельная статья | — | — | `/stati-po-ergonomike/<nazvanie-stati>/` | `article.html` |
-| Контакты | «Контакты» (подвал) | (без изменений) | `/kontakty/` | `contacts.html` |
+| Для компаний (обзорная) | «Для компаний» | Эргономика для компаний | `/ergonomika-dlya-kompaniy/` | `ergonomika-dlya-kompaniy.html`, `design/ergonomika-dlya-kompaniy.html` |
+| Офисная эргономика | «Офисная эргономика» | Офисная эргономика для компаний | `/ofisnaya-ergonomika/` | `ofisnaya-ergonomika.html` |
+| Промышленная эргономика | «Промышленная эргономика» | Промышленная эргономика для компаний | `/promyshlennaya-ergonomika/` | `promyshlennaya-ergonomika.html` |
+| Для себя (обзорная) | «Для себя» | Эргономика для себя | `/ergonomika-dlya-sebya/` | `ergonomika-dlya-sebya.html`, `design/ergonomika-dlya-sebya.html` |
+| Индивидуальная консультация | «Индивидуальная консультация» | Индивидуальная консультация по эргономике рабочего места | `/konsultaciya-po-ergonomike/` | `konsultaciya-po-ergonomike.html` |
+| Онлайн-курс (с программой и демоверсией) | «Онлайн-курс» | Система эргономики Доктора Симкина + строкой ниже «Онлайн-курс по эргономике рабочего места» | `/kurs-po-ergonomike/` | `kurs-po-ergonomike.html`, `design/kurs-po-ergonomike.html` |
+| Эргономичные решения | «Эргономичные решения» | (без изменений) | `/ergonomichnye-resheniya/` | `ergonomichnye-resheniya.html`, `design/ergonomichnye-resheniya.html` |
+| Отдельное решение | — | — | `/ergonomichnye-resheniya/<reshenie>/` | `ergonomichnoe-reshenie.html` |
+| Авторские разработки | «Авторские разработки» | (без изменений) | `/avtorskie-razrabotki/` | `avtorskie-razrabotki.html`, `design/avtorskie-razrabotki.html` |
+| Отдельная разработка | — | — | `/avtorskie-razrabotki/<razrabotka>/` | `avtorskaya-razrabotka.html`; в дизайне — по странице на разработку (см. ниже) |
+| Метод / система эргономики | «Метод Симкина» | (без изменений) | `/metod-simkina/` | `metod-simkina.html`, `design/metod-simkina.html` |
+| Дмитрий Симкин | «Дмитрий Симкин» | (без изменений) | `/dmitriy-simkin/` | `dmitriy-simkin.html` |
+| Полезные статьи | «Полезные статьи» | (без изменений) | `/stati-po-ergonomike/` | `stati-po-ergonomike.html` |
+| Отдельная статья | — | — | `/stati-po-ergonomike/<nazvanie-stati>/` | `statya.html` |
+| Контакты | «Контакты» (подвал) | (без изменений) | `/kontakty/` | `kontakty.html` |
 
 Отдельные эргономичные решения:
 
@@ -39,10 +41,10 @@
 
 | Разработка | URL | Прототип | Формат |
 |---|---|---|---|
-| Подушка под голову | `/avtorskie-razrabotki/ortopedicheskaya-podushka/` | `design/product-pillow.html` | полная: разработка, конструкция, подбор, использование |
-| Поясничные подушки | `/avtorskie-razrabotki/poyasnichnye-podushki/` | `design/product-lumbar.html` | полная: модели Mini и Universal, исследование Mini (РГПУ им. А. И. Герцена) |
-| Компьютерный стол | `/avtorskie-razrabotki/ergonomichnyy-stol/` | `design/product-desk.html` | тизер: запатентован, конструкция не раскрывается, форма «Узнать о запуске первым» |
-| Подставка для работы с ноутбуком | `/avtorskie-razrabotki/podstavka-dlya-noutbuka/` | `design/product-stand.html` | тизер: в разработке, не запатентована, форма «Узнать о запуске первым» |
+| Подушка под голову | `/avtorskie-razrabotki/ortopedicheskaya-podushka/` | `design/ortopedicheskaya-podushka.html` | полная: разработка, конструкция, подбор, использование |
+| Поясничные подушки | `/avtorskie-razrabotki/poyasnichnye-podushki/` | `design/poyasnichnye-podushki.html` | полная: модели Mini и Universal, исследование Mini (РГПУ им. А. И. Герцена) |
+| Компьютерный стол | `/avtorskie-razrabotki/ergonomichnyy-stol/` | `design/ergonomichnyy-stol.html` | тизер: запатентован, конструкция не раскрывается, форма «Узнать о запуске первым» |
+| Подставка для работы с ноутбуком | `/avtorskie-razrabotki/podstavka-dlya-noutbuka/` | `design/podstavka-dlya-noutbuka.html` | тизер: в разработке, не запатентована, форма «Узнать о запуске первым» |
 
 Перспективные направления (эргономичные компьютерные кресла, мягкая мебель) обозначены
 на общей странице раздела, отдельных страниц у них нет.
@@ -52,7 +54,7 @@
 | Было | Теперь |
 |---|---|
 | «Аудит и консалтинг» | часть «Офисной эргономики» |
-| «Подбор и организация рабочих мест» (для компаний) | часть «Офисной эргономики»; прототип `workplace.html` отдан под «Индивидуальную консультацию» |
+| «Подбор и организация рабочих мест» (для компаний) | часть «Офисной эргономики»; прототип `konsultaciya-po-ergonomike.html` отдан под «Индивидуальную консультацию» |
 | «Комплексная корпоративная программа» (`program.html`) | раскрыта внутри офисной и промышленной эргономики (блок `#complex`); прототип удалён |
 | «Программа курса» | блок на странице «Онлайн-курс»: крупные разделы → модули → демоверсия |
 | «Остеопатические чек-апы» | небольшой медицинский блок на «Эргономике для компаний» (`#checkups`) со ссылкой на DoctorSimkin.ru |
