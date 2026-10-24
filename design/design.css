@@ -3566,3 +3566,15 @@ a.dprod:hover h3{color:var(--brand)}
 /* текст в несколько строк — строки примерно равной длины, без «хвоста»
    из одного слова (плашка-вывод, подпись и ссылка финального банда) */
 .dself .dk-res__out,.dself .dband__sub,.dself-band__link,.dself .dhead__note p{text-wrap:balance}
+/* первый экран «Для себя»: кадр квадратный, человек занимает его почти
+   по всей высоте. Ниже 1101px карточка в одну колонку — рамка по пропорции
+   кадра, чтобы не обрезать ни голову, ни ноги и кресло: на телефоне квадрат,
+   на планшете чуть ниже квадрата (подрезается только пол и потолок). */
+@media (max-width:1100px){
+  .dself .dcohero__media{aspect-ratio:10/9}
+  .dself .dcohero__media img{object-position:50% 30%}
+}
+@media (max-width:700px){
+  .dself .dcohero__media{aspect-ratio:1/1}
+  .dself .dcohero__media img{object-position:50% 50%}
+}
