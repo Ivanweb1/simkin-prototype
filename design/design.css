@@ -3522,33 +3522,22 @@ a.dprod:hover h3{color:var(--brand)}
   .dself-step--main p{font-size:16.5px}
 }
 
-/* «Сначала вы – потом рабочее место»: текст слева, схема в три звена справа */
-.dself-appr{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
-.dself-appr__txt > p{margin-top:16px;font-size:17px;line-height:1.65;color:var(--navy-2);max-width:36em}
-.dself-appr__txt > .dself-appr__lead{margin-top:clamp(20px,2vw,28px);font-size:clamp(17px,1.35vw,19px);font-weight:600;line-height:1.5;color:var(--navy)}
-.dself-appr .dlink{padding-top:26px}
-.dself-chain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:30px}
-.dself-chain li{
-  position:relative;display:flex;align-items:center;gap:16px;padding:14px 22px 14px 14px;border-radius:20px;background:#fff;
-  font-size:clamp(17px,1.4vw,20px);font-weight:600;line-height:1.25;color:var(--navy);
-}
-.dself-chain li:last-child{background:var(--soft-2)}
-.dself-chain i{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--ink)}
-.dself-chain li:last-child i{background:#fff}
-.dself-chain svg{width:26px;height:26px}
-.dself-chain small{display:block;margin-bottom:3px;font-size:12.5px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);font-variant-numeric:tabular-nums}
-/* стрелка вниз между звеньями */
-.dself-chain li + li::before{
-  content:"";position:absolute;left:39px;top:-26px;width:2px;height:22px;border-radius:2px;background:var(--brand-3);
-}
-.dself-chain li + li::after{
-  content:"";position:absolute;left:35px;top:-11px;width:8px;height:8px;
-  border:solid var(--brand-3);border-width:0 2px 2px 0;transform:rotate(45deg);
-}
-#approach .dk-res__out{margin-top:clamp(32px,3.4vw,48px)}
-@media (max-width:980px){
-  .dself-appr{grid-template-columns:1fr}
-  .dself-chain{max-width:440px}
+/* «Сначала вы – потом рабочее место»: путь в три звена (компонент
+   .dmt-path--3 с «Метода Симкина»), в звене — иконка с меткой шага,
+   название и пояснение */
+.dself .dhead__note .dlink{padding-top:18px}
+.dself-path__top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.dself-path .dmt-path__step .dmt-path__ico,
+.dself-path .dmt-path__step--brand .dmt-path__ico{margin-top:0;width:56px;height:56px}
+.dself-path .dmt-path__n{align-self:center}
+.dself-path .dmt-path__t{margin-top:28px;font-size:clamp(22px,1.9vw,28px);letter-spacing:-.022em}
+.dself-path .dmt-path__step p{margin-top:12px;font-size:16.5px;font-weight:400;line-height:1.6;color:var(--navy-2);letter-spacing:0}
+.dself-path .dmt-path__step--brand .dmt-path__t{color:var(--ink)}
+.dself-path .dmt-path__step--brand p{color:var(--navy)}
+#approach .dk-res__out{margin-top:16px}
+@media (max-width:600px){
+  .dself-path .dmt-path__ico{width:50px;height:50px}
+  .dself-path .dmt-path__t{margin-top:22px;font-size:23px}
 }
 
 /* статьи без анонса: заголовок сразу над «Читать» */
@@ -3566,3 +3555,18 @@ a.dprod:hover h3{color:var(--brand)}
 .dself-step__shot{margin:22px 0 0}
 .dself-step__shot .dshot{border-radius:14px;box-shadow:0 12px 30px rgba(42,56,146,.10)}
 .dself-step__shot figcaption{margin-top:10px;font-size:13px;color:var(--navy-3)}
+/* узкие телефоны (320–400px): подписи кнопок в одну строку — поля и кегль
+   меньше, в кнопках карточек «С чего начать» стрелку убираем: подписи там
+   длинные, а кнопка и так на всю ширину */
+@media (max-width:400px){
+  .dself .dcohero__btns .dbtn,
+  .dself .dk-band__act .dbtn,
+  .dself .dself-step__act .dbtn{padding-left:14px;padding-right:14px;gap:8px;font-size:15px;white-space:nowrap}
+  .dself .dcohero__btns .dbtn svg,
+  .dself .dk-band__act .dbtn svg{width:16px;height:16px}
+  .dself .dself-step__act .dbtn svg{display:none}
+  .dself-step__tag{font-size:12px;padding:6px 11px;letter-spacing:0}
+}
+/* текст в несколько строк — строки примерно равной длины, без «хвоста»
+   из одного слова (плашка-вывод, подпись и ссылка финального банда) */
+.dself .dk-res__out,.dself .dband__sub,.dself-band__link,.dself .dhead__note p{text-wrap:balance}

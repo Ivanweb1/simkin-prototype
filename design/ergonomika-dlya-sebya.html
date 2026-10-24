@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=259">
+<link rel="stylesheet" href="design.css?v=262">
 </head>
 <body class="d dco dself">
 
@@ -234,36 +234,53 @@
 </section>
 
 <!-- ============ БЛОК 4. СНАЧАЛА ВЫ – ПОТОМ РАБОЧЕЕ МЕСТО ============ -->
-<!-- Слева текст и ссылка на «Метод Симкина», справа компактная схема в три
-     звена (приём «Одна система» с той же страницы): Вы и ваша задача →
-     Рабочая поза → Рабочее место. Вывод — светлой плашкой со стрелкой,
-     как на «Методе Симкина». -->
+<!-- Шапка как на остальных блоках: заголовок слева, тезис и ссылка на
+     «Метод Симкина» справа. Ниже — путь в три звена в стилистике «Метода»
+     (Вы и ваша задача → Рабочая поза → Рабочее место): текст заказчика
+     разложен по звеньям, итоговое звено выделено тоном. Вывод — светлой
+     плашкой со стрелкой. -->
 <section class="dsec dsec--tint" id="approach">
   <div class="dwrap">
-    <div class="dself-appr">
-      <div class="dself-appr__txt">
+    <div class="dhead dhead--split">
+      <div>
         <span class="deyebrow" data-rv>Подход</span>
         <h2 class="dh2" data-rv style="--d:.06s">Сначала вы&nbsp;– <span class="dh2__soft">потом рабочее место</span></h2>
-        <p class="dself-appr__lead" data-rv style="--d:.1s">Универсального «правильного» рабочего места не&nbsp;существует. Одно и&nbsp;то&nbsp;же кресло, высота стола или положение монитора не&nbsp;могут одинаково хорошо подходить всем.</p>
-        <p data-rv style="--d:.14s">Сначала важно понять, какую работу вы&nbsp;выполняете, какие задачи решаете и&nbsp;какое положение тела для&nbsp;них наиболее рационально. И&nbsp;только затем под вашу рабочую позу настраиваются мебель, оборудование и&nbsp;рабочая среда.</p>
-        <a href="metod-simkina.html" class="dlink" data-rv style="--d:.18s">Подробнее о&nbsp;Методе Симкина<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
       </div>
-
-      <ol class="dself-chain" data-rv style="--d:.1s">
-        <li>
-          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.4" cy="7.6" r="3.4"/><path d="M3 19.6v-1.2a6.4 6.4 0 0 1 12.8 0v1.2"/><path d="M16.6 9.4l1.6 1.6 3.2-3.4"/></svg></i>
-          <span><small>01</small>Вы и&nbsp;ваша задача</span>
-        </li>
-        <li>
-          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2.4"/><path d="M12 6.8v13M7.2 10h9.6M7.6 14h8.8M8.2 18h7.6"/></svg></i>
-          <span><small>02</small>Рабочая поза</span>
-        </li>
-        <li>
-          <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="4.4" width="18.4" height="11.4" rx="1.8"/><path d="M8.4 19.6h7.2M12 15.8v3.8"/></svg></i>
-          <span><small>03</small>Рабочее место</span>
-        </li>
-      </ol>
+      <div class="dhead__note" data-rv style="--d:.12s">
+        <p>Универсального «правильного» рабочего места не&nbsp;существует. Одно и&nbsp;то&nbsp;же кресло, высота стола или положение монитора не&nbsp;могут одинаково хорошо подходить всем.</p>
+        <a href="metod-simkina.html" class="dlink">Подробнее о&nbsp;Методе Симкина<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
+      </div>
     </div>
+
+    <ol class="dmt-path dmt-path--3 dself-path">
+      <li class="dmt-path__step" data-rv>
+        <div class="dself-path__top">
+          <span class="dmt-path__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.4" cy="7.6" r="3.4"/><path d="M3 19.6v-1.2a6.4 6.4 0 0 1 12.8 0v1.2"/><path d="M16.6 9.4l1.6 1.6 3.2-3.4"/></svg></span>
+          <span class="dmt-path__n">01 · Сначала</span>
+        </div>
+        <h3 class="dmt-path__t">Вы и&nbsp;ваша задача</h3>
+        <p>Важно понять, какую работу вы&nbsp;выполняете и&nbsp;какие задачи решаете.</p>
+      </li>
+      <li class="dmt-path__step" data-rv style="--d:.06s">
+        <span class="dmt-path__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+        <div class="dself-path__top">
+          <span class="dmt-path__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2.4"/><path d="M12 6.8v13M7.2 10h9.6M7.6 14h8.8M8.2 18h7.6"/></svg></span>
+          <span class="dmt-path__n">02 · Затем</span>
+        </div>
+        <h3 class="dmt-path__t">Рабочая поза</h3>
+        <p>Какое положение тела для&nbsp;этих задач наиболее рационально.</p>
+      </li>
+      <li class="dmt-path__step dmt-path__step--brand" data-rv style="--d:.12s">
+        <span class="dmt-path__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+        <div class="dself-path__top">
+          <span class="dmt-path__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.8" y="4.4" width="18.4" height="11.4" rx="1.8"/><path d="M8.4 19.6h7.2M12 15.8v3.8"/></svg></span>
+          <span class="dmt-path__n">03 · И&nbsp;только потом</span>
+        </div>
+        <h3 class="dmt-path__t">Рабочее место</h3>
+        <p>Под вашу рабочую позу настраиваются мебель, оборудование и&nbsp;рабочая среда.</p>
+      </li>
+    </ol>
+
     <p class="dk-res__out" data-rv><span class="dk-res__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>Задача эргономики&nbsp;– создать такие условия, при&nbsp;которых более физиологичное и&nbsp;комфортное положение тела поддерживается самим рабочим местом и&nbsp;не&nbsp;требует от&nbsp;вас постоянных усилий.</p>
   </div>
 </section>
