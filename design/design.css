@@ -3648,6 +3648,14 @@ a.dprod:hover h3{color:var(--brand)}
 .dcons-two__link{margin-top:auto;padding-top:24px;align-self:flex-start}
 .dcons-two .dself-step__arr{box-shadow:0 0 0 6px var(--tint),0 6px 16px rgba(26,95,224,.18)}
 #existing .dhead__note p + p{margin-top:12px}
+/* текст справа: колонка шире, верх — на уровне заголовка (под подводкой),
+   обычный перенос без балансировки — строки ровнее */
+@media (min-width:1101px){
+  #existing .dhead--split{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:start}
+  #existing .dhead--split > div:first-child{grid-column:1;grid-row:1}
+  #existing .dhead__note{grid-column:2;grid-row:1;padding-top:clamp(30px,2.6vw,40px)}
+}
+.dself #existing .dhead__note p{text-wrap:pretty;max-width:36em}
 @media (max-width:860px){
   .dcons-two{grid-template-columns:1fr;gap:20px}
   .dcons-two .dself-step__arr{left:50%;top:-32px;margin:0 0 0 -22px;transform:rotate(90deg)}
@@ -3677,72 +3685,81 @@ a.dprod:hover h3{color:var(--brand)}
   .dcons-med__body p{font-size:16.5px}
 }
 
-/* «Как подготовиться»: восемь шагов сеткой, шаг 02 — широкий, со схемой */
-.dprep{list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.dprep__card{display:flex;flex-direction:column;background:#fff;border-radius:28px;padding:clamp(24px,2.4vw,34px)}
-.dprep__top{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.dprep__ico{display:grid;place-items:center;flex:none;width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--brand)}
-.dprep__ico svg{width:26px;height:26px}
-.dprep__n{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);font-variant-numeric:tabular-nums}
-.dprep__card h3{margin-top:22px;font-size:clamp(20px,1.6vw,23px);font-weight:600;line-height:1.2;letter-spacing:-.02em;color:var(--navy);text-wrap:balance}
-.dprep__card p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2)}
-.dprep__card p + p{margin-top:8px}
-.dprep__card .dprep__note{margin-top:16px;padding-top:14px;border-top:1px solid var(--d-line);font-size:15px;line-height:1.55}
-.dprep__card--wide{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,2.6vw,36px);align-items:start}
-.dprep__card--wide .dprep__txt{display:flex;flex-direction:column}
-/* схема: два окна — вид сверху и кадр телефона */
-.dprep__scheme{margin:0;display:grid;grid-template-columns:1fr;gap:12px}
-.dprep__panel{position:relative;border-radius:20px;background:var(--tint);padding:14px 16px 16px}
-.dprep__cap{display:inline-block;padding:5px 11px;border-radius:100px;background:#fff;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--brand)}
-.dprep__plan,.dprep__view{display:block;width:100%;height:auto;margin-top:8px;color:var(--brand)}
-.dprep__cone{fill:rgba(46,128,255,.12);stroke:rgba(46,128,255,.45);stroke-width:1.2;stroke-dasharray:4 4}
-.dprep__desk{fill:#fff;stroke:var(--navy-3);stroke-width:1.5}
-.dprep__dark{fill:var(--navy)}
-.dprep__line{fill:none;stroke:var(--navy-3);stroke-width:1.5}
-.dprep__chair{fill:#fff;stroke:var(--navy);stroke-width:2}
-.dprep__chairback{fill:none;stroke:var(--navy);stroke-width:4;stroke-linecap:round}
-.dprep__body{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round}
-.dprep__arm{fill:none;stroke:var(--accent);stroke-width:3.4;stroke-linecap:round}
-.dprep__head{fill:#fff;stroke:var(--accent);stroke-width:3}
-.dprep__tripod path{fill:none;stroke:var(--navy);stroke-width:2;stroke-linecap:round}
-.dprep__phone{fill:var(--brand)}
-.dprep__arrow{fill:none;stroke:var(--brand);stroke-width:1.6;stroke-dasharray:3 3}
-.dprep__lbl{font:600 12px/1 Onest,Manrope,sans-serif;fill:var(--navy-2)}
-.dprep__phonebox{margin-top:8px;border-radius:16px;border:5px solid var(--navy);background:#fff;padding:2px}
-.dprep__phonebox .dprep__view{margin-top:0}
-.dprep__floor{fill:none;stroke:var(--d-line);stroke-width:2}
-.dprep__eye{fill:none;stroke:var(--brand-2);stroke-width:1.4;stroke-dasharray:3 3}
-.dprep__dline{fill:none;stroke:var(--navy-3);stroke-width:2;stroke-linecap:round}
-.dprep__chairl{fill:none;stroke:var(--navy);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
-.dprep__wheel{fill:var(--navy)}
-.dprep__fig{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
-.dprep__fighead{fill:#fff;stroke:var(--accent);stroke-width:3}
-.dprep__corners path{fill:none;stroke:var(--brand);stroke-width:2;stroke-linecap:round}
-.dprep__checks{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.dprep__checks li{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:100px;background:#fff;font-size:13px;font-weight:500;color:var(--navy)}
-.dprep__checks li::before{content:"";width:12px;height:12px;flex:none;
-  background:var(--brand);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 10.6l3.8 3.8L16 6.2'/%3E%3C/svg%3E") center/contain no-repeat;
+/* «Как подготовиться»: шаги по порядку — номер на вертикальной линии,
+   карточка: слева текст, справа схема. Ниже 981px схема под текстом. */
+.dvis-steps{list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;display:flex;flex-direction:column;gap:14px;--node:52px}
+.dvis-row{position:relative;display:grid;grid-template-columns:var(--node) minmax(0,1fr);column-gap:22px;align-items:start}
+.dvis-row__n{position:relative;z-index:1;display:grid;place-items:center;width:var(--node);height:var(--node);border-radius:50%;
+  margin-top:28px;background:#fff;border:2px solid var(--brand-2);color:var(--brand);font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.dvis-row:last-child .dvis-row__n{background:var(--brand);border-color:var(--brand);color:#fff}
+.dvis-row:not(:last-child)::before{content:"";position:absolute;left:calc(var(--node) / 2 - 1px);top:calc(28px + var(--node));bottom:-42px;width:2px;
+  background:linear-gradient(180deg,var(--brand-3),var(--brand-2))}
+.dvis-row__card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);gap:clamp(24px,3vw,48px);align-items:stretch;
+  background:#fff;border-radius:28px;padding:clamp(22px,2.4vw,32px)}
+.dvis-row--wide .dvis-row__card{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.dvis-row__txt{display:flex;flex-direction:column;justify-content:center;padding:6px 0 6px clamp(0px,1vw,10px)}
+.dvis-row__txt h3{margin-top:0;font-size:clamp(21px,1.75vw,25px);font-weight:600;line-height:1.2;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
+.dvis-row__txt p{margin-top:12px;font-size:16.5px;line-height:1.6;color:var(--navy-2);max-width:36em}
+.dvis-row__txt p + p{margin-top:8px}
+.dvis-row__txt .dprep__note{margin-top:16px;padding-top:14px;border-top:1px solid var(--d-line);font-size:15.5px}
+.dvis{display:flex;align-items:center;justify-content:center;border-radius:20px;background:var(--tint);padding:clamp(14px,1.6vw,22px);min-height:220px}
+.dvis__svg{display:block;width:100%;max-width:440px;height:auto;color:var(--brand)}
+.dvis__pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;width:100%;align-items:start}
+.dvis__sub{display:flex;flex-direction:column;gap:10px;border-radius:16px;background:#fff;padding:12px}
+.dvis__cap{align-self:flex-start;padding:5px 11px;border-radius:100px;background:var(--tint);font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--brand)}
+.dvis__checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.dvis__checks li{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;line-height:1.35;color:var(--navy)}
+.dvis__checks li::before{content:"";width:14px;height:14px;flex:none;background:var(--brand);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 10.6l3.8 3.8L16 6.2'/%3E%3C/svg%3E") center/contain no-repeat;
   mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 10.6l3.8 3.8L16 6.2'/%3E%3C/svg%3E") center/contain no-repeat}
-/* шаг 03: две фигуры — боком и спиной */
-.dprep__poses{display:flex;gap:10px;margin-top:16px}
-.dprep__poses span{display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:14px;background:var(--tint);font-size:14px;font-weight:600;color:var(--navy)}
-.dprep__poses svg{width:24px;height:38px;color:var(--accent)}
-@media (max-width:1100px){
-  .dprep{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .dprep__card--wide,.dprep__card:first-child{grid-column:1 / -1}
-  .dprep__card--wide{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .dprep__scheme{grid-template-columns:1fr}
-}
-@media (max-width:760px){
-  .dprep{grid-template-columns:1fr}
-  .dprep__card--wide{grid-template-columns:1fr}
-  .dprep__scheme{grid-template-columns:1fr 1fr}
+@media (max-width:980px){
+  .dvis-row__card,.dvis-row--wide .dvis-row__card{grid-template-columns:1fr}
+  .dvis{min-height:0}
 }
 @media (max-width:600px){
-  .dprep__card{border-radius:22px;padding:22px 20px}
-  .dprep__scheme{grid-template-columns:1fr}
-  .dprep__card p{font-size:16px}
+  .dvis-steps{--node:40px;gap:12px}
+  .dvis-row{column-gap:12px}
+  .dvis-row__n{margin-top:20px;font-size:13.5px}
+  .dvis-row:not(:last-child)::before{top:calc(20px + var(--node))}
+  .dvis-row__card{border-radius:22px;padding:20px 18px}
+  .dvis__pair{grid-template-columns:1fr}
+  .dvis-row__txt p{font-size:16px}
 }
+
+/* схемы: общий язык линий */
+.v-floor{fill:none;stroke:var(--d-line);stroke-width:2;stroke-linecap:round}
+.v-desk{fill:#fff;stroke:var(--navy-3);stroke-width:1.6}
+.v-paper{fill:#fff;stroke:var(--navy-3);stroke-width:1.4}
+.v-dark{fill:var(--navy)}
+.v-l{fill:none;stroke:var(--navy-3);stroke-width:2;stroke-linecap:round}
+.v-n{fill:none;stroke:var(--navy);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.v-chair{fill:none;stroke:var(--navy);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+.v-chairbig{fill:none;stroke:var(--navy);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.v-wheel{fill:var(--navy)}
+.v-seat{fill:#fff;stroke:var(--navy);stroke-width:2}
+.v-back{fill:none;stroke:var(--navy);stroke-width:4;stroke-linecap:round}
+.v-fig{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.v-arm{fill:none;stroke:var(--accent);stroke-width:3.4;stroke-linecap:round}
+.v-head{fill:#fff;stroke:var(--accent);stroke-width:3}
+.v-outline{fill:none;stroke:var(--brand-3);stroke-width:1.4;stroke-dasharray:3 4;stroke-linecap:round}
+.v-eye{fill:none;stroke:var(--brand-2);stroke-width:1.4;stroke-dasharray:3 3}
+.v-gaze{fill:none;stroke:var(--brand-2);stroke-width:1.5;stroke-dasharray:3 4;stroke-linecap:round}
+.v-cone{fill:rgba(46,128,255,.12);stroke:rgba(46,128,255,.45);stroke-width:1.2;stroke-dasharray:4 4}
+.v-zone{fill:none;stroke:var(--brand);stroke-width:1.6;stroke-dasharray:5 5}
+.v-frame{fill:#fff;stroke:var(--navy);stroke-width:5}
+.v-corner{fill:none;stroke:var(--brand);stroke-width:2.2;stroke-linecap:round}
+.v-phone{fill:var(--brand)}
+.v-dot{fill:var(--brand)}
+.v-halo{fill:rgba(46,128,255,.18)}
+.v-lead{fill:none;stroke:var(--brand-3);stroke-width:1.2}
+.v-move{fill:none;stroke:var(--brand);stroke-width:1.8;stroke-linecap:round;color:var(--brand)}
+.v-sep{fill:none;stroke:var(--d-line);stroke-width:1.5;stroke-dasharray:3 4}
+.v-list rect,.v-rows rect{fill:#fff;stroke:rgba(42,56,146,.12);stroke-width:1}
+.v-ok{fill:none;stroke:var(--brand);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.v-t{font:600 11.5px/1 Onest,Manrope,sans-serif;fill:var(--navy-2)}
+.v-t--b{fill:var(--brand)}
+.v-t--s{font-size:10.5px}
+.v-t--n{font-size:13px;fill:var(--navy)}
 
 /* «Как проходит консультация»: трек «Практического результата» на пять
    этапов; ниже 1281px — вертикальный */
@@ -3752,6 +3769,7 @@ a.dprod:hover h3{color:var(--brand)}
 .dcons-stages li:not(:last-child)::after{left:calc(100% + var(--res-gap) + 24px - 13px)}
 .dcons-stages .dk-res__card{padding:26px 24px 28px}
 .dcons-stages .dk-res__card::before{left:calc(24px + var(--node) / 2 - 9px)}
+.dk-res__vis{display:block;width:100%;height:auto;margin-bottom:18px;padding:10px;border-radius:16px;background:#fff;color:var(--brand)}
 .dk-res3.dcons-stages h3{margin-top:0;font-size:clamp(19px,1.4vw,21px);line-height:1.22;text-wrap:balance}
 .dk-res3.dcons-stages p{font-size:15.5px;line-height:1.58}
 .dcons-stages li:nth-child(1) .dk-res__node{border-color:var(--brand-3)}
@@ -3763,6 +3781,7 @@ a.dprod:hover h3{color:var(--brand)}
 .dcons-stages li:nth-child(4)::before{background:var(--brand)}
 .dcons-stages li:nth-child(n+3)::after{border-left-color:var(--brand)}
 @media (max-width:1280px){
+  .dk-res__vis{max-width:300px}
   .dk-res3.dcons-stages{grid-template-columns:1fr;gap:18px}
   .dcons-stages li{display:grid;grid-template-columns:var(--node) minmax(0,1fr);column-gap:18px;align-items:start}
   .dcons-stages .dk-res__node{margin-left:0}
@@ -3788,6 +3807,8 @@ a.dprod:hover h3{color:var(--brand)}
 }
 
 /* «Что вы получаете»: четыре карточки 2×2, иконка слева */
+.dprep__ico{display:grid;place-items:center;flex:none;width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--brand)}
+.dprep__ico svg{width:26px;height:26px}
 .dcons-get{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:clamp(36px,3.6vw,52px)}
 .dcons-get__card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:start;background:#fff;border-radius:28px;padding:clamp(24px,2.8vw,40px)}
 .dcons-get__card h3{font-size:clamp(21px,1.8vw,26px);font-weight:600;line-height:1.18;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
@@ -3797,7 +3818,12 @@ a.dprod:hover h3{color:var(--brand)}
 
 /* «Когда лучше начать с онлайн-курса»: карточка «Демоверсии» со слайдом */
 .dcons-course__note{margin-top:14px;padding-top:14px;border-top:1px solid var(--d-line);font-size:16.5px;line-height:1.6;color:var(--navy-2);max-width:32em}
-.dcons-course .dshot{aspect-ratio:16/9}
+.dcons-course{align-items:stretch}
+.dcons-course__ph{position:relative;border-radius:24px;overflow:hidden;min-height:320px}
+.dcons-course__ph picture{position:absolute;inset:0}
+.dcons-course__ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:58% 50%}
+@media (max-width:980px){.dcons-course__ph{order:-1;min-height:0;aspect-ratio:16/10}}
+@media (max-width:600px){.dcons-course__ph{border-radius:18px}}
 
 /* «Формат консультации»: финальный банд с форматом и главной кнопкой */
 .dcons-format__eye{justify-content:center}

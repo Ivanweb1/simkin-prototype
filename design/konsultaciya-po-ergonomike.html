@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=267">
+<link rel="stylesheet" href="design.css?v=268">
 </head>
 <body class="d dco dself dcons">
 
@@ -254,18 +254,18 @@
 </section>
 
 <!-- ============ БЛОК 4. СНАЧАЛА НАСТРАИВАЕМ ТО, ЧТО УЖЕ ЕСТЬ ============ -->
-<!-- Шапка как на остальных блоках: заголовок с тезисом слева, пояснение
-     справа. Ниже два пути белыми карточками со стрелкой «сначала → при
+<!-- Шапка как «Не просто инструкции» на курсе: заголовок слева, справа
+     тезис (выделен) и пояснение. Ниже два пути белыми карточками со стрелкой «сначала → при
      необходимости»; у подбора — ссылка на «Эргономичные решения». -->
 <section class="dsec dsec--tint" id="existing">
   <div class="dwrap">
-    <div class="dhead dhead--split dmt-ghead">
+    <div class="dhead dhead--split">
       <div>
         <span class="deyebrow" data-rv>Подход</span>
         <h2 class="dh2" data-rv style="--d:.06s">Сначала настраиваем <span class="dh2__soft">то, что&nbsp;уже есть</span></h2>
-        <p class="dmt-ghead__lead" data-rv style="--d:.1s">Покупка нового кресла или&nbsp;стола сама по&nbsp;себе не&nbsp;решает задачу эргономики.</p>
       </div>
       <div class="dhead__note" data-rv style="--d:.12s">
+        <p class="dk-strong">Покупка нового кресла или&nbsp;стола сама по&nbsp;себе не&nbsp;решает задачу эргономики.</p>
         <p>Сначала важно определить подходящую для&nbsp;вас рабочую позу и&nbsp;максимально использовать возможности уже имеющегося рабочего места.</p>
         <p>Если существующего оборудования достаточно, его правильно настраиваем. Если его возможностей объективно не&nbsp;хватает, определяем, что&nbsp;именно имеет смысл изменить или&nbsp;дополнить.</p>
       </div>
@@ -314,10 +314,10 @@
 </section>
 
 <!-- ============ БЛОК 6. КАК ПОДГОТОВИТЬСЯ ============ -->
-<!-- Восемь шагов сеткой карточек. Шаг 02 — широкая карточка со схемой:
-     слева вид сверху (телефон на штативе сбоку, конус обзора захватывает
-     человека, кресло, стол и монитор), справа — что видно в кадре телефона.
-     У шага 03 — две маленькие фигуры «боком» и «спиной». -->
+<!-- Восемь шагов по порядку: номер на вертикальной линии, слева текст,
+     справа схема в стиле сайта (линии, синий акцент, человек схематично).
+     У шага 02 схема шире: вид сверху и что видно в кадре телефона.
+     Ниже 981px схема уходит под текст. -->
 <section class="dsec dsec--tint" id="prepare">
   <div class="dwrap">
     <div class="dhead">
@@ -325,138 +325,96 @@
       <h2 class="dh2" data-rv style="--d:.06s">Как&nbsp;подготовиться <span class="dh2__soft">к&nbsp;онлайн-консультации</span></h2>
     </div>
 
-    <ol class="dprep">
-      <li class="dprep__card" data-rv>
-        <div class="dprep__top">
-          <span class="dprep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="9" rx="1.4"/><path d="M12 12.5v3M2.5 15.5h19M5 15.5v5M19 15.5v5"/></svg></span>
-          <span class="dprep__n">01</span>
-        </div>
-        <h3>Подготовьте рабочее место</h3>
-        <p>Во&nbsp;время консультации вы&nbsp;должны находиться за&nbsp;тем рабочим местом, которое хотите настроить.</p>
-      </li>
-
-      <li class="dprep__card dprep__card--wide" data-rv style="--d:.06s">
-        <div class="dprep__txt">
-          <div class="dprep__top">
-            <span class="dprep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="12" rx="1.6"/><path d="M11 12h2M12 14.5v3M12 17.5l-4.5 4M12 17.5l4.5 4M12 17.5v4"/></svg></span>
-            <span class="dprep__n">02</span>
+    <ol class="dvis-steps">
+      <li class="dvis-row" data-rv>
+        <span class="dvis-row__n">01</span>
+        <div class="dvis-row__card">
+          <div class="dvis-row__txt">
+            <h3>Подготовьте рабочее место</h3>
+            <p>Во&nbsp;время консультации вы&nbsp;должны находиться за&nbsp;тем рабочим местом, которое хотите настроить.</p>
           </div>
-          <h3>Установите телефон сбоку от&nbsp;рабочего места</h3>
-          <p>Во&nbsp;время консультации поставьте телефон на&nbsp;штатив сбоку от&nbsp;рабочего места и&nbsp;включите громкую связь.</p>
+          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 140" aria-hidden="true"><g transform="translate(30 16)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><rect class="v-zone" x="30" y="10" width="200" height="118" rx="14"/></svg></div>
+        </div>
+      </li>
+      <li class="dvis-row dvis-row--wide" data-rv>
+        <span class="dvis-row__n">02</span>
+        <div class="dvis-row__card">
+          <div class="dvis-row__txt">
+            <h3>Установите телефон сбоку от&nbsp;рабочего места</h3>
+            <p>Во&nbsp;время консультации поставьте телефон на&nbsp;штатив сбоку от&nbsp;рабочего места и&nbsp;включите громкую связь.</p>
           <p>Камера должна показывать вас целиком в&nbsp;рабочей позе вместе с&nbsp;креслом, столом и&nbsp;монитором.</p>
           <p>Телефон желательно установить примерно на&nbsp;уровне вашей головы или&nbsp;груди, когда вы&nbsp;сидите, и&nbsp;на&nbsp;таком расстоянии, чтобы в&nbsp;кадре были хорошо видны положение головы, спины, рук и&nbsp;ног, а&nbsp;также расположение оборудования относительно тела.</p>
-        </div>
-        <figure class="dprep__scheme" aria-label="Схема: телефон на штативе сбоку от рабочего места, в кадре человек целиком вместе с креслом, столом и монитором">
-          <div class="dprep__panel">
-            <span class="dprep__cap">Вид сверху</span>
-            <svg viewBox="0 0 240 200" class="dprep__plan" aria-hidden="true">
-              <path class="dprep__cone" d="M38 112 L232 22 L232 196 Z"/>
-              <rect class="dprep__desk" x="86" y="22" width="132" height="56" rx="6"/>
-              <rect class="dprep__dark" x="128" y="30" width="48" height="7" rx="2"/>
-              <rect class="dprep__line" x="132" y="54" width="40" height="11" rx="2.5"/>
-              <rect class="dprep__chair" x="122" y="104" width="60" height="54" rx="14"/>
-              <path class="dprep__chairback" d="M122 166c18 8 42 8 60 0"/>
-              <path class="dprep__body" d="M126 120c8-12 44-12 52 0"/>
-              <path class="dprep__arm" d="M130 116l6-44M174 116l-6-44"/>
-              <circle class="dprep__head" cx="152" cy="110" r="13"/>
-              <g class="dprep__tripod"><path d="M34 112l-14 14M34 112l-12-16M34 112l18 8"/></g>
-              <rect class="dprep__phone" x="29" y="100" width="10" height="24" rx="3"/>
-              <path class="dprep__arrow" d="M44 150h56" marker-end="url(#dprepArr)"/>
-              <text class="dprep__lbl" x="20" y="166">телефон</text>
-              <text class="dprep__lbl" x="20" y="180">на&nbsp;штативе</text>
-              <defs><marker id="dprepArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
-            </svg>
           </div>
-          <div class="dprep__panel">
-            <span class="dprep__cap">Что&nbsp;видно в&nbsp;кадре</span>
-            <div class="dprep__phonebox">
-              <svg viewBox="0 0 200 120" class="dprep__view" aria-hidden="true">
-                <path class="dprep__floor" d="M8 108h184"/>
-                <path class="dprep__eye" d="M66 32 L150 40"/>
-                <rect class="dprep__desk" x="112" y="64" width="78" height="5" rx="1.5"/>
-                <path class="dprep__dline" d="M182 69v39"/>
-                <rect class="dprep__dark" x="156" y="22" width="6" height="30" rx="1.5"/>
-                <path class="dprep__dline" d="M159 52v12M151 64h16"/>
-                <path class="dprep__chairl" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/>
-                <circle class="dprep__wheel" cx="57" cy="104" r="3.5"/><circle class="dprep__wheel" cx="81" cy="104" r="3.5"/>
-                <path class="dprep__fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/>
-                <circle class="dprep__fighead" cx="58" cy="27" r="9"/>
-                <g class="dprep__corners"><path d="M4 16V4h12M184 4h12v12M196 104v12h-12M16 116H4v-12"/></g>
-              </svg>
-            </div>
-            <ul class="dprep__checks">
-              <li>голова, спина, руки и&nbsp;ноги</li>
-              <li>кресло, стол и&nbsp;монитор</li>
-              <li>камера на&nbsp;уровне головы или&nbsp;груди</li>
-            </ul>
+          <div class="dvis"><div class="dvis__pair"><div class="dvis__sub"><span class="dvis__cap">Вид сверху</span><svg class="dvis__svg" viewBox="0 0 240 200" aria-hidden="true"><path class="v-cone" d="M38 112 L232 22 L232 196 Z"/><rect class="v-desk" x="86" y="22" width="132" height="56" rx="6"/><rect class="v-dark" x="128" y="30" width="48" height="7" rx="2"/><rect class="v-desk" x="132" y="54" width="40" height="11" rx="2.5"/><rect class="v-seat" x="122" y="104" width="60" height="54" rx="14"/><path class="v-back" d="M122 166c18 8 42 8 60 0"/><path class="v-fig" d="M126 120c8-12 44-12 52 0"/><path class="v-arm" d="M130 116l6-44M174 116l-6-44"/><circle class="v-head" cx="152" cy="110" r="13"/><path class="v-n" d="M34 112l-14 14M34 112l-12-16M34 112l18 8"/><rect class="v-phone" x="29" y="100" width="10" height="24" rx="3"/><text class="v-t v-t--b" x="20" y="182" text-anchor="start">телефон на штативе</text></svg></div><div class="dvis__sub"><span class="dvis__cap">Что видно в кадре</span><svg class="dvis__svg" viewBox="0 0 220 140" aria-hidden="true"><rect class="v-frame" x="3" y="3" width="214" height="134" rx="14"/><g transform="translate(10 14)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><path class="v-corner" d="M14 30V14h16M190 14h16v16M206 110v16h-16M30 126H14v-16"/></svg><ul class="dvis__checks"><li>голова, спина, руки и ноги</li><li>кресло, стол и монитор</li><li>камера на уровне головы или груди</li></ul></div></div></div>
+        </div>
+      </li>
+      <li class="dvis-row" data-rv>
+        <span class="dvis-row__n">03</span>
+        <div class="dvis-row__card">
+          <div class="dvis-row__txt">
+            <h3>Будьте готовы встать перед камерой</h3>
+            <p>Во&nbsp;время консультации нужно будет оценить вашу естественную осанку стоя.</p>
+          <p>Телефон можно оставить на&nbsp;том же месте. Вам нужно будет встать в&nbsp;кадре сначала боком, а&nbsp;затем спиной к&nbsp;камере.</p>
+          <p class="dprep__note">Это помогает лучше понять индивидуальные особенности вашего тела и&nbsp;учитывать их при&nbsp;выборе и&nbsp;настройке рабочей позы сидя.</p>
           </div>
-        </figure>
+          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><path class="v-floor" d="M8 142h244"/><path class="v-cone" d="M44 60 L250 18 L250 142 L44 70Z"/><g transform="translate(38 52)"><rect class="v-phone" x="-6" y="0" width="12" height="20" rx="2.5"/><path class="v-n" d="M0 20v14M0 34l-12 38M0 34l12 38M0 34v38"/></g><g transform="translate(128 36)"><path class="v-fig" d="M0 31C-4 44-4 56 0 66M0 66l1 36h9M0 66l-2 36M0 36l3 26"/><circle class="v-head" cx="2" cy="22" r="8"/></g><g transform="translate(208 36)"><path class="v-fig" d="M-12 36h24M0 31v35M-8 66h16M-6 66v36M6 66v36M-12 36l-3 28M12 36l3 28"/><circle class="v-head" cx="0" cy="22" r="8"/></g><text class="v-t v-t--b" x="130" y="16" text-anchor="middle">1 · боком</text><text class="v-t v-t--b" x="208" y="16" text-anchor="middle">2 · спиной</text></svg></div>
+        </div>
       </li>
-
-      <li class="dprep__card" data-rv>
-        <div class="dprep__top">
-          <span class="dprep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="2.2"/><path d="M12 6.6v8M12 14.6l-2.6 6.6M12 14.6l2.6 6.6M8 9.6h8"/></svg></span>
-          <span class="dprep__n">03</span>
+      <li class="dvis-row" data-rv>
+        <span class="dvis-row__n">04</span>
+        <div class="dvis-row__card">
+          <div class="dvis-row__txt">
+            <h3>Выберите подходящую одежду</h3>
+            <p>Одежда должна быть достаточно прилегающей к&nbsp;телу, чтобы были видны естественное положение головы, плеч, спины, таза и&nbsp;ног.</p>
+          </div>
+          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><path class="v-floor" d="M30 142h120"/><g transform="translate(84 38)"><path class="v-fig" d="M0 31C-4 44-4 56 0 66M0 66l1 36h9M0 66l-2 36M0 36l3 26"/><circle class="v-head" cx="2" cy="22" r="8"/></g><circle class="v-halo" cx="86" cy="60" r="7"/><circle class="v-dot" cx="86" cy="60" r="3.6"/><circle class="v-halo" cx="84" cy="75" r="7"/><circle class="v-dot" cx="84" cy="75" r="3.6"/><circle class="v-halo" cx="81" cy="88" r="7"/><circle class="v-dot" cx="81" cy="88" r="3.6"/><circle class="v-halo" cx="84" cy="104" r="7"/><circle class="v-dot" cx="84" cy="104" r="3.6"/><circle class="v-halo" cx="85" cy="124" r="7"/><circle class="v-dot" cx="85" cy="124" r="3.6"/><path class="v-lead" d="M94 60H170"/><text class="v-t" x="176" y="64" text-anchor="start">голова</text><path class="v-lead" d="M92 75H170"/><text class="v-t" x="176" y="79" text-anchor="start">плечи</text><path class="v-lead" d="M89 88H170"/><text class="v-t" x="176" y="92" text-anchor="start">спина</text><path class="v-lead" d="M92 104H170"/><text class="v-t" x="176" y="108" text-anchor="start">таз</text><path class="v-lead" d="M93 124H170"/><text class="v-t" x="176" y="128" text-anchor="start">ноги</text></svg></div>
         </div>
-        <h3>Будьте готовы встать перед камерой</h3>
-        <p>Во&nbsp;время консультации нужно будет оценить вашу естественную осанку стоя.</p>
-        <p>Телефон можно оставить на&nbsp;том же месте. Вам нужно будет встать в&nbsp;кадре сначала боком, а&nbsp;затем спиной к&nbsp;камере.</p>
-        <div class="dprep__poses" aria-hidden="true">
-          <span><svg viewBox="0 0 40 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="21" cy="8" r="5"/><path d="M20 14c-2 6-2 13 0 20l-1 26M20 34l2 26M20 17l3 15"/><path d="M19 60h7"/></svg>Боком</span>
-          <span><svg viewBox="0 0 40 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="8" r="5"/><path d="M12 17h16M20 14v20M14 34h12M15 34l-1 26M25 34l1 26M12 17l-2 16M28 17l2 16"/></svg>Спиной</span>
-        </div>
-        <p class="dprep__note">Это помогает лучше понять индивидуальные особенности вашего тела и&nbsp;учитывать их при&nbsp;выборе и&nbsp;настройке рабочей позы сидя.</p>
       </li>
-
-      <li class="dprep__card" data-rv style="--d:.06s">
-        <div class="dprep__top">
-          <span class="dprep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.5 4 6l-1.5 5 3 1V20.5h13V12l3-1L20 6l-5-2.5c-.5 1.5-1.6 2.3-3 2.3S9.5 5 9 3.5Z"/></svg></span>
-          <span class="dprep__n">04</span>
+      <li class="dvis-row" data-rv>
+        <span class="dvis-row__n">05</span>
+        <div class="dvis-row__card">
+          <div class="dvis-row__txt">
+            <h3>Заранее посмотрите настройки вашего кресла</h3>
+            <p>Перед консультацией желательно разобраться, какие регулировки предусмотрены у&nbsp;кресла и&nbsp;где находятся соответствующие рычаги и&nbsp;механизмы. Это позволит не&nbsp;тратить время консультации на&nbsp;их поиск.</p>
+          </div>
+          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><defs><marker id="vArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs><path class="v-floor" d="M20 142h150"/><path class="v-chairbig" d="M58 92h78M62 92 50 26M80 66h46M116 66v26M98 96v24M70 128h60"/><circle class="v-wheel" cx="76" cy="134" r="5"/><circle class="v-wheel" cx="124" cy="134" r="5"/><path class="v-n" d="M110 98h14"/><path class="v-move" d="M148 104v32" marker-start="url(#vArr)" marker-end="url(#vArr)"/><path class="v-move" d="M40 22c-10 10-12 22-8 34" marker-start="url(#vArr)" marker-end="url(#vArr)"/><path class="v-move" d="M140 54v24" marker-start="url(#vArr)" marker-end="url(#vArr)"/><circle class="v-halo" cx="124" cy="98" r="7"/><circle class="v-dot" cx="124" cy="98" r="3.6"/><text class="v-t" x="158" y="124" text-anchor="start">высота</text><text class="v-t" x="150" y="70" text-anchor="start">подлокотники</text><text class="v-t" x="12" y="14" text-anchor="start">спинка</text><path class="v-lead" d="M131 98H190"/><text class="v-t" x="196" y="102" text-anchor="start">рычаги</text></svg></div>
         </div>
-        <h3>Выберите подходящую одежду</h3>
-        <p>Одежда должна быть достаточно прилегающей к&nbsp;телу, чтобы были видны естественное положение головы, плеч, спины, таза и&nbsp;ног.</p>
       </li>
-
-      <li class="dprep__card" data-rv style="--d:.12s">
-        <div class="dprep__top">
-          <span class="dprep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10l-1 8H8z"/><path d="M5.5 11.5h13M8 11.5 7 20.5M16 11.5l1 9M12 11.5v5"/><path d="M18.5 14.5h3" /></svg></span>
-          <span class="dprep__n">05</span>
+      <li class="dvis-row" data-rv>
+        <span class="dvis-row__n">06</span>
+        <div class="dvis-row__card">
+          <div class="dvis-row__txt">
+            <h3>Понаблюдайте за&nbsp;своим самочувствием во&nbsp;время работы</h3>
+            <p>До&nbsp;консультации обратите внимание, есть ли зоны тела, в&nbsp;которых во&nbsp;время работы появляется напряжение, дискомфорт или&nbsp;боль.</p>
+          <p>Полезно отметить, где именно они возникают, через какое время работы и&nbsp;при&nbsp;каких задачах появляются или&nbsp;становятся заметнее.</p>
+          <p class="dprep__note">Если выраженных жалоб нет, это тоже нормально&nbsp;– консультация может быть направлена на&nbsp;проверку и&nbsp;более точную настройку рабочего места.</p>
+          </div>
+          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 140" aria-hidden="true"><g transform="translate(0 16)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><circle class="v-halo" cx="57" cy="52" r="7"/><circle class="v-dot" cx="57" cy="52" r="3.6"/><circle class="v-halo" cx="57" cy="80" r="7"/><circle class="v-dot" cx="57" cy="80" r="3.6"/><circle class="v-halo" cx="110" cy="78" r="7"/><circle class="v-dot" cx="110" cy="78" r="3.6"/><g class="v-list"><rect x="206" y="26" width="50" height="22" rx="11"/><rect x="206" y="58" width="50" height="22" rx="11"/><rect x="206" y="90" width="50" height="22" rx="11"/></g><text class="v-t v-t--s" x="231" y="41" text-anchor="middle">где</text><text class="v-t v-t--s" x="231" y="73" text-anchor="middle">когда</text><text class="v-t v-t--s" x="231" y="105" text-anchor="middle">задачи</text></svg></div>
         </div>
-        <h3>Заранее посмотрите настройки вашего кресла</h3>
-        <p>Перед консультацией желательно разобраться, какие регулировки предусмотрены у&nbsp;кресла и&nbsp;где находятся соответствующие рычаги и&nbsp;механизмы. Это позволит не&nbsp;тратить время консультации на&nbsp;их поиск.</p>
       </li>
-
-      <li class="dprep__card" data-rv>
-        <div class="dprep__top">
-          <span class="dprep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12h4l2.2-5 4.6 10 2.2-5h6"/></svg></span>
-          <span class="dprep__n">06</span>
+      <li class="dvis-row" data-rv>
+        <span class="dvis-row__n">07</span>
+        <div class="dvis-row__card">
+          <div class="dvis-row__txt">
+            <h3>Обратите внимание на&nbsp;свою привычную рабочую позу</h3>
+            <p>Когда вы&nbsp;специально контролируете осанку, ваша поза может заметно отличаться от&nbsp;той, в&nbsp;которой вы&nbsp;на&nbsp;самом деле проводите значительную часть рабочего времени.</p>
+          <p>Постарайтесь заранее заметить, в&nbsp;какой позе вы&nbsp;обнаруживаете себя в&nbsp;процессе работы до&nbsp;того, как&nbsp;начинаете сознательно выпрямляться или&nbsp;садиться так, как&nbsp;считаете правильным.</p>
+          <p class="dprep__note">Можно попросить кого-то сфотографировать вас сбоку во&nbsp;время обычной работы, когда вы&nbsp;увлечены задачей и&nbsp;специально не&nbsp;контролируете положение тела. Такое фото будет полезно на&nbsp;консультации.</p>
+          </div>
+          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><g transform="translate(0 26) scale(.62)"><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g></g><g transform="translate(118 26) scale(.62)"><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M60 68C52 56 56 42 70 36M60 68h34l2 36h12M70 38l6 22h38"/><circle class="v-head" cx="80" cy="30" r="9"/></g></g><path class="v-sep" d="M126 20v116"/><text class="v-t v-t--s" x="62" y="14" text-anchor="middle">когда контролируете</text><text class="v-t v-t--b" x="190" y="14" text-anchor="middle">привычная поза</text><g transform="translate(232 70)"><rect class="v-phone" x="-7" y="-11" width="14" height="22" rx="3"/></g><path class="v-eye" d="M224 70 200 52M224 70 196 100"/></svg></div>
         </div>
-        <h3>Понаблюдайте за&nbsp;своим самочувствием во&nbsp;время работы</h3>
-        <p>До&nbsp;консультации обратите внимание, есть ли зоны тела, в&nbsp;которых во&nbsp;время работы появляется напряжение, дискомфорт или&nbsp;боль.</p>
-        <p>Полезно отметить, где именно они возникают, через какое время работы и&nbsp;при&nbsp;каких задачах появляются или&nbsp;становятся заметнее.</p>
-        <p class="dprep__note">Если выраженных жалоб нет, это тоже нормально&nbsp;– консультация может быть направлена на&nbsp;проверку и&nbsp;более точную настройку рабочего места.</p>
       </li>
-
-      <li class="dprep__card" data-rv style="--d:.06s">
-        <div class="dprep__top">
-          <span class="dprep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.5A2 2 0 0 1 6 6.5h2.2l1.4-2h4.8l1.4 2H18a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.6"/></svg></span>
-          <span class="dprep__n">07</span>
+      <li class="dvis-row" data-rv>
+        <span class="dvis-row__n">08</span>
+        <div class="dvis-row__card">
+          <div class="dvis-row__txt">
+            <h3>Обратите внимание, куда вы&nbsp;смотрите во&nbsp;время работы</h3>
+            <p>Заранее отметьте, на&nbsp;какие объекты вы&nbsp;регулярно смотрите в&nbsp;процессе работы и&nbsp;где они находятся относительно вас.</p>
+          <p>Это могут быть основной и&nbsp;дополнительный мониторы, экран ноутбука, документы, телефон или&nbsp;другие объекты, к&nbsp;которым вы&nbsp;постоянно переводите взгляд.</p>
+          <p class="dprep__note">Это важно для&nbsp;оценки положения головы, шеи и&nbsp;рабочей позы в&nbsp;целом.</p>
+          </div>
+          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><rect class="v-desk" x="20" y="16" width="220" height="86" rx="8"/><rect class="v-dark" x="100" y="24" width="60" height="7" rx="2"/><rect class="v-dark" x="176" y="34" width="44" height="7" rx="2" transform="rotate(24 198 37)"/><path class="v-n" d="M38 54h36l6 18H32z"/><rect class="v-paper" x="40" y="80" width="26" height="18" rx="2" transform="rotate(-10 53 89)"/><rect class="v-phone" x="196" y="74" width="10" height="17" rx="2.5"/><path class="v-gaze" d="M130 116 130 34M130 116 196 46M130 116 58 64M130 116 56 90M130 116 198 84"/><path class="v-fig" d="M104 132c8-12 44-12 52 0"/><circle class="v-head" cx="130" cy="122" r="11"/><text class="v-t" x="130" y="11" text-anchor="middle">монитор</text><text class="v-t" x="234" y="64" text-anchor="end">второй экран</text><text class="v-t" x="36" y="49" text-anchor="start">ноутбук</text><text class="v-t" x="22" y="118" text-anchor="start">документы</text><text class="v-t" x="240" y="118" text-anchor="end">телефон</text></svg></div>
         </div>
-        <h3>Обратите внимание на&nbsp;свою привычную рабочую позу</h3>
-        <p>Когда вы&nbsp;специально контролируете осанку, ваша поза может заметно отличаться от&nbsp;той, в&nbsp;которой вы&nbsp;на&nbsp;самом деле проводите значительную часть рабочего времени.</p>
-        <p>Постарайтесь заранее заметить, в&nbsp;какой позе вы&nbsp;обнаруживаете себя в&nbsp;процессе работы до&nbsp;того, как&nbsp;начинаете сознательно выпрямляться или&nbsp;садиться так, как&nbsp;считаете правильным.</p>
-        <p class="dprep__note">Можно попросить кого-то сфотографировать вас сбоку во&nbsp;время обычной работы, когда вы&nbsp;увлечены задачей и&nbsp;специально не&nbsp;контролируете положение тела. Такое фото будет полезно на&nbsp;консультации.</p>
-      </li>
-
-      <li class="dprep__card" data-rv style="--d:.12s">
-        <div class="dprep__top">
-          <span class="dprep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
-          <span class="dprep__n">08</span>
-        </div>
-        <h3>Обратите внимание, куда вы&nbsp;смотрите во&nbsp;время работы</h3>
-        <p>Заранее отметьте, на&nbsp;какие объекты вы&nbsp;регулярно смотрите в&nbsp;процессе работы и&nbsp;где они находятся относительно вас.</p>
-        <p>Это могут быть основной и&nbsp;дополнительный мониторы, экран ноутбука, документы, телефон или&nbsp;другие объекты, к&nbsp;которым вы&nbsp;постоянно переводите взгляд.</p>
-        <p class="dprep__note">Это важно для&nbsp;оценки положения головы, шеи и&nbsp;рабочей позы в&nbsp;целом.</p>
       </li>
     </ol>
   </div>
@@ -465,7 +423,8 @@
 <!-- ============ БЛОК 7. КАК ПРОХОДИТ КОНСУЛЬТАЦИЯ ============ -->
 <!-- Пять этапов треком (компонент «Практический результат» курса): узлы
      01 → 05 на линии, которая набирает цвет к последнему этапу; ниже
-     1281px трек становится вертикальным. -->
+     1281px трек становится вертикальным. У каждого этапа — схема
+     в стиле сайта над заголовком. -->
 <section class="dsec" id="process">
   <div class="dwrap">
     <div class="dhead">
@@ -476,6 +435,7 @@
       <li data-rv>
         <span class="dk-res__node">01</span>
         <div class="dk-res__card">
+          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><path class="v-floor" d="M20 106h160"/><g transform="translate(78 4)"><path class="v-fig" d="M0 31C-4 44-4 56 0 66M0 66l1 36h9M0 66l-2 36M0 36l3 26"/><circle class="v-head" cx="2" cy="22" r="8"/></g><g transform="translate(132 4)"><path class="v-fig" d="M-12 36h24M0 31v35M-8 66h16M-6 66v36M6 66v36M-12 36l-3 28M12 36l3 28"/><circle class="v-head" cx="0" cy="22" r="8"/></g></svg>
           <h3>Оцениваем особенности вашего тела и&nbsp;осанки</h3>
           <p>Смотрим на&nbsp;положение тела стоя сбоку и&nbsp;со&nbsp;спины, чтобы учитывать ваши индивидуальные особенности при&nbsp;дальнейшей работе.</p>
         </div>
@@ -483,6 +443,7 @@
       <li data-rv style="--d:.05s">
         <span class="dk-res__node">02</span>
         <div class="dk-res__card">
+          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g></svg>
           <h3>Разбираем вашу привычную рабочую позу</h3>
           <p>Смотрим, как&nbsp;вы&nbsp;располагаетесь за&nbsp;рабочим местом, где находятся голова, спина, руки и&nbsp;ноги, как&nbsp;расположено оборудование и&nbsp;на&nbsp;какие объекты вы&nbsp;смотрите в&nbsp;процессе работы.</p>
         </div>
@@ -490,6 +451,7 @@
       <li data-rv style="--d:.1s">
         <span class="dk-res__node">03</span>
         <div class="dk-res__card">
+          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><circle class="v-halo" cx="57" cy="36" r="7"/><circle class="v-dot" cx="57" cy="36" r="3.6"/><circle class="v-halo" cx="57" cy="64" r="7"/><circle class="v-dot" cx="57" cy="64" r="3.6"/><circle class="v-halo" cx="110" cy="62" r="7"/><circle class="v-dot" cx="110" cy="62" r="3.6"/></svg>
           <h3>Анализируем ваши задачи и&nbsp;самочувствие</h3>
           <p>Учитываем характер работы, используемое оборудование и&nbsp;зоны тела, в&nbsp;которых во&nbsp;время работы появляется напряжение, усталость, дискомфорт или&nbsp;боль.</p>
         </div>
@@ -497,6 +459,7 @@
       <li data-rv style="--d:.15s">
         <span class="dk-res__node">04</span>
         <div class="dk-res__card">
+          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><defs><marker id="vArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><path class="v-move" d="M30 74v28" marker-start="url(#vArr)" marker-end="url(#vArr)"/><path class="v-move" d="M176 16v30" marker-start="url(#vArr)" marker-end="url(#vArr)"/></svg>
           <h3>Настраиваем рабочее место</h3>
           <p>Во&nbsp;время консультации вы&nbsp;меняете настройки кресла, положение оборудования и&nbsp;другие параметры, а&nbsp;мы&nbsp;сразу оцениваем результат.</p>
         </div>
@@ -504,6 +467,7 @@
       <li data-rv style="--d:.2s">
         <span class="dk-res__node">05</span>
         <div class="dk-res__card">
+          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><g class="v-rows"><rect x="22" y="10" width="156" height="26" rx="13"/><rect x="22" y="42" width="156" height="26" rx="13"/><rect x="22" y="74" width="156" height="26" rx="13"/></g><path class="v-ok" d="M34 23l4 4 8-8"/><path class="v-ok" d="M45.6 52.6A6 6 0 1 0 46 57M46.2 48.8v4h-4"/><path class="v-ok" d="M34 87h12M40 81v12"/><text class="v-t v-t--n" x="56" y="27" text-anchor="start">оставить</text><text class="v-t v-t--n" x="56" y="59" text-anchor="start">изменить</text><text class="v-t v-t--n" x="56" y="91" text-anchor="start">добавить</text></svg>
           <h3>Определяем дальнейшие шаги</h3>
           <p>По&nbsp;итогам становится понятно, что&nbsp;можно оставить, что&nbsp;стоит изменить и&nbsp;требуется ли дополнительное оборудование.</p>
         </div>
@@ -556,7 +520,7 @@
 
 <!-- ============ БЛОК 9. КОГДА ЛУЧШЕ НАЧАТЬ С ОНЛАЙН-КУРСА ============ -->
 <!-- Карточка как «Демоверсия» на странице курса: текст и кнопка слева,
-     настоящий слайд курса справа. Кнопка контурная — главная синяя на этой
+     справа фото самостоятельной настройки монитора (adjust) — на всю высоту текста. Кнопка контурная — главная синяя на этой
      странице остается за записью на консультацию. -->
 <section class="dsec" id="course">
   <div class="dwrap">
@@ -570,7 +534,7 @@
           <a href="kurs-po-ergonomike.html" class="dbtn dbtn--line">Подробнее об онлайн-курсе<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
         </div>
       </div>
-      <div class="dshot dshot--slide"><picture><source srcset="assets/course/slide-03.webp?v=2" type="image/webp"><img src="assets/course/slide-03.jpg?v=2" alt="Слайд курса «Расстояние»: положение человека относительно монитора" width="1600" height="901" loading="lazy" decoding="async"></picture></div>
+      <div class="dcons-course__ph"><picture><source srcset="assets/photo/adjust.webp" type="image/webp"><img src="assets/photo/adjust.jpg" alt="Человек сам настраивает высоту монитора на своем рабочем месте" width="1600" height="1000" loading="lazy" decoding="async"></picture></div>
     </div>
   </div>
 </section>
@@ -757,6 +721,112 @@
 </div>
 
 <script src="../script.js?v=40"></script>
+
+<script>
+/* Пошаговое чтение — «Что мы разбираем» (тот же
+   скрипт, что у доводов на «Для компаний»): активен тот пункт, что пересёк линию чтения. Никакого перехвата скролла —
+   страница прокручивается обычно, меняются только акценты. */
+(function(){
+  [].forEach.call(document.querySelectorAll('[data-flow]'), initFlow);
+  function initFlow(flow){
+  var items = [].slice.call(flow.querySelectorAll('[data-flow-item]'));
+  var rail  = [].slice.call(flow.querySelectorAll('.dflow__rail li'));
+  var shots = [].slice.call(flow.querySelectorAll('[data-flow-ph]'));
+  var num   = flow.querySelector('[data-flow-num]');
+  if(!items.length) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = -1;
+  flow.classList.add('dflow--live');
+
+  function apply(i){
+    if(i === cur) return;
+    cur = i;
+    items.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    rail.forEach(function(li,n){
+      li.classList.toggle('is-done', n <= i);
+      li.classList.toggle('is-now',  n === i);
+      var b = li.firstElementChild;
+      if(b) b.setAttribute('aria-current', n === i ? 'true' : 'false');
+    });
+    shots.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    if(num){
+      num.textContent = ('0' + (i + 1)).slice(-2);
+      if(!reduce){ num.classList.remove('is-swap'); void num.offsetWidth; num.classList.add('is-swap'); }
+    }
+  }
+
+  // каждый кадр встаёт ровно в границы своего ряда. Шире, чем остаток левой
+  // половины, он быть не может — иначе наехал бы на номер, поэтому размер
+  // ограничен сверху.
+  var aside= flow.querySelector('.dflow__aside');
+  var meta = flow.querySelector('.dflow__meta');
+  var GAP = 40; // просвет между соседними кадрами
+  function placeShots(){
+    if(!shots.length || getComputedStyle(shots[0]).display === 'none') return;
+    var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
+    shots.forEach(function(fig,n){
+      var row = items[n];
+      if(!row) return;
+      // верх остаётся на линейке ряда, просвет снимается снизу
+      var size = Math.max(0, Math.min(row.offsetHeight - GAP, room));
+      fig.style.setProperty('--ph-top', row.offsetTop + 'px');
+      fig.style.setProperty('--ph', Math.round(size) + 'px');
+    });
+  }
+  placeShots();
+  // высота ряда меняется от переносов в тексте, ширина колонки — от окна.
+  // Наблюдатель ловит и то и другое; кадры позиционированы абсолютно и на
+  // размеры рядов не влияют, так что зацикливания нет.
+  if(window.ResizeObserver){
+    var ro = new ResizeObserver(placeShots);
+    ro.observe(flow);
+    items.forEach(function(el){ ro.observe(el); });
+  }
+
+  // считаем по заголовку, а не по краю блока: принцип становится активным ровно
+  // тогда, когда его название доходит до середины экрана
+  function pick(){
+    var line = window.innerHeight * 0.45, best = 0;
+    items.forEach(function(el,n){
+      var h = el.querySelector('h3') || el;
+      if(h.getBoundingClientRect().top <= line) best = n;
+    });
+    apply(best);
+  }
+
+  var waiting = false;
+  function onScroll(){
+    if(waiting) return;
+    waiting = true;
+    requestAnimationFrame(function(){ waiting = false; pick(); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  // после смены ширины даём раскладке устояться: высота ряда меняется вместе с
+  // переносами в тексте, и без паузы кадр получил бы размер от прошлой ширины
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(placeShots, 150);
+    onScroll();
+  });
+  // шрифт догружается позже разметки и меняет высоту рядов
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(placeShots);
+  }
+  pick();
+
+  flow.querySelectorAll('[data-flow-go]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = items[+btn.getAttribute('data-flow-go')];
+      if(!el) return;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - window.innerHeight * 0.26;
+      window.scrollTo({top: top, behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+}
+})();
+</script>
 
 </body>
 </html>
