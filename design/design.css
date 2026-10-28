@@ -3642,15 +3642,26 @@ a.dprod:hover h3{color:var(--brand)}
 .dcons-two__card p{margin-top:14px;font-size:17px;line-height:1.6;color:var(--navy-2);max-width:32em}
 .dcons-two__link{margin-top:auto;padding-top:24px;align-self:flex-start}
 .dcons-two .dself-step__arr{box-shadow:0 0 0 6px var(--tint),0 6px 16px rgba(26,95,224,.18)}
-#existing .dhead__note p + p{margin-top:12px}
-/* текст справа: колонка шире, верх — на уровне заголовка (под подводкой),
-   обычный перенос без балансировки — строки ровнее */
+/* текст справа — белым листом, чтобы не слипался с заголовком: тезис
+   крупнее и отчеркнут линией, два «если» — списком с синими маркерами */
+.dexist{background:#fff;border-radius:28px;padding:clamp(24px,2.6vw,38px);max-width:none}
+.dexist p + p{margin-top:12px}
+.dexist__lead{font-size:clamp(19px,1.5vw,21px);font-weight:600;line-height:1.4;letter-spacing:-.012em;color:var(--navy);
+  padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--d-line)}
+.dexist__list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.dexist__list li{position:relative;padding:14px 18px 14px 40px;border-radius:16px;background:var(--tint);line-height:1.55}
+.dexist__list li::before{content:"";position:absolute;left:18px;top:calc(14px + .775em - 4px);width:8px;height:8px;border-radius:50%;background:var(--brand)}
+.dself #existing .dexist p,.dself #existing .dexist li{text-wrap:pretty}
 @media (min-width:1101px){
-  #existing .dhead--split{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:start}
+  #existing .dhead--split{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(48px,6vw,96px);align-items:start}
   #existing .dhead--split > div:first-child{grid-column:1;grid-row:1}
-  #existing .dhead__note{grid-column:2;grid-row:1;padding-top:clamp(30px,2.6vw,40px)}
+  #existing .dhead__note{grid-column:2;grid-row:1;padding-bottom:0}
 }
-.dself #existing .dhead__note p{text-wrap:pretty;max-width:36em}
+@media (max-width:600px){
+  .dexist{border-radius:22px;padding:22px 20px}
+  .dexist__list li{padding:12px 14px 12px 34px}
+  .dexist__list li::before{left:14px;top:calc(12px + .775em - 4px)}
+}
 @media (max-width:860px){
   .dcons-two{grid-template-columns:1fr;gap:20px}
   .dcons-two .dself-step__arr{left:50%;top:-32px;margin:0 0 0 -22px;transform:rotate(90deg)}
