@@ -3702,7 +3702,7 @@ a.dprod:hover h3{color:var(--brand)}
 /* на телефоне колонки с кадрами нет — фото шага встаёт над заголовком */
 .dprep-ph{display:none}
 @media (max-width:1000px){
-  .dprep-ph{display:block;margin:0 0 18px;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--tint)}
+  .dprep-ph{display:block;margin:0 0 18px;aspect-ratio:1/1;border-radius:20px;overflow:hidden;background:var(--tint)}
   .dprep-ph img{display:block;width:100%;height:100%;object-fit:cover}
   /* фото во всю ширину, номер — над заголовком, а не в поле слева */
   .dprep-flow .dprin{padding-left:0}
