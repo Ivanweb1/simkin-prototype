@@ -802,12 +802,16 @@
   }
 
   // считаем по заголовку, а не по краю блока: принцип становится активным ровно
-  // тогда, когда его название доходит до середины экрана
+  // тогда, когда его название доходит до середины экрана. На телефоне в шагах
+  // подготовки над заголовком стоит фото — тогда считаем по фото, иначе шаг
+  // загорался, когда его фото уже уехало, а текст был на середине экрана
   function pick(){
-    var line = window.innerHeight * 0.45, best = 0;
+    var vh = window.innerHeight, best = 0;
     items.forEach(function(el,n){
-      var h = el.querySelector('h3') || el;
-      if(h.getBoundingClientRect().top <= line) best = n;
+      var ph = el.querySelector('.dprep-ph');
+      var byPh = ph && ph.offsetParent;
+      var h = byPh ? ph : (el.querySelector('h3') || el);
+      if(h.getBoundingClientRect().top <= vh * (byPh ? 0.6 : 0.45)) best = n;
     });
     apply(best);
   }
