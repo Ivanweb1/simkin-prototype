@@ -3806,3 +3806,72 @@ a.dprod:hover h3{color:var(--brand)}
 .dcons-format__facts svg{width:18px;height:18px;color:var(--brand)}
 .dcons .dk-band__act .dbtn{height:58px;padding:0 30px;font-size:16.5px}
 @media (max-width:600px){.dcons .dk-band__act .dbtn{width:100%;height:56px}}
+
+/* =====================================================================
+   «Полезные статьи» (stati-po-ergonomike.html): библиотека материалов
+   ===================================================================== */
+/* первый экран — та же карточка, что у внутренних страниц, но без фото:
+   компактная, сразу под заголовком — темы и поиск */
+.dlib-hero{padding-bottom:0}
+.dlib-hero .dcohero__card{grid-template-columns:minmax(0,1fr)}
+.dlib-hero .dcohero__txt{padding-block:clamp(36px,4vw,64px) clamp(28px,3vw,44px)}
+.dlib-hero h1{max-width:none}
+.dlib-hero .dcohero__lead{max-width:44em}
+.dlib-bar{display:flex;align-items:flex-start;gap:10px;margin-top:clamp(26px,2.8vw,38px)}
+.dlib-filters{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:0}
+.dlib-f{
+  -webkit-appearance:none;appearance:none;border:0;cursor:pointer;font:inherit;
+  height:42px;padding:0 15px;border-radius:100px;background:#fff;color:var(--navy);
+  font-size:14.5px;font-weight:500;white-space:nowrap;
+  box-shadow:inset 0 0 0 1px var(--d-line);
+  transition:background .2s var(--ease),color .2s var(--ease),box-shadow .2s var(--ease);
+}
+.dlib-f:hover{box-shadow:inset 0 0 0 1px var(--brand-2);color:var(--brand)}
+.dlib-f.is-on{background:var(--brand);color:#fff;box-shadow:none}
+.dlib-f:focus-visible,.dlib-search__btn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+/* поиск: лупа, по нажатию раскрывается строка «Поиск по статьям» */
+.dlib-search{display:flex;align-items:center;flex:none;height:42px;border-radius:100px;background:#fff;
+  box-shadow:inset 0 0 0 1px var(--d-line);transition:box-shadow .2s var(--ease)}
+.dlib-search.is-open{box-shadow:inset 0 0 0 1.5px var(--brand)}
+.dlib-search__btn{-webkit-appearance:none;appearance:none;border:0;background:none;cursor:pointer;
+  display:grid;place-items:center;width:42px;height:42px;border-radius:50%;color:var(--navy);flex:none}
+.dlib-search__btn svg{width:19px;height:19px}
+.dlib-search.is-open .dlib-search__btn{color:var(--brand)}
+.dlib-search__in{width:0;padding:0;border:0;background:none;font:inherit;font-size:15px;color:var(--navy);outline:0;
+  transition:width .3s var(--ease),padding .3s var(--ease)}
+.dlib-search.is-open .dlib-search__in{width:clamp(180px,20vw,260px);padding-right:18px}
+.dlib-search__in::placeholder{color:var(--navy-3)}
+.dlib-search__in::-webkit-search-cancel-button{cursor:pointer}
+
+/* сетка: скрытые фильтром и «Показать еще» карточки; у библиотеки нет
+   «последней широкой» карточки, как у тройки на других страницах */
+.dlib-sec{padding-top:clamp(32px,3.4vw,52px)}
+.dlib-grid{margin-top:0}
+.dlib-grid .dpost[hidden]{display:none}
+.dlib-count{font-size:15px;color:var(--navy-3);margin-bottom:16px}
+.dlib-count:empty{display:none}
+/* время чтения справа в строке темы; у разборов исследований — одна метка */
+.dpost__meta .dread{margin-left:auto}
+/* как на «Для себя» (.dself .dpost h3): карточки на обеих страницах одинаковые */
+.dlib .dpost h3{margin-top:16px}
+.dchip--res{background:var(--navy);color:#fff}
+.dlib-empty{text-align:center;padding:clamp(32px,4vw,56px) 0}
+.dlib-empty p{font-size:18px;color:var(--navy-2)}
+.dlib-empty .dbtn{margin-top:18px}
+.dlib-band .dband__sub{max-width:40em}
+@media (max-width:980px){
+  .dlib-grid > :last-child{grid-column:auto}
+  .dlib-grid > :last-child .dpost__ph{aspect-ratio:16/10}
+  .dlib-bar{flex-direction:column-reverse;align-items:stretch}
+  .dlib-search .dlib-search__in{width:auto;flex:1;padding-right:18px}
+}
+@media (max-width:600px){
+  .dlib-hero h1{font-size:clamp(27px,7.6vw,32px)}
+  .dlib-f{height:38px;padding:0 14px;font-size:14px}
+  /* темы на телефоне — одной лентой с прокруткой вбок, а не шестью рядами;
+     лента доходит до краев карточки */
+  .dlib-filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    margin:0 -20px;padding:0 20px;scroll-padding-inline:20px}
+  .dlib-filters::-webkit-scrollbar{display:none}
+  .dlib-f{flex:none}
+}
