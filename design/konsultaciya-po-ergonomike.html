@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=268">
+<link rel="stylesheet" href="design.css?v=270">
 </head>
 <body class="d dco dself dcons">
 
@@ -90,8 +90,8 @@
 
 <!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
 <!-- Карточка как на остальных страницах раздела. Одна главная синяя кнопка
-     «Записаться на консультацию» (открывает форму #consult) и рядом текстовая
-     ссылка «Сначала пройти онлайн-курс».
+     «Записаться на консультацию» (открывает форму #consult) и рядом вторичная
+     кнопка контуром «Сначала пройти онлайн-курс».
      Кадр ВРЕМЕННЫЙ: собран из фото сайта как экран видеосвязи — на экране
      человек за рабочим местом сбоку, в углу Дмитрий Симкин. После фотосессии
      заменить весь .dcons-call одним <picture> с кадром «Дмитрий в деловом
@@ -108,7 +108,7 @@
         <p class="dcohero__sub" data-rv style="--d:.18s">Если вы&nbsp;уже знакомы с&nbsp;основными принципами эргономики и&nbsp;самостоятельно настроили рабочее место, консультация позволяет проверить результат и&nbsp;скорректировать детали.</p>
         <div class="dcohero__btns dcons-btns" data-rv style="--d:.24s">
           <button type="button" class="dbtn dbtn--brand" data-open="consult">Записаться на&nbsp;консультацию<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
-          <a href="kurs-po-ergonomike.html" class="dtext-link dcons-btns__link">Сначала пройти онлайн-курс</a>
+          <a href="kurs-po-ergonomike.html" class="dbtn dbtn--line">Сначала пройти онлайн-курс</a>
         </div>
       </div>
       <div class="dcohero__media dcons-hero" data-rv style="--d:.06s">
@@ -315,9 +315,9 @@
 
 <!-- ============ БЛОК 6. КАК ПОДГОТОВИТЬСЯ ============ -->
 <!-- Восемь шагов по порядку: номер на вертикальной линии, слева текст,
-     справа схема в стиле сайта (линии, синий акцент, человек схематично).
-     У шага 02 схема шире: вид сверху и что видно в кадре телефона.
-     Ниже 981px схема уходит под текст. -->
+     справа фото 4:3 (assets/photo/prepare/01–08.jpg). Пока файлов нет —
+     светлая плашка с номером шага; <img> раскомментировать, когда фото придут.
+     Ниже 981px фото уходит под текст. -->
 <section class="dsec dsec--tint" id="prepare">
   <div class="dwrap">
     <div class="dhead">
@@ -333,10 +333,10 @@
             <h3>Подготовьте рабочее место</h3>
             <p>Во&nbsp;время консультации вы&nbsp;должны находиться за&nbsp;тем рабочим местом, которое хотите настроить.</p>
           </div>
-          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 140" aria-hidden="true"><g transform="translate(30 16)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><rect class="v-zone" x="30" y="10" width="200" height="118" rx="14"/></svg></div>
+          <figure class="dshot dvis-ph"><span>Фото · шаг 01</span><!-- <img src="assets/photo/prepare/01.jpg" alt="Рабочее место, которое настраивают на консультации: кресло, стол, монитор" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
         </div>
       </li>
-      <li class="dvis-row dvis-row--wide" data-rv>
+      <li class="dvis-row" data-rv>
         <span class="dvis-row__n">02</span>
         <div class="dvis-row__card">
           <div class="dvis-row__txt">
@@ -345,7 +345,7 @@
           <p>Камера должна показывать вас целиком в&nbsp;рабочей позе вместе с&nbsp;креслом, столом и&nbsp;монитором.</p>
           <p>Телефон желательно установить примерно на&nbsp;уровне вашей головы или&nbsp;груди, когда вы&nbsp;сидите, и&nbsp;на&nbsp;таком расстоянии, чтобы в&nbsp;кадре были хорошо видны положение головы, спины, рук и&nbsp;ног, а&nbsp;также расположение оборудования относительно тела.</p>
           </div>
-          <div class="dvis"><div class="dvis__pair"><div class="dvis__sub"><span class="dvis__cap">Вид сверху</span><svg class="dvis__svg" viewBox="0 0 240 200" aria-hidden="true"><path class="v-cone" d="M38 112 L232 22 L232 196 Z"/><rect class="v-desk" x="86" y="22" width="132" height="56" rx="6"/><rect class="v-dark" x="128" y="30" width="48" height="7" rx="2"/><rect class="v-desk" x="132" y="54" width="40" height="11" rx="2.5"/><rect class="v-seat" x="122" y="104" width="60" height="54" rx="14"/><path class="v-back" d="M122 166c18 8 42 8 60 0"/><path class="v-fig" d="M126 120c8-12 44-12 52 0"/><path class="v-arm" d="M130 116l6-44M174 116l-6-44"/><circle class="v-head" cx="152" cy="110" r="13"/><path class="v-n" d="M34 112l-14 14M34 112l-12-16M34 112l18 8"/><rect class="v-phone" x="29" y="100" width="10" height="24" rx="3"/><text class="v-t v-t--b" x="20" y="182" text-anchor="start">телефон на штативе</text></svg></div><div class="dvis__sub"><span class="dvis__cap">Что видно в кадре</span><svg class="dvis__svg" viewBox="0 0 220 140" aria-hidden="true"><rect class="v-frame" x="3" y="3" width="214" height="134" rx="14"/><g transform="translate(10 14)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><path class="v-corner" d="M14 30V14h16M190 14h16v16M206 110v16h-16M30 126H14v-16"/></svg><ul class="dvis__checks"><li>голова, спина, руки и ноги</li><li>кресло, стол и монитор</li><li>камера на уровне головы или груди</li></ul></div></div></div>
+          <figure class="dshot dvis-ph"><span>Фото · шаг 02</span><!-- <img src="assets/photo/prepare/02.jpg" alt="Телефон на штативе сбоку от рабочего места" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
         </div>
       </li>
       <li class="dvis-row" data-rv>
@@ -357,7 +357,7 @@
           <p>Телефон можно оставить на&nbsp;том же месте. Вам нужно будет встать в&nbsp;кадре сначала боком, а&nbsp;затем спиной к&nbsp;камере.</p>
           <p class="dprep__note">Это помогает лучше понять индивидуальные особенности вашего тела и&nbsp;учитывать их при&nbsp;выборе и&nbsp;настройке рабочей позы сидя.</p>
           </div>
-          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><path class="v-floor" d="M8 142h244"/><path class="v-cone" d="M44 60 L250 18 L250 142 L44 70Z"/><g transform="translate(38 52)"><rect class="v-phone" x="-6" y="0" width="12" height="20" rx="2.5"/><path class="v-n" d="M0 20v14M0 34l-12 38M0 34l12 38M0 34v38"/></g><g transform="translate(128 36)"><path class="v-fig" d="M0 31C-4 44-4 56 0 66M0 66l1 36h9M0 66l-2 36M0 36l3 26"/><circle class="v-head" cx="2" cy="22" r="8"/></g><g transform="translate(208 36)"><path class="v-fig" d="M-12 36h24M0 31v35M-8 66h16M-6 66v36M6 66v36M-12 36l-3 28M12 36l3 28"/><circle class="v-head" cx="0" cy="22" r="8"/></g><text class="v-t v-t--b" x="130" y="16" text-anchor="middle">1 · боком</text><text class="v-t v-t--b" x="208" y="16" text-anchor="middle">2 · спиной</text></svg></div>
+          <figure class="dshot dvis-ph"><span>Фото · шаг 03</span><!-- <img src="assets/photo/prepare/03.jpg" alt="Человек стоит в естественной позе боком к камере" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
         </div>
       </li>
       <li class="dvis-row" data-rv>
@@ -367,7 +367,7 @@
             <h3>Выберите подходящую одежду</h3>
             <p>Одежда должна быть достаточно прилегающей к&nbsp;телу, чтобы были видны естественное положение головы, плеч, спины, таза и&nbsp;ног.</p>
           </div>
-          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><path class="v-floor" d="M30 142h120"/><g transform="translate(84 38)"><path class="v-fig" d="M0 31C-4 44-4 56 0 66M0 66l1 36h9M0 66l-2 36M0 36l3 26"/><circle class="v-head" cx="2" cy="22" r="8"/></g><circle class="v-halo" cx="86" cy="60" r="7"/><circle class="v-dot" cx="86" cy="60" r="3.6"/><circle class="v-halo" cx="84" cy="75" r="7"/><circle class="v-dot" cx="84" cy="75" r="3.6"/><circle class="v-halo" cx="81" cy="88" r="7"/><circle class="v-dot" cx="81" cy="88" r="3.6"/><circle class="v-halo" cx="84" cy="104" r="7"/><circle class="v-dot" cx="84" cy="104" r="3.6"/><circle class="v-halo" cx="85" cy="124" r="7"/><circle class="v-dot" cx="85" cy="124" r="3.6"/><path class="v-lead" d="M94 60H170"/><text class="v-t" x="176" y="64" text-anchor="start">голова</text><path class="v-lead" d="M92 75H170"/><text class="v-t" x="176" y="79" text-anchor="start">плечи</text><path class="v-lead" d="M89 88H170"/><text class="v-t" x="176" y="92" text-anchor="start">спина</text><path class="v-lead" d="M92 104H170"/><text class="v-t" x="176" y="108" text-anchor="start">таз</text><path class="v-lead" d="M93 124H170"/><text class="v-t" x="176" y="128" text-anchor="start">ноги</text></svg></div>
+          <figure class="dshot dvis-ph"><span>Фото · шаг 04</span><!-- <img src="assets/photo/prepare/04.jpg" alt="Прилегающая одежда, в которой видно положение тела" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
         </div>
       </li>
       <li class="dvis-row" data-rv>
@@ -377,7 +377,7 @@
             <h3>Заранее посмотрите настройки вашего кресла</h3>
             <p>Перед консультацией желательно разобраться, какие регулировки предусмотрены у&nbsp;кресла и&nbsp;где находятся соответствующие рычаги и&nbsp;механизмы. Это позволит не&nbsp;тратить время консультации на&nbsp;их поиск.</p>
           </div>
-          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><defs><marker id="vArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs><path class="v-floor" d="M20 142h150"/><path class="v-chairbig" d="M58 92h78M62 92 50 26M80 66h46M116 66v26M98 96v24M70 128h60"/><circle class="v-wheel" cx="76" cy="134" r="5"/><circle class="v-wheel" cx="124" cy="134" r="5"/><path class="v-n" d="M110 98h14"/><path class="v-move" d="M148 104v32" marker-start="url(#vArr)" marker-end="url(#vArr)"/><path class="v-move" d="M40 22c-10 10-12 22-8 34" marker-start="url(#vArr)" marker-end="url(#vArr)"/><path class="v-move" d="M140 54v24" marker-start="url(#vArr)" marker-end="url(#vArr)"/><circle class="v-halo" cx="124" cy="98" r="7"/><circle class="v-dot" cx="124" cy="98" r="3.6"/><text class="v-t" x="158" y="124" text-anchor="start">высота</text><text class="v-t" x="150" y="70" text-anchor="start">подлокотники</text><text class="v-t" x="12" y="14" text-anchor="start">спинка</text><path class="v-lead" d="M131 98H190"/><text class="v-t" x="196" y="102" text-anchor="start">рычаги</text></svg></div>
+          <figure class="dshot dvis-ph"><span>Фото · шаг 05</span><!-- <img src="assets/photo/prepare/05.jpg" alt="Регулировки офисного кресла" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
         </div>
       </li>
       <li class="dvis-row" data-rv>
@@ -389,7 +389,7 @@
           <p>Полезно отметить, где именно они возникают, через какое время работы и&nbsp;при&nbsp;каких задачах появляются или&nbsp;становятся заметнее.</p>
           <p class="dprep__note">Если выраженных жалоб нет, это тоже нормально&nbsp;– консультация может быть направлена на&nbsp;проверку и&nbsp;более точную настройку рабочего места.</p>
           </div>
-          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 140" aria-hidden="true"><g transform="translate(0 16)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><circle class="v-halo" cx="57" cy="52" r="7"/><circle class="v-dot" cx="57" cy="52" r="3.6"/><circle class="v-halo" cx="57" cy="80" r="7"/><circle class="v-dot" cx="57" cy="80" r="3.6"/><circle class="v-halo" cx="110" cy="78" r="7"/><circle class="v-dot" cx="110" cy="78" r="3.6"/><g class="v-list"><rect x="206" y="26" width="50" height="22" rx="11"/><rect x="206" y="58" width="50" height="22" rx="11"/><rect x="206" y="90" width="50" height="22" rx="11"/></g><text class="v-t v-t--s" x="231" y="41" text-anchor="middle">где</text><text class="v-t v-t--s" x="231" y="73" text-anchor="middle">когда</text><text class="v-t v-t--s" x="231" y="105" text-anchor="middle">задачи</text></svg></div>
+          <figure class="dshot dvis-ph"><span>Фото · шаг 06</span><!-- <img src="assets/photo/prepare/06.jpg" alt="Дискомфорт в шее во время работы за компьютером" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
         </div>
       </li>
       <li class="dvis-row" data-rv>
@@ -401,7 +401,7 @@
           <p>Постарайтесь заранее заметить, в&nbsp;какой позе вы&nbsp;обнаруживаете себя в&nbsp;процессе работы до&nbsp;того, как&nbsp;начинаете сознательно выпрямляться или&nbsp;садиться так, как&nbsp;считаете правильным.</p>
           <p class="dprep__note">Можно попросить кого-то сфотографировать вас сбоку во&nbsp;время обычной работы, когда вы&nbsp;увлечены задачей и&nbsp;специально не&nbsp;контролируете положение тела. Такое фото будет полезно на&nbsp;консультации.</p>
           </div>
-          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><g transform="translate(0 26) scale(.62)"><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g></g><g transform="translate(118 26) scale(.62)"><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M60 68C52 56 56 42 70 36M60 68h34l2 36h12M70 38l6 22h38"/><circle class="v-head" cx="80" cy="30" r="9"/></g></g><path class="v-sep" d="M126 20v116"/><text class="v-t v-t--s" x="62" y="14" text-anchor="middle">когда контролируете</text><text class="v-t v-t--b" x="190" y="14" text-anchor="middle">привычная поза</text><g transform="translate(232 70)"><rect class="v-phone" x="-7" y="-11" width="14" height="22" rx="3"/></g><path class="v-eye" d="M224 70 200 52M224 70 196 100"/></svg></div>
+          <figure class="dshot dvis-ph"><span>Фото · шаг 07</span><!-- <img src="assets/photo/prepare/07.jpg" alt="Привычная рабочая поза во время работы" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
         </div>
       </li>
       <li class="dvis-row" data-rv>
@@ -413,7 +413,7 @@
           <p>Это могут быть основной и&nbsp;дополнительный мониторы, экран ноутбука, документы, телефон или&nbsp;другие объекты, к&nbsp;которым вы&nbsp;постоянно переводите взгляд.</p>
           <p class="dprep__note">Это важно для&nbsp;оценки положения головы, шеи и&nbsp;рабочей позы в&nbsp;целом.</p>
           </div>
-          <div class="dvis"><svg class="dvis__svg" viewBox="0 0 260 150" aria-hidden="true"><rect class="v-desk" x="20" y="16" width="220" height="86" rx="8"/><rect class="v-dark" x="100" y="24" width="60" height="7" rx="2"/><rect class="v-dark" x="176" y="34" width="44" height="7" rx="2" transform="rotate(24 198 37)"/><path class="v-n" d="M38 54h36l6 18H32z"/><rect class="v-paper" x="40" y="80" width="26" height="18" rx="2" transform="rotate(-10 53 89)"/><rect class="v-phone" x="196" y="74" width="10" height="17" rx="2.5"/><path class="v-gaze" d="M130 116 130 34M130 116 196 46M130 116 58 64M130 116 56 90M130 116 198 84"/><path class="v-fig" d="M104 132c8-12 44-12 52 0"/><circle class="v-head" cx="130" cy="122" r="11"/><text class="v-t" x="130" y="11" text-anchor="middle">монитор</text><text class="v-t" x="234" y="64" text-anchor="end">второй экран</text><text class="v-t" x="36" y="49" text-anchor="start">ноутбук</text><text class="v-t" x="22" y="118" text-anchor="start">документы</text><text class="v-t" x="240" y="118" text-anchor="end">телефон</text></svg></div>
+          <figure class="dshot dvis-ph"><span>Фото · шаг 08</span><!-- <img src="assets/photo/prepare/08.jpg" alt="Мониторы, ноутбук, документы и телефон на рабочем столе" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
         </div>
       </li>
     </ol>
