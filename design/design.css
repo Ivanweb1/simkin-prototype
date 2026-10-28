@@ -3699,6 +3699,17 @@ a.dprod:hover h3{color:var(--brand)}
   .dprep-flow .dflow__list{display:block}
   .dprep-flow .dprin{min-height:calc(50cqw - var(--gap-flow) - var(--meta) + 24px)}
 }
+/* на телефоне колонки с кадрами нет — фото шага встаёт над заголовком */
+.dprep-ph{display:none}
+@media (max-width:1000px){
+  .dprep-ph{display:block;margin:0 0 18px;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:var(--tint)}
+  .dprep-ph img{display:block;width:100%;height:100%;object-fit:cover}
+  /* фото во всю ширину, номер — над заголовком, а не в поле слева */
+  .dprep-flow .dprin{padding-left:0}
+  .dprep-flow .dprin__n{position:static;display:block;margin-bottom:10px;font-size:26px}
+  /* у этапов консультации номер тоже виден на телефоне */
+  .dpickr--ph .dpickr__n{display:block;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
+}
 .dprep-flow .dprin .dprep__note{margin-top:16px;padding-top:14px;border-top:1px solid var(--d-line);font-size:15.5px}
 
 /* схемы: общий язык линий */
@@ -3759,6 +3770,13 @@ a.dprod:hover h3{color:var(--brand)}
   .dpickr--ph.is-live .dpickr__n{position:static;line-height:1;padding-inline:clamp(8px,1.4vw,20px)}
   .dpickr--ph.is-live .dpickr__panel h3{margin-top:12px;padding:0 clamp(8px,1.4vw,20px);font-size:clamp(24px,2.2vw,32px);max-width:16em}
   .dpickr--ph.is-live .dpickr__panel p{margin-top:14px;padding:0 clamp(8px,1.4vw,20px);font-size:clamp(17px,1.3vw,18px);max-width:38em}
+}
+
+/* финальный банд на узких телефонах (320–380): «Индивидуальная» не влезала
+   в строку при 34px, надпись кнопки обрезалась */
+@media (max-width:380px){
+  .dcons-format .dband__h2{font-size:28px}
+  .dcons .dcons-format .dk-band__act .dbtn{padding:0 12px;font-size:15px;gap:6px}
 }
 
 /* «Что вы получаете»: четыре карточки 2×2, иконка слева */
