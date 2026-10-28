@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=271">
+<link rel="stylesheet" href="design.css?v=273">
 </head>
 <body class="d dco dself dcons">
 
@@ -317,10 +317,11 @@
 </section>
 
 <!-- ============ БЛОК 6. КАК ПОДГОТОВИТЬСЯ ============ -->
-<!-- Восемь шагов по порядку: номер на вертикальной линии, слева текст,
-     справа фото 4:3 (assets/photo/prepare/01–08.jpg). Пока файлов нет —
-     светлая плашка с номером шага; <img> раскомментировать, когда фото придут.
-     Ниже 981px фото уходит под текст. -->
+<!-- Восемь шагов в формате «Принципов системы» с главной: слева липкий
+     номер 01/08 и шкала, у каждого шага свой квадратный кадр в границах
+     его ряда, по скроллу активен один шаг. Кадры — assets/photo/prepare/
+     01–08.jpg (1:1); пока файлов нет — плашка «кадр», <img> раскомментировать.
+     Ниже 1001px кадры скрыты, номер возвращается в текст шага. -->
 <section class="dsec dsec--tint" id="prepare">
   <div class="dwrap">
     <div class="dhead">
@@ -328,98 +329,104 @@
       <h2 class="dh2" data-rv style="--d:.06s">Как&nbsp;подготовиться <span class="dh2__soft">к&nbsp;онлайн-консультации</span></h2>
     </div>
 
-    <ol class="dvis-steps">
-      <li class="dvis-row" data-rv>
-        <span class="dvis-row__n">01</span>
-        <div class="dvis-row__card">
-          <div class="dvis-row__txt">
-            <h3>Подготовьте рабочее место</h3>
-            <p>Во&nbsp;время консультации вы&nbsp;должны находиться за&nbsp;тем рабочим местом, которое хотите настроить.</p>
+    <div class="dflow dprep-flow" data-flow data-rv>
+      <div class="dflow__aside">
+        <div class="dflow__sticky">
+          <div class="dflow__meta">
+            <span class="deyebrow">Шаги подготовки</span>
+            <p class="dflow__count"><b data-flow-num>01</b><i>/&nbsp;08</i></p>
+            <ol class="dflow__rail">
+              <li><button type="button" data-flow-go="0" aria-label="Шаг 01: Подготовьте рабочее место"></button></li>
+              <li><button type="button" data-flow-go="1" aria-label="Шаг 02: Установите телефон сбоку от рабочего места"></button></li>
+              <li><button type="button" data-flow-go="2" aria-label="Шаг 03: Будьте готовы встать перед камерой"></button></li>
+              <li><button type="button" data-flow-go="3" aria-label="Шаг 04: Выберите подходящую одежду"></button></li>
+              <li><button type="button" data-flow-go="4" aria-label="Шаг 05: Заранее посмотрите настройки вашего кресла"></button></li>
+              <li><button type="button" data-flow-go="5" aria-label="Шаг 06: Понаблюдайте за своим самочувствием во время работы"></button></li>
+              <li><button type="button" data-flow-go="6" aria-label="Шаг 07: Обратите внимание на свою привычную рабочую позу"></button></li>
+              <li><button type="button" data-flow-go="7" aria-label="Шаг 08: Обратите внимание, куда вы смотрите во время работы"></button></li>
+            </ol>
           </div>
-          <figure class="dshot dvis-ph"><span>Фото · шаг 01</span><!-- <img src="assets/photo/prepare/01.jpg" alt="Рабочее место, которое настраивают на консультации: кресло, стол, монитор" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
         </div>
-      </li>
-      <li class="dvis-row" data-rv>
-        <span class="dvis-row__n">02</span>
-        <div class="dvis-row__card">
-          <div class="dvis-row__txt">
-            <h3>Установите телефон сбоку от&nbsp;рабочего места</h3>
-            <p>Во&nbsp;время консультации поставьте телефон на&nbsp;штатив сбоку от&nbsp;рабочего места и&nbsp;включите громкую связь.</p>
+      </div>
+
+      <figure class="dflow__ph" data-flow-ph>
+        <!-- <img src="assets/photo/prepare/01.jpg" alt="Рабочее место, которое настраивают на консультации: кресло, стол, монитор" width="1200" height="1200" loading="lazy" decoding="async"> -->
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <!-- <img src="assets/photo/prepare/02.jpg" alt="Телефон на штативе сбоку от рабочего места" width="1200" height="1200" loading="lazy" decoding="async"> -->
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <!-- <img src="assets/photo/prepare/03.jpg" alt="Человек стоит в естественной позе боком к камере" width="1200" height="1200" loading="lazy" decoding="async"> -->
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <!-- <img src="assets/photo/prepare/04.jpg" alt="Прилегающая одежда, в которой видно положение тела" width="1200" height="1200" loading="lazy" decoding="async"> -->
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <!-- <img src="assets/photo/prepare/05.jpg" alt="Регулировки офисного кресла" width="1200" height="1200" loading="lazy" decoding="async"> -->
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <!-- <img src="assets/photo/prepare/06.jpg" alt="Дискомфорт в шее во время работы за компьютером" width="1200" height="1200" loading="lazy" decoding="async"> -->
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <!-- <img src="assets/photo/prepare/07.jpg" alt="Привычная рабочая поза во время работы" width="1200" height="1200" loading="lazy" decoding="async"> -->
+      </figure>
+      <figure class="dflow__ph" data-flow-ph>
+        <!-- <img src="assets/photo/prepare/08.jpg" alt="Мониторы, ноутбук, документы и телефон на рабочем столе" width="1200" height="1200" loading="lazy" decoding="async"> -->
+      </figure>
+
+      <div class="dflow__list">
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">01</span>
+          <h3>Подготовьте рабочее место</h3>
+          <p>Во&nbsp;время консультации вы&nbsp;должны находиться за&nbsp;тем рабочим местом, которое хотите настроить.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">02</span>
+          <h3>Установите телефон сбоку от&nbsp;рабочего места</h3>
+          <p>Во&nbsp;время консультации поставьте телефон на&nbsp;штатив сбоку от&nbsp;рабочего места и&nbsp;включите громкую связь.</p>
           <p>Камера должна показывать вас целиком в&nbsp;рабочей позе вместе с&nbsp;креслом, столом и&nbsp;монитором.</p>
           <p>Телефон желательно установить примерно на&nbsp;уровне вашей головы или&nbsp;груди, когда вы&nbsp;сидите, и&nbsp;на&nbsp;таком расстоянии, чтобы в&nbsp;кадре были хорошо видны положение головы, спины, рук и&nbsp;ног, а&nbsp;также расположение оборудования относительно тела.</p>
-          </div>
-          <figure class="dshot dvis-ph"><span>Фото · шаг 02</span><!-- <img src="assets/photo/prepare/02.jpg" alt="Телефон на штативе сбоку от рабочего места" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
-        </div>
-      </li>
-      <li class="dvis-row" data-rv>
-        <span class="dvis-row__n">03</span>
-        <div class="dvis-row__card">
-          <div class="dvis-row__txt">
-            <h3>Будьте готовы встать перед камерой</h3>
-            <p>Во&nbsp;время консультации нужно будет оценить вашу естественную осанку стоя.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">03</span>
+          <h3>Будьте готовы встать перед камерой</h3>
+          <p>Во&nbsp;время консультации нужно будет оценить вашу естественную осанку стоя.</p>
           <p>Телефон можно оставить на&nbsp;том же месте. Вам нужно будет встать в&nbsp;кадре сначала боком, а&nbsp;затем спиной к&nbsp;камере.</p>
           <p class="dprep__note">Это помогает лучше понять индивидуальные особенности вашего тела и&nbsp;учитывать их при&nbsp;выборе и&nbsp;настройке рабочей позы сидя.</p>
-          </div>
-          <figure class="dshot dvis-ph"><span>Фото · шаг 03</span><!-- <img src="assets/photo/prepare/03.jpg" alt="Человек стоит в естественной позе боком к камере" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
-        </div>
-      </li>
-      <li class="dvis-row" data-rv>
-        <span class="dvis-row__n">04</span>
-        <div class="dvis-row__card">
-          <div class="dvis-row__txt">
-            <h3>Выберите подходящую одежду</h3>
-            <p>Одежда должна быть достаточно прилегающей к&nbsp;телу, чтобы были видны естественное положение головы, плеч, спины, таза и&nbsp;ног.</p>
-          </div>
-          <figure class="dshot dvis-ph"><span>Фото · шаг 04</span><!-- <img src="assets/photo/prepare/04.jpg" alt="Прилегающая одежда, в которой видно положение тела" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
-        </div>
-      </li>
-      <li class="dvis-row" data-rv>
-        <span class="dvis-row__n">05</span>
-        <div class="dvis-row__card">
-          <div class="dvis-row__txt">
-            <h3>Заранее посмотрите настройки вашего кресла</h3>
-            <p>Перед консультацией желательно разобраться, какие регулировки предусмотрены у&nbsp;кресла и&nbsp;где находятся соответствующие рычаги и&nbsp;механизмы. Это позволит не&nbsp;тратить время консультации на&nbsp;их поиск.</p>
-          </div>
-          <figure class="dshot dvis-ph"><span>Фото · шаг 05</span><!-- <img src="assets/photo/prepare/05.jpg" alt="Регулировки офисного кресла" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
-        </div>
-      </li>
-      <li class="dvis-row" data-rv>
-        <span class="dvis-row__n">06</span>
-        <div class="dvis-row__card">
-          <div class="dvis-row__txt">
-            <h3>Понаблюдайте за&nbsp;своим самочувствием во&nbsp;время работы</h3>
-            <p>До&nbsp;консультации обратите внимание, есть ли зоны тела, в&nbsp;которых во&nbsp;время работы появляется напряжение, дискомфорт или&nbsp;боль.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">04</span>
+          <h3>Выберите подходящую одежду</h3>
+          <p>Одежда должна быть достаточно прилегающей к&nbsp;телу, чтобы были видны естественное положение головы, плеч, спины, таза и&nbsp;ног.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">05</span>
+          <h3>Заранее посмотрите настройки вашего кресла</h3>
+          <p>Перед консультацией желательно разобраться, какие регулировки предусмотрены у&nbsp;кресла и&nbsp;где находятся соответствующие рычаги и&nbsp;механизмы. Это позволит не&nbsp;тратить время консультации на&nbsp;их поиск.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">06</span>
+          <h3>Понаблюдайте за&nbsp;своим самочувствием во&nbsp;время работы</h3>
+          <p>До&nbsp;консультации обратите внимание, есть ли зоны тела, в&nbsp;которых во&nbsp;время работы появляется напряжение, дискомфорт или&nbsp;боль.</p>
           <p>Полезно отметить, где именно они возникают, через какое время работы и&nbsp;при&nbsp;каких задачах появляются или&nbsp;становятся заметнее.</p>
           <p class="dprep__note">Если выраженных жалоб нет, это тоже нормально&nbsp;– консультация может быть направлена на&nbsp;проверку и&nbsp;более точную настройку рабочего места.</p>
-          </div>
-          <figure class="dshot dvis-ph"><span>Фото · шаг 06</span><!-- <img src="assets/photo/prepare/06.jpg" alt="Дискомфорт в шее во время работы за компьютером" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
-        </div>
-      </li>
-      <li class="dvis-row" data-rv>
-        <span class="dvis-row__n">07</span>
-        <div class="dvis-row__card">
-          <div class="dvis-row__txt">
-            <h3>Обратите внимание на&nbsp;свою привычную рабочую позу</h3>
-            <p>Когда вы&nbsp;специально контролируете осанку, ваша поза может заметно отличаться от&nbsp;той, в&nbsp;которой вы&nbsp;на&nbsp;самом деле проводите значительную часть рабочего времени.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">07</span>
+          <h3>Обратите внимание на&nbsp;свою привычную рабочую позу</h3>
+          <p>Когда вы&nbsp;специально контролируете осанку, ваша поза может заметно отличаться от&nbsp;той, в&nbsp;которой вы&nbsp;на&nbsp;самом деле проводите значительную часть рабочего времени.</p>
           <p>Постарайтесь заранее заметить, в&nbsp;какой позе вы&nbsp;обнаруживаете себя в&nbsp;процессе работы до&nbsp;того, как&nbsp;начинаете сознательно выпрямляться или&nbsp;садиться так, как&nbsp;считаете правильным.</p>
           <p class="dprep__note">Можно попросить кого-то сфотографировать вас сбоку во&nbsp;время обычной работы, когда вы&nbsp;увлечены задачей и&nbsp;специально не&nbsp;контролируете положение тела. Такое фото будет полезно на&nbsp;консультации.</p>
-          </div>
-          <figure class="dshot dvis-ph"><span>Фото · шаг 07</span><!-- <img src="assets/photo/prepare/07.jpg" alt="Привычная рабочая поза во время работы" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
-        </div>
-      </li>
-      <li class="dvis-row" data-rv>
-        <span class="dvis-row__n">08</span>
-        <div class="dvis-row__card">
-          <div class="dvis-row__txt">
-            <h3>Обратите внимание, куда вы&nbsp;смотрите во&nbsp;время работы</h3>
-            <p>Заранее отметьте, на&nbsp;какие объекты вы&nbsp;регулярно смотрите в&nbsp;процессе работы и&nbsp;где они находятся относительно вас.</p>
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">08</span>
+          <h3>Обратите внимание, куда вы&nbsp;смотрите во&nbsp;время работы</h3>
+          <p>Заранее отметьте, на&nbsp;какие объекты вы&nbsp;регулярно смотрите в&nbsp;процессе работы и&nbsp;где они находятся относительно вас.</p>
           <p>Это могут быть основной и&nbsp;дополнительный мониторы, экран ноутбука, документы, телефон или&nbsp;другие объекты, к&nbsp;которым вы&nbsp;постоянно переводите взгляд.</p>
           <p class="dprep__note">Это важно для&nbsp;оценки положения головы, шеи и&nbsp;рабочей позы в&nbsp;целом.</p>
-          </div>
-          <figure class="dshot dvis-ph"><span>Фото · шаг 08</span><!-- <img src="assets/photo/prepare/08.jpg" alt="Мониторы, ноутбук, документы и телефон на рабочем столе" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
-        </div>
-      </li>
-    </ol>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 

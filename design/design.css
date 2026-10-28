@@ -3642,25 +3642,21 @@ a.dprod:hover h3{color:var(--brand)}
 .dcons-two__card p{margin-top:14px;font-size:17px;line-height:1.6;color:var(--navy-2);max-width:32em}
 .dcons-two__link{margin-top:auto;padding-top:24px;align-self:flex-start}
 .dcons-two .dself-step__arr{box-shadow:0 0 0 6px var(--tint),0 6px 16px rgba(26,95,224,.18)}
-/* текст справа — белым листом, чтобы не слипался с заголовком: тезис
-   крупнее и отчеркнут линией, два «если» — списком с синими маркерами */
-.dexist{background:#fff;border-radius:28px;padding:clamp(24px,2.6vw,38px);max-width:none}
+/* текст справа — прямо на фоне, без листа и плашек (не спорит с карточками
+   ниже); от заголовка отделён шириной колонок. Тезис крупнее и отчеркнут
+   линией, два «если» — списком с синими маркерами */
+.dexist{max-width:36em}
 .dexist p + p{margin-top:12px}
 .dexist__lead{font-size:clamp(19px,1.5vw,21px);font-weight:600;line-height:1.4;letter-spacing:-.012em;color:var(--navy);
   padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--d-line)}
-.dexist__list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
-.dexist__list li{position:relative;padding:14px 18px 14px 40px;border-radius:16px;background:var(--tint);line-height:1.55}
-.dexist__list li::before{content:"";position:absolute;left:18px;top:calc(14px + .775em - 4px);width:8px;height:8px;border-radius:50%;background:var(--brand)}
+.dexist__list{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.dexist__list li{position:relative;padding-left:22px}
+.dexist__list li::before{content:"";position:absolute;left:2px;top:calc(.8em - 3px);width:7px;height:7px;border-radius:50%;background:var(--brand)}
 .dself #existing .dexist p,.dself #existing .dexist li{text-wrap:pretty}
 @media (min-width:1101px){
   #existing .dhead--split{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(48px,6vw,96px);align-items:start}
   #existing .dhead--split > div:first-child{grid-column:1;grid-row:1}
-  #existing .dhead__note{grid-column:2;grid-row:1;padding-bottom:0}
-}
-@media (max-width:600px){
-  .dexist{border-radius:22px;padding:22px 20px}
-  .dexist__list li{padding:12px 14px 12px 34px}
-  .dexist__list li::before{left:14px;top:calc(12px + .775em - 4px)}
+  #existing .dhead__note{grid-column:2;grid-row:1;padding:clamp(30px,2.6vw,40px) 0 0}
 }
 @media (max-width:860px){
   .dcons-two{grid-template-columns:1fr;gap:20px}
@@ -3691,36 +3687,19 @@ a.dprod:hover h3{color:var(--brand)}
   .dcons-med__body p{font-size:16.5px}
 }
 
-/* «Как подготовиться»: шаги по порядку — номер на вертикальной линии,
-   карточка: слева текст, справа фото 4:3. Если текст выше кадра, фото
-   тянется по высоте и подрезается по бокам (важное — в центре кадра).
-   Ниже 981px фото под текстом. */
-.dvis-steps{list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;display:flex;flex-direction:column;gap:14px;--node:52px}
-.dvis-row{position:relative;display:grid;grid-template-columns:var(--node) minmax(0,1fr);column-gap:22px;align-items:start}
-.dvis-row__n{position:relative;z-index:1;display:grid;place-items:center;width:var(--node);height:var(--node);border-radius:50%;
-  margin-top:28px;background:#fff;border:2px solid var(--brand-2);color:var(--brand);font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
-.dvis-row:last-child .dvis-row__n{background:var(--brand);border-color:var(--brand);color:#fff}
-.dvis-row:not(:last-child)::before{content:"";position:absolute;left:calc(var(--node) / 2 - 1px);top:calc(28px + var(--node));bottom:-42px;width:2px;
-  background:linear-gradient(180deg,var(--brand-3),var(--brand-2))}
-.dvis-row__card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);gap:clamp(24px,3vw,48px);align-items:stretch;
-  background:#fff;border-radius:28px;padding:clamp(22px,2.4vw,32px)}
-.dvis-row__txt{display:flex;flex-direction:column;justify-content:center;padding:6px 0 6px clamp(0px,1vw,10px)}
-.dvis-row__txt h3{margin-top:0;font-size:clamp(21px,1.75vw,25px);font-weight:600;line-height:1.2;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
-.dvis-row__txt p{margin-top:12px;font-size:16.5px;line-height:1.6;color:var(--navy-2);max-width:36em}
-.dvis-row__txt p + p{margin-top:8px}
-.dvis-row__txt .dprep__note{margin-top:16px;padding-top:14px;border-top:1px solid var(--d-line);font-size:15.5px}
-.dvis-ph{aspect-ratio:4/3}
-@media (max-width:980px){
-  .dvis-row__card{grid-template-columns:1fr}
+/* «Как подготовиться»: формат «Принципов системы» с главной (.dflow).
+   Ряды разной длины, поэтому не уравнены по самому высокому (иначе у
+   коротких шагов пустота); вместо этого у ряда минимальная высота под
+   кадр, и все кадры выходят одного размера. Сноска шага — под линейкой. */
+#prepare{--split:50%;--gap-flow:clamp(40px,5vw,96px);--meta:clamp(120px,13vw,230px)}
+@media (min-width:1001px){
+  /* ряд не ниже кадра максимального размера: кадр = левая колонка минус
+     номер и 16px, плюс 40px просвета (как считает скрипт) */
+  .dprep-flow{container-type:inline-size}
+  .dprep-flow .dflow__list{display:block}
+  .dprep-flow .dprin{min-height:calc(50cqw - var(--gap-flow) - var(--meta) + 24px)}
 }
-@media (max-width:600px){
-  .dvis-steps{--node:40px;gap:12px}
-  .dvis-row{column-gap:12px}
-  .dvis-row__n{margin-top:20px;font-size:13.5px}
-  .dvis-row:not(:last-child)::before{top:calc(20px + var(--node))}
-  .dvis-row__card{border-radius:22px;padding:20px 18px}
-  .dvis-row__txt p{font-size:16px}
-}
+.dprep-flow .dprin .dprep__note{margin-top:16px;padding-top:14px;border-top:1px solid var(--d-line);font-size:15.5px}
 
 /* схемы: общий язык линий */
 .v-floor{fill:none;stroke:var(--d-line);stroke-width:2;stroke-linecap:round}
