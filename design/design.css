@@ -3736,49 +3736,22 @@ a.dprod:hover h3{color:var(--brand)}
 .v-t--s{font-size:10.5px}
 .v-t--n{font-size:13px;fill:var(--navy)}
 
-/* «Как проходит консультация»: трек «Практического результата» на пять
-   этапов; ниже 1281px — вертикальный */
-.dk-res3.dcons-stages{grid-template-columns:repeat(5,minmax(0,1fr));--node:48px}
-.dcons-stages .dk-res__node{margin-left:24px}
-.dcons-stages li:not(:last-child)::before{left:calc(24px + var(--node))}
-.dcons-stages li:not(:last-child)::after{left:calc(100% + var(--res-gap) + 24px - 13px)}
-.dcons-stages .dk-res__card{padding:26px 24px 28px}
-.dcons-stages .dk-res__card::before{left:calc(24px + var(--node) / 2 - 9px)}
-.dk-res__vis{display:block;width:100%;height:auto;margin-bottom:18px;padding:10px;border-radius:16px;background:#fff;color:var(--brand)}
-.dk-res3.dcons-stages h3{margin-top:0;font-size:clamp(19px,1.4vw,21px);line-height:1.22;text-wrap:balance}
-.dk-res3.dcons-stages p{font-size:15.5px;line-height:1.58}
-.dcons-stages li:nth-child(1) .dk-res__node{border-color:var(--brand-3)}
-.dcons-stages li:nth-child(2) .dk-res__node,.dcons-stages li:nth-child(3) .dk-res__node{border-color:var(--brand-2)}
-.dcons-stages li:nth-child(4) .dk-res__node{border-color:var(--brand)}
-.dcons-stages li:nth-child(1)::before{background:linear-gradient(90deg,var(--brand-3),var(--brand-2))}
-.dcons-stages li:nth-child(2)::before{background:var(--brand-2)}
-.dcons-stages li:nth-child(3)::before{background:linear-gradient(90deg,var(--brand-2),var(--brand))}
-.dcons-stages li:nth-child(4)::before{background:var(--brand)}
-.dcons-stages li:nth-child(n+3)::after{border-left-color:var(--brand)}
-@media (max-width:1280px){
-  .dk-res__vis{max-width:300px}
-  .dk-res3.dcons-stages{grid-template-columns:1fr;gap:18px}
-  .dcons-stages li{display:grid;grid-template-columns:var(--node) minmax(0,1fr);column-gap:18px;align-items:start}
-  .dcons-stages .dk-res__node{margin-left:0}
-  .dcons-stages .dk-res__card{margin-top:0}
-  .dcons-stages .dk-res__card::before{left:-8px;top:calc(var(--node) / 2 - 9px)}
-  .dcons-stages li:not(:last-child)::before{
-    top:var(--node);left:calc(var(--node) / 2 - 1px);width:2px;height:calc(100% - var(--node) + 18px);
-  }
-  .dcons-stages li:nth-child(1)::before{background:linear-gradient(180deg,var(--brand-3),var(--brand-2))}
-  .dcons-stages li:nth-child(3)::before{background:linear-gradient(180deg,var(--brand-2),var(--brand))}
-  .dcons-stages li:not(:last-child)::after{
-    left:calc(var(--node) / 2 - 6px);top:auto;bottom:-18px;
-    border-width:9px 6px 0 6px;border-color:var(--brand-2) transparent transparent transparent;
-  }
-  .dcons-stages li:nth-child(n+3)::after{border-color:var(--brand) transparent transparent transparent}
-  .dk-res3.dcons-stages p{font-size:16.5px;max-width:44em}
-}
-@media (max-width:600px){
-  .dk-res3.dcons-stages{--node:40px;gap:16px}
-  .dcons-stages li{column-gap:12px}
-  .dcons-stages .dk-res__card{padding:20px 20px 22px}
-  .dk-res3.dcons-stages p{font-size:16px}
+/* «Как проходит консультация»: вкладки .dpickr с фото. Номер этапа вместо
+   иконки; сцена здесь выше списка (фото + текст), поэтому высоту ряда задаёт
+   она, а не список. Фото на десктопе 16:10, на телефоне 4:3. */
+.dpickr__num{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.dpickr__ph{aspect-ratio:4/3;margin:0 0 20px;border-radius:20px;background-color:#fff}
+.dpickr--ph .dpickr__panel{background:var(--tint)}
+@media (min-width:861px){
+  .dpickr--ph.is-live{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
+  .dpickr--ph.is-live .dpickr__stage{height:auto;min-height:0}
+  .dpickr--ph.is-live .dpickr__list{position:sticky;top:clamp(104px,11vh,148px)}
+  .dpickr--ph .dpickr__list button{padding-block:14px}
+  .dpickr--ph.is-live .dpickr__panel{padding:clamp(18px,1.8vw,24px) clamp(18px,1.8vw,24px) clamp(28px,3vw,40px)}
+  .dpickr--ph .dpickr__ph{aspect-ratio:16/10;margin-bottom:clamp(22px,2.4vw,32px)}
+  .dpickr--ph.is-live .dpickr__n{position:static;line-height:1;padding-inline:clamp(8px,1.4vw,20px)}
+  .dpickr--ph.is-live .dpickr__panel h3{margin-top:12px;padding:0 clamp(8px,1.4vw,20px);font-size:clamp(24px,2.2vw,32px);max-width:16em}
+  .dpickr--ph.is-live .dpickr__panel p{margin-top:14px;padding:0 clamp(8px,1.4vw,20px);font-size:clamp(17px,1.3vw,18px);max-width:38em}
 }
 
 /* «Что вы получаете»: четыре карточки 2×2, иконка слева */

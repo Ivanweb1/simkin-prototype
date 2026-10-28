@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=273">
+<link rel="stylesheet" href="design.css?v=274">
 </head>
 <body class="d dco dself dcons">
 
@@ -431,58 +431,58 @@
 </section>
 
 <!-- ============ БЛОК 7. КАК ПРОХОДИТ КОНСУЛЬТАЦИЯ ============ -->
-<!-- Пять этапов треком (компонент «Практический результат» курса): узлы
-     01 → 05 на линии, которая набирает цвет к последнему этапу; ниже
-     1281px трек становится вертикальным. У каждого этапа — схема
-     в стиле сайта над заголовком. -->
+<!-- Пять этапов вкладками (компонент «Выберите решение по задаче» со страницы
+     «Эргономичные решения»): слева номера и названия этапов, справа фото
+     и описание выбранного. Фото — assets/photo/process/01–05.jpg (4:3, на
+     десктопе подрезается до 16:10 по центру); пока файлов нет — плашка,
+     <img> раскомментировать. На телефоне и без JS — пять карточек подряд. -->
 <section class="dsec" id="process">
   <div class="dwrap">
     <div class="dhead">
       <span class="deyebrow" data-rv>Этапы</span>
       <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Как&nbsp;проходит <span class="dh2__soft">консультация</span></h2>
     </div>
-    <ol class="dk-res3 dcons-stages">
-      <li data-rv>
-        <span class="dk-res__node">01</span>
-        <div class="dk-res__card">
-          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><path class="v-floor" d="M20 106h160"/><g transform="translate(78 4)"><path class="v-fig" d="M0 31C-4 44-4 56 0 66M0 66l1 36h9M0 66l-2 36M0 36l3 26"/><circle class="v-head" cx="2" cy="22" r="8"/></g><g transform="translate(132 4)"><path class="v-fig" d="M-12 36h24M0 31v35M-8 66h16M-6 66v36M6 66v36M-12 36l-3 28M12 36l3 28"/><circle class="v-head" cx="0" cy="22" r="8"/></g></svg>
+    <div class="dpickr dpickr--ph" data-rv>
+      <div class="dpickr__list" role="tablist" aria-label="Этапы консультации" aria-orientation="vertical">
+        <button type="button" role="tab" id="stg-t1" aria-controls="stg-1" aria-selected="true"><span class="dpickr__ico dpickr__num">01</span><span class="dpickr__t">Оцениваем особенности вашего тела и&nbsp;осанки</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+        <button type="button" role="tab" id="stg-t2" aria-controls="stg-2" aria-selected="false" tabindex="-1"><span class="dpickr__ico dpickr__num">02</span><span class="dpickr__t">Разбираем вашу привычную рабочую позу</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+        <button type="button" role="tab" id="stg-t3" aria-controls="stg-3" aria-selected="false" tabindex="-1"><span class="dpickr__ico dpickr__num">03</span><span class="dpickr__t">Анализируем ваши задачи и&nbsp;самочувствие</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+        <button type="button" role="tab" id="stg-t4" aria-controls="stg-4" aria-selected="false" tabindex="-1"><span class="dpickr__ico dpickr__num">04</span><span class="dpickr__t">Настраиваем рабочее место</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+        <button type="button" role="tab" id="stg-t5" aria-controls="stg-5" aria-selected="false" tabindex="-1"><span class="dpickr__ico dpickr__num">05</span><span class="dpickr__t">Определяем дальнейшие шаги</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+      </div>
+      <div class="dpickr__stage">
+        <div class="dpickr__panel is-on" role="tabpanel" id="stg-1" aria-labelledby="stg-t1">
+          <figure class="dshot dpickr__ph"><span>Фото · этап 01</span><!-- <img src="assets/photo/process/01.jpg" alt="Оценка осанки стоя: боком к камере телефона" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
+          <span class="dpickr__n">01 / 05</span>
           <h3>Оцениваем особенности вашего тела и&nbsp;осанки</h3>
           <p>Смотрим на&nbsp;положение тела стоя сбоку и&nbsp;со&nbsp;спины, чтобы учитывать ваши индивидуальные особенности при&nbsp;дальнейшей работе.</p>
         </div>
-      </li>
-      <li data-rv style="--d:.05s">
-        <span class="dk-res__node">02</span>
-        <div class="dk-res__card">
-          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g></svg>
+        <div class="dpickr__panel" role="tabpanel" id="stg-2" aria-labelledby="stg-t2">
+          <figure class="dshot dpickr__ph"><span>Фото · этап 02</span><!-- <img src="assets/photo/process/02.jpg" alt="Привычная рабочая поза за рабочим местом" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
+          <span class="dpickr__n">02 / 05</span>
           <h3>Разбираем вашу привычную рабочую позу</h3>
           <p>Смотрим, как&nbsp;вы&nbsp;располагаетесь за&nbsp;рабочим местом, где находятся голова, спина, руки и&nbsp;ноги, как&nbsp;расположено оборудование и&nbsp;на&nbsp;какие объекты вы&nbsp;смотрите в&nbsp;процессе работы.</p>
         </div>
-      </li>
-      <li data-rv style="--d:.1s">
-        <span class="dk-res__node">03</span>
-        <div class="dk-res__card">
-          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><circle class="v-halo" cx="57" cy="36" r="7"/><circle class="v-dot" cx="57" cy="36" r="3.6"/><circle class="v-halo" cx="57" cy="64" r="7"/><circle class="v-dot" cx="57" cy="64" r="3.6"/><circle class="v-halo" cx="110" cy="62" r="7"/><circle class="v-dot" cx="110" cy="62" r="3.6"/></svg>
+        <div class="dpickr__panel" role="tabpanel" id="stg-3" aria-labelledby="stg-t3">
+          <figure class="dshot dpickr__ph"><span>Фото · этап 03</span><!-- <img src="assets/photo/process/03.jpg" alt="Разговор о задачах и самочувствии по видеосвязи" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
+          <span class="dpickr__n">03 / 05</span>
           <h3>Анализируем ваши задачи и&nbsp;самочувствие</h3>
           <p>Учитываем характер работы, используемое оборудование и&nbsp;зоны тела, в&nbsp;которых во&nbsp;время работы появляется напряжение, усталость, дискомфорт или&nbsp;боль.</p>
         </div>
-      </li>
-      <li data-rv style="--d:.15s">
-        <span class="dk-res__node">04</span>
-        <div class="dk-res__card">
-          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><defs><marker id="vArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs><g transform="translate(0 0)"><path class="v-floor" d="M6 108h188"/><rect class="v-desk" x="112" y="64" width="80" height="5" rx="1.5"/><path class="v-l" d="M184 69v39"/><path class="v-eye" d="M66 27 L152 34"/><rect class="v-dark" x="156" y="20" width="6" height="32" rx="1.5"/><path class="v-l" d="M159 52v12M151 64h16"/><path class="v-chair" d="M52 72h36M52 72 47 36M68 74v18M54 100h30"/><circle class="v-wheel" cx="57" cy="104" r="3.5"/><circle class="v-wheel" cx="81" cy="104" r="3.5"/><path class="v-fig" d="M58 68 54 38M58 68h36l2 36h12M55 41l14 21h44"/><circle class="v-head" cx="58" cy="27" r="9"/></g><path class="v-move" d="M30 74v28" marker-start="url(#vArr)" marker-end="url(#vArr)"/><path class="v-move" d="M176 16v30" marker-start="url(#vArr)" marker-end="url(#vArr)"/></svg>
+        <div class="dpickr__panel" role="tabpanel" id="stg-4" aria-labelledby="stg-t4">
+          <figure class="dshot dpickr__ph"><span>Фото · этап 04</span><!-- <img src="assets/photo/process/04.jpg" alt="Настройка кресла во время консультации" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
+          <span class="dpickr__n">04 / 05</span>
           <h3>Настраиваем рабочее место</h3>
           <p>Во&nbsp;время консультации вы&nbsp;меняете настройки кресла, положение оборудования и&nbsp;другие параметры, а&nbsp;мы&nbsp;сразу оцениваем результат.</p>
         </div>
-      </li>
-      <li data-rv style="--d:.2s">
-        <span class="dk-res__node">05</span>
-        <div class="dk-res__card">
-          <svg class="dk-res__vis" viewBox="0 0 200 110" aria-hidden="true"><g class="v-rows"><rect x="22" y="10" width="156" height="26" rx="13"/><rect x="22" y="42" width="156" height="26" rx="13"/><rect x="22" y="74" width="156" height="26" rx="13"/></g><path class="v-ok" d="M34 23l4 4 8-8"/><path class="v-ok" d="M45.6 52.6A6 6 0 1 0 46 57M46.2 48.8v4h-4"/><path class="v-ok" d="M34 87h12M40 81v12"/><text class="v-t v-t--n" x="56" y="27" text-anchor="start">оставить</text><text class="v-t v-t--n" x="56" y="59" text-anchor="start">изменить</text><text class="v-t v-t--n" x="56" y="91" text-anchor="start">добавить</text></svg>
+        <div class="dpickr__panel" role="tabpanel" id="stg-5" aria-labelledby="stg-t5">
+          <figure class="dshot dpickr__ph"><span>Фото · этап 05</span><!-- <img src="assets/photo/process/05.jpg" alt="Настроенное рабочее место по итогам консультации" width="1600" height="1200" loading="lazy" decoding="async"> --></figure>
+          <span class="dpickr__n">05 / 05</span>
           <h3>Определяем дальнейшие шаги</h3>
           <p>По&nbsp;итогам становится понятно, что&nbsp;можно оставить, что&nbsp;стоит изменить и&nbsp;требуется ли дополнительное оборудование.</p>
         </div>
-      </li>
-    </ol>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -835,6 +835,33 @@
     });
   });
 }
+})();
+</script>
+
+<script>
+/* «Как проходит консультация»: список этапов слева переключает панель справа
+   (тот же скрипт, что у «Выберите решение по задаче») */
+(function(){
+  var box = document.querySelector('.dpickr'); if(!box) return;
+  var tabs = [].slice.call(box.querySelectorAll('[role=tab]'));
+  var panels = tabs.map(function(t){ return document.getElementById(t.getAttribute('aria-controls')); });
+  box.classList.add('is-live');
+  function show(i){
+    tabs.forEach(function(t, k){
+      var on = k === i;
+      t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
+      panels[k].classList.toggle('is-on', on);
+    });
+  }
+  tabs.forEach(function(t, k){
+    t.addEventListener('click', function(){ show(k); });
+    t.addEventListener('mouseenter', function(){ if(window.matchMedia('(hover:hover)').matches) show(k); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowDown' ? 1 : e.key === 'ArrowUp' ? -1 : 0;
+      if(!d) return; e.preventDefault();
+      var n = (k + d + tabs.length) % tabs.length; show(n); tabs[n].focus();
+    });
+  });
 })();
 </script>
 
