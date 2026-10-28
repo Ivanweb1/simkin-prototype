@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=285">
+<link rel="stylesheet" href="design.css?v=286">
 </head>
 <body class="d dco dlib">
 
@@ -92,8 +92,8 @@
 
 <!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН + ТЕМЫ ============ -->
 <!-- Компактная карточка без фото: заголовок, вводный текст, под ними — темы
-     плашками и поиск по статьям (лупа раскрывает строку). Фильтр и поиск
-     работают вместе. Глобального поиска по сайту нет. -->
+     строка поиска по статьям и темы плашками. Фильтр и поиск работают
+     вместе. Глобального поиска по сайту нет. -->
 <section class="dcohero dlib-hero" id="hero">
   <div class="dwrap">
     <div class="dcohero__card">
@@ -113,7 +113,7 @@
             <button type="button" class="dlib-f" data-filter="issled" aria-pressed="false">Исследования</button>
           </div>
           <div class="dlib-search">
-            <button type="button" class="dlib-search__btn" aria-label="Поиск по статьям" aria-expanded="false" aria-controls="libq"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="9" r="5.8"/><path d="m13.4 13.4 3.6 3.6"/></svg></button>
+            <button type="button" class="dlib-search__btn" aria-label="Искать" tabindex="-1"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="9" r="5.8"/><path d="m13.4 13.4 3.6 3.6"/></svg></button>
             <input class="dlib-search__in" type="search" id="libq" placeholder="Поиск по статьям" aria-label="Поиск по статьям" autocomplete="off">
           </div>
         </div>
@@ -434,7 +434,6 @@
   var btns  = [].slice.call(document.querySelectorAll('[data-filter]'));
   var input = document.getElementById('libq');
   var sbtn  = document.querySelector('.dlib-search__btn');
-  var sbox  = document.querySelector('.dlib-search');
   var more  = document.querySelector('[data-lib-more]');
   var empty = document.querySelector('.dlib-empty');
   var count = document.querySelector('.dlib-count');
@@ -469,12 +468,8 @@
     });
   });
   input.addEventListener('input', function(){ shown = STEP; render(); });
-  sbtn.addEventListener('click', function(){
-    var open = !sbox.classList.contains('is-open');
-    sbox.classList.toggle('is-open', open); sbtn.setAttribute('aria-expanded', open);
-    if(open){ input.focus(); } else if(input.value){ input.value = ''; shown = STEP; render(); }
-  });
-  input.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ input.value = ''; render(); sbtn.click(); sbtn.focus(); } });
+  sbtn.addEventListener('click', function(){ input.focus(); });
+  input.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ input.value = ''; shown = STEP; render(); } });
   more.addEventListener('click', function(){ shown += STEP; render(); });
   document.querySelector('[data-lib-reset]').addEventListener('click', function(){
     input.value = ''; btns[0].click();
