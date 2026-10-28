@@ -3743,10 +3743,17 @@ a.dprod:hover h3{color:var(--brand)}
 .dpickr__ph{aspect-ratio:4/3;margin:0 0 20px;border-radius:20px;background-color:#fff}
 .dpickr--ph .dpickr__panel{background:var(--tint)}
 @media (min-width:861px){
-  .dpickr--ph.is-live{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}
+  /* список тянется на высоту панели: пять этапов делят её поровну,
+     между ними волосяные линейки — левая и правая части одной высоты */
+  .dpickr--ph.is-live{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
   .dpickr--ph.is-live .dpickr__stage{height:auto;min-height:0}
-  .dpickr--ph.is-live .dpickr__list{position:sticky;top:clamp(104px,11vh,148px)}
-  .dpickr--ph .dpickr__list button{padding-block:14px}
+  .dpickr--ph.is-live .dpickr__list{gap:0}
+  .dpickr--ph .dpickr__list button{flex:1;position:relative;gap:20px;padding:12px 22px 12px 14px}
+  .dpickr--ph .dpickr__list button + button::before{content:"";position:absolute;left:14px;right:14px;top:0;height:1px;background:var(--d-line)}
+  .dpickr--ph .dpickr__list button[aria-selected="true"]::before,
+  .dpickr--ph .dpickr__list button[aria-selected="true"] + button::before{opacity:0}
+  .dpickr--ph .dpickr__t{font-size:clamp(19px,1.6vw,23px);line-height:1.22}
+  .dpickr--ph .dpickr__num{width:56px;height:56px;font-size:16px}
   .dpickr--ph.is-live .dpickr__panel{padding:clamp(18px,1.8vw,24px) clamp(18px,1.8vw,24px) clamp(28px,3vw,40px)}
   .dpickr--ph .dpickr__ph{margin-bottom:clamp(22px,2.4vw,32px)}
   .dpickr--ph.is-live .dpickr__n{position:static;line-height:1;padding-inline:clamp(8px,1.4vw,20px)}
