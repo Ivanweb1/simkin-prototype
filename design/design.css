@@ -3876,3 +3876,89 @@ a.dprod:hover h3{color:var(--brand)}
   .dlib-f{height:38px;padding:0 14px;font-size:14px}
   .dlib-hero .dcohero__txt{--px:20px}
 }
+
+/* =====================================================================
+   СТАТЬЯ (chto-takoe-ergonomika.html — шаблон статей раздела)
+   ===================================================================== */
+.dart-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
+.dart-meta .dread{font-size:14px;color:var(--navy-2)}
+.dart-hero h1{margin-top:18px;max-width:13em}
+.dart-hero .dcohero__lead{max-width:32em}
+.dart-hero .dcohero__media img{object-position:50% 50%}
+
+.dart-sec{padding:clamp(56px,6vw,104px) 0 clamp(72px,8vw,128px)}
+.dart{display:grid;grid-template-columns:260px minmax(0,740px);gap:clamp(48px,6vw,120px);justify-content:center;align-items:start}
+.dart__aside{align-self:stretch}
+/* содержание: закреплено при прокрутке, текущий раздел — синим с полосой слева */
+.dtoc{position:sticky;top:112px}
+.dtoc__t{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-3)}
+.dtoc ol{list-style:none;margin:16px 0 0;padding:0;border-left:2px solid var(--d-line)}
+.dtoc a{
+  display:block;margin-left:-2px;padding:9px 0 9px 18px;border-left:2px solid transparent;
+  font-size:15px;line-height:1.4;color:var(--navy-2);transition:color .2s var(--ease),border-color .2s var(--ease);
+}
+.dtoc a:hover{color:var(--navy)}
+.dtoc a.is-on{color:var(--brand);border-left-color:var(--brand);font-weight:600}
+
+/* текст: одна колонка, крупный кегль, заголовки разделов с запасом сверху */
+.dprose p{font-size:18.5px;line-height:1.72;color:var(--navy);margin:0 0 20px}
+.dprose .dprose__intro{font-size:clamp(20px,1.6vw,23px);line-height:1.55;font-weight:500;letter-spacing:-.01em}
+.dprose h2{
+  margin:clamp(52px,5vw,76px) 0 22px;scroll-margin-top:112px;
+  font-size:clamp(26px,2.3vw,34px);font-weight:600;line-height:1.16;letter-spacing:-.025em;color:var(--navy);text-wrap:balance;
+}
+/* вывод раздела — тем же кеглем, но полужирным с синей чертой */
+.dprose .dprose__key{padding-left:20px;border-left:3px solid var(--brand);font-weight:600}
+/* принцип — крупная врезка на подложке */
+.dprinciple{
+  margin:8px 0 32px;padding:clamp(28px,3.2vw,44px);border-radius:28px;background:var(--tint);
+  font-size:clamp(22px,2vw,29px);font-weight:600;line-height:1.3;letter-spacing:-.02em;color:var(--navy);
+}
+.dprinciple em{font-style:normal;color:var(--accent)}
+/* состав системы — плашки в две колонки */
+.dsys{list-style:none;margin:0 0 28px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dsys li{
+  position:relative;padding:14px 18px 14px 40px;border-radius:16px;background:var(--tint);
+  font-size:16.5px;line-height:1.4;color:var(--navy);
+}
+.dsys li::before{content:"";position:absolute;left:18px;top:22px;width:10px;height:3px;border-radius:1px;background:var(--brand)}
+/* финальный вопрос статьи */
+.dprose .dquestion{
+  margin:8px 0 0;padding:clamp(28px,3.2vw,44px);border-radius:28px;color:#fff;
+  background:linear-gradient(135deg,#001AE6 0%,#1147EE 26%,#2E80FF 62%,#54C2FF 118%);
+  font-size:clamp(22px,2vw,29px);font-weight:600;line-height:1.3;letter-spacing:-.02em;
+}
+
+.dshare{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:clamp(40px,4vw,56px);padding-top:28px;border-top:1px solid var(--d-line)}
+.dshare__t{font-size:15px;font-weight:600;margin-right:8px;color:var(--navy)}
+.dshare a,.dshare__copy{
+  display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--tint);border:0;cursor:pointer;
+  color:var(--navy-2);transition:background .2s var(--ease),color .2s var(--ease);
+}
+.dshare a:hover,.dshare__copy:hover{background:#E3EAF7;color:var(--navy)}
+.dshare__copy svg{width:21px;height:21px}
+.dshare__ok{display:none}
+.dshare__copy.is-done{color:var(--brand)}
+.dshare__copy.is-done svg{display:none}
+.dshare__copy.is-done .dshare__ok{display:block}
+
+.dart-rel__head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.dart-rel .dlink{margin-top:0;padding-top:0}
+
+@media (max-width:1100px){
+  .dart{grid-template-columns:minmax(0,740px)}
+  .dart__aside{align-self:auto}
+  .dtoc{position:static;background:var(--tint);border-radius:24px;padding:24px 26px}
+  .dtoc ol{border-left:0;margin-top:12px}
+  .dtoc a{margin-left:0;padding:8px 0;border-left:0}
+  .dtoc a.is-on{color:var(--navy-2);font-weight:400}
+}
+@media (max-width:600px){
+  .dart-hero h1{margin-top:16px}
+  .dprose p{font-size:17px}
+  .dprose .dprose__intro{font-size:19px}
+  .dprose .dprose__key{padding-left:16px}
+  .dprinciple,.dprose .dquestion{border-radius:22px;padding:24px 20px;font-size:21px}
+  .dsys{grid-template-columns:1fr}
+  .dtoc{padding:20px}
+}
