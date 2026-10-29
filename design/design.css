@@ -3855,7 +3855,7 @@ a.dprod:hover h3{color:var(--brand)}
 .dlib-grid .dpost[hidden]{display:none}
 .dlib-count{font-size:15px;color:var(--navy-3);margin-bottom:16px}
 .dlib-count:empty{display:none}
-/* время чтения справа в строке темы; у разборов исследований — одна метка */
+/* время чтения справа в строке темы — у всех карточек, и у разборов исследований */
 .dpost__meta .dread{margin-left:auto}
 /* как на «Для себя» (.dself .dpost h3): карточки на обеих страницах одинаковые */
 .dlib .dpost h3{margin-top:16px}
@@ -3961,4 +3961,81 @@ a.dprod:hover h3{color:var(--brand)}
   .dprinciple,.dprose .dquestion{border-radius:22px;padding:24px 20px;font-size:21px}
   .dsys{grid-template-columns:1fr}
   .dtoc{padding:20px}
+}
+
+/* --- статья: подача текста --- */
+/* полоса прочитанного — тонкая, по верхнему краю окна */
+.dprogress{position:fixed;left:0;right:0;top:0;height:3px;z-index:80;pointer-events:none}
+.dprogress i{display:block;height:100%;background:var(--brand);transform-origin:0 50%;transform:scaleX(0)}
+/* номер раздела над заголовком */
+.dprose__n{display:block;margin-bottom:12px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
+/* опорная фраза раздела — крупнее и плотнее обычного абзаца */
+.dprose .dprose__big{font-size:clamp(20px,1.6vw,23px);line-height:1.5;font-weight:600;letter-spacing:-.012em}
+.dprose b{font-weight:600}
+/* маркер — мягкая голубая подложка под нижней половиной строки */
+.dprose mark{
+  color:inherit;padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone;
+  background:linear-gradient(transparent 58%,rgba(84,194,255,.32) 58%,rgba(84,194,255,.32) 92%,transparent 92%);
+}
+.dprinciple__t{display:block;margin-bottom:14px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
+
+/* четыре сценария работы — плитки с иконками */
+.dtasks{list-style:none;margin:4px 0 28px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dtasks li{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px var(--d-line);font-size:16.5px;line-height:1.45;color:var(--navy)}
+.dtasks__ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--tint);color:var(--brand)}
+.dtasks__ico svg{width:24px;height:24px}
+
+/* разбор примера по шагам: вертикальная линия с точками */
+.dcase{margin:36px 0 36px;padding:clamp(26px,3vw,40px);border-radius:28px;background:var(--tint)}
+.dcase__t{display:block;margin-bottom:22px;font-size:clamp(19px,1.5vw,22px);font-weight:600;line-height:1.3;letter-spacing:-.015em;color:var(--navy)}
+.dcase__step{position:relative;padding:0 0 22px 30px}
+.dcase__step::before{content:"";position:absolute;left:5px;top:20px;bottom:-2px;width:2px;background:rgba(26,95,224,.18)}
+.dcase__step:last-child{padding-bottom:0}
+.dcase__step:last-child::before{display:none}
+.dcase__step::after{content:"";position:absolute;left:0;top:5px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px var(--brand)}
+.dcase__k{display:block;margin-bottom:6px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-3)}
+.dprose .dcase p{margin:0;font-size:17px;line-height:1.62}
+.dcase__step--no p{color:var(--navy-2)}
+.dcase__causes{display:grid;gap:8px}
+.dprose .dcase__causes p{padding:14px 18px;border-radius:16px;background:#fff}
+.dcase__step--yes::after{background:var(--brand);box-shadow:none}
+.dcase__step--yes .dcase__k{color:var(--brand)}
+.dprose .dcase__step--yes p{font-weight:600}
+
+/* «сначала → со временем» — две ступени */
+.dtime{list-style:none;margin:4px 0 8px;padding:0;display:grid;grid-template-columns:1fr 1.6fr;gap:10px}
+.dtime li{padding:20px 22px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px var(--d-line)}
+.dtime li + li{background:var(--tint);box-shadow:none}
+.dtime__k{display:block;margin-bottom:6px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
+.dprose .dtime p{margin:0;font-size:16.5px;line-height:1.55}
+
+/* популярные советы — цитатами с пометкой «совет» */
+.dtips{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dtips li{position:relative;padding:44px 20px 20px;border-radius:20px;background:var(--tint);font-size:16.5px;line-height:1.4;font-weight:600;color:var(--navy)}
+.dtips li::before{content:"«";position:absolute;left:18px;top:8px;font-size:40px;line-height:1;color:var(--brand-3);font-weight:600}
+
+/* связи элементов: «элемент — линия со стрелкой — что от него зависит» */
+.dlinks{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:8px}
+.dlinks li{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr);align-items:center;gap:12px;padding:16px 20px;border-radius:18px;background:#fff;box-shadow:inset 0 0 0 1px var(--d-line);font-size:16.5px;line-height:1.4}
+.dlinks li > span:first-child{font-weight:600;color:var(--navy)}
+.dlinks li > span:last-child{color:var(--navy-2)}
+.dlinks i{position:relative;height:2px;background:var(--brand-3)}
+.dlinks i::after{content:"";position:absolute;right:-1px;top:-4px;width:8px;height:8px;border-top:2px solid var(--brand-3);border-right:2px solid var(--brand-3);transform:rotate(45deg)}
+
+/* команды самому себе — зачёркнутые реплики */
+.dcmds{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.dcmds li{padding:10px 18px;border-radius:100px;background:var(--tint);font-size:16.5px;font-weight:500;color:var(--navy-2);text-decoration:line-through;text-decoration-color:rgba(26,95,224,.6);text-decoration-thickness:2px}
+.dprose .dpivot{font-size:clamp(28px,2.6vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.1;color:var(--accent);margin:26px 0 16px}
+
+
+@media (max-width:760px){
+  .dtasks,.dtime,.dtips{grid-template-columns:1fr}
+  .dtips li{padding:40px 18px 18px}
+  .dlinks li{grid-template-columns:1fr;gap:6px}
+  .dlinks i{display:none}
+  .dlinks li > span:last-child{padding-left:14px;border-left:2px solid var(--brand-3)}
+}
+@media (max-width:600px){
+  .dcase{border-radius:22px;padding:22px 18px}
+  .dprose .dcase p,.dtasks li,.dprose .dtime p{font-size:16px}
 }
