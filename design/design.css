@@ -3131,7 +3131,8 @@ a.dprod:hover h3{color:var(--brand)}
 .dmyth__n{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
 .dmyth__tag{
   align-self:flex-start;display:inline-flex;align-items:center;gap:7px;margin-top:22px;padding:6px 12px 6px 8px;border-radius:100px;
-  background:#FBEDEE;color:#B23A48;font-size:12.5px;font-weight:600;letter-spacing:.02em;line-height:1;
+  /* графит, не красный — правило заказчика (19.10.2026) для всего сайта */
+  background:var(--graph-bg);color:var(--graph);font-size:12.5px;font-weight:600;letter-spacing:.02em;line-height:1;
 }
 .dmyth__tag svg{width:14px;height:14px;padding:2px;border-radius:50%;background:currentColor;stroke:#fff;box-sizing:content-box}
 .dmyth__tag--yes{margin-top:0;background:var(--tint);color:var(--brand)}
