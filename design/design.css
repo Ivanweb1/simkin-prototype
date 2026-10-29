@@ -3879,163 +3879,43 @@ a.dprod:hover h3{color:var(--brand)}
 
 /* =====================================================================
    СТАТЬЯ (chto-takoe-ergonomika.html — шаблон статей раздела)
+   Раскладка — шаблон статьи из прототипа (.art, .toc, .prose), здесь только
+   цвета и шрифт дизайна. Врезки в тексте — готовые блоки других страниц:
+   .dk-principle (курс), .dmyth__tag (метод), .dstep в .doffers (для себя,
+   для компаний), .dgain__list, .dvoice__end, .dk-strong, .foot__msg.
    ===================================================================== */
-.dart-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px}
-.dart-meta .dread{font-size:14px;color:var(--navy-2)}
-.dart-hero h1{margin-top:18px;max-width:13em}
-.dart-hero .dcohero__lead{max-width:32em}
-.dart-hero .dcohero__media img{object-position:50% 50%}
-
-.dart-sec{padding:clamp(56px,6vw,104px) 0 clamp(72px,8vw,128px)}
-.dart{display:grid;grid-template-columns:260px minmax(0,740px);gap:clamp(48px,6vw,120px);justify-content:center;align-items:start}
-.dart__aside{align-self:stretch}
-/* содержание: закреплено при прокрутке, текущий раздел — синим с полосой слева */
-.dtoc{position:sticky;top:112px}
-.dtoc__t{display:block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-3)}
-.dtoc ol{list-style:none;margin:16px 0 0;padding:0;border-left:2px solid var(--d-line)}
-.dtoc a{
-  display:block;margin-left:-2px;padding:9px 0 9px 18px;border-left:2px solid transparent;
-  font-size:15px;line-height:1.4;color:var(--navy-2);transition:color .2s var(--ease),border-color .2s var(--ease);
-}
-.dtoc a:hover{color:var(--navy)}
-.dtoc a.is-on{color:var(--brand);border-left-color:var(--brand);font-weight:600}
-
-/* текст: одна колонка, крупный кегль, заголовки разделов с запасом сверху */
-.dprose p{font-size:18.5px;line-height:1.72;color:var(--navy);margin:0 0 20px}
-.dprose .dprose__intro{font-size:clamp(20px,1.6vw,23px);line-height:1.55;font-weight:500;letter-spacing:-.01em}
-.dprose h2{
+.d .art{grid-template-columns:260px minmax(0,740px);gap:clamp(48px,6vw,120px);justify-content:center}
+.d .toc{top:112px}
+.d .toc ol{padding:0;border-left-color:var(--d-line)}
+.d .toc a{font-size:15px;font-weight:500;color:var(--navy-2)}
+.d .toc a:hover{color:var(--navy)}
+.d .toc a.is-on{color:var(--brand);border-left-color:var(--brand)}
+.d .prose{max-width:none}
+.d .prose h2{
   margin:clamp(52px,5vw,76px) 0 22px;scroll-margin-top:112px;
   font-size:clamp(26px,2.3vw,34px);font-weight:600;line-height:1.16;letter-spacing:-.025em;color:var(--navy);text-wrap:balance;
 }
-/* вывод раздела — тем же кеглем, но полужирным с синей чертой */
-.dprose .dprose__key{padding-left:20px;border-left:3px solid var(--brand);font-weight:600}
-/* принцип — крупная врезка на подложке */
-.dprinciple{
-  margin:8px 0 32px;padding:clamp(28px,3.2vw,44px);border-radius:28px;background:var(--tint);
-  font-size:clamp(22px,2vw,29px);font-weight:600;line-height:1.3;letter-spacing:-.02em;color:var(--navy);
-}
-.dprinciple em{font-style:normal;color:var(--accent)}
-/* состав системы — плашки в две колонки */
-.dsys{list-style:none;margin:0 0 28px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.dsys li{
-  position:relative;padding:14px 18px 14px 40px;border-radius:16px;background:var(--tint);
-  font-size:16.5px;line-height:1.4;color:var(--navy);
-}
-.dsys li::before{content:"";position:absolute;left:18px;top:22px;width:10px;height:3px;border-radius:1px;background:var(--brand)}
-/* финальный вопрос статьи */
-.dprose .dquestion{
-  margin:8px 0 0;padding:clamp(28px,3.2vw,44px);border-radius:28px;color:#fff;
-  background:linear-gradient(135deg,#001AE6 0%,#1147EE 26%,#2E80FF 62%,#54C2FF 118%);
-  font-size:clamp(22px,2vw,29px);font-weight:600;line-height:1.3;letter-spacing:-.02em;
-}
-
-.dshare{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:clamp(40px,4vw,56px);padding-top:28px;border-top:1px solid var(--d-line)}
-.dshare__t{font-size:15px;font-weight:600;margin-right:8px;color:var(--navy)}
-.dshare a,.dshare__copy{
-  display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--tint);border:0;cursor:pointer;
-  color:var(--navy-2);transition:background .2s var(--ease),color .2s var(--ease);
-}
-.dshare a:hover,.dshare__copy:hover{background:#E3EAF7;color:var(--navy)}
-.dshare__copy svg{width:21px;height:21px}
-.dshare__ok{display:none}
-.dshare__copy.is-done{color:var(--brand)}
-.dshare__copy.is-done svg{display:none}
-.dshare__copy.is-done .dshare__ok{display:block}
-
-.dart-rel__head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.dart-rel .dlink{margin-top:0;padding-top:0}
-
+.d .prose p{font-size:18px;line-height:1.7;color:var(--navy);margin:0 0 20px}
+/* готовые блоки внутри текста: только отступы и подложка под белый фон статьи */
+.d .prose .dk-principle{margin:8px 0 32px;background:var(--tint)}
+.d .prose .doffers{margin:8px 0 28px}
+.d .prose .dstep{padding:24px 26px 26px}
+.d .prose .dstep p{margin:18px 0 0;font-size:16.5px;line-height:1.5}
+.d .prose .dchips{margin:0 0 22px}
+.d .prose .dmyth__tag{margin-top:0;line-height:1.3}
+.d .prose .dgain__list{margin:0 0 28px}
+.d .prose .dgain__list li{padding:0;margin:0;font-size:17px;color:var(--navy)}
+.d .prose .dgain__list li::before{content:none}
+.d .prose .foot__msg{margin-top:clamp(40px,4vw,56px);padding-top:28px;border-top:1px solid var(--d-line)}
 @media (max-width:1100px){
-  .dart{grid-template-columns:minmax(0,740px)}
-  .dart__aside{align-self:auto}
-  .dtoc{position:static;background:var(--tint);border-radius:24px;padding:24px 26px}
-  .dtoc ol{border-left:0;margin-top:12px}
-  .dtoc a{margin-left:0;padding:8px 0;border-left:0}
-  .dtoc a.is-on{color:var(--navy-2);font-weight:400}
+  .d .art{grid-template-columns:minmax(0,740px);gap:40px}
+  .d .toc{position:static;background:var(--tint);border-radius:24px;padding:24px 26px}
+  .d .toc ol{border-left:0;margin-top:12px}
+  .d .toc a{margin-left:0;padding:8px 0;border-left:0}
+  .d .toc a.is-on{color:var(--navy-2)}
 }
 @media (max-width:600px){
-  .dart-hero h1{margin-top:16px}
-  .dprose p{font-size:17px}
-  .dprose .dprose__intro{font-size:19px}
-  .dprose .dprose__key{padding-left:16px}
-  .dprinciple,.dprose .dquestion{border-radius:22px;padding:24px 20px;font-size:21px}
-  .dsys{grid-template-columns:1fr}
-  .dtoc{padding:20px}
-}
-
-/* --- статья: подача текста --- */
-/* полоса прочитанного — тонкая, по верхнему краю окна */
-.dprogress{position:fixed;left:0;right:0;top:0;height:3px;z-index:80;pointer-events:none}
-.dprogress i{display:block;height:100%;background:var(--brand);transform-origin:0 50%;transform:scaleX(0)}
-/* номер раздела над заголовком */
-.dprose__n{display:block;margin-bottom:12px;font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--brand);font-variant-numeric:tabular-nums}
-/* опорная фраза раздела — крупнее и плотнее обычного абзаца */
-.dprose .dprose__big{font-size:clamp(20px,1.6vw,23px);line-height:1.5;font-weight:600;letter-spacing:-.012em}
-.dprose b{font-weight:600}
-/* маркер — мягкая голубая подложка под нижней половиной строки */
-.dprose mark{
-  color:inherit;padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone;
-  background:linear-gradient(transparent 58%,rgba(84,194,255,.32) 58%,rgba(84,194,255,.32) 92%,transparent 92%);
-}
-.dprinciple__t{display:block;margin-bottom:14px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
-
-/* четыре сценария работы — плитки с иконками */
-.dtasks{list-style:none;margin:4px 0 28px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.dtasks li{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px var(--d-line);font-size:16.5px;line-height:1.45;color:var(--navy)}
-.dtasks__ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--tint);color:var(--brand)}
-.dtasks__ico svg{width:24px;height:24px}
-
-/* разбор примера по шагам: вертикальная линия с точками */
-.dcase{margin:36px 0 36px;padding:clamp(26px,3vw,40px);border-radius:28px;background:var(--tint)}
-.dcase__t{display:block;margin-bottom:22px;font-size:clamp(19px,1.5vw,22px);font-weight:600;line-height:1.3;letter-spacing:-.015em;color:var(--navy)}
-.dcase__step{position:relative;padding:0 0 22px 30px}
-.dcase__step::before{content:"";position:absolute;left:5px;top:20px;bottom:-2px;width:2px;background:rgba(26,95,224,.18)}
-.dcase__step:last-child{padding-bottom:0}
-.dcase__step:last-child::before{display:none}
-.dcase__step::after{content:"";position:absolute;left:0;top:5px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px var(--brand)}
-.dcase__k{display:block;margin-bottom:6px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-3)}
-.dprose .dcase p{margin:0;font-size:17px;line-height:1.62}
-.dcase__step--no p{color:var(--navy-2)}
-.dcase__causes{display:grid;gap:8px}
-.dprose .dcase__causes p{padding:14px 18px;border-radius:16px;background:#fff}
-.dcase__step--yes::after{background:var(--brand);box-shadow:none}
-.dcase__step--yes .dcase__k{color:var(--brand)}
-.dprose .dcase__step--yes p{font-weight:600}
-
-/* «сначала → со временем» — две ступени */
-.dtime{list-style:none;margin:4px 0 8px;padding:0;display:grid;grid-template-columns:1fr 1.6fr;gap:10px}
-.dtime li{padding:20px 22px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px var(--d-line)}
-.dtime li + li{background:var(--tint);box-shadow:none}
-.dtime__k{display:block;margin-bottom:6px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
-.dprose .dtime p{margin:0;font-size:16.5px;line-height:1.55}
-
-/* популярные советы — цитатами с пометкой «совет» */
-.dtips{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.dtips li{position:relative;padding:44px 20px 20px;border-radius:20px;background:var(--tint);font-size:16.5px;line-height:1.4;font-weight:600;color:var(--navy)}
-.dtips li::before{content:"«";position:absolute;left:18px;top:8px;font-size:40px;line-height:1;color:var(--brand-3);font-weight:600}
-
-/* связи элементов: «элемент — линия со стрелкой — что от него зависит» */
-.dlinks{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:8px}
-.dlinks li{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr);align-items:center;gap:12px;padding:16px 20px;border-radius:18px;background:#fff;box-shadow:inset 0 0 0 1px var(--d-line);font-size:16.5px;line-height:1.4}
-.dlinks li > span:first-child{font-weight:600;color:var(--navy)}
-.dlinks li > span:last-child{color:var(--navy-2)}
-.dlinks i{position:relative;height:2px;background:var(--brand-3)}
-.dlinks i::after{content:"";position:absolute;right:-1px;top:-4px;width:8px;height:8px;border-top:2px solid var(--brand-3);border-right:2px solid var(--brand-3);transform:rotate(45deg)}
-
-/* команды самому себе — зачёркнутые реплики */
-.dcmds{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.dcmds li{padding:10px 18px;border-radius:100px;background:var(--tint);font-size:16.5px;font-weight:500;color:var(--navy-2);text-decoration:line-through;text-decoration-color:rgba(26,95,224,.6);text-decoration-thickness:2px}
-.dprose .dpivot{font-size:clamp(28px,2.6vw,38px);font-weight:600;letter-spacing:-.03em;line-height:1.1;color:var(--accent);margin:26px 0 16px}
-
-
-@media (max-width:760px){
-  .dtasks,.dtime,.dtips{grid-template-columns:1fr}
-  .dtips li{padding:40px 18px 18px}
-  .dlinks li{grid-template-columns:1fr;gap:6px}
-  .dlinks i{display:none}
-  .dlinks li > span:last-child{padding-left:14px;border-left:2px solid var(--brand-3)}
-}
-@media (max-width:600px){
-  .dcase{border-radius:22px;padding:22px 18px}
-  .dprose .dcase p,.dtasks li,.dprose .dtime p{font-size:16px}
+  .d .prose p{font-size:17px}
+  .d .prose .dstep{padding:22px 20px 24px}
+  .d .toc{padding:20px}
 }

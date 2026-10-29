@@ -11,9 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=289">
+<link rel="stylesheet" href="design.css?v=290">
 </head>
-<body class="d dco dlib dart-page">
+<body class="d dco dlib">
 
 <!-- ============ ОБЩЕЕ: ШАПКА, ЗАКРЕПЛЕНА ПРИ ПРОКРУТКЕ ============ -->
 <header id="hdr">
@@ -83,7 +83,6 @@
     </div>
   </nav>
 </header>
-<div class="dprogress" aria-hidden="true"><i></i></div>
 
 
 <!-- Статья «Что такое эргономика и почему она начинается с человека».
@@ -93,12 +92,12 @@
 <!-- ============ БЛОК 1. ШАПКА СТАТЬИ ============ -->
 <!-- Карточка как у первых экранов: назад к разделу, рубрика и время чтения,
      заголовок, анонс из карточки; справа обложка статьи. -->
-<section class="dcohero dart-hero" id="hero">
+<section class="dcohero" id="hero">
   <div class="dwrap">
     <div class="dcohero__card">
       <div class="dcohero__txt">
         <a href="stati-po-ergonomike.html" class="dback" data-rv><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9H3M8 4 3 9l5 5"/></svg>Полезные статьи</a>
-        <div class="dart-meta" data-rv style="--d:.04s"><span class="dchip">Рабочее место</span><span class="dread"><span class="dread__ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.8V8l2.2 1.4"/></svg></span>6 мин чтения</span></div>
+        <div class="dchips" data-rv style="--d:.04s"><span class="dchip">Рабочее место</span><span class="dread"><span class="dread__ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.8V8l2.2 1.4"/></svg></span>6 мин чтения</span></div>
         <h1 data-rv style="--d:.06s">Что такое эргономика и&nbsp;почему она <em>начинается с&nbsp;человека</em></h1>
         <p class="dcohero__lead" data-rv style="--d:.12s">Эргономика&nbsp;– это не&nbsp;набор правил о&nbsp;высоте стола и&nbsp;монитора. Она начинается с&nbsp;человека, его задач и&nbsp;рабочей позы, а&nbsp;уже затем переходит к&nbsp;мебели, оборудованию и&nbsp;рабочей среде.</p>
       </div>
@@ -114,13 +113,14 @@
 
 <!-- ============ БЛОК 2. ТЕКСТ СТАТЬИ ============ -->
 <!-- Слева закреплённое содержание с подсветкой текущего раздела (на телефоне —
-     блок перед текстом), справа текст колонкой ~68 знаков. -->
-<section class="dsec dart-sec" id="article">
+     блок перед текстом), справа текст. Текст дословный, выделения — готовыми
+     блоками дизайна. -->
+<section class="dsec dlib-sec" id="article">
   <div class="dwrap">
-    <div class="dart">
-      <aside class="dart__aside">
-        <nav class="dtoc" data-toc aria-label="Содержание">
-          <span class="dtoc__t">Содержание</span>
+    <div class="art">
+      <aside>
+        <nav class="toc" data-toc aria-label="Содержание">
+          <span class="deyebrow">Содержание</span>
           <ol>
             <li><a href="#s1">Эргономика&nbsp;– это не&nbsp;просто удобство</a></li>
             <li><a href="#s2">Почему одного хорошего кресла недостаточно</a></li>
@@ -132,127 +132,106 @@
         </nav>
       </aside>
 
-      <article class="dprose">
-        <p class="dprose__intro">Когда говорят об&nbsp;эргономике, чаще всего вспоминают удобное кресло, регулируемый стол или правильно установленный монитор. Но&nbsp;мебель и&nbsp;оборудование&nbsp;– лишь часть эргономики.</p>
-        <p><mark>В&nbsp;центре эргономики находится человек:</mark> особенности его тела, задачи, которые он&nbsp;выполняет, рабочая поза, движения и&nbsp;окружающая среда.</p>
-        <p>Задача эргономики&nbsp;– организовать условия работы так, чтобы <b>человеку не&nbsp;приходилось постоянно приспосабливаться к&nbsp;рабочему месту</b> и&nbsp;тратить дополнительные усилия на&nbsp;поддержание неудобного положения тела.</p>
+      <article class="prose">
+        <p>Когда говорят об&nbsp;эргономике, чаще всего вспоминают удобное кресло, регулируемый стол или правильно установленный монитор. Но&nbsp;мебель и&nbsp;оборудование&nbsp;– лишь часть эргономики.</p>
+        <p><b class="dk-strong">В&nbsp;центре эргономики находится человек:</b> особенности его тела, задачи, которые он&nbsp;выполняет, рабочая поза, движения и&nbsp;окружающая среда.</p>
+        <p>Задача эргономики&nbsp;– организовать условия работы так, чтобы человеку не&nbsp;приходилось постоянно приспосабливаться к&nbsp;рабочему месту и&nbsp;тратить дополнительные усилия на&nbsp;поддержание неудобного положения тела.</p>
 
-        <h2 id="s1"><span class="dprose__n">01</span>Эргономика&nbsp;– это не&nbsp;просто удобство</h2>
-        <p class="dprose__big">Удобство важно, но&nbsp;субъективного ощущения «мне удобно» недостаточно.</p>
-        <p>Человек способен долго адаптироваться к&nbsp;самым разным условиям. Мы&nbsp;можем привыкнуть сидеть, наклонившись к&nbsp;экрану, работать с&nbsp;ноутбуком на&nbsp;диване или постоянно тянуться к&nbsp;мыши. Такое положение может казаться привычным, но&nbsp;<mark>это еще не&nbsp;означает, что оно оптимально для длительной работы.</mark></p>
+        <h2 id="s1">Эргономика&nbsp;– это не&nbsp;просто удобство</h2>
+        <p><b class="dk-strong">Удобство важно, но&nbsp;субъективного ощущения «мне удобно» недостаточно.</b></p>
+        <p>Человек способен долго адаптироваться к&nbsp;самым разным условиям. Мы&nbsp;можем привыкнуть сидеть, наклонившись к&nbsp;экрану, работать с&nbsp;ноутбуком на&nbsp;диване или постоянно тянуться к&nbsp;мыши. Такое положение может казаться привычным, но&nbsp;это еще не&nbsp;означает, что оно оптимально для длительной работы.</p>
         <p>Поэтому эргономика учитывает не&nbsp;только ощущения человека, но&nbsp;и&nbsp;то, как расположено его тело, какую работу оно выполняет и&nbsp;какую нагрузку приходится поддерживать в&nbsp;течение рабочего дня.</p>
 
-        <h2 id="s2"><span class="dprose__n">02</span>Почему одного хорошего кресла недостаточно</h2>
+        <h2 id="s2">Почему одного хорошего кресла недостаточно</h2>
         <p>Начать организацию рабочего места с&nbsp;кресла вполне можно. Более того, хорошее кресло с&nbsp;подходящими регулировками способно заметно улучшить условия работы.</p>
-        <p class="dprose__big">Проблема возникает тогда, когда покупкой и&nbsp;даже правильной настройкой кресла ограничиваются.</p>
-        <p><b>Рабочее место&nbsp;– это система.</b> Положение человека в&nbsp;кресле связано с&nbsp;высотой стола, расположением монитора, клавиатуры и&nbsp;мыши, характером выполняемой работы и&nbsp;другими элементами рабочего места.</p>
-        <!-- четыре сценария работы из одной фразы текста — плитками с иконками -->
-        <ul class="dtasks">
-          <li><span class="dtasks__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h7l4 4v13h-11z"/><path d="M13.5 3.5v4h4"/><path d="M9 11.5h6M9 14.5h6M9 17.5h4"/></svg></span><span>Один человек преимущественно работает с&nbsp;текстом,</span></li>
-          <li><span class="dtasks__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="9" height="7" rx="1.2"/><rect x="12.5" y="5" width="9" height="7" rx="1.2"/><path d="M7 12v3M17 12v3M4.5 17.5h15"/></svg></span><span>другой постоянно переключается между несколькими мониторами,</span></li>
-          <li><span class="dtasks__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="m15.5 10.5 6-3v9l-6-3"/><circle cx="9" cy="10.5" r="2"/><path d="M5.5 15.5c.8-1.4 2-2 3.5-2s2.7.6 3.5 2"/></svg></span><span>третий большую часть времени общается по&nbsp;видеосвязи,</span></li>
-          <li><span class="dtasks__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="13" height="15" rx="1.5"/><path d="M6.5 9h6M6.5 12h6"/><path d="m20.5 5.5-5.5 9-1 3 2.5-2 5.5-9z"/></svg></span><span>четвертый работает с&nbsp;документами или графическим планшетом.</span></li>
-        </ul>
-        <p>Поэтому одно и&nbsp;то&nbsp;же&nbsp;кресло может использоваться по-разному в&nbsp;зависимости от&nbsp;задачи и&nbsp;организации всего рабочего места.</p>
-        <p class="dprose__key">Хорошее кресло&nbsp;– важная часть эргономики, но&nbsp;максимальный результат появляется тогда, когда кресло, рабочая поза, стол, оборудование и&nbsp;рабочая среда согласованы между собой.</p>
-
-        <h2 id="s3"><span class="dprose__n">03</span>Человек не&nbsp;должен приспосабливаться к&nbsp;рабочему месту</h2>
-        <p>Один из&nbsp;базовых принципов эргономики можно сформулировать просто:</p>
-        <!-- принцип вынесен крупной врезкой: формулировка дословно из текста -->
-        <blockquote class="dprinciple"><span class="dprinciple__t">Базовый принцип</span>Не&nbsp;человек должен приспосабливаться к&nbsp;рабочему месту&nbsp;– <em>рабочее место должно быть адаптировано под человека и&nbsp;его задачу.</em></blockquote>
-
-        <!-- пример со спинкой — разбор по шагам: что видим → привычная реакция →
-             где может быть причина → что делать. Текст дословный, разбит по шагам. -->
-        <div class="dcase">
-          <span class="dcase__t">Хороший пример&nbsp;– использование спинки кресла</span>
-          <div class="dcase__step">
-            <span class="dcase__k">Что происходит</span>
-            <p>Бывает, что человек почти не&nbsp;опирается на&nbsp;нее и&nbsp;весь день сидит, удерживая корпус самостоятельно.</p>
+        <p>Проблема возникает тогда, когда покупкой и&nbsp;даже правильной настройкой кресла ограничиваются.</p>
+        <p><b class="dk-strong">Рабочее место&nbsp;– это система.</b> Положение человека в&nbsp;кресле связано с&nbsp;высотой стола, расположением монитора, клавиатуры и&nbsp;мыши, характером выполняемой работы и&nbsp;другими элементами рабочего места.</p>
+        <!-- четыре сценария из одной фразы текста — карточки .dstep, как «Кому полезно» на «Для себя» -->
+        <div class="doffers">
+          <div class="dstep">
+            <span class="dstep__head"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h7l4 4v13h-11z"/><path d="M13.5 3.5v4h4"/><path d="M9 11.5h6M9 14.5h6M9 17.5h4"/></svg></span><span class="dstep__n">01</span></span>
+            <p>Один человек преимущественно работает с&nbsp;текстом,</p>
           </div>
-          <div class="dcase__step dcase__step--no">
-            <span class="dcase__k">Привычный вывод</span>
-            <p>Это не&nbsp;обязательно означает, что ему не&nbsp;хватает дисциплины и&nbsp;нужно постоянно напоминать себе: «обопрись на&nbsp;спинку».</p>
+          <div class="dstep">
+            <span class="dstep__head"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="9" height="7" rx="1.2"/><rect x="12.5" y="5" width="9" height="7" rx="1.2"/><path d="M7 12v3M17 12v3M4.5 17.5h15"/></svg></span><span class="dstep__n">02</span></span>
+            <p>другой постоянно переключается между несколькими мониторами,</p>
           </div>
-          <div class="dcase__step">
-            <span class="dcase__k">Где может быть причина</span>
-            <div class="dcase__causes">
-              <p>Возможно, спинка действительно неудобна или неправильно настроена.</p>
-              <p>Но&nbsp;причина может находиться и&nbsp;совсем в&nbsp;другом месте. Например, монитор расположен так, что при опоре на&nbsp;спинку его становится неудобно видеть, и&nbsp;человек невольно подается корпусом вперед.</p>
-              <p>Или положение стола, клавиатуры и&nbsp;других элементов рабочего места не&nbsp;позволяет работать с&nbsp;нормальной опорой на&nbsp;спинку.</p>
-            </div>
+          <div class="dstep">
+            <span class="dstep__head"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="m15.5 10.5 6-3v9l-6-3"/><circle cx="9" cy="10.5" r="2"/><path d="M5.5 15.5c.8-1.4 2-2 3.5-2s2.7.6 3.5 2"/></svg></span><span class="dstep__n">03</span></span>
+            <p>третий большую часть времени общается по&nbsp;видеосвязи,</p>
           </div>
-          <div class="dcase__step dcase__step--yes">
-            <span class="dcase__k">Что делать</span>
-            <p>В&nbsp;таком случае правильнее не&nbsp;заставлять человека сохранять неудобное положение усилием воли, а&nbsp;понять, почему рабочее место провоцирует именно такую позу, и&nbsp;изменить соответствующие настройки.</p>
+          <div class="dstep">
+            <span class="dstep__head"><span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="13" height="15" rx="1.5"/><path d="M6.5 9h6M6.5 12h6"/><path d="m20.5 5.5-5.5 9-1 3 2.5-2 5.5-9z"/></svg></span><span class="dstep__n">04</span></span>
+            <p>четвертый работает с&nbsp;документами или графическим планшетом.</p>
           </div>
         </div>
+        <p>Поэтому одно и&nbsp;то&nbsp;же&nbsp;кресло может использоваться по-разному в&nbsp;зависимости от&nbsp;задачи и&nbsp;организации всего рабочего места.</p>
+        <p class="dvoice__end">Хорошее кресло&nbsp;– важная часть эргономики, но&nbsp;максимальный результат появляется тогда, когда кресло, рабочая поза, стол, оборудование и&nbsp;рабочая среда согласованы между собой.</p>
 
-        <p>Если стол неудобной высоты, монитор расположен неудачно, кресло не&nbsp;дает необходимой опоры или для работы приходится постоянно поворачивать голову, <mark>тело начинает компенсировать недостатки рабочего места.</mark></p>
-        <!-- как копится компенсация — две ступени из текста -->
-        <ol class="dtime">
-          <li><span class="dtime__k">Сначала</span><p>это может восприниматься просто как усталость.</p></li>
-          <li><span class="dtime__k">Со&nbsp;временем</span><p>человек нередко начинает замечать, что к&nbsp;концу рабочего дня ему хочется изменить положение тела, размять шею или спину, встать, пройтись или перестать работать за&nbsp;компьютером.</p></li>
-        </ol>
+        <h2 id="s3">Человек не&nbsp;должен приспосабливаться к&nbsp;рабочему месту</h2>
+        <p>Один из&nbsp;базовых принципов эргономики можно сформулировать просто:</p>
+        <!-- принцип — блок .dk-principle, как на «Курсе» и «Методе»; формулировка дословная -->
+        <div class="dk-principle">Не&nbsp;человек должен приспосабливаться к&nbsp;рабочему месту&nbsp;– <b>рабочее место должно быть адаптировано под человека и&nbsp;его задачу.</b></div>
+        <p>Хороший пример&nbsp;– использование спинки кресла. Бывает, что человек почти не&nbsp;опирается на&nbsp;нее и&nbsp;весь день сидит, удерживая корпус самостоятельно.</p>
+        <p>Это не&nbsp;обязательно означает, что ему не&nbsp;хватает дисциплины и&nbsp;нужно постоянно напоминать себе: «обопрись на&nbsp;спинку».</p>
+        <p>Возможно, спинка действительно неудобна или неправильно настроена. Но&nbsp;причина может находиться и&nbsp;совсем в&nbsp;другом месте. Например, монитор расположен так, что при опоре на&nbsp;спинку его становится неудобно видеть, и&nbsp;человек невольно подается корпусом вперед. Или положение стола, клавиатуры и&nbsp;других элементов рабочего места не&nbsp;позволяет работать с&nbsp;нормальной опорой на&nbsp;спинку.</p>
+        <p class="dvoice__end">В&nbsp;таком случае правильнее не&nbsp;заставлять человека сохранять неудобное положение усилием воли, а&nbsp;понять, почему рабочее место провоцирует именно такую позу, и&nbsp;изменить соответствующие настройки.</p>
+        <p>Если стол неудобной высоты, монитор расположен неудачно, кресло не&nbsp;дает необходимой опоры или для работы приходится постоянно поворачивать голову, <b class="dk-strong">тело начинает компенсировать недостатки рабочего места.</b></p>
+        <p>Сначала это может восприниматься просто как усталость. Со&nbsp;временем человек нередко начинает замечать, что к&nbsp;концу рабочего дня ему хочется изменить положение тела, размять шею или спину, встать, пройтись или перестать работать за&nbsp;компьютером.</p>
 
-        <h2 id="s4"><span class="dprose__n">04</span>Почему универсальные рекомендации работают не&nbsp;всегда</h2>
+        <h2 id="s4">Почему универсальные рекомендации работают не&nbsp;всегда</h2>
         <p>В&nbsp;эргономике существует много популярных советов:</p>
-        <!-- популярные советы — цитатами-«стикерами» -->
-        <ul class="dtips">
-          <li>сидеть строго прямо</li>
-          <li>держать определенный угол в&nbsp;тазобедренных и&nbsp;коленных суставах</li>
-          <li>устанавливать монитор на&nbsp;определенной высоте</li>
-        </ul>
-        <p>Такие рекомендации могут быть полезны <b>как ориентиры</b>, но&nbsp;проблема начинается тогда, когда их&nbsp;воспринимают <b>как универсальные правила.</b></p>
+        <!-- советы — плашками «Общий совет» с «Метода Симкина» (.dmyth__tag) -->
+        <div class="dchips">
+          <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>сидеть строго прямо</span>
+          <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>держать определенный угол в&nbsp;тазобедренных и&nbsp;коленных суставах</span>
+          <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>устанавливать монитор на&nbsp;определенной высоте</span>
+        </div>
+        <p>Такие рекомендации могут быть полезны как ориентиры, но&nbsp;проблема начинается тогда, когда их&nbsp;воспринимают как универсальные правила.</p>
         <p>Люди отличаются ростом, пропорциями тела, подвижностью, особенностями осанки и&nbsp;состоянием опорно-двигательного аппарата. Отличаются и&nbsp;рабочие задачи.</p>
-        <p class="dprose__key">Поэтому важнее не&nbsp;пытаться привести всех к&nbsp;одной стандартной позе, а&nbsp;понять, какое положение тела рационально для конкретного человека и&nbsp;конкретной работы.</p>
+        <p class="dvoice__end">Поэтому важнее не&nbsp;пытаться привести всех к&nbsp;одной стандартной позе, а&nbsp;понять, какое положение тела рационально для конкретного человека и&nbsp;конкретной работы.</p>
 
-        <h2 id="s5"><span class="dprose__n">05</span>Что входит в&nbsp;эргономику рабочего места</h2>
-        <p class="dprose__big">Эргономика касается не&nbsp;одного предмета, а&nbsp;всей системы, в&nbsp;которой человек работает.</p>
+        <h2 id="s5">Что входит в&nbsp;эргономику рабочего места</h2>
+        <p><b class="dk-strong">Эргономика касается не&nbsp;одного предмета, а&nbsp;всей системы, в&nbsp;которой человек работает.</b></p>
         <p>Это:</p>
-        <ul class="dsys">
-          <li>Рабочая поза</li>
-          <li>Кресло и&nbsp;стол</li>
-          <li>Монитор или несколько экранов</li>
-          <li>Клавиатура и&nbsp;мышь</li>
-          <li>Ноутбук и&nbsp;мобильные устройства</li>
-          <li>Документы и&nbsp;другие объекты, с&nbsp;которыми человек работает</li>
-          <li>Освещение</li>
-          <li>Микроклимат</li>
-          <li>Акустическая среда</li>
-          <li>Организация пространства</li>
-          <li>Режим и&nbsp;характер работы</li>
+        <!-- состав системы — список с галочками (.dgain__list), как на «Для компаний» и «Методе» -->
+        <ul class="dgain__list">
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>рабочая поза;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>кресло и&nbsp;стол;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>монитор или несколько экранов;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>клавиатура и&nbsp;мышь;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>ноутбук и&nbsp;мобильные устройства;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>документы и&nbsp;другие объекты, с&nbsp;которыми человек работает;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>освещение;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>микроклимат;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>акустическая среда;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>организация пространства;</li>
+          <li><span class="dgain__ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></span>режим и&nbsp;характер работы.</li>
         </ul>
-        <p>Изменение одного элемента может повлиять на&nbsp;остальные. Например:</p>
-        <!-- три связи из примера — строками «элемент → что от него зависит» -->
-        <ul class="dlinks">
-          <li><span>положение экрана</span><i aria-hidden="true"></i><span>связано с&nbsp;положением головы,</span></li>
-          <li><span>расположение клавиатуры</span><i aria-hidden="true"></i><span>– с&nbsp;положением рук и&nbsp;корпуса,</span></li>
-          <li><span>а&nbsp;высота рабочей поверхности</span><i aria-hidden="true"></i><span>– с&nbsp;тем, как человек использует кресло.</span></li>
-        </ul>
-        <p class="dprose__key">Именно поэтому эргономику правильнее рассматривать как систему, а&nbsp;не&nbsp;как набор отдельных советов.</p>
+        <p>Изменение одного элемента может повлиять на&nbsp;остальные. Например, положение экрана связано с&nbsp;положением головы, расположение клавиатуры&nbsp;– с&nbsp;положением рук и&nbsp;корпуса, а&nbsp;высота рабочей поверхности&nbsp;– с&nbsp;тем, как человек использует кресло.</p>
+        <p class="dvoice__end">Именно поэтому эргономику правильнее рассматривать как систему, а&nbsp;не&nbsp;как набор отдельных советов.</p>
 
-        <h2 id="s6"><span class="dprose__n">06</span>Что дает правильно организованное рабочее место</h2>
+        <h2 id="s6">Что дает правильно организованное рабочее место</h2>
         <p>Цель эргономики не&nbsp;в&nbsp;том, чтобы заставить человека весь день помнить:</p>
-        <!-- команды самому себе — зачёркнутыми репликами -->
-        <ul class="dcmds">
-          <li>«сядь правильно»</li>
-          <li>«выпрями спину»</li>
-          <li>«не&nbsp;наклоняй голову»</li>
-        </ul>
-        <p class="dpivot">Наоборот.</p>
-        <p class="dprose__big">Хорошо организованное рабочее место должно само помогать человеку сохранять более рациональное и&nbsp;комфортное положение тела, не&nbsp;требуя для этого постоянного сознательного контроля и&nbsp;лишних усилий.</p>
-        <p>Это особенно важно для тех, кто проводит за&nbsp;компьютером много часов: <mark>даже небольшие особенности положения тела и&nbsp;организации рабочего места могут сохраняться и&nbsp;перегружать тело изо дня в&nbsp;день.</mark></p>
+        <div class="dchips">
+          <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>«сядь правильно»</span>
+          <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>«выпрями спину»</span>
+          <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>«не&nbsp;наклоняй голову»</span>
+        </div>
+        <p><b class="dk-strong">Наоборот.</b></p>
+        <p>Хорошо организованное рабочее место должно само помогать человеку сохранять более рациональное и&nbsp;комфортное положение тела, не&nbsp;требуя для этого постоянного сознательного контроля и&nbsp;лишних усилий.</p>
+        <p>Это особенно важно для тех, кто проводит за&nbsp;компьютером много часов: даже небольшие особенности положения тела и&nbsp;организации рабочего места могут сохраняться и&nbsp;перегружать тело изо дня в&nbsp;день.</p>
         <p>Поэтому начинать можно и&nbsp;с&nbsp;кресла, и&nbsp;со&nbsp;стола, и&nbsp;с&nbsp;монитора. Важно только не&nbsp;останавливаться на&nbsp;отдельном элементе, а&nbsp;в&nbsp;итоге ответить на&nbsp;более общий вопрос:</p>
-        <!-- финальный вопрос статьи — отдельной плашкой, дословно -->
-        <p class="dquestion">Как я&nbsp;работаю и&nbsp;каким должно быть рабочее место, чтобы оно помогало моему телу, а&nbsp;не&nbsp;заставляло тело приспосабливаться к&nbsp;нему?</p>
+        <!-- финальный вопрос — тем же блоком .dk-principle -->
+        <div class="dk-principle"><b>Как я&nbsp;работаю и&nbsp;каким должно быть рабочее место, чтобы оно помогало моему телу, а&nbsp;не&nbsp;заставляло тело приспосабливаться к&nbsp;нему?</b></div>
 
         <!-- ============ БЛОК 3. ПОДЕЛИТЬСЯ ============ -->
-        <div class="dshare">
-          <span class="dshare__t">Поделиться</span>
-          <a href="https://vk.com/share.php" data-share="vk" target="_blank" rel="noopener" aria-label="Поделиться во ВКонтакте" title="ВКонтакте"><img src="assets/soc/vk.svg" alt="" width="22" height="22"></a>
-          <a href="https://t.me/share/url" data-share="tg" target="_blank" rel="noopener" aria-label="Поделиться в Telegram" title="Telegram"><img src="assets/soc/telegram.svg" alt="" width="22" height="22"></a>
-          <a href="https://wa.me/" data-share="wa" target="_blank" rel="noopener" aria-label="Поделиться в WhatsApp" title="WhatsApp"><img src="assets/soc/whatsapp.svg" alt="" width="22" height="22"></a>
-          <button type="button" class="dshare__copy" aria-label="Скопировать ссылку" title="Скопировать ссылку"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/></svg><svg class="dshare__ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></button>
+        <!-- значки как у «Написать» в подвале (.foot__msg) -->
+        <div class="foot__msg">
+          <span class="foot__msg-t">Поделиться:</span>
+          <a href="https://vk.com/share.php" data-share="vk" target="_blank" rel="noopener" aria-label="Поделиться во ВКонтакте" title="ВКонтакте"><img src="assets/soc/vk.svg" alt="" width="26" height="26"></a>
+          <a href="https://t.me/share/url" data-share="tg" target="_blank" rel="noopener" aria-label="Поделиться в Telegram" title="Telegram"><img src="assets/soc/telegram.svg" alt="" width="26" height="26"></a>
+          <a href="https://wa.me/" data-share="wa" target="_blank" rel="noopener" aria-label="Поделиться в WhatsApp" title="WhatsApp"><img src="assets/soc/whatsapp.svg" alt="" width="26" height="26"></a>
         </div>
       </article>
     </div>
@@ -261,11 +240,11 @@
 
 <!-- ============ БЛОК 4. ПОХОЖИЕ СТАТЬИ ============ -->
 <!-- Пока подставлены временные карточки той же темы и «Мебели и оборудования». -->
-<section class="dsec dsec--tint dart-rel" id="related">
+<section class="dsec dsec--tint" id="related">
   <div class="dwrap">
-    <div class="dart-rel__head">
+    <div class="dhead dhead--split">
       <h2 class="dh2 dh2--top" data-rv>Похожие <span class="dh2__soft">статьи</span></h2>
-      <a href="stati-po-ergonomike.html" class="dlink" data-rv>Все статьи<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
+      <div class="dhead__act" data-rv style="--d:.06s"><a href="stati-po-ergonomike.html" class="dbtn dbtn--light">Все статьи<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a></div>
     </div>
     <div class="dposts">
       <a href="../statya.html" class="dpost" data-rv>
@@ -450,27 +429,11 @@
 <script src="../script.js?v=40"></script>
 
 <script>
-/* полоса прочитанного: доля пройденного текста статьи */
-(function(){
-  var bar = document.querySelector('.dprogress i'), art = document.querySelector('.dprose');
-  function sync(){
-    var r = art.getBoundingClientRect(), h = r.height - innerHeight * .6;
-    bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, -r.top / h)) + ')';
-  }
-  addEventListener('scroll', sync, {passive:true}); addEventListener('resize', sync); sync();
-})();
 /* «Поделиться»: ссылки собираются из адреса страницы */
 (function(){
   var u = encodeURIComponent(location.href), t = encodeURIComponent(document.querySelector('h1').textContent);
   var map = {vk:'https://vk.com/share.php?url=' + u, tg:'https://t.me/share/url?url=' + u + '&text=' + t, wa:'https://wa.me/?text=' + t + '%20' + u};
   document.querySelectorAll('[data-share]').forEach(function(a){ a.href = map[a.dataset.share]; });
-  // копирование ссылки: иконка сменяется галочкой, подпись — «Ссылка скопирована»
-  var c = document.querySelector('.dshare__copy');
-  c.addEventListener('click', function(){
-    function done(){ c.classList.add('is-done'); c.title = 'Ссылка скопирована';
-      setTimeout(function(){ c.classList.remove('is-done'); c.title = 'Скопировать ссылку'; }, 2000); }
-    if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(done, function(){});
-  });
 })();
 </script>
 
