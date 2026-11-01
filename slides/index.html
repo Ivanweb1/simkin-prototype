@@ -114,6 +114,47 @@ img{display:block;max-width:100%}
 .l-heat .s-photo{height:100%}
 .l-heat .s-photo img{object-position:40% 50%}
 
+/* 4. Ноутбук: текст слева, два фото с подписью «удобно / неудобно» */
+.l-lap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1fr);gap:2.4em;height:100%;grid-template-rows:minmax(0,1fr)}
+.l-lap__text{display:flex;flex-direction:column;padding-right:1.6em}
+.l-lap__lead{margin-top:2.4em;font-size:2.1em;line-height:1.5;color:var(--navy-2)}
+.lap{display:flex;flex-direction:column;min-height:0}
+.lap .s-photo{flex:1 1 auto;min-height:0}
+.verdict{list-style:none;margin-top:1.6em;background:var(--tint);border-radius:2.2em;padding:1.6em 2em}
+.verdict li{display:flex;align-items:center;gap:1em;font-size:2em;font-weight:500;line-height:1.3}
+.verdict li + li{margin-top:.7em}
+.verdict i{flex:0 0 auto;display:grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;background:var(--brand);color:#fff}
+.verdict li.is-bad{color:var(--navy-2)}
+.verdict li.is-bad i{background:#B6BCC8}
+.verdict svg{width:.9em;height:.9em}
+
+/* 5. Диск: текст слева, схема «норма / выпрямленный лордоз» справа */
+.l-disc{display:flex;flex-direction:column;height:100%}
+.l-disc__text{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:5.6em;align-items:end}
+.l-disc .s-h{font-size:5.6em}
+.l-disc__lead{font-size:2.3em;line-height:1.45;color:var(--navy-2);padding-bottom:.4em}
+.discs{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2em;margin-top:4em}
+.disc{position:relative;display:flex;flex-direction:column;min-height:0;background:var(--tint);border-radius:2.8em;padding:7.2em 2.4em 2.8em}
+.disc svg{flex:1 1 auto;width:100%;min-height:0}
+.disc__cap{position:absolute;left:1.4em;top:1.4em;margin-top:0}
+.disc__cap{display:flex;align-items:center;gap:1em;margin-top:1.6em;font-size:2.1em;font-weight:600}
+.disc__cap span{font-size:.72em;color:var(--brand)}
+
+/* 6. Головная боль: причины плашками, следствие цепочкой, фото справа */
+.l-head{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:5.6em;height:100%;grid-template-rows:minmax(0,1fr)}
+.l-head__sub{margin-top:.8em;font-size:2.6em;font-weight:600;letter-spacing:-.02em;color:var(--accent)}
+.l-head__lbl{margin-top:2em;font-size:1.9em;font-weight:600;color:var(--navy-3)}
+.l-head .chips{margin-top:1em;gap:.8em}
+.l-head .chips li{padding:.7em 1.3em}
+.chain{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:1em 1.8em;margin-top:1em;background:var(--tint);border-radius:2.4em;padding:1.8em 2.4em}
+.chain p{font-size:2em;line-height:1.4;color:var(--navy-2)}
+.chain p b{font-weight:600;color:var(--navy)}
+.chain i{flex:0 0 auto;display:grid;place-items:center;width:4.4em;height:4.4em;border-radius:50%;background:var(--brand);color:#fff}
+.chain i svg{width:2.2em;height:2.2em}
+.chain i.is-soft{background:#fff;color:var(--brand)}
+.l-head .s-photo{height:100%}
+.l-head .s-photo img{object-position:55% 40%}
+
 /* ---------- полноэкранный показ ---------- */
 .show{position:fixed;inset:0;z-index:10;background:#0E1426;display:none;align-items:center;justify-content:center;padding:2vmin}
 .show.is-on{display:flex}
@@ -127,7 +168,7 @@ img{display:block;max-width:100%}
 <main class="page">
   <header class="intro">
     <h1>Слайды курса <em>в стиле нового сайта</em></h1>
-    <p>Три слайда из текущих презентаций курса, переоформленные в стиле сайта: тот же шрифт, цвета и подача. Текст перенесён слово в слово. Фото подобраны заново под смысл каждого слайда, в единой светлой гамме. Слева было, справа стало.</p>
+    <p>Шесть слайдов из текущих презентаций курса, переоформленные в стиле сайта: тот же шрифт, цвета и подача. Текст перенесён слово в слово. Фото подобраны заново под смысл каждого слайда, в единой светлой гамме. Слева было, справа стало.</p>
   </header>
 
   <!-- 1 -->
@@ -214,6 +255,123 @@ img{display:block;max-width:100%}
           <div class="s-foot"><span>simkin.ru</span><span><b>03</b> / 13</span></div>
         </div></div>
         <button class="open" type="button" data-open="2">Смотреть на весь экран →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="pair">
+    <div class="pair__head"><span class="pair__num">04</span><h2 class="pair__title">Основная проблема ноутбука</h2></div>
+    <div class="pair__grid">
+      <div class="before"><span class="tag">Было</span><img src="../design/assets/course/slide-01.jpg" alt="Исходный слайд «Основная проблема ноутбука»" loading="lazy"></div>
+      <div class="after">
+        <span class="tag tag--new">Стало</span>
+        <div class="slide-wrap"><div class="slide">
+          <div class="s-top"><span class="s-eyebrow">Работа с ноутбуком</span><img class="s-logo" src="../design/assets/logo.svg?v=2" alt="Доктор Симкин"></div>
+          <div class="s-body l-lap">
+            <div class="l-lap__text">
+              <h3 class="s-h">Основная проблема <em>ноутбука</em></h3>
+              <p class="l-lap__lead">Главная эргономическая проблема ноутбука в том, что экран и клавиатура соединены в одном корпусе. Поэтому ноутбук сам по себе хуже подходит для длительной работы, чем стационарное рабочее место.</p>
+            </div>
+            <div class="lap">
+              <div class="s-photo"><img src="img/laptop-stand.jpg" alt=""></div>
+              <ul class="verdict">
+                <li><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></i>Удобно для глаз</li>
+                <li class="is-bad"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l8 8M14 6l-8 8"/></svg></i>неудобно для рук</li>
+              </ul>
+            </div>
+            <div class="lap">
+              <div class="s-photo"><img src="img/laptop-desk.jpg" alt=""></div>
+              <ul class="verdict">
+                <li><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6l3.8 3.8L16 6.2"/></svg></i>Удобно для рук</li>
+                <li class="is-bad"><i><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l8 8M14 6l-8 8"/></svg></i>неудобно для шеи</li>
+              </ul>
+            </div>
+          </div>
+          <div class="s-foot"><span>simkin.ru</span><span><b>08</b> / 12</span></div>
+        </div></div>
+        <button class="open" type="button" data-open="3">Смотреть на весь экран →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="pair">
+    <div class="pair__head"><span class="pair__num">05</span><h2 class="pair__title">Изменение формы диска</h2></div>
+    <div class="pair__grid">
+      <div class="before"><span class="tag">Было</span><img src="../design/assets/course/slide-02.jpg" alt="Исходный слайд «Изменение формы диска»" loading="lazy"><small>Схема перерисована в стиле сайта по исходной (диск как шар между пластинами). Подписи «Норма» и «Выпрямленный лордоз» добавлены для читаемости, их стоит показать заказчику.</small></div>
+      <div class="after">
+        <span class="tag tag--new">Стало</span>
+        <div class="slide-wrap"><div class="slide">
+          <div class="s-top"><span class="s-eyebrow">Строение позвоночника в норме и патологии</span><img class="s-logo" src="../design/assets/logo.svg?v=2" alt="Доктор Симкин"></div>
+          <div class="s-body l-disc">
+            <div class="l-disc__text">
+              <h3 class="s-h">Изменение формы диска <em>при изменении рабочей позы</em></h3>
+              <p class="l-disc__lead">Выпрямление лордоза приводит к формированию протрузий и грыж дисков</p>
+            </div>
+            <div class="discs">
+              <div class="disc">
+                <svg viewBox="20 12 280 236" aria-hidden="true">
+                  <defs><radialGradient id="ballA" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#BFE6FF"/><stop offset=".55" stop-color="#54C2FF"/><stop offset="1" stop-color="#1A5FE0"/></radialGradient></defs>
+                  <rect x="30" y="44" width="240" height="24" rx="8" fill="#fff" stroke="#98A0B2" stroke-width="2"/>
+                  <rect x="30" y="196" width="240" height="24" rx="8" fill="#fff" stroke="#98A0B2" stroke-width="2"/>
+                  <circle cx="150" cy="132" r="62" fill="url(#ballA)"/>
+                  <path d="M150 20v14M144 28l6 6 6-6M150 240v-14M144 232l6-6 6 6" fill="none" stroke="#98A0B2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="disc__cap"><span>01</span>Норма</div>
+              </div>
+              <div class="disc">
+                <svg viewBox="20 12 280 236" aria-hidden="true">
+                  <defs><radialGradient id="ballB" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#BFE6FF"/><stop offset=".55" stop-color="#54C2FF"/><stop offset="1" stop-color="#1A5FE0"/></radialGradient></defs>
+                  <polygon points="30,150 250,62 258,84 38,172" fill="#fff" stroke="#98A0B2" stroke-width="2" stroke-linejoin="round"/>
+                  <rect x="30" y="196" width="240" height="24" rx="8" fill="#fff" stroke="#98A0B2" stroke-width="2"/>
+                  <ellipse cx="200" cy="142" rx="56" ry="52" fill="url(#ballB)"/>
+                  <path d="M54 112c10-22 30-36 52-40M100 66l8 6-8 6" fill="none" stroke="#1A5FE0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M262 142h22M276 134l8 8-8 8" fill="none" stroke="#1A5FE0" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="disc__cap"><span>02</span>Выпрямленный лордоз</div>
+              </div>
+            </div>
+          </div>
+          <div class="s-foot"><span>simkin.ru</span><span><b>11</b> / 17</span></div>
+        </div></div>
+        <button class="open" type="button" data-open="4">Смотреть на весь экран →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="pair">
+    <div class="pair__head"><span class="pair__num">06</span><h2 class="pair__title">Головная боль</h2></div>
+    <div class="pair__grid">
+      <div class="before"><span class="tag">Было</span><img src="../design/assets/course/slide-06.jpg" alt="Исходный слайд «Головная боль»" loading="lazy"></div>
+      <div class="after">
+        <span class="tag tag--new">Стало</span>
+        <div class="slide-wrap"><div class="slide">
+          <div class="s-top"><span class="s-eyebrow">Troubleshooting</span><img class="s-logo" src="../design/assets/logo.svg?v=2" alt="Доктор Симкин"></div>
+          <div class="s-body l-head">
+            <div>
+              <h3 class="s-h">Головная боль</h3>
+              <p class="l-head__sub">Поворот головы в сторону</p>
+              <p class="l-head__lbl">Причины:</p>
+              <ul class="chips">
+                <li><span>01</span>Монитор расположен сбоку от оси тела</li>
+                <li><span>02</span>Использование бокового монитора как основного</li>
+                <li><span>03</span>Работа с ноутбуком, стоящим сбоку от клавиатуры</li>
+              </ul>
+              <p class="l-head__lbl">Следствие:</p>
+              <div class="chain">
+                <i class="is-soft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+                <p>постоянное напряжение подзатылочных мышц, осуществляющих поворот головы</p>
+                <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+                <p><b>боль в шее и затылочной области</b></p>
+              </div>
+            </div>
+            <div class="s-photo"><img src="img/head-turn.jpg" alt=""></div>
+          </div>
+          <div class="s-foot"><span>simkin.ru</span><span><b>06</b> / 36</span></div>
+        </div></div>
+        <button class="open" type="button" data-open="5">Смотреть на весь экран →</button>
       </div>
     </div>
   </section>
