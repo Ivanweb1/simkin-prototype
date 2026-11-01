@@ -2678,7 +2678,7 @@ a.dprod:hover h3{color:var(--brand)}
    (поля 8px — чтобы не обрезалось свечение активной точки) */
 .dera.is-live .dera__rail{display:block;overflow-x:auto;margin:-8px -8px 0;padding:8px 8px 0;scrollbar-width:none}
 .dera__rail::-webkit-scrollbar{display:none}
-.dera__track{display:grid;grid-template-columns:repeat(8,minmax(124px,1fr));position:relative}
+.dera__track{display:grid;grid-template-columns:repeat(9,minmax(116px,1fr));position:relative}
 .dera__line{position:absolute;left:10px;right:0;top:9px;height:2px;background:var(--d-line)}
 .dera__fill{display:block;height:100%;width:0;background:var(--brand);transition:width .6s var(--ease)}
 .dera__rail button{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:0 12px 6px 0;border:0;background:none;font:inherit;text-align:left;color:var(--navy-3);cursor:pointer}
@@ -3923,3 +3923,12 @@ a.dprod:hover h3{color:var(--brand)}
   .d .prose .dstep{padding:22px 20px 24px}
   .d .toc{padding:20px}
 }
+
+/* «Авторские разработки»: «Исследования и испытания» — подблок секции
+   «Что уже создано», отделен от списка разработок отступом как новая секция */
+.dresearch{margin-top:clamp(72px,8vw,120px);scroll-margin-top:96px}
+/* «Сравнить модели»: «Мини» заметно меньше «Универсала» — картинка в той же
+   рамке уменьшена, чтобы соотношение размеров читалось ближе к реальному */
+.dshot--mini img{inset:21% 24%;width:52%;height:58%}
+/* карточки .dhelp на серой секции — белыми листами */
+.dprd .dsec--tint .dhelp__card{background:#fff}
