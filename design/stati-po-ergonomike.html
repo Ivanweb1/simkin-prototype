@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=291">
+<link rel="stylesheet" href="design.css?v=292">
 </head>
 <body class="d dco dlib">
 
@@ -78,7 +78,6 @@
       <div class="mnav__item"><a href="metod-simkina.html">Метод Симкина</a></div>
       <div class="mnav__item"><a href="../dmitriy-simkin.html">Дмитрий Симкин</a></div>
       <div class="mnav__item"><a href="stati-po-ergonomike.html" class="is-current" aria-current="page">Полезные статьи</a></div>
-      <a href="tel:+78126061000" class="mnav__tel">+7 (812) 606-10-00</a>
       <div class="btns"><button class="btn" data-open>Обратный звонок</button></div>
     </div>
   </nav>
@@ -124,7 +123,7 @@
 
 <!-- ============ БЛОК 2. МАТЕРИАЛЫ ============ -->
 <!-- Карточки — тот же компонент, что на «Для себя» (.dpost): обложка, тема
-     (у разборов — тёмная метка «Исследование»), заголовок, анонс 2–3 строки,
+     (у разборов — темная метка «Исследование»), заголовок, анонс 2–3 строки,
      время чтения, «Читать». Даты нет. Первая — готовая статья от заказчика
      (29.10.2026). Следующие три согласованы,
      время чтения у них — заглушка до готовых статей. Остальные (data-tmp) —
@@ -234,8 +233,8 @@
         </picture>
         <div class="dpost__body">
           <div class="dpost__meta"><span class="dchip">Здоровье и&nbsp;работа</span><span class="dread"><span class="dread__ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"/><path d="M8 4.8V8l2.2 1.4"/></svg></span>4 мин</span></div>
-          <h3>Почему перерывы важнее идеальной позы</h3>
-          <p>Даже хорошо настроенное рабочее место не&nbsp;отменяет смену положения тела. Разбираем, как встроить паузы в&nbsp;рабочий день.</p>
+          <h3>Почему перерывы не&nbsp;менее важны, чем правильная поза за&nbsp;компьютером</h3>
+          <p>Даже хорошо настроенное рабочее место не&nbsp;отменяет необходимости иногда менять положение тела. Разбираем, как встроить паузы в&nbsp;рабочий день.</p>
           <div class="dpost__foot"><span class="dlink">Читать<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span></div>
         </div>
       </a>
@@ -351,7 +350,6 @@
       <div>
         <h4>Контакты</h4>
         <ul>
-          <li><a href="tel:+78126061000">+7 (812) 606-10-00</a></li>
           <li><a href="mailto:mail@simkin.ru">mail@simkin.ru</a></li>
           <li class="foot__msg">
             <span class="foot__msg-t">Написать:</span>
@@ -436,7 +434,7 @@
   </div>
 </div>
 
-<script src="../script.js?v=40"></script>
+<script src="../script.js?v=41"></script>
 
 <script>
 /* Библиотека: тема и поиск работают вместе, «Показать еще» добавляет по 9
@@ -451,8 +449,8 @@
   var empty = document.querySelector('.dlib-empty');
   var count = document.querySelector('.dlib-count');
   var STEP = 9, shown = STEP, topic = 'all';
-  // ищем по заголовку и анонсу; «ё» = «е», регистр не важен
-  function norm(s){ return s.toLowerCase().replace(/ё/g,'е').replace(/\s+/g,' '); }
+  // ищем по заголовку и анонсу; «е» = «е», регистр не важен
+  function norm(s){ return s.toLowerCase().replace(/е/g,'е').replace(/\s+/g,' '); }
   cards.forEach(function(c){
     c._text = norm(c.querySelector('h3').textContent + ' ' + c.querySelector('p').textContent);
   });

@@ -1051,8 +1051,11 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
    нажатия — 48×48, чтобы попадать пальцем без промаха */
 @media (max-width:600px){
   .d .foot__msg{gap:0}
-  .d .foot__msg-t{margin-right:4px}
+  /* «Контакты» в половине ширины: подпись строкой, три значка ровным рядом,
+     первый значок по левому краю текста (зона нажатия выходит на 9px влево) */
+  .d .foot__msg-t{flex-basis:100%;margin:0 0 4px}
   .d .foot__msg a{display:flex;align-items:center;justify-content:center;width:48px;height:48px}
+  .d .foot__msg-t + a{margin-left:-9px}
   .d .foot__msg img{width:30px;height:30px;border-radius:8px}
 }
 .d .soc{gap:8px;padding-bottom:0;justify-content:flex-start}
@@ -1116,8 +1119,8 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .d .foot__about{max-width:38em}
 }
 @media (max-width:700px){
+  /* «Контакты» встают правым столбцом рядом с «О проекте» */
   .d .foot{grid-template-columns:1fr 1fr}
-  .d .foot > :last-child{grid-column:1 / -1}
 }
 @media (max-width:600px){
   .d .foot{padding-top:44px;gap:28px 20px}

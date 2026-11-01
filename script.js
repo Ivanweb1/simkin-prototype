@@ -79,7 +79,7 @@ document.querySelectorAll('[data-topics]').forEach(function(box){
   });
 });
 
-// «Показать ещё» раскрывает скрытые карточки и прячется
+// «Показать еще» раскрывает скрытые карточки и прячется
 document.querySelectorAll('[data-more]').forEach(function(btn){
   btn.addEventListener('click', function(){
     var grid = document.getElementById(btn.getAttribute('data-more'));
@@ -126,15 +126,15 @@ document.querySelectorAll('[data-topic]').forEach(function(t){
     if (!form) return;
     var label = form.querySelector('[data-topic-label]');
     if (label) label.textContent = t.textContent.trim();
-    // форма рядом — не дёргаем страницу; на телефоне она ниже плиток, туда и ведём
+    // форма рядом — не дергаем страницу; на телефоне она ниже плиток, туда и ведем
     if (form.getBoundingClientRect().top > window.innerHeight * 0.6) {
       form.scrollIntoView({behavior:'smooth', block:'start'});
     }
   });
 });
 
-// отправка формы ведёт на «Спасибо»; в адресе только источник, без данных из полей.
-// Страница «Спасибо» одна, в корне: из папки design/ к ней ведёт ../
+// отправка формы ведет на «Спасибо»; в адресе только источник, без данных из полей.
+// Страница «Спасибо» одна, в корне: из папки design/ к ней ведет ../
 document.querySelectorAll('form[data-thanks]').forEach(function(f){
   f.addEventListener('submit', function(e){
     e.preventDefault();
@@ -145,7 +145,7 @@ document.querySelectorAll('form[data-thanks]').forEach(function(f){
 
 // MAX: прямой ссылки на чат по номеру у мессенджера нет, контакт ищут по
 // телефону. Поэтому ссылка открывает окно с номером и кнопками «Скопировать»
-// и «Открыть MAX». Без скрипта ссылка просто ведёт в веб-версию MAX.
+// и «Открыть MAX». Без скрипта ссылка просто ведет в веб-версию MAX.
 document.querySelectorAll('[data-max]').forEach(function(a){
   a.addEventListener('click', function(e){
     var m = document.getElementById('maxinfo');
@@ -179,7 +179,7 @@ if (thanksBox) {
   var variants = {
     discuss: ['Заявка отправлена', 'Свяжемся с вами, чтобы обсудить задачу.'],
     company: ['Заявка отправлена', 'Свяжемся с вами, уточним задачу и предложим подходящий формат работы.'],
-    course: ['Заявка на курс принята', 'Пришлём подробности о курсе и выбранной версии.'],
+    course: ['Заявка на курс принята', 'Пришлем подробности о курсе и выбранной версии.'],
     contacts: ['Сообщение отправлено', 'Спасибо за обращение – скоро ответим.'],
     partner: ['Заявка отправлена', 'Свяжемся с вами, чтобы обсудить совместную разработку.'],
     launch: ['Вы в списке', 'Сообщим о запуске, как только разработка будет готова.'],
@@ -220,14 +220,14 @@ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-m
     });
   }, {rootMargin: '0px 0px -12% 0px', threshold: 0.08});
   reveals.forEach(function(el){ io.observe(el); });
-  // страховка: вкладка открыта в фоне или наблюдатель не сработал — показываем всё
+  // страховка: вкладка открыта в фоне или наблюдатель не сработал — показываем все
   setTimeout(function(){ if(!fired) showAll(); }, 1600);
 }
 
 // Отзывы компаний: превью-карточки .drev[data-rev] и просмотр скана крупно.
 // Скан лежит в design/assets/reviews/<id>.jpg, превью — <id>-sm.jpg; превью
-// подставляется только карточкам без hidden (для скрытых файла ещё нет).
-// Карточка, у которой превью всё же не загрузилось, скрывается; если скрыты
+// подставляется только карточкам без hidden (для скрытых файла еще нет).
+// Карточка, у которой превью все же не загрузилось, скрывается; если скрыты
 // все — скрывается и блок, и ссылки на него. Адрес вида #review-<id> (с
 // логотипа на главной) прокручивает к карточке и сразу открывает скан.
 (function(){
@@ -385,7 +385,7 @@ document.querySelectorAll('[data-tabs]').forEach(function(box){
 });
 
 // Схема «рабочее место — это система» [data-sysmap]: элемент выключается
-// и включается нажатием. Выключенный рвёт свою связь с центром, а центр
+// и включается нажатием. Выключенный рвет свою связь с центром, а центр
 // показывает, что поза нарушается, — пока выключен хотя бы один элемент.
 document.querySelectorAll('[data-sysmap]').forEach(function(map){
   var state = map.querySelector('.dk-map__state');
