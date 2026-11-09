@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=305">
+<link rel="stylesheet" href="design.css?v=309">
 </head>
 <body class="d dco">
 
@@ -142,7 +142,8 @@
 <!-- ============ БЛОК 3. ФОРМА ОБРАЩЕНИЯ ============ -->
 <!-- Банд с формой — тот же, что завершает главную. Слева внизу — плашка
      «Медицинские приемы» (.dcheck со страницы «Для компаний»): рядом с формой
-     она сразу говорит, что запись к врачу — на сайте клиники. Тема обращения — плашки
+     она сразу говорит, что запись к врачу — на сайте клиники. Под ней тихой
+     строкой реквизиты. Тема обращения — плашки
      .dpick (как выбор разработки на «Авторских разработках»), но с одиночным
      выбором. Согласие — под кнопкой, как просил заказчик; ссылка на документ
      пока #, документа еще нет. -->
@@ -161,6 +162,7 @@
             </div>
             <a href="https://doctorsimkin.ru" target="_blank" rel="noopener" class="dbtn dbtn--light dcheck__btn">Перейти на&nbsp;сайт клиники<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
           </aside>
+          <p class="dreq" id="requisites"><span class="dreq__t">Реквизиты</span><span class="dreq__v">Индивидуальный предприниматель Симкин Дмитрий Борисович, ИНН&nbsp;780402604387</span></p>
         </div>
         <form class="dform" data-thanks="contacts">
           <input class="dfield" placeholder="Имя" required>
@@ -184,11 +186,20 @@
   </div>
 </section>
 
-<!-- ============ БЛОК 4. РЕКВИЗИТЫ ============ -->
-<!-- Тихой строкой внизу, без визуального акцента. -->
-<section class="dsec dkont-req" id="clinic">
+<!-- ============ БЛОК 4. КЛИНИКА И РЕКВИЗИТЫ (планшет, телефон) ============ -->
+<!-- Та же плашка и строка, что в левой колонке банда; там они на узких
+     экранах скрыты, здесь — показаны после формы. -->
+<section class="dsec dkont-after">
   <div class="dwrap">
-    <p class="dreq" id="requisites"><span class="dreq__t">Реквизиты</span><span class="dreq__v">Индивидуальный предприниматель Симкин Дмитрий Борисович, ИНН&nbsp;780402604387</span></p>
+      <aside class="dcheck">
+        <span class="dcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2.4c3.3 1 6.7 1 10 0v4.4c-3.3-1-6.7-1-10 0z"/><path d="M7 4.6H4.4M17 4.6h2.6"/><path d="M7 9.8c3.3 1 6.7 1 10 0v4.4c-3.3-1-6.7-1-10 0z"/><path d="M7 12.0H4.4M17 12.0h2.6"/><path d="M7 17.2c3.3 1 6.7 1 10 0v4.4c-3.3-1-6.7-1-10 0z"/><path d="M7 19.4H4.4M17 19.4h2.6"/><path d="M10 7.9h4"/><path d="M10 15.3h4"/></svg></span>
+        <div class="dcheck__txt">
+          <h3>Медицинские приемы</h3>
+          <p>Запись на&nbsp;остеопатический и&nbsp;другие медицинские приемы&nbsp;– на&nbsp;сайте Клиники Доктора Симкина.</p>
+        </div>
+        <a href="https://doctorsimkin.ru" target="_blank" rel="noopener" class="dbtn dbtn--light dcheck__btn">Перейти на&nbsp;сайт клиники<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
+      </aside>
+    <p class="dreq"><span class="dreq__t">Реквизиты</span><span class="dreq__v">Индивидуальный предприниматель Симкин Дмитрий Борисович, ИНН&nbsp;780402604387</span></p>
   </div>
 </section>
 

@@ -4000,13 +4000,27 @@ a.dprod:hover h3{color:var(--brand)}
 .dband--form .dcheck{grid-template-columns:auto minmax(0,1fr);gap:16px 18px;align-items:start;margin-top:auto;padding:24px}
 .dband--form .dcheck p{font-size:15.5px}
 .dband--form .dcheck__btn{grid-column:1/-1;justify-self:start}
-@media (max-width:1100px){.dband--form .dcheck{margin-top:32px}}
+/* в одну колонку (планшет, телефон) клиника и реквизиты — не в банде,
+   а отдельным блоком после него (#clinic-after, та же разметка) */
+.dkont-after{display:none}
+@media (max-width:1100px){
+  .dband--form .dband__left .dcheck,.dband--form .dband__left .dreq{display:none}
+  .dkont-after{display:block;padding-top:0}
+  .dkont-after .dcheck{margin-top:0}
+  .dkont-after .dreq{margin-top:18px;padding-top:0;border-top:0;font-size:13px;gap:4px 12px}
+  #form{padding-bottom:clamp(28px,5vw,48px)}
+}
+@media (max-width:560px){
+  .dkont-after .dcheck{grid-template-columns:minmax(0,1fr);gap:14px;padding:22px 20px}
+  .dkont-after .dcheck__btn{white-space:nowrap;padding:0 16px}
+}
 @media (max-width:560px){
   .dband--form .dcheck{grid-template-columns:minmax(0,1fr);padding:22px 20px}
   .dband--form .dcheck__btn{justify-self:stretch;width:100%;justify-content:center;white-space:nowrap;padding:0 16px}
   @media (max-width:370px){.dband--form .dcheck__btn{font-size:14.5px}}
 }
-.dkont-req{padding-top:0}
-.dkont-req .dreq{margin-top:0}
+/* реквизиты в банде — под плашкой клиники, без линии */
+.dband--form .dreq{margin-top:18px;padding-top:0;border-top:0;font-size:13px;gap:4px 12px}
+.dband--form .dreq__t{font-size:11.5px}
 /* плашки-ссылки .dspec на самых узких телефонах переносятся, а не вылезают */
 @media (max-width:400px){.dspec__links a{white-space:normal;height:auto;min-height:40px;padding-top:8px;padding-bottom:8px;line-height:1.3}}
