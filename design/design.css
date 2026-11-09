@@ -3946,5 +3946,33 @@ a.dprod:hover h3{color:var(--brand)}
 .dpaths--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:1100px){.dpaths--3{grid-template-columns:minmax(0,1fr)}}
 .dpaths--3 .dpath h3{max-width:none}
-.dpaths--3 .dspec__links a{white-space:normal;height:auto;min-height:40px;padding-top:8px;padding-bottom:8px;line-height:1.3}
-.dreq{margin-top:clamp(28px,3vw,40px);font-size:13.5px;line-height:1.6;color:var(--navy-3)}
+/* плашки-ссылки стоят на одной нижней линии во всех трех карточках,
+   независимо от высоты заголовка; подпись в одну строку */
+.dpaths--3 .dspec{margin-top:auto;padding-top:28px}
+.dpaths--3 .dspec__links a{height:44px;padding:0 18px 0 14px}
+@media (max-width:400px){.dpaths--3 .dspec__links a{white-space:normal;height:auto;min-height:44px;padding-top:9px;padding-bottom:9px;line-height:1.3}}
+/* реквизиты: тихая строка под тонкой линией, подпись слева */
+.dreq{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;margin-top:clamp(40px,4vw,56px);padding-top:20px;border-top:1px solid var(--d-line);font-size:14px;line-height:1.5;color:var(--navy-3)}
+.dreq__t{font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--navy-3)}
+.dreq__v{color:var(--navy-2)}
+/* плашки-ссылки на телефоне — во всю ширину карточки, одинаковые */
+@media (max-width:640px){.dpaths--3 .dspec__links a{display:flex;width:100%}}
+/* форма на «Контактах»: шире и ниже — имя и почта в ряд, темы в две
+   колонки в одну строку, текст слева занимает меньше места */
+.dband--form .dband__grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.dband--form .dform{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.dband--form .dform > *{grid-column:1/-1}
+.dband--form .dform > input.dfield{grid-column:auto;margin-top:0}
+.dband--form .dform > input[type="tel"]{grid-column:1/-1}
+.dband--form .dform__label{margin:14px 0 0}
+.dband--form .dpick{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.dband--form .dpick span{height:46px;padding:0 14px}
+.dband--form .dfield--area{margin-top:14px}
+.dband--form .dform__submit{margin-top:12px}
+.dband--form .dagree{margin-top:8px}
+@media (max-width:1100px){.dband--form .dband__grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){
+  .dband--form .dform{grid-template-columns:minmax(0,1fr)}
+  .dband--form .dpick{grid-template-columns:minmax(0,1fr)}
+}
+
