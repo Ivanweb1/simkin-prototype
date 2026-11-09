@@ -4033,7 +4033,12 @@ a.dprod:hover h3{color:var(--brand)}
 /* «Что это дает компании»: панель на всю ширину, пять пунктов в ряд —
    галочка над текстом, ячейки одной ширины и с общей верхней линией */
 .dkp-gain{margin-top:clamp(36px,3.6vw,52px);padding:clamp(26px,3vw,40px);border-radius:28px}
-.dkp-gain .dgain__list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(18px,2vw,32px);margin-top:22px}
+.dkp-gain .dgain__list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin-top:22px}
+/* ячейки разделены волосяными линиями, строки выровнены по длине */
+.dkp-gain .dgain__list li{padding:4px clamp(16px,1.6vw,26px);text-wrap:balance}
+.dkp-gain .dgain__list li:first-child{padding-left:0}
+.dkp-gain .dgain__list li:last-child{padding-right:0}
+.dkp-gain .dgain__list li + li{border-left:1px solid var(--d-line)}
 .dkp-gain .dgain__list li{grid-template-columns:minmax(0,1fr);align-content:start;gap:14px;font-size:16.5px;line-height:1.5;color:var(--navy)}
 /* шапка блока: заголовок и пояснение от общей верхней линии — пояснение в три
    абзаца, по нижней линии слева оставалась пустота */
@@ -4041,8 +4046,9 @@ a.dprod:hover h3{color:var(--brand)}
 .dkp #why .dhead__note{padding-bottom:0}
 .dkp-gain .dgain__ic{width:28px;height:28px;margin-top:0}
 .dkp-gain .dgain__ic svg{width:14px;height:14px}
-@media (max-width:1100px){
+@media (max-width:1360px){
   .dkp-gain .dgain__list{grid-template-columns:minmax(0,1fr);gap:14px}
+  .dkp-gain .dgain__list li,.dkp-gain .dgain__list li:first-child,.dkp-gain .dgain__list li:last-child{padding:0;border-left:0;text-wrap:wrap}
   .dkp-gain .dgain__list li{grid-template-columns:auto minmax(0,1fr);gap:14px;font-size:17px}
   .dkp-gain .dgain__ic{width:24px;height:24px}
 }
