@@ -3982,3 +3982,17 @@ a.dprod:hover h3{color:var(--brand)}
 .dkont-hero .dcohero__lead{margin-top:0;max-width:none;font-size:clamp(17px,1.3vw,19px)}
 .dkont-hero h1{line-height:.95}
 @media (max-width:900px){.dkont-hero .dcohero__txt{grid-template-columns:minmax(0,1fr);gap:14px}}
+/* «Контакты»: плашка клиники прижата к низу левой колонки банда с формой */
+.dband--form .dband__grid{align-items:stretch}
+.dband--form .dband__left{display:flex;flex-direction:column}
+.dband--form .dcheck{grid-template-columns:auto minmax(0,1fr);gap:16px 18px;align-items:start;margin-top:auto;padding:24px}
+.dband--form .dcheck p{font-size:15.5px}
+.dband--form .dcheck__btn{grid-column:1/-1;justify-self:start}
+@media (max-width:1100px){.dband--form .dcheck{margin-top:32px}}
+@media (max-width:560px){
+  .dband--form .dcheck{grid-template-columns:minmax(0,1fr);padding:22px 20px}
+  .dband--form .dcheck__btn{justify-self:stretch;width:100%;justify-content:center;white-space:nowrap;padding:0 16px}
+  @media (max-width:370px){.dband--form .dcheck__btn{font-size:14.5px}}
+}
+.dkont-req{padding-top:0}
+.dkont-req .dreq{margin-top:0}
