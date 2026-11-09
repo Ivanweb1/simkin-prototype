@@ -1445,7 +1445,7 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
   .dflow--bare .dprin__n{position:static;grid-column:1;grid-row:1;align-self:center;margin:0}
   .dflow--bare .dprin__ico{grid-column:2;grid-row:1;justify-self:start;margin-bottom:0}
   .dflow--bare .dprin h3{grid-column:1 / -1;margin-top:18px}
-  .dflow--bare .dprin p{grid-column:1 / -1}
+  .dflow--bare .dprin p,.dflow--bare .dprin > .dkp-ol{grid-column:1 / -1}
 }
 @media (max-width:600px){
   .dprin__ico{width:48px;height:48px;border-radius:14px;margin-bottom:16px}
@@ -4061,7 +4061,9 @@ a.dprod:hover h3{color:var(--brand)}
 .dkp-step > p + p,.dkp-step > p + div,.dkp-step > div + p{margin-top:12px}
 /* три задачи курса: номер синим в кружке, текст рядом */
 .dkp-ol{display:flex;flex-direction:column;gap:8px}
-.dkp-step .dkp-ol p{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;margin:0}
+.dprin .dkp-ol{margin-top:12px;max-width:36em}
+.dprin .dkp-ol p{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;margin:0}
+.dprin .dkp-ol + p{margin-top:12px}
 .dkp-ol b{display:grid;place-items:center;width:22px;height:22px;margin-top:1px;border-radius:50%;background:var(--tint);color:var(--brand);font-size:12px;font-weight:700}
 @media (max-width:1180px){.dstairs--6{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:980px){.dstairs--6{grid-template-columns:minmax(0,1fr)}}

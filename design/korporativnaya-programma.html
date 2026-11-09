@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=318">
+<link rel="stylesheet" href="design.css?v=320">
 </head>
 <body class="d dco dkp">
 
@@ -142,68 +142,86 @@
 </section>
 
 <!-- ============ БЛОК 3. КАК УСТРОЕНА ПРОГРАММА ============ -->
-<!-- Шесть этапов — «лестница» .dstairs с «Авторских разработок» (номер, иконка,
-     шкала прогресса), раскладка 3×2 по образцу заказчика; последний этап —
-     результат, залит синим. Ось под этапами — подзаголовок первого экрана. -->
+<!-- Пошаговое чтение, как «Что мы разбираем» на консультации (.dflow с
+     подписанной шкалой): слева счетчик и шесть этапов, справа этапы по
+     одному, активный подсвечен. Подписи шкалы — из инфографики заказчика. -->
 <section class="dsec dsec--tint" id="steps">
   <div class="dwrap">
     <div class="dhead">
       <span class="deyebrow" data-rv>Этапы</span>
       <h2 class="dh2 dh2--inline" data-rv style="--d:.06s">Как устроена <span class="dh2__soft">программа</span></h2>
     </div>
-    <ol class="dstairs dstairs--6" data-rv>
-      <li style="--i:0">
-        <div class="dstairs__top"><span class="dstairs__n">01</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="16.5" rx="2.2"/><path d="M9 4.5V3.2h6v1.3"/><path d="m9 13 2.2 2.2L15.5 11"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i><i></i><i></i></span></div>
-        <h3>Первичная оценка</h3>
-        <div class="dkp-step">
+    <div class="dflow dflow--bare dk-seqflow" data-flow data-rv>
+      <div class="dflow__aside">
+        <div class="dflow__sticky">
+          <div class="dflow__meta">
+            <span class="deyebrow">Шесть этапов</span>
+            <p class="dflow__count"><b data-flow-num>01</b><i>/ 06</i></p>
+            <ol class="dflow__rail dflow__rail--labels">
+              <li><button type="button" data-flow-go="0" aria-label="01: Первичная оценка"><span>Первичная оценка</span></button></li>
+              <li><button type="button" data-flow-go="1" aria-label="02: Онлайн-обучение"><span>Онлайн-обучение</span></button></li>
+              <li><button type="button" data-flow-go="2" aria-label="03: Самостоятельная настройка"><span>Самостоятельная настройка</span></button></li>
+              <li><button type="button" data-flow-go="3" aria-label="04: Индивидуальная проверка"><span>Индивидуальная проверка</span></button></li>
+              <li><button type="button" data-flow-go="4" aria-label="05: Рекомендации"><span>Рекомендации</span></button></li>
+              <li><button type="button" data-flow-go="5" aria-label="06: Контроль результата"><span>Контроль результата</span></button></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="dflow__list">
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">01</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="16.5" rx="2.2"/><path d="M9 4.5V3.2h6v1.3"/><path d="m9 13 2.2 2.2L15.5 11"/></svg></span>
+          <span class="dk-seq__tag">Первичная оценка</span>
+          <h3>Первичная оценка</h3>
           <p>Знакомимся с&nbsp;задачами компании, особенностями рабочих мест и&nbsp;организацией работы сотрудников.</p>
           <p>Определяем наиболее распространенные проблемы, состав участников и&nbsp;необходимый объем программы.</p>
-        </div>
-      </li>
-      <li style="--i:1">
-        <div class="dstairs__top"><span class="dstairs__n">02</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/><path d="M10.5 8.2v4.6l3.8-2.3z"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i></i><i></i><i></i><i></i></span></div>
-        <h3>Онлайн-обучение сотрудников</h3>
-        <div class="dkp-step">
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">02</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/><path d="M10.5 8.2v4.6l3.8-2.3z"/></svg></span>
+          <span class="dk-seq__tag">Онлайн-обучение</span>
+          <h3>Онлайн-обучение сотрудников</h3>
           <p>Сотрудники проходят авторский курс «Система эргономики Доктора Симкина». Обучение построено вокруг трех последовательных задач:</p>
           <div class="dkp-ol"><p><b>1</b>Понять, как устроено и&nbsp;работает тело.</p><p><b>2</b>Найти сбалансированное положение для выполнения рабочих задач.</p><p><b>3</b>Адаптировать рабочее место под себя.</p></div>
           <p>Курс помогает понять не&nbsp;только что нужно изменить, но&nbsp;и&nbsp;почему это важно.</p>
-        </div>
-      </li>
-      <li style="--i:2">
-        <div class="dstairs__top"><span class="dstairs__n">03</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i></i><i></i><i></i></span></div>
-        <h3>Самостоятельная настройка рабочих мест</h3>
-        <div class="dkp-step">
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">03</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></span>
+          <span class="dk-seq__tag">Самостоятельная настройка</span>
+          <h3>Самостоятельная настройка рабочих мест</h3>
           <p>После обучения сотрудники применяют полученные знания на&nbsp;практике: регулируют кресла, располагают мониторы, клавиатуры и&nbsp;другие устройства, оценивают удобство рабочей позы.</p>
           <p>Важно, чтобы человек научился самостоятельно организовывать свое рабочее место, а&nbsp;не&nbsp;зависел постоянно от&nbsp;помощи специалиста.</p>
-        </div>
-      </li>
-      <li style="--i:3">
-        <div class="dstairs__top"><span class="dstairs__n">04</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.4"/><path d="M3.8 19.5c.7-3.3 3.1-5.2 6.2-5.2 1.3 0 2.5.3 3.5.9"/><path d="m15 17.5 2 2 4-4"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i></i><i></i></span></div>
-        <h3>Индивидуальная проверка и&nbsp;корректировка</h3>
-        <div class="dkp-step">
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">04</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="3.4"/><path d="M3.8 19.5c.7-3.3 3.1-5.2 6.2-5.2 1.3 0 2.5.3 3.5.9"/><path d="m15 17.5 2 2 4-4"/></svg></span>
+          <span class="dk-seq__tag">Индивидуальная проверка</span>
+          <h3>Индивидуальная проверка и&nbsp;корректировка</h3>
           <p>Дмитрий Симкин лично оценивает, насколько правильно сотрудники применяют полученные рекомендации.</p>
           <p>При необходимости помогает скорректировать рабочую позу, расположение оборудования и&nbsp;другие элементы организации рабочего места.</p>
           <p>Объем индивидуальной помощи зависит от&nbsp;количества и&nbsp;характера выявленных ошибок.</p>
-        </div>
-      </li>
-      <li style="--i:4">
-        <div class="dstairs__top"><span class="dstairs__n">05</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6.5 1.5 1.5 2.5-2.7M4 12.5 5.5 14l2.5-2.7M4 18.5 5.5 20l2.5-2.7"/><path d="M11 7h9M11 13h9M11 19h9"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i></i></span></div>
-        <h3>Рекомендации компании</h3>
-        <div class="dkp-step">
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">05</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6.5 1.5 1.5 2.5-2.7M4 12.5 5.5 14l2.5-2.7M4 18.5 5.5 20l2.5-2.7"/><path d="M11 7h9M11 13h9M11 19h9"/></svg></span>
+          <span class="dk-seq__tag">Рекомендации</span>
+          <h3>Рекомендации компании</h3>
           <p>По&nbsp;результатам работы формируем рекомендации по&nbsp;организации рабочих мест, использованию имеющейся мебели и&nbsp;оборудования.</p>
           <p>Если требуется, определяем, какие изменения невозможно выполнить без участия компании.</p>
-        </div>
-      </li>
-      <li class="dstairs__end" style="--i:5">
-        <div class="dstairs__top"><span class="dstairs__n">06</span><span class="dstairs__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M7 16.5V12M12 16.5V7M17 16.5v-6"/></svg></span><span class="dstairs__meter" aria-hidden="true"><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i><i class="is-on"></i></span></div>
-        <h3>Контроль результата</h3>
-        <div class="dkp-step">
+        </article>
+        <article class="dprin" data-flow-item>
+          <span class="dprin__n">06</span>
+          <span class="dprin__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M7 16.5V12M12 16.5V7M17 16.5v-6"/></svg></span>
+          <span class="dk-seq__tag">Контроль результата</span>
+          <h3>Контроль результата</h3>
           <p>Оцениваем, насколько сотрудники усвоили рекомендации и&nbsp;как изменились условия их&nbsp;работы.</p>
           <p>При согласовании с&nbsp;компанией можно дополнительно оценивать динамику субъективного дискомфорта, утомления и&nbsp;удобства рабочего места.</p>
-        </div>
-      </li>
-    </ol>
-    <div class="dstairs__axis" aria-hidden="true"><span>Обучение сотрудников</span><i></i><span>Изменения рабочих мест</span></div>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -321,6 +339,116 @@
 <!-- переключатель вариантов убран: заказчик утвердил вариант A (index-b.html / index-c.html остаются в репозитории) -->
 
 <script src="../script.js?v=41"></script>
+
+<script>
+/* Пошаговое чтение — «Что мы разбираем» (тот же
+   скрипт, что у доводов на «Для компаний»): активен тот пункт, что пересек линию чтения. Никакого перехвата скролла —
+   страница прокручивается обычно, меняются только акценты. */
+(function(){
+  [].forEach.call(document.querySelectorAll('[data-flow]'), initFlow);
+  function initFlow(flow){
+  var items = [].slice.call(flow.querySelectorAll('[data-flow-item]'));
+  var rail  = [].slice.call(flow.querySelectorAll('.dflow__rail li'));
+  var shots = [].slice.call(flow.querySelectorAll('[data-flow-ph]'));
+  var num   = flow.querySelector('[data-flow-num]');
+  if(!items.length) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = -1;
+  flow.classList.add('dflow--live');
+
+  function apply(i){
+    if(i === cur) return;
+    cur = i;
+    items.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    rail.forEach(function(li,n){
+      li.classList.toggle('is-done', n <= i);
+      li.classList.toggle('is-now',  n === i);
+      var b = li.firstElementChild;
+      if(b) b.setAttribute('aria-current', n === i ? 'true' : 'false');
+    });
+    shots.forEach(function(el,n){ el.classList.toggle('is-now', n === i); });
+    if(num){
+      num.textContent = ('0' + (i + 1)).slice(-2);
+      if(!reduce){ num.classList.remove('is-swap'); void num.offsetWidth; num.classList.add('is-swap'); }
+    }
+  }
+
+  // каждый кадр встает ровно в границы своего ряда. Шире, чем остаток левой
+  // половины, он быть не может — иначе наехал бы на номер, поэтому размер
+  // ограничен сверху.
+  var aside= flow.querySelector('.dflow__aside');
+  var meta = flow.querySelector('.dflow__meta');
+  var GAP = 40; // просвет между соседними кадрами
+  function placeShots(){
+    if(!shots.length || getComputedStyle(shots[0]).display === 'none') return;
+    var room = aside.getBoundingClientRect().width - meta.getBoundingClientRect().width - 16;
+    shots.forEach(function(fig,n){
+      var row = items[n];
+      if(!row) return;
+      // верх остается на линейке ряда, просвет снимается снизу
+      var size = Math.max(0, Math.min(row.offsetHeight - GAP, room));
+      fig.style.setProperty('--ph-top', row.offsetTop + 'px');
+      fig.style.setProperty('--ph', Math.round(size) + 'px');
+    });
+  }
+  placeShots();
+  // высота ряда меняется от переносов в тексте, ширина колонки — от окна.
+  // Наблюдатель ловит и то и другое; кадры позиционированы абсолютно и на
+  // размеры рядов не влияют, так что зацикливания нет.
+  if(window.ResizeObserver){
+    var ro = new ResizeObserver(placeShots);
+    ro.observe(flow);
+    items.forEach(function(el){ ro.observe(el); });
+  }
+
+  // считаем по заголовку, а не по краю блока: принцип становится активным ровно
+  // тогда, когда его название доходит до середины экрана. На телефоне в шагах
+  // подготовки над заголовком стоит фото — тогда считаем по фото, иначе шаг
+  // загорался, когда его фото уже уехало, а текст был на середине экрана
+  function pick(){
+    var vh = window.innerHeight, best = 0;
+    items.forEach(function(el,n){
+      var ph = el.querySelector('.dprep-ph');
+      var byPh = ph && ph.offsetParent;
+      var h = byPh ? ph : (el.querySelector('h3') || el);
+      if(h.getBoundingClientRect().top <= vh * (byPh ? 0.6 : 0.45)) best = n;
+    });
+    apply(best);
+  }
+
+  var waiting = false;
+  function onScroll(){
+    if(waiting) return;
+    waiting = true;
+    requestAnimationFrame(function(){ waiting = false; pick(); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  // после смены ширины даем раскладке устояться: высота ряда меняется вместе с
+  // переносами в тексте, и без паузы кадр получил бы размер от прошлой ширины
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(placeShots, 150);
+    onScroll();
+  });
+  // шрифт догружается позже разметки и меняет высоту рядов
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(placeShots);
+  }
+  pick();
+
+  flow.querySelectorAll('[data-flow-go]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = items[+btn.getAttribute('data-flow-go')];
+      if(!el) return;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - window.innerHeight * 0.26;
+      window.scrollTo({top: top, behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+}
+})();
+</script>
 
 </body>
 </html>
