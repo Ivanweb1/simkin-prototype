@@ -4030,12 +4030,22 @@ a.dprod:hover h3{color:var(--brand)}
 .dkp-tg{gap:10px}
 .dkp-tg img{width:20px;height:20px;flex:none;border-radius:5px}
 .dkp .dcohero__media img{object-position:50% 22%}
-/* «Что это дает компании»: список крупнее, чем в карточках */
-.dkp-why{align-items:start}
-.dkp-why .dgain{margin-top:0;padding:clamp(26px,3vw,40px);border-radius:28px}
-.dkp-why .dgain__list{margin-top:18px;gap:16px}
-.dkp-why .dgain__list li{font-size:17px;line-height:1.5;gap:14px}
-.dkp-why .dgain__ic{width:24px;height:24px;margin-top:0}
+/* «Что это дает компании»: панель на всю ширину, пять пунктов в ряд —
+   галочка над текстом, ячейки одной ширины и с общей верхней линией */
+.dkp-gain{margin-top:clamp(36px,3.6vw,52px);padding:clamp(26px,3vw,40px);border-radius:28px}
+.dkp-gain .dgain__list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(18px,2vw,32px);margin-top:22px}
+.dkp-gain .dgain__list li{grid-template-columns:minmax(0,1fr);align-content:start;gap:14px;font-size:16.5px;line-height:1.5;color:var(--navy)}
+/* шапка блока: заголовок и пояснение от общей верхней линии — пояснение в три
+   абзаца, по нижней линии слева оставалась пустота */
+.dkp #why .dhead--split{align-items:start}
+.dkp #why .dhead__note{padding-bottom:0}
+.dkp-gain .dgain__ic{width:28px;height:28px;margin-top:0}
+.dkp-gain .dgain__ic svg{width:14px;height:14px}
+@media (max-width:1100px){
+  .dkp-gain .dgain__list{grid-template-columns:minmax(0,1fr);gap:14px}
+  .dkp-gain .dgain__list li{grid-template-columns:auto minmax(0,1fr);gap:14px;font-size:17px}
+  .dkp-gain .dgain__ic{width:24px;height:24px}
+}
 /* шесть этапов: 3×2 по образцу заказчика, шкала на шесть делений */
 .dstairs--6{grid-template-columns:repeat(3,minmax(0,1fr))}
 .dstairs--6 .dstairs__meter{grid-template-columns:repeat(6,1fr)}
