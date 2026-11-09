@@ -1120,8 +1120,11 @@ a.dpost:hover{border-color:transparent;box-shadow:0 20px 54px rgba(35,43,62,.1);
 }
 @media (max-width:700px){
   /* «Контакты» встают правым столбцом рядом с «О проекте» */
-  .d .foot{grid-template-columns:1fr 1fr}
+  .d .foot{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .d .foot li{overflow-wrap:break-word}
 }
+/* самые узкие телефоны: в две колонки длинные пункты не помещаются */
+@media (max-width:374px){.d .foot{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){
   .d .foot{padding-top:44px;gap:28px 20px}
   .d .foot h4{margin-bottom:14px}
@@ -3100,7 +3103,7 @@ a.dprod:hover h3{color:var(--brand)}
 .dpath__ava{width:52px;height:52px}
 .dpath__ava img{width:232px;left:-116px}
 .dpath--company .dpath__who{background:var(--navy);color:#fff}
-@media (max-width:980px){.dpaths{grid-template-columns:1fr}}
+@media (max-width:980px){.dpaths{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){
   .dpath{border-radius:22px;padding:24px 20px}
   .dpath__act .dbtn{width:100%;justify-content:center;text-align:center}
@@ -3944,7 +3947,16 @@ a.dprod:hover h3{color:var(--brand)}
 .dagree a:hover{color:var(--brand)}
 /* «Контакты»: три направления в ряд, на планшете и телефоне — столбиком */
 .dpaths--3{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media (max-width:1100px){.dpaths--3{grid-template-columns:minmax(0,1fr)}}
+/* ниже 1400 плашка «Написать Дмитрию Симкину в Telegram» в треть ширины не
+   помещается: направления строками — иконка и заголовок слева, плашка справа */
+@media (max-width:1399px){
+  .dpaths.dpaths--3{grid-template-columns:minmax(0,1fr);gap:10px}
+}
+@media (min-width:701px) and (max-width:1399px){
+  .dpaths--3 .dpath{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:22px;padding:22px 26px 22px 22px}
+  .dpaths--3 .dpath h3{margin-top:0;font-size:clamp(19px,1.9vw,22px)}
+  .dpaths--3 .dpath .dspec{margin-top:0;padding-top:0}
+}
 .dpaths--3 .dpath h3{max-width:none}
 /* плашки-ссылки стоят на одной нижней линии во всех трех карточках,
    независимо от высоты заголовка; подпись в одну строку */
@@ -3996,3 +4008,5 @@ a.dprod:hover h3{color:var(--brand)}
 }
 .dkont-req{padding-top:0}
 .dkont-req .dreq{margin-top:0}
+/* плашки-ссылки .dspec на самых узких телефонах переносятся, а не вылезают */
+@media (max-width:400px){.dspec__links a{white-space:normal;height:auto;min-height:40px;padding-top:8px;padding-bottom:8px;line-height:1.3}}
