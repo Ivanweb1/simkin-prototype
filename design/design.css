@@ -4024,3 +4024,29 @@ a.dprod:hover h3{color:var(--brand)}
 .dband--form .dreq__t{font-size:11.5px}
 /* плашки-ссылки .dspec на самых узких телефонах переносятся, а не вылезают */
 @media (max-width:400px){.dspec__links a{white-space:normal;height:auto;min-height:40px;padding-top:8px;padding-bottom:8px;line-height:1.3}}
+
+/* ===== Корпоративная программа офисной эргономики (.dkp) ===== */
+/* кнопка в Telegram: значок слева от подписи */
+.dkp-tg{gap:10px}
+.dkp-tg img{width:20px;height:20px;flex:none;border-radius:5px}
+.dkp .dcohero__media img{object-position:50% 22%}
+/* «Что это дает компании»: список крупнее, чем в карточках */
+.dkp-why{align-items:start}
+.dkp-why .dgain{margin-top:0;padding:clamp(26px,3vw,40px);border-radius:28px}
+.dkp-why .dgain__list{margin-top:18px;gap:16px}
+.dkp-why .dgain__list li{font-size:17px;line-height:1.5;gap:14px}
+.dkp-why .dgain__ic{width:24px;height:24px;margin-top:0}
+/* шесть этапов: 3×2 по образцу заказчика, шкала на шесть делений */
+.dstairs--6{grid-template-columns:repeat(3,minmax(0,1fr))}
+.dstairs--6 .dstairs__meter{grid-template-columns:repeat(6,1fr)}
+.dstairs--6 li{padding:26px 26px 30px}
+.dkp-step{margin-top:12px}
+.dkp-step p{margin-top:0;font-size:16px;line-height:1.6}
+.dkp-step > p + p,.dkp-step > p + div,.dkp-step > div + p{margin-top:12px}
+/* три задачи курса: номер синим в кружке, текст рядом */
+.dkp-ol{display:flex;flex-direction:column;gap:8px}
+.dkp-step .dkp-ol p{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;margin:0}
+.dkp-ol b{display:grid;place-items:center;width:22px;height:22px;margin-top:1px;border-radius:50%;background:var(--tint);color:var(--brand);font-size:12px;font-weight:700}
+@media (max-width:1180px){.dstairs--6{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:980px){.dstairs--6{grid-template-columns:minmax(0,1fr)}}
+.dstairs--6 h3{margin-top:0}
