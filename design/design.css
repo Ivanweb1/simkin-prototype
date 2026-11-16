@@ -4087,6 +4087,11 @@ a.dprod:hover h3{color:var(--brand)}
    остается в верхней части */
 .dds-hero .dcohero__media{min-height:clamp(380px,32vw,540px)}
 .dds-hero .dcohero__media picture{position:absolute;inset:0}
+/* экран на ~15% выше текста: больше воздуха сверху и снизу, фото
+   продлевается вниз (лицо остается на месте) */
+@media (min-width:1101px){
+  .dds-hero .dcohero__txt{padding-top:clamp(56px,6.8vw,126px);padding-bottom:clamp(56px,6.8vw,126px)}
+}
 .dds-hero .dcohero__media img{object-position:50% 6%}
 .dds-hero h1{max-width:none}
 .dds-hero .dcohero__h1sub{max-width:26em}
