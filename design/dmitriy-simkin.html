@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css?v=30">
-<link rel="stylesheet" href="design.css?v=323">
+<link rel="stylesheet" href="design.css?v=324">
 </head>
 <body class="d dco dds">
 
@@ -126,17 +126,28 @@
       <div class="dexp__body">
         <span class="deyebrow" data-rv>Профессиональный профиль</span>
         <h2 class="dh2" data-rv style="--d:.06s">Медицина, эргономика, обучение <span class="dh2__soft">и&nbsp;разработка оборудования</span></h2>
+        <p class="dds-lead" data-rv style="--d:.1s">Моя профессиональная деятельность объединяет медицину, эргономику, обучение и&nbsp;разработку оборудования.</p>
         <ul class="dfacts" data-rv style="--d:.12s">
           <li><span class="dfacts__y">1991</span><span class="dfacts__t">Работа с&nbsp;телом человека</span></li>
           <li><span class="dfacts__y">1996</span><span class="dfacts__t">Практика и&nbsp;разработки в&nbsp;области эргономики</span></li>
           <li><span class="dfacts__y">2004</span><span class="dfacts__t">Обучение эргономике и&nbsp;работа с&nbsp;компаниями</span></li>
         </ul>
-        <div class="dds-text" data-rv style="--d:.16s">
-          <p>Моя профессиональная деятельность объединяет медицину, эргономику, обучение и&nbsp;разработку оборудования. С&nbsp;1991&nbsp;года я&nbsp;работаю с&nbsp;телом человека, с&nbsp;1996&nbsp;года занимаюсь вопросами эргономики, а&nbsp;с&nbsp;2004&nbsp;года провожу обучение, в&nbsp;том числе для сотрудников компаний.</p>
-          <p>Врачебная практика позволила мне увидеть, как повседневные привычки и&nbsp;организация рабочего места могут быть связаны с&nbsp;напряжением мышц, дискомфортом и&nbsp;утомлением.</p>
-          <p>Постепенно сформировалась авторская система, в&nbsp;которой эргономика рассматривается не&nbsp;как набор универсальных правил, а&nbsp;как способ адаптировать условия работы под конкретного человека.</p>
-          <p>Я&nbsp;также являюсь основателем и&nbsp;руководителем Клиники остеопатии Доктора Симкина и&nbsp;председателем Комитета по&nbsp;производительности труда и&nbsp;корпоративному здоровью «Деловой России».</p>
+        <!-- Как сложился подход: два коротких шага с подписью вместо сплошного
+             текста. Годы из первого абзаца ТЗ уже показаны фактами выше. -->
+        <div class="dds-path" data-rv style="--d:.16s">
+          <div class="dds-path__step">
+            <span class="dds-path__k">Что показала практика</span>
+            <p>Врачебная практика позволила мне увидеть, как повседневные привычки и&nbsp;организация рабочего места могут быть связаны с&nbsp;напряжением мышц, дискомфортом и&nbsp;утомлением.</p>
+          </div>
+          <div class="dds-path__step">
+            <span class="dds-path__k">Что из&nbsp;этого выросло</span>
+            <p>Постепенно сформировалась авторская система, в&nbsp;которой эргономика рассматривается не&nbsp;как набор универсальных правил, а&nbsp;как способ <b>адаптировать условия работы под конкретного человека</b>.</p>
+          </div>
         </div>
+        <ul class="dds-roles" data-rv style="--d:.2s">
+          <li><span class="dds-roles__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v8M8 12h8"/><rect x="3.5" y="3.5" width="17" height="17" rx="4"/></svg></span><span><small>Основатель и&nbsp;руководитель</small>Клиника остеопатии Доктора Симкина</span></li>
+          <li><span class="dds-roles__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="7" width="17" height="12.5" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3.5 12.5h17"/></svg></span><span><small>Председатель Комитета по&nbsp;производительности труда и&nbsp;корпоративному здоровью</small>«Деловая Россия»</span></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -155,12 +166,45 @@
       </div>
       <p class="dhead__note" data-rv style="--d:.12s">Высшее медицинское образование и&nbsp;последующее профессиональное развитие сформировали основу моего подхода к&nbsp;работе с&nbsp;человеческим телом.</p>
     </div>
+    <!-- Лента времени: линия с точками, у вехи — год, метка направления,
+         жирное название и пояснение. Награда выделена заливкой точки и
+         звездой. На телефоне лента вертикальная, линия слева. -->
     <ol class="dds-tl" data-rv style="--d:.1s">
-      <li><span class="dds-tl__y">1993</span><p>Окончание Ленинградского педиатрического медицинского института</p></li>
-      <li><span class="dds-tl__y">2003</span><p>Подготовка по&nbsp;остеопатии в&nbsp;Санкт-Петербургской медицинской академии последипломного образования</p></li>
-      <li><span class="dds-tl__y">2019</span><p>Обучение по&nbsp;программе «Эргономическое проектирование и&nbsp;экспертиза условий труда»</p></li>
-      <li><span class="dds-tl__y">2024</span><p>Мастер-класс на&nbsp;Всероссийском конгрессе под эгидой Минздрава России «Osteopathy Open 2024»: представление авторского метода остеопатической диагностики</p></li>
-      <li class="dds-tl__award"><span class="dds-tl__y">2026</span><p>Награда «Лучший остеопат» в&nbsp;региональной номинации премии «Лидеры остеопатии России», Санкт-Петербург</p></li>
+      <li>
+        <span class="dds-tl__dot"></span>
+        <span class="dds-tl__y">1993</span>
+        <span class="dds-tl__tag">Высшее образование</span>
+        <b class="dds-tl__name">Ленинградский педиатрический медицинский институт</b>
+        <p>Окончание института</p>
+      </li>
+      <li>
+        <span class="dds-tl__dot"></span>
+        <span class="dds-tl__y">2003</span>
+        <span class="dds-tl__tag">Остеопатия</span>
+        <b class="dds-tl__name">Подготовка по&nbsp;остеопатии</b>
+        <p>Санкт-Петербургская медицинская академия последипломного образования</p>
+      </li>
+      <li>
+        <span class="dds-tl__dot"></span>
+        <span class="dds-tl__y">2019</span>
+        <span class="dds-tl__tag">Эргономика</span>
+        <b class="dds-tl__name">«Эргономическое проектирование и&nbsp;экспертиза условий труда»</b>
+        <p>Обучение по&nbsp;программе</p>
+      </li>
+      <li>
+        <span class="dds-tl__dot"></span>
+        <span class="dds-tl__y">2024</span>
+        <span class="dds-tl__tag">Выступление</span>
+        <b class="dds-tl__name">Мастер-класс на&nbsp;«Osteopathy Open 2024»</b>
+        <p>Всероссийский конгресс под эгидой Минздрава России: представление авторского метода остеопатической диагностики</p>
+      </li>
+      <li class="dds-tl__award">
+        <span class="dds-tl__dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.6l2.5 5.1 5.6.8-4 3.9.9 5.6-5-2.6-5 2.6.9-5.6-4-3.9 5.6-.8z"/></svg></span>
+        <span class="dds-tl__y">2026</span>
+        <span class="dds-tl__tag">Награда</span>
+        <b class="dds-tl__name">«Лучший остеопат»</b>
+        <p>Региональная номинация премии «Лидеры остеопатии России», Санкт-Петербург</p>
+      </li>
     </ol>
   </div>
 </section>
