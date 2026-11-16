@@ -4083,8 +4083,11 @@ a.dprod:hover h3{color:var(--brand)}
 /* ---- Первый экран: фото слева, текст справа ----
    Кадр вертикальный: колонка фото уже текстовой, лицо в верхней трети. */
 .dds-hero .dcohero__card{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
-.dds-hero .dcohero__media{min-height:clamp(520px,46vw,760px)}
-.dds-hero .dcohero__media img{object-position:50% 18%}
+/* высота экрана задается текстом, а не фото: кадр режется снизу, лицо
+   остается в верхней части */
+.dds-hero .dcohero__media{min-height:clamp(380px,32vw,540px)}
+.dds-hero .dcohero__media picture{position:absolute;inset:0}
+.dds-hero .dcohero__media img{object-position:50% 6%}
 .dds-hero h1{max-width:none}
 .dds-hero .dcohero__h1sub{max-width:26em}
 .dds-motto{
