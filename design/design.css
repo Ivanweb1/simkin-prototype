@@ -4226,11 +4226,24 @@ a.dprod:hover h3{color:var(--brand)}
   .dds-key p{font-size:19px}
 }
 
-/* ---- Компании: вводный текст в две колонки над логотипами ---- */
-.dds-co{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,64px);margin-top:clamp(28px,3vw,40px);max-width:1100px}
-.dds-co p{font-size:17px;line-height:1.6;color:var(--navy-2)}
-@media (max-width:860px){.dds-co{grid-template-columns:minmax(0,1fr);gap:12px}}
-@media (max-width:600px){.dds-co p{font-size:16.5px}}
+/* ---- Компании: состав проектов плашками, подпись над логотипами ---- */
+.dds-co{
+  display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:clamp(32px,3.4vw,48px);
+  padding:clamp(18px,2vw,24px) clamp(20px,2.4vw,32px);border-radius:24px;background:var(--tint);
+}
+.dds-co__t{font-size:16px;font-weight:600;color:var(--navy)}
+.dds-co__list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.dds-co__list li{
+  display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:6px 16px 6px 12px;border-radius:100px;
+  background:#fff;font-size:15px;font-weight:500;line-height:1.3;color:var(--navy);
+}
+.dds-co__list li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--brand);flex:0 0 auto}
+.dds-co__cap{margin-top:clamp(36px,3.6vw,52px);font-size:14px;font-weight:600;color:var(--navy-2)}
+.dlogos.dds-co__logos{margin-top:16px}
+@media (max-width:600px){
+  .dds-co{border-radius:20px;padding:18px}
+  .dds-co__list li{font-size:14.5px}
+}
 
 /* ---- Публикации: строки со ссылками ---- */
 .dpubs{list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;background:#fff;border-radius:28px;overflow:hidden}
