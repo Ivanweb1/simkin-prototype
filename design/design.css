@@ -4076,3 +4076,162 @@ a.dprod:hover h3{color:var(--brand)}
 .dkp-tg img{transform:translateY(-1px)}
 /* этапы программы — пошаговое чтение: колонка шкалы слева, как «Что мы разбираем» */
 .dkp #steps{--split:26%;--gap-flow:clamp(32px,4vw,72px);--meta:clamp(150px,15vw,240px)}
+
+/* =====================================================================
+   СТРАНИЦА «ДМИТРИЙ СИМКИН» (.dds)
+   ===================================================================== */
+/* ---- Первый экран: фото слева, текст справа ----
+   Кадр вертикальный: колонка фото уже текстовой, лицо в верхней трети. */
+.dds-hero .dcohero__card{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
+.dds-hero .dcohero__media{min-height:clamp(520px,46vw,760px)}
+.dds-hero .dcohero__media img{object-position:50% 18%}
+.dds-hero h1{max-width:none}
+.dds-hero .dcohero__h1sub{max-width:26em}
+.dds-motto{
+  margin-top:clamp(26px,2.6vw,36px);padding-left:20px;border-left:3px solid var(--brand);
+  font-size:clamp(20px,1.75vw,26px);font-weight:600;line-height:1.3;letter-spacing:-.02em;color:var(--navy);max-width:22em;
+}
+.dds-motto em{font-style:normal;color:var(--accent)}
+.dds-hero .dcohero__lead{margin-top:clamp(22px,2.2vw,30px);max-width:34em}
+@media (max-width:1100px){
+  .dds-hero .dcohero__card{grid-template-columns:minmax(0,1fr)}
+  .dds-hero .dcohero__media{min-height:0;aspect-ratio:4/3}
+  .dds-hero .dcohero__media img{object-position:50% 22%}
+}
+@media (max-width:600px){
+  /* телефон: кадр 4:5 по лицу и скрещенным рукам */
+  .dds-hero .dcohero__media{aspect-ratio:4/5}
+  .dds-hero .dcohero__media img{object-position:50% 12%}
+  .dds-motto{padding-left:16px;font-size:20px}
+}
+
+/* ---- Текстовые абзацы внутри блоков ---- */
+.dds-text{margin-top:clamp(26px,2.6vw,36px)}
+.dds-text p{font-size:17px;line-height:1.65;color:var(--navy-2);max-width:40em}
+.dds-text p + p{margin-top:14px}
+@media (max-width:600px){.dds-text p{font-size:16.5px}}
+
+/* ---- Профиль: факты сразу под заголовком ---- */
+.dds-prof .dexp__ph img{object-position:50% 14%}
+.dds-prof .dfacts{margin-top:clamp(28px,2.8vw,40px)}
+.dds-prof .dfacts li{padding:14px 0}
+.dds-prof .dfacts li:first-child{padding-top:0}
+.dds-prof .dfacts__t{font-weight:600;color:var(--navy)}
+
+/* ---- Образование: компактная хронология ---- */
+.dds-tl{
+  list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;
+}
+.dds-tl li{background:#fff;border-radius:24px;padding:clamp(22px,2vw,28px);display:flex;flex-direction:column;gap:16px}
+.dds-tl__y{font-size:clamp(28px,2.4vw,36px);font-weight:600;letter-spacing:-.03em;line-height:1;color:var(--brand)}
+.dds-tl p{font-size:16px;line-height:1.5;color:var(--navy-2)}
+.dds-tl li.dds-tl__award{background:var(--brand)}
+.dds-tl__award .dds-tl__y,.dds-tl__award p{color:#fff}
+@media (max-width:1100px){.dds-tl{grid-template-columns:repeat(2,minmax(0,1fr))}.dds-tl__award{grid-column:1/-1}}
+@media (max-width:600px){
+  .dds-tl{grid-template-columns:minmax(0,1fr);gap:8px}
+  .dds-tl li{flex-direction:row;align-items:baseline;gap:16px;padding:18px 20px;border-radius:20px}
+  .dds-tl__y{font-size:22px;flex:0 0 56px}
+  .dds-tl p{font-size:15.5px}
+}
+
+/* ---- Специализация: направления и ключевой принцип ---- */
+.dds-h3{margin-top:clamp(48px,5vw,72px);font-size:clamp(22px,1.9vw,28px);font-weight:600;letter-spacing:-.024em;color:var(--navy)}
+.dds-dirs{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.dds-dirs li{
+  display:flex;align-items:center;gap:18px;padding:20px 22px;border-radius:22px;border:1px solid var(--d-line);
+  font-size:16.5px;font-weight:500;line-height:1.4;color:var(--navy);
+}
+.dds-dirs__ico{width:48px;height:48px;border-radius:14px;background:var(--tint);color:var(--brand);display:grid;place-items:center;flex:0 0 auto}
+.dds-dirs__ico svg{width:24px;height:24px}
+.dds-key{
+  margin-top:clamp(28px,3vw,40px);padding:clamp(24px,2.8vw,40px) clamp(24px,3.2vw,48px);border-radius:28px;
+  background:var(--soft);display:grid;grid-template-columns:minmax(0,.32fr) minmax(0,1fr);gap:clamp(16px,3vw,48px);align-items:center;
+}
+.dds-key__t{font-size:14px;font-weight:600;color:var(--brand);letter-spacing:.01em}
+.dds-key p{font-size:clamp(20px,1.8vw,27px);font-weight:600;line-height:1.35;letter-spacing:-.02em;color:var(--navy);max-width:30em}
+@media (max-width:1100px){.dds-dirs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){
+  .dds-dirs{grid-template-columns:minmax(0,1fr);gap:8px}
+  .dds-dirs li{padding:16px 18px;border-radius:18px;font-size:16px;gap:14px}
+  .dds-dirs__ico{width:42px;height:42px;border-radius:12px}
+  .dds-key{grid-template-columns:minmax(0,1fr);gap:10px;border-radius:22px}
+  .dds-key p{font-size:19px}
+}
+
+/* ---- Компании: вводный текст в две колонки над логотипами ---- */
+.dds-co{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,64px);margin-top:clamp(28px,3vw,40px);max-width:1100px}
+.dds-co p{font-size:17px;line-height:1.6;color:var(--navy-2)}
+@media (max-width:860px){.dds-co{grid-template-columns:minmax(0,1fr);gap:12px}}
+@media (max-width:600px){.dds-co p{font-size:16.5px}}
+
+/* ---- Публикации: строки со ссылками ---- */
+.dpubs{list-style:none;margin:clamp(36px,3.6vw,52px) 0 0;padding:0;background:#fff;border-radius:28px;overflow:hidden}
+.dpubs li + li{border-top:1px solid var(--d-line)}
+.dpubs a{
+  display:grid;grid-template-columns:minmax(0,.36fr) minmax(0,1fr) auto;gap:clamp(16px,3vw,48px);align-items:center;
+  padding:clamp(20px,2.2vw,30px) clamp(22px,2.8vw,40px);color:var(--navy);transition:background .2s var(--ease);
+}
+.dpubs a:hover{background:#F8FAFE}
+.dpubs__meta{display:flex;flex-direction:column;gap:4px}
+.dpubs__meta time{font-size:14px;color:var(--navy-3);font-variant-numeric:tabular-nums}
+.dpubs__meta b{font-size:15px;font-weight:600;color:var(--brand)}
+.dpubs__t{font-size:clamp(18px,1.5vw,21px);font-weight:600;line-height:1.35;letter-spacing:-.015em}
+.dpubs__go{width:20px;height:20px;color:var(--brand);transition:transform .22s var(--ease)}
+.dpubs a:hover .dpubs__go{transform:translate(3px,-3px)}
+@media (max-width:700px){
+  .dpubs{border-radius:22px}
+  .dpubs a{grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;padding:20px}
+  .dpubs__meta{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+  .dpubs__t{font-size:17px}
+}
+
+/* ---- Социальные сети ---- */
+.dds-socsec{padding-bottom:clamp(64px,7vw,110px)}
+.dds-soc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(32px,3.2vw,44px)}
+.dds-soc a{
+  display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:22px;border:1px solid var(--d-line);color:var(--navy);
+  transition:border-color .2s var(--ease),box-shadow .2s var(--ease);
+}
+.dds-soc a:hover{border-color:transparent;box-shadow:0 14px 36px rgba(35,43,62,.10)}
+.dds-soc img{width:44px;height:44px;border-radius:12px;flex:0 0 auto}
+.dds-soc span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.dds-soc b{font-size:17px;font-weight:600;transition:color .2s var(--ease)}
+.dds-soc a:hover b{color:var(--brand)}
+.dds-soc small{font-size:14px;color:var(--navy-2)}
+@media (max-width:1100px){.dds-soc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.dds-soc{grid-template-columns:minmax(0,1fr);gap:8px}}
+
+/* ---- Клиника ---- */
+.dds-clinic{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(36px,5vw,84px);align-items:start}
+.dds-clinic__ph{margin:0;border-radius:32px;overflow:hidden;position:sticky;top:110px}
+.dds-clinic__ph picture,.dds-clinic__ph img{display:block;width:100%;height:auto}
+.dds-trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:clamp(26px,2.6vw,34px)}
+.dds-trust__item{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:22px;background:#fff;color:var(--navy)}
+.dds-trust__item > b{font-size:36px;font-weight:600;letter-spacing:-.03em;line-height:1;color:var(--brand)}
+.dds-trust__item > span{display:flex;flex-direction:column;gap:2px;font-size:16px;font-weight:600;line-height:1.3}
+.dds-trust__item small{font-size:14px;font-weight:400;color:var(--navy-2)}
+.dds-trust__item > b.dds-trust__ico{width:44px;height:44px;border-radius:12px;background:var(--tint);display:grid;place-items:center;flex:0 0 auto}
+.dds-trust__ico svg{width:24px;height:24px}
+.dds-trust__rate{transition:box-shadow .2s var(--ease)}
+.dds-trust__rate > svg{width:18px;height:18px;margin-left:auto;color:var(--brand);flex:0 0 auto;transition:transform .22s var(--ease)}
+.dds-trust__rate:hover{box-shadow:0 14px 36px rgba(35,43,62,.10)}
+.dds-trust__rate:hover > svg{transform:translate(3px,-3px)}
+.dds-note{margin-top:clamp(22px,2.2vw,30px);font-size:17px;line-height:1.6;color:var(--navy);font-weight:500;max-width:40em}
+.dds-checkup{margin-top:clamp(26px,2.6vw,36px);padding:clamp(22px,2.4vw,32px);border-radius:24px;background:#fff}
+.dds-checkup h3{font-size:clamp(20px,1.7vw,24px);font-weight:600;line-height:1.2;letter-spacing:-.022em}
+.dds-checkup p{margin-top:12px;font-size:16px;line-height:1.6;color:var(--navy-2)}
+.dds-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,2.4vw,32px)}
+@media (max-width:980px){
+  .dds-clinic{grid-template-columns:minmax(0,1fr);gap:32px}
+  .dds-clinic__ph{position:static;max-width:460px}
+}
+@media (max-width:600px){
+  .dds-clinic__ph{border-radius:24px;max-width:none;aspect-ratio:4/5}
+  .dds-clinic__ph picture,.dds-clinic__ph img{height:100%}
+  .dds-clinic__ph img{object-fit:cover;object-position:50% 30%}
+  .dds-trust{grid-template-columns:minmax(0,1fr);gap:8px}
+  .dds-note{font-size:16.5px}
+  .dds-btns .dbtn{width:100%}
+}
