@@ -4149,6 +4149,13 @@ a.dprod:hover h3{color:var(--brand)}
 .dds-prof .dexp__ph img{object-position:50% 14%}
 .dds-prof .dfacts{margin-top:clamp(28px,2.8vw,40px)}
 .dds-prof .dfacts__t{font-weight:600;color:var(--navy)}
+/* телефон и планшет: факты строками — синий год слева, подпись справа */
+@media (max-width:980px){
+  .dds-prof .dfacts li,.dds-prof .dfacts li:first-child{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:baseline;padding:14px 0;border-top:1px solid var(--d-line)}
+  .dds-prof .dfacts li:first-child{border-top:0;padding-top:0}
+  .dds-prof .dfacts__y{display:block;min-width:0;height:auto;padding:0;border-radius:0;background:none;font-size:22px;font-weight:600;letter-spacing:-.02em;line-height:1;color:var(--brand)}
+  .dds-prof .dfacts__t{font-size:16px;line-height:1.4}
+}
 
 /* ---- Шапка блока с длинным пояснением справа: колонка текста шире,
    чтобы абзац укладывался в 4–5 строк и заканчивался вровень с заголовком ---- */
@@ -4342,6 +4349,14 @@ a.dprod:hover h3{color:var(--brand)}
   .dds-checkup__head{align-items:flex-start}
   .dds-checkup__ico{width:44px;height:44px;border-radius:13px}
   .dds-checkup__steps li{gap:12px;padding:14px 16px;font-size:15.5px}
+}
+/* узкие телефоны (320–400): значок над заголовком, отступы меньше */
+@media (max-width:400px){
+  .dds-checkup{padding:20px 16px}
+  .dds-checkup__head{flex-direction:column;gap:12px}
+  .dds-checkup__steps li{padding:12px 14px;font-size:15px}
+  .dds-checkup__fmt span{font-size:14.5px;padding:8px 14px}
+  .dds-checkup__note{font-size:14.5px}
 }
 .dds-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,2.4vw,32px)}
 @media (max-width:980px){
