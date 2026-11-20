@@ -4371,3 +4371,44 @@ a.dprod:hover h3{color:var(--brand)}
   .dds-note{font-size:16.5px}
   .dds-btns .dbtn{width:100%}
 }
+
+/* =====================================================================
+   «Дмитрий Симкин», правки заказчика 20.11.2026
+   ===================================================================== */
+/* Профессиональная деятельность: продолжение «Образования» (тот же тон),
+   отделено линией; три роли в ряд белыми карточками */
+.dds-work{padding-top:0}
+.dds-work__in{padding-top:clamp(44px,5vw,72px);border-top:1px solid var(--d-line)}
+.dds-work .dh2{margin-top:16px}
+.dds-roles--3{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:clamp(26px,3vw,40px)}
+.dds-work .dds-roles li{background:#fff;padding:22px 22px 24px;flex-direction:column;gap:18px}
+.dds-work .dds-roles__ico{background:var(--tint)}
+.dds-work .dds-roles li > span:last-child{gap:10px;font-size:18px;line-height:1.32}
+.dds-work .dds-roles small{font-size:14.5px;line-height:1.5}
+@media (max-width:980px){
+  .dds-roles--3{grid-template-columns:minmax(0,1fr)}
+  .dds-work .dds-roles li{flex-direction:row;gap:16px;padding:18px 18px 20px}
+  .dds-work .dds-roles li > span:last-child{font-size:17px}
+}
+
+/* «Ночная Симфония»: вырез на белом с мягкой тенью (тень в самом файле) */
+.dshot--white{background:#fff;box-shadow:inset 0 0 0 1px var(--d-line)}
+
+/* Надпись поверх фото: белый текст на затемнении снизу */
+.dshot--flag::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,rgba(18,24,40,0) 38%,rgba(18,24,40,.62) 100%)}
+.dshot__flag{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0 22px 20px;
+  color:#fff;font-size:clamp(20px,1.7vw,26px);font-weight:600;line-height:1.15;letter-spacing:-.015em;
+  text-shadow:0 1px 12px rgba(10,14,28,.45)}
+@media (max-width:600px){.dshot__flag{padding:0 16px 14px;font-size:19px}}
+
+/* ШАПКА НА ТЕЛЕФОНЕ: в Safari, когда при прокрутке сворачивается панель
+   адреса, между верхом экрана и закреплённой шапкой оставалась полоса,
+   сквозь которую просвечивал текст страницы. Фон шапки продлён вверх —
+   шапка визуально прилегает к верху видимой области при любой высоте
+   панелей браузера. */
+@media (max-width:1136px){
+  .d header{top:0;padding-top:env(safe-area-inset-top,0px)}
+  .d header::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:120px;
+    background:inherit;pointer-events:none}
+}
