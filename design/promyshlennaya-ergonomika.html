@@ -119,6 +119,17 @@
 .dformat-card p{font-size:15.5px;line-height:1.6;color:var(--navy-2);margin:0}
 .dformat-card .dbtn{margin-top:auto;padding-top:26px;align-self:flex-start}
 
+/* Кадрирование фото первого экрана для ПК и мобильных */
+.dcohero__media img{object-position:42% 16%}
+@media (max-width:1100px){
+  .dcohero__media{aspect-ratio:16/10}
+  .dcohero__media img{object-position:42% 12%}
+}
+@media (max-width:600px){
+  .dcohero__media{aspect-ratio:4/3}
+  .dcohero__media img{object-position:42% 10%}
+}
+
 /* Адаптив под планшеты и мобильные */
 @media (max-width:1100px){
   .dfactors-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -238,8 +249,7 @@
       </div>
       <div class="dcohero__media" data-rv style="--d:.06s">
         <picture>
-          <source srcset="assets/photo/prom-hero.webp" type="image/webp">
-          <img src="assets/photo/prom-hero.jpg" alt="Промышленная эргономика — обучение на производстве" width="1800" height="1012" fetchpriority="high">
+          <img src="assets/photo/prom-hero.jpg" alt="Дмитрий Симкин на производстве в защитной каске и с планшетом" width="1024" height="682" fetchpriority="high">
         </picture>
       </div>
     </div>
