@@ -133,13 +133,13 @@ document.querySelectorAll('[data-topic]').forEach(function(t){
   });
 });
 
-// отправка формы ведет на «Спасибо»; в адресе только источник, без данных из полей.
-// Страница «Спасибо» одна, в корне: из папки design/ к ней ведет ../
+// отправка формы ведет на страницу «Спасибо» в дизайне
 document.querySelectorAll('form[data-thanks]').forEach(function(f){
   f.addEventListener('submit', function(e){
     e.preventDefault();
-    var base = /\/design\//.test(location.pathname) ? '../' : '';
-    location.href = base + 'spasibo.html?from=' + encodeURIComponent(f.getAttribute('data-thanks'));
+    var isDesign = /\/design\//.test(location.pathname);
+    var target = isDesign ? 'spasibo.html' : 'design/spasibo.html';
+    location.href = target + '?from=' + encodeURIComponent(f.getAttribute('data-thanks'));
   });
 });
 
