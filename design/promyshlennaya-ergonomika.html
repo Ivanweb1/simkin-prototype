@@ -121,16 +121,15 @@
 
 /* Финальный блок заявки: аккуратная симметричная раскладка */
 .dband--prom .dband__grid{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);
-  gap:clamp(36px,4.5vw,68px);align-items:start;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
+  gap:clamp(36px,4.5vw,72px);align-items:center;
 }
 .dband--prom .dband__h2{
-  font-size:clamp(28px,2.5vw,38px);line-height:1.15;letter-spacing:-.025em;max-width:17em;
+  font-size:clamp(28px,2.5vw,38px);line-height:1.15;letter-spacing:-.025em;max-width:18em;
 }
 .dband--prom .dband__sub{
-  font-size:16.5px;line-height:1.6;margin-top:16px;max-width:30em;color:var(--navy-2);
+  font-size:16.5px;line-height:1.6;margin-top:16px;max-width:32em;color:var(--navy-2);
 }
-.dband--prom .dcheck{margin-top:32px}
 
 .dform-prom{
   display:flex;flex-direction:column;background:#fff;border-radius:28px;
@@ -165,6 +164,8 @@
   content:"";position:absolute;left:5px;top:2px;width:4px;height:8px;
   border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
 }
+.dform-prom .dagree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.dform-prom .dagree a:hover{color:var(--brand)}
 .dform-prom .dform__submit{
   width:100%;height:62px;font-size:17px;font-weight:600;letter-spacing:-.01em;border-radius:100px;
   background:var(--brand);color:#fff;border:none;cursor:pointer;
@@ -763,14 +764,13 @@
         <div class="dband__left">
           <h2 class="dh2 dband__h2">Сделайте производственные процессы <span class="dband__soft">менее утомительными и&nbsp;более эффективными</span></h2>
           <p class="dband__sub">Обсудим особенности вашего производства, основные задачи и&nbsp;подходящий формат обучения или консультирования.</p>
-          <aside class="dcheck">
-            <span class="dcard__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2.4c3.3 1 6.7 1 10 0v4.4c-3.3-1-6.7-1-10 0z"/><path d="M7 4.6H4.4M17 4.6h2.6"/><path d="M7 9.8c3.3 1 6.7 1 10 0v4.4c-3.3-1-6.7-1-10 0z"/><path d="M7 12.0H4.4M17 12.0h2.6"/><path d="M7 17.2c3.3 1 6.7 1 10 0v4.4c-3.3-1-6.7-1-10 0z"/><path d="M7 19.4H4.4M17 19.4h2.6"/><path d="M10 7.9h4"/><path d="M10 15.3h4"/></svg></span>
-            <div class="dcheck__txt">
-              <h3>Остеопатические чек-апы</h3>
-              <p>Медицинские осмотры и&nbsp;диагностика состояния опорно-двигательного аппарата сотрудников&nbsp;– на&nbsp;сайте Клиники Доктора Симкина.</p>
+          <div class="ddirect">
+            <span class="ddirect__t">Или напишите напрямую</span>
+            <div class="ddirect__links">
+              <a href="https://t.me/Dmitrii_BS" target="_blank" rel="noopener"><img src="assets/soc/telegram.svg" alt="" width="20" height="20">Написать Дмитрию Симкину в&nbsp;Telegram</a>
+              <a href="mailto:mail@simkin.ru"><img src="assets/soc/email.svg" alt="" width="20" height="20">mail@simkin.ru</a>
             </div>
-            <a href="https://doctorsimkin.ru" target="_blank" rel="noopener" class="dbtn dbtn--light dcheck__btn">Перейти на&nbsp;сайт клиники<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></a>
-          </aside>
+          </div>
         </div>
         <form class="dform-prom" data-thanks="industry">
           <div class="dform-prom__row">
@@ -782,7 +782,7 @@
             <input class="dfield" type="email" placeholder="Электронная почта">
           </div>
           <textarea class="dfield dfield--area" placeholder="Опишите задачи производства или проблемные участки"></textarea>
-          <label class="dagree"><input type="checkbox" name="agree" required><i></i><span>Согласие на&nbsp;обработку персональных данных</span></label>
+          <label class="dagree"><input type="checkbox" name="agree" required><i></i><span>Согласие на&nbsp;<a href="#">обработку персональных данных</a></span></label>
           <button type="submit" class="dform__submit">Обсудить программу для предприятия<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
         </form>
       </div>
