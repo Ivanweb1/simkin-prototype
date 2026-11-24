@@ -253,35 +253,76 @@
   font-size:16px;font-weight:600;color:var(--ink);opacity:.55;
 }
 
-/* Карточки программы: Теория и Практика */
-.dparts-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:clamp(36px,3.6vw,52px)}
+/* Блок 5: компактная полоса участников + сбалансированные карточки Теории и Практики с раскрытием */
+.dpart-who{
+  margin-top:clamp(28px,3vw,40px);padding:22px 26px;border-radius:24px;
+  background:#fff;border:1px solid rgba(42,56,146,.06);
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 24px;align-items:center;
+}
+.dpart-who__lbl{
+  display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;
+  color:var(--navy);white-space:nowrap;
+}
+.dpart-who__ico{
+  width:36px;height:36px;border-radius:11px;background:var(--tint);color:var(--ink);
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.dpart-who__ico svg{width:19px;height:19px}
+.dpart-who__tags{display:flex;flex-wrap:wrap;gap:8px}
+.dpart-who__tag{
+  display:inline-flex;align-items:center;padding:7px 14px;border-radius:100px;
+  background:var(--tint);font-size:14px;font-weight:500;color:var(--navy);line-height:1.25;
+}
+
+.dparts-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;align-items:start}
 .dpart-card{
-  background:#fff;border:1px solid var(--d-line);border-radius:32px;padding:clamp(34px,3.6vw,48px);
-  display:flex;flex-direction:column;
+  background:#fff;border:1px solid rgba(42,56,146,.06);border-radius:28px;
+  padding:clamp(26px,2.8vw,36px);display:flex;flex-direction:column;
 }
-.dpart-card--active{border-color:rgba(26,95,224,.3);box-shadow:0 16px 44px rgba(26,95,224,.06)}
-.dpart-card__top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
+.dpart-card--active{
+  background:var(--soft-2);border-color:transparent;
+  box-shadow:inset 0 0 0 1px rgba(42,56,146,.08);
+}
+.dpart-card__top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
 .dpart-badge{
-  font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
-  padding:6px 14px;border-radius:100px;background:var(--tint);color:var(--navy);
+  font-size:13px;font-weight:600;letter-spacing:.01em;
+  padding:7px 14px;border-radius:100px;background:var(--tint);color:var(--navy);line-height:1;
 }
-.dpart-badge--brand{background:var(--brand);color:#fff}
-.dpart-icon{width:52px;height:52px;border-radius:16px;background:var(--tint);color:var(--navy);display:grid;place-items:center}
-.dpart-icon svg{width:26px;height:26px}
-.dpart-icon--brand{background:#edf3ff;color:var(--brand)}
-.dpart-card h3{font-size:clamp(22px,2vw,28px);font-weight:600;color:var(--navy);margin:0 0 10px;letter-spacing:-.02em}
-.dpart-card__sub{font-size:16.5px;color:var(--navy-2);line-height:1.55;margin:0 0 28px}
-.dpart-section{border-top:1px solid var(--d-line);padding-top:22px;margin-top:20px}
-.dpart-section h5{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--navy-3);margin:0 0 14px}
-.dpart-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
-.dpart-list li{position:relative;padding-left:18px;font-size:15.5px;line-height:1.5;color:var(--navy)}
-.dpart-list li::before{content:"•";position:absolute;left:0;color:var(--brand);font-size:18px;line-height:1}
-.dpart-list--check li::before{content:"✓";font-size:13px;font-weight:800;top:2px}
+.dpart-badge--brand{background:#fff;color:var(--ink)}
+.dpart-icon{width:46px;height:46px;border-radius:14px;background:var(--tint);color:var(--ink);display:grid;place-items:center}
+.dpart-icon svg{width:23px;height:23px}
+.dpart-icon--brand{background:#fff;color:var(--ink)}
+.dpart-card h3{font-size:clamp(21px,1.85vw,26px);font-weight:600;color:var(--navy);margin:0 0 8px;letter-spacing:-.022em;line-height:1.2}
+.dpart-card--active h3{color:var(--ink)}
+.dpart-card__sub{font-size:15.5px;color:var(--navy-2);line-height:1.52;margin:0 0 20px}
+.dpart-card--active .dpart-card__sub{color:var(--navy)}
+
 .dpart-goal{
-  margin-top:auto;padding-top:26px;border-top:1px solid var(--d-line);
-  font-size:15px;line-height:1.55;color:var(--navy-2);
+  padding:16px 18px;border-radius:16px;background:var(--tint);
+  font-size:14.5px;line-height:1.52;color:var(--navy-2);margin-bottom:18px;
 }
-.dpart-goal strong{color:var(--navy)}
+.dpart-card--active .dpart-goal{background:#fff}
+.dpart-goal strong{color:var(--navy);font-weight:600}
+
+/* Раскрывающийся подробный список программы */
+.dpart-acc{border-top:1px solid var(--d-line);padding-top:16px}
+.dpart-acc summary{
+  list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  cursor:pointer;font-size:15px;font-weight:600;color:var(--ink);user-select:none;
+  padding:4px 0;transition:opacity .2s var(--ease);
+}
+.dpart-acc summary::-webkit-details-marker{display:none}
+.dpart-acc summary:hover{opacity:.78}
+.dpart-acc summary svg{
+  width:18px;height:18px;flex:0 0 auto;transition:transform .24s var(--ease);
+}
+.dpart-acc[open] summary svg{transform:rotate(180deg)}
+.dpart-list{list-style:none;padding:16px 0 0;margin:0;display:flex;flex-direction:column;gap:11px}
+.dpart-list li{position:relative;padding-left:20px;font-size:15px;line-height:1.5;color:var(--navy)}
+.dpart-list li::before{
+  content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;
+  background:var(--ink);
+}
 
 /* Сетка результатов: 5 карточек (сбалансированная раскладка 3 + 2) */
 .dresults-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:clamp(36px,3.6vw,52px)}
@@ -416,6 +457,7 @@
   .dband--prom .dband__h2{max-width:none}
 }
 @media (max-width:860px){
+  .dpart-who{grid-template-columns:1fr;padding:20px}
   .dparts-grid{grid-template-columns:1fr}
 }
 @media (max-width:600px){
@@ -861,6 +903,22 @@
       </ul>
     </div>
 
+    <!-- Общий компактный блок участников над карточками -->
+    <div class="dpart-who" data-rv>
+      <span class="dpart-who__lbl">
+        <span class="dpart-who__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg></span>
+        Кто участвует:
+      </span>
+      <div class="dpart-who__tags">
+        <span class="dpart-who__tag">Руководители производственных подразделений</span>
+        <span class="dpart-who__tag">Начальники цехов и&nbsp;мастера смен</span>
+        <span class="dpart-who__tag">Инженеры и&nbsp;технологи</span>
+        <span class="dpart-who__tag">Специалисты по&nbsp;охране труда и&nbsp;эргономике</span>
+        <span class="dpart-who__tag">Медицинские работники предприятия</span>
+        <span class="dpart-who__tag">Специалисты по&nbsp;организации процессов</span>
+      </div>
+    </div>
+
     <div class="dparts-grid" data-rv>
       <!-- Часть 1. Теория -->
       <article class="dpart-card">
@@ -871,32 +929,23 @@
         <h3>Теоретическое обучение</h3>
         <p class="dpart-card__sub">Формирование у&nbsp;специалистов системного понимания механизмов возникновения нагрузок.</p>
 
-        <div class="dpart-section">
-          <h5>Участники:</h5>
-          <ul class="dpart-list">
-            <li>Руководители производственных подразделений</li>
-            <li>Начальники цехов и&nbsp;мастера смен</li>
-            <li>Инженеры и&nbsp;технологи</li>
-            <li>Специалисты по&nbsp;охране труда и&nbsp;эргономике</li>
-            <li>Медицинские работники предприятия</li>
-            <li>Сотрудники, участвующие в&nbsp;организации и&nbsp;совершенствовании процессов</li>
-          </ul>
+        <div class="dpart-goal">
+          <strong>Цель части&nbsp;–</strong> научить специалистов самостоятельно видеть причины избыточной нагрузки и&nbsp;находить возможности для улучшения рабочих процессов.
         </div>
 
-        <div class="dpart-section">
-          <h5>Программа обучения:</h5>
-          <ul class="dpart-list dpart-list--check">
+        <details class="dpart-acc">
+          <summary>
+            <span>Подробная программа (5&nbsp;тем)</span>
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg>
+          </summary>
+          <ul class="dpart-list">
             <li>Как работает опорно-двигательный аппарат и&nbsp;почему возникает производственная утомляемость</li>
             <li>Факторы риска и&nbsp;эргономические инструменты для выявления неблагоприятных нагрузок</li>
             <li>Способы облегчения труда, оптимизация рабочих поз и&nbsp;движений</li>
             <li>Оптимизация расположения инструментов, оборудования и&nbsp;последовательности операций</li>
-            <li>Знакомство с качественными и&nbsp;количественными методами оценки</li>
+            <li>Знакомство с&nbsp;качественными и&nbsp;количественными методами оценки</li>
           </ul>
-        </div>
-
-        <div class="dpart-goal">
-          <strong>Цель теоретической части&nbsp;–</strong> научить специалистов самостоятельно видеть причины избыточной нагрузки и&nbsp;находить возможности для улучшения рабочих процессов.
-        </div>
+        </details>
       </article>
 
       <!-- Часть 2. Практика -->
@@ -905,23 +954,26 @@
           <span class="dpart-badge dpart-badge--brand">2-я половина дня · ~4 часа</span>
           <span class="dpart-icon dpart-icon--brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
         </div>
-        <h3>Практическая работа в цехах</h3>
+        <h3>Практическая работа в&nbsp;цехах</h3>
         <p class="dpart-card__sub">Переход непосредственно в&nbsp;производственные помещения к&nbsp;реальным рабочим местам.</p>
 
-        <div class="dpart-section">
-          <h5>Как проходит работа:</h5>
-          <ul class="dpart-list dpart-list--check">
+        <div class="dpart-goal">
+          <strong>Результат части&nbsp;–</strong> участники сразу видят, как применять полученные знания на&nbsp;своем предприятии, и&nbsp;вырабатывают конкретный пул эргономических решений.
+        </div>
+
+        <details class="dpart-acc">
+          <summary>
+            <span>Как проходит работа в&nbsp;цехе (5&nbsp;шагов)</span>
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l5 5 5-5"/></svg>
+          </summary>
+          <ul class="dpart-list">
             <li>Выход на&nbsp;реальные производственные участки вместе со&nbsp;специалистами компании</li>
             <li>Анализ рабочих поз, движений, физических усилий и&nbsp;расположения оборудования</li>
             <li>Наглядная демонстрация факторов избыточной нагрузки на&nbsp;конкретных примерах</li>
             <li>Совместная выработка решений с&nbsp;учетом регламентов и&nbsp;особенностей производства</li>
             <li>Прямое вовлечение специалистов предприятия в&nbsp;поиск и&nbsp;проверку решений</li>
           </ul>
-        </div>
-
-        <div class="dpart-goal">
-          <strong>Результат практической части&nbsp;–</strong> участники сразу видят, как применять полученные знания на&nbsp;своем предприятии, и&nbsp;вырабатывают конкретный пул эргономических решений.
-        </div>
+        </details>
       </article>
     </div>
   </div>
