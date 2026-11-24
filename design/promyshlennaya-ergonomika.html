@@ -14,21 +14,33 @@
 <link rel="stylesheet" href="design.css?v=338">
 <style>
 /* Специфические стили для компонентов страницы промышленной эргономики */
-.dfactors-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:clamp(32px,3.4vw,48px)}
-.dfactor{
-  background:#fff;border:1px solid rgba(42,56,146,.06);border-radius:24px;padding:24px 22px 26px;
-  display:flex;flex-direction:column;transition:box-shadow .22s var(--ease),transform .22s var(--ease),border-color .22s var(--ease);
+/* Блок 3: чистый редакционный реестр 8 факторов на едином белом листе с волосяными линиями */
+.dfactors-sheet{
+  background:#fff;border-radius:32px;padding:clamp(24px,3.2vw,44px);
+  margin-top:clamp(32px,3.4vw,48px);border:1px solid rgba(42,56,146,.06);
 }
-.dfactor:hover{box-shadow:0 14px 34px rgba(42,56,146,.07);border-color:rgba(42,56,146,.14);transform:translateY(-2px)}
-.dfactor__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.dfactor__ico{
-  width:44px;height:44px;border-radius:13px;background:var(--tint);color:var(--ink);
-  display:grid;place-items:center;transition:background .22s var(--ease);
+.dfactors-list{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(28px,4vw,64px);
 }
-.dfactor:hover .dfactor__ico{background:var(--soft-2)}
-.dfactor__ico svg{width:22px;height:22px}
-.dfactor__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);font-variant-numeric:tabular-nums}
-.dfactor p{font-size:15.5px;line-height:1.5;color:var(--navy);font-weight:500;margin:0}
+.dfactor-row{
+  display:grid;grid-template-columns:36px 26px minmax(0,1fr);align-items:start;gap:14px;
+  padding:20px 0;border-bottom:1px solid var(--d-line);
+  transition:border-color .2s var(--ease);
+}
+.dfactor-row:nth-child(7),.dfactor-row:nth-child(8){border-bottom:0}
+.dfactor-row__ico{
+  width:36px;height:36px;border-radius:11px;background:var(--tint);color:var(--ink);
+  display:grid;place-items:center;margin-top:-2px;transition:background .2s var(--ease);
+}
+.dfactor-row:hover .dfactor-row__ico{background:var(--soft-2)}
+.dfactor-row__ico svg{width:18px;height:18px}
+.dfactor-row__n{
+  font-size:13.5px;font-weight:600;color:var(--navy-3);padding-top:4px;
+  font-variant-numeric:tabular-nums;
+}
+.dfactor-row:hover .dfactor-row__n{color:var(--ink)}
+.dfactor-row p{font-size:16.5px;line-height:1.48;color:var(--navy);font-weight:500;margin:0}
 
 /* Схема «Проблема → Причина → Решение» в спокойной палитре сайта */
 .dschema-wrap{
@@ -168,13 +180,26 @@
 }
 .dwhy-flow__arr svg{width:14px;height:14px}
 
-/* Сетка инфографики подхода: 4 колонки */
-.dsteps--4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.dcols-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
-.dcol-box{background:var(--tint);border-radius:24px;padding:32px 30px}
-.dcol-box h4{font-size:19px;font-weight:600;color:var(--navy);margin:0 0 12px;letter-spacing:-.015em}
-.dcol-box p{font-size:16px;line-height:1.6;color:var(--navy-2);margin:0}
-.dcol-box p + p{margin-top:14px}
+/* Блок 4: трек-последовательность .dk-res3 на 4 узла + чистая редакционная верстка без плашек */
+.dk-res4{grid-template-columns:repeat(4,minmax(0,1fr));--res-gap:14px}
+.dk-res4 li:nth-child(3) .dk-res__node{border-color:var(--ink);color:var(--ink)}
+.dk-res4 li:nth-child(3)::before{background:linear-gradient(90deg,var(--brand-2),var(--ink))}
+.dk-res4 li:nth-child(3)::after{border-left-color:var(--ink)}
+.dk-res4 .dk-res__card{padding:26px 24px 28px}
+.dk-res4 h3{margin-top:18px;font-size:clamp(18px,1.45vw,21px)}
+.dk-res4 p{font-size:15px;line-height:1.55}
+
+.dcols-editorial{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,4.5vw,72px);
+  margin-top:clamp(40px,4vw,56px);padding-top:clamp(32px,3.2vw,44px);
+  border-top:1px solid var(--d-line);
+}
+.dcol-ed h4{
+  font-size:clamp(19px,1.5vw,22px);font-weight:600;color:var(--navy);
+  margin:0 0 14px;letter-spacing:-.02em;line-height:1.25;
+}
+.dcol-ed p{font-size:16.5px;line-height:1.65;color:var(--navy-2);margin:0}
+.dcol-ed p + p{margin-top:14px}
 
 /* Карточки программы: Теория и Практика */
 .dparts-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:clamp(36px,3.6vw,52px)}
@@ -314,8 +339,6 @@
 
 /* Адаптив под планшеты и мобильные */
 @media (max-width:1100px){
-  .dfactors-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .dsteps--4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .dresults-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .dresult-card,.dresult-card:nth-child(4),.dresult-card:nth-child(5){grid-column:auto}
   .dresult-card:nth-child(5){grid-column:1 / -1}
@@ -325,14 +348,19 @@
   .dwhy-factors{grid-template-columns:repeat(2,minmax(0,1fr))}
   .dwhy-compare{grid-template-columns:1fr;gap:20px}
   .dwhy-manifest{grid-template-columns:1fr;gap:24px}
+  .dfactors-list{grid-template-columns:1fr}
+  .dfactor-row:nth-child(7){border-bottom:1px solid var(--d-line)}
   .dschema-flow{grid-template-columns:1fr;gap:20px}
   .dschema-step__arr{left:50%;top:-30px;margin:0 0 0 -20px;transform:rotate(90deg)}
+  .dk-res4{grid-template-columns:1fr}
+  .dk-res4 li:nth-child(3)::before{background:linear-gradient(180deg,var(--brand-2),var(--ink))}
+  .dk-res4 li:nth-child(3)::after{border-color:var(--ink) transparent transparent transparent}
+  .dcols-editorial{grid-template-columns:1fr;gap:28px}
   .dband--prom .dband__grid{grid-template-columns:1fr;gap:36px}
   .dband--prom .dband__h2{max-width:none}
 }
 @media (max-width:860px){
   .dparts-grid{grid-template-columns:1fr}
-  .dcols-2{grid-template-columns:1fr}
 }
 @media (max-width:600px){
   .dwhy-factors{grid-template-columns:1fr;gap:10px}
@@ -595,64 +623,50 @@
       </div>
     </div>
 
-    <!-- 8 факторов нагрузки -->
-    <div class="dfactors-grid" data-rv>
-      <div class="dfactor">
-        <div class="dfactor__head">
-          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.2"/><path d="M12 7v5.5l-3 5.5M12 12.5l3 5.5M8.5 9.5l3.5 1.5 3.5-1.5"/></svg></span>
-          <span class="dfactor__n">01</span>
-        </div>
-        <p>Неудобные и&nbsp;вынужденные рабочие позы</p>
-      </div>
-      <div class="dfactor">
-        <div class="dfactor__head">
-          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
-          <span class="dfactor__n">02</span>
-        </div>
-        <p>Длительное статическое напряжение мышц</p>
-      </div>
-      <div class="dfactor">
-        <div class="dfactor__head">
-          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4l3 3-3 3"/><path d="M4 11V9a2 2 0 0 1 2-2h14"/><path d="M7 20l-3-3 3-3"/><path d="M20 13v2a2 2 0 0 1-2 2H4"/></svg></span>
-          <span class="dfactor__n">03</span>
-        </div>
-        <p>Часто повторяющиеся однотипные движения</p>
-      </div>
-      <div class="dfactor">
-        <div class="dfactor__head">
-          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19h12l-1.5-9.5a2 2 0 0 0-2-1.7h-5a2 2 0 0 0-2 1.7z"/><path d="M9.5 7.8V6a2.5 2.5 0 0 1 5 0v1.8"/></svg></span>
-          <span class="dfactor__n">04</span>
-        </div>
-        <p>Избыточные усилия при выполнении операций</p>
-      </div>
-      <div class="dfactor">
-        <div class="dfactor__head">
-          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="7" height="6.5" rx="1.5"/><rect x="13.5" y="4.5" width="7" height="6.5" rx="1.5"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5"/></svg></span>
-          <span class="dfactor__n">05</span>
-        </div>
-        <p>Неудобное расположение инструментов, материалов и&nbsp;оборудования</p>
-      </div>
-      <div class="dfactor">
-        <div class="dfactor__head">
-          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19h14"/><path d="M7 19V7"/><path d="M7 12a7 7 0 0 1 7 7"/><path d="M14.5 9.5l3-3m0 0h-3m3 0v3"/></svg></span>
-          <span class="dfactor__n">06</span>
-        </div>
-        <p>Необходимость часто наклоняться, поворачиваться или выполнять движения с&nbsp;чрезмерной амплитудой</p>
-      </div>
-      <div class="dfactor">
-        <div class="dfactor__head">
-          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="12" r="2.2"/><circle cx="6" cy="18" r="2.2"/><path d="M8.2 6.8l7.6 4.2M15.8 13l-7.6 4.2"/></svg></span>
-          <span class="dfactor__n">07</span>
-        </div>
-        <p>Нерациональная организация последовательности рабочих действий</p>
-      </div>
-      <div class="dfactor">
-        <div class="dfactor__head">
-          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5v3M12 16.5v3M4.5 12h3M16.5 12h3"/><circle cx="12" cy="12" r="4.5"/></svg></span>
-          <span class="dfactor__n">08</span>
-        </div>
-        <p>Недостаточные возможности для восстановления при выполнении физически напряженной работы</p>
-      </div>
+    <!-- 8 факторов нагрузки: чистый редакционный реестр с волосяными линиями -->
+    <div class="dfactors-sheet" data-rv>
+      <ol class="dfactors-list">
+        <li class="dfactor-row">
+          <span class="dfactor-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.2"/><path d="M12 7v5.5l-3 5.5M12 12.5l3 5.5M8.5 9.5l3.5 1.5 3.5-1.5"/></svg></span>
+          <span class="dfactor-row__n">01</span>
+          <p>Неудобные и&nbsp;вынужденные рабочие позы</p>
+        </li>
+        <li class="dfactor-row">
+          <span class="dfactor-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+          <span class="dfactor-row__n">02</span>
+          <p>Длительное статическое напряжение мышц</p>
+        </li>
+        <li class="dfactor-row">
+          <span class="dfactor-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4l3 3-3 3"/><path d="M4 11V9a2 2 0 0 1 2-2h14"/><path d="M7 20l-3-3 3-3"/><path d="M20 13v2a2 2 0 0 1-2 2H4"/></svg></span>
+          <span class="dfactor-row__n">03</span>
+          <p>Часто повторяющиеся однотипные движения</p>
+        </li>
+        <li class="dfactor-row">
+          <span class="dfactor-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19h12l-1.5-9.5a2 2 0 0 0-2-1.7h-5a2 2 0 0 0-2 1.7z"/><path d="M9.5 7.8V6a2.5 2.5 0 0 1 5 0v1.8"/></svg></span>
+          <span class="dfactor-row__n">04</span>
+          <p>Избыточные усилия при выполнении операций</p>
+        </li>
+        <li class="dfactor-row">
+          <span class="dfactor-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="7" height="6.5" rx="1.5"/><rect x="13.5" y="4.5" width="7" height="6.5" rx="1.5"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5"/></svg></span>
+          <span class="dfactor-row__n">05</span>
+          <p>Неудобное расположение инструментов, материалов и&nbsp;оборудования</p>
+        </li>
+        <li class="dfactor-row">
+          <span class="dfactor-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19h14"/><path d="M7 19V7"/><path d="M7 12a7 7 0 0 1 7 7"/><path d="M14.5 9.5l3-3m0 0h-3m3 0v3"/></svg></span>
+          <span class="dfactor-row__n">06</span>
+          <p>Необходимость часто наклоняться, поворачиваться или выполнять движения с&nbsp;чрезмерной амплитудой</p>
+        </li>
+        <li class="dfactor-row">
+          <span class="dfactor-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="12" r="2.2"/><circle cx="6" cy="18" r="2.2"/><path d="M8.2 6.8l7.6 4.2M15.8 13l-7.6 4.2"/></svg></span>
+          <span class="dfactor-row__n">07</span>
+          <p>Нерациональная организация последовательности рабочих действий</p>
+        </li>
+        <li class="dfactor-row">
+          <span class="dfactor-row__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5v3M12 16.5v3M4.5 12h3M16.5 12h3"/><circle cx="12" cy="12" r="4.5"/></svg></span>
+          <span class="dfactor-row__n">08</span>
+          <p>Недостаточные возможности для восстановления при выполнении физически напряженной работы</p>
+        </li>
+      </ol>
     </div>
 
     <!-- Схема «Проблема → Причина → Эргономическое решение» -->
@@ -694,53 +708,50 @@
       </div>
     </div>
 
-    <!-- Инфографика: Рабочая операция → Позы и движения → Нагрузка на тело → Возможности улучшения -->
-    <div class="dsteps dsteps--4" data-rv>
-      <article class="dstep">
-        <span class="dstep__head">
+    <!-- Инфографика-трек (как на странице курса): Рабочая операция → Позы и движения → Нагрузка на тело → Возможности улучшения -->
+    <ol class="dk-res3 dk-res4">
+      <li data-rv>
+        <span class="dk-res__node">01</span>
+        <div class="dk-res__card">
           <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
-          <span class="dstep__n">01</span>
-        </span>
-        <h3>Рабочая операция</h3>
-        <p>Изучение технологического регламента, последовательности действий и&nbsp;используемого инструментария.</p>
-      </article>
-
-      <article class="dstep" style="--d:.06s">
-        <span class="dstep__head">
+          <h3>Рабочая операция</h3>
+          <p>Изучение технологического регламента, последовательности действий и&nbsp;используемого инструментария.</p>
+        </div>
+      </li>
+      <li data-rv style="--d:.06s">
+        <span class="dk-res__node">02</span>
+        <div class="dk-res__card">
           <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="m9 20 3-6 3 6M6 12l6-2 6 2M12 7.5v6.5"/></svg></span>
-          <span class="dstep__n">02</span>
-        </span>
-        <h3>Позы и&nbsp;движения</h3>
-        <p>Анализ фактических рабочих поз, углов наклона, поворотов корпуса, амплитуды и&nbsp;повторяемости манипуляций.</p>
-      </article>
-
-      <article class="dstep" style="--d:.12s">
-        <span class="dstep__head">
+          <h3>Позы и&nbsp;движения</h3>
+          <p>Анализ фактических рабочих поз, углов наклона, поворотов корпуса, амплитуды и&nbsp;повторяемости манипуляций.</p>
+        </div>
+      </li>
+      <li data-rv style="--d:.12s">
+        <span class="dk-res__node">03</span>
+        <div class="dk-res__card">
           <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4M12 16h.01"/></svg></span>
-          <span class="dstep__n">03</span>
-        </span>
-        <h3>Нагрузка на&nbsp;тело</h3>
-        <p>Оценка реакций мышц и&nbsp;связок, распределения веса, зон избыточного напряжения и&nbsp;компенсаторных механизмов.</p>
-      </article>
-
-      <article class="dstep" style="--d:.18s">
-        <span class="dstep__head">
+          <h3>Нагрузка на&nbsp;тело</h3>
+          <p>Оценка реакций мышц и&nbsp;связок, распределения веса, зон избыточного напряжения и&nbsp;компенсаторных механизмов.</p>
+        </div>
+      </li>
+      <li data-rv style="--d:.18s">
+        <span class="dk-res__node">04</span>
+        <div class="dk-res__card">
           <span class="dstep__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></span>
-          <span class="dstep__n">04</span>
-        </span>
-        <h3>Возможности улучшения</h3>
-        <p>Разработка практических мер устранения перегрузки, сохраняющих или повышающих производительность.</p>
-      </article>
-    </div>
+          <h3>Возможности улучшения</h3>
+          <p>Разработка практических мер устранения перегрузки, сохраняющих или повышающих производительность.</p>
+        </div>
+      </li>
+    </ol>
 
-    <!-- Разъяснение подхода -->
-    <div class="dcols-2" data-rv>
-      <div class="dcol-box">
+    <!-- Разъяснение подхода: чистая редакционная верстка без лишних плашек -->
+    <div class="dcols-editorial" data-rv>
+      <div class="dcol-ed">
         <h4>Физиологическая основа оценки</h4>
         <p>Наш подход основан прежде всего на&nbsp;понимании того, как человеческое тело реагирует на&nbsp;различные нагрузки, каким образом формируются мышечное напряжение, утомляемость и&nbsp;нарушения опорно-двигательного аппарата.</p>
         <p>Это позволяет оценивать не&nbsp;только очевидные параметры рабочего места, но&nbsp;и&nbsp;индивидуальные особенности движений, распределение нагрузки, компенсаторные механизмы и&nbsp;другие факторы, которые не&nbsp;всегда можно полноценно описать с&nbsp;помощью стандартных количественных показателей.</p>
       </div>
-      <div class="dcol-box">
+      <div class="dcol-ed">
         <h4>Практические и&nbsp;применимые решения</h4>
         <p>При этом количественные методы оценки также входят в&nbsp;программу и&nbsp;применяются там, где они помогают объективно оценить нагрузку и&nbsp;результаты изменений.</p>
         <p>Мы&nbsp;учим не&nbsp;просто фиксировать наличие эргономической проблемы, а&nbsp;понимать причины ее&nbsp;возникновения и&nbsp;находить практические способы устранения или уменьшения.</p>
