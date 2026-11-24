@@ -443,14 +443,34 @@
 }
 @media (max-width:600px){
   .dwhy-factors{grid-template-columns:1fr;gap:10px}
-  .dwhy-factor{border-radius:20px}
+  .dwhy-factor{border-radius:20px;padding:20px 18px}
   .dwhy-box{padding:24px 20px;border-radius:22px}
   .dwhy-manifest{padding:24px 20px 24px 40px;border-radius:22px}
   .dwhy-manifest::before{left:20px;top:24px;bottom:24px}
+  .dfactors-sheet{border-radius:22px;padding:18px 18px}
+  .dfactor-row{grid-template-columns:32px 22px minmax(0,1fr);gap:10px;padding:16px 0}
+  .dfactor-row__ico{width:32px;height:32px;border-radius:9px}
+  .dfactor-row__ico svg{width:16px;height:16px}
+  .dfactor-row p{font-size:15px}
+  .dschema-wrap{border-radius:22px;padding:22px 18px}
+  .dschema-step{border-radius:18px;padding:20px 18px}
+  .dapp-triad{border-radius:20px;padding:20px 18px}
+  .dapp-triad__items{flex-direction:column;align-items:stretch;gap:6px}
+  .dapp-triad__item{width:100%}
+  .dapp-triad__plus{text-align:center;line-height:1}
+  .dpart-who{border-radius:22px;padding:18px}
+  .dpart-who__tag{font-size:13.5px;padding:6px 12px}
+  .dpart-card{border-radius:22px;padding:24px 20px}
   .dresults-grid{grid-template-columns:1fr}
   .dresult-card:nth-child(5){grid-column:auto}
   .dlogos--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dformat-card{border-radius:22px;padding:24px 20px}
   .dformat-card .dbtn{width:100%;justify-content:center}
+  #expert .dfacts__y{min-width:82px;height:32px;font-size:14px}
+  #request .dform__submit{
+    height:auto;min-height:58px;padding:14px 20px;
+    white-space:normal;line-height:1.25;text-align:center;
+  }
 }
 </style>
 </head>
