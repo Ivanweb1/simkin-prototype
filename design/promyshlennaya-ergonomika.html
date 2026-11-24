@@ -388,63 +388,8 @@
 #expert .dk-author__note{margin-top:20px}
 #expert .dexp__btn{margin-top:24px}
 
-/* Финальный блок заявки: аккуратная симметричная раскладка */
-.dband--prom .dband__grid{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
-  gap:clamp(36px,4.5vw,72px);align-items:center;
-}
-.dband--prom .dband__h2{
-  font-size:clamp(28px,2.5vw,38px);line-height:1.15;letter-spacing:-.025em;max-width:18em;
-}
-.dband--prom .dband__sub{
-  font-size:16.5px;line-height:1.6;margin-top:16px;max-width:32em;color:rgba(255,255,255,.84);
-}
-
-.dform-prom{
-  display:flex;flex-direction:column;background:#fff;border-radius:28px;
-  padding:clamp(28px,3vw,40px);box-shadow:0 24px 60px rgba(9,26,80,.12);border:1px solid rgba(35,43,62,.06);
-}
-.dform-prom__row{
-  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;
-}
-.dform-prom .dfield{
-  width:100%;height:54px;padding:0 18px;border:1px solid var(--d-line);border-radius:14px;background:var(--tint);
-  font-family:inherit;font-weight:400;font-size:15.5px;line-height:1;color:var(--navy);
-  transition:border-color .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease);
-  box-sizing:border-box;margin:0;
-}
-.dform-prom .dfield:focus{outline:none;border-color:var(--brand);background:#fff;box-shadow:0 0 0 3px rgba(26,95,224,.12)}
-.dform-prom .dfield::placeholder{color:var(--navy-3)}
-.dform-prom .dfield--area{
-  height:100px;padding:16px 18px;line-height:1.5;resize:vertical;margin-bottom:18px;
-}
-.dform-prom .dagree{
-  position:relative;display:flex;align-items:flex-start;gap:10px;cursor:pointer;
-  font-size:13px;line-height:1.45;color:var(--navy-3);margin-bottom:20px;
-}
-.dform-prom .dagree input{position:absolute;opacity:0;pointer-events:none}
-.dform-prom .dagree i{
-  width:18px;height:18px;border-radius:5px;border:1px solid var(--d-line);background:#fff;flex:0 0 auto;margin-top:1px;
-  position:relative;transition:background .18s var(--ease),border-color .18s var(--ease);
-}
-.dform-prom .dagree:hover i{border-color:var(--navy-3)}
-.dform-prom .dagree input:checked + i{background:var(--brand);border-color:var(--brand)}
-.dform-prom .dagree input:checked + i::after{
-  content:"";position:absolute;left:5px;top:2px;width:4px;height:8px;
-  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);
-}
-.dform-prom .dagree a{color:inherit;text-decoration:underline;text-underline-offset:2px}
-.dform-prom .dagree a:hover{color:var(--brand)}
-.dform-prom .dform__submit{
-  width:100%;height:62px;font-size:17px;font-weight:600;letter-spacing:-.01em;border-radius:100px;
-  background:var(--brand);color:#fff;border:none;cursor:pointer;
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  box-shadow:0 14px 30px rgba(18,62,158,.24);
-  transition:background .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease);
-}
-.dform-prom .dform__submit:hover{background:var(--brand-dark);box-shadow:0 18px 36px rgba(18,62,158,.32);transform:translateY(-1px)}
-.dform-prom .dform__submit svg{width:18px;height:18px;transition:transform .22s var(--ease)}
-.dform-prom .dform__submit:hover svg{transform:translateX(3px)}
+/* Блок 10: стандартный .dband и .dform сайта, чуть шире колонка под заголовок */
+#request .dband__h2{max-width:14em}
 
 /* Кнопка первого экрана и кадрирование фото для ПК и мобильных */
 .dcohero__btns .dbtn--brand{height:58px;font-size:16.5px}
@@ -485,8 +430,7 @@
   .dcol-ed:last-child{padding-left:0;border-left:0;padding-top:28px;border-top:1px solid var(--d-line)}
   .dapp-triad{grid-template-columns:1fr;gap:18px}
   .dapp-triad__items{justify-content:flex-start}
-  .dband--prom .dband__grid{grid-template-columns:1fr;gap:36px}
-  .dband--prom .dband__h2{max-width:none}
+  #request .dband__h2{max-width:none}
 }
 @media (max-width:860px){
   .dpart-who{grid-template-columns:1fr;padding:20px}
@@ -498,17 +442,10 @@
   .dwhy-box{padding:24px 20px;border-radius:22px}
   .dwhy-manifest{padding:24px 20px 24px 40px;border-radius:22px}
   .dwhy-manifest::before{left:20px;top:24px;bottom:24px}
-  .dfactors-grid{grid-template-columns:1fr}
-  .dsteps--4{grid-template-columns:1fr}
   .dresults-grid{grid-template-columns:1fr}
   .dresult-card:nth-child(5){grid-column:auto}
   .dlogos--3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .dformat-card .dbtn{width:100%;justify-content:center}
-  .dform-prom{padding:24px 20px;border-radius:22px}
-  .dform-prom__row{grid-template-columns:1fr;gap:10px;margin-bottom:10px}
-  .dform-prom .dfield{height:50px;font-size:15px}
-  .dform-prom .dfield--area{height:100px}
-  .dform-prom .dform__submit{height:56px;font-size:16px}
 }
 </style>
 </head>
@@ -1210,31 +1147,34 @@
 <!-- ============ БЛОК 10. ЗАКЛЮЧИТЕЛЬНЫЙ БЛОК ============ -->
 <section class="dsec dsec--cta" id="request">
   <div class="dwrap">
-    <div class="dband dband--prom" data-rv>
+    <div class="dband" data-rv>
       <div class="dband__grid">
         <div class="dband__left">
-          <h2 class="dh2 dband__h2">Сделайте производственные процессы <span class="dband__soft">менее утомительными и&nbsp;более эффективными</span></h2>
+          <h2 class="dh2 dband__h2">Сделайте производство <span class="dband__soft">менее утомительным и&nbsp;эффективнее</span></h2>
           <p class="dband__sub">Обсудим особенности вашего производства, основные задачи и&nbsp;подходящий формат обучения или консультирования.</p>
           <div class="ddirect">
-            <span class="ddirect__t">Или напишите напрямую</span>
+            <span class="ddirect__t">Или напишите сразу</span>
             <div class="ddirect__links">
               <a href="https://t.me/Dmitrii_BS" target="_blank" rel="noopener"><img src="assets/soc/telegram.svg" alt="" width="20" height="20">Написать Дмитрию Симкину в&nbsp;Telegram</a>
               <a href="mailto:mail@simkin.ru"><img src="assets/soc/email.svg" alt="" width="20" height="20">mail@simkin.ru</a>
             </div>
           </div>
         </div>
-        <form class="dform-prom" data-thanks="industry">
-          <div class="dform-prom__row">
-            <input class="dfield" placeholder="Имя" required>
-            <input class="dfield" type="tel" placeholder="Телефон" required>
+        <form class="dform" data-thanks="industry" data-channels>
+          <input class="dfield" placeholder="Имя" required>
+          <input class="dfield" placeholder="Компания" required>
+          <span class="dform__label">Как с&nbsp;вами связаться</span>
+          <div class="dchan" role="group" aria-label="Способ связи">
+            <button type="button" data-ch="tg">Telegram</button>
+            <button type="button" data-ch="max">MAX</button>
+            <button type="button" data-ch="wa">WhatsApp</button>
+            <button type="button" data-ch="mail">Почта</button>
+            <button type="button" data-ch="tel">Телефон</button>
           </div>
-          <div class="dform-prom__row">
-            <input class="dfield" placeholder="Компания" required>
-            <input class="dfield" type="email" placeholder="Электронная почта">
-          </div>
+          <input class="dfield" data-contact hidden>
           <textarea class="dfield dfield--area" placeholder="Опишите задачи производства или проблемные участки"></textarea>
           <label class="dagree"><input type="checkbox" name="agree" required><i></i><span>Согласие на&nbsp;<a href="#">обработку персональных данных</a></span></label>
-          <button type="submit" class="dform__submit">Обсудить программу для предприятия<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
+          <button class="dbtn dbtn--brand dform__submit">Обсудить программу для предприятия</button>
         </form>
       </div>
     </div>
