@@ -189,17 +189,69 @@
 .dk-res4 h3{margin-top:18px;font-size:clamp(18px,1.45vw,21px)}
 .dk-res4 p{font-size:15px;line-height:1.55}
 
+/* Разъяснение подхода: две выровненные колонки с иконками, акцентами и нижней триадой */
 .dcols-editorial{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,4.5vw,72px);
-  margin-top:clamp(40px,4vw,56px);padding-top:clamp(32px,3.2vw,44px);
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;
+  margin-top:clamp(36px,3.8vw,52px);padding-top:clamp(32px,3.2vw,44px);
   border-top:1px solid var(--d-line);
 }
-.dcol-ed h4{
-  font-size:clamp(19px,1.5vw,22px);font-weight:600;color:var(--navy);
-  margin:0 0 14px;letter-spacing:-.02em;line-height:1.25;
+.dcol-ed{display:flex;flex-direction:column}
+.dcol-ed:first-child{padding-right:clamp(24px,3.4vw,52px)}
+.dcol-ed:last-child{padding-left:clamp(24px,3.4vw,52px);border-left:1px solid var(--d-line)}
+.dcol-ed__head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.dcol-ed__ico{
+  flex:0 0 42px;width:42px;height:42px;border-radius:12px;
+  background:var(--tint);color:var(--ink);display:grid;place-items:center;
 }
-.dcol-ed p{font-size:16.5px;line-height:1.65;color:var(--navy-2);margin:0}
+.dcol-ed__ico svg{width:21px;height:21px}
+.dcol-ed h4{
+  font-size:clamp(18px,1.45vw,21px);font-weight:600;color:var(--navy);
+  margin:0;letter-spacing:-.02em;line-height:1.25;
+}
+.dcol-ed p{font-size:15.5px;line-height:1.62;color:var(--navy-2);margin:0}
 .dcol-ed p + p{margin-top:14px}
+
+.dcol-ed__tags{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding-top:18px;
+  border-top:1px solid var(--d-line);
+}
+.dcol-ed__tag{
+  display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:100px;
+  background:var(--tint);font-size:13.5px;font-weight:500;color:var(--navy);
+}
+.dcol-ed__tag::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--ink);flex:0 0 auto;
+}
+
+.dcol-ed__shift{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:20px;padding-top:18px;
+  border-top:1px solid var(--d-line);
+}
+.dcol-ed__shift .dmyth__tag{margin-top:0}
+.dcol-ed__shift-arr{color:var(--ink);opacity:.6;display:grid;place-items:center}
+.dcol-ed__shift-arr svg{width:14px;height:14px}
+
+/* Нижняя триада: 3 фактора, которые учитываются одновременно */
+.dapp-triad{
+  margin-top:clamp(28px,3vw,40px);padding:clamp(22px,2.4vw,30px) clamp(24px,2.8vw,36px);
+  border-radius:24px;background:var(--soft);box-shadow:inset 0 0 0 1px rgba(42,56,146,.06);
+  display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.55fr);gap:24px;align-items:center;
+}
+.dapp-triad__lead{
+  font-size:15.5px;line-height:1.5;font-weight:500;color:var(--navy);margin:0;
+}
+.dapp-triad__items{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px;
+}
+.dapp-triad__item{
+  display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border-radius:14px;
+  background:#fff;font-size:14.5px;font-weight:600;color:var(--navy);
+  box-shadow:0 2px 8px rgba(42,56,146,.04);
+}
+.dapp-triad__item svg{width:18px;height:18px;color:var(--ink);flex:0 0 auto}
+.dapp-triad__plus{
+  font-size:16px;font-weight:600;color:var(--ink);opacity:.55;
+}
 
 /* Карточки программы: Теория и Практика */
 .dparts-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:clamp(36px,3.6vw,52px)}
@@ -356,6 +408,10 @@
   .dk-res4 li:nth-child(3)::before{background:linear-gradient(180deg,var(--brand-2),var(--ink))}
   .dk-res4 li:nth-child(3)::after{border-color:var(--ink) transparent transparent transparent}
   .dcols-editorial{grid-template-columns:1fr;gap:28px}
+  .dcol-ed:first-child{padding-right:0}
+  .dcol-ed:last-child{padding-left:0;border-left:0;padding-top:28px;border-top:1px solid var(--d-line)}
+  .dapp-triad{grid-template-columns:1fr;gap:18px}
+  .dapp-triad__items{justify-content:flex-start}
   .dband--prom .dband__grid{grid-template-columns:1fr;gap:36px}
   .dband--prom .dband__h2{max-width:none}
 }
@@ -744,18 +800,46 @@
       </li>
     </ol>
 
-    <!-- Разъяснение подхода: чистая редакционная верстка без лишних плашек -->
+    <!-- Разъяснение подхода: две выровненные колонки с иконками и визуальными акцентами -->
     <div class="dcols-editorial" data-rv>
       <div class="dcol-ed">
-        <h4>Физиологическая основа оценки</h4>
+        <div class="dcol-ed__head">
+          <span class="dcol-ed__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.2"/><path d="M12 7v7.5M7.5 10.5l4.5 2 4.5-2M9 19.5l3-5 3 5"/></svg></span>
+          <h4>Физиологическая основа оценки</h4>
+        </div>
         <p>Наш подход основан прежде всего на&nbsp;понимании того, как человеческое тело реагирует на&nbsp;различные нагрузки, каким образом формируются мышечное напряжение, утомляемость и&nbsp;нарушения опорно-двигательного аппарата.</p>
-        <p>Это позволяет оценивать не&nbsp;только очевидные параметры рабочего места, но&nbsp;и&nbsp;индивидуальные особенности движений, распределение нагрузки, компенсаторные механизмы и&nbsp;другие факторы, которые не&nbsp;всегда можно полноценно описать с&nbsp;помощью стандартных количественных показателей.</p>
+        <p>Это позволяет оценивать не&nbsp;только очевидные параметры рабочего места, но&nbsp;и&nbsp;факторы, которые не&nbsp;всегда можно полноценно описать с&nbsp;помощью стандартных количественных показателей:</p>
+        <div class="dcol-ed__tags">
+          <span class="dcol-ed__tag">Индивидуальные движения</span>
+          <span class="dcol-ed__tag">Распределение нагрузки</span>
+          <span class="dcol-ed__tag">Компенсаторные механизмы</span>
+        </div>
       </div>
+
       <div class="dcol-ed">
-        <h4>Практические и&nbsp;применимые решения</h4>
+        <div class="dcol-ed__head">
+          <span class="dcol-ed__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-5 4 4 7-8"/><path d="M15 8h5v5"/></svg></span>
+          <h4>Практические и&nbsp;применимые решения</h4>
+        </div>
         <p>При этом количественные методы оценки также входят в&nbsp;программу и&nbsp;применяются там, где они помогают объективно оценить нагрузку и&nbsp;результаты изменений.</p>
         <p>Мы&nbsp;учим не&nbsp;просто фиксировать наличие эргономической проблемы, а&nbsp;понимать причины ее&nbsp;возникновения и&nbsp;находить практические способы устранения или уменьшения.</p>
-        <p>Такой подход помогает искать решения, учитывающие одновременно особенности человеческого тела, характер производственных операций и&nbsp;требования предприятия.</p>
+        <div class="dcol-ed__shift">
+          <span class="dmyth__tag"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg>Фиксация по&nbsp;чек-листу</span>
+          <span class="dcol-ed__shift-arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          <span class="dmyth__tag dmyth__tag--yes"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.3l2.3 2.3L9.5 3.6"/></svg>Понимание причин и&nbsp;решения</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Визуальная триада: 3 фактора одновременно -->
+    <div class="dapp-triad" data-rv>
+      <p class="dapp-triad__lead">Такой подход помогает искать решения, учитывающие одновременно три составляющие:</p>
+      <div class="dapp-triad__items">
+        <span class="dapp-triad__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><path d="M12 7.5v7M8 10.5l4 1.8 4-1.8M9.5 19l2.5-4.5 2.5 4.5"/></svg>Особенности тела человека</span>
+        <span class="dapp-triad__plus" aria-hidden="true">+</span>
+        <span class="dapp-triad__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>Характер операций</span>
+        <span class="dapp-triad__plus" aria-hidden="true">+</span>
+        <span class="dapp-triad__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V9l6 3V9l6 3V5h2v15"/></svg>Требования предприятия</span>
       </div>
     </div>
   </div>
