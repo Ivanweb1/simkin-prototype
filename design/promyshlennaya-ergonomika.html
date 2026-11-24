@@ -14,34 +14,55 @@
 <link rel="stylesheet" href="design.css?v=338">
 <style>
 /* Специфические стили для компонентов страницы промышленной эргономики */
-.dfactors-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:clamp(28px,3vw,44px)}
+.dfactors-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:clamp(32px,3.4vw,48px)}
 .dfactor{
-  background:#fff;border:1px solid var(--d-line);border-radius:20px;padding:24px 22px;
-  display:flex;flex-direction:column;gap:12px;transition:box-shadow .22s var(--ease),transform .22s var(--ease);
+  background:#fff;border:1px solid rgba(42,56,146,.06);border-radius:24px;padding:24px 22px 26px;
+  display:flex;flex-direction:column;transition:box-shadow .22s var(--ease),transform .22s var(--ease),border-color .22s var(--ease);
 }
-.dfactor:hover{box-shadow:0 12px 30px rgba(35,43,62,.06);transform:translateY(-2px)}
-.dfactor__n{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--brand);font-variant-numeric:tabular-nums}
-.dfactor p{font-size:16px;line-height:1.45;color:var(--navy);font-weight:500;margin:0}
+.dfactor:hover{box-shadow:0 14px 34px rgba(42,56,146,.07);border-color:rgba(42,56,146,.14);transform:translateY(-2px)}
+.dfactor__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.dfactor__ico{
+  width:44px;height:44px;border-radius:13px;background:var(--tint);color:var(--ink);
+  display:grid;place-items:center;transition:background .22s var(--ease);
+}
+.dfactor:hover .dfactor__ico{background:var(--soft-2)}
+.dfactor__ico svg{width:22px;height:22px}
+.dfactor__n{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--navy-3);font-variant-numeric:tabular-nums}
+.dfactor p{font-size:15.5px;line-height:1.5;color:var(--navy);font-weight:500;margin:0}
 
-/* Схема «Проблема → Причина → Решение» */
-.dschema-wrap{background:#fff;border:1px solid var(--d-line);border-radius:32px;padding:clamp(32px,3.5vw,48px)}
-.dschema-title{font-size:clamp(20px,1.8vw,24px);font-weight:600;color:var(--navy);letter-spacing:-.02em;margin-bottom:28px}
-.dschema-flow{display:flex;align-items:stretch;gap:16px}
+/* Схема «Проблема → Причина → Решение» в спокойной палитре сайта */
+.dschema-wrap{
+  background:#fff;border:1px solid rgba(42,56,146,.06);border-radius:32px;
+  padding:clamp(28px,3.2vw,44px);margin-top:clamp(28px,3vw,44px);
+}
+.dschema-title{
+  font-size:clamp(20px,1.8vw,25px);font-weight:600;color:var(--navy);
+  letter-spacing:-.022em;line-height:1.25;margin:0 0 26px;
+}
+.dschema-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .dschema-step{
-  flex:1;background:var(--tint);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;
-  border:1px solid transparent;transition:border-color .22s ease;
+  position:relative;background:var(--tint);border-radius:24px;padding:clamp(24px,2.4vw,32px);
+  display:flex;flex-direction:column;
 }
-.dschema-step--accent{background:#edf3ff;border-color:rgba(26,95,224,.18)}
+.dschema-step--mid{background:var(--soft)}
+.dschema-step--accent{background:var(--soft-2);box-shadow:inset 0 0 0 1px rgba(42,56,146,.08)}
+.dschema-step__arr{
+  position:absolute;z-index:1;left:-27px;top:50%;margin-top:-20px;
+  display:grid;place-items:center;width:40px;height:40px;border-radius:50%;
+  background:#fff;color:var(--ink);box-shadow:0 0 0 5px #fff,0 6px 16px rgba(42,56,146,.12);
+}
+.dschema-step__arr svg{width:18px;height:18px}
 .dschema-step__badge{
-  display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;
-  text-transform:uppercase;letter-spacing:.06em;padding:5px 12px;border-radius:100px;
-  background:#fff;color:var(--brand);margin-bottom:18px;
+  display:inline-flex;align-items:center;align-self:flex-start;
+  font-size:13px;font-weight:600;letter-spacing:.01em;padding:6px 14px;border-radius:100px;
+  background:var(--graph-bg);color:var(--graph);margin-bottom:18px;line-height:1;
 }
-.dschema-step--accent .dschema-step__badge{background:var(--brand);color:#fff}
-.dschema-step h4{font-size:19px;font-weight:600;color:var(--navy);margin:0 0 10px;letter-spacing:-.015em}
-.dschema-step p{font-size:15px;line-height:1.55;color:var(--navy-2);margin:0}
-.dschema-arrow{display:grid;place-items:center;color:var(--navy-3);flex:0 0 28px}
-.dschema-arrow svg{width:24px;height:24px}
+.dschema-step--mid .dschema-step__badge{background:#fff;color:var(--ink)}
+.dschema-step--accent .dschema-step__badge{background:var(--ink);color:#fff}
+.dschema-step h4{font-size:clamp(18px,1.5vw,21px);font-weight:600;color:var(--navy);margin:0 0 10px;letter-spacing:-.02em;line-height:1.22}
+.dschema-step--accent h4{color:var(--ink)}
+.dschema-step p{font-size:15.5px;line-height:1.55;color:var(--navy-2);margin:0}
+.dschema-step--accent p{color:var(--navy)}
 
 /* Блок «Почему важно»: в спокойной палитре сайта (--tint, --soft, --soft-2, --ink, --graph) */
 .dwhy-factors{
@@ -289,18 +310,17 @@
   .dresult-card:nth-child(5){grid-column:1 / -1}
   .dformats-grid{grid-template-columns:1fr}
 }
-@media (max-width:860px){
-  .dparts-grid{grid-template-columns:1fr}
-  .dprose-grid{grid-template-columns:1fr}
-  .dcols-2{grid-template-columns:1fr}
-  .dschema-flow{flex-direction:column}
-  .dschema-arrow{transform:rotate(90deg);padding:8px 0}
-}
 @media (max-width:980px){
   .dwhy-factors{grid-template-columns:repeat(2,minmax(0,1fr))}
   .dwhy-compare{grid-template-columns:1fr;gap:20px}
+  .dschema-flow{grid-template-columns:1fr;gap:20px}
+  .dschema-step__arr{left:50%;top:-30px;margin:0 0 0 -20px;transform:rotate(90deg)}
   .dband--prom .dband__grid{grid-template-columns:1fr;gap:36px}
   .dband--prom .dband__h2{max-width:none}
+}
+@media (max-width:860px){
+  .dparts-grid{grid-template-columns:1fr}
+  .dcols-2{grid-template-columns:1fr}
 }
 @media (max-width:600px){
   .dwhy-factors{grid-template-columns:1fr;gap:10px}
@@ -545,71 +565,95 @@
 <!-- ============ БЛОК 3. КАКИЕ ПРОБЛЕМЫ ПОМОГАЕТ РЕШАТЬ ============ -->
 <section class="dsec dsec--tint" id="problems">
   <div class="dwrap">
-    <div class="dhead">
-      <span class="deyebrow" data-rv>Задачи и проблемы</span>
-      <h2 class="dh2" data-rv style="--d:.06s">От&nbsp;причин утомляемости&nbsp;– <span class="dh2__soft">к&nbsp;практическим решениям</span></h2>
-      <p class="dhead__note" data-rv style="--d:.1s; margin-top: 14px;">В&nbsp;ходе работы мы&nbsp;рассматриваем факторы, которые могут повышать физическую нагрузку на&nbsp;сотрудников и&nbsp;затруднять выполнение производственных операций:</p>
+    <div class="dhead dhead--split">
+      <div>
+        <span class="deyebrow" data-rv>Задачи и&nbsp;проблемы</span>
+        <h2 class="dh2" data-rv style="--d:.06s">От&nbsp;причин утомляемости&nbsp;– <span class="dh2__soft">к&nbsp;практическим решениям</span></h2>
+      </div>
+      <div class="dhead__note" data-rv style="--d:.12s">
+        <p>В&nbsp;ходе работы мы&nbsp;рассматриваем факторы, которые могут повышать физическую нагрузку на&nbsp;сотрудников и&nbsp;затруднять выполнение производственных операций.</p>
+      </div>
     </div>
 
     <!-- 8 факторов нагрузки -->
     <div class="dfactors-grid" data-rv>
       <div class="dfactor">
-        <span class="dfactor__n">01</span>
+        <div class="dfactor__head">
+          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2.2"/><path d="M12 7v5.5l-3 5.5M12 12.5l3 5.5M8.5 9.5l3.5 1.5 3.5-1.5"/></svg></span>
+          <span class="dfactor__n">01</span>
+        </div>
         <p>Неудобные и&nbsp;вынужденные рабочие позы</p>
       </div>
       <div class="dfactor">
-        <span class="dfactor__n">02</span>
+        <div class="dfactor__head">
+          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+          <span class="dfactor__n">02</span>
+        </div>
         <p>Длительное статическое напряжение мышц</p>
       </div>
       <div class="dfactor">
-        <span class="dfactor__n">03</span>
+        <div class="dfactor__head">
+          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4l3 3-3 3"/><path d="M4 11V9a2 2 0 0 1 2-2h14"/><path d="M7 20l-3-3 3-3"/><path d="M20 13v2a2 2 0 0 1-2 2H4"/></svg></span>
+          <span class="dfactor__n">03</span>
+        </div>
         <p>Часто повторяющиеся однотипные движения</p>
       </div>
       <div class="dfactor">
-        <span class="dfactor__n">04</span>
+        <div class="dfactor__head">
+          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19h12l-1.5-9.5a2 2 0 0 0-2-1.7h-5a2 2 0 0 0-2 1.7z"/><path d="M9.5 7.8V6a2.5 2.5 0 0 1 5 0v1.8"/></svg></span>
+          <span class="dfactor__n">04</span>
+        </div>
         <p>Избыточные усилия при выполнении операций</p>
       </div>
       <div class="dfactor">
-        <span class="dfactor__n">05</span>
+        <div class="dfactor__head">
+          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="7" height="6.5" rx="1.5"/><rect x="13.5" y="4.5" width="7" height="6.5" rx="1.5"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5"/></svg></span>
+          <span class="dfactor__n">05</span>
+        </div>
         <p>Неудобное расположение инструментов, материалов и&nbsp;оборудования</p>
       </div>
       <div class="dfactor">
-        <span class="dfactor__n">06</span>
+        <div class="dfactor__head">
+          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19h14"/><path d="M7 19V7"/><path d="M7 12a7 7 0 0 1 7 7"/><path d="M14.5 9.5l3-3m0 0h-3m3 0v3"/></svg></span>
+          <span class="dfactor__n">06</span>
+        </div>
         <p>Необходимость часто наклоняться, поворачиваться или выполнять движения с&nbsp;чрезмерной амплитудой</p>
       </div>
       <div class="dfactor">
-        <span class="dfactor__n">07</span>
+        <div class="dfactor__head">
+          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="12" r="2.2"/><circle cx="6" cy="18" r="2.2"/><path d="M8.2 6.8l7.6 4.2M15.8 13l-7.6 4.2"/></svg></span>
+          <span class="dfactor__n">07</span>
+        </div>
         <p>Нерациональная организация последовательности рабочих действий</p>
       </div>
       <div class="dfactor">
-        <span class="dfactor__n">08</span>
+        <div class="dfactor__head">
+          <span class="dfactor__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5v3M12 16.5v3M4.5 12h3M16.5 12h3"/><circle cx="12" cy="12" r="4.5"/></svg></span>
+          <span class="dfactor__n">08</span>
+        </div>
         <p>Недостаточные возможности для восстановления при выполнении физически напряженной работы</p>
       </div>
     </div>
 
     <!-- Схема «Проблема → Причина → Эргономическое решение» -->
-    <div class="dschema-wrap" data-rv style="margin-top: clamp(36px, 4vw, 56px);">
-      <h3 class="dschema-title">Для каждой выявленной проблемы рассматриваются возможные пути решения:</h3>
+    <div class="dschema-wrap" data-rv>
+      <h3 class="dschema-title">Для каждой выявленной проблемы рассматриваются возможные пути решения</h3>
       <div class="dschema-flow">
         <div class="dschema-step">
           <span class="dschema-step__badge">Проблема</span>
           <h4>Что затрудняет труд</h4>
           <p>Фиксация жалоб сотрудников, очагов переутомления, снижения темпа или частоты пауз в&nbsp;ходе смены.</p>
         </div>
-        <div class="dschema-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="dschema-step">
+        <div class="dschema-step dschema-step--mid">
+          <span class="dschema-step__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
           <span class="dschema-step__badge">Причина</span>
           <h4>Механизм нагрузки</h4>
           <p>Определение неблагоприятных рабочих поз, зон досягаемости, статических зажимов и&nbsp;биомеханических перегрузок.</p>
         </div>
-        <div class="dschema-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
         <div class="dschema-step dschema-step--accent">
-          <span class="dschema-step__badge">Решение</span>
-          <h4>Эргономическое решение</h4>
+          <span class="dschema-step__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
+          <span class="dschema-step__badge">Эргономическое решение</span>
+          <h4>Практические изменения</h4>
           <p>Изменение высоты и&nbsp;углов рабочих поверхностей, перераспределение захватов, перестановка оснастки и&nbsp;оптимизация приемов труда.</p>
         </div>
       </div>
