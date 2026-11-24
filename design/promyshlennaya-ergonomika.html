@@ -61,6 +61,7 @@
 .dcol-box{background:var(--tint);border-radius:24px;padding:32px 30px}
 .dcol-box h4{font-size:19px;font-weight:600;color:var(--navy);margin:0 0 12px;letter-spacing:-.015em}
 .dcol-box p{font-size:16px;line-height:1.6;color:var(--navy-2);margin:0}
+.dcol-box p + p{margin-top:14px}
 
 /* Карточки программы: Теория и Практика */
 .dparts-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:clamp(36px,3.6vw,52px)}
@@ -92,17 +93,22 @@
 }
 .dpart-goal strong{color:var(--navy)}
 
-/* Сетка результатов: 5 карточек */
-.dresults-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(36px,3.6vw,52px)}
+/* Сетка результатов: 5 карточек (сбалансированная раскладка 3 + 2) */
+.dresults-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:clamp(36px,3.6vw,52px)}
 .dresult-card{
+  grid-column:span 2;
   background:var(--tint);border-radius:24px;padding:32px 28px;
   display:flex;flex-direction:column;transition:transform .22s var(--ease),background .22s var(--ease);
 }
+.dresult-card:nth-child(4),.dresult-card:nth-child(5){grid-column:span 3}
 .dresult-card:hover{background:#e9eef7;transform:translateY(-2px)}
 .dresult-card__ico{width:48px;height:48px;border-radius:14px;background:#fff;color:var(--brand);display:grid;place-items:center;margin-bottom:22px}
 .dresult-card__ico svg{width:24px;height:24px}
 .dresult-card h3{font-size:20px;font-weight:600;line-height:1.25;letter-spacing:-.018em;color:var(--navy);margin:0 0 12px}
 .dresult-card p{font-size:15.5px;line-height:1.55;color:var(--navy-2);margin:0}
+
+/* Сетка логотипов 3x2 с адаптацией на мобильных */
+.dlogos--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 
 /* Карточки форматов: 3 колонки */
 .dformats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:clamp(36px,3.6vw,52px)}
@@ -116,8 +122,8 @@
   padding:5px 12px;border-radius:100px;background:var(--tint);color:var(--brand);margin-bottom:22px;
 }
 .dformat-card h3{font-size:22px;font-weight:600;line-height:1.2;letter-spacing:-.02em;color:var(--navy);margin:0 0 14px}
-.dformat-card p{font-size:15.5px;line-height:1.6;color:var(--navy-2);margin:0}
-.dformat-card .dbtn{margin-top:auto;padding-top:26px;align-self:flex-start}
+.dformat-card p{font-size:15.5px;line-height:1.6;color:var(--navy-2);margin:0 0 28px}
+.dformat-card .dbtn{margin-top:auto;align-self:flex-start}
 
 /* Финальный блок заявки: аккуратная симметричная раскладка */
 .dband--prom .dband__grid{
@@ -128,7 +134,7 @@
   font-size:clamp(28px,2.5vw,38px);line-height:1.15;letter-spacing:-.025em;max-width:18em;
 }
 .dband--prom .dband__sub{
-  font-size:16.5px;line-height:1.6;margin-top:16px;max-width:32em;color:var(--navy-2);
+  font-size:16.5px;line-height:1.6;margin-top:16px;max-width:32em;color:rgba(255,255,255,.84);
 }
 
 .dform-prom{
@@ -177,13 +183,18 @@
 .dform-prom .dform__submit svg{width:18px;height:18px;transition:transform .22s var(--ease)}
 .dform-prom .dform__submit:hover svg{transform:translateX(3px)}
 
-/* Кадрирование фото первого экрана для ПК и мобильных */
+/* Кнопка первого экрана и кадрирование фото для ПК и мобильных */
+.dcohero__btns .dbtn--brand{height:58px;font-size:16.5px}
 .dcohero__media img{object-position:42% 16%}
 @media (max-width:1100px){
   .dcohero__media{aspect-ratio:16/10}
   .dcohero__media img{object-position:42% 12%}
 }
 @media (max-width:600px){
+  .dcohero__btns .dbtn--brand{
+    width:100%;height:auto;min-height:56px;padding:14px 20px;
+    white-space:normal;text-align:center;line-height:1.25;
+  }
   .dcohero__media{aspect-ratio:4/3}
   .dcohero__media img{object-position:42% 10%}
 }
@@ -193,6 +204,8 @@
   .dfactors-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .dsteps--4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .dresults-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dresult-card,.dresult-card:nth-child(4),.dresult-card:nth-child(5){grid-column:auto}
+  .dresult-card:nth-child(5){grid-column:1 / -1}
   .dformats-grid{grid-template-columns:1fr}
 }
 @media (max-width:860px){
@@ -210,9 +223,13 @@
   .dfactors-grid{grid-template-columns:1fr}
   .dsteps--4{grid-template-columns:1fr}
   .dresults-grid{grid-template-columns:1fr}
+  .dresult-card:nth-child(5){grid-column:auto}
+  .dlogos--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dformat-card .dbtn{width:100%;justify-content:center}
   .dform-prom{padding:24px 20px;border-radius:22px}
   .dform-prom__row{grid-template-columns:1fr;gap:10px;margin-bottom:10px}
   .dform-prom .dfield{height:50px;font-size:15px}
+  .dform-prom .dfield--area{height:100px}
   .dform-prom .dform__submit{height:56px;font-size:16px}
 }
 </style>
@@ -286,17 +303,6 @@
     </div>
   </nav>
 </header>
-
-<!-- ============ ОБЩЕЕ: ХЛЕБНЫЕ КРОШКИ ============ -->
-<nav class="crumbs">
-  <div class="wrap crumbs__in">
-    <a href="index.html">Главная</a>
-    <span>/</span>
-    <a href="ergonomika-dlya-kompaniy.html">Для компаний</a>
-    <span>/</span>
-    <span>Промышленная эргономика</span>
-  </div>
-</nav>
 
 <!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
 <section class="dcohero" id="hero">
@@ -386,7 +392,7 @@
       </div>
       <div class="dfactor">
         <span class="dfactor__n">06</span>
-        <p>Необходимость часто наклоняться, поворачиваться или делать движения с&nbsp;чрезмерной амплитудой</p>
+        <p>Необходимость часто наклоняться, поворачиваться или выполнять движения с&nbsp;чрезмерной амплитудой</p>
       </div>
       <div class="dfactor">
         <span class="dfactor__n">07</span>
@@ -394,7 +400,7 @@
       </div>
       <div class="dfactor">
         <span class="dfactor__n">08</span>
-        <p>Недостаточные возможности для восстановления при физически напряженной работе</p>
+        <p>Недостаточные возможности для восстановления при выполнении физически напряженной работы</p>
       </div>
     </div>
 
@@ -421,7 +427,7 @@
         <div class="dschema-step dschema-step--accent">
           <span class="dschema-step__badge">Решение</span>
           <h4>Эргономическое решение</h4>
-          <p>Изменение высоты и углов рабочих поверхностей, перераспределение захватов, перестановка оснастки и&nbsp;оптимизация приёмов труда.</p>
+          <p>Изменение высоты и&nbsp;углов рабочих поверхностей, перераспределение захватов, перестановка оснастки и&nbsp;оптимизация приемов труда.</p>
         </div>
       </div>
     </div>
@@ -484,11 +490,14 @@
     <div class="dcols-2" data-rv>
       <div class="dcol-box">
         <h4>Физиологическая основа оценки</h4>
-        <p>Наш подход основан на&nbsp;понимании того, как человеческое тело реагирует на&nbsp;различные нагрузки, каким образом формируются мышечное напряжение, утомляемость и&nbsp;нарушения опорно-двигательного аппарата. Это позволяет оценивать индивидуальные особенности движений и&nbsp;факторы, которые невозможно описать одними лишь стандартными чек-листами.</p>
+        <p>Наш подход основан прежде всего на&nbsp;понимании того, как человеческое тело реагирует на&nbsp;различные нагрузки, каким образом формируются мышечное напряжение, утомляемость и&nbsp;нарушения опорно-двигательного аппарата.</p>
+        <p>Это позволяет оценивать не&nbsp;только очевидные параметры рабочего места, но&nbsp;и&nbsp;индивидуальные особенности движений, распределение нагрузки, компенсаторные механизмы и&nbsp;другие факторы, которые не&nbsp;всегда можно полноценно описать с&nbsp;помощью стандартных количественных показателей.</p>
       </div>
       <div class="dcol-box">
-        <h4>Практические и применимые решения</h4>
-        <p>При этом количественные методы оценки также входят в&nbsp;программу и&nbsp;применяются для объективной оценки нагрузки и&nbsp;контроля результатов изменений. Мы&nbsp;учим не&nbsp;просто фиксировать проблему, а&nbsp;находить практические способы её&nbsp;устранения с&nbsp;учётом требований производства.</p>
+        <h4>Практические и&nbsp;применимые решения</h4>
+        <p>При этом количественные методы оценки также входят в&nbsp;программу и&nbsp;применяются там, где они помогают объективно оценить нагрузку и&nbsp;результаты изменений.</p>
+        <p>Мы&nbsp;учим не&nbsp;просто фиксировать наличие эргономической проблемы, а&nbsp;понимать причины ее&nbsp;возникновения и&nbsp;находить практические способы устранения или уменьшения.</p>
+        <p>Такой подход помогает искать решения, учитывающие одновременно особенности человеческого тела, характер производственных операций и&nbsp;требования предприятия.</p>
       </div>
     </div>
   </div>
@@ -556,13 +565,13 @@
             <li>Выход на&nbsp;реальные производственные участки вместе со&nbsp;специалистами компании</li>
             <li>Анализ рабочих поз, движений, физических усилий и&nbsp;расположения оборудования</li>
             <li>Наглядная демонстрация факторов избыточной нагрузки на&nbsp;конкретных примерах</li>
-            <li>Совместная выработка решений с&nbsp;учётом регламентов и&nbsp;особенностей производства</li>
+            <li>Совместная выработка решений с&nbsp;учетом регламентов и&nbsp;особенностей производства</li>
             <li>Прямое вовлечение специалистов предприятия в&nbsp;поиск и&nbsp;проверку решений</li>
           </ul>
         </div>
 
         <div class="dpart-goal">
-          <strong>Результат практической части&nbsp;–</strong> участники сразу видят, как применять полученные знания на&nbsp;своём предприятии, и&nbsp;вырабатывают конкретный пул эргономических решений.
+          <strong>Результат практической части&nbsp;–</strong> участники сразу видят, как применять полученные знания на&nbsp;своем предприятии, и&nbsp;вырабатывают конкретный пул эргономических решений.
         </div>
       </article>
     </div>
@@ -631,12 +640,12 @@
         <h2 class="dh2" data-rv style="--d:.06s">Сотрудничество с&nbsp;российскими <span class="dh2__soft">и&nbsp;международными производственными компаниями</span></h2>
       </div>
       <div class="dhead__note" data-rv style="--d:.12s">
-        <p>Практический подход к&nbsp;эргономике сформировался благодаря многолетнему опыту обучения и&nbsp;консультирования промышленных предприятий с&nbsp;учётом технологических процессов и&nbsp;характера нагрузок.</p>
+        <p>Практический подход к&nbsp;эргономике сформировался благодаря многолетнему опыту обучения и&nbsp;консультирования промышленных предприятий с&nbsp;учетом технологических процессов и&nbsp;характера нагрузок.</p>
       </div>
     </div>
 
     <!-- Сетка логотипов 6 производственных компаний -->
-    <div class="dlogos" data-rv style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+    <div class="dlogos dlogos--3" data-rv>
       <a href="ergonomika-dlya-kompaniy.html#review-sanofi" class="dlogo" data-logo title="Sanofi — отзыв об обучении промышленной эргономике" style="--logo-h:36px">
         <img src="assets/logos/sanofi.png" alt="Sanofi" width="160" height="42" loading="lazy">
         <span>Sanofi</span>
