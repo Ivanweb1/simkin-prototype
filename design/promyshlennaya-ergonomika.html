@@ -396,20 +396,76 @@
 /* Блок 10: стандартный .dband и .dform сайта, чуть шире колонка под заголовок */
 #request .dband__h2{max-width:14em}
 
-/* Кнопка первого экрана и кадрирование фото для ПК и мобильных */
+/* Кнопка первого экрана, мобильный порядок и кадрирование фото */
+.dcohero{padding-bottom:clamp(20px,2.4vw,32px)}
 .dcohero__btns .dbtn--brand{height:58px;font-size:16.5px}
+.dprom-hero__note{font-weight:500;color:var(--navy)}
 .dcohero__media img{object-position:42% 16%}
+
+/* Компактная полоса логотипов сразу после первого экрана */
+.dprom-trust{padding:0 0 clamp(28px,3.2vw,44px)}
+.dprom-trust__in{
+  display:flex;flex-direction:column;gap:14px;
+}
+.dprom-trust__lbl{
+  font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--navy-3);
+  margin:0;
+}
+.dprom-trust__grid{
+  display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;
+}
+.dprom-trust__item{
+  background:#fff;border:1px solid var(--d-line);border-radius:16px;
+  height:62px;padding:10px 12px;display:grid;place-items:center;
+  transition:border-color .22s var(--ease),box-shadow .22s var(--ease);
+}
+a.dprom-trust__item{cursor:pointer}
+a.dprom-trust__item:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+@media (hover:hover) and (pointer:fine){
+  .dprom-trust__item:hover{border-color:transparent;box-shadow:0 10px 26px rgba(35,43,62,.07)}
+  .dprom-trust__item:hover img{filter:none}
+}
+.dprom-trust__item img{
+  max-width:86%;max-height:var(--tlogo-h,26px);width:auto;height:auto;object-fit:contain;
+  filter:var(--logo-tone,grayscale(1) contrast(1.25) brightness(.9));
+  transition:filter .22s var(--ease);
+}
+@media (hover:none){
+  .dprom-trust__item img{filter:none}
+}
+
 @media (max-width:1100px){
-  .dcohero__media{aspect-ratio:16/10}
+  .dprom-hero__txt{display:contents}
+  .dprom-hero__top{
+    order:1;padding:clamp(28px,4vw,44px) clamp(20px,3.4vw,44px) 0;
+  }
+  .dprom-hero__btns{
+    order:2;margin-top:20px;padding:0 clamp(20px,3.4vw,44px) 22px;
+  }
+  .dprom-hero__media{
+    order:3;min-height:0;aspect-ratio:16/10;
+  }
+  .dprom-hero__extra{
+    order:4;padding:22px clamp(20px,3.4vw,44px) clamp(28px,4vw,40px);
+  }
+  .dprom-hero__extra .dcohero__lead:first-child{margin-top:0}
   .dcohero__media img{object-position:42% 12%}
+  .dprom-trust__grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 @media (max-width:600px){
+  .dcohero{padding-bottom:18px}
+  .dprom-hero__top{padding:24px 20px 0}
+  .dprom-hero__btns{margin-top:18px;padding:0 20px 20px}
+  .dprom-hero__extra{padding:20px 20px 26px}
   .dcohero__btns .dbtn--brand{
-    width:100%;height:auto;min-height:56px;padding:14px 20px;
+    width:100%;height:auto;min-height:54px;padding:13px 18px;
     white-space:normal;text-align:center;line-height:1.25;
   }
   .dcohero__media{aspect-ratio:4/3}
   .dcohero__media img{object-position:42% 10%}
+  .dprom-trust{padding-bottom:24px}
+  .dprom-trust__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .dprom-trust__item{height:54px;border-radius:14px;padding:8px 10px}
 }
 
 /* Адаптив под планшеты и мобильные */
@@ -547,22 +603,62 @@
 <!-- ============ БЛОК 1. ПЕРВЫЙ ЭКРАН ============ -->
 <section class="dcohero" id="hero">
   <div class="dwrap">
-    <div class="dcohero__card">
-      <div class="dcohero__txt">
-        <span class="deyebrow" data-rv>Для компаний</span>
-        <h1 data-rv style="--d:.06s">Промышленная <em>эргономика</em></h1>
-        <p class="dcohero__h1sub" data-rv style="--d:.1s">Меньше физических перегрузок&nbsp;– выше эффективность труда</p>
-        <p class="dcohero__sub" data-rv style="--d:.12s">Обучение и&nbsp;практическое консультирование промышленных предприятий по&nbsp;вопросам организации рабочих процессов, снижения производственной утомляемости и&nbsp;профилактики заболеваний опорно-двигательного аппарата.</p>
-        <p class="dcohero__lead" data-rv style="--d:.18s">Помогаем выявлять факторы, которые создают избыточную нагрузку на&nbsp;сотрудников, и&nbsp;находить решения, позволяющие сделать работу легче, безопаснее и&nbsp;эффективнее.</p>
-        <div class="dcohero__btns" data-rv style="--d:.24s">
-          <button class="dbtn dbtn--brand" data-open="discuss">Обсудить программу для предприятия
+    <div class="dcohero__card dprom-hero">
+      <div class="dcohero__txt dprom-hero__txt">
+        <div class="dprom-hero__top">
+          <span class="deyebrow" data-rv>Для компаний</span>
+          <h1 data-rv style="--d:.06s">Промышленная <em>эргономика</em></h1>
+          <p class="dcohero__h1sub" data-rv style="--d:.1s">Больше выработки&nbsp;– меньше физической перегрузки</p>
+          <p class="dcohero__sub" data-rv style="--d:.12s">Помогаем промышленным предприятиям находить резервы производительности и&nbsp;качества труда без увеличения физической нагрузки на&nbsp;сотрудников.</p>
+        </div>
+        <div class="dprom-hero__extra">
+          <p class="dcohero__lead" data-rv style="--d:.16s">Выявляем избыточные усилия и&nbsp;перемещения, неудобные позы и&nbsp;движения, причины утомляемости и&nbsp;боли, эргономические риски. Вместе со&nbsp;специалистами предприятия анализируем реальные производственные задачи и&nbsp;находим практические решения, позволяющие сделать работу легче и&nbsp;эффективнее.</p>
+          <p class="dcohero__lead dprom-hero__note" data-rv style="--d:.2s">Обучение специалистов и&nbsp;практическое консультирование непосредственно на&nbsp;производстве.</p>
+        </div>
+        <div class="dcohero__btns dprom-hero__btns" data-rv style="--d:.24s">
+          <button class="dbtn dbtn--brand" data-open="discuss">Обсудить задачу предприятия
             <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></button>
         </div>
       </div>
-      <div class="dcohero__media" data-rv style="--d:.06s">
+      <div class="dcohero__media dprom-hero__media" data-rv style="--d:.06s">
         <picture>
           <img src="assets/photo/prom-hero.jpg" alt="Дмитрий Симкин на производстве в защитной каске и с планшетом" width="1024" height="682" fetchpriority="high">
         </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ КОМПАКТНЫЙ БЛОК ЛОГОТИПОВ ============ -->
+<section class="dprom-trust" id="trust" aria-label="Опыт работы с промышленными предприятиями">
+  <div class="dwrap">
+    <div class="dprom-trust__in" data-rv>
+      <p class="dprom-trust__lbl">Опыт работы с&nbsp;промышленными предприятиями</p>
+      <div class="dprom-trust__grid">
+        <a href="ergonomika-dlya-kompaniy.html#review-sanofi" class="dprom-trust__item" title="Sanofi — отзыв об обучении промышленной эргономике" style="--tlogo-h:24px">
+          <img src="assets/logos/sanofi.png" alt="Sanofi" width="160" height="42">
+        </a>
+        <a href="ergonomika-dlya-kompaniy.html#review-kraft-foods" class="dprom-trust__item" title="Kraft Foods — отзыв о корпоративном обучении" style="--tlogo-h:28px">
+          <img src="assets/logos/kraft-foods.png" alt="Kraft Foods" width="180" height="48">
+        </a>
+        <a href="ergonomika-dlya-kompaniy.html#review-ford" class="dprom-trust__item" title="Ford — отзыв о тренинге по эргономике" style="--tlogo-h:26px">
+          <img src="assets/logos/ford.png" alt="Ford" width="160" height="62">
+        </a>
+        <a href="ergonomika-dlya-kompaniy.html#review-chudovo-rws" class="dprom-trust__item" title="IKEA Industry (Чудово-RWS) — отзыв о сотрудничестве" style="--tlogo-h:24px">
+          <img src="assets/logos/ikea.svg" alt="IKEA Industry" width="100" height="40">
+        </a>
+        <div class="dprom-trust__item" title="Continental" style="--tlogo-h:22px">
+          <img src="assets/logos/continental.svg" alt="Continental" width="220" height="41">
+        </div>
+        <div class="dprom-trust__item" title="Toyota Motor Manufacturing Russia (TMMR)" style="--tlogo-h:34px">
+          <img src="assets/logos/toyota.svg" alt="Toyota (TMMR)" width="140" height="101">
+        </div>
+        <div class="dprom-trust__item" title="OTIS" style="--tlogo-h:22px">
+          <img src="assets/logos/otis.svg" alt="OTIS" width="113" height="35">
+        </div>
+        <div class="dprom-trust__item" title="GE Healthcare" style="--tlogo-h:24px">
+          <img src="assets/logos/ge-healthcare.svg" alt="GE Healthcare" width="144" height="32">
+        </div>
       </div>
     </div>
   </div>
@@ -574,10 +670,10 @@
     <div class="dhead dhead--split">
       <div>
         <span class="deyebrow" data-rv>Значение для производства</span>
-        <h2 class="dh2" data-rv style="--d:.06s">Утомляемость сотрудников&nbsp;– <span class="dh2__soft">не&nbsp;неизбежная плата за&nbsp;физический труд</span></h2>
+        <h2 class="dh2" data-rv style="--d:.06s">Избыточная утомляемость&nbsp;– <span class="dh2__soft">не&nbsp;обязательная плата за&nbsp;физический труд</span></h2>
       </div>
       <div class="dhead__note" data-rv style="--d:.12s">
-        <p>На&nbsp;производстве работоспособность человека зависит не&nbsp;только от&nbsp;его физической подготовки, квалификации и&nbsp;мотивации.</p>
+        <p>В&nbsp;условиях дефицита квалифицированных производственных кадров особенно важно находить резервы эффективности без увеличения физической нагрузки на&nbsp;сотрудников. Во&nbsp;многих случаях дополнительная утомляемость возникает не&nbsp;столько из-за тяжести самой работы, сколько из-за нерациональной организации процессов, неудобных рабочих поз, лишних движений и&nbsp;усилий.</p>
       </div>
     </div>
 
@@ -634,7 +730,7 @@
         <ul class="dwhy-list">
           <li class="dwhy-item dwhy-item--risk">
             <span class="dwhy-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg></span>
-            <p class="dwhy-item__text"><strong>Избыточное мышечное напряжение:</strong> постоянный статический зажим спины, шеи и&nbsp;плечевого пояса.</p>
+            <p class="dwhy-item__text"><strong>Мышечное перенапряжение:</strong> избыточное статическое напряжение мышц спины, шеи и&nbsp;плечевого пояса.</p>
           </li>
           <li class="dwhy-item dwhy-item--risk">
             <span class="dwhy-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l6 6M9 3l-6 6"/></svg></span>
@@ -774,7 +870,7 @@
           <span class="dschema-step__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
           <span class="dschema-step__badge">Причина</span>
           <h4>Механизм нагрузки</h4>
-          <p>Определение неблагоприятных рабочих поз, зон досягаемости, статических зажимов и&nbsp;биомеханических перегрузок.</p>
+          <p>Определение неблагоприятных рабочих поз, зон досягаемости, избыточного статического напряжения мышц и&nbsp;биомеханических перегрузок.</p>
         </div>
         <div class="dschema-step dschema-step--accent">
           <span class="dschema-step__arr" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h12M10 4l5 5-5 5"/></svg></span>
@@ -949,10 +1045,10 @@
           <span class="dpart-icon dpart-icon--brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
         </div>
         <h3>Практическая работа в&nbsp;цехах</h3>
-        <p class="dpart-card__sub">Переход непосредственно в&nbsp;производственные помещения к&nbsp;реальным рабочим местам.</p>
+        <p class="dpart-card__sub">Переход непосредственно в&nbsp;производственные помещения к&nbsp;реальным рабочим местам вместе со&nbsp;специалистами предприятия.</p>
 
         <div class="dpart-goal">
-          <strong>Результат части&nbsp;–</strong> участники сразу видят, как применять полученные знания на&nbsp;своем предприятии, и&nbsp;вырабатывают конкретный пул эргономических решений.
+          <strong>Результат части&nbsp;–</strong> вместе предлагаем практические решения, направленные на&nbsp;облегчение труда, снижение утомляемости и&nbsp;повышение эффективности производственных операций.
         </div>
 
         <details class="dpart-acc">
@@ -1039,8 +1135,8 @@
       </div>
     </div>
 
-    <!-- Сетка логотипов 6 производственных компаний -->
-    <div class="dlogos dlogos--3" data-rv>
+    <!-- Сетка логотипов 8 производственных компаний -->
+    <div class="dlogos" data-rv>
       <a href="ergonomika-dlya-kompaniy.html#review-sanofi" class="dlogo" data-logo title="Sanofi — отзыв об обучении промышленной эргономике" style="--logo-h:36px">
         <img src="assets/logos/sanofi.png" alt="Sanofi" width="160" height="42" loading="lazy">
         <span>Sanofi</span>
@@ -1064,6 +1160,14 @@
       <div class="dlogo" data-logo title="Toyota Motor Manufacturing Russia (TMMR)" style="--logo-h:50px">
         <img src="assets/logos/toyota.svg" alt="Toyota (TMMR)" width="140" height="101" loading="lazy">
         <span>Toyota (TMMR)</span>
+      </div>
+      <div class="dlogo" data-logo title="OTIS" style="--logo-h:32px">
+        <img src="assets/logos/otis.svg" alt="OTIS" width="113" height="35" loading="lazy">
+        <span>OTIS</span>
+      </div>
+      <div class="dlogo" data-logo title="GE Healthcare" style="--logo-h:34px">
+        <img src="assets/logos/ge-healthcare.svg" alt="GE Healthcare" width="144" height="32" loading="lazy">
+        <span>GE Healthcare</span>
       </div>
     </div>
 
@@ -1175,7 +1279,7 @@
     <div class="dband" data-rv>
       <div class="dband__grid">
         <div class="dband__left">
-          <h2 class="dh2 dband__h2">Сделайте производство <span class="dband__soft">менее утомительным и&nbsp;эффективнее</span></h2>
+          <h2 class="dh2 dband__h2">Сделайте производственные процессы <span class="dband__soft">менее утомительными и&nbsp;более эффективными</span></h2>
           <p class="dband__sub">Обсудим особенности вашего производства, основные задачи и&nbsp;подходящий формат обучения или консультирования.</p>
           <div class="ddirect">
             <span class="ddirect__t">Или напишите сразу</span>
