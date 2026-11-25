@@ -407,14 +407,20 @@
 #expert .dk-author__note{margin-top:20px}
 #expert .dexp__btn{margin-top:24px}
 
-/* Блок 10: компактный заголовок слева и выравнивание левой и правой колонок по высоте */
-#request .dband__grid{align-items:stretch}
-#request .dband__left{display:flex;flex-direction:column}
-#request .dband__h2{
-  font-size:clamp(28px,2.55vw,40px);line-height:1.12;max-width:18em;
+/* Блок 10: заголовок стандартного кегля .dh2 на всю ширину сверху, под ним — 2 ровные колонки */
+#request .dband__h2{max-width:22em;margin-bottom:clamp(28px,3.2vw,44px)}
+#request .dband__grid{
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:clamp(28px,4.5vw,64px);align-items:stretch;
 }
-#request .dband__sub{margin-top:18px}
-#request .ddirect{margin-top:auto;padding-top:28px}
+#request .dband__left{
+  display:flex;flex-direction:column;
+  padding-top:4px;
+}
+#request .dband__sub{margin-top:0;font-size:clamp(18px,1.45vw,21px);line-height:1.55;max-width:24em}
+#request .ddirect{
+  margin-top:auto;padding-top:28px;border-top:1px solid var(--d-line);
+}
 
 /* Кнопка первого экрана, мобильный порядок и кадрирование фото */
 .dcohero{padding-bottom:clamp(20px,2.4vw,32px)}
@@ -511,7 +517,9 @@ a.dprom-trust__item:focus-visible{outline:2px solid var(--brand);outline-offset:
   .dcol-ed:last-child{padding-left:0;border-left:0;padding-top:28px;border-top:1px solid var(--d-line)}
   .dapp-triad{grid-template-columns:1fr;gap:18px}
   .dapp-triad__items{justify-content:flex-start}
-  #request .dband__h2{max-width:none}
+  #request .dband__h2{max-width:none;margin-bottom:24px}
+  #request .dband__grid{grid-template-columns:1fr;gap:28px}
+  #request .ddirect{margin-top:24px;padding-top:22px}
 }
 @media (max-width:860px){
   .dpart-who{grid-template-columns:1fr;padding:20px}
@@ -1296,9 +1304,9 @@ a.dprom-trust__item:focus-visible{outline:2px solid var(--brand);outline-offset:
 <section class="dsec dsec--cta" id="request">
   <div class="dwrap">
     <div class="dband" data-rv>
+      <h2 class="dh2 dband__h2">Сделайте производственные процессы <span class="dband__soft">менее утомительными и&nbsp;более эффективными</span></h2>
       <div class="dband__grid">
         <div class="dband__left">
-          <h2 class="dh2 dband__h2">Сделайте производственные процессы <span class="dband__soft">менее утомительными и&nbsp;более эффективными</span></h2>
           <p class="dband__sub">Обсудим особенности вашего производства, основные задачи и&nbsp;подходящий формат обучения или консультирования.</p>
           <div class="ddirect">
             <span class="ddirect__t">Или напишите сразу</span>
