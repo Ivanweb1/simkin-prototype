@@ -397,8 +397,14 @@
 #expert .dk-author__note{margin-top:20px}
 #expert .dexp__btn{margin-top:24px}
 
-/* Блок 10: стандартный .dband и .dform сайта, чуть шире колонка под заголовок */
-#request .dband__h2{max-width:14em}
+/* Блок 10: компактный заголовок слева и выравнивание левой и правой колонок по высоте */
+#request .dband__grid{align-items:stretch}
+#request .dband__left{display:flex;flex-direction:column}
+#request .dband__h2{
+  font-size:clamp(28px,2.55vw,40px);line-height:1.12;max-width:18em;
+}
+#request .dband__sub{margin-top:18px}
+#request .ddirect{margin-top:auto;padding-top:28px}
 
 /* Кнопка первого экрана, мобильный порядок и кадрирование фото */
 .dcohero{padding-bottom:clamp(20px,2.4vw,32px)}
