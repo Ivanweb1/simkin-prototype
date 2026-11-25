@@ -407,8 +407,10 @@
 #expert .dk-author__note{margin-top:20px}
 #expert .dexp__btn{margin-top:24px}
 
-/* Блок 10: заголовок стандартного кегля .dh2 на всю ширину сверху, под ним — 2 ровные колонки */
-#request .dband__h2{max-width:22em;margin-bottom:clamp(28px,3.2vw,44px)}
+/* Блок 10: заголовок стандартного кегля .dh2 по центру сверху, под ним — 2 ровные колонки */
+#request .dband__h2{
+  max-width:22em;margin:0 auto clamp(28px,3.2vw,44px);text-align:center;
+}
 #request .dband__grid{
   grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
   gap:clamp(28px,4.5vw,64px);align-items:stretch;
