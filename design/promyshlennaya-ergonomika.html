@@ -407,26 +407,42 @@
 #expert .dk-author__note{margin-top:20px}
 #expert .dexp__btn{margin-top:24px}
 
-/* Блок 10: заголовок стандартного кегля .dh2 по центру сверху, под ним — 2 ровные колонки */
+/* Блок 10: центрированная композиция и горизонтальная форма */
+#request .dband__head{text-align:center}
 #request .dband__h2{
-  max-width:22em;margin:0 auto clamp(28px,3.2vw,44px);text-align:center;
+  max-width:22em;margin:0 auto;text-align:center;
 }
-#request .dband__grid{
-  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
-  gap:clamp(28px,4.5vw,64px);align-items:stretch;
+#request .dband__sub{
+  margin:16px auto 0;font-size:clamp(17px,1.4vw,20px);line-height:1.55;
+  max-width:36em;text-align:center;
 }
-#request .dband__left{
-  display:flex;flex-direction:column;
-  padding-top:4px;
+#request .dform{
+  max-width:960px;margin:clamp(28px,3vw,40px) auto 0;
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:16px 24px;align-items:stretch;
 }
-#request .dband__sub{margin-top:0;font-size:clamp(18px,1.45vw,21px);line-height:1.55;max-width:24em}
-#request .ddirect{
-  margin-top:auto;padding-top:28px;border-top:1px solid var(--d-line);
+#request .dform__col{display:flex;flex-direction:column}
+#request .dform__col--msg{display:flex;flex-direction:column}
+#request .dform__col--msg .dfield--area{
+  flex:1 1 auto;height:auto;min-height:132px;margin-top:0;resize:vertical;
 }
 #request .dform__row{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
 }
 #request .dform__row .dfield{margin-top:0}
+#request .dform__foot{
+  grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding-top:16px;margin-top:4px;border-top:1px solid var(--d-line);
+}
+#request .dform__foot .dagree{margin-top:0}
+#request .dform__foot .dform__submit{
+  margin-top:0;width:auto;min-width:300px;height:60px;padding:0 32px;
+  font-size:17px;flex:0 0 auto;
+}
+#request .ddirect{
+  margin-top:clamp(24px,2.8vw,36px);text-align:center;
+}
+#request .ddirect__links{justify-content:center}
 
 /* Кнопка первого экрана, мобильный порядок и кадрирование фото */
 .dcohero{padding-bottom:clamp(20px,2.4vw,32px)}
@@ -523,9 +539,10 @@ a.dprom-trust__item:focus-visible{outline:2px solid var(--brand);outline-offset:
   .dcol-ed:last-child{padding-left:0;border-left:0;padding-top:28px;border-top:1px solid var(--d-line)}
   .dapp-triad{grid-template-columns:1fr;gap:18px}
   .dapp-triad__items{justify-content:flex-start}
-  #request .dband__h2{max-width:none;margin-bottom:24px}
-  #request .dband__grid{grid-template-columns:1fr;gap:28px}
-  #request .ddirect{margin-top:24px;padding-top:22px}
+  #request .dband__h2{max-width:none}
+  #request .dform{grid-template-columns:1fr;gap:14px}
+  #request .dform__foot{flex-direction:column;align-items:stretch;gap:14px;padding-top:14px}
+  #request .dform__foot .dform__submit{width:100%;min-width:0}
 }
 @media (max-width:860px){
   .dpart-who{grid-template-columns:1fr;padding:20px}
@@ -1311,19 +1328,13 @@ a.dprom-trust__item:focus-visible{outline:2px solid var(--brand);outline-offset:
 <section class="dsec dsec--cta" id="request">
   <div class="dwrap">
     <div class="dband" data-rv>
-      <h2 class="dh2 dband__h2">Сделайте производственные процессы <span class="dband__soft">менее утомительными и&nbsp;более эффективными</span></h2>
-      <div class="dband__grid">
-        <div class="dband__left">
-          <p class="dband__sub">Обсудим особенности вашего производства, основные задачи и&nbsp;подходящий формат обучения или консультирования.</p>
-          <div class="ddirect">
-            <span class="ddirect__t">Или напишите сразу</span>
-            <div class="ddirect__links">
-              <a href="https://t.me/Dmitrii_BS" target="_blank" rel="noopener"><img src="assets/soc/telegram.svg" alt="" width="20" height="20">Написать Дмитрию Симкину в&nbsp;Telegram</a>
-              <a href="mailto:mail@simkin.ru"><img src="assets/soc/email.svg" alt="" width="20" height="20">mail@simkin.ru</a>
-            </div>
-          </div>
-        </div>
-        <form class="dform" data-thanks="industry" data-channels>
+      <div class="dband__head">
+        <h2 class="dh2 dband__h2">Сделайте производственные процессы <span class="dband__soft">менее утомительными и&nbsp;более эффективными</span></h2>
+        <p class="dband__sub">Обсудим особенности вашего производства, основные задачи и&nbsp;подходящий формат обучения или консультирования.</p>
+      </div>
+
+      <form class="dform" data-thanks="industry" data-channels>
+        <div class="dform__col">
           <div class="dform__row">
             <input class="dfield" placeholder="Имя" required>
             <input class="dfield" placeholder="Компания" required>
@@ -1337,10 +1348,24 @@ a.dprom-trust__item:focus-visible{outline:2px solid var(--brand);outline-offset:
             <button type="button" data-ch="tel">Телефон</button>
           </div>
           <input class="dfield" data-contact hidden>
+        </div>
+
+        <div class="dform__col dform__col--msg">
           <textarea class="dfield dfield--area" placeholder="Опишите задачи производства или проблемные участки"></textarea>
+        </div>
+
+        <div class="dform__foot">
           <label class="dagree"><input type="checkbox" name="agree" required><i></i><span>Согласие на&nbsp;<a href="#">обработку персональных данных</a></span></label>
           <button class="dbtn dbtn--brand dform__submit">Обсудить программу для предприятия</button>
-        </form>
+        </div>
+      </form>
+
+      <div class="ddirect">
+        <span class="ddirect__t">Или напишите сразу</span>
+        <div class="ddirect__links">
+          <a href="https://t.me/Dmitrii_BS" target="_blank" rel="noopener"><img src="assets/soc/telegram.svg" alt="" width="20" height="20">Написать Дмитрию Симкину в&nbsp;Telegram</a>
+          <a href="mailto:mail@simkin.ru"><img src="assets/soc/email.svg" alt="" width="20" height="20">mail@simkin.ru</a>
+        </div>
       </div>
     </div>
   </div>
