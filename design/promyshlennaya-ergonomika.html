@@ -76,9 +76,19 @@
 .dschema-step p{font-size:15.5px;line-height:1.55;color:var(--navy-2);margin:0}
 .dschema-step--accent p{color:var(--navy)}
 
-/* Шапка блока «Почему это важно»: аккуратное распределение 2-го абзаца */
-#why .dhead--wide .dhead__note{padding-bottom:6px}
-#why .dhead--wide .dhead__note p + p{margin-top:10px}
+/* Шапка блока «Почему это важно»: 2-строчный заголовок на всю ширину + 2 сбалансированные колонки текста под ним */
+#why .dhead{max-width:none}
+#why .dh2{max-width:24em;text-wrap:wrap}
+.dwhy-intro{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3.6vw,56px);
+  margin-top:clamp(18px,2vw,26px);padding-top:clamp(18px,2vw,24px);
+  border-top:1px solid var(--d-line);
+}
+.dwhy-intro p{font-size:17px;line-height:1.6;color:var(--navy-2);margin:0}
+@media (max-width:860px){
+  .dwhy-intro{grid-template-columns:1fr;gap:12px}
+  .dwhy-intro p{font-size:16.5px}
+}
 
 /* Блок «Почему важно»: в спокойной палитре сайта (--tint, --soft, --soft-2, --ink, --graph) */
 .dwhy-factors{
@@ -677,15 +687,13 @@ a.dprom-trust__item:focus-visible{outline:2px solid var(--brand);outline-offset:
 <!-- ============ БЛОК 2. ПОЧЕМУ ЭТО ВАЖНО ============ -->
 <section class="dsec" id="why">
   <div class="dwrap">
-    <div class="dhead dhead--split dhead--wide">
-      <div>
-        <span class="deyebrow" data-rv>Значение для производства</span>
-        <h2 class="dh2" data-rv style="--d:.06s">Избыточная утомляемость&nbsp;– <span class="dh2__soft">не&nbsp;обязательная плата за&nbsp;физический труд</span></h2>
-      </div>
-      <div class="dhead__note" data-rv style="--d:.12s">
-        <p>В&nbsp;условиях дефицита квалифицированных производственных кадров особенно важно находить резервы эффективности без увеличения физической нагрузки на&nbsp;сотрудников.</p>
-        <p>Во&nbsp;многих случаях дополнительная утомляемость возникает не&nbsp;столько из-за тяжести самой работы, сколько из-за нерациональной организации процессов, неудобных рабочих поз, лишних движений и&nbsp;усилий.</p>
-      </div>
+    <div class="dhead">
+      <span class="deyebrow" data-rv>Значение для производства</span>
+      <h2 class="dh2" data-rv style="--d:.06s">Избыточная утомляемость&nbsp;– <span class="dh2__soft">не&nbsp;обязательная плата за&nbsp;физический труд</span></h2>
+    </div>
+    <div class="dwhy-intro" data-rv style="--d:.12s">
+      <p>В&nbsp;условиях дефицита квалифицированных производственных кадров особенно важно находить резервы эффективности без увеличения физической нагрузки на&nbsp;сотрудников.</p>
+      <p>Во&nbsp;многих случаях дополнительная утомляемость возникает не&nbsp;столько из-за тяжести самой работы, сколько из-за нерациональной организации процессов, неудобных рабочих поз, лишних движений и&nbsp;усилий.</p>
     </div>
 
     <!-- 4 ключевых параметра организации труда -->
